@@ -1,0 +1,107 @@
+schema_version: 3
+source_pr:
+  number: 793
+  url: https://github.com/meta-secret/nook/pull/793
+  title: "refactor: extract nook-event-log crate"
+  change_surface: rust_core
+  head_sha: 72ccc67d763fe2052431b42f05aefb4a86494bb1
+  started_at: '2026-07-26T14:12:02Z'
+  opened_at: '2026-07-26T15:04:54Z'
+  merged_at: '2026-07-26T16:07:42Z'
+  elapsed_seconds: 6940
+  open_to_merge_seconds: 3768
+summary:
+  local_execution_count: 19
+  local_check_count: 16
+  local_test_count: 1
+  local_combined_count: 2
+  local_execution_seconds: 2653
+  github_actions_run_count: 4
+  github_actions_seconds: 3580
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-26T16:07:42Z'
+  head_sha: 72ccc67d763fe2052431b42f05aefb4a86494bb1
+  by_type:
+    rust: 654
+    preflight: 45
+    web_unit: 279
+    e2e: 205
+  total: 1183
+local_executions:
+  - {command: 'cargo check -p nook-event-log', category: check, started_at: '2026-07-26T14:20:09Z', finished_at: '2026-07-26T14:20:48Z', duration_seconds: 39, outcome: passed, reason: initial_crate_compile}
+  - {command: 'cargo check -p nook-core', category: check, started_at: '2026-07-26T14:20:56Z', finished_at: '2026-07-26T14:21:01Z', duration_seconds: 4, outcome: failed, reason: event_error_conversion_diagnostic}
+  - {command: 'cargo check -p nook-core', category: check, started_at: '2026-07-26T14:21:12Z', finished_at: '2026-07-26T14:21:15Z', duration_seconds: 4, outcome: passed, reason: core_boundary_compile}
+  - {command: 'cargo test -p nook-event-log', category: test, started_at: '2026-07-26T14:21:19Z', finished_at: '2026-07-26T14:21:30Z', duration_seconds: 11, outcome: passed, reason: extracted_domain_suite}
+  - {command: 'cargo test -p nook-core --no-run', category: check, started_at: '2026-07-26T14:24:39Z', finished_at: '2026-07-26T14:24:49Z', duration_seconds: 11, outcome: passed, reason: core_test_compile}
+  - {command: 'cargo check --workspace --all-targets', category: check, started_at: '2026-07-26T14:29:40Z', finished_at: '2026-07-26T14:29:51Z', duration_seconds: 11, outcome: passed, reason: workspace_compile}
+  - {command: 'cargo check -p nook-event-log --target wasm32-unknown-unknown', category: check, started_at: '2026-07-26T14:31:10Z', finished_at: '2026-07-26T14:31:21Z', duration_seconds: 11, outcome: passed, reason: portable_wasm_compile}
+  - {command: task format, category: check, started_at: '2026-07-26T14:32:24Z', finished_at: '2026-07-26T14:35:51Z', duration_seconds: 207, outcome: failed, reason: initial_host_format_apply}
+  - {command: 'cargo clippy -p nook-event-log --all-targets -- -D warnings', category: check, started_at: '2026-07-26T14:37:58Z', finished_at: '2026-07-26T14:38:01Z', duration_seconds: 3, outcome: passed, reason: focused_crate_lint}
+  - {command: task format, category: check, started_at: '2026-07-26T14:38:06Z', finished_at: '2026-07-26T14:52:19Z', duration_seconds: 854, outcome: failed, reason: apply_cross_surface_format_changes}
+  - {command: task format, category: check, started_at: '2026-07-26T14:52:24Z', finished_at: '2026-07-26T15:03:48Z', duration_seconds: 684, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: 'cargo fmt --manifest-path preflight/Cargo.toml --check && cargo test --manifest-path preflight/Cargo.toml --locked --test core_ownership event_log_crate_keeps_the_portable_dependency_direction', category: combined, started_at: '2026-07-26T15:06:57Z', finished_at: '2026-07-26T15:06:59Z', duration_seconds: 2, outcome: failed, reason: preflight_format_diagnostic}
+  - {command: task format, category: check, started_at: '2026-07-26T15:07:05Z', finished_at: '2026-07-26T15:11:56Z', duration_seconds: 291, outcome: passed, reason: pre_push_hygiene_after_preflight_format}
+  - {command: 'cargo check -p nook-core && cargo check -p nook-event-log && cargo fmt --all --check && git diff --check', category: check, started_at: '2026-07-26T15:31:31Z', finished_at: '2026-07-26T15:31:35Z', duration_seconds: 5, outcome: passed, reason: review_boundary_diagnostic}
+  - {command: task format, category: check, started_at: '2026-07-26T15:31:38Z', finished_at: '2026-07-26T15:38:07Z', duration_seconds: 388, outcome: passed, reason: pre_push_hygiene_after_review_fixes}
+  - {command: task format, category: check, started_at: '2026-07-26T15:38:15Z', finished_at: '2026-07-26T15:38:54Z', duration_seconds: 39, outcome: passed, reason: final_pre_push_hygiene_for_review_batch}
+  - {command: 'cargo fmt --manifest-path preflight/Cargo.toml --check && cargo test --manifest-path preflight/Cargo.toml --locked --test vault_app_isolation coverage_dependencies_are_warmed_in_one_instrumented_build', category: combined, started_at: '2026-07-26T15:41:06Z', finished_at: '2026-07-26T15:41:08Z', duration_seconds: 1, outcome: passed, reason: manifest_hash_contract}
+  - {command: task format, category: check, started_at: '2026-07-26T15:41:12Z', finished_at: '2026-07-26T15:42:35Z', duration_seconds: 83, outcome: passed, reason: final_pre_push_hygiene}
+  - {command: 'task pr:ready PR=793', category: check, started_at: '2026-07-26T16:07:24Z', finished_at: '2026-07-26T16:07:29Z', duration_seconds: 5, outcome: passed, reason: readiness_before_squash_merge}
+github_actions_runs:
+  - {workflow: PR, run_id: 30207442526, run_attempt: 1, head_sha: 99c777bbb5dce11cb8b84af497d0bbb8cac527cd, trigger: pull_request, started_at: '2026-07-26T15:04:58Z', finished_at: '2026-07-26T15:10:50Z', duration_seconds: 352, conclusion: failure}
+  - {workflow: PR, run_id: 30207693963, run_attempt: 1, head_sha: cee65c81e26a21d4273c765dd7af5a3dda120312, trigger: pull_request, started_at: '2026-07-26T15:12:09Z', finished_at: '2026-07-26T15:37:48Z', duration_seconds: 1539, conclusion: failure}
+  - {workflow: PR, run_id: 30208658210, run_attempt: 1, head_sha: 04dda392c1cdfe1c85bf949aafa90c3a0e6ca0ec, trigger: pull_request, started_at: '2026-07-26T15:39:10Z', finished_at: '2026-07-26T15:43:05Z', duration_seconds: 235, conclusion: cancelled}
+  - {workflow: PR, run_id: 30208787379, run_attempt: 1, head_sha: 3550aa65cf33b6f39b441219caa5522f11a5de94, trigger: pull_request, started_at: '2026-07-26T15:42:46Z', finished_at: '2026-07-26T16:07:00Z', duration_seconds: 1454, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 12
+    remote_backend_job_count: 0
+    direct_compile_job_count: 12
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 2331
+    buildkit_cached_steps: 833
+    buildkit_cache_hit_rate_percent: 35.74
+  jobs:
+    - {run_id: 30207442526, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30207442526, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30207442526, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48}
+    - {run_id: 30207693963, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 109, buildkit_cache_hit_rate_percent: 29.54}
+    - {run_id: 30207693963, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 227, buildkit_cached_steps: 64, buildkit_cache_hit_rate_percent: 28.19}
+    - {run_id: 30207693963, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48}
+    - {run_id: 30208658210, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 17, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30208658210, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30208658210, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 147, buildkit_cached_steps: 42, buildkit_cache_hit_rate_percent: 28.57}
+    - {run_id: 30208787379, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 97, buildkit_cache_hit_rate_percent: 26.29}
+    - {run_id: 30208787379, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 231, buildkit_cached_steps: 70, buildkit_cache_hit_rate_percent: 30.3}
+    - {run_id: 30208787379, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48}
+pr_retriggers:
+  - {at: '2026-07-26T15:12:09Z', kind: head_push, run_id: 30207693963, reason: apply_preflight_format}
+  - {at: '2026-07-26T15:39:10Z', kind: head_push, run_id: 30208658210, reason: address_review_compatibility_hashing_and_base_coverage}
+  - {at: '2026-07-26T15:42:46Z', kind: head_push, run_id: 30208787379, reason: strengthen_manifest_hash_preflight_invariant}
+merge_attempts:
+  - {at: '2026-07-26T16:07:39Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [791]
+  baseline_quality: comparable
+  baseline_note: PR 791 extracted the adjacent replication domain across the same Rust, WASM, Docker, coverage, preflight, and documentation gate surface.
+  elapsed_seconds_change_percent: -64.7
+  local_execution_seconds_change_percent: -31.6
+  github_actions_seconds_change_percent: -74.7
+  test_inventory_total_change: 1
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - Each head-push retrigger contained a substantive formatting, compatibility, historical coverage, source-hash, or preflight-contract correction; there were no unchanged reruns.
+    - The cancelled third run was superseded by the manifest-hash invariant fix, avoiding completion of obsolete validation.
+    - Pull-request jobs intentionally used direct compilation because untrusted workflows receive no persistent cache credentials.
+    - Historical base coverage necessarily rebuilt the pre-extraction base against the current coverage image; the corrected fallback now supports future portable-crate extractions.
+    - Local and Actions time were materially lower than the adjacent replication extraction baseline.
+  required_actions: []
