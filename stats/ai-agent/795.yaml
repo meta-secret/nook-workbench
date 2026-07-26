@@ -1,0 +1,83 @@
+schema_version: 3
+source_pr:
+  number: 795
+  url: https://github.com/meta-secret/nook/pull/795
+  title: "Install Kubernetes console and pin Hive Codex Light"
+  change_surface: infra_ci
+  head_sha: 88b0ec4fdf9e12912d5a415132b5e1673af08013
+  started_at: '2026-07-26T22:52:12Z'
+  opened_at: '2026-07-26T22:52:21Z'
+  merged_at: '2026-07-26T23:40:27Z'
+  elapsed_seconds: 2895
+  open_to_merge_seconds: 2886
+summary:
+  local_execution_count: 6
+  local_check_count: 5
+  local_test_count: 0
+  local_combined_count: 1
+  local_execution_seconds: 556
+  github_actions_run_count: 10
+  github_actions_seconds: 3717
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-26T23:40:27Z'
+  head_sha: 88b0ec4fdf9e12912d5a415132b5e1673af08013
+  by_type:
+    rust: 654
+    preflight: 45
+    web_unit: 279
+    e2e: 205
+  total: 1183
+local_executions:
+  - {command: 'task infra:k0s:manifests:check', category: check, started_at: '2026-07-26T23:31:50Z', finished_at: '2026-07-26T23:31:56Z', duration_seconds: 6, outcome: passed, reason: final_manifest_contract}
+  - {command: task format, category: check, started_at: '2026-07-26T23:31:58Z', finished_at: '2026-07-26T23:32:58Z', duration_seconds: 60, outcome: passed, reason: final_pre_push_hygiene}
+  - {command: 'task infra:kubernetes:console:install', category: check, started_at: '2026-07-26T23:39:00Z', finished_at: '2026-07-26T23:39:20Z', duration_seconds: 20, outcome: passed, reason: idempotent_live_operator_console}
+  - {command: 'task pr:ready PR=795', category: check, started_at: '2026-07-26T23:40:05Z', finished_at: '2026-07-26T23:40:11Z', duration_seconds: 6, outcome: passed, reason: exact_head_readiness}
+  - {command: 'task infra:kubernetes:console:install', category: check, started_at: '2026-07-26T23:40:45Z', finished_at: '2026-07-26T23:41:05Z', duration_seconds: 20, outcome: passed, reason: exact_merge_operator_console}
+  - {command: 'task infra:hive:deploy', category: combined, started_at: '2026-07-26T23:41:06Z', finished_at: '2026-07-26T23:48:30Z', duration_seconds: 444, outcome: passed, reason: exact_merge_production_delivery}
+github_actions_runs:
+  - {workflow: PR, run_id: 30224014826, run_attempt: 1, head_sha: 6aad3c7aa21b82615a3f6bf4b93bc2e1dd898292, trigger: pull_request, started_at: '2026-07-26T22:52:24Z', finished_at: '2026-07-26T22:58:19Z', duration_seconds: 355, conclusion: success}
+  - {workflow: Hive, run_id: 30224014817, run_attempt: 1, head_sha: 6aad3c7aa21b82615a3f6bf4b93bc2e1dd898292, trigger: pull_request, started_at: '2026-07-26T22:52:24Z', finished_at: '2026-07-26T22:59:36Z', duration_seconds: 432, conclusion: success}
+  - {workflow: PR, run_id: 30224415057, run_attempt: 1, head_sha: f8d139e2cf98463b1b79a0661a0ce4d68013634f, trigger: pull_request, started_at: '2026-07-26T23:03:24Z', finished_at: '2026-07-26T23:06:46Z', duration_seconds: 202, conclusion: success}
+  - {workflow: Hive, run_id: 30224415101, run_attempt: 1, head_sha: f8d139e2cf98463b1b79a0661a0ce4d68013634f, trigger: pull_request, started_at: '2026-07-26T23:03:24Z', finished_at: '2026-07-26T23:09:56Z', duration_seconds: 392, conclusion: success}
+  - {workflow: PR, run_id: 30224659304, run_attempt: 1, head_sha: 3c2e743d779888e186fe16a1c1cc18d3ffc8c16e, trigger: pull_request, started_at: '2026-07-26T23:10:00Z', finished_at: '2026-07-26T23:16:23Z', duration_seconds: 383, conclusion: success}
+  - {workflow: Hive, run_id: 30224659302, run_attempt: 1, head_sha: 3c2e743d779888e186fe16a1c1cc18d3ffc8c16e, trigger: pull_request, started_at: '2026-07-26T23:10:00Z', finished_at: '2026-07-26T23:17:22Z', duration_seconds: 442, conclusion: success}
+  - {workflow: PR, run_id: 30225136385, run_attempt: 1, head_sha: a1179148b3af954b6521e97047dbae05ba824599, trigger: pull_request, started_at: '2026-07-26T23:23:17Z', finished_at: '2026-07-26T23:29:25Z', duration_seconds: 368, conclusion: success}
+  - {workflow: Hive, run_id: 30225136396, run_attempt: 1, head_sha: a1179148b3af954b6521e97047dbae05ba824599, trigger: pull_request, started_at: '2026-07-26T23:23:17Z', finished_at: '2026-07-26T23:29:21Z', duration_seconds: 364, conclusion: success}
+  - {workflow: PR, run_id: 30225500724, run_attempt: 1, head_sha: 88b0ec4fdf9e12912d5a415132b5e1673af08013, trigger: pull_request, started_at: '2026-07-26T23:33:23Z', finished_at: '2026-07-26T23:39:48Z', duration_seconds: 385, conclusion: success}
+  - {workflow: Hive, run_id: 30225500715, run_attempt: 1, head_sha: 88b0ec4fdf9e12912d5a415132b5e1673af08013, trigger: pull_request, started_at: '2026-07-26T23:33:23Z', finished_at: '2026-07-26T23:39:57Z', duration_seconds: 394, conclusion: success}
+cache_telemetry:
+  final_pr_hive:
+    sccache_cache_hits: 1970
+    sccache_cache_misses: 0
+    sccache_cache_errors: 0
+  production_release:
+    sccache_cache_hits: 1029
+    sccache_cache_misses: 1
+    sccache_cache_errors: 0
+pr_retriggers:
+  - {at: '2026-07-26T23:03:24Z', kind: head_push, run_id: 30224415101, reason: add_k9s_and_direct_cluster_access}
+  - {at: '2026-07-26T23:10:00Z', kind: head_push, run_id: 30224659302, reason: pin_worker_model_and_reasoning}
+  - {at: '2026-07-26T23:23:17Z', kind: head_push, run_id: 30225136396, reason: replace_persistent_admin_credentials}
+  - {at: '2026-07-26T23:33:23Z', kind: head_push, run_id: 30225500715, reason: guard_legacy_kubeconfig_migration}
+merge_attempts:
+  - {at: '2026-07-26T23:40:27Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [794]
+  baseline_quality: comparable
+  baseline_note: PR 794 delivered the same Hive infrastructure and cache path immediately before this operator-console refinement.
+  elapsed_seconds_change_percent: -88.33
+  local_execution_seconds_change_percent: -11.61
+  github_actions_seconds_change_percent: 20.49
+  test_inventory_total_change: 0
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - Each validation cycle corresponded to a distinct security or operator-contract correction.
+    - Final Hive verification completed in 6m34s with 1,970 remote compiler-cache hits and zero misses.
+    - Production dependency compilation completed in 99 seconds with 1,029 remote compiler-cache hits and zero dependency misses.
+  required_actions: []
