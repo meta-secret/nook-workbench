@@ -1,0 +1,72 @@
+schema_version: 3
+source_pr:
+  number: 785
+  url: https://github.com/meta-secret/nook/pull/785
+  title: "Fix Main statistics for skipped-job timestamp skew"
+  change_surface: ci_main_statistics_timestamp_normalization
+  head_sha: d8b8e4487f7df86d44354e1f06eea03a1dcb43df
+  started_at: '2026-07-26T00:46:00Z'
+  opened_at: '2026-07-26T00:50:51Z'
+  merged_at: '2026-07-26T00:55:16Z'
+  elapsed_seconds: 556
+  open_to_merge_seconds: 265
+summary:
+  local_execution_count: 3
+  local_check_count: 2
+  local_test_count: 1
+  local_combined_count: 0
+  local_execution_seconds: 60
+  github_actions_run_count: 1
+  github_actions_seconds: 230
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-26T00:55:16Z'
+  head_sha: d8b8e4487f7df86d44354e1f06eea03a1dcb43df
+  by_type:
+    rust: 636
+    preflight: 43
+    web_unit: 279
+    e2e: 205
+  total: 1163
+local_executions:
+  - {command: 'node --test .github/scripts/main-build-stats.test.cjs', category: test, started_at: '2026-07-26T00:47:00Z', finished_at: '2026-07-26T00:47:01Z', duration_seconds: 1, outcome: passed, reason: reproduce_skipped_job_timestamp_shape}
+  - {command: task format, category: check, started_at: '2026-07-26T00:47:01Z', finished_at: '2026-07-26T00:47:53Z', duration_seconds: 52, outcome: passed, reason: pre_push_hygiene}
+  - {command: 'task pr:ready PR=785', category: check, started_at: '2026-07-26T00:55:00Z', finished_at: '2026-07-26T00:55:07Z', duration_seconds: 7, outcome: passed, reason: readiness_before_squash_merge}
+github_actions_runs:
+  - {workflow: PR, run_id: 30181869338, run_attempt: 1, head_sha: 52e9f36690cce7dbadd9c6580311b4d387d1e48f, trigger: pull_request, started_at: '2026-07-26T00:50:54Z', finished_at: '2026-07-26T00:54:44Z', duration_seconds: 230, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 3
+    remote_backend_job_count: 0
+    direct_compile_job_count: 3
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 80
+    buildkit_cached_steps: 19
+    buildkit_cache_hit_rate_percent: 23.75
+  jobs:
+    - {run_id: 30181869338, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0.0}
+    - {run_id: 30181869338, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30181869338, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+pr_retriggers: []
+merge_attempts:
+  - {at: '2026-07-26T00:55:16Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [772, 783]
+  baseline_quality: low
+  baseline_note: CI workflow records are directionally useful, but PR 783 was a much broader cross-repository migration.
+  elapsed_seconds_change_percent: -80.6
+  local_execution_seconds_change_percent: -90.9
+  github_actions_seconds_change_percent: -78.3
+  test_inventory_total_change: 3
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - The focused repair used one local validation cycle, one PR workflow run, and one merge attempt.
+  required_actions: []
