@@ -1,0 +1,94 @@
+schema_version: 3
+source_pr:
+  number: 789
+  url: https://github.com/meta-secret/nook/pull/789
+  title: "Eliminate duplicate Main BuildKit cache reconstruction"
+  change_surface: ci_buildkit_cache_publication
+  head_sha: 58f74cb91eb80fb0335cc05cabcf1c8787c2548b
+  started_at: '2026-07-26T03:29:36Z'
+  opened_at: '2026-07-26T03:40:15Z'
+  merged_at: '2026-07-26T04:47:13Z'
+  elapsed_seconds: 4657
+  open_to_merge_seconds: 4018
+summary:
+  local_execution_count: 5
+  local_check_count: 5
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 574
+  github_actions_run_count: 6
+  github_actions_seconds: 3442
+  pr_retrigger_count: 5
+  agent_requested_rerun_count: 1
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-26T04:48:00Z'
+  head_sha: 58f74cb91eb80fb0335cc05cabcf1c8787c2548b
+  by_type:
+    rust: 636
+    preflight: 43
+    web_unit: 279
+    e2e: 205
+  total: 1163
+local_executions:
+  - {command: task format, category: check, started_at: '2026-07-26T03:36:51Z', finished_at: '2026-07-26T03:39:51Z', duration_seconds: 180, outcome: passed, reason: pre_push_hygiene}
+  - {command: task format, category: check, started_at: '2026-07-26T04:32:07Z', finished_at: '2026-07-26T04:37:07Z', duration_seconds: 300, outcome: passed, reason: pre_push_hygiene_after_review_fixes}
+  - {command: 'cargo fmt --manifest-path preflight/Cargo.toml', category: check, started_at: '2026-07-26T04:38:13Z', finished_at: '2026-07-26T04:38:14Z', duration_seconds: 1, outcome: passed, reason: correct_sealed_preflight_format_drift}
+  - {command: task format, category: check, started_at: '2026-07-26T04:38:28Z', finished_at: '2026-07-26T04:39:58Z', duration_seconds: 90, outcome: passed, reason: pre_push_hygiene_after_format_correction}
+  - {command: 'task pr:ready PR=789', category: check, started_at: '2026-07-26T04:46:55Z', finished_at: '2026-07-26T04:46:58Z', duration_seconds: 3, outcome: passed, reason: readiness_before_squash_merge}
+github_actions_runs:
+  - {workflow: PR, run_id: 30186536293, run_attempt: 1, head_sha: 7c64e98e000b45b83cfc2bff99d642209085ae3e, trigger: pull_request, started_at: '2026-07-26T03:40:18Z', finished_at: '2026-07-26T03:40:21Z', duration_seconds: 3, conclusion: cancelled}
+  - {workflow: PR, run_id: 30186537071, run_attempt: 1, head_sha: 7c64e98e000b45b83cfc2bff99d642209085ae3e, trigger: pull_request, started_at: '2026-07-26T03:40:19Z', finished_at: '2026-07-26T04:13:08Z', duration_seconds: 1969, conclusion: failure}
+  - {workflow: PR, run_id: 30186537071, run_attempt: 2, head_sha: 7c64e98e000b45b83cfc2bff99d642209085ae3e, trigger: pull_request, started_at: '2026-07-26T04:13:37Z', finished_at: '2026-07-26T04:21:28Z', duration_seconds: 471, conclusion: cancelled}
+  - {workflow: PR, run_id: 30187639857, run_attempt: 1, head_sha: 7c64e98e000b45b83cfc2bff99d642209085ae3e, trigger: pull_request, started_at: '2026-07-26T04:21:04Z', finished_at: '2026-07-26T04:28:06Z', duration_seconds: 422, conclusion: success}
+  - {workflow: PR, run_id: 30188073786, run_attempt: 1, head_sha: 07e152e19b75c5049faaea234f6d13e0f4adc795, trigger: pull_request, started_at: '2026-07-26T04:37:21Z', finished_at: '2026-07-26T04:40:25Z', duration_seconds: 184, conclusion: cancelled}
+  - {workflow: PR, run_id: 30188150954, run_attempt: 1, head_sha: 90542ec5cb3f87067b094aa2e76a1663b8cad759, trigger: pull_request, started_at: '2026-07-26T04:40:18Z', finished_at: '2026-07-26T04:46:51Z', duration_seconds: 393, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 9
+    remote_backend_job_count: 0
+    direct_compile_job_count: 9
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 1462
+    buildkit_cached_steps: 748
+    buildkit_cache_hit_rate_percent: 51.16
+  jobs:
+    - {run_id: 30187639857, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 313, buildkit_cached_steps: 191, buildkit_cache_hit_rate_percent: 61.02}
+    - {run_id: 30187639857, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30187639857, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 277, buildkit_cached_steps: 134, buildkit_cache_hit_rate_percent: 48.38}
+    - {run_id: 30188073786, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0.0}
+    - {run_id: 30188073786, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30188073786, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 137, buildkit_cached_steps: 42, buildkit_cache_hit_rate_percent: 30.66}
+    - {run_id: 30188150954, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 313, buildkit_cached_steps: 209, buildkit_cache_hit_rate_percent: 66.77}
+    - {run_id: 30188150954, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30188150954, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 277, buildkit_cached_steps: 134, buildkit_cache_hit_rate_percent: 48.38}
+pr_retriggers:
+  - {at: '2026-07-26T03:40:19Z', kind: duplicate_dispatch, run_id: 30186537071, reason: initial_PR_dispatch_replaced_the_immediately_cancelled_duplicate}
+  - {at: '2026-07-26T04:13:37Z', kind: manual_rerun, run_id: 30186537071, reason: retry_optional_extension_failure}
+  - {at: '2026-07-26T04:21:04Z', kind: unlabeled, run_id: 30187639857, reason: remove_inapplicable_full_e2e_label_and_restore_core_validation}
+  - {at: '2026-07-26T04:37:21Z', kind: head_push, run_id: 30188073786, reason: harden_validation_gated_serial_cache_exports}
+  - {at: '2026-07-26T04:40:18Z', kind: head_push, run_id: 30188150954, reason: correct_preflight_rustfmt_drift}
+merge_attempts:
+  - {at: '2026-07-26T04:47:13Z', method: squash, outcome: success, reason: exact_head_readiness_passed_remote_merge_confirmed_after_local_worktree_checkout_error}
+comparison:
+  baseline_prs: [787, 788]
+  baseline_quality: comparable
+  baseline_note: Recent CI workflow changes using the same core PR verification topology.
+  elapsed_seconds_change_percent: 282.0
+  local_execution_seconds_change_percent: 158.6
+  github_actions_seconds_change_percent: 503.3
+  test_inventory_total_change: 0
+  regression: true
+  regression_reasons:
+    - The inapplicable optional extension suite and its manual retry consumed most of the Actions time before the label was removed.
+    - Three implementation heads were necessary to incorporate substantive cache-safety review and correct a formatting-only preflight failure.
+waste_assessment:
+  wasteful: false
+  findings:
+    - The optional extension retry was stopped and the label removed once its failure was confirmed unrelated to CI-only cache paths.
+    - Review cycles preserved the protected WASM dependency lineage and added validation-before-publication plus upload serialization.
+    - Pull-request jobs intentionally used direct compilation because untrusted workflows receive no persistent cache credentials.
+  required_actions: []
