@@ -5,11 +5,12 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-07-25T00:00:00Z
-updated_at: 2026-07-26T00:45:34Z
+updated_at: 2026-07-26T02:09:20Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/783
   - https://github.com/meta-secret/nook/pull/785
+  - https://github.com/meta-secret/nook/pull/787
 depends_on: []
 ---
 
@@ -59,6 +60,9 @@ history is preserved here.
   collector through Nook PR 785.
 - 2026-07-26: Enabled GitHub secret scanning and push protection, and added
   versioned Bun-powered pre-commit, pre-push, and CI sensitive-content scans.
+- 2026-07-26: Fixed rerun collection to exclude successful jobs reused from
+  earlier attempts through Nook PR 787; the production attempt-2 payload then
+  published successfully.
 
 ## Findings and decisions
 
