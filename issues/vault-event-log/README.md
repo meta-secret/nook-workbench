@@ -1,8 +1,8 @@
 ---
 title: Vault event log and replication architecture
-status: in_progress
+status: done
 created_at: 2026-07-26T08:29:14Z
-updated_at: 2026-07-26T08:29:14Z
+updated_at: 2026-07-26T13:57:00Z
 ---
 
 # Vault event log and replication architecture
@@ -16,10 +16,10 @@ provider transports.
 ## Current state
 
 The immutable event-log and causal projection architecture is implemented under
-the historical completed issue #112. Its provider-neutral causal indexing,
-replica bookkeeping, vault operation policy, and projection currently share the
-`nook-core` package. The active extraction separates reusable replication
-mechanics without changing persisted event bytes or provider behavior.
+the historical completed issue #112. Provider-neutral causal indexing,
+append-only replica bookkeeping, outboxes, and repair planning now live in the
+portable `nook-replication` crate. Vault policy and projection remain in
+`nook-core`, and provider behavior remains in host adapters.
 
 ## Decisions
 
@@ -33,7 +33,7 @@ mechanics without changing persisted event bytes or provider behavior.
 
 ## Issues
 
-- [ ] [Extract portable replication mechanics from nook-core](extract-nook-replication-crate.md)
+- [x] [Extract portable replication mechanics from nook-core](extract-nook-replication-crate.md)
 
 ## References
 
