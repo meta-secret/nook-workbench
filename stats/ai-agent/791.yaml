@@ -1,0 +1,171 @@
+schema_version: 3
+source_pr:
+  number: 791
+  url: https://github.com/meta-secret/nook/pull/791
+  title: "Extract portable replication mechanics into nook-replication"
+  change_surface: rust_core
+  head_sha: 61630537fd8839432a5788fdbfc81fa9ac697ade
+  started_at: '2026-07-26T08:29:14Z'
+  opened_at: '2026-07-26T09:09:55Z'
+  merged_at: '2026-07-26T13:57:00Z'
+  elapsed_seconds: 19666
+  open_to_merge_seconds: 17225
+summary:
+  local_execution_count: 42
+  local_check_count: 24
+  local_test_count: 5
+  local_combined_count: 13
+  local_execution_seconds: 3880
+  github_actions_run_count: 12
+  github_actions_seconds: 14133
+  pr_retrigger_count: 10
+  agent_requested_rerun_count: 1
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-26T13:57:12Z'
+  head_sha: 61630537fd8839432a5788fdbfc81fa9ac697ade
+  by_type:
+    rust: 654
+    preflight: 44
+    web_unit: 279
+    e2e: 205
+  total: 1182
+local_executions:
+  - {command: 'cargo test -p nook-replication', category: test, started_at: '2026-07-26T08:42:49Z', finished_at: '2026-07-26T08:42:52Z', duration_seconds: 2, outcome: passed, reason: initial_replication_suite}
+  - {command: 'cargo test -p nook-core vault_event_graph::tests', category: test, started_at: '2026-07-26T08:42:57Z', finished_at: '2026-07-26T08:43:27Z', duration_seconds: 30, outcome: passed, reason: compatibility_graph_suite}
+  - {command: 'cargo test -p nook-core vault_event_store::tests', category: test, started_at: '2026-07-26T08:45:30Z', finished_at: '2026-07-26T08:45:31Z', duration_seconds: 1, outcome: passed, reason: compatibility_store_suite}
+  - {command: 'cargo clippy -p nook-replication --all-targets -- -D warnings', category: check, started_at: '2026-07-26T08:47:39Z', finished_at: '2026-07-26T08:47:40Z', duration_seconds: 1, outcome: passed, reason: focused_crate_lint}
+  - {command: task format, category: check, started_at: '2026-07-26T08:48:09Z', finished_at: '2026-07-26T09:08:29Z', duration_seconds: 1220, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --test core_ownership --test coverage_reporting --test vault_app_isolation', category: test, started_at: '2026-07-26T09:08:55Z', finished_at: '2026-07-26T09:09:09Z', duration_seconds: 14, outcome: passed, reason: focused_repository_contracts}
+  - {command: 'task pr:preflight PR=791', category: check, started_at: '2026-07-26T09:10:01Z', finished_at: '2026-07-26T09:10:09Z', duration_seconds: 8, outcome: passed, reason: initial_pr_preflight}
+  - {command: 'cargo fmt --manifest-path preflight/Cargo.toml && git diff --check', category: check, started_at: '2026-07-26T09:11:23Z', finished_at: '2026-07-26T09:11:24Z', duration_seconds: 0, outcome: passed, reason: apply_preflight_format}
+  - {command: task format, category: check, started_at: '2026-07-26T09:11:29Z', finished_at: '2026-07-26T09:17:08Z', duration_seconds: 339, outcome: passed, reason: pre_push_hygiene_after_preflight_format}
+  - {command: 'cargo fmt --manifest-path preflight/Cargo.toml && cargo test --manifest-path preflight/Cargo.toml --test vault_app_isolation assert_pr_workflow_contract -- --exact', category: combined, started_at: '2026-07-26T09:33:32Z', finished_at: '2026-07-26T09:33:34Z', duration_seconds: 2, outcome: passed, reason: base_coverage_workflow_contract}
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --test vault_app_isolation delivery_ci_uses_github_hosted_runners_with_scoped_buildkit_caches -- --exact', category: test, started_at: '2026-07-26T09:33:41Z', finished_at: '2026-07-26T09:33:41Z', duration_seconds: 0, outcome: passed, reason: hosted_runner_cache_contract}
+  - {command: task format, category: check, started_at: '2026-07-26T09:33:50Z', finished_at: '2026-07-26T09:35:03Z', duration_seconds: 73, outcome: passed, reason: pre_push_hygiene_after_base_fallback}
+  - {command: 'cargo fmt --all -- --check && cargo test -p nook-replication && cargo clippy -p nook-replication --all-targets -- -D warnings', category: combined, started_at: '2026-07-26T10:03:27Z', finished_at: '2026-07-26T10:03:29Z', duration_seconds: 2, outcome: failed, reason: formatting_diagnostic_after_review_fixes}
+  - {command: 'cargo fmt --manifest-path preflight/Cargo.toml -- --check && cargo test --manifest-path preflight/Cargo.toml --test vault_app_isolation coverage_dependencies_are_warmed_in_one_instrumented_build -- --exact', category: combined, started_at: '2026-07-26T10:03:27Z', finished_at: '2026-07-26T10:03:29Z', duration_seconds: 2, outcome: passed, reason: parallel_coverage_warmup_contract}
+  - {command: 'cargo fmt --all && cargo test -p nook-replication && cargo clippy -p nook-replication --all-targets -- -D warnings', category: combined, started_at: '2026-07-26T10:03:34Z', finished_at: '2026-07-26T10:03:36Z', duration_seconds: 2, outcome: failed, reason: cycle_projection_expectation_diagnostic}
+  - {command: 'cargo fmt --all && cargo test -p nook-replication && cargo clippy -p nook-replication --all-targets -- -D warnings && cargo test -p nook-core vault_event_graph::tests && cargo test -p nook-core vault_event_store::tests', category: combined, started_at: '2026-07-26T10:03:53Z', finished_at: '2026-07-26T10:04:09Z', duration_seconds: 17, outcome: passed, reason: review_fix_regression_suite}
+  - {command: task format, category: check, started_at: '2026-07-26T10:04:22Z', finished_at: '2026-07-26T10:09:27Z', duration_seconds: 304, outcome: passed, reason: pre_push_hygiene_after_review_batch}
+  - {command: 'cargo test -p nook-replication && cargo clippy -p nook-replication --all-targets -- -D warnings && cargo test -p nook-core vault_event_graph --lib && cargo test -p nook-core vault_event_store --lib', category: combined, started_at: '2026-07-26T10:37:42Z', finished_at: '2026-07-26T10:37:48Z', duration_seconds: 6, outcome: passed, reason: immutable_identity_regressions}
+  - {command: task format, category: check, started_at: '2026-07-26T10:37:56Z', finished_at: '2026-07-26T10:42:04Z', duration_seconds: 248, outcome: passed, reason: pre_push_hygiene_after_identity_fix}
+  - {command: 'cargo test -p nook-replication && cargo clippy -p nook-replication --all-targets -- -D warnings && cargo test -p nook-core vault_event_graph --lib', category: combined, started_at: '2026-07-26T11:17:08Z', finished_at: '2026-07-26T11:17:09Z', duration_seconds: 1, outcome: failed, reason: moved_identifier_compile_diagnostic}
+  - {command: 'cargo test -p nook-replication && cargo clippy -p nook-replication --all-targets -- -D warnings && cargo test -p nook-core vault_event_graph --lib', category: combined, started_at: '2026-07-26T11:17:20Z', finished_at: '2026-07-26T11:17:25Z', duration_seconds: 5, outcome: passed, reason: normalized_parent_and_quarantine_regressions}
+  - {command: task format, category: check, started_at: '2026-07-26T11:17:31Z', finished_at: '2026-07-26T11:21:58Z', duration_seconds: 267, outcome: passed, reason: pre_push_hygiene_after_normalization_fix}
+  - {command: 'task pr:ready PR=791', category: check, started_at: '2026-07-26T11:49:41Z', finished_at: '2026-07-26T11:49:46Z', duration_seconds: 6, outcome: failed, reason: current_head_review_thread}
+  - {command: 'cargo test -p nook-replication && cargo clippy -p nook-replication --all-targets -- -D warnings && cargo test -p nook-core vault_event_store --lib', category: combined, started_at: '2026-07-26T11:51:12Z', finished_at: '2026-07-26T11:51:19Z', duration_seconds: 7, outcome: failed, reason: outbox_union_regression_diagnostic}
+  - {command: 'cargo test -p nook-core vault_event_store --lib && cargo test -p nook-core vault_event_graph --lib && cargo clippy -p nook-replication -p nook-core --all-targets -- -D warnings', category: combined, started_at: '2026-07-26T11:51:38Z', finished_at: '2026-07-26T11:51:47Z', duration_seconds: 9, outcome: passed, reason: hardened_rejection_regressions}
+  - {command: task format, category: check, started_at: '2026-07-26T11:51:50Z', finished_at: '2026-07-26T11:56:26Z', duration_seconds: 276, outcome: passed, reason: pre_push_hygiene_after_rejection_fix}
+  - {command: 'task pr:ready PR=791', category: check, started_at: '2026-07-26T12:23:51Z', finished_at: '2026-07-26T12:23:59Z', duration_seconds: 8, outcome: failed, reason: unresolved_thread_and_stale_base}
+  - {command: 'cargo test -p nook-core union_preserves_existing_outbox_entries --lib && cargo test -p nook-core vault_event_store --lib && cargo clippy -p nook-replication -p nook-core --all-targets -- -D warnings', category: combined, started_at: '2026-07-26T12:24:51Z', finished_at: '2026-07-26T12:25:00Z', duration_seconds: 9, outcome: passed, reason: outbox_preservation_after_base_update}
+  - {command: task format, category: check, started_at: '2026-07-26T12:25:14Z', finished_at: '2026-07-26T12:30:26Z', duration_seconds: 312, outcome: passed, reason: pre_push_hygiene_after_first_base_update}
+  - {command: 'cargo nextest list rust packages --message-format json', category: check, started_at: '2026-07-26T12:36:57Z', finished_at: '2026-07-26T12:37:36Z', duration_seconds: 39, outcome: passed, reason: diagnose_inventory_output_shape}
+  - {command: 'cargo nextest list rust packages --message-format json | jq keys', category: check, started_at: '2026-07-26T12:37:45Z', finished_at: '2026-07-26T12:37:45Z', duration_seconds: 1, outcome: passed, reason: diagnose_inventory_schema}
+  - {command: 'cargo nextest list rust and preflight package filters', category: check, started_at: '2026-07-26T12:37:53Z', finished_at: '2026-07-26T12:37:53Z', duration_seconds: 1, outcome: passed, reason: initial_test_inventory}
+  - {command: 'cargo nextest list --manifest-path preflight/Cargo.toml --lib --tests --message-format json', category: check, started_at: '2026-07-26T12:38:02Z', finished_at: '2026-07-26T12:38:05Z', duration_seconds: 2, outcome: passed, reason: preflight_test_inventory}
+  - {command: 'task pr:ready PR=791', category: check, started_at: '2026-07-26T12:59:20Z', finished_at: '2026-07-26T12:59:28Z', duration_seconds: 8, outcome: failed, reason: current_head_incremental_cycle_review}
+  - {command: 'cargo test -p nook-replication && cargo clippy -p nook-replication --all-targets -- -D warnings && cargo test -p nook-core vault_event_graph --lib', category: combined, started_at: '2026-07-26T13:00:42Z', finished_at: '2026-07-26T13:00:49Z', duration_seconds: 7, outcome: passed, reason: incremental_cycle_regressions}
+  - {command: task format, category: check, started_at: '2026-07-26T13:00:54Z', finished_at: '2026-07-26T13:05:49Z', duration_seconds: 295, outcome: passed, reason: pre_push_hygiene_after_incremental_cycle_fix}
+  - {command: 'cargo test -p nook-replication && cargo clippy -p nook-replication --all-targets -- -D warnings && cargo test -p nook-core event_log::graph', category: combined, started_at: '2026-07-26T13:18:57Z', finished_at: '2026-07-26T13:19:07Z', duration_seconds: 11, outcome: passed, reason: conflicting_parent_cycle_regression}
+  - {command: task format, category: check, started_at: '2026-07-26T13:19:13Z', finished_at: '2026-07-26T13:23:33Z', duration_seconds: 260, outcome: passed, reason: pre_push_hygiene_after_conflict_cycle_fix}
+  - {command: task format, category: check, started_at: '2026-07-26T13:26:46Z', finished_at: '2026-07-26T13:27:52Z', duration_seconds: 67, outcome: passed, reason: pre_push_hygiene_after_second_base_update}
+  - {command: 'cargo nextest list rust packages and preflight manifest', category: check, started_at: '2026-07-26T13:30:56Z', finished_at: '2026-07-26T13:31:08Z', duration_seconds: 12, outcome: failed, reason: wrong_relative_preflight_manifest_diagnostic}
+  - {command: 'cargo nextest list --manifest-path ../preflight/Cargo.toml --lib --tests --message-format json', category: check, started_at: '2026-07-26T13:31:19Z', finished_at: '2026-07-26T13:31:19Z', duration_seconds: 0, outcome: passed, reason: merged_base_test_inventory}
+  - {command: 'task pr:ready PR=791', category: check, started_at: '2026-07-26T13:56:46Z', finished_at: '2026-07-26T13:56:52Z', duration_seconds: 6, outcome: passed, reason: readiness_before_squash_merge}
+github_actions_runs:
+  - {workflow: PR, run_id: 30195955979, run_attempt: 1, head_sha: d70fcdbd835336347ec777747eaf302c033fb537, trigger: pull_request, started_at: '2026-07-26T09:09:59Z', finished_at: '2026-07-26T09:16:40Z', duration_seconds: 401, conclusion: failure}
+  - {workflow: PR, run_id: 30196183926, run_attempt: 1, head_sha: 093f09f6b9083084e972b2cc3e87d61e0e16b679, trigger: pull_request, started_at: '2026-07-26T09:17:19Z', finished_at: '2026-07-26T09:31:52Z', duration_seconds: 873, conclusion: failure}
+  - {workflow: PR, run_id: 30196724362, run_attempt: 1, head_sha: 61c4600bdf3ca38841de4f2543850f39c153e8e3, trigger: pull_request, started_at: '2026-07-26T09:35:15Z', finished_at: '2026-07-26T10:00:31Z', duration_seconds: 1516, conclusion: success}
+  - {workflow: PR, run_id: 30197769958, run_attempt: 1, head_sha: e00509579543ddc9419bbd2e538b254a87ab9d2b, trigger: pull_request, started_at: '2026-07-26T10:09:53Z', finished_at: '2026-07-26T10:36:28Z', duration_seconds: 1595, conclusion: success}
+  - {workflow: PR, run_id: 30198744809, run_attempt: 1, head_sha: 43e8b0b66043d5ec94f708175478da93ea103a95, trigger: pull_request, started_at: '2026-07-26T10:42:24Z', finished_at: '2026-07-26T10:56:00Z', duration_seconds: 816, conclusion: failure}
+  - {workflow: PR, run_id: 30198744809, run_attempt: 2, head_sha: 43e8b0b66043d5ec94f708175478da93ea103a95, trigger: workflow_dispatch, started_at: '2026-07-26T10:56:21Z', finished_at: '2026-07-26T11:15:36Z', duration_seconds: 1155, conclusion: success}
+  - {workflow: PR, run_id: 30199996482, run_attempt: 1, head_sha: 4b49aa2b6552ddf5519510c912502035048ad2e9, trigger: pull_request, started_at: '2026-07-26T11:22:15Z', finished_at: '2026-07-26T11:49:34Z', duration_seconds: 1639, conclusion: success}
+  - {workflow: PR, run_id: 30201101425, run_attempt: 1, head_sha: c80588b863bdc51ed00fb934d985cc060432c9d0, trigger: pull_request, started_at: '2026-07-26T11:56:56Z', finished_at: '2026-07-26T12:23:28Z', duration_seconds: 1592, conclusion: success}
+  - {workflow: PR, run_id: 30202196496, run_attempt: 1, head_sha: f322a859bd1d413b2049f555d44bccf4361c8a6b, trigger: pull_request, started_at: '2026-07-26T12:30:39Z', finished_at: '2026-07-26T12:58:58Z', duration_seconds: 1699, conclusion: success}
+  - {workflow: PR, run_id: 30203370709, run_attempt: 1, head_sha: 53e1e25348df841f9902f288bdf6bfa512781aa3, trigger: pull_request, started_at: '2026-07-26T13:06:02Z', finished_at: '2026-07-26T13:19:50Z', duration_seconds: 828, conclusion: failure}
+  - {workflow: PR, run_id: 30203953190, run_attempt: 1, head_sha: 328afc3f42154fde06ff59c301d86d5c786b17db, trigger: pull_request, started_at: '2026-07-26T13:23:48Z', finished_at: '2026-07-26T13:29:30Z', duration_seconds: 342, conclusion: cancelled}
+  - {workflow: PR, run_id: 30204092088, run_attempt: 1, head_sha: 7e3a34200aca92251ca730b40f89c0f14018368a, trigger: pull_request, started_at: '2026-07-26T13:28:03Z', finished_at: '2026-07-26T13:56:00Z', duration_seconds: 1677, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 35
+    remote_backend_job_count: 0
+    direct_compile_job_count: 35
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 8384
+    buildkit_cached_steps: 3091
+    buildkit_cache_hit_rate_percent: 36.87
+  jobs:
+    - {run_id: 30195955979, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30195955979, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30195955979, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 139, buildkit_cache_hit_rate_percent: 48.43}
+    - {run_id: 30196183926, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 341, buildkit_cached_steps: 98, buildkit_cache_hit_rate_percent: 28.74}
+    - {run_id: 30196183926, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 175, buildkit_cached_steps: 90, buildkit_cache_hit_rate_percent: 51.43}
+    - {run_id: 30196183926, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 147, buildkit_cache_hit_rate_percent: 51.22}
+    - {run_id: 30196724362, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 341, buildkit_cached_steps: 98, buildkit_cache_hit_rate_percent: 28.74}
+    - {run_id: 30196724362, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 220, buildkit_cached_steps: 66, buildkit_cache_hit_rate_percent: 30}
+    - {run_id: 30196724362, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 139, buildkit_cache_hit_rate_percent: 48.43}
+    - {run_id: 30197769958, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 341, buildkit_cached_steps: 98, buildkit_cache_hit_rate_percent: 28.74}
+    - {run_id: 30197769958, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 220, buildkit_cached_steps: 66, buildkit_cache_hit_rate_percent: 30}
+    - {run_id: 30197769958, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 145, buildkit_cache_hit_rate_percent: 50.52}
+    - {run_id: 30198744809, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 341, buildkit_cached_steps: 94, buildkit_cache_hit_rate_percent: 27.57}
+    - {run_id: 30198744809, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30198744809, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 155, buildkit_cached_steps: 44, buildkit_cache_hit_rate_percent: 28.39}
+    - {run_id: 30198744809, run_attempt: 2, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 220, buildkit_cached_steps: 64, buildkit_cache_hit_rate_percent: 29.09}
+    - {run_id: 30198744809, run_attempt: 2, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 145, buildkit_cache_hit_rate_percent: 50.52}
+    - {run_id: 30199996482, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 341, buildkit_cached_steps: 98, buildkit_cache_hit_rate_percent: 28.74}
+    - {run_id: 30199996482, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 220, buildkit_cached_steps: 66, buildkit_cache_hit_rate_percent: 30}
+    - {run_id: 30199996482, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 139, buildkit_cache_hit_rate_percent: 48.43}
+    - {run_id: 30201101425, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 341, buildkit_cached_steps: 94, buildkit_cache_hit_rate_percent: 27.57}
+    - {run_id: 30201101425, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 220, buildkit_cached_steps: 66, buildkit_cache_hit_rate_percent: 30}
+    - {run_id: 30201101425, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 139, buildkit_cache_hit_rate_percent: 48.43}
+    - {run_id: 30202196496, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 341, buildkit_cached_steps: 98, buildkit_cache_hit_rate_percent: 28.74}
+    - {run_id: 30202196496, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 220, buildkit_cached_steps: 66, buildkit_cache_hit_rate_percent: 30}
+    - {run_id: 30202196496, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 139, buildkit_cache_hit_rate_percent: 48.43}
+    - {run_id: 30203370709, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 341, buildkit_cached_steps: 98, buildkit_cache_hit_rate_percent: 28.74}
+    - {run_id: 30203370709, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 82, buildkit_cached_steps: 22, buildkit_cache_hit_rate_percent: 26.83}
+    - {run_id: 30203370709, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 139, buildkit_cache_hit_rate_percent: 48.43}
+    - {run_id: 30203953190, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 29, buildkit_cached_steps: 2, buildkit_cache_hit_rate_percent: 6.9}
+    - {run_id: 30203953190, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 32, buildkit_cached_steps: 12, buildkit_cache_hit_rate_percent: 37.5}
+    - {run_id: 30203953190, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 139, buildkit_cache_hit_rate_percent: 48.43}
+    - {run_id: 30204092088, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 341, buildkit_cached_steps: 98, buildkit_cache_hit_rate_percent: 28.74}
+    - {run_id: 30204092088, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 220, buildkit_cached_steps: 66, buildkit_cache_hit_rate_percent: 30}
+    - {run_id: 30204092088, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 287, buildkit_cached_steps: 139, buildkit_cache_hit_rate_percent: 48.43}
+pr_retriggers:
+  - {at: '2026-07-26T09:17:19Z', kind: head_push, run_id: 30196183926, reason: format_replication_coverage_preflight}
+  - {at: '2026-07-26T09:35:15Z', kind: head_push, run_id: 30196724362, reason: support_pre_crate_base_coverage_fallback}
+  - {at: '2026-07-26T10:09:53Z', kind: head_push, run_id: 30197769958, reason: address_replication_review_batch}
+  - {at: '2026-07-26T10:42:24Z', kind: head_push, run_id: 30198744809, reason: reject_conflicting_replication_identities}
+  - {at: '2026-07-26T10:56:21Z', kind: manual_rerun, run_id: 30198744809, reason: bounded_retry_after_buildkit_failure}
+  - {at: '2026-07-26T11:22:15Z', kind: head_push, run_id: 30199996482, reason: normalize_parent_and_quarantine_semantics}
+  - {at: '2026-07-26T11:56:56Z', kind: head_push, run_id: 30201101425, reason: harden_replication_rejection_invariants}
+  - {at: '2026-07-26T12:30:39Z', kind: base_update, run_id: 30202196496, reason: integrate_current_main_and_preserve_outbox}
+  - {at: '2026-07-26T13:06:02Z', kind: head_push, run_id: 30203370709, reason: detect_causal_cycles_incrementally}
+  - {at: '2026-07-26T13:23:48Z', kind: head_push, run_id: 30203953190, reason: recompute_cycles_after_parent_conflicts}
+  - {at: '2026-07-26T13:28:03Z', kind: base_update, run_id: 30204092088, reason: integrate_latest_main_before_exact_head_validation}
+merge_attempts:
+  - {at: '2026-07-26T13:56:57Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [562, 715]
+  baseline_quality: weak
+  baseline_note: Earlier Rust core extraction and vault event-log work are the closest records, but neither matches this cross-cutting crate extraction, current gate topology, or iterative convergence hardening.
+  elapsed_seconds_change_percent: 1212.8
+  local_execution_seconds_change_percent: 617.2
+  github_actions_seconds_change_percent: 1310.3
+  test_inventory_total_change: 123.5
+  regression: true
+  regression_reasons:
+    - The crate extraction crossed Rust domain, compatibility, WASM, Docker, coverage, preflight, cache, and architecture surfaces and required repeated fresh exact-head validation after substantive review fixes.
+    - Two main advances and a base that predated the new crate forced base integration and extraction-aware historical coverage rebuilds.
+waste_assessment:
+  wasteful: false
+  findings:
+    - Every head-push cycle carried a substantive implementation, correctness, compatibility, performance, workflow, or base-integration change; no unchanged product-validation rerun was requested.
+    - One manual rerun was bounded to a documented BuildKit infrastructure failure and succeeded without source changes.
+    - Superseded run 30203953190 was cancelled when the latest main base was integrated, avoiding completion of obsolete validation.
+    - Pull-request jobs intentionally used direct compilation because untrusted workflows receive no persistent cache credentials.
+    - Focused Rust and preflight diagnostics preceded repository formatting and remote gates; failed local executions captured authored diagnostics that were fixed before each push.
+  required_actions: []
