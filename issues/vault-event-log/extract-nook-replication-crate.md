@@ -1,13 +1,13 @@
 ---
 title: Extract portable replication mechanics from nook-core
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-07-26T08:29:14Z
-updated_at: 2026-07-26T08:29:14Z
+updated_at: 2026-07-26T13:57:00Z
 source_issues: ["https://github.com/meta-secret/nook/issues/112"]
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/791"]
 depends_on: []
 ---
 
@@ -42,19 +42,19 @@ credentials, and transports retain their existing behavior and ownership.
 
 ## Acceptance criteria
 
-- [ ] `nook-replication` compiles on native and through the workspace WASM
+- [x] `nook-replication` compiles on native and through the workspace WASM
       dependency graph without browser or provider dependencies.
-- [ ] Generic tests cover pending parents, deterministic ordering,
+- [x] Generic tests cover pending parents, deterministic ordering,
       concurrency/heads, set-union laws, quarantine exclusion, idempotent
       outboxes, and missing-event repair.
-- [ ] Existing vault graph, event-store, event-log workflow, and WASM tests pass
+- [x] Existing vault graph, event-store, event-log workflow, and WASM tests pass
       unchanged at their public boundary.
-- [ ] Current vault-event serialization and storage identifiers are unchanged.
-- [ ] Coverage, Docker, cache keys, preflight, and Task commands include the new
+- [x] Current vault-event serialization and storage identifiers are unchanged.
+- [x] Coverage, Docker, cache keys, preflight, and Task commands include the new
       crate.
-- [ ] Architecture documentation explicitly distinguishes replication
+- [x] Architecture documentation explicitly distinguishes replication
       mechanics from vault policy and provider transport.
-- [ ] The Nook implementation PR passes exact-head readiness and is
+- [x] The Nook implementation PR passes exact-head readiness and is
       squash-merged.
 
 ## Progress
@@ -62,6 +62,19 @@ credentials, and transports retain their existing behavior and ownership.
 - 2026-07-26: Started from current Nook main after publishing the task plan.
 - 2026-07-26: Chose a sibling-foundation dependency shape:
   `nook-auth2 + nook-replication -> nook-core -> nook-wasm`.
+- 2026-07-26: Added generic causal DAG, append-only replica, per-provider
+  outbox, and missing-event repair primitives with 16 focused crate tests.
+- 2026-07-26: Preserved the `nook_core` compatibility surface and vault event
+  bytes while wiring native/WASM builds, coverage, cache keys, preflight, Task,
+  and architecture documentation.
+- 2026-07-26: Hardened convergence under out-of-order delivery, conflicting
+  parent sets, cycles, quarantine propagation, immutable payload conflicts, and
+  outbox-preserving union.
+- 2026-07-26: Exact-head PR workflow run
+  [30204092088](https://github.com/meta-secret/nook/actions/runs/30204092088)
+  passed, `task pr:ready PR=791` returned ready, and PR
+  [#791](https://github.com/meta-secret/nook/pull/791) was squash-merged as
+  `61630537`.
 
 ## Findings and decisions
 
