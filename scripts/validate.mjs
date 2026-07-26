@@ -12,6 +12,15 @@ const validStatuses = new Set([
   "cancelled",
 ]);
 const validAutomation = new Set(["manual", "agent"]);
+const validWorklogStatuses = new Set(["in_progress", "blocked", "completed"]);
+const requiredWorklogSections = [
+  "## Outcome",
+  "## Progress",
+  "## Implementation problems",
+  "## Decisions",
+  "## Validation",
+  "## Remaining work",
+];
 const errors = [];
 
 async function filesUnder(directory) {
@@ -49,14 +58,39 @@ for (const area of ["issues", "worklogs"]) {
       errors.push(`${path}: missing YAML frontmatter`);
       continue;
     }
-    for (const required of ["title", "status", "created_at", "updated_at"]) {
+    const requiredMetadata =
+      area === "issues"
+        ? ["title", "status", "created_at", "updated_at"]
+        : [
+            "title",
+            "feature",
+            "issue",
+            "status",
+            "started_at",
+            "finished_at",
+            "agent",
+          ];
+    for (const required of requiredMetadata) {
       if (!metadata.get(required)) errors.push(`${path}: missing ${required}`);
     }
-    if (!validStatuses.has(metadata.get("status"))) {
+    if (area === "issues" && !validStatuses.has(metadata.get("status"))) {
       errors.push(`${path}: invalid status ${metadata.get("status")}`);
     }
     if (area === "issues" && !validAutomation.has(metadata.get("automation"))) {
       errors.push(`${path}: automation must be manual or agent`);
+    }
+    if (area === "worklogs") {
+      if (!validWorklogStatuses.has(metadata.get("status"))) {
+        errors.push(`${path}: invalid worklog status ${metadata.get("status")}`);
+      }
+      const headings = [...text.matchAll(/^## (.+)$/gm)].map(
+        (match) => `## ${match[1]}`,
+      );
+      if (JSON.stringify(headings) !== JSON.stringify(requiredWorklogSections)) {
+        errors.push(
+          `${path}: worklog sections must exactly match ${requiredWorklogSections.join(", ")}`,
+        );
+      }
     }
   }
 }
