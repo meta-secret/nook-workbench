@@ -1,0 +1,82 @@
+schema_version: 3
+source_pr:
+  number: 794
+  url: https://github.com/meta-secret/nook/pull/794
+  title: "Fix idempotent k0s and Hive deployment recovery"
+  change_surface: infra_ci
+  head_sha: a9760bc17263f7b3dd5fe87c4d4df8b387484d1d
+  started_at: '2026-07-26T15:19:26Z'
+  opened_at: '2026-07-26T15:19:26Z'
+  merged_at: '2026-07-26T22:12:50Z'
+  elapsed_seconds: 24804
+  open_to_merge_seconds: 24804
+summary:
+  local_execution_count: 5
+  local_check_count: 4
+  local_test_count: 0
+  local_combined_count: 1
+  local_execution_seconds: 629
+  github_actions_run_count: 10
+  github_actions_seconds: 3085
+  pr_retrigger_count: 6
+  agent_requested_rerun_count: 1
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-26T22:12:50Z'
+  head_sha: a9760bc17263f7b3dd5fe87c4d4df8b387484d1d
+  by_type:
+    rust: 654
+    preflight: 45
+    web_unit: 279
+    e2e: 205
+  total: 1183
+local_executions:
+  - {command: 'task infra:k0s:manifests:check', category: check, started_at: '2026-07-26T22:03:20Z', finished_at: '2026-07-26T22:03:26Z', duration_seconds: 6, outcome: passed, reason: final_review_regressions}
+  - {command: task format, category: check, started_at: '2026-07-26T22:03:30Z', finished_at: '2026-07-26T22:04:29Z', duration_seconds: 59, outcome: passed, reason: final_pre_push_hygiene}
+  - {command: 'task pr:ready PR=794', category: check, started_at: '2026-07-26T22:12:10Z', finished_at: '2026-07-26T22:12:16Z', duration_seconds: 6, outcome: passed, reason: exact_head_readiness}
+  - {command: 'task infra:deploy', category: combined, started_at: '2026-07-26T22:13:00Z', finished_at: '2026-07-26T22:22:10Z', duration_seconds: 550, outcome: passed, reason: exact_merge_production_delivery}
+  - {command: 'task infra:k0s:status and production diagnostics', category: check, started_at: '2026-07-26T22:22:12Z', finished_at: '2026-07-26T22:22:20Z', duration_seconds: 8, outcome: passed, reason: post_deploy_verification}
+github_actions_runs:
+  - {workflow: Hive, run_id: 30220888715, run_attempt: 1, head_sha: 066ba1fa16109dfea74bf86e29f4ac9adb17d4a1, trigger: pull_request, started_at: '2026-07-26T21:21:03Z', finished_at: '2026-07-26T21:28:32Z', duration_seconds: 449, conclusion: failure}
+  - {workflow: Hive, run_id: 30221193395, run_attempt: 1, head_sha: 5e684d7f04d992c37325d2d3d091ea88dde49c18, trigger: pull_request, started_at: '2026-07-26T21:29:57Z', finished_at: '2026-07-26T21:31:16Z', duration_seconds: 79, conclusion: failure}
+  - {workflow: Hive, run_id: 30221270708, run_attempt: 1, head_sha: 6c754ac32f313dacaf6d0b95cac8ab697a5f9e63, trigger: pull_request, started_at: '2026-07-26T21:31:58Z', finished_at: '2026-07-26T21:32:50Z', duration_seconds: 52, conclusion: failure}
+  - {workflow: Hive, run_id: 30221412684, run_attempt: 1, head_sha: 458ba76140469c0aaf1e98da27f5fa1f233d6228, trigger: pull_request, started_at: '2026-07-26T21:36:00Z', finished_at: '2026-07-26T21:37:52Z', duration_seconds: 112, conclusion: failure}
+  - {workflow: Hive, run_id: 30221710931, run_attempt: 1, head_sha: 61281b238cc89f105fec3ac401f414901716adcf, trigger: pull_request, started_at: '2026-07-26T21:44:50Z', finished_at: '2026-07-26T21:51:43Z', duration_seconds: 413, conclusion: success}
+  - {workflow: PR, run_id: 30221710946, run_attempt: 1, head_sha: 61281b238cc89f105fec3ac401f414901716adcf, trigger: pull_request, started_at: '2026-07-26T21:44:50Z', finished_at: '2026-07-26T21:51:18Z', duration_seconds: 388, conclusion: success}
+  - {workflow: PR, run_id: 30222042552, run_attempt: 1, head_sha: e41bb225d11f88c88624665495821b17deb9afd2, trigger: pull_request, started_at: '2026-07-26T21:54:41Z', finished_at: '2026-07-26T22:00:52Z', duration_seconds: 371, conclusion: success}
+  - {workflow: Hive, run_id: 30222042594, run_attempt: 1, head_sha: e41bb225d11f88c88624665495821b17deb9afd2, trigger: pull_request, started_at: '2026-07-26T21:54:41Z', finished_at: '2026-07-26T22:01:29Z', duration_seconds: 408, conclusion: success}
+  - {workflow: PR, run_id: 30222424230, run_attempt: 1, head_sha: a9760bc17263f7b3dd5fe87c4d4df8b387484d1d, trigger: pull_request, started_at: '2026-07-26T22:05:21Z', finished_at: '2026-07-26T22:12:04Z', duration_seconds: 403, conclusion: success}
+  - {workflow: Hive, run_id: 30222424182, run_attempt: 1, head_sha: a9760bc17263f7b3dd5fe87c4d4df8b387484d1d, trigger: pull_request, started_at: '2026-07-26T22:05:21Z', finished_at: '2026-07-26T22:12:11Z', duration_seconds: 410, conclusion: success}
+cache_telemetry:
+  final_pr_hive:
+    sccache_cache_hits: 1970
+    sccache_cache_misses: 0
+    exported_test_megabytes: 177
+    compiler_critical_path_seconds: 246
+  production_release:
+    sccache_cache_hits: 1021
+    sccache_cache_misses: 8
+    sccache_cache_errors: 0
+pr_retriggers:
+  - {at: '2026-07-26T21:29:57Z', kind: head_push, run_id: 30221193395, reason: remove_redundant_debug_dependency_warmup}
+  - {at: '2026-07-26T21:31:58Z', kind: head_push, run_id: 30221270708, reason: separate_test_execution_from_buildkit}
+  - {at: '2026-07-26T21:36:00Z', kind: head_push, run_id: 30221412684, reason: export_only_test_executables}
+  - {at: '2026-07-26T21:44:50Z', kind: head_push, run_id: 30221710931, reason: repair_manifest_cache_lock}
+  - {at: '2026-07-26T21:54:41Z', kind: head_push, run_id: 30222042594, reason: strip_and_bound_test_artifacts}
+  - {at: '2026-07-26T22:05:21Z', kind: head_push, run_id: 30222424182, reason: address_final_review_batch}
+merge_attempts:
+  - {at: '2026-07-26T22:12:50Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [789, 793]
+  baseline_quality: weak
+  baseline_note: The nearest records cover cache topology and broad Rust delivery, but not a new stateful isolated agent platform.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - Build optimization deliberately preceded final deployment and reduced the compiler critical path to approximately four minutes.
+    - Failed optimization runs exposed distinct cache, networking, lockfile, and export-boundary defects; each was corrected before the next push.
+    - Pull requests consume the shared BuildKit cache without publishing it; trusted Main remains the sole publisher.
+    - Remote compiler-cache telemetry proved successful Redis use in both hosted verification and production release builds.
+  required_actions: []
