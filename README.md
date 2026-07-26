@@ -7,6 +7,7 @@ The product repository owns source code, architecture, and development rules.
 This repository owns the context surrounding that work:
 
 - [`issues/`](issues/) — feature-scoped Markdown issues and execution plans;
+- [`plans/`](plans/) — public-safe agent interpretations and initial task plans;
 - [`worklogs/`](worklogs/) — agent progress, decisions, problems, and outcomes;
 - [`stats/`](stats/) — AI-agent delivery and Main-build measurements.
 
@@ -21,6 +22,9 @@ issues/
   <feature>/
     README.md
     <issue>.md
+plans/
+  <feature>/
+    <timestamp>-<task>.md
 worklogs/
   <feature>/
     <timestamp>-<issue-or-pr>.md
@@ -50,11 +54,17 @@ records never trigger an agent.
 
 ## Recording work
 
-Every task-owning agent writes a worklog before finishing, including incomplete
-or blocked work. The worklog links the issue, Nook pull request, material
-progress, implementation problems, decisions, validation evidence, and
-remaining work. Chat transcripts, prompts, secrets, credentials, raw logs, and
-vault data must never be copied here.
+Every task-owning agent first publishes a plan before implementation begins.
+The plan captures the agent's interpreted request, important requirements,
+constraints, exclusions, intended steps, and expected completion evidence. It
+must be synthesized by the agent: raw prompts, prompt-like transcripts, and
+conversation history must never be copied or lightly reformatted.
+
+Before finishing, including incomplete or blocked work, the agent writes a
+worklog linked to that plan. The worklog links the issue, Nook pull request,
+material progress, implementation problems, decisions, validation evidence, and
+remaining work. Chat transcripts, raw prompts, secrets, credentials, raw logs,
+and vault data must never be copied here.
 
 Workbench is public. Record durable outcomes, decisions, root causes, and
 validation references; omit environment dumps, stack traces, local paths,
@@ -75,4 +85,5 @@ remove it from the repository and history.
 
 See [AGENTS.md](AGENTS.md) for the full contract and the templates under
 [`issues/_templates/`](issues/_templates/) and
+[`plans/_templates/`](plans/_templates/),
 [`worklogs/_templates/`](worklogs/_templates/).

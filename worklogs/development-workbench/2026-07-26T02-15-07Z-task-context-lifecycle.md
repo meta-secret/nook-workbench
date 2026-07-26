@@ -2,6 +2,7 @@
 title: Add structured task-start context to agent work history
 feature: development-workbench
 issue: direct-user-request
+plan: plans/development-workbench/2026-07-26T02-15-07Z-task-context-lifecycle.md
 nook_pr: null
 status: in_progress
 started_at: 2026-07-26T02:15:07Z
