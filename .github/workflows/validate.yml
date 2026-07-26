@@ -13,7 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
       - uses: actions/setup-node@v4
         with:
           node-version: "22"
       - run: node scripts/validate.mjs
+      - name: Validate changed statistics
+        run: |
+          set -euo pipefail
+          mapfile -t files < <(git diff --name-only HEAD^ HEAD -- 'stats/**/*.yaml')
+          ruby scripts/validate-stats.rb "${files[@]}"

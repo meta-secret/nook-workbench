@@ -11,3 +11,8 @@ The schema and analysis rules are owned by Nook's
 `.cortex/workflows/main-build-statistics.md`. Statistics are committed here so
 they do not create bookkeeping pull requests or product workflow noise in the
 source repository.
+
+`scripts/validate-stats.rb` checks new or changed records for filename/source
+identity, required agent summary derivations, test-inventory totals, and Main
+run identity on every Workbench push and pull request. Historical imports are
+retained as evidence even where an older record predates the current contract.
