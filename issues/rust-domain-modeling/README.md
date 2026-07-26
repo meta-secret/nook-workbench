@@ -15,7 +15,7 @@ for truthful structural absence and raw compatibility boundaries.
 
 ## Current state
 
-A repository-wide occurrence audit reviewed 519 explicit `Option<T>` uses.
+A repository-wide occurrence audit reviewed 518 explicit `Option<T>` type uses.
 Thirteen event-domain occurrences are being removed immediately. Most remaining
 uses are structural lookups/inputs or boundary DTOs; 36 internal occurrences
 need owner-domain design and migration work before they can be changed safely.
