@@ -6,6 +6,8 @@ Nook's `.cortex` architecture and workflow rules.
 
 ## Records
 
+- Put each task-owning agent's interpreted request and initial execution plan in
+  `plans/<feature>/<timestamp>-<task>.md` before implementation begins.
 - Put planned, blocked, deferred, or independently deliverable work in
   `issues/<feature>/<issue>.md`.
 - Put feature-wide context and the issue index in
@@ -18,9 +20,11 @@ Nook's `.cortex` architecture and workflow rules.
 
 ## Safety
 
-Never store secrets, credentials, environment values, vault data, prompt or chat
-transcripts, private user information, or raw logs. Summarize only the
-development facts another agent needs to resume or understand the work.
+Never store secrets, credentials, environment values, vault data, raw prompts
+or chat transcripts, private user information, or raw logs. A task plan is the
+agent's own structured interpretation of the request, not a paraphrase that
+tracks the source prompt sentence by sentence. Summarize only the development
+facts another agent needs to resume or understand the work.
 
 This repository is public. Keep durable context such as outcomes, decisions,
 root causes, tradeoffs, validation names, and public links. Exclude command
@@ -59,5 +63,5 @@ rather than erasing history. Use ISO 8601 UTC timestamps. Keep links absolute
 across repositories.
 
 An agent completing a Nook task must update the associated issue and add a
-worklog. If no issue existed because the task arrived directly from a user,
-the worklog alone is required.
+worklog linked to its task plan. If no issue existed because the task arrived
+directly from a user, the plan and worklog are still required.

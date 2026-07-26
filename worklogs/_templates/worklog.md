@@ -2,6 +2,7 @@
 title: Work summary
 feature: feature-slug
 issue: issues/feature-slug/focused-deliverable.md
+plan: plans/feature-slug/2026-01-01T00-00-00Z-focused-deliverable.md
 nook_pr: null
 status: completed
 started_at: 2026-01-01T00:00:00Z

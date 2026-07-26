@@ -13,6 +13,14 @@ const validStatuses = new Set([
 ]);
 const validAutomation = new Set(["manual", "agent"]);
 const validWorklogStatuses = new Set(["in_progress", "blocked", "completed"]);
+const requiredPlanSections = [
+  "## Interpreted request",
+  "## Requirements",
+  "## Constraints and exclusions",
+  "## Initial plan",
+  "## Completion evidence",
+  "## Safety review",
+];
 const requiredWorklogSections = [
   "## Outcome",
   "## Progress",
@@ -22,6 +30,12 @@ const requiredWorklogSections = [
   "## Remaining work",
 ];
 const errors = [];
+const forbiddenContextHeadings = [
+  "## Raw prompt",
+  "## User prompt",
+  "## Chat transcript",
+  "## Conversation transcript",
+];
 
 async function filesUnder(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -46,7 +60,7 @@ function frontmatter(text) {
   return values;
 }
 
-for (const area of ["issues", "worklogs"]) {
+for (const area of ["issues", "plans", "worklogs"]) {
   const directory = join(root, area);
   for (const file of await filesUnder(directory)) {
     if (extname(file) !== ".md" || file.includes("/_templates/")) continue;
@@ -61,7 +75,9 @@ for (const area of ["issues", "worklogs"]) {
     const requiredMetadata =
       area === "issues"
         ? ["title", "status", "created_at", "updated_at"]
-        : [
+        : area === "plans"
+          ? ["title", "feature", "issue", "started_at", "agent"]
+          : [
             "title",
             "feature",
             "issue",
@@ -90,6 +106,27 @@ for (const area of ["issues", "worklogs"]) {
         errors.push(
           `${path}: worklog sections must exactly match ${requiredWorklogSections.join(", ")}`,
         );
+      }
+      const plan = metadata.get("plan");
+      if (plan && !/^plans\/[a-z0-9-]+\/[a-zA-Z0-9._-]+\.md$/.test(plan)) {
+        errors.push(`${path}: invalid plan reference ${plan}`);
+      }
+    }
+    if (area === "plans") {
+      const headings = [...text.matchAll(/^## (.+)$/gm)].map(
+        (match) => `## ${match[1]}`,
+      );
+      if (JSON.stringify(headings) !== JSON.stringify(requiredPlanSections)) {
+        errors.push(
+          `${path}: plan sections must exactly match ${requiredPlanSections.join(", ")}`,
+        );
+      }
+    }
+    if (area === "plans" || area === "worklogs") {
+      for (const heading of forbiddenContextHeadings) {
+        if (text.includes(heading)) {
+          errors.push(`${path}: forbidden raw-context heading ${heading}`);
+        }
       }
     }
   }
