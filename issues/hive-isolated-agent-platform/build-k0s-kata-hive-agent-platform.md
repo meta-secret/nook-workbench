@@ -6,15 +6,16 @@ priority: high
 automation: manual
 owner: codex
 created_at: 2026-07-26T15:19:26Z
-updated_at: 2026-07-26T22:24:00Z
+updated_at: 2026-07-26T23:49:21Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/786
   - https://github.com/meta-secret/nook/pull/792
   - https://github.com/meta-secret/nook/pull/794
+  - https://github.com/meta-secret/nook/pull/795
 depends_on: []
 agent: codex
-pull_request: https://github.com/meta-secret/nook/pull/794
+pull_request: https://github.com/meta-secret/nook/pull/795
 ---
 
 # Build the isolated Hive agent platform
@@ -39,7 +40,9 @@ efficient coalesced Main train and durable, end-to-end automated repair work.
 - PR: https://github.com/meta-secret/nook/pull/786
 - PR: https://github.com/meta-secret/nook/pull/792
 - PR: https://github.com/meta-secret/nook/pull/794
+- PR: https://github.com/meta-secret/nook/pull/795
 - Plan: `plans/hive-isolated-agent-platform/2026-07-26T06-08-23Z-durable-main-repair-delivery.md`
+- Plan: `plans/hive-isolated-agent-platform/2026-07-26T23-07-05Z-pin-hive-codex-light.md`
 
 ## Delivered
 
@@ -55,3 +58,7 @@ efficient coalesced Main train and durable, end-to-end automated repair work.
 - Reduced the Hive verification build path from roughly nineteen minutes to a
   four-minute compiler critical path; the complete hosted workflow, including
   service setup and test execution, now finishes in under seven minutes.
+- Installed pinned kubectl, Helm, and k9s on the node for direct SSH operator
+  use through a short-lived-token kubeconfig with no persisted admin key.
+- Pinned every Hive worker to Codex GPT-5.6 with low reasoning effort and
+  verified the exact values in the Kubernetes manifest contract.
