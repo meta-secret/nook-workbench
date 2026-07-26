@@ -1,0 +1,97 @@
+schema_version: 3
+source_pr:
+  number: 790
+  url: https://github.com/meta-secret/nook/pull/790
+  title: "Remove scheduled nightly checks"
+  change_surface: docs_ci
+  head_sha: 30a529c393671648c7aacae9a93913dc24fc81c0
+  started_at: '2026-07-26T06:19:27Z'
+  opened_at: '2026-07-26T06:25:56Z'
+  merged_at: '2026-07-26T06:52:10Z'
+  elapsed_seconds: 1963
+  open_to_merge_seconds: 1574
+summary:
+  local_execution_count: 8
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 364
+  github_actions_run_count: 5
+  github_actions_seconds: 1383
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-26T06:53:00Z'
+  head_sha: 30a529c393671648c7aacae9a93913dc24fc81c0
+  by_type:
+    rust: 636
+    preflight: 44
+    web_unit: 279
+    e2e: 205
+  total: 1164
+local_executions:
+  - {command: task format, category: check, started_at: '2026-07-26T06:24:22Z', finished_at: '2026-07-26T06:25:29Z', duration_seconds: 67, outcome: passed, reason: pre_push_hygiene}
+  - {command: 'task pr:preflight PR=790', category: check, started_at: '2026-07-26T06:26:05Z', finished_at: '2026-07-26T06:26:21Z', duration_seconds: 16, outcome: passed, reason: focused_pr_preflight}
+  - {command: task format, category: check, started_at: '2026-07-26T06:28:31Z', finished_at: '2026-07-26T06:29:37Z', duration_seconds: 66, outcome: passed, reason: pre_push_hygiene_after_clippy_fix}
+  - {command: task format, category: check, started_at: '2026-07-26T06:30:52Z', finished_at: '2026-07-26T06:32:01Z', duration_seconds: 69, outcome: passed, reason: pre_push_hygiene_after_provider_review_fix}
+  - {command: task format, category: check, started_at: '2026-07-26T06:39:20Z', finished_at: '2026-07-26T06:40:27Z', duration_seconds: 67, outcome: passed, reason: pre_push_hygiene_after_cleanup_review_fix}
+  - {command: 'task pr:ready PR=790', category: check, started_at: '2026-07-26T06:44:58Z', finished_at: '2026-07-26T06:45:03Z', duration_seconds: 5, outcome: failed, reason: unresolved_current_head_review_thread}
+  - {command: task format, category: check, started_at: '2026-07-26T06:45:22Z', finished_at: '2026-07-26T06:46:29Z', duration_seconds: 67, outcome: passed, reason: pre_push_hygiene_after_owner_review_fix}
+  - {command: 'task pr:ready PR=790', category: check, started_at: '2026-07-26T06:51:48Z', finished_at: '2026-07-26T06:51:55Z', duration_seconds: 7, outcome: passed, reason: readiness_before_squash_merge}
+github_actions_runs:
+  - {workflow: PR, run_id: 30191040063, run_attempt: 1, head_sha: 6df36d2294753e426177c2868bbfb1d26cb2a066, trigger: pull_request, started_at: '2026-07-26T06:25:59Z', finished_at: '2026-07-26T06:32:15Z', duration_seconds: 376, conclusion: cancelled}
+  - {workflow: PR, run_id: 30191144681, run_attempt: 1, head_sha: c1f666adfcad1d74a4546801ca4af55f03c7fa16, trigger: pull_request, started_at: '2026-07-26T06:29:51Z', finished_at: '2026-07-26T06:32:24Z', duration_seconds: 153, conclusion: cancelled}
+  - {workflow: PR, run_id: 30191222213, run_attempt: 1, head_sha: 8784e6bdadac456c89dc0273ca4bbf1f3b20be09, trigger: pull_request, started_at: '2026-07-26T06:32:21Z', finished_at: '2026-07-26T06:38:35Z', duration_seconds: 374, conclusion: success}
+  - {workflow: PR, run_id: 30191457773, run_attempt: 1, head_sha: c33dd37c7a19ef95e0cf415032be5562b8637572, trigger: pull_request, started_at: '2026-07-26T06:40:43Z', finished_at: '2026-07-26T06:44:27Z', duration_seconds: 224, conclusion: success}
+  - {workflow: PR, run_id: 30191633897, run_attempt: 1, head_sha: 4efbb8b7f0d0d400fcf9928f8fee261234a359e4, trigger: pull_request, started_at: '2026-07-26T06:46:49Z', finished_at: '2026-07-26T06:51:05Z', duration_seconds: 256, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 12
+    remote_backend_job_count: 0
+    direct_compile_job_count: 12
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 1672
+    buildkit_cached_steps: 928
+    buildkit_cache_hit_rate_percent: 55.5
+  jobs:
+    - {run_id: 30191040063, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0.0}
+    - {run_id: 30191040063, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 32, buildkit_cached_steps: 12, buildkit_cache_hit_rate_percent: 37.5}
+    - {run_id: 30191040063, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 214, buildkit_cached_steps: 92, buildkit_cache_hit_rate_percent: 42.99}
+    - {run_id: 30191222213, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 313, buildkit_cached_steps: 191, buildkit_cache_hit_rate_percent: 61.02}
+    - {run_id: 30191222213, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30191222213, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 277, buildkit_cached_steps: 134, buildkit_cache_hit_rate_percent: 48.38}
+    - {run_id: 30191457773, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 313, buildkit_cached_steps: 221, buildkit_cache_hit_rate_percent: 70.61}
+    - {run_id: 30191457773, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30191457773, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30191633897, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 313, buildkit_cached_steps: 221, buildkit_cache_hit_rate_percent: 70.61}
+    - {run_id: 30191633897, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30191633897, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+pr_retriggers:
+  - {at: '2026-07-26T06:29:51Z', kind: head_push, run_id: 30191144681, reason: correct_preflight_clippy_diagnostic}
+  - {at: '2026-07-26T06:32:21Z', kind: head_push, run_id: 30191222213, reason: retain_explicit_github_provider_selection}
+  - {at: '2026-07-26T06:40:43Z', kind: head_push, run_id: 30191457773, reason: add_cancellation_safe_live_sync_cleanup}
+  - {at: '2026-07-26T06:46:49Z', kind: head_push, run_id: 30191633897, reason: delete_test_repository_under_pat_owner}
+merge_attempts:
+  - {at: '2026-07-26T06:52:07Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [788, 789]
+  baseline_quality: comparable
+  baseline_note: Recent CI and workflow-policy changes using the same core PR verification topology.
+  elapsed_seconds_change_percent: -40.6
+  local_execution_seconds_change_percent: -12.3
+  github_actions_seconds_change_percent: -36.8
+  test_inventory_total_change: 1
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - The first run exposed an authored Clippy diagnostic and was corrected with a focused head push.
+    - Later validation cycles corresponded to substantive live-provider safety review fixes; there were no unchanged manual reruns.
+    - Pull-request jobs intentionally used direct compilation because untrusted workflows receive no persistent cache credentials.
+    - Run 30191144681 was cancelled before it could publish cache telemetry; the available artifacts from every other run were retained.
+  required_actions: []
