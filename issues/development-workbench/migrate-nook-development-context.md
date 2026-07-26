@@ -1,13 +1,15 @@
 ---
 title: "Migrate Nook development context into Workbench"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-07-25T00:00:00Z
-updated_at: 2026-07-25T00:00:00Z
+updated_at: 2026-07-26T00:45:34Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/783
+  - https://github.com/meta-secret/nook/pull/785
 depends_on: []
 ---
 
@@ -38,17 +40,25 @@ history is preserved here.
 
 - [x] Workbench exists with GitHub Issues disabled and validation enabled.
 - [x] Historical Nook issues and statistics are present.
-- [ ] Nook's implementation workflow claims explicit Workbench issue files.
-- [ ] Agent runs and task owners publish worklogs.
-- [ ] Nook Main metrics publish directly to Workbench.
-- [ ] Nook no longer stores `.stats` or creates stats-only PRs.
-- [ ] Nook `.cortex` consistently documents the new lifecycle.
-- [ ] The Nook migration PR is validated and merged.
+- [x] Nook's implementation workflow claims explicit Workbench issue files.
+- [x] Agent runs and task owners publish worklogs.
+- [x] Nook Main metrics publish directly to Workbench.
+- [x] Nook no longer stores `.stats` or creates stats-only PRs.
+- [x] Nook `.cortex` consistently documents the new lifecycle.
+- [x] The Nook migration PR is validated and merged.
 
 ## Progress
 
 - 2026-07-25: Created the Workbench and imported 152 issues and 147 statistics
   records.
+- 2026-07-26: Migrated the final concurrent PR 776 statistic, bringing the
+  historical total to 148 records.
+- 2026-07-26: Merged Nook PR 783 after exact-head validation and disabled
+  GitHub Issues in the Nook repository.
+- 2026-07-26: Fixed skipped-job timestamp skew in the new Main statistics
+  collector through Nook PR 785.
+- 2026-07-26: Enabled GitHub secret scanning and push protection, and added
+  versioned Bun-powered pre-commit, pre-push, and CI sensitive-content scans.
 
 ## Findings and decisions
 
@@ -59,6 +69,13 @@ history is preserved here.
   execution.
 - Unique statistics and worklog paths can be committed directly without a
   product-repository PR.
+- Mutable records use optimistic concurrency: publishers must provide the blob
+  SHA on which their edit is based, while statistics remain immutable.
+- Agent-authored worklogs are shape-, size-, and secret-checked before trusted
+  direct publication.
+- Workbench is public. Records keep durable outcomes and decisions while
+  excluding raw logs, environment details, internal infrastructure, local
+  paths, and incidental debugging history.
 
 ## References
 

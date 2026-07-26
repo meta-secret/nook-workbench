@@ -1,0 +1,99 @@
+schema_version: 3
+source_pr:
+  number: 783
+  url: https://github.com/meta-secret/nook/pull/783
+  title: "Migrate development context to Nook Workbench"
+  change_surface: development_workbench_cortex_ci_statistics_migration
+  head_sha: 9d71cb2565e6f99418978bc9b98b848875d984e6
+  started_at: '2026-07-25T23:30:00Z'
+  opened_at: '2026-07-26T00:15:31Z'
+  merged_at: '2026-07-26T00:45:34Z'
+  elapsed_seconds: 4534
+  open_to_merge_seconds: 1803
+summary:
+  local_execution_count: 12
+  local_check_count: 7
+  local_test_count: 3
+  local_combined_count: 2
+  local_execution_seconds: 1026
+  github_actions_run_count: 4
+  github_actions_seconds: 1398
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-26T00:45:34Z'
+  head_sha: 9d71cb2565e6f99418978bc9b98b848875d984e6
+  by_type:
+    rust: 636
+    preflight: 43
+    web_unit: 279
+    e2e: 205
+  total: 1163
+local_executions:
+  - {command: node scripts/validate.mjs, category: check, started_at: '2026-07-25T23:58:00Z', finished_at: '2026-07-25T23:58:02Z', duration_seconds: 2, outcome: passed, reason: validate_seeded_workbench}
+  - {command: task format, category: check, started_at: '2026-07-26T00:09:00Z', finished_at: '2026-07-26T00:13:00Z', duration_seconds: 240, outcome: passed, reason: pre_push_hygiene_initial_migration}
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --test workbench', category: test, started_at: '2026-07-26T00:13:00Z', finished_at: '2026-07-26T00:13:02Z', duration_seconds: 2, outcome: passed, reason: focused_workbench_contract}
+  - {command: 'cargo fmt --manifest-path preflight/Cargo.toml -- --check', category: check, started_at: '2026-07-26T00:13:02Z', finished_at: '2026-07-26T00:13:03Z', duration_seconds: 1, outcome: passed, reason: standalone_preflight_format}
+  - {command: 'node --test .github/scripts/main-build-stats.test.cjs', category: test, started_at: '2026-07-26T00:13:03Z', finished_at: '2026-07-26T00:13:04Z', duration_seconds: 1, outcome: passed, reason: workbench_main_statistics_publisher}
+  - {command: 'npm ci && npm test', category: combined, started_at: '2026-07-26T00:13:04Z', finished_at: '2026-07-26T00:14:06Z', duration_seconds: 62, outcome: passed, reason: ci_agent_workbench_prompt_and_runtime}
+  - {command: 'task pr:ready PR=783', category: check, started_at: '2026-07-26T00:22:20Z', finished_at: '2026-07-26T00:22:28Z', duration_seconds: 8, outcome: failed, reason: inspect_first_review_feedback}
+  - {command: task format, category: check, started_at: '2026-07-26T00:23:00Z', finished_at: '2026-07-26T00:27:00Z', duration_seconds: 240, outcome: passed, reason: pre_push_hygiene_review_hardening}
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --test workbench', category: test, started_at: '2026-07-26T00:28:00Z', finished_at: '2026-07-26T00:28:02Z', duration_seconds: 2, outcome: failed, reason: reject_empty_legacy_stats_directory_false_positive}
+  - {command: task format, category: check, started_at: '2026-07-26T00:30:00Z', finished_at: '2026-07-26T00:34:00Z', duration_seconds: 240, outcome: passed, reason: pre_push_hygiene_late_stat_reconciliation}
+  - {command: 'task format && focused Workbench validations', category: combined, started_at: '2026-07-26T00:36:00Z', finished_at: '2026-07-26T00:39:40Z', duration_seconds: 220, outcome: passed, reason: final_review_concurrency_fixes}
+  - {command: 'task pr:ready PR=783', category: check, started_at: '2026-07-26T00:45:15Z', finished_at: '2026-07-26T00:45:23Z', duration_seconds: 8, outcome: passed, reason: readiness_before_squash_merge}
+github_actions_runs:
+  - {workflow: PR, run_id: 30180856725, run_attempt: 1, head_sha: e15f90feda64d991544076a6c19cc41d0a44a0ca, trigger: pull_request, started_at: '2026-07-26T00:15:34Z', finished_at: '2026-07-26T00:22:13Z', duration_seconds: 399, conclusion: success}
+  - {workflow: PR, run_id: 30181148822, run_attempt: 1, head_sha: 0eb528bba9b390e4d5b527587ecd2f20276cf4b1, trigger: pull_request, started_at: '2026-07-26T00:26:04Z', finished_at: '2026-07-26T00:32:05Z', duration_seconds: 361, conclusion: cancelled}
+  - {workflow: PR, run_id: 30181300848, run_attempt: 1, head_sha: bafa670ff9287016c0cd9697852e4bcad9260357, trigger: pull_request, started_at: '2026-07-26T00:31:32Z', finished_at: '2026-07-26T00:38:12Z', duration_seconds: 400, conclusion: success}
+  - {workflow: PR, run_id: 30181588227, run_attempt: 1, head_sha: e1f38f4a9b097323b5a1e6a1d0ef01f4cffc4e9f, trigger: pull_request, started_at: '2026-07-26T00:41:15Z', finished_at: '2026-07-26T00:45:13Z', duration_seconds: 238, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 12
+    remote_backend_job_count: 0
+    direct_compile_job_count: 12
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 2014
+    buildkit_cached_steps: 1080
+    buildkit_cache_hit_rate_percent: 53.62
+  jobs:
+    - {run_id: 30180856725, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 313, buildkit_cached_steps: 191, buildkit_cache_hit_rate_percent: 61.02}
+    - {run_id: 30180856725, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30180856725, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 277, buildkit_cached_steps: 134, buildkit_cache_hit_rate_percent: 48.38}
+    - {run_id: 30181148822, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 17, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0.0}
+    - {run_id: 30181148822, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 32, buildkit_cached_steps: 12, buildkit_cache_hit_rate_percent: 37.5}
+    - {run_id: 30181148822, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 277, buildkit_cached_steps: 134, buildkit_cache_hit_rate_percent: 48.38}
+    - {run_id: 30181300848, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 313, buildkit_cached_steps: 209, buildkit_cache_hit_rate_percent: 66.77}
+    - {run_id: 30181300848, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30181300848, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 277, buildkit_cached_steps: 134, buildkit_cache_hit_rate_percent: 48.38}
+    - {run_id: 30181588227, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 313, buildkit_cached_steps: 209, buildkit_cache_hit_rate_percent: 66.77}
+    - {run_id: 30181588227, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30181588227, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+pr_retriggers:
+  - {at: '2026-07-26T00:26:04Z', type: head_push, reason: first_review_hardening}
+  - {at: '2026-07-26T00:31:32Z', type: head_push, reason: late_legacy_statistics_reconciliation}
+  - {at: '2026-07-26T00:41:15Z', type: head_push, reason: final_review_concurrency_hardening}
+merge_attempts:
+  - {at: '2026-07-26T00:45:34Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [742, 772]
+  baseline_quality: low
+  baseline_note: Documentation and CI-workflow changes are only partially comparable to this cross-repository migration.
+  elapsed_seconds_change_percent: 327.5
+  local_execution_seconds_change_percent: 356.0
+  github_actions_seconds_change_percent: 286.2
+  test_inventory_total_change: 22
+  regression: true
+  regression_reasons:
+    - The migration required repository creation, historical import, workflow cutover, and two review-hardening rounds.
+    - GitHub Actions elapsed time exceeded the partial baseline median by more than 20 percent and 60 seconds.
+waste_assessment:
+  wasteful: true
+  findings:
+    - One intermediate full PR run was superseded after a concurrent legacy statistics PR merged into Main.
+    - Opening the implementation PR before the concurrent final statistics record settled required an additional rebase and gate.
+  required_actions: []

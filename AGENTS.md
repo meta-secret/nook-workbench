@@ -22,6 +22,20 @@ Never store secrets, credentials, environment values, vault data, prompt or chat
 transcripts, private user information, or raw logs. Summarize only the
 development facts another agent needs to resume or understand the work.
 
+This repository is public. Keep durable context such as outcomes, decisions,
+root causes, tradeoffs, validation names, and public links. Exclude command
+output, stack traces, environment or infrastructure inventories, local paths,
+internal hostnames or addresses, credential names and values, customer data,
+and incidental debugging detail. Prefer “the authenticated publish step
+failed” over copying its log.
+
+Before committing, install the repository hooks with
+`bun scripts/install-hooks.mjs`. Git does not activate repository-owned hooks
+automatically after clone because that would execute untrusted clone content.
+The hooks and GitHub validation run the same
+sensitive-content scanner. A clean scan reduces risk but is not permission to
+include unnecessary internal detail.
+
 ## Issue lifecycle
 
 Valid statuses are `proposed`, `ready`, `in_progress`, `blocked`, `done`, and

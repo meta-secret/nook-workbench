@@ -15,10 +15,12 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 2
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "22"
-      - run: node scripts/validate.mjs
+      - uses: oven-sh/setup-bun@v2
+      - name: Reject sensitive content
+        run: |
+          bun test scripts/scan-sensitive.test.mjs
+          bun scripts/scan-sensitive.mjs
+      - run: bun scripts/validate.mjs
       - name: Validate changed statistics
         run: |
           set -euo pipefail

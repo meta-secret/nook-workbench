@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+
+# Scan the full tracked snapshot so direct pushes cannot bypass an earlier
+# commit made with hooks disabled.
+bun scripts/scan-sensitive.mjs

@@ -56,6 +56,23 @@ progress, implementation problems, decisions, validation evidence, and
 remaining work. Chat transcripts, prompts, secrets, credentials, raw logs, and
 vault data must never be copied here.
 
+Workbench is public. Record durable outcomes, decisions, root causes, and
+validation references; omit environment dumps, stack traces, local paths,
+internal infrastructure details, and incidental debugging history. Install the
+versioned commit and push hooks once per clone:
+
+```bash
+bun scripts/install-hooks.mjs
+```
+
+Git intentionally does not activate repository-owned hooks automatically on
+clone. The one-time command points this clone at the versioned `.githooks/`
+directory. The hooks run `scripts/scan-sensitive.mjs` with Bun before commits
+and pushes. GitHub validation and native push protection are automatic for
+everyone, so skipped local hooks do not remove the remote detection gates. If a
+real secret is ever detected after publication, rotate or revoke it first, then
+remove it from the repository and history.
+
 See [AGENTS.md](AGENTS.md) for the full contract and the templates under
 [`issues/_templates/`](issues/_templates/) and
 [`worklogs/_templates/`](worklogs/_templates/).
