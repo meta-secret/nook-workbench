@@ -2,7 +2,9 @@
 title: Explicit Rust domain states
 status: proposed
 created_at: 2026-07-26T22:32:47Z
-updated_at: 2026-07-26T22:32:47Z
+updated_at: 2026-07-27T08:55:17Z
+related_prs:
+  - https://github.com/meta-secret/nook/pull/796
 ---
 
 # Explicit Rust domain states
@@ -15,10 +17,14 @@ for truthful structural absence and raw compatibility boundaries.
 
 ## Current state
 
-A repository-wide occurrence audit reviewed 518 explicit `Option<T>` type uses.
-Thirteen event-domain occurrences are being removed immediately. Most remaining
-uses are structural lookups/inputs or boundary DTOs; 36 internal occurrences
-need owner-domain design and migration work before they can be changed safely.
+A repository-wide occurrence audit reviewed 518 explicit `Option<T>` type uses
+at task start. PR 796 removed invalid event, revision, workflow, device-mode,
+session, and wire-result absence; made both encrypted-secret fingerprints
+required validated values; and eliminated every authored Rust `.unwrap()` and
+`.unwrap_err()`. The merged tree contains 331 explicit `Option<T>` type uses.
+Those remaining occurrences are retained structural absence, caller input,
+lookups/parsers, or boundary shapes, with the owner-domain candidates below
+kept as focused follow-up records.
 
 ## Decisions
 
@@ -35,7 +41,16 @@ need owner-domain design and migration work before they can be changed safely.
 - [ ] [Model vault configuration and session states explicitly](vault-configuration-and-session-states.md)
 - [ ] [Model event projection lifecycle states explicitly](event-projection-lifecycle-states.md)
 
+## Progress
+
+- 2026-07-27: [PR 796](https://github.com/meta-secret/nook/pull/796)
+  landed required non-empty fingerprints, explicit revision/workflow/actor-key/
+  PIN and wire-result states, concrete `thiserror` production errors,
+  `anyhow::Result` test propagation, repository-wide unwrap denial, and the
+  durable Cortex coding rules. No legacy fallback or compatibility backfill was
+  retained.
+
 ## References
 
-- [Authored Rust Option inventory](https://github.com/meta-secret/nook/blob/main/.cortex/references/rust-option-inventory.md)
 - [Rust coding rule](https://github.com/meta-secret/nook/blob/main/.cortex/dynamic-skills/rust-coding.md)
+- [PR 796](https://github.com/meta-secret/nook/pull/796)
