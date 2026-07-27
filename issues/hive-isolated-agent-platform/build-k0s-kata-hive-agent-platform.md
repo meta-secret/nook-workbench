@@ -6,7 +6,7 @@ priority: high
 automation: manual
 owner: codex
 created_at: 2026-07-26T15:19:26Z
-updated_at: 2026-07-27T16:58:11Z
+updated_at: 2026-07-27T17:44:17Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/786
@@ -15,9 +15,10 @@ related_prs:
   - https://github.com/meta-secret/nook/pull/795
   - https://github.com/meta-secret/nook/pull/811
   - https://github.com/meta-secret/nook/pull/813
+  - https://github.com/meta-secret/nook/pull/814
 depends_on: []
 agent: codex
-pull_request: https://github.com/meta-secret/nook/pull/813
+pull_request: https://github.com/meta-secret/nook/pull/814
 ---
 
 # Build the isolated Hive agent platform
@@ -31,9 +32,9 @@ efficient coalesced Main train and durable, end-to-end automated repair work.
 - Pull requests remain the unit of review and validation.
 - Main preserves cache writers and keeps only the newest pending revision.
 - A failed Main run becomes a durable, deduplicated Hive queue item.
-- One logical agent owns diagnosis through successful squash merge and green
-  Main verification.
-- Pod loss resumes durable branch, PR, and verification checkpoints.
+- One trusted Codex agent owns diagnosis through successful squash merge and
+  green Main verification using ordinary `git`, `gh`, and Taskfile commands.
+- Pod loss resumes from durable GitHub branch, PR, merge, and check state.
 - Blocking work is expressed through task dependencies and prioritized without
   losing the original task.
 
@@ -45,15 +46,17 @@ efficient coalesced Main train and durable, end-to-end automated repair work.
 - PR: https://github.com/meta-secret/nook/pull/795
 - PR: https://github.com/meta-secret/nook/pull/811
 - PR: https://github.com/meta-secret/nook/pull/813
+- PR: https://github.com/meta-secret/nook/pull/814
 - Plan: `plans/hive-isolated-agent-platform/2026-07-26T06-08-23Z-durable-main-repair-delivery.md`
 - Plan: `plans/hive-isolated-agent-platform/2026-07-26T23-07-05Z-pin-hive-codex-light.md`
+- Plan: `plans/hive-isolated-agent-platform/2026-07-27T16-56-00Z-direct-hive-github-access.md`
 - Deferred: [Automate unchanged-web deployment attestations](automate-agentic-only-deployment-attestations.md)
 
 ## Delivered
 
 - Merged the stateful k0s, Kata Dragonball, Neo4j, and four-worker Hive
   deployment with Taskfile-owned recovery and verification.
-- Deployed the exact merge commit to the production Linux node.
+- Deployed the exact earlier platform merges to the production Linux node.
 - Verified four healthy isolated workers, the dispatcher and lifecycle
   controller, retained Neo4j storage, default-deny networking, stable API
   routing, and the remote Redis compiler cache.
@@ -67,11 +70,12 @@ efficient coalesced Main train and durable, end-to-end automated repair work.
   use through a short-lived-token kubeconfig with no persisted admin key.
 - Pinned every Hive worker to Codex GPT-5.6 with low reasoning effort and
   verified the exact values in the Kubernetes manifest contract.
-- Replaced sandbox-side publication sockets with a task-scoped filesystem
-  mailbox whose request authorization and responses are bound to the exact
-  request digest before the trusted broker can execute a mutation.
-- Added bounded, lossless review-detail continuation and kept publication
-  available only as an explicit writable root for Main-repair tasks.
-- Deployed the exact PR 811 and PR 813 merges, then verified the full
-  Dragonball, Bubblewrap, seccomp, publication-mailbox, cluster-connectivity,
-  and durable-queue path on the live stateful cluster.
+- Replaced the publication broker and filesystem mailbox with direct
+  repository-scoped `GH_TOKEN` access for trusted Codex task owners.
+- Removed request signing, publication capabilities, broker sidecars, private
+  publication checkouts, mailbox smoke contracts, and broker-owned completion
+  verification.
+- Added a native sealed-guest PR readiness path and made Main-repair agents
+  explicitly require the `ci:full-e2e` label before merge.
+- Kept Kata, container, Kubernetes, secret-storage, and repository-token
+  permissions as the remaining operational boundaries.
