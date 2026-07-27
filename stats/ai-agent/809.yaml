@@ -1,0 +1,71 @@
+schema_version: 3
+source_pr:
+  number: 809
+  url: https://github.com/meta-secret/nook/pull/809
+  title: Skip deferred E2E-only Hive handoffs
+  change_surface: hive_handoff_and_cache
+  head_sha: ffd8d02b740b5b306b3dd6fda51979a0c9985a7c
+  started_at: '2026-07-27T10:33:00Z'
+  opened_at: '2026-07-27T10:37:35Z'
+  merged_at: '2026-07-27T13:12:36Z'
+  elapsed_seconds: 9576
+  open_to_merge_seconds: 9301
+summary:
+  local_execution_count: 8
+  local_check_count: 6
+  local_test_count: 1
+  local_combined_count: 1
+  local_execution_seconds: 356
+  github_actions_run_count: 2
+  github_actions_seconds: 892
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-27T13:12:36Z'
+  head_sha: ffd8d02b740b5b306b3dd6fda51979a0c9985a7c
+  by_type: {rust: 659, preflight: 48, web_unit: 279, e2e: 205}
+  total: 1191
+local_executions:
+  - {command: 'task hive:handoff:test', category: test, duration_seconds: 1, outcome: passed, reason: stale_attempt_policy}
+  - {command: 'task format', category: check, duration_seconds: 27, outcome: passed, reason: pre_push_hygiene}
+  - {command: 'task hive:verify', category: check, duration_seconds: 28, outcome: passed, reason: hive_behavior_and_lint}
+  - {command: 'task preflight', category: check, duration_seconds: 27, outcome: passed, reason: repository_invariants}
+  - {command: 'task infra:k0s:manifests:check', category: check, duration_seconds: 1, outcome: passed, reason: deployment_contract}
+  - {command: 'task pr:ready PR=809', category: check, duration_seconds: 7, outcome: passed, reason: exact_head_readiness}
+  - {command: 'task infra:hive:deploy', category: combined, duration_seconds: 245, outcome: passed, reason: exact_merge_production_delivery}
+  - {command: 'task infra:hive:diagnose and sandbox checks', category: check, duration_seconds: 20, outcome: passed, reason: live_cluster_verification}
+github_actions_runs:
+  - {workflow: Hive, run_id: 30268529141, run_attempt: 1, head_sha: 823a1799db319e8f255937f6cde0922513ce07dc, trigger: pull_request, started_at: '2026-07-27T13:03:36Z', finished_at: '2026-07-27T13:10:25Z', duration_seconds: 409, conclusion: success}
+  - {workflow: PR, run_id: 30268529268, run_attempt: 1, head_sha: 823a1799db319e8f255937f6cde0922513ce07dc, trigger: pull_request, started_at: '2026-07-27T13:03:36Z', finished_at: '2026-07-27T13:11:39Z', duration_seconds: 483, conclusion: success}
+pr_retriggers:
+  - {kind: head_push, reason: initial_handoff_policy}
+  - {kind: cache_topology, reason: parallel_dependency_graphs}
+  - {kind: base_update, reason: incorporate_latest_main}
+  - {kind: review_fix, reason: ordering_and_retirement_races}
+merge_attempts:
+  - {at: '2026-07-27T13:12:36Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+cache_telemetry:
+  final_hive:
+    cache_backend: remote
+    cache_backend_reason: persistent_tls_service
+    test_dependency_hits: 951
+    clippy_dependency_hits: 1019
+    cache_misses: 0
+    cache_errors: 0
+  production_release:
+    dependency_layers: cached
+    source_layers_rebuilt: true
+comparison:
+  baseline_prs: [807]
+  baseline_quality: comparable
+  baseline_note: Adjacent Hive runtime delivery.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - The final local Hive verification reused both dependency graphs.
+    - The production release reused toolchain and cargo-chef layers.
+    - Exact-head reruns followed base updates or actionable review findings.
+  required_actions: []
