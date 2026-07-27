@@ -6,16 +6,18 @@ priority: high
 automation: manual
 owner: codex
 created_at: 2026-07-26T15:19:26Z
-updated_at: 2026-07-26T23:49:21Z
+updated_at: 2026-07-27T16:58:11Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/786
   - https://github.com/meta-secret/nook/pull/792
   - https://github.com/meta-secret/nook/pull/794
   - https://github.com/meta-secret/nook/pull/795
+  - https://github.com/meta-secret/nook/pull/811
+  - https://github.com/meta-secret/nook/pull/813
 depends_on: []
 agent: codex
-pull_request: https://github.com/meta-secret/nook/pull/795
+pull_request: https://github.com/meta-secret/nook/pull/813
 ---
 
 # Build the isolated Hive agent platform
@@ -62,3 +64,11 @@ efficient coalesced Main train and durable, end-to-end automated repair work.
   use through a short-lived-token kubeconfig with no persisted admin key.
 - Pinned every Hive worker to Codex GPT-5.6 with low reasoning effort and
   verified the exact values in the Kubernetes manifest contract.
+- Replaced sandbox-side publication sockets with a task-scoped filesystem
+  mailbox whose request authorization and responses are bound to the exact
+  request digest before the trusted broker can execute a mutation.
+- Added bounded, lossless review-detail continuation and kept publication
+  available only as an explicit writable root for Main-repair tasks.
+- Deployed the exact PR 811 and PR 813 merges, then verified the full
+  Dragonball, Bubblewrap, seccomp, publication-mailbox, cluster-connectivity,
+  and durable-queue path on the live stateful cluster.

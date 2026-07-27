@@ -1,0 +1,84 @@
+schema_version: 3
+source_pr:
+  number: 811
+  url: https://github.com/meta-secret/nook/pull/811
+  title: Use a filesystem mailbox for Hive publication
+  change_surface: hive_sandbox_publication
+  head_sha: df9a5c30f7dfe7722456d2071f865f9e0455f1fe
+  started_at: '2026-07-27T14:41:05Z'
+  opened_at: '2026-07-27T14:52:40Z'
+  merged_at: '2026-07-27T16:07:20Z'
+  elapsed_seconds: 5175
+  open_to_merge_seconds: 4480
+summary:
+  local_execution_count: 12
+  local_check_count: 9
+  local_test_count: 1
+  local_combined_count: 2
+  local_execution_seconds: 655
+  github_actions_run_count: 10
+  github_actions_seconds: 3867
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-27T16:07:20Z'
+  head_sha: df9a5c30f7dfe7722456d2071f865f9e0455f1fe
+  by_type: {rust: 659, preflight: 48, web_unit: 279, e2e: 205}
+  total: 1191
+local_executions:
+  - {command: 'task --taskfile agentic-ai/minds/hive/Taskfile.yml test', category: test, duration_seconds: 50, outcome: passed, reason: mailbox_behavior_and_regressions}
+  - {command: 'task --taskfile agentic-ai/minds/hive/Taskfile.yml format', category: check, duration_seconds: 6, outcome: passed, reason: focused_hive_format}
+  - {command: task format, category: check, duration_seconds: 79, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: 'task pr:ready PR=811', category: check, duration_seconds: 4, outcome: failed, reason: exact_head_workflows_in_progress}
+  - {command: 'task pr:ready PR=811', category: check, duration_seconds: 7, outcome: passed, reason: exact_head_readiness}
+  - {command: 'task infra:hive:deploy', category: combined, duration_seconds: 256, outcome: passed, reason: exact_merge_production_delivery}
+  - {command: 'task infra:kata:verify', category: check, duration_seconds: 13, outcome: passed, reason: live_dragonball_isolation}
+  - {command: 'task infra:hive:sandbox:diagnose', category: check, duration_seconds: 13, outcome: failed, reason: openssl_oneshot_smoke_input}
+  - {command: 'task infra:hive:diagnose', category: check, duration_seconds: 9, outcome: passed, reason: live_cluster_and_connectivity}
+  - {command: 'task infra:hive:queue:status', category: check, duration_seconds: 4, outcome: passed, reason: durable_repair_queue}
+  - {command: 'task format', category: check, duration_seconds: 139, outcome: passed, reason: final_review_fix_hygiene}
+  - {command: 'task --taskfile agentic-ai/minds/hive/Taskfile.yml test and task pr:ready PR=811', category: combined, duration_seconds: 75, outcome: passed, reason: final_behavior_and_readiness}
+github_actions_runs:
+  - {workflow: Hive, run_id: 30277215953, run_attempt: 1, head_sha: 885af59ed95b3969a718ae744d0a0f2ba28365b8, trigger: pull_request, started_at: '2026-07-27T14:52:44Z', finished_at: '2026-07-27T14:59:14Z', duration_seconds: 390, conclusion: success}
+  - {workflow: PR, run_id: 30277216783, run_attempt: 1, head_sha: 885af59ed95b3969a718ae744d0a0f2ba28365b8, trigger: pull_request, started_at: '2026-07-27T14:52:44Z', finished_at: '2026-07-27T14:59:32Z', duration_seconds: 408, conclusion: success}
+  - {workflow: Hive, run_id: 30278421605, run_attempt: 1, head_sha: dabee5a3d78b5fe6c699272911eb05720dec27f1, trigger: pull_request, started_at: '2026-07-27T15:07:02Z', finished_at: '2026-07-27T15:12:50Z', duration_seconds: 348, conclusion: failure}
+  - {workflow: PR, run_id: 30278422148, run_attempt: 1, head_sha: dabee5a3d78b5fe6c699272911eb05720dec27f1, trigger: pull_request, started_at: '2026-07-27T15:07:03Z', finished_at: '2026-07-27T15:13:00Z', duration_seconds: 357, conclusion: success}
+  - {workflow: Hive, run_id: 30279114436, run_attempt: 1, head_sha: 4166b1e6e595b785e58e17a7eeeaac9fb1ecba03, trigger: pull_request, started_at: '2026-07-27T15:15:29Z', finished_at: '2026-07-27T15:22:38Z', duration_seconds: 429, conclusion: success}
+  - {workflow: PR, run_id: 30279120235, run_attempt: 1, head_sha: 4166b1e6e595b785e58e17a7eeeaac9fb1ecba03, trigger: pull_request, started_at: '2026-07-27T15:15:33Z', finished_at: '2026-07-27T15:21:45Z', duration_seconds: 372, conclusion: success}
+  - {workflow: PR, run_id: 30281191182, run_attempt: 1, head_sha: a6579b5ec01343e96a875ebdfd1821c61c60ef17, trigger: pull_request, started_at: '2026-07-27T15:41:28Z', finished_at: '2026-07-27T15:47:49Z', duration_seconds: 381, conclusion: success}
+  - {workflow: Hive, run_id: 30281191427, run_attempt: 1, head_sha: a6579b5ec01343e96a875ebdfd1821c61c60ef17, trigger: pull_request, started_at: '2026-07-27T15:41:28Z', finished_at: '2026-07-27T15:48:18Z', duration_seconds: 410, conclusion: success}
+  - {workflow: PR, run_id: 30282662756, run_attempt: 1, head_sha: df9a5c30f7dfe7722456d2071f865f9e0455f1fe, trigger: pull_request, started_at: '2026-07-27T16:00:05Z', finished_at: '2026-07-27T16:06:22Z', duration_seconds: 377, conclusion: success}
+  - {workflow: Hive, run_id: 30282663099, run_attempt: 1, head_sha: df9a5c30f7dfe7722456d2071f865f9e0455f1fe, trigger: pull_request, started_at: '2026-07-27T16:00:05Z', finished_at: '2026-07-27T16:06:40Z', duration_seconds: 395, conclusion: success}
+cache_telemetry:
+  final_hive:
+    cache_backend: remote
+    cache_backend_reason: persistent_tls_service
+    dependency_cache_hits: 1028
+    dependency_cache_misses: 1
+    cache_errors: 0
+  production_release:
+    toolchain_layers: cached
+    dependency_compile_seconds: 98
+    source_compile_seconds: 91
+pr_retriggers:
+  - {kind: review_fix, reason: mailbox_fixture_contract}
+  - {kind: review_fix, reason: request_response_binding_and_bounded_inspection}
+  - {kind: review_fix, reason: authenticated_forwarding_and_lossless_detail}
+  - {kind: exact_head, reason: final_security_and_reliability_gate}
+merge_attempts:
+  - {at: '2026-07-27T16:07:20Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [809, 810]
+  baseline_quality: comparable
+  baseline_note: Adjacent Hive publication-capability deliveries.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - Exact-head reruns followed actionable security or reliability findings.
+    - Native Rust and WASM verification ran in parallel.
+    - Remote compiler cache served 1028 dependency hits with zero errors.
+    - Browser and extension E2E remained deferred as requested.
+  required_actions: []

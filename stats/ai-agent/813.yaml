@@ -1,0 +1,70 @@
+schema_version: 3
+source_pr:
+  number: 813
+  url: https://github.com/meta-secret/nook/pull/813
+  title: Fix Hive publication smoke signing
+  change_surface: hive_live_verification
+  head_sha: 96c9860d368bafe76ee6382ac507b7767c8211b0
+  started_at: '2026-07-27T16:14:00Z'
+  opened_at: '2026-07-27T16:19:35Z'
+  merged_at: '2026-07-27T16:29:51Z'
+  elapsed_seconds: 951
+  open_to_merge_seconds: 616
+summary:
+  local_execution_count: 9
+  local_check_count: 6
+  local_test_count: 1
+  local_combined_count: 2
+  local_execution_seconds: 244
+  github_actions_run_count: 1
+  github_actions_seconds: 432
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 2
+test_inventory:
+  measured_at: '2026-07-27T16:29:51Z'
+  head_sha: 96c9860d368bafe76ee6382ac507b7767c8211b0
+  by_type: {rust: 659, preflight: 48, web_unit: 279, e2e: 205}
+  total: 1191
+local_executions:
+  - {command: 'OpenSSL Ed25519 one-shot reproduction', category: check, duration_seconds: 1, outcome: failed, reason: piped_input_has_no_seekable_size}
+  - {command: 'OpenSSL Ed25519 file-input reproduction', category: check, duration_seconds: 1, outcome: passed, reason: explicit_bounded_input_file}
+  - {command: 'task --taskfile agentic-ai/minds/hive/Taskfile.yml format', category: check, duration_seconds: 5, outcome: passed, reason: focused_hive_format}
+  - {command: 'task --taskfile agentic-ai/minds/hive/Taskfile.yml test', category: test, duration_seconds: 4, outcome: passed, reason: hive_behavior_regression}
+  - {command: task format, category: check, duration_seconds: 139, outcome: passed, reason: pre_push_hygiene}
+  - {command: 'task pr:ready PR=813', category: check, duration_seconds: 5, outcome: passed, reason: exact_head_readiness}
+  - {command: 'task infra:hive:deploy', category: combined, duration_seconds: 73, outcome: passed, reason: exact_merge_production_delivery}
+  - {command: 'task infra:hive:sandbox:diagnose', category: combined, duration_seconds: 3, outcome: passed, reason: live_bubblewrap_mailbox_proof}
+  - {command: 'task infra:hive:diagnose and task infra:hive:queue:status', category: check, duration_seconds: 13, outcome: passed, reason: live_cluster_and_queue_health}
+github_actions_runs:
+  - {workflow: Hive, run_id: 30284205366, run_attempt: 1, head_sha: 96c9860d368bafe76ee6382ac507b7767c8211b0, trigger: pull_request, started_at: '2026-07-27T16:19:40Z', finished_at: '2026-07-27T16:26:52Z', duration_seconds: 432, conclusion: success}
+cache_telemetry:
+  final_hive:
+    cache_backend: remote
+    cache_backend_reason: persistent_tls_service
+    dependency_layers: cached
+    source_layers: cached
+    cache_errors: 0
+  production_release:
+    toolchain_layers: cached
+    cargo_chef_layers: cached
+    hive_binary_layer: cached
+    rebuilt_layers: 3
+pr_retriggers: []
+merge_attempts:
+  - {at: '2026-07-27T16:27:30Z', method: squash, outcome: blocked, reason: required_web_deployment_absent_for_agentic_only_path}
+  - {at: '2026-07-27T16:29:51Z', method: squash, outcome: success, reason: exact_head_unchanged_web_deployment_attested}
+comparison:
+  baseline_prs: [811]
+  baseline_quality: comparable
+  baseline_note: Live verification correction for the filesystem mailbox delivery.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - Only the dedicated Hive workflow ran for the agentic-only change.
+    - The production rebuild reused dependencies, source compilation, and the Hive binary.
+    - The live smoke caught and proved the packaging-specific OpenSSL behavior.
+  required_actions:
+    - Automate unchanged-web deployment attestations for agentic-only pull requests.
