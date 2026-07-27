@@ -5,12 +5,13 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-07-27T05:45:15Z
-updated_at: 2026-07-27T18:46:00Z
+updated_at: 2026-07-27T19:02:15Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/805
   - https://github.com/meta-secret/nook/pull/812
   - https://github.com/meta-secret/nook/pull/816
+  - https://github.com/meta-secret/nook/pull/818
 depends_on: []
 ---
 
@@ -45,6 +46,9 @@ or compiler secret mounts.
 - [x] A fresh hosted builder importing only the fingerprinted WASM scope
   restores cargo-chef release, cargo-chef clippy, and release-test dependency
   layers without executing them.
+- [x] A source-only native change restores all nextest, clippy, and coverage
+  dependency producer layers from the published cache on its first hosted
+  solve.
 
 ## Progress
 
@@ -62,6 +66,9 @@ or compiler secret mounts.
   its isolated verifier restored all three required stages as cached.
 - Source-only proof PR 817 preserved that fingerprint and independently
   restored all three stages as cached in its first hosted WASM solve.
+- Source-only proof PR 818 preserved native dependency inputs. Its first hosted
+  Native solve restored all nine dependency producer layers as cached and
+  completed successfully in 3 minutes 53 seconds.
 
 ## Findings and decisions
 
@@ -85,3 +92,4 @@ or compiler secret mounts.
 - [Nook PR 805](https://github.com/meta-secret/nook/pull/805)
 - [Nook PR 812](https://github.com/meta-secret/nook/pull/812)
 - [Nook PR 816](https://github.com/meta-secret/nook/pull/816)
+- [Native cache proof PR 818](https://github.com/meta-secret/nook/pull/818)
