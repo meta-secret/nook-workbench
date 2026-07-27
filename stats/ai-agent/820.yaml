@@ -1,0 +1,88 @@
+schema_version: 3
+source_pr:
+  number: 820
+  url: https://github.com/meta-secret/nook/pull/820
+  title: Export VaultType as a WASM enum
+  change_surface: rust_wasm_web_domain_boundary
+  head_sha: ed0091dfdb2cc148cbebe6daad2b6dffc83a1211
+  started_at: '2026-07-27T22:47:00Z'
+  opened_at: '2026-07-27T22:57:43Z'
+  merged_at: '2026-07-27T23:18:23Z'
+  elapsed_seconds: 1883
+  open_to_merge_seconds: 1240
+summary:
+  local_execution_count: 7
+  local_check_count: 7
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 298
+  github_actions_run_count: 2
+  github_actions_seconds: 1190
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 2
+test_inventory:
+  measured_at: '2026-07-27T23:19:00Z'
+  head_sha: ed0091dfdb2cc148cbebe6daad2b6dffc83a1211
+  by_type:
+    rust: 649
+    preflight: 56
+    web_unit: 279
+    e2e: 205
+  total: 1189
+local_executions:
+  - {command: git diff --check, category: check, duration_seconds: 1, outcome: passed, reason: patch_hygiene}
+  - {command: task format, category: check, duration_seconds: 223, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: pre_commit_ui_demo_classification}
+  - {command: 'task pr:preflight PR=820', category: check, duration_seconds: 7, outcome: passed, reason: initial_pr_preflight}
+  - {command: task format, category: check, duration_seconds: 58, outcome: passed, reason: demo_contract_fix_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: exact_committed_head_demo_contract}
+  - {command: 'task pr:ready PR=820', category: check, duration_seconds: 7, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: PR, run_id: 30312545677, run_attempt: 1, head_sha: cf0549a82b056dbe1e41c230473ebbda4695d3fb, trigger: pull_request, started_at: '2026-07-27T22:57:45Z', finished_at: '2026-07-27T22:59:53Z', duration_seconds: 128, conclusion: cancelled}
+  - {workflow: PR, run_id: 30312676951, run_attempt: 1, head_sha: 6c8d6e0897c20f822505c9506896f3c3dd088506, trigger: pull_request, started_at: '2026-07-27T23:00:07Z', finished_at: '2026-07-27T23:17:49Z', duration_seconds: 1062, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 6
+    remote_backend_job_count: 0
+    direct_compile_job_count: 6
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: null
+    buildkit_completed_steps: 963
+    buildkit_cached_steps: 450
+    buildkit_cache_hit_rate_percent: 46.73
+  collection:
+    complete: true
+    warnings: []
+  jobs:
+    - {run_id: 30312545677, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 2, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30312545677, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 58, buildkit_cached_steps: 38, buildkit_cache_hit_rate_percent: 65.52}
+    - {run_id: 30312545677, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30312676951, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 97, buildkit_cache_hit_rate_percent: 26.29}
+    - {run_id: 30312676951, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 168, buildkit_cache_hit_rate_percent: 66.93}
+    - {run_id: 30312676951, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 283, buildkit_cached_steps: 147, buildkit_cache_hit_rate_percent: 51.94}
+pr_retriggers:
+  - {at: '2026-07-27T23:00:07Z', kind: head_push, run_id: 30312676951, reason: add_required_sentinel_ui_demo_assertion}
+merge_attempts:
+  - {at: '2026-07-27T23:18:10Z', method: squash, outcome: failed, reason: local_main_branch_owned_by_another_worktree}
+  - {at: '2026-07-27T23:18:23Z', method: squash_api, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [816]
+  baseline_quality: comparable
+  baseline_note: PR 816 used the same Rust, WASM, web, and preview PR gate across a cross-boundary change.
+  elapsed_seconds_change_percent: -32.8
+  local_execution_seconds_change_percent: -73.08
+  github_actions_seconds_change_percent: 8.08
+  test_inventory_total_change: 0
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: true
+  findings:
+    - The first PR cycle was avoidable because the UI demo contract was run before the component edits were part of committed HEAD.
+    - The failed cycle was cancelled after the required demo assertion was committed; no unchanged rerun was requested.
+    - Pull-request jobs correctly used direct compilation because untrusted workflows receive no persistent cache credentials.
+    - The final exact-head cycle completed in a duration comparable to the selected cross-boundary baseline.
+  required_actions: []
