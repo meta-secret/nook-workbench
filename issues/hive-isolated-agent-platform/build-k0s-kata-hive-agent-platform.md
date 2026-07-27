@@ -43,8 +43,11 @@ efficient coalesced Main train and durable, end-to-end automated repair work.
 - PR: https://github.com/meta-secret/nook/pull/792
 - PR: https://github.com/meta-secret/nook/pull/794
 - PR: https://github.com/meta-secret/nook/pull/795
+- PR: https://github.com/meta-secret/nook/pull/811
+- PR: https://github.com/meta-secret/nook/pull/813
 - Plan: `plans/hive-isolated-agent-platform/2026-07-26T06-08-23Z-durable-main-repair-delivery.md`
 - Plan: `plans/hive-isolated-agent-platform/2026-07-26T23-07-05Z-pin-hive-codex-light.md`
+- Deferred: [Automate unchanged-web deployment attestations](automate-agentic-only-deployment-attestations.md)
 
 ## Delivered
 
