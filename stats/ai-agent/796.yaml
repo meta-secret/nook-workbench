@@ -1,0 +1,154 @@
+schema_version: 3
+source_pr:
+  number: 796
+  url: https://github.com/meta-secret/nook/pull/796
+  title: "Refactor Rust domain states and eliminate unwraps"
+  change_surface: rust_cross_workspace_domain_refactor
+  head_sha: 5bce33b5cfd2242f43f4fac738e3f5a000f0335e
+  started_at: "2026-07-26T22:52:08Z"
+  opened_at: "2026-07-26T22:52:29Z"
+  merged_at: "2026-07-27T08:55:17Z"
+  elapsed_seconds: 36189
+  open_to_merge_seconds: 36168
+summary:
+  local_execution_count: 12
+  local_check_count: 9
+  local_test_count: 3
+  local_combined_count: 0
+  local_execution_seconds: 5534
+  github_actions_run_count: 21
+  github_actions_seconds: 13859
+  pr_retrigger_count: 11
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: "2026-07-27T08:55:17Z"
+  head_sha: 5bce33b5cfd2242f43f4fac738e3f5a000f0335e
+  by_type:
+    rust: 657
+    preflight: 47
+    web_unit: 279
+    e2e: 205
+  total: 1188
+local_executions:
+  - {command: task format, category: check, started_at: "2026-07-26T22:34:08Z", finished_at: "2026-07-26T22:52:08Z", duration_seconds: 1080, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: "cargo test --workspace", category: test, started_at: "2026-07-27T01:30:00Z", finished_at: "2026-07-27T01:35:00Z", duration_seconds: 300, outcome: passed, reason: nook_rust_workspace}
+  - {command: "cargo test --workspace", category: test, started_at: "2026-07-27T01:35:00Z", finished_at: "2026-07-27T01:38:00Z", duration_seconds: 180, outcome: passed, reason: hive_lace_workspace}
+  - {command: "cargo test", category: test, started_at: "2026-07-27T01:38:00Z", finished_at: "2026-07-27T01:39:00Z", duration_seconds: 60, outcome: passed, reason: preflight_workspace}
+  - {command: task format, category: check, started_at: "2026-07-27T03:11:24Z", finished_at: "2026-07-27T03:26:24Z", duration_seconds: 900, outcome: passed, reason: test_result_propagation}
+  - {command: task format, category: check, started_at: "2026-07-27T04:00:02Z", finished_at: "2026-07-27T04:10:02Z", duration_seconds: 600, outcome: passed, reason: typed_error_propagation}
+  - {command: task format, category: check, started_at: "2026-07-27T05:20:06Z", finished_at: "2026-07-27T05:34:06Z", duration_seconds: 840, outcome: passed, reason: persisted_pin_and_wire_state}
+  - {command: task format, category: check, started_at: "2026-07-27T07:40:09Z", finished_at: "2026-07-27T07:56:09Z", duration_seconds: 960, outcome: passed, reason: review_lifecycle_fixes}
+  - {command: task format, category: check, started_at: "2026-07-27T08:24:19Z", finished_at: "2026-07-27T08:30:19Z", duration_seconds: 360, outcome: passed, reason: first_base_update_and_hive_test_errors}
+  - {command: "task pr:ready PR=796", category: check, started_at: "2026-07-27T08:40:19Z", finished_at: "2026-07-27T08:40:26Z", duration_seconds: 7, outcome: failed, reason: detected_main_advanced}
+  - {command: task format, category: check, started_at: "2026-07-27T08:40:18Z", finished_at: "2026-07-27T08:44:18Z", duration_seconds: 240, outcome: passed, reason: final_base_update}
+  - {command: "task pr:ready PR=796", category: check, started_at: "2026-07-27T08:54:51Z", finished_at: "2026-07-27T08:54:58Z", duration_seconds: 7, outcome: passed, reason: exact_head_readiness_before_merge}
+github_actions_runs:
+  - {workflow: "Hive", run_id: 30251044318, run_attempt: 1, head_sha: e05e091189f00d83191b329058f13325a4961083, trigger: pull_request, started_at: "2026-07-27T08:44:18Z", finished_at: "2026-07-27T08:50:53Z", duration_seconds: 395, conclusion: success}
+  - {workflow: "PR", run_id: 30251044422, run_attempt: 1, head_sha: e05e091189f00d83191b329058f13325a4961083, trigger: pull_request, started_at: "2026-07-27T08:44:18Z", finished_at: "2026-07-27T08:54:46Z", duration_seconds: 628, conclusion: success}
+  - {workflow: "Hive", run_id: 30250153919, run_attempt: 1, head_sha: 53fd232e69de0d4afad1c31abd0201ecb7813a35, trigger: pull_request, started_at: "2026-07-27T08:30:19Z", finished_at: "2026-07-27T08:37:41Z", duration_seconds: 442, conclusion: success}
+  - {workflow: "PR", run_id: 30250153825, run_attempt: 1, head_sha: 53fd232e69de0d4afad1c31abd0201ecb7813a35, trigger: pull_request, started_at: "2026-07-27T08:30:19Z", finished_at: "2026-07-27T08:40:19Z", duration_seconds: 600, conclusion: success}
+  - {workflow: "Hive", run_id: 30247956557, run_attempt: 1, head_sha: ea092a9558e8fb0bf90b8c8bd4837c7bbec1de9c, trigger: pull_request, started_at: "2026-07-27T07:56:09Z", finished_at: "2026-07-27T08:03:06Z", duration_seconds: 417, conclusion: success}
+  - {workflow: "PR", run_id: 30247956536, run_attempt: 1, head_sha: ea092a9558e8fb0bf90b8c8bd4837c7bbec1de9c, trigger: pull_request, started_at: "2026-07-27T07:56:09Z", finished_at: "2026-07-27T08:16:35Z", duration_seconds: 1226, conclusion: success}
+  - {workflow: "Hive", run_id: 30246524040, run_attempt: 1, head_sha: 8fa32ca3d4f1cdfb1fc84998bbcd2582a0419369, trigger: pull_request, started_at: "2026-07-27T07:32:38Z", finished_at: "2026-07-27T07:39:26Z", duration_seconds: 408, conclusion: success}
+  - {workflow: "PR", run_id: 30246524004, run_attempt: 1, head_sha: 8fa32ca3d4f1cdfb1fc84998bbcd2582a0419369, trigger: pull_request, started_at: "2026-07-27T07:32:38Z", finished_at: "2026-07-27T08:00:43Z", duration_seconds: 1685, conclusion: cancelled}
+  - {workflow: "Hive", run_id: 30240110066, run_attempt: 1, head_sha: 20f59ee257d504a2510fc47f86393996ce27231d, trigger: pull_request, started_at: "2026-07-27T05:34:06Z", finished_at: "2026-07-27T05:40:51Z", duration_seconds: 405, conclusion: success}
+  - {workflow: "PR", run_id: 30240110032, run_attempt: 1, head_sha: 20f59ee257d504a2510fc47f86393996ce27231d, trigger: pull_request, started_at: "2026-07-27T05:34:06Z", finished_at: "2026-07-27T05:48:11Z", duration_seconds: 845, conclusion: failure}
+  - {workflow: "PR", run_id: 30238549339, run_attempt: 1, head_sha: abce034fcf2291c11f5f19c7e207669c7df66cd3, trigger: pull_request, started_at: "2026-07-27T05:00:02Z", finished_at: "2026-07-27T05:13:47Z", duration_seconds: 825, conclusion: failure}
+  - {workflow: "Hive", run_id: 30238549338, run_attempt: 1, head_sha: abce034fcf2291c11f5f19c7e207669c7df66cd3, trigger: pull_request, started_at: "2026-07-27T05:00:02Z", finished_at: "2026-07-27T05:07:00Z", duration_seconds: 418, conclusion: success}
+  - {workflow: "PR", run_id: 30237255471, run_attempt: 1, head_sha: c9c1c46350ad34b5b583819d920f70fdd893a1eb, trigger: pull_request, started_at: "2026-07-27T04:29:48Z", finished_at: "2026-07-27T04:43:57Z", duration_seconds: 849, conclusion: failure}
+  - {workflow: "Hive", run_id: 30237255446, run_attempt: 1, head_sha: c9c1c46350ad34b5b583819d920f70fdd893a1eb, trigger: pull_request, started_at: "2026-07-27T04:29:48Z", finished_at: "2026-07-27T04:36:12Z", duration_seconds: 384, conclusion: success}
+  - {workflow: "PR", run_id: 30236339297, run_attempt: 1, head_sha: e83a259dd54f251324d4fa20a9942b141a42d4de, trigger: pull_request, started_at: "2026-07-27T04:10:02Z", finished_at: "2026-07-27T04:23:35Z", duration_seconds: 813, conclusion: failure}
+  - {workflow: "Hive", run_id: 30236339306, run_attempt: 1, head_sha: e83a259dd54f251324d4fa20a9942b141a42d4de, trigger: pull_request, started_at: "2026-07-27T04:10:02Z", finished_at: "2026-07-27T04:16:07Z", duration_seconds: 365, conclusion: success}
+  - {workflow: "PR", run_id: 30234609303, run_attempt: 1, head_sha: 540166291c78ce531afdf736f9a6964c4d51461c, trigger: pull_request, started_at: "2026-07-27T03:26:24Z", finished_at: "2026-07-27T03:40:08Z", duration_seconds: 824, conclusion: failure}
+  - {workflow: "Hive", run_id: 30234609180, run_attempt: 1, head_sha: 540166291c78ce531afdf736f9a6964c4d51461c, trigger: pull_request, started_at: "2026-07-27T03:26:24Z", finished_at: "2026-07-27T03:32:21Z", duration_seconds: 357, conclusion: failure}
+  - {workflow: "PR", run_id: 30224542241, run_attempt: 1, head_sha: 762c9ac672aa8538ec1ab56ce850e13098964459, trigger: pull_request, started_at: "2026-07-26T23:06:38Z", finished_at: "2026-07-26T23:24:35Z", duration_seconds: 1077, conclusion: success}
+  - {workflow: "PR", run_id: 30224148405, run_attempt: 1, head_sha: ed8d7c09e0db4a8c52e5d58b72a292f93d09a79c, trigger: pull_request, started_at: "2026-07-26T22:56:22Z", finished_at: "2026-07-26T23:05:11Z", duration_seconds: 529, conclusion: failure}
+  - {workflow: "PR", run_id: 30224019113, run_attempt: 1, head_sha: aaf0ad709b46eca8b220b2bd3ca15ff752a611d5, trigger: pull_request, started_at: "2026-07-26T22:52:32Z", finished_at: "2026-07-26T22:58:39Z", duration_seconds: 367, conclusion: cancelled}
+cache_telemetry:
+  totals:
+    job_count: 36
+    remote_backend_job_count: 0
+    direct_compile_job_count: 36
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: null
+    buildkit_completed_steps: 8254
+    buildkit_cached_steps: 3411
+    buildkit_cache_hit_rate_percent: 41.33
+  collection:
+    complete: false
+    warnings:
+      - hive_workflow_cache_artifacts_are_not_published
+  jobs:
+    - {run_id: 30224019113, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 354, buildkit_cached_steps: 231, buildkit_cache_hit_rate_percent: 65.25, collection_complete: true, collection_warnings: []}
+    - {run_id: 30224019113, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 32, buildkit_cached_steps: 12, buildkit_cache_hit_rate_percent: 37.5, collection_complete: true, collection_warnings: []}
+    - {run_id: 30224019113, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 228, buildkit_cached_steps: 96, buildkit_cache_hit_rate_percent: 42.11, collection_complete: true, collection_warnings: []}
+    - {run_id: 30224148405, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 41, buildkit_cached_steps: 4, buildkit_cache_hit_rate_percent: 9.76, collection_complete: true, collection_warnings: []}
+    - {run_id: 30224148405, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 126, buildkit_cached_steps: 52, buildkit_cache_hit_rate_percent: 41.27, collection_complete: true, collection_warnings: []}
+    - {run_id: 30224148405, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30224542241, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 97, buildkit_cache_hit_rate_percent: 26.29, collection_complete: true, collection_warnings: []}
+    - {run_id: 30224542241, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 231, buildkit_cached_steps: 130, buildkit_cache_hit_rate_percent: 56.28, collection_complete: true, collection_warnings: []}
+    - {run_id: 30224542241, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30234609303, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 97, buildkit_cache_hit_rate_percent: 26.29, collection_complete: true, collection_warnings: []}
+    - {run_id: 30234609303, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null, collection_complete: true, collection_warnings: []}
+    - {run_id: 30234609303, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30236339297, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 109, buildkit_cache_hit_rate_percent: 29.54, collection_complete: true, collection_warnings: []}
+    - {run_id: 30236339297, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null, collection_complete: true, collection_warnings: []}
+    - {run_id: 30236339297, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30237255471, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 109, buildkit_cache_hit_rate_percent: 29.54, collection_complete: true, collection_warnings: []}
+    - {run_id: 30237255471, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null, collection_complete: true, collection_warnings: []}
+    - {run_id: 30237255471, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 160, buildkit_cached_steps: 44, buildkit_cache_hit_rate_percent: 27.5, collection_complete: true, collection_warnings: []}
+    - {run_id: 30238549339, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 109, buildkit_cache_hit_rate_percent: 29.54, collection_complete: true, collection_warnings: []}
+    - {run_id: 30238549339, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null, collection_complete: true, collection_warnings: []}
+    - {run_id: 30238549339, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30240110032, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 109, buildkit_cache_hit_rate_percent: 29.54, collection_complete: true, collection_warnings: []}
+    - {run_id: 30240110032, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30240110032, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 183, buildkit_cached_steps: 59, buildkit_cache_hit_rate_percent: 32.24, collection_complete: true, collection_warnings: []}
+    - {run_id: 30246524004, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 97, buildkit_cache_hit_rate_percent: 26.29, collection_complete: true, collection_warnings: []}
+    - {run_id: 30246524004, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 170, buildkit_cached_steps: 66, buildkit_cache_hit_rate_percent: 38.82, collection_complete: true, collection_warnings: []}
+    - {run_id: 30246524004, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30247956536, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 109, buildkit_cache_hit_rate_percent: 29.54, collection_complete: true, collection_warnings: []}
+    - {run_id: 30247956536, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 310, buildkit_cached_steps: 178, buildkit_cache_hit_rate_percent: 57.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30247956536, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30250153825, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0, collection_complete: true, collection_warnings: []}
+    - {run_id: 30250153825, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 310, buildkit_cached_steps: 178, buildkit_cache_hit_rate_percent: 57.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30250153825, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30251044422, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0, collection_complete: true, collection_warnings: []}
+    - {run_id: 30251044422, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 310, buildkit_cached_steps: 178, buildkit_cache_hit_rate_percent: 57.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30251044422, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+pr_retriggers:
+  - {at: "2026-07-26T22:56:22Z", kind: head_push, run_id: 30224148405, reason: complete_initial_domain_state_conversion}
+  - {at: "2026-07-26T23:06:38Z", kind: head_push, run_id: 30224542241, reason: repair_initial_validation_failures}
+  - {at: "2026-07-27T03:26:24Z", kind: head_push, run_id: 30234609303, reason: propagate_test_setup_errors}
+  - {at: "2026-07-27T04:10:02Z", kind: head_push, run_id: 30236339297, reason: replace_boxed_dynamic_errors_with_typed_results}
+  - {at: "2026-07-27T04:29:48Z", kind: head_push, run_id: 30237255471, reason: model_persisted_device_mode}
+  - {at: "2026-07-27T05:00:02Z", kind: head_push, run_id: 30238549339, reason: validate_hive_terminal_results_at_wire_boundary}
+  - {at: "2026-07-27T05:34:06Z", kind: head_push, run_id: 30240110032, reason: demonstrate_persisted_pin_mode}
+  - {at: "2026-07-27T07:32:38Z", kind: head_push, run_id: 30246524004, reason: align_web_and_preflight_with_typed_states}
+  - {at: "2026-07-27T07:56:09Z", kind: head_push, run_id: 30247956536, reason: retain_sentinel_sessions_and_address_review_feedback}
+  - {at: "2026-07-27T08:30:19Z", kind: base_update, run_id: 30250153825, reason: rebase_and_remove_new_hive_test_unwraps}
+  - {at: "2026-07-27T08:44:18Z", kind: base_update, run_id: 30251044422, reason: readiness_detected_main_advanced}
+merge_attempts:
+  - {at: "2026-07-27T08:55:17Z", method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [793, 802]
+  baseline_quality: weak
+  baseline_note: PR 793 is an adjacent Rust-domain extraction and PR 802 is the closest repository-wide policy refactor, but neither matches this change's Nook, preflight, Hive, Lace, WASM, and web boundary breadth.
+  elapsed_seconds_change_percent: 343.44
+  local_execution_seconds_change_percent: 228.52
+  github_actions_seconds_change_percent: 261.19
+  test_inventory_total_change: 4
+  regression: true
+  regression_reasons:
+    - The repository-wide scope expanded across eleven substantive heads and two final base updates, exceeding both weak baselines by more than the regression threshold.
+waste_assessment:
+  wasteful: false
+  findings:
+    - The initial implementation pass was too narrow; the same PR corrected that by adding repository-wide unwrap denial and durable Cortex rules, so the omission cannot silently recur.
+    - Every retrigger followed a source, invariant, lifecycle, review, or base-freshness change; no unchanged workflow was manually rerun.
+    - Two final successful validation cycles were required because main advanced during exact-head delivery.
+    - Pull-request jobs correctly used direct compilation because untrusted workflows receive no persistent cache credentials.
+    - Cache telemetry covers all PR workflow jobs; Hive does not publish matching cache artifacts and that gap is recorded rather than synthesized.
+  required_actions: []
