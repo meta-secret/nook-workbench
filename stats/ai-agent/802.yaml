@@ -1,0 +1,124 @@
+schema_version: 3
+source_pr:
+  number: 802
+  url: https://github.com/meta-secret/nook/pull/802
+  title: "refactor(web): normalize absent values to undefined"
+  change_surface: web_cross_surface_refactor
+  head_sha: 178ce1ed29cce608b7e19aea5eb1b34ed09a47da
+  started_at: '2026-07-27T03:21:06Z'
+  opened_at: '2026-07-27T04:03:35Z'
+  merged_at: '2026-07-27T05:57:28Z'
+  elapsed_seconds: 9382
+  open_to_merge_seconds: 6833
+summary:
+  local_execution_count: 15
+  local_check_count: 11
+  local_test_count: 3
+  local_combined_count: 1
+  local_execution_seconds: 716
+  github_actions_run_count: 8
+  github_actions_seconds: 4094
+  pr_retrigger_count: 7
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-27T05:57:28Z'
+  head_sha: 178ce1ed29cce608b7e19aea5eb1b34ed09a47da
+  by_type:
+    rust: 654
+    preflight: 47
+    web_unit: 279
+    e2e: 205
+  total: 1185
+local_executions:
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --locked typescript_uses_undefined_for_application_absence', category: test, started_at: '2026-07-27T03:47:22Z', finished_at: '2026-07-27T03:47:25Z', duration_seconds: 3, outcome: passed, reason: initial_absence_invariant}
+  - {command: 'cargo clippy --manifest-path preflight/Cargo.toml --locked --all-targets -- -D warnings', category: check, started_at: '2026-07-27T03:47:30Z', finished_at: '2026-07-27T03:47:34Z', duration_seconds: 4, outcome: passed, reason: initial_preflight_lint}
+  - {command: task format, category: check, started_at: '2026-07-27T03:57:01Z', finished_at: '2026-07-27T04:01:23Z', duration_seconds: 262, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh "$(git rev-parse origin/main)"', category: check, started_at: '2026-07-27T04:01:25Z', finished_at: '2026-07-27T04:01:26Z', duration_seconds: 1, outcome: passed, reason: initial_ui_demo_contract}
+  - {command: task format, category: check, started_at: '2026-07-27T04:05:10Z', finished_at: '2026-07-27T04:06:52Z', duration_seconds: 102, outcome: passed, reason: external_boundary_correction}
+  - {command: task format, category: check, started_at: '2026-07-27T04:40:42Z', finished_at: '2026-07-27T04:42:55Z', duration_seconds: 133, outcome: passed, reason: syntax_guard_review_correction}
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --locked reports_authored_null_while_preserving_external_contracts', category: test, started_at: '2026-07-27T04:54:58Z', finished_at: '2026-07-27T04:55:00Z', duration_seconds: 2, outcome: passed, reason: boundary_fixture_regression}
+  - {command: task format, category: check, started_at: '2026-07-27T04:55:04Z', finished_at: '2026-07-27T04:56:28Z', duration_seconds: 84, outcome: passed, reason: component_adapter_compatibility}
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --locked typescript_uses_undefined_for_application_absence', category: test, started_at: '2026-07-27T05:31:12Z', finished_at: '2026-07-27T05:31:14Z', duration_seconds: 2, outcome: passed, reason: syntax_tree_guard_regression}
+  - {command: 'cargo clippy --manifest-path preflight/Cargo.toml --locked --all-targets -- -D warnings', category: check, started_at: '2026-07-27T05:31:17Z', finished_at: '2026-07-27T05:31:19Z', duration_seconds: 2, outcome: passed, reason: syntax_tree_guard_lint}
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --locked reports_authored_null_while_preserving_external_contracts && git diff --check', category: combined, started_at: '2026-07-27T05:45:18Z', finished_at: '2026-07-27T05:45:20Z', duration_seconds: 2, outcome: passed, reason: final_review_regressions}
+  - {command: task format, category: check, started_at: '2026-07-27T05:45:23Z', finished_at: '2026-07-27T05:47:07Z', duration_seconds: 104, outcome: passed, reason: final_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh "$(git rev-parse origin/main)"', category: check, started_at: '2026-07-27T05:47:09Z', finished_at: '2026-07-27T05:47:10Z', duration_seconds: 1, outcome: passed, reason: final_ui_demo_contract}
+  - {command: 'task pr:ready PR=802', category: check, started_at: '2026-07-27T05:42:58Z', finished_at: '2026-07-27T05:43:03Z', duration_seconds: 5, outcome: failed, reason: unresolved_review_threads_diagnostic}
+  - {command: 'task pr:ready PR=802', category: check, started_at: '2026-07-27T05:57:07Z', finished_at: '2026-07-27T05:57:16Z', duration_seconds: 9, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: PR, run_id: 30236075029, run_attempt: 1, head_sha: 18007cba568a30a4808bf24696716b7b068d8ce9, trigger: pull_request, started_at: '2026-07-27T04:03:38Z', finished_at: '2026-07-27T04:09:31Z', duration_seconds: 353, conclusion: cancelled}
+  - {workflow: PR, run_id: 30236227872, run_attempt: 1, head_sha: 61585296886ad646443ec4daafbb044349a21553, trigger: pull_request, started_at: '2026-07-27T04:07:16Z', finished_at: '2026-07-27T04:17:55Z', duration_seconds: 639, conclusion: failure}
+  - {workflow: PR, run_id: 30237856957, run_attempt: 1, head_sha: 397d92eceff0ab386c205d640d33eb5c443a7295, trigger: pull_request, started_at: '2026-07-27T04:43:19Z', finished_at: '2026-07-27T04:51:28Z', duration_seconds: 489, conclusion: failure}
+  - {workflow: PR, run_id: 30238425971, run_attempt: 1, head_sha: 1814d55af586557846f270c3a7e10cfaa8cf8b4c, trigger: pull_request, started_at: '2026-07-27T04:56:48Z', finished_at: '2026-07-27T05:03:02Z', duration_seconds: 374, conclusion: cancelled}
+  - {workflow: PR, run_id: 30238580604, run_attempt: 1, head_sha: eb080dd6aa07c31ac767c81bc472e8b101d1afcd, trigger: pull_request, started_at: '2026-07-27T05:00:38Z', finished_at: '2026-07-27T05:11:46Z', duration_seconds: 668, conclusion: success}
+  - {workflow: PR, run_id: 30239221605, run_attempt: 1, head_sha: ed622f8711e48d69700d3f98da04d26a1a2b5448, trigger: pull_request, started_at: '2026-07-27T05:15:00Z', finished_at: '2026-07-27T05:23:35Z', duration_seconds: 515, conclusion: success}
+  - {workflow: PR, run_id: 30240106293, run_attempt: 1, head_sha: a67d3b7a33239f64237db999d3ed2f98a0102a63, trigger: pull_request, started_at: '2026-07-27T05:34:01Z', finished_at: '2026-07-27T05:42:52Z', duration_seconds: 531, conclusion: success}
+  - {workflow: PR, run_id: 30240790390, run_attempt: 1, head_sha: cb0c9f297c3c2d13e491aee82517186e4aff23c0, trigger: pull_request, started_at: '2026-07-27T05:48:15Z', finished_at: '2026-07-27T05:57:00Z', duration_seconds: 525, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 24
+    remote_backend_job_count: 0
+    direct_compile_job_count: 24
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 4322
+    buildkit_cached_steps: 2094
+    buildkit_cache_hit_rate_percent: 48.45
+  jobs:
+    - {run_id: 30236075029, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0, collection_complete: true, collection_warnings: []}
+    - {run_id: 30236075029, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 32, buildkit_cached_steps: 12, buildkit_cache_hit_rate_percent: 37.5, collection_complete: true, collection_warnings: []}
+    - {run_id: 30236075029, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 228, buildkit_cached_steps: 96, buildkit_cache_hit_rate_percent: 42.11, collection_complete: true, collection_warnings: []}
+    - {run_id: 30236227872, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 49, buildkit_cached_steps: 4, buildkit_cache_hit_rate_percent: 8.16, collection_complete: true, collection_warnings: []}
+    - {run_id: 30236227872, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30236227872, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30237856957, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null, collection_complete: false, collection_warnings: [buildkit_history_unavailable_due_to_registry_timeout]}
+    - {run_id: 30237856957, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30237856957, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 150, buildkit_cache_hit_rate_percent: 50.51, collection_complete: true, collection_warnings: []}
+    - {run_id: 30238425971, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0, collection_complete: true, collection_warnings: []}
+    - {run_id: 30238425971, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 32, buildkit_cached_steps: 12, buildkit_cache_hit_rate_percent: 37.5, collection_complete: true, collection_warnings: []}
+    - {run_id: 30238425971, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 183, buildkit_cached_steps: 59, buildkit_cache_hit_rate_percent: 32.24, collection_complete: true, collection_warnings: []}
+    - {run_id: 30238580604, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 229, buildkit_cache_hit_rate_percent: 62.06, collection_complete: true, collection_warnings: []}
+    - {run_id: 30238580604, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30238580604, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30239221605, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0, collection_complete: true, collection_warnings: []}
+    - {run_id: 30239221605, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30239221605, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30240106293, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 277, buildkit_cache_hit_rate_percent: 75.07, collection_complete: true, collection_warnings: []}
+    - {run_id: 30240106293, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30240106293, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+    - {run_id: 30240790390, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 229, buildkit_cache_hit_rate_percent: 62.06, collection_complete: true, collection_warnings: []}
+    - {run_id: 30240790390, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42, collection_complete: true, collection_warnings: []}
+    - {run_id: 30240790390, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 297, buildkit_cached_steps: 144, buildkit_cache_hit_rate_percent: 48.48, collection_complete: true, collection_warnings: []}
+pr_retriggers:
+  - {at: '2026-07-27T04:07:16Z', kind: head_push, run_id: 30236227872, reason: preserve_explicit_external_contracts}
+  - {at: '2026-07-27T04:43:19Z', kind: head_push, run_id: 30237856957, reason: harden_absence_guard_and_boundary_fixtures}
+  - {at: '2026-07-27T04:56:48Z', kind: head_push, run_id: 30238425971, reason: preserve_component_library_dom_ref_contracts}
+  - {at: '2026-07-27T05:00:38Z', kind: head_push, run_id: 30238580604, reason: correct_component_adapter_fixture_coverage}
+  - {at: '2026-07-27T05:15:00Z', kind: base_update, run_id: 30239221605, reason: rebase_onto_current_main}
+  - {at: '2026-07-27T05:34:01Z', kind: base_update, run_id: 30240106293, reason: rebase_after_main_advanced}
+  - {at: '2026-07-27T05:48:15Z', kind: head_push, run_id: 30240790390, reason: replace_token_scan_with_typescript_and_svelte_syntax_trees}
+merge_attempts:
+  - {at: '2026-07-27T05:57:28Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [747, 769]
+  baseline_quality: weak
+  baseline_note: The closest recent records cover extension TypeScript and browser-flow changes, but this PR crossed the app, shared UI, extension, E2E, documentation, and Rust preflight parser surfaces.
+  elapsed_seconds_change_percent: 418.06
+  local_execution_seconds_change_percent: 94.83
+  github_actions_seconds_change_percent: 281.37
+  test_inventory_total_change: 29.5
+  regression: true
+  regression_reasons:
+    - Delivery exceeded the weak comparison median because the cross-surface policy guard required multiple compatibility and parser corrections, plus two base updates.
+waste_assessment:
+  wasteful: false
+  findings:
+    - Every retrigger followed a substantive compatibility, parser-correctness, review, or base-freshness change; no unchanged workflow was rerun.
+    - Two superseded runs were cancelled rather than allowed to consume the full validation path.
+    - Pull-request jobs correctly used direct compilation because untrusted workflows do not receive persistent cache credentials.
+    - One failed Rust job lacked BuildKit history after a registry timeout; the incomplete telemetry is retained without invented cache values.
+    - The final parser-based invariant prevents recurrence of the broad authored-null cleanup and makes future violations fail in preflight.
+  required_actions: []
