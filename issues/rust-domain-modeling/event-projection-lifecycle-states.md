@@ -5,9 +5,10 @@ priority: p2
 automation: manual
 owner: unassigned
 created_at: 2026-07-26T22:32:47Z
-updated_at: 2026-07-26T22:32:47Z
+updated_at: 2026-07-27T08:55:17Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/796
 depends_on: []
 ---
 
@@ -40,12 +41,15 @@ transitions and unchanged deterministic replay behavior.
 - [ ] Pre-genesis and active-epoch states are explicit.
 - [ ] Reducer, conflict, replay, and permutation-invariance tests cover every
   enum transition.
-- [ ] The relevant candidate entries in the Rust Option inventory are resolved
-  or reclassified with rationale.
+- [ ] Every targeted persisted lifecycle absence is resolved or retained with
+  an owner-domain rationale.
 
 ## Progress
 
 - Candidate occurrences identified; no implementation started.
+- 2026-07-27: PR 796 completed the signed-event actor-key and fingerprint
+  invariants; projection deletion/replacement and epoch lifecycle states remain
+  scoped here.
 
 ## Findings and decisions
 
@@ -54,5 +58,5 @@ transitions and unchanged deterministic replay behavior.
 
 ## References
 
-- [Authored Rust Option inventory](https://github.com/meta-secret/nook/blob/main/.cortex/references/rust-option-inventory.md)
 - [Vault event-log design](https://github.com/meta-secret/nook/blob/main/.cortex/design-docs/vault-event-log.md)
+- [PR 796](https://github.com/meta-secret/nook/pull/796)
