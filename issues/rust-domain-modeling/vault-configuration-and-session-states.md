@@ -5,9 +5,10 @@ priority: p2
 automation: manual
 owner: unassigned
 created_at: 2026-07-26T22:32:47Z
-updated_at: 2026-07-26T22:32:47Z
+updated_at: 2026-07-27T08:55:17Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/796
 depends_on: []
 ---
 
@@ -30,8 +31,8 @@ invalid field combinations.
 
 - Include the candidate occurrences in vault architecture, vault format,
   client policy, sync state, access diagnostics, and manager session state.
-- Keep incomplete historical IndexedDB/provider JSON in raw compatibility
-  structs and convert it into typed domain states immediately after parsing.
+- Reject incomplete persisted records instead of synthesizing legacy fallback
+  values, then convert valid boundary data into typed domain states.
 - Exclude browser SDK response DTOs and ordinary optional search filters.
 
 ## Acceptance criteria
@@ -42,20 +43,23 @@ invalid field combinations.
   folder credentials/targets.
 - [ ] Locked, unlocked, and cache lifecycle states own their required values.
 - [ ] Persisted browser/storage migration behavior has Rust coverage.
-- [ ] The relevant candidate and boundary entries in the Rust Option inventory
-  are resolved or explicitly retained at named boundaries.
+- [ ] Every targeted internal configuration/session absence is resolved or
+  retained at a named boundary with an owner-domain rationale.
 
 ## Progress
 
 - Candidate occurrences identified; no implementation started.
+- 2026-07-27: PR 796 landed explicit revision guards, persisted device/PIN
+  modes, authentication workflow classification, locale validation, and
+  retained Sentinel ceremony sessions across failed finalization. Broader
+  provider configuration and cache lifecycle consolidation remains scoped here.
 
 ## Findings and decisions
 
-- This is migration-sensitive because current IndexedDB records intentionally
-  accept incomplete historical shapes.
-- Raw compatibility structs must not become the application's decision model.
+- Persisted records are validated without legacy fallback.
+- Boundary DTOs must not become the application's decision model.
 
 ## References
 
-- [Authored Rust Option inventory](https://github.com/meta-secret/nook/blob/main/.cortex/references/rust-option-inventory.md)
 - [Rust coding rule](https://github.com/meta-secret/nook/blob/main/.cortex/dynamic-skills/rust-coding.md)
+- [PR 796](https://github.com/meta-secret/nook/pull/796)
