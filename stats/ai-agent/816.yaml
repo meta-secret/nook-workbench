@@ -1,0 +1,96 @@
+schema_version: 3
+source_pr:
+  number: 816
+  url: https://github.com/meta-secret/nook/pull/816
+  title: Make hosted WASM dependency cache portable
+  change_surface: ci_buildkit_dependency_cache_portability
+  head_sha: 634fa4a4f99b70973c07eb9aae960014af313162
+  started_at: '2026-07-27T17:29:00Z'
+  opened_at: '2026-07-27T17:57:06Z'
+  merged_at: '2026-07-27T18:15:42Z'
+  elapsed_seconds: 2802
+  open_to_merge_seconds: 1116
+summary:
+  local_execution_count: 14
+  local_check_count: 8
+  local_test_count: 3
+  local_combined_count: 3
+  local_execution_seconds: 1107
+  github_actions_run_count: 2
+  github_actions_seconds: 1101
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-27T18:16:00Z'
+  head_sha: 634fa4a4f99b70973c07eb9aae960014af313162
+  by_type:
+    rust: 649
+    preflight: 56
+    web_unit: 279
+    e2e: 205
+  total: 1189
+local_executions:
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --test sccache_redis --test vault_app_isolation', category: test, started_at: '2026-07-27T17:29:10Z', finished_at: '2026-07-27T17:29:18Z', duration_seconds: 8, outcome: failed, reason: initial_parallel_topology_regressions}
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --test sccache_redis && cargo test --manifest-path preflight/Cargo.toml --test vault_app_isolation -- --test-threads=1', category: test, started_at: '2026-07-27T17:30:00Z', finished_at: '2026-07-27T17:30:08Z', duration_seconds: 8, outcome: passed, reason: focused_self_contained_cache_invariants}
+  - {command: 'docker buildx bake --print', category: check, started_at: '2026-07-27T17:31:00Z', finished_at: '2026-07-27T17:31:01Z', duration_seconds: 1, outcome: failed, reason: incomplete_bake_file_list}
+  - {command: 'bash -n .github/scripts/verify-wasm-gha-cache.sh && docker buildx bake --print', category: check, started_at: '2026-07-27T17:31:15Z', finished_at: '2026-07-27T17:31:17Z', duration_seconds: 2, outcome: passed, reason: verifier_syntax_and_resolved_bake_graph}
+  - {command: 'docker buildx bake builder-wasm-deps', category: combined, started_at: '2026-07-27T17:32:00Z', finished_at: '2026-07-27T17:34:31Z', duration_seconds: 151, outcome: passed, reason: cold_self_contained_dependency_producer}
+  - {command: 'docker buildx bake builder-wasm-deps', category: combined, started_at: '2026-07-27T17:34:40Z', finished_at: '2026-07-27T17:34:41Z', duration_seconds: 1, outcome: passed, reason: same_daemon_dependency_cache_restore}
+  - {command: 'docker buildx bake builder-wasm-deps --cache-to type=local,mode=max && docker buildx bake builder-wasm-deps --cache-from type=local', category: combined, started_at: '2026-07-27T17:35:00Z', finished_at: '2026-07-27T17:35:35Z', duration_seconds: 35, outcome: passed, reason: fresh_docker_container_builder_cache_restore}
+  - {command: git diff --check, category: check, started_at: '2026-07-27T17:35:45Z', finished_at: '2026-07-27T17:35:46Z', duration_seconds: 1, outcome: passed, reason: patch_hygiene}
+  - {command: task format, category: check, started_at: '2026-07-27T17:37:00Z', finished_at: '2026-07-27T17:48:10Z', duration_seconds: 670, outcome: passed, reason: cold_topology_pre_push_hygiene}
+  - {command: 'cargo test --manifest-path preflight/Cargo.toml --test sccache_redis && cargo test --manifest-path preflight/Cargo.toml --test vault_app_isolation -- --test-threads=1', category: test, started_at: '2026-07-27T17:49:00Z', finished_at: '2026-07-27T17:49:08Z', duration_seconds: 8, outcome: passed, reason: post_format_focused_invariants}
+  - {command: task format, category: check, started_at: '2026-07-27T17:55:25Z', finished_at: '2026-07-27T17:57:00Z', duration_seconds: 95, outcome: passed, reason: current_main_pre_push_hygiene}
+  - {command: 'cargo fmt --manifest-path preflight/Cargo.toml && cargo test --manifest-path preflight/Cargo.toml --test sccache_redis && cargo test --manifest-path preflight/Cargo.toml --test vault_app_isolation -- --test-threads=1', category: check, started_at: '2026-07-27T17:57:55Z', finished_at: '2026-07-27T17:58:04Z', duration_seconds: 9, outcome: passed, reason: reviewed_preflight_format_fix}
+  - {command: task format, category: check, started_at: '2026-07-27T17:58:05Z', finished_at: '2026-07-27T17:59:58Z', duration_seconds: 113, outcome: passed, reason: reviewed_head_pre_push_hygiene}
+  - {command: 'task pr:ready PR=816', category: check, started_at: '2026-07-27T18:15:25Z', finished_at: '2026-07-27T18:15:30Z', duration_seconds: 5, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: PR, run_id: 30291566040, run_attempt: 1, head_sha: 2246c581027b8b101dccbdc1e6878de1b76e1e24, trigger: pull_request, started_at: '2026-07-27T17:57:10Z', finished_at: '2026-07-27T18:00:24Z', duration_seconds: 194, conclusion: cancelled}
+  - {workflow: PR, run_id: 30291790129, run_attempt: 1, head_sha: eb226a2a7896542f7d9220bf9947e399b8ab253c, trigger: pull_request, started_at: '2026-07-27T18:00:08Z', finished_at: '2026-07-27T18:15:15Z', duration_seconds: 907, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 6
+    remote_backend_job_count: 0
+    direct_compile_job_count: 6
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 824
+    buildkit_cached_steps: 309
+    buildkit_cache_hit_rate_percent: 37.5
+  collection:
+    complete: true
+    warnings: []
+  jobs:
+    - {run_id: 30291566040, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30291566040, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30291566040, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 124, buildkit_cached_steps: 34, buildkit_cache_hit_rate_percent: 27.42}
+    - {run_id: 30291790129, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 109, buildkit_cache_hit_rate_percent: 29.54}
+    - {run_id: 30291790129, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30291790129, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 147, buildkit_cache_hit_rate_percent: 58.57}
+pr_retriggers:
+  - {at: '2026-07-27T18:00:08Z', kind: head_push, run_id: 30291790129, reason: apply_preflight_rustfmt_required_by_ci_and_review}
+merge_attempts:
+  - {at: '2026-07-27T18:15:42Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [812]
+  baseline_quality: comparable
+  baseline_note: PR 812 changed the same hosted WASM cache-consumer topology and used the same core PR gate.
+  elapsed_seconds_change_percent: 20.26
+  local_execution_seconds_change_percent: 233.43
+  github_actions_seconds_change_percent: -48.48
+  test_inventory_total_change: 0
+  regression: true
+  regression_reasons:
+    - A fresh hosted proof disproved the first consumer-only repair, requiring a self-contained producer design and a second implementation PR.
+    - The topology migration intentionally cold-built native dependency and coverage profiles during mandatory formatting and exact-head validation.
+waste_assessment:
+  wasteful: false
+  findings:
+    - The failed first PR run exposed one preflight formatting gap and was superseded immediately after the exact mechanical fix.
+    - Local cold, warm, and fresh-builder solves were all necessary because same-daemon reuse had produced the earlier false positive.
+    - Pull-request jobs remained read-only direct-compilation consumers; trusted Main publication and post-merge proof were kept outside this PR statistics lifecycle.
+    - The merged change adds an automated fresh-builder assertion, preventing future incomplete cache publications from being reported as successful.
+  required_actions: []
