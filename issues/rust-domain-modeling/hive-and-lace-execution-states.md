@@ -5,9 +5,10 @@ priority: p2
 automation: manual
 owner: unassigned
 created_at: 2026-07-26T22:32:47Z
-updated_at: 2026-07-26T22:32:47Z
+updated_at: 2026-07-27T08:55:17Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/796
 depends_on: []
 ---
 
@@ -41,12 +42,15 @@ named enums whose variants own exactly the data valid in that state.
   states with behavior-focused tests.
 - [ ] Persisted Neo4j and publication migration behavior is documented and
   covered.
-- [ ] The relevant candidate entries in the Rust Option inventory are resolved
-  or reclassified with rationale.
+- [ ] Every targeted internal execution-state absence is resolved or retained
+  with an owner-domain rationale.
 
 ## Progress
 
 - Candidate occurrences identified; no implementation started.
+- 2026-07-27: PR 796 added strict terminal-result wire DTO validation and
+  converted Hive/Lace test setup to `anyhow::Result`; the broader persisted
+  execution and lease-state model remains scoped here.
 
 ## Findings and decisions
 
@@ -55,4 +59,4 @@ named enums whose variants own exactly the data valid in that state.
 
 ## References
 
-- [Authored Rust Option inventory](https://github.com/meta-secret/nook/blob/main/.cortex/references/rust-option-inventory.md)
+- [PR 796](https://github.com/meta-secret/nook/pull/796)
