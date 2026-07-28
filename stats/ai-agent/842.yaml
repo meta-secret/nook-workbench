@@ -1,0 +1,51 @@
+schema_version: 3
+source_pr:
+  number: 842
+  url: https://github.com/meta-secret/nook/pull/842
+  title: Extract extension enrollment outcome controller
+  change_surface: extension_enrollment_architecture
+  head_sha: 2efec222c5c1515dff27524b62f9f5e537162aef
+  started_at: '2026-07-28T08:20:00Z'
+  merged_at: '2026-07-28T09:12:19Z'
+  elapsed_seconds: 3139
+summary:
+  local_execution_count: 12
+  local_check_count: 3
+  local_test_count: 4
+  local_combined_count: 5
+  github_actions_run_count: 6
+  pr_retrigger_count: 5
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T09:12:19Z'
+  head_sha: 2efec222c5c1515dff27524b62f9f5e537162aef
+  by_type: {rust: 641, preflight: 56, web_unit: 279, e2e: 206}
+  total: 1182
+github_actions_runs:
+  - {workflow: PR, run_id: 30342118533, conclusion: failure, reason: missing_ui_demo}
+  - {workflow: PR, run_id: 30342576179, conclusion: failure, reason: demo_app_bootstrap_race}
+  - {workflow: PR, run_id: 30343084109, conclusion: failure, reason: obsolete_pairing_fixture}
+  - {workflow: PR, run_id: 30343752956, conclusion: success, reason: pre_review_head}
+  - {workflow: PR, run_id: 30344301098, conclusion: success, reason: main_advanced}
+  - {workflow: PR, run_id: 30345025628, conclusion: success, reason: final_exact_head}
+pr_retriggers:
+  - {reason: add_focused_ui_demo_evidence}
+  - {reason: remove_svelte_bootstrap_race}
+  - {reason: update_typed_pairing_fixture}
+  - {reason: preserve_real_origin_after_review}
+  - {reason: rebase_onto_current_main}
+merge_attempts:
+  - {at: '2026-07-28T09:12:19Z', method: squash, outcome: success, reason: exact_head_checks_threads_and_base_confirmed}
+comparison:
+  baseline_prs: [841]
+  baseline_quality: comparable
+  regression: true
+  regression_reasons:
+    - The demo fixture contract and real-origin requirement were not audited before the first push.
+waste_assessment:
+  wasteful: true
+  findings:
+    - Three CI cycles were spent discovering demo-harness issues reproducible with focused local Chrome.
+  required_actions:
+    - Run focused UI demos locally with a real origin before pushing future UI-path refactors.
