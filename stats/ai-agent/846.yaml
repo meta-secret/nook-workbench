@@ -1,0 +1,38 @@
+schema_version: 3
+source_pr:
+  number: 846
+  url: https://github.com/meta-secret/nook/pull/846
+  title: Split web E2E helper domains
+  change_surface: web_e2e_architecture
+  head_sha: 48423f6763594ae1972cc388d72178265e46591f
+  started_at: '2026-07-28T09:58:16Z'
+  merged_at: '2026-07-28T10:02:23Z'
+  elapsed_seconds: 247
+summary:
+  local_execution_count: 10
+  local_check_count: 4
+  local_test_count: 2
+  local_combined_count: 4
+  github_actions_run_count: 1
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T10:02:23Z'
+  head_sha: 48423f6763594ae1972cc388d72178265e46591f
+  by_type: {rust: 641, preflight: 56, web_unit: 281, e2e: 206}
+  total: 1184
+github_actions_runs:
+  - {workflow: PR, run_id: 30348829630, conclusion: success, reason: final_exact_head}
+merge_attempts:
+  - {at: '2026-07-28T10:02:23Z', method: squash, outcome: success, reason: exact_head_checks_threads_and_base_confirmed}
+comparison:
+  baseline_prs: [845]
+  baseline_quality: comparable
+  regression: false
+waste_assessment:
+  wasteful: false
+  findings:
+    - Focused local import and discovery proofs caught extraction path and initialization hazards before the first push.
+    - The PR passed its first GitHub Actions cycle.
+  required_actions: []
