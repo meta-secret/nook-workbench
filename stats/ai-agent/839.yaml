@@ -1,0 +1,73 @@
+schema_version: 3
+source_pr:
+  number: 839
+  url: https://github.com/meta-secret/nook/pull/839
+  title: Add Hive Control Center
+  change_surface: hive_rust_infrastructure_web
+  head_sha: 25ff89788872624fdfc621b1ed0b12c71ccb7e11
+  started_at: '2026-07-28T06:36:05Z'
+  opened_at: '2026-07-28T07:08:12Z'
+  merged_at: '2026-07-28T08:36:29Z'
+  elapsed_seconds: 7224
+  open_to_merge_seconds: 5297
+summary:
+  local_execution_count: 7
+  local_check_count: 4
+  local_test_count: 2
+  local_combined_count: 1
+  local_execution_seconds: 940
+  github_actions_run_count: 2
+  github_actions_seconds: 851
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T08:36:29Z'
+  head_sha: 25ff89788872624fdfc621b1ed0b12c71ccb7e11
+  by_type: {rust: 649, preflight: 56, web_unit: 279, e2e: 206}
+  total: 1190
+local_executions:
+  - {command: cargo test --workspace, category: test, duration_seconds: 120, outcome: passed, reason: hive_behavior_coverage}
+  - {command: bunx playwright test, category: test, duration_seconds: 60, outcome: passed, reason: dashboard_behavior_coverage}
+  - {command: task format, category: combined, duration_seconds: 240, outcome: passed, reason: pre_push_hygiene}
+  - {command: task format, category: check, duration_seconds: 240, outcome: passed, reason: review_fix_hygiene}
+  - {command: task format, category: check, duration_seconds: 240, outcome: passed, reason: exact_head_hygiene}
+  - {command: task ui:demo:contract, category: check, duration_seconds: 30, outcome: passed, reason: user_visible_change}
+  - {command: 'task pr:ready PR=839', category: check, duration_seconds: 10, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: Hive, run_id: 30342479302, run_attempt: 1, head_sha: 25ff89788872624fdfc621b1ed0b12c71ccb7e11, trigger: pull_request, started_at: '2026-07-28T08:27:45Z', finished_at: '2026-07-28T08:35:47Z', duration_seconds: 482, conclusion: success}
+  - {workflow: PR, run_id: 30342479305, run_attempt: 1, head_sha: 25ff89788872624fdfc621b1ed0b12c71ccb7e11, trigger: pull_request, started_at: '2026-07-28T08:27:45Z', finished_at: '2026-07-28T08:33:54Z', duration_seconds: 369, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: null
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+    buildkit_cache_hit_rate_percent: null
+  jobs: []
+pr_retriggers:
+  - {at: '2026-07-28T08:27:45Z', kind: base_update, reason: rebased onto current Main before exact-head validation}
+merge_attempts:
+  - {at: '2026-07-28T08:36:29Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [838]
+  baseline_quality: weak
+  baseline_note: PR 838 used the same repository gates but had a substantially smaller Rust-only surface.
+  elapsed_seconds_change_percent: 509.62
+  local_execution_seconds_change_percent: 27.89
+  github_actions_seconds_change_percent: 116.00
+  test_inventory_total_change: 0
+  regression: true
+  regression_reasons:
+    - The cross-cutting Rust, Kubernetes, and dashboard delivery required a longer review and validation cycle than the available baseline.
+waste_assessment:
+  wasteful: false
+  findings:
+    - The final exact-head workflows passed without a manual rerun.
+    - Review-driven fixes materially strengthened ordering, persistence, provenance, and credential isolation rather than repeating unchanged validation.
+  required_actions: []
