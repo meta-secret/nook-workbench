@@ -1,0 +1,111 @@
+schema_version: 3
+source_pr:
+  number: 826
+  url: https://github.com/meta-secret/nook/pull/826
+  title: Remove Rust waits from PR preview verification
+  change_surface: github_actions_ci
+  head_sha: 42cf8b5d229c6240dfbe3afaab0f00b95504c71b
+  started_at: '2026-07-28T03:33:34Z'
+  opened_at: '2026-07-28T03:40:22Z'
+  merged_at: '2026-07-28T04:34:34Z'
+  elapsed_seconds: 3660
+  open_to_merge_seconds: 3252
+summary:
+  local_execution_count: 7
+  local_check_count: 5
+  local_test_count: 2
+  local_combined_count: 0
+  local_execution_seconds: 260
+  github_actions_run_count: 5
+  github_actions_seconds: 3285
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T04:35:00Z'
+  head_sha: 42cf8b5d229c6240dfbe3afaab0f00b95504c71b
+  by_type:
+    rust: 649
+    preflight: 56
+    web_unit: 279
+    e2e: 206
+  total: 1190
+local_executions:
+  - {command: 'node --test .github/scripts/base-coverage-artifact.test.cjs', category: test, duration_seconds: 1, outcome: passed, reason: focused_artifact_trust_contract}
+  - {command: task format, category: check, duration_seconds: 61, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: 'task pr:preflight PR=826', category: check, duration_seconds: 2, outcome: failed, reason: initial_workflow_active_and_preflight_contract_outdated}
+  - {command: 'task preflight:test', category: test, duration_seconds: 55, outcome: passed, reason: updated_ci_contract_regression_proof}
+  - {command: task format, category: check, duration_seconds: 70, outcome: passed, reason: preflight_contract_pre_push_hygiene}
+  - {command: task format, category: check, duration_seconds: 68, outcome: passed, reason: workflow_documentation_pre_push_hygiene}
+  - {command: 'task pr:ready PR=826', category: check, duration_seconds: 3, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: PR, run_id: 30326569586, run_attempt: 1, head_sha: c06702b96223a0b955618332cb7bcd01c30af6fe, trigger: pull_request, started_at: '2026-07-28T03:40:25Z', finished_at: '2026-07-28T03:40:27Z', duration_seconds: 2, conclusion: cancelled}
+  - {workflow: PR, run_id: 30326569644, run_attempt: 1, head_sha: c06702b96223a0b955618332cb7bcd01c30af6fe, trigger: pull_request, started_at: '2026-07-28T03:40:25Z', finished_at: '2026-07-28T03:47:46Z', duration_seconds: 441, conclusion: cancelled}
+  - {workflow: PR, run_id: 30326894627, run_attempt: 1, head_sha: 3ac75023d667883cfa4ef3adae606b0738e2e485, trigger: pull_request, started_at: '2026-07-28T03:47:21Z', finished_at: '2026-07-28T04:11:23Z', duration_seconds: 1442, conclusion: cancelled}
+  - {workflow: PR, run_id: 30328020568, run_attempt: 1, head_sha: f6157fa731bdb9eadabb19dbe75031f26980ec3f, trigger: pull_request, started_at: '2026-07-28T04:10:59Z', finished_at: '2026-07-28T04:19:39Z', duration_seconds: 520, conclusion: cancelled}
+  - {workflow: PR, run_id: 30328418259, run_attempt: 1, head_sha: f6157fa731bdb9eadabb19dbe75031f26980ec3f, trigger: pull_request, started_at: '2026-07-28T04:19:17Z', finished_at: '2026-07-28T04:33:57Z', duration_seconds: 880, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 21
+    remote_backend_job_count: 0
+    direct_compile_job_count: 21
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: null
+    buildkit_completed_steps: 2862
+    buildkit_cached_steps: 1173
+    buildkit_cache_hit_rate_percent: 40.99
+  collection:
+    complete: true
+    warnings: []
+  jobs:
+    - {run_id: 30326569644, run_attempt: 1, job: full-e2e, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 79, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30326569644, run_attempt: 1, job: full-extension-e2e, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 79, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30326569644, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 17, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30326569644, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30326569644, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 164, buildkit_cache_hit_rate_percent: 65.34}
+    - {run_id: 30326894627, run_attempt: 1, job: coverage, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30326894627, run_attempt: 1, job: full-e2e, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 79, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30326894627, run_attempt: 1, job: full-extension-e2e, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 79, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30326894627, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 97, buildkit_cache_hit_rate_percent: 26.29}
+    - {run_id: 30326894627, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30326894627, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 173, buildkit_cache_hit_rate_percent: 68.92}
+    - {run_id: 30328020568, run_attempt: 1, job: coverage, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30328020568, run_attempt: 1, job: full-e2e, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 79, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30328020568, run_attempt: 1, job: full-extension-e2e, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 79, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30328020568, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 229, buildkit_cache_hit_rate_percent: 62.06}
+    - {run_id: 30328020568, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30328020568, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 173, buildkit_cache_hit_rate_percent: 68.92}
+    - {run_id: 30328418259, run_attempt: 1, job: coverage, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30328418259, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 97, buildkit_cache_hit_rate_percent: 26.29}
+    - {run_id: 30328418259, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30328418259, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 164, buildkit_cache_hit_rate_percent: 65.34}
+pr_retriggers:
+  - {at: '2026-07-28T03:40:25Z', kind: reopen, run_id: 30326569644, reason: label_event_started_a_second_initial_cycle}
+  - {at: '2026-07-28T03:47:21Z', kind: head_push, run_id: 30326894627, reason: synchronize_preflight_contract}
+  - {at: '2026-07-28T04:10:59Z', kind: head_push, run_id: 30328020568, reason: synchronize_authoritative_ci_documentation}
+  - {at: '2026-07-28T04:19:17Z', kind: reopen, run_id: 30328418259, reason: remove_full_e2e_label_after_matching_main_failure_evidence}
+merge_attempts:
+  - {at: '2026-07-28T04:34:34Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [824]
+  baseline_quality: comparable
+  baseline_note: PR 824 used the adjacent vault refactor workflow and exposed the duplicated base-coverage fallback that PR 826 removed.
+  elapsed_seconds_change_percent: -30.31
+  local_execution_seconds_change_percent: -64.09
+  github_actions_seconds_change_percent: -16.58
+  test_inventory_total_change: 0
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: true
+  findings:
+    - The first pushed workflow contradicted the repository preflight contract and required a corrective head push.
+    - One remaining authoritative workflow guide required another documentation-only head push.
+    - Full browser E2E reproduced existing Main vault-flow failures twice; the second run established determinism before the label was removed.
+    - A canceled workflow's successful native producer was not reusable, causing the final normal run to repeat cold Native validation.
+    - Verify and preview itself consistently completed in approximately three and a half minutes after the topology change.
+  required_actions:
+    - Repair the existing Main Web and extension E2E failures under the active Main-failure record.
+    - Evaluate source-keyed native handoff reuse after a workflow is canceled without weakening exact-source validation.
