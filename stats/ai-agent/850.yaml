@@ -1,0 +1,36 @@
+schema_version: 3
+source_pr:
+  number: 850
+  url: https://github.com/meta-secret/nook/pull/850
+  title: Split add-secret form domains
+  change_surface: vault_secret_form_architecture
+  head_sha: 1e453d5e347a9714adf08f6e5352651bc3d1be60
+  started_at: '2026-07-28T11:13:50Z'
+  merged_at: '2026-07-28T11:28:19Z'
+  elapsed_seconds: 869
+summary:
+  local_execution_count: 16
+  local_check_count: 7
+  local_test_count: 2
+  local_combined_count: 4
+  github_actions_run_count: 1
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T11:28:19Z'
+  head_sha: 1e453d5e347a9714adf08f6e5352651bc3d1be60
+  by_type: {rust: 641, preflight: 56, web_unit: 235, e2e: 206}
+  total: 1138
+github_actions_runs:
+  - {workflow: PR, run_id: 30354507783, conclusion: success, reason: final_exact_head}
+merge_attempts:
+  - {at: '2026-07-28T11:28:19Z', method: squash, outcome: success, reason: exact_head_checks_threads_and_base_confirmed}
+comparison:
+  baseline_prs: [849]
+  baseline_quality: comparable
+  regression: false
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
