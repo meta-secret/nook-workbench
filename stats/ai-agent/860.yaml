@@ -1,0 +1,75 @@
+schema_version: 3
+source_pr:
+  number: 860
+  url: https://github.com/meta-secret/nook/pull/860
+  title: 'feat(hive): add typed attention alerts'
+  change_surface: hive_rust_observer_web
+  head_sha: f374b1813dcf1ee725dde6ba335355b120424cd0
+  started_at: '2026-07-28T16:36:17Z'
+  opened_at: '2026-07-28T17:16:29Z'
+  merged_at: '2026-07-28T22:24:24Z'
+  elapsed_seconds: 20887
+  open_to_merge_seconds: 18475
+summary:
+  local_execution_count: 6
+  local_check_count: 6
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 360
+  github_actions_run_count: 10
+  github_actions_seconds: 2760
+  pr_retrigger_count: 8
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 2
+test_inventory:
+  measured_at: '2026-07-28T22:24:24Z'
+  head_sha: f374b1813dcf1ee725dde6ba335355b120424cd0
+  by_type: {rust: 641, preflight: 56, web_unit: 235, e2e: 206}
+  total: 1138
+local_executions:
+  - {command: task format, category: check, duration_seconds: 60, outcome: passed, reason: pre_push_hygiene}
+  - {command: task format, category: check, duration_seconds: 60, outcome: passed, reason: review_fix_hygiene}
+  - {command: task format, category: check, duration_seconds: 60, outcome: passed, reason: review_fix_hygiene}
+  - {command: task format, category: check, duration_seconds: 60, outcome: passed, reason: review_fix_hygiene}
+  - {command: task format, category: check, duration_seconds: 60, outcome: passed, reason: review_fix_hygiene}
+  - {command: task format, category: check, duration_seconds: 60, outcome: passed, reason: exact_head_hygiene}
+github_actions_runs:
+  - {workflow: Hive, run_id: 30400785382, run_attempt: 1, head_sha: 7e353b6cbc4897e065b04c5c5d04de5468163511, trigger: pull_request, duration_seconds: 503, conclusion: success}
+  - {workflow: Source architecture, run_id: 30400785686, run_attempt: 1, head_sha: 7e353b6cbc4897e065b04c5c5d04de5468163511, trigger: pull_request, duration_seconds: 21, conclusion: success}
+  - {workflow: Hive, run_id: 30401557057, run_attempt: 1, head_sha: b97d32e632c62ebd54af009c2ebf0c3444ff4bc2, trigger: pull_request, duration_seconds: 476, conclusion: success}
+  - {workflow: Source architecture, run_id: 30401556957, run_attempt: 1, head_sha: b97d32e632c62ebd54af009c2ebf0c3444ff4bc2, trigger: pull_request, duration_seconds: 35, conclusion: success}
+  - {workflow: Hive, run_id: 30402274683, run_attempt: 1, head_sha: a4e3e52bba04ee2d74b7ba03ae8130fb91eef959, trigger: pull_request, duration_seconds: 488, conclusion: success}
+  - {workflow: Source architecture, run_id: 30402274596, run_attempt: 1, head_sha: a4e3e52bba04ee2d74b7ba03ae8130fb91eef959, trigger: pull_request, duration_seconds: 24, conclusion: success}
+  - {workflow: Hive, run_id: 30402991480, run_attempt: 1, head_sha: 9ca1f6593258a743410506bad609b28f5d5684ed, trigger: pull_request, duration_seconds: 671, conclusion: success}
+  - {workflow: Source architecture, run_id: 30402991741, run_attempt: 1, head_sha: 9ca1f6593258a743410506bad609b28f5d5684ed, trigger: pull_request, duration_seconds: 24, conclusion: success}
+  - {workflow: Hive, run_id: 30403840728, run_attempt: 1, head_sha: f374b1813dcf1ee725dde6ba335355b120424cd0, trigger: pull_request, duration_seconds: 512, conclusion: success}
+  - {workflow: Source architecture, run_id: 30403840672, run_attempt: 1, head_sha: f374b1813dcf1ee725dde6ba335355b120424cd0, trigger: pull_request, duration_seconds: 6, conclusion: success}
+cache_telemetry:
+  totals: {job_count: 0, remote_backend_job_count: 0, direct_compile_job_count: 0, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, sccache_hit_rate_percent: null, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+  jobs: []
+pr_retriggers:
+  - {kind: head_push, reason: review_fix}
+  - {kind: head_push, reason: review_fix}
+  - {kind: head_push, reason: review_fix}
+  - {kind: head_push, reason: review_fix}
+  - {kind: head_push, reason: review_fix}
+  - {kind: head_push, reason: review_fix}
+  - {kind: head_push, reason: review_fix}
+  - {kind: base_update, reason: merge_current_main}
+merge_attempts:
+  - {at: '2026-07-28T21:47:58Z', method: squash, outcome: blocked, reason: current_head_review_pending}
+  - {at: '2026-07-28T22:24:24Z', method: squash, outcome: success, reason: exact_head_checks_threads_and_base_confirmed}
+comparison:
+  baseline_prs: [839]
+  baseline_quality: comparable
+  baseline_note: Both changed Hive Rust, observer, infrastructure, and dashboard behavior.
+  elapsed_seconds_change_percent: 189.15
+  local_execution_seconds_change_percent: -61.70
+  github_actions_seconds_change_percent: 224.32
+  test_inventory_total_change: -52
+  regression: true
+  regression_reasons: [Review findings required repeated exact-head validation cycles.]
+waste_assessment:
+  wasteful: true
+  findings: [Late review arrivals caused repeated full Hive validation cycles.]
+  required_actions: [Batch observer query, lifecycle edge-case, bounded-count, and accessibility audits before the first push.]
