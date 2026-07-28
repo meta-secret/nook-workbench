@@ -1,0 +1,41 @@
+schema_version: 3
+source_pr:
+  number: 845
+  url: https://github.com/meta-secret/nook/pull/845
+  title: Split extension smoke domains
+  change_surface: extension_e2e_architecture
+  head_sha: ed0248568d8b22bcc57559e99c4725c024f8b937
+  started_at: '2026-07-28T09:29:12Z'
+  merged_at: '2026-07-28T09:46:36Z'
+  elapsed_seconds: 1044
+summary:
+  local_execution_count: 8
+  local_check_count: 3
+  local_test_count: 2
+  local_combined_count: 3
+  github_actions_run_count: 3
+  pr_retrigger_count: 2
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T09:46:36Z'
+  head_sha: ed0248568d8b22bcc57559e99c4725c024f8b937
+  by_type: {rust: 641, preflight: 56, web_unit: 281, e2e: 206}
+  total: 1184
+github_actions_runs:
+  - {workflow: PR, run_id: 30346783823, conclusion: failure, reason: moved_preflight_invariant_owner}
+  - {workflow: PR, run_id: 30347066911, conclusion: success, reason: superseded_by_review_fix}
+  - {workflow: PR, run_id: 30347736400, conclusion: success, reason: final_exact_head}
+merge_attempts:
+  - {at: '2026-07-28T09:46:36Z', method: squash, outcome: success, reason: exact_head_checks_threads_and_base_confirmed}
+comparison:
+  baseline_prs: [844]
+  baseline_quality: comparable
+  regression: false
+waste_assessment:
+  wasteful: true
+  findings:
+    - The first cycle retained a hardcoded preflight owner after the test harness moved.
+    - Review caught a one-level package-root regression in the newly nested helper.
+  required_actions:
+    - Keep source-owner invariants and default path resolution in the focused local proof for future test-harness moves.
