@@ -5,7 +5,7 @@ priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-07-28T14:10:49Z
-updated_at: 2026-07-28T15:17:48Z
+updated_at: 2026-07-28T16:20:04Z
 source_issues: []
 related_prs: [855]
 depends_on: []
@@ -51,6 +51,11 @@ request while preserving the failing revision and workflow evidence.
 - 2026-07-28T15:17:48Z: Resume attempt confirmed the guest still cannot run the
   required formatter because Cargo is unavailable. No source changes, repair PR,
   or Main update were published.
+- 2026-07-28T16:20:04Z: A third resume re-read the retained browser-job evidence
+  and confirmed the shared IndexedDB version-change callback failure that leaves
+  vault crypto unavailable after reload. The sealed guest still has no Cargo, so
+  the mandatory formatter cannot complete and no unformatted repair was
+  published.
 
 ## Findings and decisions
 
@@ -67,6 +72,7 @@ request while preserving the failing revision and workflow evidence.
 - [Task-start plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/hive-isolated-agent-platform/2026-07-28T14-20-00Z-main-failure-a2a5b6c0cd2ba6e8060a1ea3bf853eea038eb892-run-30362865457-attempt-1.md)
 - [Blocked worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/hive-isolated-agent-platform/2026-07-28T14-25-00Z-main-failure-a2a5b6c0cd2ba6e8060a1ea3bf853eea038eb892-run-30362865457-attempt-1.md)
 - [Resume worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/hive-isolated-agent-platform/2026-07-28T15-17-48Z-main-failure-a2a5b6c0cd2ba6e8060a1ea3bf853eea038eb892-run-30362865457-attempt-2.md)
+- [Latest blocked worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/hive-isolated-agent-platform/2026-07-28T16-20-04Z-main-failure-a2a5b6c0cd2ba6e8060a1ea3bf853eea038eb892-run-30362865457-attempt-3.md)
 
 ## References
 
