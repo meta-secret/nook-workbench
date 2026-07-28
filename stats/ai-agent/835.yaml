@@ -1,0 +1,67 @@
+schema_version: 3
+source_pr:
+  number: 835
+  url: https://github.com/meta-secret/nook/pull/835
+  title: Refactor Neo4j claim retry and test boundaries
+  change_surface: hive_neo4j_architecture
+  head_sha: 1d0a51eab81bee387eb8b1fdfda71f604e727e81
+  started_at: '2026-07-28T06:00:00Z'
+  opened_at: '2026-07-28T06:15:58Z'
+  merged_at: '2026-07-28T07:23:20Z'
+  elapsed_seconds: 5000
+  open_to_merge_seconds: 4042
+summary:
+  local_execution_count: 6
+  local_check_count: 2
+  local_test_count: 1
+  local_combined_count: 3
+  local_execution_seconds: 1100
+  github_actions_run_count: 5
+  github_actions_seconds: 1981
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T07:23:20Z'
+  head_sha: 1d0a51eab81bee387eb8b1fdfda71f604e727e81
+  by_type: {rust: 649, preflight: 56, web_unit: 279, e2e: 206}
+  total: 1190
+local_executions:
+  - {command: cargo test -p hive, category: test, duration_seconds: 80, outcome: passed, reason: focused_hive_validation}
+  - {command: task format, category: combined, duration_seconds: 240, outcome: passed, reason: pre_push_hygiene}
+  - {command: task format, category: combined, duration_seconds: 300, outcome: passed, reason: post_rebase_pre_push_hygiene}
+  - {command: task format, category: combined, duration_seconds: 470, outcome: passed, reason: formatter_copyback_review_fix}
+  - {command: git diff --check, category: check, duration_seconds: 1, outcome: passed, reason: focused_diff_hygiene}
+  - {command: 'task pr:ready PR=835', category: check, duration_seconds: 9, outcome: failed, reason: github_rest_rate_limit}
+github_actions_runs:
+  - {workflow: Hive verification, run_id: 30334241203, run_attempt: 1, head_sha: 7b4e78fc1941e20987142df2603c257e0c767738, trigger: pull_request, started_at: '2026-07-28T06:16:02Z', finished_at: '2026-07-28T06:22:31Z', duration_seconds: 389, conclusion: success}
+  - {workflow: Hive verification, run_id: 30334845680, run_attempt: 1, head_sha: 4bf45b3553edb2ba39e08fb12531429c1d653d3b, trigger: pull_request, started_at: '2026-07-28T06:27:05Z', finished_at: '2026-07-28T06:32:24Z', duration_seconds: 319, conclusion: failure}
+  - {workflow: Hive verification, run_id: 30335811963, run_attempt: 1, head_sha: 6e3e5f807c33c8c292d6c3cf0d23eba9b903a5d5, trigger: pull_request, started_at: '2026-07-28T06:44:14Z', finished_at: '2026-07-28T06:51:09Z', duration_seconds: 415, conclusion: success}
+  - {workflow: Hive verification, run_id: 30336620973, run_attempt: 1, head_sha: 1ee4f41ff8c4198164f49d767ec3020f2753b645, trigger: pull_request, started_at: '2026-07-28T06:57:55Z', finished_at: '2026-07-28T07:04:54Z', duration_seconds: 419, conclusion: success}
+  - {workflow: Hive verification, run_id: 30337722062, run_attempt: 1, head_sha: 1d0a51eab81bee387eb8b1fdfda71f604e727e81, trigger: pull_request, started_at: '2026-07-28T07:15:26Z', finished_at: '2026-07-28T07:22:45Z', duration_seconds: 439, conclusion: success}
+pr_retriggers:
+  - {at: '2026-07-28T06:27:05Z', reason: include_integration_tests_in_hive_stages}
+  - {at: '2026-07-28T06:44:14Z', reason: apply_rustfmt_to_integration_target}
+  - {at: '2026-07-28T06:57:55Z', reason: rebase_onto_current_main}
+  - {at: '2026-07-28T07:15:26Z', reason: copy_formatted_integration_tests_back_to_host}
+merge_attempts:
+  - {at: '2026-07-28T07:23:20Z', method: squash, outcome: success, reason: exact_head_checks_threads_and_base_confirmed}
+comparison:
+  baseline_prs: [838]
+  baseline_quality: comparable
+  baseline_note: Both were architectural Rust test-colocation refactors with exact-head validation.
+  elapsed_seconds_change_percent: 321.94
+  local_execution_seconds_change_percent: 49.66
+  github_actions_seconds_change_percent: 402.79
+  test_inventory_total_change: 0
+  regression: true
+  regression_reasons:
+    - Hive integration-test Docker and host-format contracts required two review-driven corrections.
+    - Rebasing and the final formatter copy-back fix each required a fresh exact-head workflow.
+waste_assessment:
+  wasteful: true
+  findings:
+    - The initial extraction should have audited every Hive Docker and formatter consumer of crate tests.
+    - Five full Hive workflows were used; only the final exact-head run was merge-authoritative.
+    - GitHub REST rate limiting blocked the CLI readiness command, but connector verification avoided idle waiting.
+  required_actions: []
