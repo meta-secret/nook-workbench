@@ -1,14 +1,15 @@
 ---
 title: Add Hive alerts and attention triage
 feature: hive-isolated-agent-platform
-status: in_progress
+status: done
 priority: high
 automation: manual
 owner: codex
 created_at: 2026-07-28T16:36:17Z
-updated_at: 2026-07-28T16:36:17Z
+updated_at: 2026-07-28T22:24:24Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/860
 depends_on:
   - issues/hive-isolated-agent-platform/hive-control-center.md
 ---
@@ -44,22 +45,25 @@ clears.
 
 ## Acceptance criteria
 
-- [ ] Every alert has a stable kind, severity, affected task, first-observed
+- [x] Every alert has a stable kind, severity, affected task, first-observed
       time, reason, and direct task-detail destination.
-- [ ] Alert ordering is deterministic and prioritizes severity, then age.
-- [ ] Conditions disappear from the active queue once durable task state no
+- [x] Alert ordering is deterministic and prioritizes severity, then age.
+- [x] Conditions disappear from the active queue once durable task state no
       longer satisfies the alert rule.
-- [ ] The observer exposes only typed bounded alert projections.
-- [ ] The attention queue is responsive, translated, keyboard accessible, and
+- [x] The observer exposes only typed bounded alert projections.
+- [x] The attention queue is responsive, translated, keyboard accessible, and
       announces meaningful count changes without noisy repeated announcements.
-- [ ] Rust tests cover every alert rule, ordering, clearing, and bounding.
-- [ ] Focused Playwright coverage demonstrates active, empty, and unavailable
+- [x] Rust tests cover every alert rule, ordering, clearing, and bounding.
+- [x] Focused Playwright coverage demonstrates active, empty, and unavailable
       attention states.
 
 ## Progress
 
 - 2026-07-28: Scoped the third Control Center release after completing the
   durable event model and read-only dashboard.
+- 2026-07-28: PR 860 merged with typed alerts, a bounded attention projection,
+  exact active-queue totals, schema-7 activity backfill, and focused browser and
+  Neo4j behavior coverage.
 
 ## Findings and decisions
 
