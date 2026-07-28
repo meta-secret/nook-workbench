@@ -1,0 +1,59 @@
+schema_version: 3
+source_pr:
+  number: 829
+  url: https://github.com/meta-secret/nook/pull/829
+  title: Extract Hive Neo4j tests into a focused module
+  change_surface: hive_rust_architecture
+  head_sha: ce01689daf61ccbfaf76fb73ef151cdd1f447183
+  started_at: '2026-07-28T01:38:30Z'
+  opened_at: '2026-07-28T05:04:03Z'
+  merged_at: '2026-07-28T05:11:14Z'
+  elapsed_seconds: 12764
+  open_to_merge_seconds: 431
+summary:
+  local_execution_count: 3
+  local_check_count: 2
+  local_test_count: 1
+  local_combined_count: 0
+  local_execution_seconds: 207
+  github_actions_run_count: 1
+  github_actions_seconds: 393
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 2
+test_inventory:
+  measured_at: '2026-07-28T05:11:30Z'
+  head_sha: ce01689daf61ccbfaf76fb73ef151cdd1f447183
+  by_type:
+    rust: 649
+    preflight: 56
+    web_unit: 279
+    e2e: 206
+  total: 1190
+local_executions:
+  - {command: task format, category: check, duration_seconds: 198, outcome: passed, reason: pre_push_hygiene}
+  - {command: 'cargo test -p hive retries_transient_pull_failures_from_the_neo4j_driver', category: test, duration_seconds: 4, outcome: passed, reason: focused_neo4j_retry_test}
+  - {command: 'task pr:ready PR=829', category: check, duration_seconds: 5, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: Hive, run_id: 30330528622, run_attempt: 1, head_sha: 18a64e673ef140f29f6b1a41a88fa273dbbc2f9d, trigger: pull_request, started_at: '2026-07-28T05:04:06Z', finished_at: '2026-07-28T05:10:39Z', duration_seconds: 393, conclusion: success}
+pr_retriggers: []
+merge_attempts:
+  - {at: '2026-07-28T05:11:05Z', method: squash, outcome: blocked, reason: branch_policy_required_admin_path}
+  - {at: '2026-07-28T05:11:14Z', method: squash_admin, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [828]
+  baseline_quality: not_comparable
+  baseline_note: PR 828 exercised the full product PR workflow while PR 829 exercised the Hive-specific workflow.
+  elapsed_seconds_change_percent: 5.1
+  local_execution_seconds_change_percent: 2.48
+  github_actions_seconds_change_percent: 26.77
+  test_inventory_total_change: 0
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: true
+  findings:
+    - The repository-wide formatter prepared unrelated web and WASM surfaces for a Hive-only extraction.
+    - The exact-head Hive workflow passed in one cycle.
+  required_actions:
+    - Evaluate a safe surface-aware host formatting path without weakening mandatory repository formatting.
