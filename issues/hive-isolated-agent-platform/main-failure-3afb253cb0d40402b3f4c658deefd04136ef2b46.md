@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 3afb253cb0d4
-status: ready
+status: blocked
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-07-28T16:18:20Z
-updated_at: 2026-07-28T16:18:20Z
+updated_at: 2026-07-28T16:22:30Z
 source_issues: []
 related_prs: [853]
 depends_on: []
@@ -45,11 +45,18 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:30372245566:attempt:1 -->
 - 2026-07-28T16:18:20Z: Main run [30372245566 attempt 1](https://github.com/meta-secret/nook/actions/runs/30372245566)
   failed for `3afb253cb0d40402b3f4c658deefd04136ef2b46`. Failed jobs: Extension e2e, Web e2e.
+- 2026-07-28T16:22:30Z: Blocked before implementation by active overlapping
+  [PR 859](https://github.com/meta-secret/nook/pull/859), which changes the
+  same IndexedDB lifecycle and is still failing required verification. See the
+  linked worklog for the recovery path.
 
 ## Findings and decisions
 
 - Main failure records include job names and workflow links, never raw logs or
   credentials.
+- The shared browser failure is an IndexedDB callback-lifetime problem that can
+  leave vault crypto unavailable after reload. Do not create a duplicate repair
+  while PR 859 owns the same storage lifecycle; resolve or close it first.
 
 ## References
 
