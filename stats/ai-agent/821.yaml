@@ -1,0 +1,118 @@
+schema_version: 3
+source_pr:
+  number: 821
+  url: https://github.com/meta-secret/nook/pull/821
+  title: Refactor vault state into cohesive slices and action modules
+  change_surface: web_svelte_architecture
+  head_sha: a365fce64eebf8b8075c6d8fcb2d43b48d7f405b
+  started_at: '2026-07-28T00:03:01Z'
+  opened_at: '2026-07-28T00:16:49Z'
+  merged_at: '2026-07-28T01:44:38Z'
+  elapsed_seconds: 6097
+  open_to_merge_seconds: 5269
+summary:
+  local_execution_count: 12
+  local_check_count: 11
+  local_test_count: 1
+  local_combined_count: 0
+  local_execution_seconds: 485
+  github_actions_run_count: 7
+  github_actions_seconds: 2269
+  pr_retrigger_count: 6
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T01:45:00Z'
+  head_sha: a365fce64eebf8b8075c6d8fcb2d43b48d7f405b
+  by_type:
+    rust: 649
+    preflight: 56
+    web_unit: 279
+    e2e: 205
+  total: 1189
+local_executions:
+  - {command: task format, category: check, duration_seconds: 223, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: initial_ui_demo_contract}
+  - {command: task web:check, category: check, duration_seconds: 42, outcome: passed, reason: focused_svelte_validation}
+  - {command: 'bun test tests/unit/lib/vault-sync.test.ts', category: test, duration_seconds: 8, outcome: passed, reason: focused_action_context_regression}
+  - {command: task format, category: check, duration_seconds: 58, outcome: passed, reason: base_update_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: base_update_demo_contract}
+  - {command: task format, category: check, duration_seconds: 44, outcome: passed, reason: declaration_merge_fix_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: declaration_merge_fix_demo_contract}
+  - {command: task format, category: check, duration_seconds: 52, outcome: passed, reason: rune_module_fix_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: rune_module_fix_demo_contract}
+  - {command: task format, category: check, duration_seconds: 52, outcome: passed, reason: reactive_date_fix_pre_push_hygiene}
+  - {command: 'task pr:ready PR=821', category: check, duration_seconds: 2, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: PR, run_id: 30316838827, run_attempt: 1, head_sha: eb9710dade75a057f2b9adf540f02155b750a7f1, trigger: pull_request, started_at: '2026-07-28T00:16:53Z', finished_at: '2026-07-28T00:19:58Z', duration_seconds: 185, conclusion: failure}
+  - {workflow: PR, run_id: 30317251184, run_attempt: 1, head_sha: ba8b8f61de9375eb1cea5f49d5a0592dc0f658cc, trigger: pull_request, started_at: '2026-07-28T00:25:15Z', finished_at: '2026-07-28T00:30:47Z', duration_seconds: 332, conclusion: failure}
+  - {workflow: PR, run_id: 30318675451, run_attempt: 1, head_sha: 1069fcbca7f899e5b973c2b085231d37a80ec682, trigger: pull_request, started_at: '2026-07-28T00:53:45Z', finished_at: '2026-07-28T00:59:54Z', duration_seconds: 369, conclusion: failure}
+  - {workflow: PR, run_id: 30319486912, run_attempt: 1, head_sha: f04fc2ceb082a196e052594e6a62b76e516ee722, trigger: pull_request, started_at: '2026-07-28T01:10:15Z', finished_at: '2026-07-28T01:14:45Z', duration_seconds: 270, conclusion: failure}
+  - {workflow: PR, run_id: 30319838315, run_attempt: 1, head_sha: c99d0c66c55adcbad8172bd93dc97c58325ddd53, trigger: pull_request, started_at: '2026-07-28T01:17:36Z', finished_at: '2026-07-28T01:23:19Z', duration_seconds: 343, conclusion: failure}
+  - {workflow: PR, run_id: 30320274451, run_attempt: 1, head_sha: 10bdde2812994be1329720a9cd710153322ed168, trigger: pull_request, started_at: '2026-07-28T01:26:57Z', finished_at: '2026-07-28T01:32:38Z', duration_seconds: 341, conclusion: failure}
+  - {workflow: PR, run_id: 30320630694, run_attempt: 1, head_sha: 269c5d0626abbf0e26ef197cdd5aec13bfd3440d, trigger: pull_request, started_at: '2026-07-28T01:34:11Z', finished_at: '2026-07-28T01:41:20Z', duration_seconds: 429, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 21
+    remote_backend_job_count: 0
+    direct_compile_job_count: 21
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: null
+    buildkit_completed_steps: 2770
+    buildkit_cached_steps: 1399
+    buildkit_cache_hit_rate_percent: 50.51
+  collection:
+    complete: true
+    warnings: []
+  jobs:
+    - {run_id: 30316838827, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30316838827, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 124, buildkit_cached_steps: 52, buildkit_cache_hit_rate_percent: 41.94}
+    - {run_id: 30316838827, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 173, buildkit_cache_hit_rate_percent: 68.92}
+    - {run_id: 30317251184, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30317251184, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 124, buildkit_cached_steps: 52, buildkit_cache_hit_rate_percent: 41.94}
+    - {run_id: 30317251184, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 121, buildkit_cache_hit_rate_percent: 48.21}
+    - {run_id: 30318675451, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30318675451, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 124, buildkit_cached_steps: 52, buildkit_cache_hit_rate_percent: 41.94}
+    - {run_id: 30318675451, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 121, buildkit_cache_hit_rate_percent: 48.21}
+    - {run_id: 30319486912, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30319486912, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 124, buildkit_cached_steps: 52, buildkit_cache_hit_rate_percent: 41.94}
+    - {run_id: 30319486912, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 164, buildkit_cache_hit_rate_percent: 65.34}
+    - {run_id: 30319838315, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30319838315, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42}
+    - {run_id: 30319838315, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 173, buildkit_cache_hit_rate_percent: 68.92}
+    - {run_id: 30320274451, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30320274451, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 124, buildkit_cached_steps: 52, buildkit_cache_hit_rate_percent: 41.94}
+    - {run_id: 30320274451, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 121, buildkit_cache_hit_rate_percent: 48.21}
+    - {run_id: 30320630694, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30320630694, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42}
+    - {run_id: 30320630694, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 164, buildkit_cache_hit_rate_percent: 65.34}
+pr_retriggers:
+  - {at: '2026-07-28T00:25:15Z', kind: head_push, run_id: 30317251184, reason: fix delegated state accessor ownership}
+  - {at: '2026-07-28T00:53:45Z', kind: head_push, run_id: 30318675451, reason: extract narrow action modules}
+  - {at: '2026-07-28T01:10:15Z', kind: base_update, run_id: 30319486912, reason: merge latest main before delivery}
+  - {at: '2026-07-28T01:17:36Z', kind: head_push, run_id: 30319838315, reason: replace unsafe class interface declaration merging}
+  - {at: '2026-07-28T01:26:57Z', kind: head_push, run_id: 30320274451, reason: compile reactive action files as Svelte rune modules}
+  - {at: '2026-07-28T01:34:11Z', kind: head_push, run_id: 30320630694, reason: use SvelteDate in the newly reactive sync module}
+merge_attempts:
+  - {at: '2026-07-28T01:44:38Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [820]
+  baseline_quality: comparable
+  baseline_note: PR 820 used the same Rust, WASM, web, demo, and preview gate for an adjacent vault boundary refactor.
+  elapsed_seconds_change_percent: 223.79
+  local_execution_seconds_change_percent: 62.75
+  github_actions_seconds_change_percent: 90.67
+  test_inventory_total_change: 0
+  regression: true
+  regression_reasons:
+    - Six implementation-fix cycles made elapsed and GitHub Actions time materially slower than the adjacent baseline.
+waste_assessment:
+  wasteful: true
+  findings:
+    - The initial facade extraction needed repeated fixes for Svelte accessor ownership, TypeScript declaration merging, rune compilation, and reactive Date linting.
+    - Every failed cycle was followed by a source change; no unchanged workflow rerun was requested.
+    - Pull-request jobs correctly used direct compilation because untrusted workflows receive no persistent cache credentials.
+    - The final exact-head cycle passed in 429 seconds; the regression came from implementation iteration rather than a slow final gate.
+  required_actions: []
