@@ -1,0 +1,59 @@
+schema_version: 3
+source_pr:
+  number: 834
+  url: https://github.com/meta-secret/nook/pull/834
+  title: Split popular-login fixture generators
+  change_surface: browser_extension_fixture_tooling
+  head_sha: 359c937a97e69d42d7a456187c346c767ac6f72a
+  started_at: '2026-07-28T05:51:44Z'
+  opened_at: '2026-07-28T05:53:59Z'
+  merged_at: '2026-07-28T06:07:32Z'
+  elapsed_seconds: 948
+  open_to_merge_seconds: 813
+summary:
+  local_execution_count: 6
+  local_check_count: 3
+  local_test_count: 2
+  local_combined_count: 1
+  local_execution_seconds: 170
+  github_actions_run_count: 2
+  github_actions_seconds: 478
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T06:07:40Z'
+  head_sha: 359c937a97e69d42d7a456187c346c767ac6f72a
+  by_type: {rust: 649, preflight: 56, web_unit: 279, e2e: 206}
+  total: 1190
+local_executions:
+  - {command: 'node nook-app/nook-web/nook-web-extension/scripts/generate-popular-login-fixtures.mjs', category: test, duration_seconds: 1, outcome: passed, reason: focused_generator_behavior}
+  - {command: 'node nook-app/nook-web/nook-web-extension/scripts/expand-popular-login-1000.mjs', category: test, duration_seconds: 1, outcome: passed, reason: focused_generator_behavior}
+  - {command: 'bun run lint', category: check, duration_seconds: 0, outcome: unavailable, reason: disposable_worktree_dependencies_not_installed}
+  - {command: task format, category: combined, duration_seconds: 154, outcome: passed, reason: pre_push_hygiene}
+  - {command: git diff --check, category: check, duration_seconds: 0, outcome: passed, reason: focused_diff_hygiene}
+  - {command: 'task pr:ready PR=834', category: check, duration_seconds: 7, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: PR, run_id: 30333034046, run_attempt: 1, head_sha: beee3511f3433828ca31c2c05a8a163bacc18875, trigger: pull_request, started_at: '2026-07-28T05:54:02Z', finished_at: '2026-07-28T05:58:04Z', duration_seconds: 242, conclusion: failure}
+  - {workflow: PR, run_id: 30333408840, run_attempt: 1, head_sha: 21d37c9aa33667f5bc1c80e9166d4dbf65054616, trigger: pull_request, started_at: '2026-07-28T06:01:02Z', finished_at: '2026-07-28T06:04:58Z', duration_seconds: 236, conclusion: success}
+pr_retriggers:
+  - {at: '2026-07-28T06:01:02Z', reason: remove_unused_destructured_parameter, source_run_id: 30333034046}
+merge_attempts:
+  - {at: '2026-07-28T06:07:32Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [833]
+  baseline_quality: comparable
+  baseline_note: Both used the full product workflow for source-size refactors.
+  elapsed_seconds_change_percent: 88.10
+  local_execution_seconds_change_percent: 165.63
+  github_actions_seconds_change_percent: 65.40
+  test_inventory_total_change: 0
+  regression: true
+  regression_reasons:
+    - The first Verify cycle failed on an unused destructured parameter.
+waste_assessment:
+  wasteful: true
+  findings:
+    - One preventable lint finding required a second full PR workflow.
+    - The successful Verify/preview path remained below four minutes.
+  required_actions: []
