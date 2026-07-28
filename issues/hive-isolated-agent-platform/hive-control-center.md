@@ -1,14 +1,16 @@
 ---
 title: Build the Hive Control Center
 feature: hive-isolated-agent-platform
-status: in_progress
+status: done
 priority: high
 automation: manual
 owner: codex
 created_at: 2026-07-28T06:36:05Z
-updated_at: 2026-07-28T06:36:05Z
+updated_at: 2026-07-28T09:03:37Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/839
+  - https://github.com/meta-secret/nook/pull/843
 depends_on: []
 ---
 
@@ -49,25 +51,29 @@ the lifecycle from Pod logs.
 
 ## Acceptance criteria
 
-- [ ] Task activity remains visible after the worker Pod that produced it is
+- [x] Task activity remains visible after the worker Pod that produced it is
       replaced.
-- [ ] The overview distinguishes idle, active, blocked, failed, cancelling, and
+- [x] The overview distinguishes idle, active, blocked, failed, cancelling, and
       completed work and identifies stale activity.
-- [ ] Task detail explains the trigger, source revision, current attempt,
+- [x] Task detail explains the trigger, source revision, current attempt,
       dependencies, bounded progress, errors, and delivery links when present.
-- [ ] The browser receives only typed observer data and never a Neo4j
+- [x] The browser receives only typed observer data and never a Neo4j
       credential or arbitrary-query capability.
-- [ ] Empty, loading, unavailable, active, blocked, failed, and completed
+- [x] Empty, loading, unavailable, active, blocked, failed, and completed
       dashboard states are explicit, responsive, keyboard accessible, and
       covered by a focused browser demonstration.
-- [ ] Rust behavior tests cover event persistence, ordering, bounding,
+- [x] Rust behavior tests cover event persistence, ordering, bounding,
       sanitization, and observer projections.
-- [ ] Architecture and operator documentation describe the observation model,
+- [x] Architecture and operator documentation describe the observation model,
       access path, and deliberate read-only boundary.
 
 ## Progress
 
 - 2026-07-28: Started implementation from the current Nook Main revision.
+- 2026-07-28: PR 839 merged and the read-only Control Center was deployed; its
+  live overview reported four agents and 69 durable tasks.
+- 2026-07-28: Production rollout found and repaired newline-contaminated Neo4j
+  client credentials; PR 843 makes bootstrap normalization durable.
 
 ## Findings and decisions
 
