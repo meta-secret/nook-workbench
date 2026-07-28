@@ -1,0 +1,105 @@
+schema_version: 3
+source_pr:
+  number: 824
+  url: https://github.com/meta-secret/nook/pull/824
+  title: Refactor vault sync resolution into a focused action module
+  change_surface: web_svelte_architecture
+  head_sha: 426eb2a581e8ec022ea93a902c8a5c94615db57b
+  started_at: '2026-07-28T01:45:27Z'
+  opened_at: '2026-07-28T01:48:28Z'
+  merged_at: '2026-07-28T03:12:59Z'
+  elapsed_seconds: 5252
+  open_to_merge_seconds: 5071
+summary:
+  local_execution_count: 13
+  local_check_count: 10
+  local_test_count: 3
+  local_combined_count: 0
+  local_execution_seconds: 724
+  github_actions_run_count: 4
+  github_actions_seconds: 3938
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T03:13:30Z'
+  head_sha: 426eb2a581e8ec022ea93a902c8a5c94615db57b
+  by_type:
+    rust: 649
+    preflight: 56
+    web_unit: 279
+    e2e: 206
+  total: 1190
+local_executions:
+  - {command: task format, category: check, duration_seconds: 180, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: initial_ui_demo_contract}
+  - {command: task format, category: check, duration_seconds: 181, outcome: passed, reason: base_update_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: base_update_demo_contract}
+  - {command: task format, category: check, duration_seconds: 195, outcome: passed, reason: localization_fix_pre_push_hygiene}
+  - {command: 'task web:test', category: test, duration_seconds: 28, outcome: passed, reason: locale_catalog_and_web_regression_suite}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: localization_fix_demo_contract}
+  - {command: task format, category: check, duration_seconds: 54, outcome: passed, reason: playwright_regression_pre_push_hygiene}
+  - {command: '.github/scripts/ui-demo-contract.sh <base-sha>', category: check, duration_seconds: 1, outcome: passed, reason: playwright_regression_demo_contract}
+  - {command: 'task web:test:e2e:file E2E_SPEC=e2e/sync-conflict-resolution.spec.ts', category: test, duration_seconds: 66, outcome: failed, reason: targeted_spec_new_test_passed_existing_provider_fixture_failed}
+  - {command: 'task web:test:e2e:file E2E_SPEC=<spec-and-grep>', category: test, duration_seconds: 16, outcome: failed, reason: attempted_single_test_filter_was_not_forwarded_by_task_wrapper}
+  - {command: 'task pr:ready PR=824', category: check, duration_seconds: 2, outcome: failed, reason: current_head_review_thread_required_fix}
+  - {command: 'task pr:ready PR=824', category: check, duration_seconds: 2, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: PR, run_id: 30321315221, run_attempt: 1, head_sha: f04fb59d96a4ee2a25bc7835ae3c43e383f4696f, trigger: pull_request, started_at: '2026-07-28T01:48:31Z', finished_at: '2026-07-28T01:58:01Z', duration_seconds: 570, conclusion: success}
+  - {workflow: PR, run_id: 30321855829, run_attempt: 1, head_sha: e5e13b3397347217401beae6e0134f4926e54d6f, trigger: pull_request, started_at: '2026-07-28T02:00:04Z', finished_at: '2026-07-28T02:09:01Z', duration_seconds: 537, conclusion: success}
+  - {workflow: PR, run_id: 30322575669, run_attempt: 1, head_sha: 0b585207a9ec9e40f2a8f05db23e6c09a59298cf, trigger: pull_request, started_at: '2026-07-28T02:15:07Z', finished_at: '2026-07-28T02:41:56Z', duration_seconds: 1609, conclusion: success}
+  - {workflow: PR, run_id: 30324233279, run_attempt: 1, head_sha: 94540f3f710fecb72a55af2227783bd6b7b220d3, trigger: pull_request, started_at: '2026-07-28T02:50:09Z', finished_at: '2026-07-28T03:10:31Z', duration_seconds: 1222, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 12
+    remote_backend_job_count: 0
+    direct_compile_job_count: 12
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: null
+    buildkit_completed_steps: 2272
+    buildkit_cached_steps: 939
+    buildkit_cache_hit_rate_percent: 41.33
+  collection:
+    complete: true
+    warnings: []
+  jobs:
+    - {run_id: 30321315221, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42}
+    - {run_id: 30321315221, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30321315221, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 121, buildkit_cache_hit_rate_percent: 48.21}
+    - {run_id: 30321855829, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 144, buildkit_cached_steps: 51, buildkit_cache_hit_rate_percent: 35.42}
+    - {run_id: 30321855829, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30321855829, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 121, buildkit_cache_hit_rate_percent: 48.21}
+    - {run_id: 30322575669, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 283, buildkit_cached_steps: 81, buildkit_cache_hit_rate_percent: 28.62}
+    - {run_id: 30322575669, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 97, buildkit_cache_hit_rate_percent: 26.29}
+    - {run_id: 30322575669, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 168, buildkit_cache_hit_rate_percent: 66.93}
+    - {run_id: 30324233279, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 283, buildkit_cached_steps: 81, buildkit_cache_hit_rate_percent: 28.62}
+    - {run_id: 30324233279, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 15, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30324233279, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 168, buildkit_cache_hit_rate_percent: 66.93}
+pr_retriggers:
+  - {at: '2026-07-28T02:00:04Z', kind: base_update, run_id: 30321855829, reason: merge latest main before delivery}
+  - {at: '2026-07-28T02:15:07Z', kind: head_push, run_id: 30322575669, reason: localize retired conflict guidance after current-head review}
+  - {at: '2026-07-28T02:50:09Z', kind: head_push, run_id: 30324233279, reason: add targeted localized conflict Playwright coverage}
+merge_attempts:
+  - {at: '2026-07-28T03:12:59Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [821]
+  baseline_quality: comparable
+  baseline_note: PR 821 used the same Rust, WASM, web, demo, preview, and coverage gate for the adjacent vault state refactor.
+  elapsed_seconds_change_percent: -13.86
+  local_execution_seconds_change_percent: 49.28
+  github_actions_seconds_change_percent: 73.56
+  test_inventory_total_change: 1
+  regression: true
+  regression_reasons:
+    - Two review-driven pushes touched Rust-owned locale catalogs and required expensive base coverage fallbacks because the base had no reusable successful Main artifact.
+waste_assessment:
+  wasteful: true
+  findings:
+    - One attempted single-test grep was not forwarded correctly by the repository task wrapper and spent 16 seconds without selecting a test.
+    - The full focused Playwright spec proved the new regression passed but also exposed an unrelated existing encrypted-provider fixture failure; it was not rerun unchanged.
+    - Each GitHub Actions run followed a base update or source/test change; no unchanged workflow rerun was requested.
+    - Pull-request jobs correctly used direct compilation because untrusted workflows receive no persistent cache credentials.
+    - Base coverage fallbacks cannot safely reuse artifacts produced by untrusted pull-request code.
+  required_actions: []
