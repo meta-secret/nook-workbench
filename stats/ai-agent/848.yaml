@@ -1,0 +1,36 @@
+schema_version: 3
+source_pr:
+  number: 848
+  url: https://github.com/meta-secret/nook/pull/848
+  title: Split extension autofill domains
+  change_surface: extension_content_architecture
+  head_sha: 394cc8ca761660a2f0788ae42521ba20756d7152
+  started_at: '2026-07-28T10:25:00Z'
+  merged_at: '2026-07-28T10:41:14Z'
+  elapsed_seconds: 974
+summary:
+  local_execution_count: 17
+  local_check_count: 7
+  local_test_count: 2
+  local_combined_count: 5
+  github_actions_run_count: 1
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T10:41:14Z'
+  head_sha: 394cc8ca761660a2f0788ae42521ba20756d7152
+  by_type: {rust: 641, preflight: 56, web_unit: 281, e2e: 206}
+  total: 1184
+github_actions_runs:
+  - {workflow: PR, run_id: 30351311787, conclusion: success, reason: final_exact_head}
+merge_attempts:
+  - {at: '2026-07-28T10:41:14Z', method: squash, outcome: success, reason: exact_head_checks_threads_and_base_confirmed}
+comparison:
+  baseline_prs: [847]
+  baseline_quality: comparable
+  regression: false
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
