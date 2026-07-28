@@ -1,0 +1,57 @@
+schema_version: 3
+source_pr:
+  number: 831
+  url: https://github.com/meta-secret/nook/pull/831
+  title: Split WASM boundary types by responsibility
+  change_surface: rust_wasm_architecture
+  head_sha: 5545b222095b5f6705c520825728caa32dc06011
+  started_at: '2026-07-28T05:12:30Z'
+  opened_at: '2026-07-28T05:16:06Z'
+  merged_at: '2026-07-28T05:21:51Z'
+  elapsed_seconds: 561
+  open_to_merge_seconds: 345
+summary:
+  local_execution_count: 2
+  local_check_count: 2
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 191
+  github_actions_run_count: 1
+  github_actions_seconds: 315
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-28T05:22:00Z'
+  head_sha: 5545b222095b5f6705c520825728caa32dc06011
+  by_type:
+    rust: 649
+    preflight: 56
+    web_unit: 279
+    e2e: 206
+  total: 1190
+local_executions:
+  - {command: task format, category: check, duration_seconds: 185, outcome: passed, reason: pre_push_hygiene}
+  - {command: 'task pr:ready PR=831', category: check, duration_seconds: 6, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: PR, run_id: 30331139195, run_attempt: 1, head_sha: 4e1e65f6681b81594db527c1918a55437b8e0f3f, trigger: pull_request, started_at: '2026-07-28T05:16:09Z', finished_at: '2026-07-28T05:21:24Z', duration_seconds: 315, conclusion: success}
+pr_retriggers: []
+merge_attempts:
+  - {at: '2026-07-28T05:21:51Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [828]
+  baseline_quality: comparable
+  baseline_note: PR 828 was the preceding full product workflow Rust extraction.
+  elapsed_seconds_change_percent: -95.38
+  local_execution_seconds_change_percent: -5.45
+  github_actions_seconds_change_percent: 1.61
+  test_inventory_total_change: 0
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: true
+  findings:
+    - The repository-wide formatter still prepared unrelated web and Hive surfaces.
+    - The exact-head preview used the parallel WASM handoff and completed in 5 minutes 1 second without a Docker fallback rebuild.
+  required_actions:
+    - Evaluate a safe surface-aware host formatting path without weakening mandatory repository formatting.
