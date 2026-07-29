@@ -74,6 +74,11 @@ claim through a merged, verified result or a truthful terminal supersession.
   blocked-chain retries. A production replay reached the root task but exposed
   two unresolved P1 findings on already-merged PR #865; the follow-up repair
   and merged-PR reconciliation path are now the final lifecycle work.
+- 2026-07-29: PR #875 merged the review follow-up and the exact merge passed
+  Main, Hive, browser, and extension verification. Production replay completed
+  the historical blocker chain, then exposed a final protocol-hardening gap:
+  a Main-repair completion that incorrectly sets the blocker-only `obsolete`
+  flag is rejected instead of being normalized to an ordinary completion.
 
 ## Findings and decisions
 
