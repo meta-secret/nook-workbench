@@ -6,9 +6,11 @@ priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-07-28T22:31:28Z
+updated_at: 2026-07-29T12:45:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 865
+  - 872
 depends_on:
   - issues/hive-isolated-agent-platform/build-k0s-kata-hive-agent-platform.md
 ---
@@ -37,6 +39,8 @@ claim through a merged, verified result or a truthful terminal supersession.
 - Reaper-controller authorization repair.
 - Existing Hive repair PR backlog reconciliation.
 - Rust and infrastructure regression coverage.
+- Graceful graph-client rollout that releases in-flight worker leases before
+  the coordinator socket exits.
 
 ## Acceptance criteria
 
@@ -49,11 +53,18 @@ claim through a merged, verified result or a truthful terminal supersession.
       failures.
 - [ ] Existing Hive repair PRs have no unattended open remainder.
 - [ ] The merged platform is deployed and verified live.
+- [ ] A production rollout leaves no `RUNNING` lease owned by a removed Hive
+      Pod.
 
 ## Progress
 
 - 2026-07-28: Audited seven open Hive repair PRs with failed Main-equivalent
   checks and confirmed the live reaper authorization failure.
+- 2026-07-29: Merged and deployed PR #872 with schema-8 obsolete-blocker
+  recovery. The coordinated drain exposed two leases still owned by removed
+  worker Pods because the coordinator container exited before the worker could
+  persist its interruption. The two exact orphan leases were expired and
+  reclaimed on the new release; a graceful shutdown invariant is now required.
 
 ## Findings and decisions
 
