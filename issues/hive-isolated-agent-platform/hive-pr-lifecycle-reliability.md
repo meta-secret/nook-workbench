@@ -1,18 +1,21 @@
 ---
 title: Make Hive repair PR ownership reliable
 feature: hive-isolated-agent-platform
-status: in_progress
+status: done
 priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-07-29T12:45:00Z
+updated_at: 2026-07-29T22:07:36Z
 source_issues: []
 related_prs:
   - 865
   - 872
   - 873
   - 874
+  - 875
+  - 876
+  - 877
 depends_on:
   - issues/hive-isolated-agent-platform/build-k0s-kata-hive-agent-platform.md
 ---
@@ -47,18 +50,18 @@ claim through a merged, verified result or a truthful terminal supersession.
 
 ## Acceptance criteria
 
-- [ ] Every Hive-created PR has the stable `hive` label and a `[Hive]` title.
-- [ ] A worker does not complete merely because it opened a PR.
-- [ ] Failed exact-head checks cause another repair iteration on the same PR.
-- [ ] Worker replacement resumes from the durable branch and PR.
-- [ ] Ready PRs are squash-merged and the owning task becomes completed.
-- [ ] The reaper controller reconciles its NetworkPolicy without authorization
+- [x] Every Hive-created PR has the stable `hive` label and a `[Hive]` title.
+- [x] A worker does not complete merely because it opened a PR.
+- [x] Failed exact-head checks cause another repair iteration on the same PR.
+- [x] Worker replacement resumes from the durable branch and PR.
+- [x] Ready PRs are squash-merged and the owning task becomes completed.
+- [x] The reaper controller reconciles its NetworkPolicy without authorization
       failures.
-- [ ] Existing Hive repair PRs have no unattended open remainder.
-- [ ] A merged repair with unresolved actionable review produces and owns a
+- [x] Existing Hive repair PRs have no unattended open remainder.
+- [x] A merged repair with unresolved actionable review produces and owns a
       follow-up repair instead of exhausting the root retry budget.
-- [ ] The merged platform is deployed and verified live.
-- [ ] A production rollout leaves no `RUNNING` lease owned by a removed Hive
+- [x] The merged platform is deployed and verified live.
+- [x] A production rollout leaves no `RUNNING` lease owned by a removed Hive
       Pod.
 
 ## Progress
@@ -84,6 +87,13 @@ claim through a merged, verified result or a truthful terminal supersession.
   feedback query is incompatible with the deployed `gh` runtime because it
   uses the newer `api --slurp` flag. Delivery verification must use portable
   paginated body extraction before the root can complete.
+- 2026-07-29: PR #877 replaced the incompatible query, passed exact-head Hive,
+  Rust ecosystem, and source-architecture checks, and deployed as
+  `4ee8d53fc43f1cca605b03bbc3770cc140cddde9` with image digest
+  `sha256:891182aeac4797cbefce3d582c0f3d8e4954b9eed5409825d9555ec87ef7a67b`.
+  The production replay completed the original root on attempt 14. The queue
+  has no running or ready tasks, no Hive PR remains open, and all Hive
+  deployments are available with zero container restarts.
 
 ## Findings and decisions
 
@@ -91,9 +101,12 @@ claim through a merged, verified result or a truthful terminal supersession.
   visible in lists and notifications.
 - Milestones are not used as the primary marker because they represent
   planning cadence rather than immutable execution provenance.
+- Runtime-facing CLI calls are tested against the argument surface shipped in
+  the production image; newer local-only flags are not assumed.
 
 ## References
 
 - `issues/hive-isolated-agent-platform/build-k0s-kata-hive-agent-platform.md`
 - `.cortex/design-docs/hive-isolated-agent-platform.md`
 - `agentic-ai/minds/hive/`
+- `worklogs/hive-isolated-agent-platform/2026-07-29T21-55-00Z-hive-pr-lifecycle-reliability.md`

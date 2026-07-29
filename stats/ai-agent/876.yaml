@@ -1,0 +1,28 @@
+schema_version: 3
+source_pr:
+  number: 876
+  url: https://github.com/meta-secret/nook/pull/876
+  title: "[Hive] fix(hive): normalize non-blocker completion flags"
+  change_surface: hive_terminal_result_normalization
+  head_sha: 77e6c2f244d7dc0e7b128f169cfacf7fae2d19e4
+  started_at: '2026-07-29T20:40:46Z'
+  merged_at: '2026-07-29T20:50:01Z'
+  elapsed_seconds: 555
+summary: {local_execution_count: 2, local_check_count: 1, local_test_count: 1, local_combined_count: 0, local_execution_seconds: 0, github_actions_run_count: 3, github_actions_seconds: 0, pr_retrigger_count: 0, agent_requested_rerun_count: 0, merge_attempt_count: 1}
+test_inventory:
+  measured_at: '2026-07-29T20:50:01Z'
+  head_sha: 77e6c2f244d7dc0e7b128f169cfacf7fae2d19e4
+  by_type: {rust: 1, preflight: 0, web_unit: 0, e2e: 0}
+  total: 1
+local_executions:
+  - {command: task_format, category: check, duration_seconds: 0, outcome: passed, reason: pre_push_hygiene}
+  - {command: focused_hive_tests, category: test, duration_seconds: 0, outcome: passed, reason: terminal_result_regression}
+github_actions_runs:
+  - {workflow: Rust ecosystem checks, run_id: 30489442663, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+  - {workflow: Hive, run_id: 30489392185, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+  - {workflow: Source architecture, run_id: 30489392186, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+pr_retriggers: []
+merge_attempts:
+  - {at: '2026-07-29T20:50:01Z', method: squash_admin, outcome: success, reason: exact_head_ready_after_stale_label_check}
+comparison: {baseline_prs: [875], baseline_quality: comparable, regression: false}
+waste_assessment: {wasteful: false, findings: [unsupported_hive_label_event_was_superseded_by_exact_ci_validate_run], required_actions: []}

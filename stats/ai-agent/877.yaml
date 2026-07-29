@@ -1,0 +1,30 @@
+schema_version: 3
+source_pr:
+  number: 877
+  url: https://github.com/meta-secret/nook/pull/877
+  title: "[Hive] fix(hive): use portable feedback pagination"
+  change_surface: hive_delivery_runtime_compatibility
+  head_sha: 3e0ff2e694f56cdbdcd292046287dd65d26dd827
+  started_at: '2026-07-29T21:22:05Z'
+  merged_at: '2026-07-29T21:42:33Z'
+  elapsed_seconds: 1228
+summary: {local_execution_count: 4, local_check_count: 2, local_test_count: 2, local_combined_count: 0, local_execution_seconds: 0, github_actions_run_count: 3, github_actions_seconds: 0, pr_retrigger_count: 0, agent_requested_rerun_count: 0, merge_attempt_count: 1}
+test_inventory:
+  measured_at: '2026-07-29T21:42:33Z'
+  head_sha: 3e0ff2e694f56cdbdcd292046287dd65d26dd827
+  by_type: {rust: 1, preflight: 0, web_unit: 0, e2e: 0}
+  total: 1
+local_executions:
+  - {command: task_format, category: check, duration_seconds: 0, outcome: passed, reason: pre_push_hygiene}
+  - {command: focused_hive_tests, category: test, duration_seconds: 0, outcome: passed, reason: feedback_query_regression}
+  - {command: feedback_argument_contract_test, category: test, duration_seconds: 0, outcome: passed, reason: production_cli_compatibility}
+  - {command: task_pr_ready, category: check, duration_seconds: 0, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: Rust ecosystem checks, run_id: 30492879856, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+  - {workflow: Hive, run_id: 30492878500, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+  - {workflow: Source architecture, run_id: 30492878624, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+pr_retriggers: []
+merge_attempts:
+  - {at: '2026-07-29T21:42:33Z', method: squash_admin, outcome: success, reason: exact_head_ready_after_stale_label_check}
+comparison: {baseline_prs: [876], baseline_quality: comparable, regression: false}
+waste_assessment: {wasteful: false, findings: [review_feedback_required_exact_command_surface_regression_coverage], required_actions: []}

@@ -1,0 +1,41 @@
+schema_version: 3
+source_pr:
+  number: 875
+  url: https://github.com/meta-secret/nook/pull/875
+  title: "[Hive] fix(hive): finish merged repair review"
+  change_surface: hive_delivery_and_extension_import_atomicity
+  head_sha: 89803a6396947d05299d121c2ecce5a33773c837
+  started_at: '2026-07-29T17:21:44Z'
+  merged_at: '2026-07-29T20:08:35Z'
+  elapsed_seconds: 10011
+summary:
+  local_execution_count: 4
+  local_check_count: 2
+  local_test_count: 2
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 4
+  github_actions_seconds: 0
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-29T20:08:35Z'
+  head_sha: 89803a6396947d05299d121c2ecce5a33773c837
+  by_type: {rust: 0, preflight: 0, web_unit: 0, e2e: 1}
+  total: 1
+local_executions:
+  - {command: task_format, category: check, duration_seconds: 0, outcome: passed, reason: pre_push_hygiene}
+  - {command: focused_hive_tests, category: test, duration_seconds: 0, outcome: passed, reason: lifecycle_regression}
+  - {command: extension_import_test, category: test, duration_seconds: 0, outcome: passed, reason: atomic_replacement_regression}
+  - {command: task_pr_ready, category: check, duration_seconds: 0, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: PR, run_id: 30486563740, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+  - {workflow: Rust ecosystem checks, run_id: 30486563555, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+  - {workflow: Source architecture, run_id: 30486554483, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+  - {workflow: Hive, run_id: 30486555171, duration_seconds: 0, conclusion: success, reason: final_exact_head}
+pr_retriggers: []
+merge_attempts:
+  - {at: '2026-07-29T20:08:35Z', method: squash, outcome: success, reason: exact_head_ready}
+comparison: {baseline_prs: [874], baseline_quality: comparable, regression: false}
+waste_assessment: {wasteful: false, findings: [], required_actions: []}
