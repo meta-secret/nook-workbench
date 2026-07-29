@@ -11,6 +11,8 @@ source_issues: []
 related_prs:
   - 865
   - 872
+  - 873
+  - 874
 depends_on:
   - issues/hive-isolated-agent-platform/build-k0s-kata-hive-agent-platform.md
 ---
@@ -38,6 +40,7 @@ claim through a merged, verified result or a truthful terminal supersession.
 - Recovery across disposable worker replacement.
 - Reaper-controller authorization repair.
 - Existing Hive repair PR backlog reconciliation.
+- Follow-up delivery when a repair PR merged with unresolved actionable review.
 - Rust and infrastructure regression coverage.
 - Graceful graph-client rollout that releases in-flight worker leases before
   the coordinator socket exits.
@@ -52,6 +55,8 @@ claim through a merged, verified result or a truthful terminal supersession.
 - [ ] The reaper controller reconciles its NetworkPolicy without authorization
       failures.
 - [ ] Existing Hive repair PRs have no unattended open remainder.
+- [ ] A merged repair with unresolved actionable review produces and owns a
+      follow-up repair instead of exhausting the root retry budget.
 - [ ] The merged platform is deployed and verified live.
 - [ ] A production rollout leaves no `RUNNING` lease owned by a removed Hive
       Pod.
@@ -65,6 +70,10 @@ claim through a merged, verified result or a truthful terminal supersession.
   worker Pods because the coordinator container exited before the worker could
   persist its interruption. The two exact orphan leases were expired and
   reclaimed on the new release; a graceful shutdown invariant is now required.
+- 2026-07-29: PRs #873 and #874 repaired graceful lease release and durable
+  blocked-chain retries. A production replay reached the root task but exposed
+  two unresolved P1 findings on already-merged PR #865; the follow-up repair
+  and merged-PR reconciliation path are now the final lifecycle work.
 
 ## Findings and decisions
 
