@@ -1,0 +1,102 @@
+schema_version: 3
+source_pr:
+  number: 869
+  url: https://github.com/meta-secret/nook/pull/869
+  title: "ci: add label-gated hosted remote execution"
+  change_surface: ci_agent_remote_execution
+  head_sha: 15452804d65f3e305675071aa722fdf8c107f67d
+  started_at: '2026-07-29T04:30:56Z'
+  opened_at: '2026-07-29T04:57:34Z'
+  merged_at: '2026-07-29T05:20:52Z'
+  elapsed_seconds: 2996
+  open_to_merge_seconds: 1398
+summary:
+  local_execution_count: 8
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 294
+  github_actions_run_count: 7
+  github_actions_seconds: 1057
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-29T05:20:52Z'
+  head_sha: 15452804d65f3e305675071aa722fdf8c107f67d
+  by_type:
+    rust: 641
+    preflight: 59
+    web_unit: 235
+    e2e: 207
+  total: 1142
+local_executions:
+  - {command: task_catalog_and_workflow_contract_checks, category: check, started_at: '2026-07-29T04:50:00Z', finished_at: '2026-07-29T04:50:04Z', duration_seconds: 4, outcome: passed, reason: initial_remote_dispatch_contract}
+  - {command: task format, category: check, started_at: '2026-07-29T04:50:10Z', finished_at: '2026-07-29T04:51:20Z', duration_seconds: 70, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: task format, category: check, started_at: '2026-07-29T04:54:30Z', finished_at: '2026-07-29T04:55:37Z', duration_seconds: 67, outcome: passed, reason: input_guard_pre_push_hygiene}
+  - {command: task format, category: check, started_at: '2026-07-29T04:59:10Z', finished_at: '2026-07-29T05:00:17Z', duration_seconds: 67, outcome: passed, reason: hosted_contract_fix_pre_push_hygiene}
+  - {command: 'task pr:preflight PR=869', category: check, started_at: '2026-07-29T05:07:44Z', finished_at: '2026-07-29T05:07:55Z', duration_seconds: 11, outcome: passed, reason: review_and_readiness_audit}
+  - {command: task_graph_and_e2e_mount_dry_run, category: check, started_at: '2026-07-29T05:10:30Z', finished_at: '2026-07-29T05:10:32Z', duration_seconds: 2, outcome: passed, reason: review_fix_contract_proof}
+  - {command: task format, category: check, started_at: '2026-07-29T05:11:30Z', finished_at: '2026-07-29T05:12:33Z', duration_seconds: 63, outcome: passed, reason: review_fixes_pre_push_hygiene}
+  - {command: 'task pr:ready PR=869', category: check, started_at: '2026-07-29T05:19:50Z', finished_at: '2026-07-29T05:20:00Z', duration_seconds: 10, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: Source architecture, run_id: 30423680901, run_attempt: 1, head_sha: 07ed8a4773f5ad0092978324577212f0ec17f5b2, trigger: pull_request, started_at: '2026-07-29T04:57:38Z', finished_at: '2026-07-29T04:58:06Z', duration_seconds: 28, conclusion: success}
+  - {workflow: PR, run_id: 30423684144, run_attempt: 1, head_sha: 07ed8a4773f5ad0092978324577212f0ec17f5b2, trigger: pull_request, started_at: '2026-07-29T04:57:42Z', finished_at: '2026-07-29T05:02:10Z', duration_seconds: 268, conclusion: cancelled}
+  - {workflow: Source architecture, run_id: 30423837385, run_attempt: 1, head_sha: a04177ca6117bb371d0df8ae891c05fca0702dc1, trigger: pull_request, started_at: '2026-07-29T05:00:53Z', finished_at: '2026-07-29T05:01:20Z', duration_seconds: 27, conclusion: success}
+  - {workflow: PR, run_id: 30423842186, run_attempt: 1, head_sha: a04177ca6117bb371d0df8ae891c05fca0702dc1, trigger: pull_request, started_at: '2026-07-29T05:00:59Z', finished_at: '2026-07-29T05:07:33Z', duration_seconds: 394, conclusion: success}
+  - {workflow: Source architecture, run_id: 30424472705, run_attempt: 1, head_sha: 15452804d65f3e305675071aa722fdf8c107f67d, trigger: pull_request, started_at: '2026-07-29T05:13:51Z', finished_at: '2026-07-29T05:14:28Z', duration_seconds: 37, conclusion: success}
+  - {workflow: PR, run_id: 30424512067, run_attempt: 1, head_sha: 15452804d65f3e305675071aa722fdf8c107f67d, trigger: pull_request, started_at: '2026-07-29T05:14:43Z', finished_at: '2026-07-29T05:14:53Z', duration_seconds: 10, conclusion: failure}
+  - {workflow: PR, run_id: 30424549552, run_attempt: 1, head_sha: 15452804d65f3e305675071aa722fdf8c107f67d, trigger: pull_request, started_at: '2026-07-29T05:15:28Z', finished_at: '2026-07-29T05:20:21Z', duration_seconds: 293, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 10
+    remote_backend_job_count: 0
+    direct_compile_job_count: 10
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 1294
+    buildkit_cached_steps: 757
+    buildkit_cache_hit_rate_percent: 58.5
+  collection:
+    complete: false
+    warnings:
+      - cancelled_run_30423684144_produced_no_coverage_telemetry
+      - final_run_30424549552_wasm_artifact_download_hit_github_api_rate_limit
+  jobs:
+    - {run_id: 30423684144, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 17, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: 0}
+    - {run_id: 30423684144, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 32, buildkit_cached_steps: 12, buildkit_cache_hit_rate_percent: 37.5}
+    - {run_id: 30423684144, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 126, buildkit_cached_steps: 86, buildkit_cache_hit_rate_percent: 68.25}
+    - {run_id: 30423842186, run_attempt: 1, job: coverage, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30423842186, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 229, buildkit_cache_hit_rate_percent: 62.06}
+    - {run_id: 30423842186, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+    - {run_id: 30423842186, run_attempt: 1, job: wasm, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 251, buildkit_cached_steps: 163, buildkit_cache_hit_rate_percent: 64.94}
+    - {run_id: 30424549552, run_attempt: 1, job: coverage, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0, buildkit_cache_hit_rate_percent: null}
+    - {run_id: 30424549552, run_attempt: 1, job: rust, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 369, buildkit_cached_steps: 229, buildkit_cache_hit_rate_percent: 62.06}
+    - {run_id: 30424549552, run_attempt: 1, job: verify, cache_backend: direct_compile, persistent: false, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 65, buildkit_cached_steps: 19, buildkit_cache_hit_rate_percent: 29.23}
+pr_retriggers:
+  - {at: '2026-07-29T05:00:59Z', kind: validation_label, run_id: 30423842186, reason: replace_initial_hosted_contract_failure_with_corrected_head}
+  - {at: '2026-07-29T05:14:43Z', kind: unsupported_label, run_id: 30424512067, reason: prove_unrelated_labels_fail_without_starting_product_jobs}
+  - {at: '2026-07-29T05:15:28Z', kind: validation_label, run_id: 30424549552, reason: validate_final_review_fixed_exact_head}
+merge_attempts:
+  - {at: '2026-07-29T05:20:52Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [805, 812]
+  baseline_quality: directionally_comparable
+  baseline_note: PRs 805 and 812 changed the hosted CI and cache execution topology under the same core PR product gates.
+  elapsed_seconds_change_percent: -57.97
+  local_execution_seconds_change_percent: -13.91
+  github_actions_seconds_change_percent: -78.01
+  test_inventory_total_change: -46.5
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - Heavy product validation stayed on GitHub-hosted runners; local work was limited to formatting and focused structural checks.
+    - The first product run was cancelled after it exposed the obsolete push-trigger contract, and the replacement head corrected that contract.
+    - The successful intermediate run became stale only after substantive review findings required security and diagnostic fixes.
+    - The ten-second unsupported-label run was a bounded negative proof that no product job could be masked by an unrelated label.
+    - The final exact-head validation was the only complete product suite on the merged head.
+  required_actions: []
