@@ -79,6 +79,11 @@ claim through a merged, verified result or a truthful terminal supersession.
   the historical blocker chain, then exposed a final protocol-hardening gap:
   a Main-repair completion that incorrectly sets the blocker-only `obsolete`
   flag is rejected instead of being normalized to an ordinary completion.
+- 2026-07-29: PR #876 merged and deployed that normalization. The next
+  production replay reached delivery verification but proved its non-thread
+  feedback query is incompatible with the deployed `gh` runtime because it
+  uses the newer `api --slurp` flag. Delivery verification must use portable
+  paginated body extraction before the root can complete.
 
 ## Findings and decisions
 
