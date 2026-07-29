@@ -1,0 +1,193 @@
+schema_version: 3
+source_pr:
+  number: 867
+  url: https://github.com/meta-secret/nook/pull/867
+  title: 'chore(skills): dockerize Impeccable installation'
+  change_surface: agent_skill_tooling
+  head_sha: 2b1ef2d304b5936a30047501250b0a6f02c8df10
+  started_at: '2026-07-29T03:07:00Z'
+  opened_at: '2026-07-29T03:14:19Z'
+  merged_at: '2026-07-29T03:20:19Z'
+  elapsed_seconds: 799
+  open_to_merge_seconds: 360
+summary:
+  local_execution_count: 9
+  local_check_count: 9
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 84
+  github_actions_run_count: 2
+  github_actions_seconds: 325
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-29T03:20:19Z'
+  head_sha: 2b1ef2d304b5936a30047501250b0a6f02c8df10
+  by_type:
+    rust: 641
+    preflight: 56
+    web_unit: 235
+    e2e: 207
+  total: 1139
+local_executions:
+  - command: task impeccable:install
+    category: check
+    started_at: '2026-07-29T03:08:00Z'
+    finished_at: '2026-07-29T03:08:06Z'
+    duration_seconds: 6
+    outcome: failed
+    reason: proved_runtime_installer_required_network
+  - command: dockerized_upstream_install_and_digest
+    category: check
+    started_at: '2026-07-29T03:09:00Z'
+    finished_at: '2026-07-29T03:09:02Z'
+    duration_seconds: 2
+    outcome: passed
+    reason: derive_reviewed_skill_content_digest
+  - command: task impeccable:install_and_check_context
+    category: check
+    started_at: '2026-07-29T03:10:00Z'
+    finished_at: '2026-07-29T03:10:14Z'
+    duration_seconds: 14
+    outcome: failed
+    reason: exposed_shell_digest_escaping_error_after_offline_install_passed
+  - command: task impeccable:check_and_context
+    category: check
+    started_at: '2026-07-29T03:10:30Z'
+    finished_at: '2026-07-29T03:10:33Z'
+    duration_seconds: 3
+    outcome: passed
+    reason: verify_offline_generated_skill_and_context_runtime
+  - command: task impeccable:hook
+    category: check
+    started_at: '2026-07-29T03:11:00Z'
+    finished_at: '2026-07-29T03:11:02Z'
+    duration_seconds: 2
+    outcome: passed
+    reason: verify_containerized_detector_hook
+  - command: task format
+    category: check
+    started_at: '2026-07-29T03:12:00Z'
+    finished_at: '2026-07-29T03:12:32Z'
+    duration_seconds: 32
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: task impeccable:check
+    category: check
+    started_at: '2026-07-29T03:13:00Z'
+    finished_at: '2026-07-29T03:13:03Z'
+    duration_seconds: 3
+    outcome: passed
+    reason: prove_formatter_did_not_mutate_generated_dependency
+  - command: task pr:preflight PR=867
+    category: check
+    started_at: '2026-07-29T03:14:30Z'
+    finished_at: '2026-07-29T03:14:43Z'
+    duration_seconds: 13
+    outcome: passed
+    reason: initial_pr_audit
+  - command: task pr:ready PR=867
+    category: check
+    started_at: '2026-07-29T03:19:40Z'
+    finished_at: '2026-07-29T03:19:49Z'
+    duration_seconds: 9
+    outcome: passed
+    reason: exact_head_readiness
+github_actions_runs:
+  - workflow: Source architecture
+    run_id: 30419034492
+    run_attempt: 1
+    head_sha: 48a226fdf90bbbd528f185e3d03e637ab6302342
+    trigger: pull_request
+    started_at: '2026-07-29T03:14:22Z'
+    finished_at: '2026-07-29T03:14:52Z'
+    duration_seconds: 30
+    conclusion: success
+  - workflow: PR
+    run_id: 30419034564
+    run_attempt: 1
+    head_sha: 48a226fdf90bbbd528f185e3d03e637ab6302342
+    trigger: pull_request
+    started_at: '2026-07-29T03:14:23Z'
+    finished_at: '2026-07-29T03:19:18Z'
+    duration_seconds: 295
+    conclusion: success
+cache_telemetry:
+  totals:
+    job_count: 4
+    remote_backend_job_count: 0
+    direct_compile_job_count: 4
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: null
+    buildkit_completed_steps: 689
+    buildkit_cached_steps: 464
+    buildkit_cache_hit_rate_percent: 67.34
+  jobs:
+    - workflow: PR
+      run_id: 30419034564
+      run_attempt: 1
+      job: rust
+      cache_backend: direct_compile
+      cache_backend_reason: hosted_buildkit_only
+      cache_backend_persistent: false
+      sccache: {compile_requests: 0, cache_hits: 0, cache_misses: 0, hit_rate_percent: null}
+      buildkit: {completed_steps: 373, cached_steps: 281, cache_hit_rate_percent: 75.34, measurement: buildx_target_record_steps}
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30419034564
+      run_attempt: 1
+      job: wasm
+      cache_backend: direct_compile
+      cache_backend_reason: hosted_buildkit_only
+      cache_backend_persistent: false
+      sccache: {compile_requests: 0, cache_hits: 0, cache_misses: 0, hit_rate_percent: null}
+      buildkit: {completed_steps: 251, cached_steps: 164, cache_hit_rate_percent: 65.34, measurement: buildx_target_record_steps}
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30419034564
+      run_attempt: 1
+      job: verify
+      cache_backend: direct_compile
+      cache_backend_reason: hosted_buildkit_only
+      cache_backend_persistent: false
+      sccache: {compile_requests: 0, cache_hits: 0, cache_misses: 0, hit_rate_percent: null}
+      buildkit: {completed_steps: 65, cached_steps: 19, cache_hit_rate_percent: 29.23, measurement: buildx_target_record_steps}
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30419034564
+      run_attempt: 1
+      job: coverage
+      cache_backend: direct_compile
+      cache_backend_reason: credentials_unavailable
+      cache_backend_persistent: false
+      sccache: {compile_requests: 0, cache_hits: 0, cache_misses: 0, hit_rate_percent: null}
+      buildkit: {completed_steps: 0, cached_steps: 0, cache_hit_rate_percent: null, measurement: buildx_target_record_steps}
+      collection_complete: true
+      collection_warnings: []
+pr_retriggers: []
+merge_attempts:
+  - at: '2026-07-29T03:20:19Z'
+    method: squash
+    outcome: success
+    reason: readiness_passed_local_cleanup_blocked_by_main_worktree
+comparison:
+  baseline_prs: [850]
+  baseline_quality: weak
+  baseline_note: PR 850 had one validation cycle and similar elapsed time, but changed product source architecture rather than agent tooling and lacks complete duration fields.
+  elapsed_seconds_change_percent: -8.06
+  local_execution_seconds_change_percent: null
+  github_actions_seconds_change_percent: null
+  test_inventory_total_change: 1
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - The failed offline installer probe exposed a mutable network boundary before publication and prevented a non-reproducible design.
+  required_actions: []
