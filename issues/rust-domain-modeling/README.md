@@ -37,12 +37,17 @@ kept as focused follow-up records.
 
 ## Issues
 
+- [x] [Adopt Rust ecosystem quality and security gates](rust-ecosystem-quality-gates.md)
 - [ ] [Model Hive and Lace execution states explicitly](hive-and-lace-execution-states.md)
 - [ ] [Model vault configuration and session states explicitly](vault-configuration-and-session-states.md)
 - [ ] [Model event projection lifecycle states explicitly](event-projection-lifecycle-states.md)
 
 ## Progress
 
+- 2026-07-29: [PR 870](https://github.com/meta-secret/nook/pull/870)
+  added repository-owned dependency policy, advisory auditing, property and
+  snapshot tests, concurrency model checking, fuzzing, bounded proofs, and
+  typed Dylint checks.
 - 2026-07-27: [PR 796](https://github.com/meta-secret/nook/pull/796)
   landed required non-empty fingerprints, explicit revision/workflow/actor-key/
   PIN and wire-result states, concrete `thiserror` production errors,
