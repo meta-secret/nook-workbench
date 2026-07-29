@@ -1,0 +1,158 @@
+schema_version: 3
+source_pr:
+  number: 870
+  url: https://github.com/meta-secret/nook/pull/870
+  title: "ci: adopt Rust ecosystem quality gates"
+  change_surface: rust_quality_security_tooling
+  head_sha: 2126d2756a2f7e4daa3b2d7a23a56b6ebfb8c6f6
+  started_at: '2026-07-29T07:29:49Z'
+  opened_at: '2026-07-29T07:59:54Z'
+  merged_at: '2026-07-29T13:10:11Z'
+  elapsed_seconds: 20422
+  open_to_merge_seconds: 18617
+summary:
+  local_execution_count: 8
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 1040
+  github_actions_run_count: 56
+  github_actions_seconds: 27088
+  pr_retrigger_count: 18
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-29T13:10:11Z'
+  head_sha: 2126d2756a2f7e4daa3b2d7a23a56b6ebfb8c6f6
+  by_type:
+    rust: 646
+    preflight: 75
+    web_unit: 235
+    e2e: 207
+  total: 1163
+local_executions:
+  - {command: task format, category: check, started_at: '2026-07-29T08:25:00Z', finished_at: '2026-07-29T08:27:00Z', duration_seconds: 120, outcome: passed, reason: initial_pre_push_hygiene}
+  - {command: task format, category: check, started_at: '2026-07-29T09:19:00Z', finished_at: '2026-07-29T09:21:00Z', duration_seconds: 120, outcome: passed, reason: ecosystem_configuration_fixes}
+  - {command: task format, category: check, started_at: '2026-07-29T10:11:00Z', finished_at: '2026-07-29T10:13:00Z', duration_seconds: 120, outcome: passed, reason: initial_review_fixes}
+  - {command: task format, category: check, started_at: '2026-07-29T11:08:00Z', finished_at: '2026-07-29T11:10:00Z', duration_seconds: 120, outcome: passed, reason: dylint_behavioral_repairs}
+  - {command: task format, category: check, started_at: '2026-07-29T12:15:00Z', finished_at: '2026-07-29T12:17:00Z', duration_seconds: 120, outcome: passed, reason: workflow_security_review_fixes}
+  - {command: task format, category: check, started_at: '2026-07-29T12:23:00Z', finished_at: '2026-07-29T12:25:00Z', duration_seconds: 120, outcome: passed, reason: rustsec_action_policy_fix}
+  - {command: task format, category: check, started_at: '2026-07-29T12:47:00Z', finished_at: '2026-07-29T12:52:00Z', duration_seconds: 300, outcome: passed, reason: base_update_and_transactional_regression}
+  - {command: 'task pr:ready PR=870', category: check, started_at: '2026-07-29T13:09:20Z', finished_at: '2026-07-29T13:09:40Z', duration_seconds: 20, outcome: passed, reason: exact_head_readiness}
+github_actions_runs:
+  - {workflow: "Remote task", run_id: 30433752385, run_attempt: 1, head_sha: 4b1203fd9d1af8fe12f378d4bbf09e39cd2e73f7, trigger: workflow_dispatch, started_at: "2026-07-29T08:00:06Z", finished_at: "2026-07-29T08:00:48Z", duration_seconds: 42, conclusion: failure}
+  - {workflow: "Rust ecosystem checks", run_id: 30433780284, run_attempt: 1, head_sha: 4b1203fd9d1af8fe12f378d4bbf09e39cd2e73f7, trigger: pull_request, started_at: "2026-07-29T08:00:28Z", finished_at: "2026-07-29T08:01:06Z", duration_seconds: 38, conclusion: failure}
+  - {workflow: "PR", run_id: 30433780803, run_attempt: 1, head_sha: 4b1203fd9d1af8fe12f378d4bbf09e39cd2e73f7, trigger: pull_request, started_at: "2026-07-29T08:00:29Z", finished_at: "2026-07-29T08:07:20Z", duration_seconds: 411, conclusion: failure}
+  - {workflow: "Remote task", run_id: 30435950142, run_attempt: 1, head_sha: 997750cd48c8cae36702c758ead18a8350da9e13, trigger: workflow_dispatch, started_at: "2026-07-29T08:32:54Z", finished_at: "2026-07-29T08:34:13Z", duration_seconds: 79, conclusion: success}
+  - {workflow: "PR", run_id: 30435960901, run_attempt: 1, head_sha: 997750cd48c8cae36702c758ead18a8350da9e13, trigger: pull_request, started_at: "2026-07-29T08:33:03Z", finished_at: "2026-07-29T08:48:18Z", duration_seconds: 915, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30435961724, run_attempt: 1, head_sha: 997750cd48c8cae36702c758ead18a8350da9e13, trigger: pull_request, started_at: "2026-07-29T08:33:04Z", finished_at: "2026-07-29T08:53:24Z", duration_seconds: 1220, conclusion: failure}
+  - {workflow: "Remote task", run_id: 30437558227, run_attempt: 1, head_sha: a4380692f0c73f9c531d8ad87b561ea914cab1ff, trigger: workflow_dispatch, started_at: "2026-07-29T08:56:41Z", finished_at: "2026-07-29T08:57:48Z", duration_seconds: 67, conclusion: success}
+  - {workflow: "PR", run_id: 30437567367, run_attempt: 1, head_sha: a4380692f0c73f9c531d8ad87b561ea914cab1ff, trigger: pull_request, started_at: "2026-07-29T08:56:49Z", finished_at: "2026-07-29T09:07:51Z", duration_seconds: 662, conclusion: cancelled}
+  - {workflow: "Rust ecosystem checks", run_id: 30437567274, run_attempt: 1, head_sha: a4380692f0c73f9c531d8ad87b561ea914cab1ff, trigger: pull_request, started_at: "2026-07-29T08:56:49Z", finished_at: "2026-07-29T09:03:06Z", duration_seconds: 377, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30437978430, run_attempt: 1, head_sha: 794c7fc3daad7eb311b324f79451b8d361a9149b, trigger: workflow_dispatch, started_at: "2026-07-29T09:02:41Z", finished_at: "2026-07-29T09:03:48Z", duration_seconds: 67, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30437988436, run_attempt: 1, head_sha: 794c7fc3daad7eb311b324f79451b8d361a9149b, trigger: pull_request, started_at: "2026-07-29T09:02:49Z", finished_at: "2026-07-29T09:09:52Z", duration_seconds: 423, conclusion: cancelled}
+  - {workflow: "PR", run_id: 30437988683, run_attempt: 1, head_sha: 794c7fc3daad7eb311b324f79451b8d361a9149b, trigger: pull_request, started_at: "2026-07-29T09:02:50Z", finished_at: "2026-07-29T09:14:38Z", duration_seconds: 708, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30438473740, run_attempt: 1, head_sha: a8c1f8fd1dd6c588be3f3663d268a99f00458b2e, trigger: workflow_dispatch, started_at: "2026-07-29T09:09:29Z", finished_at: "2026-07-29T09:10:52Z", duration_seconds: 83, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30438480807, run_attempt: 1, head_sha: a8c1f8fd1dd6c588be3f3663d268a99f00458b2e, trigger: pull_request, started_at: "2026-07-29T09:09:36Z", finished_at: "2026-07-29T09:24:10Z", duration_seconds: 874, conclusion: cancelled}
+  - {workflow: "PR", run_id: 30438480832, run_attempt: 1, head_sha: a8c1f8fd1dd6c588be3f3663d268a99f00458b2e, trigger: pull_request, started_at: "2026-07-29T09:09:36Z", finished_at: "2026-07-29T09:28:56Z", duration_seconds: 1160, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30439462947, run_attempt: 1, head_sha: 481e17e632365c17d5d801f779aa326473d84e74, trigger: workflow_dispatch, started_at: "2026-07-29T09:23:50Z", finished_at: "2026-07-29T09:25:06Z", duration_seconds: 76, conclusion: success}
+  - {workflow: "PR", run_id: 30439466522, run_attempt: 1, head_sha: 481e17e632365c17d5d801f779aa326473d84e74, trigger: pull_request, started_at: "2026-07-29T09:23:54Z", finished_at: "2026-07-29T09:43:43Z", duration_seconds: 1189, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30439466315, run_attempt: 1, head_sha: 481e17e632365c17d5d801f779aa326473d84e74, trigger: pull_request, started_at: "2026-07-29T09:23:54Z", finished_at: "2026-07-29T09:44:35Z", duration_seconds: 1241, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30442959048, run_attempt: 1, head_sha: 945028ff6f86e65759dd4a879523e325fd504aa2, trigger: workflow_dispatch, started_at: "2026-07-29T10:15:29Z", finished_at: "2026-07-29T10:16:42Z", duration_seconds: 73, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30442964312, run_attempt: 1, head_sha: 945028ff6f86e65759dd4a879523e325fd504aa2, trigger: pull_request, started_at: "2026-07-29T10:15:34Z", finished_at: "2026-07-29T10:20:14Z", duration_seconds: 280, conclusion: cancelled}
+  - {workflow: "PR", run_id: 30442964495, run_attempt: 1, head_sha: 945028ff6f86e65759dd4a879523e325fd504aa2, trigger: pull_request, started_at: "2026-07-29T10:15:34Z", finished_at: "2026-07-29T10:25:06Z", duration_seconds: 572, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30443250913, run_attempt: 1, head_sha: 6ffad48b4d1917e217e8f5dfaaaa5cbc83b58f14, trigger: workflow_dispatch, started_at: "2026-07-29T10:20:00Z", finished_at: "2026-07-29T10:21:12Z", duration_seconds: 72, conclusion: success}
+  - {workflow: "PR", run_id: 30443255620, run_attempt: 1, head_sha: 6ffad48b4d1917e217e8f5dfaaaa5cbc83b58f14, trigger: pull_request, started_at: "2026-07-29T10:20:04Z", finished_at: "2026-07-29T10:31:58Z", duration_seconds: 714, conclusion: cancelled}
+  - {workflow: "Rust ecosystem checks", run_id: 30443255439, run_attempt: 1, head_sha: 6ffad48b4d1917e217e8f5dfaaaa5cbc83b58f14, trigger: pull_request, started_at: "2026-07-29T10:20:04Z", finished_at: "2026-07-29T10:24:58Z", duration_seconds: 294, conclusion: failure}
+  - {workflow: "Remote task", run_id: 30443698967, run_attempt: 1, head_sha: 0c136cc49008b6139e8909f5a1299fc9f228d8dc, trigger: workflow_dispatch, started_at: "2026-07-29T10:26:52Z", finished_at: "2026-07-29T10:28:09Z", duration_seconds: 77, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30443703937, run_attempt: 1, head_sha: 0c136cc49008b6139e8909f5a1299fc9f228d8dc, trigger: pull_request, started_at: "2026-07-29T10:26:56Z", finished_at: "2026-07-29T10:34:07Z", duration_seconds: 431, conclusion: failure}
+  - {workflow: "PR", run_id: 30443704166, run_attempt: 1, head_sha: 0c136cc49008b6139e8909f5a1299fc9f228d8dc, trigger: pull_request, started_at: "2026-07-29T10:26:57Z", finished_at: "2026-07-29T10:46:34Z", duration_seconds: 1177, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30444643089, run_attempt: 1, head_sha: 8adc10b0467ed77a0276ef71882c9370371eedcf, trigger: workflow_dispatch, started_at: "2026-07-29T10:41:28Z", finished_at: "2026-07-29T10:42:51Z", duration_seconds: 83, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30444646953, run_attempt: 1, head_sha: 8adc10b0467ed77a0276ef71882c9370371eedcf, trigger: pull_request, started_at: "2026-07-29T10:41:32Z", finished_at: "2026-07-29T10:48:34Z", duration_seconds: 422, conclusion: failure}
+  - {workflow: "PR", run_id: 30444647358, run_attempt: 1, head_sha: 8adc10b0467ed77a0276ef71882c9370371eedcf, trigger: pull_request, started_at: "2026-07-29T10:41:32Z", finished_at: "2026-07-29T11:01:58Z", duration_seconds: 1226, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30445682272, run_attempt: 1, head_sha: dd8da0a5703bcbb472b9ad86937e73859183bba3, trigger: workflow_dispatch, started_at: "2026-07-29T10:57:32Z", finished_at: "2026-07-29T10:58:54Z", duration_seconds: 82, conclusion: success}
+  - {workflow: "PR", run_id: 30445689241, run_attempt: 1, head_sha: dd8da0a5703bcbb472b9ad86937e73859183bba3, trigger: pull_request, started_at: "2026-07-29T10:57:38Z", finished_at: "2026-07-29T11:16:51Z", duration_seconds: 1153, conclusion: cancelled}
+  - {workflow: "Rust ecosystem checks", run_id: 30445688980, run_attempt: 1, head_sha: dd8da0a5703bcbb472b9ad86937e73859183bba3, trigger: pull_request, started_at: "2026-07-29T10:57:38Z", finished_at: "2026-07-29T11:05:00Z", duration_seconds: 442, conclusion: failure}
+  - {workflow: "Remote task", run_id: 30446687799, run_attempt: 1, head_sha: 1109fa8fc2fe8ee386be77e999091f6d16b0d065, trigger: workflow_dispatch, started_at: "2026-07-29T11:12:52Z", finished_at: "2026-07-29T11:14:07Z", duration_seconds: 75, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30446694371, run_attempt: 1, head_sha: 1109fa8fc2fe8ee386be77e999091f6d16b0d065, trigger: pull_request, started_at: "2026-07-29T11:12:57Z", finished_at: "2026-07-29T11:20:21Z", duration_seconds: 444, conclusion: failure}
+  - {workflow: "PR", run_id: 30446695098, run_attempt: 1, head_sha: 1109fa8fc2fe8ee386be77e999091f6d16b0d065, trigger: pull_request, started_at: "2026-07-29T11:12:58Z", finished_at: "2026-07-29T11:29:45Z", duration_seconds: 1007, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30447452754, run_attempt: 1, head_sha: 415ff814b2d4d63f5d447a353951524ffd3240c4, trigger: workflow_dispatch, started_at: "2026-07-29T11:24:38Z", finished_at: "2026-07-29T11:25:56Z", duration_seconds: 78, conclusion: success}
+  - {workflow: "PR", run_id: 30447458642, run_attempt: 1, head_sha: 415ff814b2d4d63f5d447a353951524ffd3240c4, trigger: pull_request, started_at: "2026-07-29T11:24:43Z", finished_at: "2026-07-29T11:45:03Z", duration_seconds: 1220, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30447459110, run_attempt: 1, head_sha: 415ff814b2d4d63f5d447a353951524ffd3240c4, trigger: pull_request, started_at: "2026-07-29T11:24:44Z", finished_at: "2026-07-29T11:32:17Z", duration_seconds: 453, conclusion: success}
+  - {workflow: "Remote task", run_id: 30449028731, run_attempt: 1, head_sha: a4823c8ee08cf0e2f08d5103f35f8977cec2455a, trigger: workflow_dispatch, started_at: "2026-07-29T11:48:58Z", finished_at: "2026-07-29T11:50:13Z", duration_seconds: 75, conclusion: success}
+  - {workflow: "PR", run_id: 30449033332, run_attempt: 1, head_sha: a4823c8ee08cf0e2f08d5103f35f8977cec2455a, trigger: pull_request, started_at: "2026-07-29T11:49:03Z", finished_at: "2026-07-29T12:04:00Z", duration_seconds: 897, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30449033216, run_attempt: 1, head_sha: a4823c8ee08cf0e2f08d5103f35f8977cec2455a, trigger: pull_request, started_at: "2026-07-29T11:49:03Z", finished_at: "2026-07-29T11:56:28Z", duration_seconds: 445, conclusion: success}
+  - {workflow: "Remote task", run_id: 30450642537, run_attempt: 1, head_sha: 66d8ed3d476333fccb2dd122fa0276ae55906312, trigger: workflow_dispatch, started_at: "2026-07-29T12:12:38Z", finished_at: "2026-07-29T12:14:02Z", duration_seconds: 84, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30450647385, run_attempt: 1, head_sha: 66d8ed3d476333fccb2dd122fa0276ae55906312, trigger: pull_request, started_at: "2026-07-29T12:12:42Z", finished_at: "2026-07-29T12:19:03Z", duration_seconds: 381, conclusion: cancelled}
+  - {workflow: "PR", run_id: 30450647646, run_attempt: 1, head_sha: 66d8ed3d476333fccb2dd122fa0276ae55906312, trigger: pull_request, started_at: "2026-07-29T12:12:42Z", finished_at: "2026-07-29T12:23:45Z", duration_seconds: 663, conclusion: cancelled}
+  - {workflow: "PR", run_id: 30451065481, run_attempt: 1, head_sha: dcb5fa40ee9ac1ab73b98a2fbc698a97a0ac02cb, trigger: pull_request, started_at: "2026-07-29T12:18:43Z", finished_at: "2026-07-29T12:19:03Z", duration_seconds: 20, conclusion: cancelled}
+  - {workflow: "Rust ecosystem checks", run_id: 30451068776, run_attempt: 1, head_sha: dcb5fa40ee9ac1ab73b98a2fbc698a97a0ac02cb, trigger: pull_request, started_at: "2026-07-29T12:18:46Z", finished_at: "2026-07-29T12:19:03Z", duration_seconds: 17, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30451069307, run_attempt: 1, head_sha: dcb5fa40ee9ac1ab73b98a2fbc698a97a0ac02cb, trigger: workflow_dispatch, started_at: "2026-07-29T12:18:47Z", finished_at: "2026-07-29T12:20:21Z", duration_seconds: 94, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30451085485, run_attempt: 1, head_sha: dcb5fa40ee9ac1ab73b98a2fbc698a97a0ac02cb, trigger: pull_request, started_at: "2026-07-29T12:19:01Z", finished_at: "2026-07-29T12:26:38Z", duration_seconds: 457, conclusion: cancelled}
+  - {workflow: "PR", run_id: 30451085568, run_attempt: 1, head_sha: dcb5fa40ee9ac1ab73b98a2fbc698a97a0ac02cb, trigger: pull_request, started_at: "2026-07-29T12:19:01Z", finished_at: "2026-07-29T12:31:26Z", duration_seconds: 745, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 30451589477, run_attempt: 1, head_sha: 089d143e721935e36865bd9105043aa3bf62c9e5, trigger: workflow_dispatch, started_at: "2026-07-29T12:26:16Z", finished_at: "2026-07-29T12:27:44Z", duration_seconds: 88, conclusion: success}
+  - {workflow: "PR", run_id: 30451598999, run_attempt: 1, head_sha: 089d143e721935e36865bd9105043aa3bf62c9e5, trigger: pull_request, started_at: "2026-07-29T12:26:24Z", finished_at: "2026-07-29T12:46:55Z", duration_seconds: 1231, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30451598798, run_attempt: 1, head_sha: 089d143e721935e36865bd9105043aa3bf62c9e5, trigger: pull_request, started_at: "2026-07-29T12:26:24Z", finished_at: "2026-07-29T12:33:57Z", duration_seconds: 453, conclusion: success}
+  - {workflow: "Remote task", run_id: 30453539433, run_attempt: 1, head_sha: 213a5242922e027213876949c2a19ebe46ddcdc5, trigger: workflow_dispatch, started_at: "2026-07-29T12:53:34Z", finished_at: "2026-07-29T12:54:48Z", duration_seconds: 74, conclusion: success}
+  - {workflow: "PR", run_id: 30453550036, run_attempt: 1, head_sha: 213a5242922e027213876949c2a19ebe46ddcdc5, trigger: pull_request, started_at: "2026-07-29T12:53:42Z", finished_at: "2026-07-29T13:09:15Z", duration_seconds: 933, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30453549900, run_attempt: 1, head_sha: 213a5242922e027213876949c2a19ebe46ddcdc5, trigger: pull_request, started_at: "2026-07-29T12:53:42Z", finished_at: "2026-07-29T13:00:46Z", duration_seconds: 424, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent:
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+    buildkit_cache_hit_rate_percent:
+  collection:
+    complete: false
+    warnings:
+      - telemetry_artifacts_not_collected_for_the_large_superseded_run_set
+  jobs: []
+pr_retriggers:
+  - {at: "2026-07-29T08:33:03Z", kind: validation_label, run_id: 30435960901, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T08:56:49Z", kind: validation_label, run_id: 30437567367, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T09:02:50Z", kind: validation_label, run_id: 30437988683, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T09:09:36Z", kind: validation_label, run_id: 30438480832, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T09:23:54Z", kind: validation_label, run_id: 30439466522, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T10:15:34Z", kind: validation_label, run_id: 30442964495, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T10:20:04Z", kind: validation_label, run_id: 30443255620, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T10:26:57Z", kind: validation_label, run_id: 30443704166, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T10:41:32Z", kind: validation_label, run_id: 30444647358, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T10:57:38Z", kind: validation_label, run_id: 30445689241, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T11:12:58Z", kind: validation_label, run_id: 30446695098, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T11:24:43Z", kind: validation_label, run_id: 30447458642, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T11:49:03Z", kind: validation_label, run_id: 30449033332, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T12:12:42Z", kind: validation_label, run_id: 30450647646, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T12:18:43Z", kind: validation_label, run_id: 30451065481, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T12:19:01Z", kind: validation_label, run_id: 30451085568, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T12:26:24Z", kind: validation_label, run_id: 30451598999, reason: "replace_superseded_or_review_fixed_head"}
+  - {at: "2026-07-29T12:53:42Z", kind: validation_label, run_id: 30453550036, reason: "final_base_update_validation"}
+merge_attempts:
+  - {at: '2026-07-29T13:10:11Z', method: squash, outcome: success, reason: exact_head_readiness_passed}
+comparison:
+  baseline_prs: [867, 869]
+  baseline_quality: directionally_comparable
+  baseline_note: Recent CI and repository-workflow PRs using the same hosted product gates; PR 870 intentionally adds a new seven-minute ecosystem workflow.
+  elapsed_seconds_change_percent: 976.26
+  local_execution_seconds_change_percent: 450.26
+  github_actions_seconds_change_percent: 3819.97
+  test_inventory_total_change: 22.5
+  regression: true
+  regression_reasons:
+    - Initial adoption exposed configuration, source-policy, and real production findings across eight new tools.
+    - Review-driven fixes and one base update repeatedly invalidated otherwise green exact-head runs.
+waste_assessment:
+  wasteful: true
+  findings:
+    - The adoption required 56 measured hosted runs and 18 complete PR retriggers before merge.
+    - Several PR runs were dispatched alongside ecosystem-only fixes and then cancelled by the next corrected head.
+    - Sequential RustSec workspace actions and cold Dylint installation make the ecosystem workflow materially longer than ordinary focused checks.
+    - The final exact-head ecosystem and PR runs were both necessary and green; earlier superseded cycles account for most avoidable runner time.
+  required_actions:
+    - Evaluate trusted artifact or cache reuse for pinned Dylint installation in a separate normal PR.
+    - Avoid triggering the complete PR workflow until focused ecosystem jobs pass when changes affect only the new ecosystem configuration.
