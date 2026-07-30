@@ -1,0 +1,346 @@
+---
+schema_version: 3
+source_pr:
+  number: 881
+  url: https://github.com/meta-secret/nook/pull/881
+  title: 'fix(infra): harden Zot migration cleanup'
+  change_surface: hive_k0s_registry_infrastructure
+  head_sha: 44cdcfe1fc5781cd65c74e13942ac6335dc2c698
+  started_at: '2026-07-30T03:36:30Z'
+  opened_at: '2026-07-30T03:46:24Z'
+  merged_at: '2026-07-30T04:05:37Z'
+  elapsed_seconds: 1747
+  open_to_merge_seconds: 1153
+summary:
+  local_execution_count: 4
+  local_check_count: 4
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 260
+  github_actions_run_count: 10
+  github_actions_seconds: 3280
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-30T04:05:37Z'
+  head_sha: 44cdcfe1fc5781cd65c74e13942ac6335dc2c698
+  by_type:
+    rust: 646
+    preflight: 72
+    web_unit: 235
+    e2e: 207
+  total: 1160
+local_executions:
+- command: task format
+  category: check
+  started_at: '2026-07-30T03:43:55Z'
+  finished_at: '2026-07-30T03:45:55Z'
+  duration_seconds: 120
+  outcome: passed
+  reason: migration_cleanup_pre_push_hygiene
+- command: task pr:ready PR=881
+  category: check
+  started_at: '2026-07-30T03:54:35Z'
+  finished_at: '2026-07-30T03:54:45Z'
+  duration_seconds: 10
+  outcome: passed
+  reason: initial_exact_head_readiness
+- command: task format
+  category: check
+  started_at: '2026-07-30T03:55:00Z'
+  finished_at: '2026-07-30T03:57:00Z'
+  duration_seconds: 120
+  outcome: passed
+  reason: base_update_pre_push_hygiene
+- command: task pr:ready PR=881
+  category: check
+  started_at: '2026-07-30T04:05:20Z'
+  finished_at: '2026-07-30T04:05:30Z'
+  duration_seconds: 10
+  outcome: passed
+  reason: refreshed_exact_head_readiness
+github_actions_runs:
+- workflow: Source architecture
+  run_id: 30512072638
+  run_attempt: 1
+  head_sha: 698d80374d6b906869d5d88c3efbef34ca7c7037
+  trigger: pull_request
+  started_at: '2026-07-30T03:46:27Z'
+  finished_at: '2026-07-30T03:46:58Z'
+  duration_seconds: 31
+  conclusion: success
+- workflow: 'Hive verification · PR #881'
+  run_id: 30512072616
+  run_attempt: 1
+  head_sha: 698d80374d6b906869d5d88c3efbef34ca7c7037
+  trigger: pull_request
+  started_at: '2026-07-30T03:46:27Z'
+  finished_at: '2026-07-30T03:54:51Z'
+  duration_seconds: 504
+  conclusion: success
+- workflow: Remote task
+  run_id: 30512077129
+  run_attempt: 1
+  head_sha: 698d80374d6b906869d5d88c3efbef34ca7c7037
+  trigger: workflow_dispatch
+  started_at: '2026-07-30T03:46:33Z'
+  finished_at: '2026-07-30T03:58:51Z'
+  duration_seconds: 738
+  conclusion: success
+- workflow: Remote task
+  run_id: 30512077406
+  run_attempt: 1
+  head_sha: 698d80374d6b906869d5d88c3efbef34ca7c7037
+  trigger: workflow_dispatch
+  started_at: '2026-07-30T03:46:34Z'
+  finished_at: '2026-07-30T03:47:39Z'
+  duration_seconds: 65
+  conclusion: success
+- workflow: Rust ecosystem checks
+  run_id: 30512085068
+  run_attempt: 1
+  head_sha: 698d80374d6b906869d5d88c3efbef34ca7c7037
+  trigger: pull_request
+  started_at: '2026-07-30T03:46:44Z'
+  finished_at: '2026-07-30T03:54:00Z'
+  duration_seconds: 436
+  conclusion: success
+- workflow: PR
+  run_id: 30512085208
+  run_attempt: 1
+  head_sha: 698d80374d6b906869d5d88c3efbef34ca7c7037
+  trigger: pull_request
+  started_at: '2026-07-30T03:46:44Z'
+  finished_at: '2026-07-30T03:50:28Z'
+  duration_seconds: 224
+  conclusion: success
+- workflow: Source architecture
+  run_id: 30512533267
+  run_attempt: 1
+  head_sha: 979ae5a481f00a893757b09ad6ef16d5dcacaaa5
+  trigger: pull_request
+  started_at: '2026-07-30T03:57:09Z'
+  finished_at: '2026-07-30T03:57:42Z'
+  duration_seconds: 33
+  conclusion: success
+- workflow: 'Hive verification · PR #881'
+  run_id: 30512533268
+  run_attempt: 1
+  head_sha: 979ae5a481f00a893757b09ad6ef16d5dcacaaa5
+  trigger: pull_request
+  started_at: '2026-07-30T03:57:09Z'
+  finished_at: '2026-07-30T04:05:19Z'
+  duration_seconds: 490
+  conclusion: success
+- workflow: Rust ecosystem checks
+  run_id: 30512538956
+  run_attempt: 1
+  head_sha: 979ae5a481f00a893757b09ad6ef16d5dcacaaa5
+  trigger: pull_request
+  started_at: '2026-07-30T03:57:17Z'
+  finished_at: '2026-07-30T04:04:27Z'
+  duration_seconds: 430
+  conclusion: success
+- workflow: PR
+  run_id: 30512539092
+  run_attempt: 1
+  head_sha: 979ae5a481f00a893757b09ad6ef16d5dcacaaa5
+  trigger: pull_request
+  started_at: '2026-07-30T03:57:17Z'
+  finished_at: '2026-07-30T04:02:46Z'
+  duration_seconds: 329
+  conclusion: success
+cache_telemetry:
+  totals:
+    job_count: 8
+    remote_backend_job_count: 0
+    direct_compile_job_count: 8
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: 
+    buildkit_completed_steps: 1387
+    buildkit_cached_steps: 924
+    buildkit_cache_hit_rate_percent: 66.62
+  jobs:
+  - workflow: PR
+    run_id: 30512085208
+    run_attempt: 1
+    job: coverage
+    cache_backend: direct_compile
+    cache_backend_reason: credentials_unavailable
+    cache_backend_persistent: false
+    sccache:
+      compile_requests: 0
+      cache_hits: 0
+      cache_misses: 0
+      hit_rate_percent: 
+    buildkit:
+      completed_steps: 0
+      cached_steps: 0
+      cache_hit_rate_percent: 
+      measurement: buildx_target_record_steps
+    collection_complete: true
+    collection_warnings: []
+  - workflow: PR
+    run_id: 30512085208
+    run_attempt: 1
+    job: rust
+    cache_backend: direct_compile
+    cache_backend_reason: hosted_buildkit_only
+    cache_backend_persistent: false
+    sccache:
+      compile_requests: 0
+      cache_hits: 0
+      cache_misses: 0
+      hit_rate_percent: 
+    buildkit:
+      completed_steps: 369
+      cached_steps: 277
+      cache_hit_rate_percent: 75.07
+      measurement: buildx_target_record_steps
+    collection_complete: true
+    collection_warnings: []
+  - workflow: PR
+    run_id: 30512085208
+    run_attempt: 1
+    job: verify
+    cache_backend: direct_compile
+    cache_backend_reason: hosted_buildkit_only
+    cache_backend_persistent: false
+    sccache:
+      compile_requests: 0
+      cache_hits: 0
+      cache_misses: 0
+      hit_rate_percent: 
+    buildkit:
+      completed_steps: 82
+      cached_steps: 22
+      cache_hit_rate_percent: 26.83
+      measurement: buildx_target_record_steps
+    collection_complete: true
+    collection_warnings: []
+  - workflow: PR
+    run_id: 30512085208
+    run_attempt: 1
+    job: wasm
+    cache_backend: direct_compile
+    cache_backend_reason: hosted_buildkit_only
+    cache_backend_persistent: false
+    sccache:
+      compile_requests: 0
+      cache_hits: 0
+      cache_misses: 0
+      hit_rate_percent: 
+    buildkit:
+      completed_steps: 251
+      cached_steps: 173
+      cache_hit_rate_percent: 68.92
+      measurement: buildx_target_record_steps
+    collection_complete: true
+    collection_warnings: []
+  - workflow: PR
+    run_id: 30512539092
+    run_attempt: 1
+    job: coverage
+    cache_backend: direct_compile
+    cache_backend_reason: credentials_unavailable
+    cache_backend_persistent: false
+    sccache:
+      compile_requests: 0
+      cache_hits: 0
+      cache_misses: 0
+      hit_rate_percent: 
+    buildkit:
+      completed_steps: 0
+      cached_steps: 0
+      cache_hit_rate_percent: 
+      measurement: buildx_target_record_steps
+    collection_complete: true
+    collection_warnings: []
+  - workflow: PR
+    run_id: 30512539092
+    run_attempt: 1
+    job: rust
+    cache_backend: direct_compile
+    cache_backend_reason: hosted_buildkit_only
+    cache_backend_persistent: false
+    sccache:
+      compile_requests: 0
+      cache_hits: 0
+      cache_misses: 0
+      hit_rate_percent: 
+    buildkit:
+      completed_steps: 369
+      cached_steps: 265
+      cache_hit_rate_percent: 71.82
+      measurement: buildx_target_record_steps
+    collection_complete: true
+    collection_warnings: []
+  - workflow: PR
+    run_id: 30512539092
+    run_attempt: 1
+    job: verify
+    cache_backend: direct_compile
+    cache_backend_reason: hosted_buildkit_only
+    cache_backend_persistent: false
+    sccache:
+      compile_requests: 0
+      cache_hits: 0
+      cache_misses: 0
+      hit_rate_percent: 
+    buildkit:
+      completed_steps: 65
+      cached_steps: 19
+      cache_hit_rate_percent: 29.23
+      measurement: buildx_target_record_steps
+    collection_complete: true
+    collection_warnings: []
+  - workflow: PR
+    run_id: 30512539092
+    run_attempt: 1
+    job: wasm
+    cache_backend: direct_compile
+    cache_backend_reason: hosted_buildkit_only
+    cache_backend_persistent: false
+    sccache:
+      compile_requests: 0
+      cache_hits: 0
+      cache_misses: 0
+      hit_rate_percent: 
+    buildkit:
+      completed_steps: 251
+      cached_steps: 168
+      cache_hit_rate_percent: 66.93
+      measurement: buildx_target_record_steps
+    collection_complete: true
+    collection_warnings: []
+pr_retriggers:
+- at: '2026-07-30T03:57:09Z'
+  trigger: base_update
+  head_sha: 979ae5a481f00a893757b09ad6ef16d5dcacaaa5
+  reason: origin_main_advanced_during_validation
+merge_attempts:
+- at: '2026-07-30T04:05:37Z'
+  method: squash
+  outcome: success
+  reason: exact_head_readiness_passed
+comparison:
+  baseline_prs:
+  - 879
+  baseline_quality: comparable
+  baseline_note: Directly comparable follow-up to the Zot migration.
+  elapsed_seconds_change_percent: -8.5
+  local_execution_seconds_change_percent: 100.0
+  github_actions_seconds_change_percent: 57.1
+  test_inventory_total_change: 0
+  regression: true
+  regression_reasons:
+  - required_base_update_repeated_the_complete_gate_set
+waste_assessment:
+  wasteful: false
+  findings:
+  - The extra validation cycle was required because main advanced; no unchanged-head
+    rerun occurred.
+  required_actions: []
