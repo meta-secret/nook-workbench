@@ -1,0 +1,107 @@
+{
+  "schema_version": 2,
+  "recorded_at": "2026-07-30T04:20:43.027Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 30512924454,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/30512924454",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "44cdcfe1fc5781cd65c74e13942ac6335dc2c698",
+    "conclusion": "cancelled",
+    "created_at": "2026-07-30T04:05:40Z",
+    "started_at": "2026-07-30T04:05:40Z",
+    "completed_at": "2026-07-30T04:10:10Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 881,
+      "url": "https://github.com/meta-secret/nook/pull/881",
+      "title": "fix(infra): harden Zot migration cleanup"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 0,
+    "execution_seconds": 270,
+    "wall_seconds": 270,
+    "job_count": 3,
+    "step_count": 0,
+    "build_seconds": null,
+    "deployment_seconds": null,
+    "coverage_seconds": null
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "sccache_hit_rate_percent": null,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0,
+      "buildkit_cache_hit_rate_percent": null
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "id": 90777230209,
+      "name": "Security audit",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": null,
+      "runner_group_name": null,
+      "labels": [],
+      "started_at": "2026-07-30T04:10:06Z",
+      "completed_at": "2026-07-30T04:10:06Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 90777233903,
+      "name": "Security audit",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": null,
+      "runner_group_name": null,
+      "labels": [],
+      "started_at": "2026-07-30T04:10:08Z",
+      "completed_at": "2026-07-30T04:10:08Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 90777240220,
+      "name": "Security audit",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": null,
+      "runner_group_name": null,
+      "labels": [],
+      "started_at": "2026-07-30T04:10:10Z",
+      "completed_at": "2026-07-30T04:10:10Z",
+      "duration_seconds": 0,
+      "steps": []
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "wall_seconds_change_percent": null,
+    "execution_seconds_change_percent": null,
+    "build_seconds_change_percent": null,
+    "regression": false,
+    "regression_reasons": []
+  }
+}
