@@ -1,0 +1,82 @@
+schema_version: 3
+source_pr:
+  number: 896
+  url: https://github.com/meta-secret/nook/pull/896
+  title: Fix Google Drive Connect assess timeout on sync
+  change_surface: drive_connect_assess_timeout
+  head_sha: 48b69e326f8542be6ce68f7cc4f4822bc613df8a
+  merged_sha: 5a1f26fbec23d4134eb1f57b52289e30c61afe02
+  started_at: '2026-07-31T16:03:00Z'
+  opened_at: '2026-07-31T16:11:06Z'
+  merged_at: '2026-07-31T16:43:22Z'
+  elapsed_seconds: 2422
+  open_to_merge_seconds: 1936
+summary:
+  local_execution_count: 6
+  local_check_count: 6
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 900
+  github_actions_run_count: 12
+  github_actions_seconds: 2400
+  pr_retrigger_count: 2
+  agent_requested_rerun_count: 2
+  merge_attempt_count: 1
+local_executions:
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: '.github/scripts/ui-demo-contract.sh <base-sha>'
+    category: check
+    outcome: failed
+    reason: uncommitted_ui_paths_not_visible_to_contract
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene_after_demo
+  - command: '.github/scripts/ui-demo-contract.sh <base-sha>'
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: task pr:validate PR=896
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+  - command: task pr:ready PR=896
+    category: check
+    outcome: passed
+    reason: merge_gate
+github_actions:
+  pr_validate_triggers: 3
+  notable_runs:
+    - id: 30646095209
+      workflow: PR
+      conclusion: cancelled
+    - id: 30646504974
+      workflow: PR
+      conclusion: cancelled
+    - id: 30647351172
+      workflow: PR
+      conclusion: success
+    - id: 30647350765
+      workflow: Rust ecosystem checks
+      conclusion: success
+    - id: 30646088159
+      workflow: Remote task
+      conclusion: success
+    - id: 30646087996
+      workflow: Remote task
+      conclusion: success
+comparison:
+  against:
+    - 894
+    - 895
+  assessment: >
+    Slower open-to-merge than PR 894 because two exact-head Validate cycles burned
+    on UI-demo contract misses (missing demo commit, then OAuth origin port 5183).
+    Product fix itself was focused; waste was pre-push demo hygiene, not domain
+    churn. Comparable to other Drive adapter PRs once the third validation went green.
+notes:
+  - Plan published as plans/google-drive-sync/2026-07-31T16-11-16Z-fix-drive-connect-timeout.md
+  - Squash merge succeeded on GitHub; local gh checkout of main failed due to an unrelated worktree.
