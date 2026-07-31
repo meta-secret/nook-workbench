@@ -1,0 +1,97 @@
+schema_version: 3
+source_pr:
+  number: 890
+  url: https://github.com/meta-secret/nook/pull/890
+  title: Add KeePassXC CSV password import
+  change_surface: keepassxc_csv_password_import
+  head_sha: 0e160df7f52950d6375909080a562a9c5ffa8102
+  merged_sha: 39b415e728ffed52dea56d054c99169e9b67967c
+  started_at: '2026-07-31T07:45:21Z'
+  opened_at: '2026-07-31T08:34:29Z'
+  merged_at: '2026-07-31T10:17:52Z'
+  elapsed_seconds: 9151
+  open_to_merge_seconds: 6203
+summary:
+  local_execution_count: 8
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 4200
+  github_actions_run_count: 18
+  github_actions_seconds: 7200
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 4
+  merge_attempt_count: 1
+local_executions:
+  - command: task format
+    category: check
+    outcome: failed
+    reason: pre_push_hygiene_clippy
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: .github/scripts/ui-demo-contract.sh origin/main
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: task pr:validate PR=890
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene_after_main_merge
+  - command: task pr:validate PR=890
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene_after_main_merge
+  - command: task pr:validate PR=890
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+github_actions:
+  pr_validate_triggers: 5
+  notable_runs:
+    - id: 30616788522
+      workflow: Source architecture
+      conclusion: failure
+    - id: 30616793935
+      workflow: PR
+      conclusion: failure
+    - id: 30617796582
+      workflow: PR
+      conclusion: success
+    - id: 30619250052
+      workflow: PR
+      conclusion: success
+    - id: 30620884413
+      workflow: PR
+      conclusion: success
+    - id: 30622477817
+      workflow: PR
+      conclusion: success
+    - id: 30622477586
+      workflow: Rust ecosystem checks
+      conclusion: success
+    - id: 30622474058
+      workflow: Source architecture
+      conclusion: success
+comparison:
+  against:
+    - 895
+    - 893
+  assessment: >
+    Slower than Dashlane import and slower open-to-merge than Safari import
+    because the first exact-head cycle failed the source-size gate and later
+    concurrent Dashlane/Safari landings forced repeated main merges with full
+    revalidation. The product change itself matched the existing CSV import
+    panel pattern once the KeePassXC e2e suite was split.
+notes:
+  - Plan published before implementation: plans/unplanned/2026-07-31T07-45-21Z-keepassxc-csv-import.md
+  - Largest waste was sealed format rebuilds plus main-race merge cycles, not parser design.
