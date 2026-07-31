@@ -1,0 +1,93 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-07-31T10:18:09.624Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 30621980321,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/30621980321",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "afe528a634330f48f8df545cd3e236bd3106df0a",
+    "conclusion": "cancelled",
+    "created_at": "2026-07-31T10:00:05Z",
+    "started_at": "2026-07-31T10:00:05Z",
+    "completed_at": "2026-07-31T10:04:43Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 895,
+      "url": "https://github.com/meta-secret/nook/pull/895",
+      "title": "Add Dashlane CSV password import"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 0,
+    "execution_seconds": 278,
+    "wall_seconds": 278,
+    "job_count": 3,
+    "step_count": 0
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "id": 91129337459,
+      "name": "Security audit",
+      "status": "completed",
+      "conclusion": "success",
+      "labels": [],
+      "started_at": "2026-07-31T10:04:38Z",
+      "completed_at": "2026-07-31T10:04:39Z",
+      "duration_seconds": 1,
+      "steps": []
+    },
+    {
+      "id": 91129342327,
+      "name": "Security audit",
+      "status": "completed",
+      "conclusion": "success",
+      "labels": [],
+      "started_at": "2026-07-31T10:04:40Z",
+      "completed_at": "2026-07-31T10:04:40Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 91129351514,
+      "name": "Security audit",
+      "status": "completed",
+      "conclusion": "success",
+      "labels": [],
+      "started_at": "2026-07-31T10:04:43Z",
+      "completed_at": "2026-07-31T10:04:43Z",
+      "duration_seconds": 0,
+      "steps": []
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
