@@ -1,0 +1,44 @@
+schema_version: 3
+source_pr:
+  number: 886
+  url: https://github.com/meta-secret/nook/pull/886
+  title: Extract companion WASM and finish domain-boundary cleanup
+  change_surface: rust_wasm_web_domain_boundary
+  head_sha: a7ebc4dc90bb3463d2bbc90dc9089afd0812c851
+  started_at: '2026-07-31T03:25:00Z'
+  opened_at: '2026-07-31T04:13:29Z'
+  merged_at: '2026-07-31T06:42:00Z'
+  elapsed_seconds: 11820
+  open_to_merge_seconds: 8911
+summary:
+  local_execution_count: 4
+  local_check_count: 4
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 900
+  github_actions_run_count: 10
+  github_actions_seconds: 5400
+  pr_retrigger_count: 5
+  agent_requested_rerun_count: 5
+  merge_attempt_count: 1
+local_executions:
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: task pr:validate PR=886
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+  - command: task pr:ready PR=886
+    category: check
+    outcome: passed
+    reason: merge_gate
+  - command: git rebase origin/main
+    category: check
+    outcome: passed
+    reason: absorb_registry_dev_cutover
+notes:
+  - Companion WASM nested under vault WASM handoff for Docker/CI.
+  - Rebased onto main after registry.dev.nokey.sh and local cache credential PRs.
+  - Final exact-head PR/Native/WASM/Verify checks were green before squash merge.
