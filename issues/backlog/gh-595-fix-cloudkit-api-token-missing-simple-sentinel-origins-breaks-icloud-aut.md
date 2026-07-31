@@ -1,13 +1,13 @@
 ---
 title: "fix: CloudKit API token missing simple/sentinel origins breaks iCloud auth"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: "cypherkitty"
 created_at: 2026-07-21T19:12:46Z
-updated_at: 2026-07-31T07:40:00Z
+updated_at: 2026-07-31T09:37:40Z
 source_issues: ["https://github.com/meta-secret/nook/issues/595"]
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/891"]
 depends_on: []
 legacy_labels: []
 legacy_state_reason: ""
@@ -96,3 +96,10 @@ No comments.
 
 - Keep the production API token; do not rotate unless console access shows the token itself is invalid.
 - Treat the console allowlist update as the auth fix; repository changes only improve diagnostics and docs.
+
+### 2026-07-31 — allowlist + Brave race fixed
+
+- Production CloudKit token now accepts `https://simple.dev.nokey.sh`.
+- Remaining Brave failure was a second `window.open` after the native Apple
+  window; fixed and squash-merged in https://github.com/meta-secret/nook/pull/891.
+
