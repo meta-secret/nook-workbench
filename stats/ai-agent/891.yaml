@@ -1,0 +1,16 @@
+pr: 891
+title: "fix(web): stop Brave iCloud second-popup sign-in race"
+merged_at: "2026-07-31T09:37:00Z"
+agent: cursor-grok
+local:
+  format_runs: 3
+  ui_demo_contract_runs: 3
+remote:
+  focused_tasks:
+    - web:test
+  pr_validate_triggers: 3
+  pr_ready_attempts: 3
+notes: >
+  CloudKit Production origin allowlist was updated out of band. Product fix was
+  the Brave native-click second-popup race. Demo contract and preflight
+  undefined token required follow-up commits before merge.
