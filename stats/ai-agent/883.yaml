@@ -1,0 +1,90 @@
+schema_version: 3
+source_pr:
+  number: 883
+  url: https://github.com/meta-secret/nook/pull/883
+  title: Fix extension pairing grant handoff rejection
+  change_surface: rust_wasm_web_extension_pairing
+  head_sha: 11a7946618b7a7f98bec06c6156aa4fa63f262c4
+  started_at: '2026-07-31T00:40:22Z'
+  opened_at: '2026-07-31T00:59:38Z'
+  merged_at: '2026-07-31T03:39:49Z'
+  elapsed_seconds: 10767
+  open_to_merge_seconds: 9611
+summary:
+  local_execution_count: 5
+  local_check_count: 5
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 3920
+  github_actions_run_count: 10
+  github_actions_seconds: 5400
+  pr_retrigger_count: 6
+  agent_requested_rerun_count: 6
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-07-31T03:40:15Z'
+  head_sha: 11a7946618b7a7f98bec06c6156aa4fa63f262c4
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task format
+    category: check
+    started_at: '2026-07-31T01:51:00Z'
+    finished_at: '2026-07-31T02:05:00Z'
+    duration_seconds: 840
+    outcome: passed
+    reason: pre_push_hygiene_e2e_fix
+  - command: task format
+    category: check
+    started_at: '2026-07-31T02:10:00Z'
+    finished_at: '2026-07-31T02:25:00Z'
+    duration_seconds: 900
+    outcome: passed
+    reason: local_vault_reapprove_e2e_rewrite
+  - command: task format
+    category: check
+    started_at: '2026-07-31T03:06:25Z'
+    finished_at: '2026-07-31T03:26:36Z'
+    duration_seconds: 1211
+    outcome: passed
+    reason: post_main_merge_hygiene
+  - command: task pr:validate PR=883
+    category: check
+    started_at: '2026-07-31T03:26:40Z'
+    finished_at: '2026-07-31T03:26:50Z'
+    duration_seconds: 10
+    outcome: passed
+    reason: post_main_merge_full_e2e_request
+  - command: task pr:ready PR=883
+    category: check
+    started_at: '2026-07-31T03:39:00Z'
+    finished_at: '2026-07-31T03:39:10Z'
+    duration_seconds: 10
+    outcome: passed
+    reason: exact_head_ready_before_squash_merge
+github_actions_runs:
+  - run_id: 30600146935
+    workflow: PR
+    conclusion: success
+    reason: green_before_main_merge
+  - run_id: 30601599002
+    workflow: PR
+    conclusion: success
+    reason: exact_head_after_main_merge
+  - run_id: 30601598882
+    workflow: Rust ecosystem checks
+    conclusion: success
+    reason: exact_head_after_main_merge
+waste:
+  - kind: flaky_e2e_setup
+    note: Multiple extension e2e iterations for unlock-without-grant and closed popup reuse before the local-vault re-approve path stabilized.
+  - kind: shallow_worktree
+    note: Unshallow fetch was required before merging origin/main into the PR branch.
+lessons:
+  - Extension popups close when Connect opens Simple Vault; e2e must open a fresh extension page per pairing attempt.
+  - Re-approve after clearing the grant needs a website-local passkey vault; extension-identity vaults cannot unlock without the grant.
+  - Do not refuse all signer minting when events exist; that breaks enrollment while quarantine refusal already blocks unauthorized JoinApproved.
