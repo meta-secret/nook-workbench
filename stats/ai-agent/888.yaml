@@ -1,0 +1,21 @@
+pr: 888
+title: Cut sccache to SeaweedFS under *.dev.nokey.sh
+merged_at: 2026-07-31T06:00:27Z
+head_sha: a916e88e9
+local:
+  format_runs: 1
+  commits: 2
+  pushes: 2
+github_actions:
+  pr_validate_triggers: 3
+  notable_runs:
+    - id: 30607506795
+      workflow: PR
+      conclusion: success
+    - id: 30607504787
+      workflow: Hive
+      conclusion: success
+notes: >
+  First validation failed while Traefik still served the retired apex registry
+  host after a remote compose revert; redeployed SeaweedFS/Traefik, then fixed
+  one rustfmt assert and revalidated.
