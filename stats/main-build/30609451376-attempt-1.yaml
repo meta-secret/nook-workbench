@@ -1,0 +1,282 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-07-31T06:35:16.435Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 30609451376,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/30609451376",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "eb1f9d1b593ad11b2d018ea90dbbd9b95b6911f7",
+    "conclusion": "failure",
+    "created_at": "2026-07-31T06:22:28Z",
+    "started_at": "2026-07-31T06:22:28Z",
+    "completed_at": "2026-07-31T06:35:04Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 889,
+      "url": "https://github.com/meta-secret/nook/pull/889",
+      "title": "Store local cache credentials in ~/.nook/cache"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 0,
+    "execution_seconds": 756,
+    "wall_seconds": 756,
+    "job_count": 7,
+    "step_count": 11,
+    "build_seconds": 56
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 1,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 1,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 174,
+      "buildkit_cached_steps": 113,
+      "buildkit_cache_hit_rate_percent": 64.94
+    },
+    "jobs": [
+      {
+        "job": "rust",
+        "cache_backend": {
+          "kind": "direct_compile",
+          "persistent": false,
+          "reason": "hosted_buildkit_only"
+        },
+        "sccache": {
+          "report_count": 0,
+          "compile_requests": 0,
+          "requests_executed": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0
+        },
+        "buildkit": {
+          "build_record_count": 7,
+          "completed_steps": 174,
+          "cached_steps": 113,
+          "cache_hit_rate_percent": 64.94,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      }
+    ],
+    "collection": {
+      "complete": true,
+      "warnings": []
+    }
+  },
+  "jobs": [
+    {
+      "id": 91090519836,
+      "name": "Native Rust verification",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_name": "GitHub Actions 1000010875",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-07-31T06:33:50Z",
+      "completed_at": "2026-07-31T06:35:04Z",
+      "duration_seconds": 74,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-31T06:33:51Z",
+          "completed_at": "2026-07-31T06:33:52Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-31T06:33:52Z",
+          "completed_at": "2026-07-31T06:33:53Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-31T06:33:53Z",
+          "completed_at": "2026-07-31T06:34:02Z",
+          "duration_seconds": 9
+        },
+        {
+          "number": 4,
+          "name": "Native Rust format, tests, and coverage",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-07-31T06:34:02Z",
+          "completed_at": "2026-07-31T06:34:58Z",
+          "duration_seconds": 56
+        },
+        {
+          "number": 5,
+          "name": "Export commit-keyed ***-core/auth coverage",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-07-31T06:34:58Z",
+          "completed_at": "2026-07-31T06:34:58Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 6,
+          "name": "Upload commit-keyed ***-core/auth coverage",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-07-31T06:34:58Z",
+          "completed_at": "2026-07-31T06:34:58Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 7,
+          "name": "Publish verified native BuildKit cache",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-07-31T06:34:58Z",
+          "completed_at": "2026-07-31T06:34:58Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 8,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-31T06:34:58Z",
+          "completed_at": "2026-07-31T06:35:00Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 15,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-31T06:35:00Z",
+          "completed_at": "2026-07-31T06:35:02Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 16,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-31T06:35:02Z",
+          "completed_at": "2026-07-31T06:35:02Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 17,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-07-31T06:35:02Z",
+          "completed_at": "2026-07-31T06:35:03Z",
+          "duration_seconds": 1
+        }
+      ]
+    },
+    {
+      "id": 91090715572,
+      "name": "Extension e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-07-31T06:35:04Z",
+      "completed_at": "2026-07-31T06:35:04Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 91090715575,
+      "name": "WASM verification and artifact",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-07-31T06:35:04Z",
+      "completed_at": "2026-07-31T06:35:04Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 91090715620,
+      "name": "UI demos",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-07-31T06:35:04Z",
+      "completed_at": "2026-07-31T06:35:04Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 91090715814,
+      "name": "Deploy development",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-07-31T06:35:04Z",
+      "completed_at": "2026-07-31T06:35:04Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 91090715866,
+      "name": "Web e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-07-31T06:35:04Z",
+      "completed_at": "2026-07-31T06:35:04Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 91090716023,
+      "name": "Verify web build",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-07-31T06:35:04Z",
+      "completed_at": "2026-07-31T06:35:04Z",
+      "duration_seconds": 0,
+      "steps": []
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
