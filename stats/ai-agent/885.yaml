@@ -1,0 +1,52 @@
+schema_version: 3
+source_pr:
+  number: 885
+  url: https://github.com/meta-secret/nook/pull/885
+  title: Expose authenticated Zot at registry.nokey.sh and cut BuildKit off GHA cache
+  change_surface: infra_ci_registry_buildkit
+  head_sha: fcc7badc4ef2758fe91c53e8c8541411361041c7
+  started_at: '2026-07-31T01:56:00Z'
+  opened_at: '2026-07-31T02:34:00Z'
+  merged_at: '2026-07-31T04:07:56Z'
+  elapsed_seconds: 7916
+  open_to_merge_seconds: 5636
+summary:
+  local_execution_count: 6
+  local_check_count: 6
+  local_test_count: 1
+  local_combined_count: 0
+  local_execution_seconds: 2800
+  github_actions_run_count: 8
+  github_actions_seconds: 7200
+  pr_retrigger_count: 6
+  agent_requested_rerun_count: 6
+  merge_attempt_count: 1
+local_executions:
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: cargo test --locked --test remote_execution --test vault_app_isolation --test infra
+    category: test
+    outcome: passed
+    reason: focused_preflight_contracts
+  - command: task infra:registry:check
+    category: check
+    outcome: passed
+    reason: live_borg_registry_contract
+  - command: task infra:services:ensure-edge-firewall
+    category: check
+    outcome: passed
+    reason: nftables_edge_ports
+  - command: task infra:registry:credential:sync
+    category: check
+    outcome: passed
+    reason: github_registry_secrets
+  - command: task pr:ready PR=885
+    category: check
+    outcome: passed
+    reason: merge_gate
+notes:
+  - DNS A registry.nokey.sh -> 40.160.60.148 created via Cloudflare MCP.
+  - Main seeded nook/buildcache/* refs on registry.nokey.sh after merge.
+  - Work continued in isolated worktree nook-public-zot after shared-checkout contention.

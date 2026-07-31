@@ -1,8 +1,10 @@
 ---
 title: Public authenticated Zot registry and BuildKit cutover
 feature: hive-isolated-agent-platform
-status: active
+status: completed
 created: 2026-07-31
+completed: 2026-07-31
+nook_pr: 885
 ---
 
 # Public authenticated Zot registry and BuildKit cutover
