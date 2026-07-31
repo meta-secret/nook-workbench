@@ -1,0 +1,118 @@
+schema_version: 3
+source_pr:
+  number: 892
+  url: https://github.com/meta-secret/nook/pull/892
+  title: Add Keeper Password Manager CSV import
+  change_surface: keeper_csv_password_import
+  head_sha: a28192c7f0ce58eb0d9cd8f60d5602d9c006382c
+  merged_sha: 1d7745a50d294d0268c81c897cfebcd688f9fd1f
+  started_at: '2026-07-31T07:41:00Z'
+  opened_at: '2026-07-31T08:47:29Z'
+  merged_at: '2026-07-31T10:55:54Z'
+  elapsed_seconds: 11694
+  open_to_merge_seconds: 7705
+summary:
+  local_execution_count: 10
+  local_check_count: 10
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 5400
+  github_actions_run_count: 18
+  github_actions_seconds: 7800
+  pr_retrigger_count: 5
+  agent_requested_rerun_count: 5
+  merge_attempt_count: 1
+local_executions:
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: .github/scripts/ui-demo-contract.sh origin/main
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: task pr:validate PR=892
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene_after_main_merge
+  - command: task pr:validate PR=892
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+  - command: task pr:validate PR=892
+    category: check
+    outcome: passed
+    reason: dylint_install_retrigger
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene_after_main_merge
+  - command: task pr:validate PR=892
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene_after_main_merge
+  - command: task pr:validate PR=892
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+github_actions:
+  pr_validate_triggers: 6
+  notable_runs:
+    - id: 30617555681
+      workflow: Source architecture
+      conclusion: failure
+    - id: 30617588853
+      workflow: PR
+      conclusion: failure
+    - id: 30617571414
+      workflow: Remote task
+      conclusion: success
+    - id: 30617571529
+      workflow: Remote task
+      conclusion: success
+    - id: 30618956257
+      workflow: PR
+      conclusion: success
+    - id: 30620554659
+      workflow: PR
+      conclusion: success
+    - id: 30621593813
+      workflow: Rust ecosystem checks
+      conclusion: cancelled
+    - id: 30621798888
+      workflow: PR
+      conclusion: success
+    - id: 30623042531
+      workflow: PR
+      conclusion: success
+    - id: 30624248857
+      workflow: PR
+      conclusion: success
+    - id: 30624248757
+      workflow: Rust ecosystem checks
+      conclusion: success
+    - id: 30624240493
+      workflow: Source architecture
+      conclusion: success
+comparison:
+  against:
+    - 890
+    - 895
+  assessment: >
+    Slower than Dashlane and comparable to KeePassXC because the first
+    exact-head cycle failed the source-size gate, a transient Dylint install
+    failure forced a retrigger, and concurrent Dashlane/KeePassXC landings
+    required repeated main merges with full revalidation. The product change
+    itself reused the shared CSV import panel pattern once the Keeper e2e suite
+    was split.
+notes:
+  - Plan published before implementation: plans/unplanned/2026-07-31T07-43-35Z-keeper-csv-import.md
+  - Largest waste was main-race merge cycles and sealed format rebuilds, not parser design.
