@@ -1,11 +1,11 @@
 ---
 title: "fix: CloudKit API token missing simple/sentinel origins breaks iCloud auth"
-status: proposed
-priority: p2
+status: in_progress
+priority: p1
 automation: manual
-owner: "unassigned"
+owner: "cypherkitty"
 created_at: 2026-07-21T19:12:46Z
-updated_at: 2026-07-21T19:12:46Z
+updated_at: 2026-07-31T07:40:00Z
 source_issues: ["https://github.com/meta-secret/nook/issues/595"]
 related_prs: []
 depends_on: []
@@ -79,3 +79,20 @@ curl -s "https://api.apple-cloudkit.com/database/1/iCloud.metasecret.project.com
 ## Historical comments
 
 No comments.
+
+## Progress
+
+### 2026-07-31 — live reproduction on simple.dev.nokey.sh
+
+- Reconfirmed `users/current` with the production Web Services token:
+  - `https://localhost:5173` and `https://nokey.sh` → `AUTHENTICATION_REQUIRED`
+  - `https://simple.dev.nokey.sh`, `https://simple.nokey.sh`, `https://sentinel.nokey.sh`, `https://sentinel.dev.nokey.sh`, `https://localhost:5175` → `AUTHENTICATION_FAILED`
+- Product UI on Simple Vault development shows generic iCloud sign-in failure because prepare/sign-in hit the rejected origin.
+- CloudKit Dashboard access requires an interactive Apple ID login; agent environment has no session.
+- Code follow-up in progress: map `AUTHENTICATION_FAILED` to `provider_setup.icloud_unknown_error`, refresh config comments, and add unit coverage.
+- Live sign-in remains blocked until CloudKit Console allowlists the vault origins above.
+
+## Decisions
+
+- Keep the production API token; do not rotate unless console access shows the token itself is invalid.
+- Treat the console allowlist update as the auth fix; repository changes only improve diagnostics and docs.
