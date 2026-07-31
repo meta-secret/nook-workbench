@@ -1,0 +1,73 @@
+schema_version: 3
+source_pr:
+  number: 894
+  url: https://github.com/meta-secret/nook/pull/894
+  title: Fix Google Drive Connect & sync event parse failure
+  change_surface: rust_wasm_drive_event_adapter
+  head_sha: 9285551d83a0c08de818ac04f7a6eea9cd9998db
+  merged_sha: 1563a88278a13e3d7f96a25b62106787e7fc2fbc
+  started_at: '2026-07-31T07:33:00Z'
+  opened_at: '2026-07-31T08:49:19Z'
+  merged_at: '2026-07-31T08:58:39Z'
+  elapsed_seconds: 5139
+  open_to_merge_seconds: 560
+summary:
+  local_execution_count: 5
+  local_check_count: 5
+  local_test_count: 2
+  local_combined_count: 0
+  local_execution_seconds: 1500
+  github_actions_run_count: 5
+  github_actions_seconds: 900
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+local_executions:
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: cargo test -p nook-wasm select_matching --lib
+    category: test
+    outcome: passed
+    reason: focused_regression
+  - command: cargo test -p nook-event-log classify_remote_event_log_fails_closed --lib
+    category: test
+    outcome: passed
+    reason: focused_regression
+  - command: task pr:validate PR=894
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+  - command: task pr:ready PR=894
+    category: check
+    outcome: passed
+    reason: merge_gate
+github_actions:
+  pr_validate_triggers: 1
+  notable_runs:
+    - id: 30617684911
+      workflow: PR
+      conclusion: success
+    - id: 30617684800
+      workflow: Rust ecosystem checks
+      conclusion: success
+    - id: 30617666939
+      workflow: Remote task
+      conclusion: success
+    - id: 30617660879
+      workflow: Source architecture
+      conclusion: success
+comparison:
+  against:
+    - 886
+    - 888
+  assessment: >
+    Faster than recent large domain-boundary PRs because the change was a focused
+    Drive adapter fix with one validation cycle and no retriggers after the first
+    exact-head green result. Local format burns from contested checkout/worktree
+    isolation were the main waste; no product CI waste after push.
+notes:
+  - Isolated worktree required after another agent repeatedly switched the primary checkout.
+  - No PR retriggers; first exact-head validation was green.
+
