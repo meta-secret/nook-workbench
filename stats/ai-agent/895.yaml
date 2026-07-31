@@ -1,0 +1,78 @@
+schema_version: 3
+source_pr:
+  number: 895
+  url: https://github.com/meta-secret/nook/pull/895
+  title: Add Dashlane CSV password import
+  change_surface: dashlane_csv_password_import
+  head_sha: 2a5ee4a8b6a980f54bf206e2046913aea7b6f5fb
+  merged_sha: afe528a634330f48f8df545cd3e236bd3106df0a
+  started_at: '2026-07-31T09:21:59Z'
+  opened_at: '2026-07-31T09:42:56Z'
+  merged_at: '2026-07-31T10:00:02Z'
+  elapsed_seconds: 2283
+  open_to_merge_seconds: 1026
+summary:
+  local_execution_count: 7
+  local_check_count: 5
+  local_test_count: 2
+  local_combined_count: 0
+  local_execution_seconds: 900
+  github_actions_run_count: 3
+  github_actions_seconds: 1500
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 2
+local_executions:
+  - command: task format
+    category: check
+    outcome: failed
+    reason: pre_push_hygiene_clippy
+  - command: cargo clippy -p nook-core --lib -- -D warnings
+    category: check
+    outcome: passed
+    reason: clippy_fix
+  - command: cargo fmt -p nook-core
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: cargo test -p nook-core --lib secrets::dashlane_import
+    category: test
+    outcome: passed
+    reason: focused_regression
+  - command: cargo test -p nook-core --lib test_import_source_labels
+    category: test
+    outcome: passed
+    reason: focused_regression
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: task pr:validate PR=895
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+github_actions:
+  pr_validate_triggers: 1
+  notable_runs:
+    - id: 30620951902
+      workflow: PR
+      conclusion: success
+    - id: 30620951742
+      workflow: Rust ecosystem checks
+      conclusion: success
+    - id: 30620947021
+      workflow: Source architecture
+      conclusion: success
+comparison:
+  against:
+    - 893
+    - 894
+  assessment: >
+    Faster open-to-merge than Safari import because the Dashlane change reused
+    the existing binary import panel pattern, kept e2e in a focused suite from
+    the start, and needed only one exact-head validation cycle. Local waste was
+    mostly an early clippy failure inside sealed format and a worktree-local
+    merge checkout conflict that required a second merge API call.
+notes:
+  - Plan was already published before UI wiring resumed.
+  - No PR retriggers; first exact-head validation was green.
