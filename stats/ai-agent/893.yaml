@@ -1,0 +1,71 @@
+schema_version: 3
+source_pr:
+  number: 893
+  url: https://github.com/meta-secret/nook/pull/893
+  title: Add Safari browsing-data password import
+  change_surface: safari_apple_passwords_import
+  head_sha: bdb399095ae6ad58a3c3066ca9eecb3a8accab1b
+  merged_sha: 068ac0f486e4846a222db9fa8db8cf1aca89a556
+  started_at: '2026-07-31T07:50:57Z'
+  opened_at: '2026-07-31T08:48:38Z'
+  merged_at: '2026-07-31T09:21:09Z'
+  elapsed_seconds: 5412
+  open_to_merge_seconds: 1951
+summary:
+  local_execution_count: 4
+  local_check_count: 3
+  local_test_count: 1
+  local_combined_count: 0
+  local_execution_seconds: 2400
+  github_actions_run_count: 7
+  github_actions_seconds: 3600
+  pr_retrigger_count: 2
+  agent_requested_rerun_count: 2
+  merge_attempt_count: 1
+local_executions:
+  - command: task format
+    category: check
+    outcome: interrupted
+    reason: pre_push_hygiene
+  - command: cargo fmt --all
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: cargo test --manifest-path preflight/Cargo.toml --test source_file_size
+    category: test
+    outcome: passed
+    reason: source_architecture_fix
+  - command: task pr:validate PR=893
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+github_actions:
+  pr_validate_triggers: 3
+  notable_runs:
+    - id: 30617621434
+      workflow: Source architecture
+      conclusion: failure
+    - id: 30617772753
+      workflow: PR
+      conclusion: success
+    - id: 30617772322
+      workflow: Rust ecosystem checks
+      conclusion: success
+    - id: 30618539050
+      workflow: PR
+      conclusion: success
+    - id: 30618538946
+      workflow: Rust ecosystem checks
+      conclusion: success
+comparison:
+  against:
+    - 894
+    - 886
+  assessment: >
+    Slower open-to-merge than the focused Drive adapter fix because the first
+    exact-head cycle failed the source-size gate and a later main merge forced a
+    second complete validation. Product change itself stayed narrow once the e2e
+    suite was split on an import-capability seam.
+notes:
+  - First Verify path was blocked by local-vault-imports.spec.ts at 1005 lines.
+  - Sealed local format rebuilds were the largest local time sink.
