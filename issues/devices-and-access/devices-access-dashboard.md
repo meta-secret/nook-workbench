@@ -1,13 +1,13 @@
 ---
 title: "Build the Devices & access dashboard"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-01T04:18:33Z
-updated_at: 2026-08-01T04:18:33Z
+updated_at: 2026-08-01T20:18:53Z
 source_issues: []
-related_prs: []
+related_prs: [901]
 depends_on: []
 ---
 
@@ -55,20 +55,21 @@ under their owning vault.
 
 ## Acceptance criteria
 
-- [ ] The dashboard is reachable with no vault, a locked vault, or an unlocked vault.
-- [ ] Passkey and PIN/passphrase protection are both represented truthfully.
-- [ ] The page clearly distinguishes protection method, device identity, vault authorization, enrolled devices, and backup passwords.
-- [ ] Technical IDs and public fingerprints are available through progressive disclosure; private keys and sensitive material never cross into the DOM or logs.
-- [ ] Passkey metadata includes every supported non-secret browser/Nook fact and labels its provenance; unknown provider data remains unknown.
-- [ ] Locked relationships are marked last-known or unknown and mutations require the appropriate authorization.
-- [ ] Existing records migrate without losing unlock capability.
-- [ ] Rust tests own portable domain and persistence behavior; targeted web tests own presentation state; Playwright covers the complete user journey and UI demo contract.
-- [ ] English and Russian translations remain in parity.
-- [ ] Exact-head GitHub Actions validation passes and the implementation PR is squash-merged.
+- [x] The dashboard is reachable with no vault, a locked vault, or an unlocked vault.
+- [x] Passkey and PIN/passphrase protection are both represented truthfully.
+- [x] The page clearly distinguishes protection method, device identity, vault authorization, enrolled devices, and backup passwords.
+- [x] Technical IDs and public fingerprints are available through progressive disclosure; private keys and sensitive material never cross into the DOM or logs.
+- [x] Passkey metadata includes every supported non-secret browser/Nook fact and labels its provenance; unknown provider data remains unknown.
+- [x] Locked relationships are marked last-known or unknown and mutations require the appropriate authorization.
+- [x] Existing records migrate without losing unlock capability.
+- [x] Rust tests own portable domain and persistence behavior; targeted web tests own presentation state; Playwright covers the complete user journey and UI demo contract.
+- [x] English and Russian translations remain in parity.
+- [x] Exact-head GitHub Actions validation passes and the implementation PR is squash-merged.
 
 ## Progress
 
 - 2026-08-01: Direct implementation started after the access model and page scope were confirmed.
+- 2026-08-01: PR #901 passed exact-head validation and was squash-merged as `9fbdae27a5719c85ffcdd245dc431e36307c3757`.
 
 ## Findings and decisions
 
