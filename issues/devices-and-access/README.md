@@ -1,8 +1,8 @@
 ---
 title: "Feature: Devices and access clarity"
-status: in_progress
+status: done
 created_at: 2026-08-01T04:18:33Z
-updated_at: 2026-08-01T04:18:33Z
+updated_at: 2026-08-01T20:18:53Z
 ---
 
 # Feature: Devices and access clarity
@@ -15,7 +15,7 @@ metadata without exposing private key material.
 
 ## Issues
 
-- [ ] [Build the Devices & access dashboard](devices-access-dashboard.md)
+- [x] [Build the Devices & access dashboard](devices-access-dashboard.md)
 
 ## Durable boundaries
 
