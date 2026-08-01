@@ -1,0 +1,459 @@
+schema_version: 3
+source_pr:
+  number: 899
+  url: https://github.com/meta-secret/nook/pull/899
+  title: 'refactor(rust): eliminate authored macros'
+  change_surface: rust_macro_elimination_cross_crate
+  head_sha: c6619ef6225247db926396ca32fd961be654771b
+  pr_head_sha: 35216324adf5d24a198f3aacc95664e0b2848e49
+  started_at: '2026-08-01T04:38:54Z'
+  opened_at: '2026-08-01T04:57:43Z'
+  merged_at: '2026-08-01T05:19:35Z'
+  elapsed_seconds: 2441
+  open_to_merge_seconds: 1312
+summary:
+  local_execution_count: 12
+  local_check_count: 12
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 618
+  github_actions_run_count: 17
+  github_actions_seconds: 4283
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 1
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-08-01T05:36:49Z'
+  head_sha: c6619ef6225247db926396ca32fd961be654771b
+  by_type:
+    rust: 666
+    preflight: 96
+    web_unit: 306
+    e2e: 222
+  total: 1290
+local_executions:
+  - command: task format
+    category: check
+    started_at: '2026-08-01T04:49:00Z'
+    finished_at: '2026-08-01T04:56:40Z'
+    duration_seconds: 460
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: rustfmt preflight sources
+    category: check
+    started_at: '2026-08-01T04:56:40Z'
+    finished_at: '2026-08-01T04:56:41Z'
+    duration_seconds: 1
+    outcome: passed
+    reason: preflight_format
+  - command: task format
+    category: check
+    started_at: '2026-08-01T04:59:50Z'
+    finished_at: '2026-08-01T05:00:25Z'
+    duration_seconds: 35
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: rustfmt preflight sources
+    category: check
+    started_at: '2026-08-01T05:00:25Z'
+    finished_at: '2026-08-01T05:00:26Z'
+    duration_seconds: 1
+    outcome: passed
+    reason: preflight_format
+  - command: task pr:preflight PR=899
+    category: check
+    started_at: '2026-08-01T05:01:35Z'
+    finished_at: '2026-08-01T05:01:42Z'
+    duration_seconds: 7
+    outcome: failed
+    reason: review_thread_present
+  - command: task format
+    category: check
+    started_at: '2026-08-01T05:02:50Z'
+    finished_at: '2026-08-01T05:03:21Z'
+    duration_seconds: 31
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: rustfmt preflight sources
+    category: check
+    started_at: '2026-08-01T05:03:21Z'
+    finished_at: '2026-08-01T05:03:22Z'
+    duration_seconds: 1
+    outcome: passed
+    reason: preflight_format
+  - command: task pr:validate PR=899
+    category: check
+    started_at: '2026-08-01T05:04:23Z'
+    finished_at: '2026-08-01T05:04:28Z'
+    duration_seconds: 5
+    outcome: passed
+    reason: exact_head_validation
+  - command: task format
+    category: check
+    started_at: '2026-08-01T05:08:40Z'
+    finished_at: '2026-08-01T05:09:40Z'
+    duration_seconds: 60
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: task pr:validate PR=899
+    category: check
+    started_at: '2026-08-01T05:10:42Z'
+    finished_at: '2026-08-01T05:10:47Z'
+    duration_seconds: 5
+    outcome: passed
+    reason: exact_head_validation
+  - command: task pr:preflight PR=899
+    category: check
+    started_at: '2026-08-01T05:18:50Z'
+    finished_at: '2026-08-01T05:18:57Z'
+    duration_seconds: 7
+    outcome: passed
+    reason: exact_head_readiness
+  - command: task pr:ready PR=899
+    category: check
+    started_at: '2026-08-01T05:19:00Z'
+    finished_at: '2026-08-01T05:19:05Z'
+    duration_seconds: 5
+    outcome: passed
+    reason: merge_gate
+github_actions_runs:
+  - workflow: Source architecture
+    run_id: 30684921763
+    run_attempt: 1
+    head_sha: b41f90a8d3772dea265381fb267d8d25d28ce298
+    trigger: pull_request
+    started_at: '2026-08-01T04:57:46Z'
+    finished_at: '2026-08-01T04:58:07Z'
+    duration_seconds: 21
+    conclusion: success
+  - workflow: Hive
+    run_id: 30684921768
+    run_attempt: 1
+    head_sha: b41f90a8d3772dea265381fb267d8d25d28ce298
+    trigger: pull_request
+    started_at: '2026-08-01T04:57:46Z'
+    finished_at: '2026-08-01T05:01:33Z'
+    duration_seconds: 227
+    conclusion: cancelled
+  - workflow: Remote task preflight
+    run_id: 30684927532
+    run_attempt: 1
+    head_sha: b41f90a8d3772dea265381fb267d8d25d28ce298
+    trigger: workflow_dispatch
+    started_at: '2026-08-01T04:57:58Z'
+    finished_at: '2026-08-01T04:58:52Z'
+    duration_seconds: 54
+    conclusion: failure
+  - workflow: Remote task hive:verify
+    run_id: 30684927561
+    run_attempt: 1
+    head_sha: b41f90a8d3772dea265381fb267d8d25d28ce298
+    trigger: workflow_dispatch
+    started_at: '2026-08-01T04:57:58Z'
+    finished_at: '2026-08-01T05:06:26Z'
+    duration_seconds: 508
+    conclusion: failure
+  - workflow: Source architecture
+    run_id: 30685029492
+    run_attempt: 1
+    head_sha: b29be766fe5c80dc0ba61fb4fd71f1beb9f2927c
+    trigger: pull_request
+    started_at: '2026-08-01T05:01:10Z'
+    finished_at: '2026-08-01T05:01:42Z'
+    duration_seconds: 32
+    conclusion: success
+  - workflow: Hive
+    run_id: 30685029512
+    run_attempt: 1
+    head_sha: b29be766fe5c80dc0ba61fb4fd71f1beb9f2927c
+    trigger: pull_request
+    started_at: '2026-08-01T05:01:10Z'
+    finished_at: '2026-08-01T05:04:54Z'
+    duration_seconds: 224
+    conclusion: cancelled
+  - workflow: Remote task preflight
+    run_id: 30685032446
+    run_attempt: 1
+    head_sha: b29be766fe5c80dc0ba61fb4fd71f1beb9f2927c
+    trigger: workflow_dispatch
+    started_at: '2026-08-01T05:01:16Z'
+    finished_at: '2026-08-01T05:02:45Z'
+    duration_seconds: 89
+    conclusion: success
+  - workflow: Hive
+    run_id: 30685129916
+    run_attempt: 1
+    head_sha: 2963f19f6870c1d245867f917ff5998c09e34a1b
+    trigger: pull_request
+    started_at: '2026-08-01T05:04:18Z'
+    finished_at: '2026-08-01T05:08:37Z'
+    duration_seconds: 259
+    conclusion: failure
+  - workflow: Source architecture
+    run_id: 30685129922
+    run_attempt: 1
+    head_sha: 2963f19f6870c1d245867f917ff5998c09e34a1b
+    trigger: pull_request
+    started_at: '2026-08-01T05:04:19Z'
+    finished_at: '2026-08-01T05:04:55Z'
+    duration_seconds: 36
+    conclusion: success
+  - workflow: Remote task preflight
+    run_id: 30685134955
+    run_attempt: 1
+    head_sha: 2963f19f6870c1d245867f917ff5998c09e34a1b
+    trigger: workflow_dispatch
+    started_at: '2026-08-01T05:04:28Z'
+    finished_at: '2026-08-01T05:05:52Z'
+    duration_seconds: 84
+    conclusion: success
+  - workflow: PR
+    run_id: 30685135493
+    run_attempt: 1
+    head_sha: 2963f19f6870c1d245867f917ff5998c09e34a1b
+    trigger: pull_request
+    started_at: '2026-08-01T05:04:29Z'
+    finished_at: '2026-08-01T05:10:26Z'
+    duration_seconds: 357
+    conclusion: success
+  - workflow: Rust ecosystem checks
+    run_id: 30685135447
+    run_attempt: 1
+    head_sha: 2963f19f6870c1d245867f917ff5998c09e34a1b
+    trigger: pull_request
+    started_at: '2026-08-01T05:04:29Z'
+    finished_at: '2026-08-01T05:11:06Z'
+    duration_seconds: 397
+    conclusion: cancelled
+  - workflow: Source architecture
+    run_id: 30685339018
+    run_attempt: 1
+    head_sha: 35216324adf5d24a198f3aacc95664e0b2848e49
+    trigger: pull_request
+    started_at: '2026-08-01T05:10:38Z'
+    finished_at: '2026-08-01T05:11:16Z'
+    duration_seconds: 38
+    conclusion: success
+  - workflow: Hive
+    run_id: 30685339024
+    run_attempt: 1
+    head_sha: 35216324adf5d24a198f3aacc95664e0b2848e49
+    trigger: pull_request
+    started_at: '2026-08-01T05:10:38Z'
+    finished_at: '2026-08-01T05:17:17Z'
+    duration_seconds: 399
+    conclusion: success
+  - workflow: Remote task hive:verify
+    run_id: 30685344038
+    run_attempt: 1
+    head_sha: 35216324adf5d24a198f3aacc95664e0b2848e49
+    trigger: workflow_dispatch
+    started_at: '2026-08-01T05:10:47Z'
+    finished_at: '2026-08-01T05:22:55Z'
+    duration_seconds: 728
+    conclusion: success
+  - workflow: PR
+    run_id: 30685345495
+    run_attempt: 1
+    head_sha: 35216324adf5d24a198f3aacc95664e0b2848e49
+    trigger: pull_request
+    started_at: '2026-08-01T05:10:49Z'
+    finished_at: '2026-08-01T05:16:51Z'
+    duration_seconds: 362
+    conclusion: success
+  - workflow: Rust ecosystem checks
+    run_id: 30685345392
+    run_attempt: 1
+    head_sha: 35216324adf5d24a198f3aacc95664e0b2848e49
+    trigger: pull_request
+    started_at: '2026-08-01T05:10:49Z'
+    finished_at: '2026-08-01T05:18:37Z'
+    duration_seconds: 468
+    conclusion: success
+cache_telemetry:
+  totals:
+    job_count: 8
+    remote_backend_job_count: 0
+    direct_compile_job_count: 8
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 1066
+    buildkit_cached_steps: 661
+    buildkit_cache_hit_rate_percent: 62.01
+  jobs:
+    - workflow: PR
+      run_id: 30685135493
+      run_attempt: 1
+      job: coverage
+      cache_backend: direct_compile
+      cache_backend_reason: credentials_unavailable
+      cache_backend_persistent: false
+      sccache:
+        compile_requests: 0
+        cache_hits: 0
+        cache_misses: 0
+      buildkit:
+        completed_steps: 0
+        cached_steps: 0
+        measurement: buildx_target_record_steps
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30685135493
+      run_attempt: 1
+      job: rust
+      cache_backend: direct_compile
+      cache_backend_reason: hosted_buildkit_only
+      cache_backend_persistent: false
+      sccache:
+        compile_requests: 0
+        cache_hits: 0
+        cache_misses: 0
+      buildkit:
+        completed_steps: 405
+        cached_steps: 257
+        cache_hit_rate_percent: 63.46
+        measurement: buildx_target_record_steps
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30685135493
+      run_attempt: 1
+      job: verify
+      cache_backend: direct_compile
+      cache_backend_reason: hosted_buildkit_only
+      cache_backend_persistent: false
+      sccache:
+        compile_requests: 0
+        cache_hits: 0
+        cache_misses: 0
+      buildkit:
+        completed_steps: 66
+        cached_steps: 19
+        cache_hit_rate_percent: 28.79
+        measurement: buildx_target_record_steps
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30685135493
+      run_attempt: 1
+      job: wasm
+      cache_backend: direct_compile
+      cache_backend_reason: hosted_buildkit_only
+      cache_backend_persistent: false
+      sccache:
+        compile_requests: 0
+        cache_hits: 0
+        cache_misses: 0
+      buildkit:
+        completed_steps: 257
+        cached_steps: 183
+        cache_hit_rate_percent: 71.21
+        measurement: buildx_target_record_steps
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30685345495
+      run_attempt: 1
+      job: coverage
+      cache_backend: direct_compile
+      cache_backend_reason: credentials_unavailable
+      cache_backend_persistent: false
+      sccache:
+        compile_requests: 0
+        cache_hits: 0
+        cache_misses: 0
+      buildkit:
+        completed_steps: 0
+        cached_steps: 0
+        measurement: buildx_target_record_steps
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30685345495
+      run_attempt: 1
+      job: rust
+      cache_backend: direct_compile
+      cache_backend_reason: hosted_buildkit_only
+      cache_backend_persistent: false
+      sccache:
+        compile_requests: 0
+        cache_hits: 0
+        cache_misses: 0
+      buildkit:
+        completed_steps: 15
+        cached_steps: 0
+        cache_hit_rate_percent: 0
+        measurement: buildx_target_record_steps
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30685345495
+      run_attempt: 1
+      job: verify
+      cache_backend: direct_compile
+      cache_backend_reason: hosted_buildkit_only
+      cache_backend_persistent: false
+      sccache:
+        compile_requests: 0
+        cache_hits: 0
+        cache_misses: 0
+      buildkit:
+        completed_steps: 66
+        cached_steps: 19
+        cache_hit_rate_percent: 28.79
+        measurement: buildx_target_record_steps
+      collection_complete: true
+      collection_warnings: []
+    - workflow: PR
+      run_id: 30685345495
+      run_attempt: 1
+      job: wasm
+      cache_backend: direct_compile
+      cache_backend_reason: hosted_buildkit_only
+      cache_backend_persistent: false
+      sccache:
+        compile_requests: 0
+        cache_hits: 0
+        cache_misses: 0
+      buildkit:
+        completed_steps: 257
+        cached_steps: 183
+        cache_hit_rate_percent: 71.21
+        measurement: buildx_target_record_steps
+      collection_complete: true
+      collection_warnings: []
+pr_retriggers:
+  - at: '2026-08-01T05:10:47Z'
+    kind: validation_label
+    reason: hive_lint_fix_changed_head
+merge_attempts:
+  - at: '2026-08-01T05:19:32Z'
+    method: squash
+    outcome: success
+    reason: readiness_passed
+comparison:
+  baseline_prs: [886]
+  baseline_quality: comparable
+  baseline_note: >-
+    PR 886 was the newest comparable broad Rust/WASM domain-boundary cleanup;
+    it lacks a merged-head test inventory, so no inventory delta is reported.
+  elapsed_seconds_change_percent: -79.35
+  local_execution_seconds_change_percent: -31.33
+  github_actions_seconds_change_percent: -20.69
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - >-
+      Hosted preflight and Hive caught migration-specific lint issues; every
+      repeat followed a source correction, with no unchanged rerun.
+    - >-
+      Security review found a real scanner-containment flaw that was fixed and
+      regression-tested before merge.
+    - >-
+      Exact-head focused and complete validation were run in parallel, and the
+      single merge attempt followed a fresh readiness pass.
+  required_actions: []
