@@ -1,0 +1,72 @@
+schema_version: 3
+source_pr:
+  number: 898
+  url: https://github.com/meta-secret/nook/pull/898
+  title: Fix preserve local vault and honest unlock after import-as-new
+  change_surface: import_as_new_vault_preserve_unlock
+  head_sha: a7003c08a58cbf4af32192ff9774e6364402d698
+  merged_sha: 532ff81c20849e8a71a37b011c14324395f4a0be
+  started_at: '2026-08-01T02:40:00Z'
+  opened_at: '2026-08-01T02:54:16Z'
+  merged_at: '2026-08-01T03:40:15Z'
+  elapsed_seconds: 3615
+  open_to_merge_seconds: 2759
+summary:
+  local_execution_count: 5
+  local_check_count: 5
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 1100
+  github_actions_run_count: 16
+  github_actions_seconds: 4200
+  pr_retrigger_count: 2
+  agent_requested_rerun_count: 2
+  merge_attempt_count: 1
+local_executions:
+  - command: task format
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: '.github/scripts/ui-demo-contract.sh <base-sha>'
+    category: check
+    outcome: passed
+    reason: pre_push_hygiene
+  - command: task remote TASK_NAME=wasm:test:browser
+    category: check
+    outcome: failed
+    reason: chromedriver_sigkill_after_compile
+  - command: task pr:validate PR=898
+    category: check
+    outcome: passed
+    reason: exact_head_validation
+  - command: task pr:ready PR=898
+    category: check
+    outcome: passed
+    reason: merge_gate
+github_actions:
+  pr_validate_triggers: 2
+  notable_runs:
+    - id: 30682115343
+      workflow: PR
+      conclusion: success
+    - id: 30682115203
+      workflow: Rust ecosystem checks
+      conclusion: success
+    - id: 30682110967
+      workflow: Remote task
+      conclusion: failure
+    - id: 30681285453
+      workflow: PR
+      conclusion: success
+comparison:
+  against:
+    - 896
+    - 895
+  assessment: >
+    Faster open-to-merge than recent Drive/extension PRs. One extra exact-head
+    cycle covered browser-test compile fixes; product path stayed focused on
+    import preserve + unlock honesty. Focused wasm:test:browser remained flaky
+    at ChromeDriver after compile succeeded and did not block merge.
+notes:
+  - Preview: https://pr-898.nokey-sh.pages.dev
+  - Parent issue already done; this closed the import-as-new follow-through gap.

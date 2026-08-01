@@ -5,9 +5,9 @@ priority: p2
 automation: manual
 owner: "unassigned"
 created_at: 2026-07-06T23:32:38Z
-updated_at: 2026-07-07T05:40:53Z
+updated_at: 2026-08-01T03:45:00Z
 source_issues: ["https://github.com/meta-secret/nook/issues/205"]
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/898"]
 depends_on: []
 legacy_labels: ["bug"]
 legacy_state_reason: "COMPLETED"
@@ -92,3 +92,7 @@ Do not auto-merge distinct vault databases in this issue. If merging two differe
 ## Historical comments
 
 No comments.
+
+## Progress
+
+- 2026-08-01: Closed the import-as-new-vault follow-through gap for empty-local vs different-provider vaults in [Nook PR #898](https://github.com/meta-secret/nook/pull/898): prior local vault remains registered, multi-vault picker stays visible, and unlock honesty prefers backup password when this device has no auth envelope.
