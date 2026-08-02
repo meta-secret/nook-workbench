@@ -35,10 +35,10 @@ request while preserving the failing revision and workflow evidence.
 
 ## Acceptance criteria
 
-- [ ] The failure is explained and fixed with targeted regression coverage.
-- [ ] The fix PR passes exact-head repository-owned checks, including the
+- [x] The failure is explained and fixed with targeted regression coverage.
+- [x] The fix PR passes exact-head repository-owned checks, including the
   Main-equivalent browser suites.
-- [ ] The fix is squash-merged and the incident records its PR and validation.
+- [x] The fix is squash-merged and the incident records its PR and validation.
 
 ## Progress
 
