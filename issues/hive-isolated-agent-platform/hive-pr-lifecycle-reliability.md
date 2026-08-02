@@ -1,12 +1,12 @@
 ---
 title: Make Hive repair PR ownership reliable
 feature: hive-isolated-agent-platform
-status: done
+status: in_progress
 priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-07-29T22:07:36Z
+updated_at: 2026-08-02T17:18:47Z
 source_issues: []
 related_prs:
   - 865
@@ -94,6 +94,12 @@ claim through a merged, verified result or a truthful terminal supersession.
   The production replay completed the original root on attempt 14. The queue
   has no running or ready tasks, no Hive PR remains open, and all Hive
   deployments are available with zero container restarts.
+- 2026-08-02: Reopened after the long-running Workbench dispatcher exhausted
+  its process budget with unreaped detached Git children. A failed Main
+  incident was published successfully but remained ready because the
+  dispatcher could no longer launch its synchronization operation. Production
+  recovery, foreground cleanup, liveness coverage, and durable delivery proof
+  are in progress.
 
 ## Findings and decisions
 
