@@ -1,0 +1,907 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-08-02T17:52:47.598Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 30745952825,
+    "run_attempt": 2,
+    "url": "https://github.com/meta-secret/nook/actions/runs/30745952825",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "1783e5db6458451a3ce30f16b8b64f87a8e148cf",
+    "conclusion": "success",
+    "created_at": "2026-08-02T17:36:10Z",
+    "started_at": "2026-08-02T17:36:14Z",
+    "completed_at": "2026-08-02T17:52:32Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 904,
+      "url": "https://github.com/meta-secret/nook/pull/904",
+      "title": "Show the browser access chain instead of an evidence ledger"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 5,
+    "execution_seconds": 978,
+    "wall_seconds": 983,
+    "job_count": 6,
+    "step_count": 63,
+    "build_seconds": 432,
+    "deployment_seconds": 232
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 6,
+      "remote_backend_job_count": 1,
+      "direct_compile_job_count": 5,
+      "sccache_compile_requests": 58,
+      "sccache_cache_hits": 30,
+      "sccache_cache_misses": 0,
+      "sccache_hit_rate_percent": 100,
+      "buildkit_completed_steps": 944,
+      "buildkit_cached_steps": 438,
+      "buildkit_cache_hit_rate_percent": 46.4
+    },
+    "jobs": [
+      {
+        "job": "deploy",
+        "cache_backend": {
+          "kind": "direct_compile",
+          "persistent": false,
+          "reason": "hosted_secret_free_by_design"
+        },
+        "sccache": {
+          "report_count": 0,
+          "compile_requests": 0,
+          "requests_executed": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0
+        },
+        "buildkit": {
+          "build_record_count": 4,
+          "completed_steps": 66,
+          "cached_steps": 19,
+          "cache_hit_rate_percent": 28.79,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      },
+      {
+        "job": "extension-e2e",
+        "cache_backend": {
+          "kind": "direct_compile",
+          "persistent": false,
+          "reason": "hosted_secret_free_by_design"
+        },
+        "sccache": {
+          "report_count": 0,
+          "compile_requests": 0,
+          "requests_executed": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0
+        },
+        "buildkit": {
+          "build_record_count": 5,
+          "completed_steps": 80,
+          "cached_steps": 0,
+          "cache_hit_rate_percent": 0,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      },
+      {
+        "job": "ui-demos",
+        "cache_backend": {
+          "kind": "direct_compile",
+          "persistent": false,
+          "reason": "hosted_secret_free_by_design"
+        },
+        "sccache": {
+          "report_count": 0,
+          "compile_requests": 0,
+          "requests_executed": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0
+        },
+        "buildkit": {
+          "build_record_count": 5,
+          "completed_steps": 80,
+          "cached_steps": 0,
+          "cache_hit_rate_percent": 0,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      },
+      {
+        "job": "wasm",
+        "cache_backend": {
+          "kind": "remote",
+          "persistent": true,
+          "reason": "persistent_s3_service"
+        },
+        "sccache": {
+          "report_count": 4,
+          "compile_requests": 58,
+          "requests_executed": 30,
+          "cache_hits": 30,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0,
+          "hit_rate_percent": 100
+        },
+        "buildkit": {
+          "build_record_count": 11,
+          "completed_steps": 479,
+          "cached_steps": 354,
+          "cache_hit_rate_percent": 73.9,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      },
+      {
+        "job": "web",
+        "cache_backend": {
+          "kind": "direct_compile",
+          "persistent": false,
+          "reason": "hosted_secret_free_by_design"
+        },
+        "sccache": {
+          "report_count": 0,
+          "compile_requests": 0,
+          "requests_executed": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0
+        },
+        "buildkit": {
+          "build_record_count": 10,
+          "completed_steps": 159,
+          "cached_steps": 65,
+          "cache_hit_rate_percent": 40.88,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      },
+      {
+        "job": "web-e2e",
+        "cache_backend": {
+          "kind": "direct_compile",
+          "persistent": false,
+          "reason": "hosted_secret_free_by_design"
+        },
+        "sccache": {
+          "report_count": 0,
+          "compile_requests": 0,
+          "requests_executed": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0
+        },
+        "buildkit": {
+          "build_record_count": 5,
+          "completed_steps": 80,
+          "cached_steps": 0,
+          "cache_hit_rate_percent": 0,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      }
+    ],
+    "collection": {
+      "complete": true,
+      "warnings": []
+    }
+  },
+  "jobs": [
+    {
+      "id": 91526695439,
+      "name": "WASM verification and artifact",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000013689",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-02T17:36:14Z",
+      "completed_at": "2026-08-02T17:40:09Z",
+      "duration_seconds": 235,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:36:15Z",
+          "completed_at": "2026-08-02T17:36:16Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:36:16Z",
+          "completed_at": "2026-08-02T17:36:17Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:36:17Z",
+          "completed_at": "2026-08-02T17:36:28Z",
+          "duration_seconds": 11
+        },
+        {
+          "number": 4,
+          "name": "WASM clippy, build, and package export",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:36:28Z",
+          "completed_at": "2026-08-02T17:38:22Z",
+          "duration_seconds": 114
+        },
+        {
+          "number": 5,
+          "name": "Stamp WASM run attempt",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:38:22Z",
+          "completed_at": "2026-08-02T17:38:22Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 6,
+          "name": "Upload WASM handoff",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:38:22Z",
+          "completed_at": "2026-08-02T17:38:25Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 7,
+          "name": "WASM Node tests",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:38:25Z",
+          "completed_at": "2026-08-02T17:39:39Z",
+          "duration_seconds": 74
+        },
+        {
+          "number": 8,
+          "name": "Publish verified WASM BuildKit cache",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:39:39Z",
+          "completed_at": "2026-08-02T17:40:01Z",
+          "duration_seconds": 22
+        },
+        {
+          "number": 9,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:01Z",
+          "completed_at": "2026-08-02T17:40:04Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 17,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:04Z",
+          "completed_at": "2026-08-02T17:40:07Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 18,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:07Z",
+          "completed_at": "2026-08-02T17:40:07Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 19,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:07Z",
+          "completed_at": "2026-08-02T17:40:07Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 91527080481,
+      "name": "UI demos",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000013710",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-02T17:40:12Z",
+      "completed_at": "2026-08-02T17:45:39Z",
+      "duration_seconds": 327,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:13Z",
+          "completed_at": "2026-08-02T17:40:15Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:15Z",
+          "completed_at": "2026-08-02T17:40:16Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:16Z",
+          "completed_at": "2026-08-02T17:40:28Z",
+          "duration_seconds": 12
+        },
+        {
+          "number": 4,
+          "name": "Download verified WASM handoff",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:28Z",
+          "completed_at": "2026-08-02T17:40:29Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 5,
+          "name": "Headless UI demos",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:29Z",
+          "completed_at": "2026-08-02T17:45:26Z",
+          "duration_seconds": 297
+        },
+        {
+          "number": 6,
+          "name": "Upload complete Main UI demo artifact",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:45:26Z",
+          "completed_at": "2026-08-02T17:45:28Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 7,
+          "name": "Publish largest Main UI demos to the merged PR issue",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:45:28Z",
+          "completed_at": "2026-08-02T17:45:34Z",
+          "duration_seconds": 6
+        },
+        {
+          "number": 8,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:45:34Z",
+          "completed_at": "2026-08-02T17:45:35Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 15,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:45:35Z",
+          "completed_at": "2026-08-02T17:45:38Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 16,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:45:38Z",
+          "completed_at": "2026-08-02T17:45:38Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 17,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:45:38Z",
+          "completed_at": "2026-08-02T17:45:38Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 91527080484,
+      "name": "Extension e2e",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000013713",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-02T17:40:13Z",
+      "completed_at": "2026-08-02T17:46:16Z",
+      "duration_seconds": 363,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:14Z",
+          "completed_at": "2026-08-02T17:40:15Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:15Z",
+          "completed_at": "2026-08-02T17:40:16Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:16Z",
+          "completed_at": "2026-08-02T17:40:30Z",
+          "duration_seconds": 14
+        },
+        {
+          "number": 4,
+          "name": "Download verified WASM handoff",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:30Z",
+          "completed_at": "2026-08-02T17:40:32Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 5,
+          "name": "Extension e2e",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:32Z",
+          "completed_at": "2026-08-02T17:46:06Z",
+          "duration_seconds": 334
+        },
+        {
+          "number": 6,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:46:06Z",
+          "completed_at": "2026-08-02T17:46:09Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 11,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:46:09Z",
+          "completed_at": "2026-08-02T17:46:13Z",
+          "duration_seconds": 4
+        },
+        {
+          "number": 12,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:46:13Z",
+          "completed_at": "2026-08-02T17:46:13Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:46:13Z",
+          "completed_at": "2026-08-02T17:46:14Z",
+          "duration_seconds": 1
+        }
+      ]
+    },
+    {
+      "id": 91527080485,
+      "name": "Web e2e",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000013712",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-02T17:40:14Z",
+      "completed_at": "2026-08-02T17:48:11Z",
+      "duration_seconds": 477,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:14Z",
+          "completed_at": "2026-08-02T17:40:15Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:15Z",
+          "completed_at": "2026-08-02T17:40:17Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:17Z",
+          "completed_at": "2026-08-02T17:40:31Z",
+          "duration_seconds": 14
+        },
+        {
+          "number": 4,
+          "name": "Download verified WASM handoff",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:31Z",
+          "completed_at": "2026-08-02T17:40:32Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 5,
+          "name": "Local-provider web e2e",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:32Z",
+          "completed_at": "2026-08-02T17:48:04Z",
+          "duration_seconds": 452
+        },
+        {
+          "number": 6,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:48:04Z",
+          "completed_at": "2026-08-02T17:48:06Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 11,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:48:06Z",
+          "completed_at": "2026-08-02T17:48:10Z",
+          "duration_seconds": 4
+        },
+        {
+          "number": 12,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:48:10Z",
+          "completed_at": "2026-08-02T17:48:10Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:48:10Z",
+          "completed_at": "2026-08-02T17:48:10Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 91527080488,
+      "name": "Verify web build",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000013711",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-02T17:40:19Z",
+      "completed_at": "2026-08-02T17:44:50Z",
+      "duration_seconds": 271,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:19Z",
+          "completed_at": "2026-08-02T17:40:20Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:20Z",
+          "completed_at": "2026-08-02T17:40:21Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:21Z",
+          "completed_at": "2026-08-02T17:40:35Z",
+          "duration_seconds": 14
+        },
+        {
+          "number": 4,
+          "name": "Download verified WASM handoff",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:35Z",
+          "completed_at": "2026-08-02T17:40:36Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 5,
+          "name": "Svelte checks, JS unit tests, lint, and web build",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:40:36Z",
+          "completed_at": "2026-08-02T17:44:40Z",
+          "duration_seconds": 244
+        },
+        {
+          "number": 6,
+          "name": "Publish verified web BuildKit cache",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:44:40Z",
+          "completed_at": "2026-08-02T17:44:42Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 7,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:44:42Z",
+          "completed_at": "2026-08-02T17:44:44Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 13,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:44:44Z",
+          "completed_at": "2026-08-02T17:44:48Z",
+          "duration_seconds": 4
+        },
+        {
+          "number": 14,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:44:48Z",
+          "completed_at": "2026-08-02T17:44:48Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 15,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:44:48Z",
+          "completed_at": "2026-08-02T17:44:48Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 91527851643,
+      "name": "Deploy development",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000013741",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-02T17:48:15Z",
+      "completed_at": "2026-08-02T17:52:32Z",
+      "duration_seconds": 257,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:48:16Z",
+          "completed_at": "2026-08-02T17:48:18Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:48:18Z",
+          "completed_at": "2026-08-02T17:48:19Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:48:19Z",
+          "completed_at": "2026-08-02T17:48:32Z",
+          "duration_seconds": 13
+        },
+        {
+          "number": 4,
+          "name": "Download verified WASM handoff",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:48:32Z",
+          "completed_at": "2026-08-02T17:48:33Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 5,
+          "name": "Build sealed web image for development deploy",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:48:33Z",
+          "completed_at": "2026-08-02T17:51:46Z",
+          "duration_seconds": 193
+        },
+        {
+          "number": 6,
+          "name": "Deploy isolated development applications to Cloudflare Pages",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:51:46Z",
+          "completed_at": "2026-08-02T17:52:14Z",
+          "duration_seconds": 28
+        },
+        {
+          "number": 7,
+          "name": "Configure and verify isolated development domains",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:52:14Z",
+          "completed_at": "2026-08-02T17:52:24Z",
+          "duration_seconds": 10
+        },
+        {
+          "number": 8,
+          "name": "Record development deployment",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:52:24Z",
+          "completed_at": "2026-08-02T17:52:25Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 9,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:52:25Z",
+          "completed_at": "2026-08-02T17:52:27Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 17,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:52:27Z",
+          "completed_at": "2026-08-02T17:52:30Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 18,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:52:30Z",
+          "completed_at": "2026-08-02T17:52:30Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 19,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-02T17:52:31Z",
+          "completed_at": "2026-08-02T17:52:31Z",
+          "duration_seconds": 0
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [
+      {
+        "run_id": 30737806787,
+        "run_attempt": 1
+      },
+      {
+        "run_id": 30735934129,
+        "run_attempt": 1
+      }
+    ],
+    "baseline_quality": "comparable",
+    "baseline_note": "Two most recent successful Main attempts from the same workflow",
+    "wall_seconds_change_percent": -15.8,
+    "execution_seconds_change_percent": -16.3,
+    "build_seconds_change_percent": -18.5,
+    "regression": false,
+    "regression_reasons": []
+  }
+}
