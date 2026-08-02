@@ -21,8 +21,9 @@ ability to launch Git operations.
   while the dispatcher is the container's first process.
 - Add behavior-focused regression coverage for foreground Workbench cleanup and
   an operational health signal that detects stalled synchronization.
-- Preserve the token-free dispatcher, Kata isolation, Neo4j durability, and
-  existing Main-failure handoff contract.
+- Preserve Kata isolation, Neo4j durability, and the existing Main-failure
+  handoff contract. Give the dispatcher only the existing publication token
+  needed for authenticated GitHub run reads, without exposing Codex auth.
 - Restore production service, deploy the immutable repair, and verify that the
   waiting Main incident is claimed and progresses through normal Hive delivery.
 - Validate and deliver the source change through the repository's hosted,
@@ -48,6 +49,12 @@ ability to launch Git operations.
 4. Squash-merge, deploy the pinned Hive image, and verify dispatcher health,
    durable queue state, and Main-repair progress.
 5. Publish the completion worklog, issue update, and agent statistics.
+
+During the production soak, the new startup probe exposed a second bounded
+failure: a cold dispatcher reconciles more ready incident records than the
+shared anonymous GitHub API budget reliably permits. Authenticate those reads
+with the existing narrowly scoped publication credential before restarting the
+soak.
 
 ## Completion evidence
 
