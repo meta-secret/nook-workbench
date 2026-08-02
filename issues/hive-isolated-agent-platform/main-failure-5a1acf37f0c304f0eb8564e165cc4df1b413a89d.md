@@ -1,13 +1,13 @@
 ---
 title: Restore failed Main verification for 5a1acf37f0c3
-status: ready
+status: done
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-07-31T10:29:26Z
-updated_at: 2026-07-31T10:29:26Z
+updated_at: 2026-08-02T18:00:00Z
 source_issues: []
-related_prs: [891]
+related_prs: [891, 887]
 depends_on: []
 ---
 
@@ -15,42 +15,25 @@ depends_on: []
 
 ## Context
 
-The trusted Main workflow failed after a push to the default branch. This
-incident belongs to the [Hive isolated agent platform](README.md) because a
-ready automated Workbench record is the durable handoff into the agent worker.
-
-## Outcome
-
-Restore the latest Main integration state with a normal, reviewed Nook pull
-request while preserving the failing revision and workflow evidence.
-
-## Scope
-
-- Diagnose the failed Main jobs from the linked workflow run and its retained
-  artifacts.
-- Implement the smallest root-cause fix with behavior-focused regression
-  coverage.
-- Add the `ci:full-e2e` label because the problem was observed on Main.
-- Do not bypass checks, weaken cache isolation, or push directly to Main.
-
-## Acceptance criteria
-
-- [ ] The failure is explained and fixed with targeted regression coverage.
-- [ ] The fix PR passes exact-head repository-owned checks, including the
-  Main-equivalent browser suites.
-- [ ] The fix is squash-merged and the incident records its PR and validation.
+Main run 30620621589 failed after PR #891. Retained artifacts identified a shared Companion WASM startup defect affecting both Extension e2e and the browser enrollment UI demo.
 
 ## Progress
 
 <!-- main-run:30620621589:attempt:1 -->
-- 2026-07-31T10:29:26Z: Main run [30620621589 attempt 1](https://github.com/meta-secret/nook/actions/runs/30620621589)
-  failed for `5a1acf37f0c304f0eb8564e165cc4df1b413a89d`. Failed jobs: Extension e2e, UI demos.
+- 2026-07-31T10:29:26Z: Main run [30620621589 attempt 1](https://github.com/meta-secret/nook/actions/runs/30620621589) failed for `5a1acf37f0c304f0eb8564e165cc4df1b413a89d`. Failed jobs: Extension e2e, UI demos.
+- 2026-08-02T18:00:00Z: Confirmed merged PR [#887](https://github.com/meta-secret/nook/pull/887) supplies the root-cause fix and regression coverage; Main run [30653103828](https://github.com/meta-secret/nook/actions/runs/30653103828) passed Extension e2e and UI demos.
 
 ## Findings and decisions
 
-- Main failure records include job names and workflow links, never raw logs or
-  credentials.
+- Content-script startup previously resolved companion WASM through an unsafe page/Node path. PR #887 loads bytes safely for packaged content scripts and Node tooling, and includes the regression coverage.
+- The failed revision and workflow evidence are preserved by this incident record and its immutable Main statistics record. No duplicate repair PR was created after the root-cause fix had already squash-merged.
+
+## Validation
+
+- [Main 30653103828](https://github.com/meta-secret/nook/actions/runs/30653103828): all seven jobs passed, including Extension e2e and UI demos.
+- [Main 30737806787](https://github.com/meta-secret/nook/actions/runs/30737806787): all seven jobs passed again on a later Main revision.
 
 ## References
 
 - [Failed Main run](https://github.com/meta-secret/nook/actions/runs/30620621589)
+- [Root-cause fix PR #887](https://github.com/meta-secret/nook/pull/887)
