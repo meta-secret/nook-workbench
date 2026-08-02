@@ -55,6 +55,13 @@ shared anonymous GitHub REST API budget reliably permits. Read and fail-closed
 validate the public run page instead, preserving the dispatcher credential
 boundary while avoiding the REST rate budget, before restarting the soak.
 
+The merged public-page repair rollout exposed a third deployment-lifecycle
+failure: normal image deployment can overwrite Hive's newer cluster-persisted
+Codex refresh credential with an older local bootstrap file. Separate
+one-time/explicit credential rotation from routine deployment, preserve the
+cluster-owned Secret during public-Zot image rollouts, and cover that ownership
+contract mechanically before the final production soak.
+
 ## Completion evidence
 
 - A merged Nook pull request with green exact-head repository checks.
