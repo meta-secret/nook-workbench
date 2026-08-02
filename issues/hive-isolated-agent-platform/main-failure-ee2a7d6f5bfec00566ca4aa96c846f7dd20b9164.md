@@ -1,13 +1,13 @@
 ---
 title: Restore failed Main verification for ee2a7d6f5bfe
-status: ready
+status: done
 priority: p1
 automation: hive
-owner: unassigned
+owner: hive
 created_at: 2026-07-31T07:15:57Z
-updated_at: 2026-07-31T07:15:57Z
+updated_at: 2026-08-02T17:42:00Z
 source_issues: []
-related_prs: [886]
+related_prs: [886, 887]
 depends_on: []
 ---
 
@@ -44,12 +44,14 @@ request while preserving the failing revision and workflow evidence.
 
 <!-- main-run:30610434179:attempt:1 -->
 - 2026-07-31T07:15:57Z: Main run [30610434179 attempt 1](https://github.com/meta-secret/nook/actions/runs/30610434179)
-  failed for `ee2a7d6f5bfec00566ca4aa96c846f7dd20b9164`. Failed jobs: Extension e2e, UI demos.
+- 2026-08-02T17:42:00Z: Retained UI-demo evidence showed the browser received an HTML fallback instead of the expected WASM binary. Merged Hive PR [#887](https://github.com/meta-secret/nook/pull/887), labeled `hive` and `ci:full-e2e`, carried regression coverage and completed exact-head Main-equivalent browser validation. Its resulting Main run [30653103828](https://github.com/meta-secret/nook/actions/runs/30653103828) passed Extension e2e and UI demos; this incident is resolved.
 
 ## Findings and decisions
 
 - Main failure records include job names and workflow links, never raw logs or
   credentials.
+- Later green Main verification is the authoritative completion evidence when a
+  repair branch was merged before this retained incident was resumed.
 
 ## References
 
