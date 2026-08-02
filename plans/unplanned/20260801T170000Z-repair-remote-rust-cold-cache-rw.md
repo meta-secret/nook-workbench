@@ -12,19 +12,20 @@ supersedes: plans/unplanned/20260801T160000Z-repair-remote-rust-cold-cache.md
 ## Interpreted request
 
 Stop focused hosted Rust and WASM tasks from repeatedly downloading and compiling
-the dependency graph. Make SeaweedFS the highest-priority authenticated read/write
-compiler-object cache and the private Zot registry the second-priority read/write
-BuildKit layer cache, while preserving strict branch isolation and Main fallback.
+the dependency graph. Use SeaweedFS for trusted compiler-object reuse and the
+private Zot registry as the authoritative BuildKit layer cache, while preserving
+strict branch isolation and Main fallback.
 
 ## Requirements
 
 - Identify the first uncached BuildKit stage from current Remote workflow logs.
 - Distinguish Zot-backed BuildKit layer reuse from SeaweedFS-backed compiler-object
   reuse and measure both services with concrete health and capacity evidence.
-- Let explicitly dispatched same-repository Remote tasks read and write compiler
-  objects so genuinely new Rust dependencies populate SeaweedFS for later runs.
+- Let explicitly dispatched same-repository Remote tasks read compiler objects
+  from SeaweedFS while keeping Main as its only writer.
 - Let each Remote branch write only deterministic branch-isolated Zot cache refs,
-  restoring from that branch first and trusted Main refs second.
+  so genuinely new dependencies are immediately reusable; restore from that
+  branch first and trusted Main refs second.
 - Mount cache credentials through stable BuildKit secret IDs and paths whose
   contents are excluded from layer cache checksums; never expose secrets as build
   arguments, image environment, source files, URLs, or logs.
@@ -35,20 +36,21 @@ BuildKit layer cache, while preserving strict branch isolation and Main fallback
 
 ## Constraints and exclusions
 
-- Pull-request validation stays secret-free and read-only against trusted Main Zot
-  refs. Credential-bearing execution is limited to explicitly dispatched,
-  same-repository branch Remote tasks and trusted Main jobs.
+- Same-repository pull-request validation may authenticate with the ACL-limited
+  Remote Zot identity to restore caches, but exporters stay disabled. Forks
+  receive no credentials. Trusted Main alone publishes Main cache refs.
 - Branch jobs cannot write Main Zot refs or gain SeaweedFS administrative actions.
 - Cache outages fall back to direct compilation, and Zot imports retain Main
   fallback behavior.
 - No persistent runner or persistent Docker daemon is introduced.
 
-## Delivery plan
+## Initial plan
 
 1. Correct the Docker Bake graph so Remote branches restore branch Zot refs first,
    restore Main refs second, and export only their deterministic branch refs.
-2. Pass scoped SeaweedFS credentials to Rust compiler vertices via stable optional
-   BuildKit secret mounts and keep secret contents outside cache checksums.
+2. Pass scoped read-only SeaweedFS credentials to Remote compiler vertices via
+   stable optional BuildKit secret mounts and keep secret contents outside cache
+   checksums.
 3. Split server-only SeaweedFS administration from the bucket-scoped build identity
    and verify authenticated read/write behavior plus denied anonymous access.
 4. Add and run preflight contracts, format, then prove two repeated hosted Rust/WASM

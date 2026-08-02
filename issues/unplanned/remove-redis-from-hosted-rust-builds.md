@@ -5,13 +5,14 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-07-27T05:45:15Z
-updated_at: 2026-07-27T19:02:15Z
+updated_at: 2026-08-02T02:36:13Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/805
   - https://github.com/meta-secret/nook/pull/812
   - https://github.com/meta-secret/nook/pull/816
   - https://github.com/meta-secret/nook/pull/818
+  - https://github.com/meta-secret/nook/pull/902
 depends_on: []
 ---
 
@@ -25,30 +26,41 @@ dependencies. This direct repair belongs to
 
 ## Outcome
 
-Hosted builds use one stable dependency-cache mechanism: an immutable,
-dependency-fingerprinted GitHub Actions BuildKit scope without Redis credentials
-or compiler secret mounts.
+Hosted builds use two purpose-specific private caches without Redis or GitHub
+Actions cache storage: Zot persists portable BuildKit layers, and SeaweedFS
+persists compiler objects. Remote branches publish only isolated Zot refs while
+Main publishes protected refs and the authoritative SeaweedFS objects.
 
 ## Scope
 
-- Remove hosted Redis credential transport and compiler secret mounts.
+- Remove hosted Redis and GitHub Actions cache transport.
 - Fingerprint all dependency graph and compiler-environment inputs.
-- Add hard preflight protection against regression.
+- Persist BuildKit layers in Zot and compiler objects in SeaweedFS through stable,
+  scoped secret mounts.
+- Add hard preflight protection for cache isolation and secret handling.
 - Keep explicit local/runtime Redis tooling outside the hosted build path.
 
 ## Acceptance criteria
 
 - [x] Hosted compiler stages do not mount a Redis secret.
+- [x] Hosted Docker Bake targets do not import or export GitHub Actions caches.
 - [x] The dependency scope changes only when a declared build input changes.
-- [x] Preflight rejects secret-mount and fingerprint-contract regressions.
+- [x] Stable BuildKit secret mounts keep credential values out of layer cache
+  keys, build arguments, image environments, source files, URLs, and logs.
+- [x] Preflight rejects permission, restore-order, secret-handling, and
+  fingerprint-contract regressions.
 - [x] Exact-head PR checks pass and Main publishes the new native and WASM
-  cache scope.
+  protected Zot cache refs.
 - [x] A fresh hosted builder importing only the fingerprinted WASM scope
   restores cargo-chef release, cargo-chef clippy, and release-test dependency
   layers without executing them.
 - [x] A source-only native change restores all nextest, clippy, and coverage
   dependency producer layers from the published cache on its first hosted
   solve.
+- [x] Remote branches restore their own Zot refs before Main and can publish
+  only deterministic branch/task refs.
+- [x] SeaweedFS allows Main read/write, allows Remote reads, and denies Remote
+  writes.
 
 ## Progress
 
@@ -69,6 +81,14 @@ or compiler secret mounts.
 - Source-only proof PR 818 preserved native dependency inputs. Its first hosted
   Native solve restored all nine dependency producer layers as cached and
   completed successfully in 3 minutes 53 seconds.
+- PR 902 replaced GitHub Actions cache storage with private Zot cache images,
+  added branch-first/Main-second Remote restore and branch-only publication,
+  and integrated SeaweedFS compiler-object reuse through scoped identities.
+- A repeated fresh-worker Rust test restored its compile layer and completed in
+  4 minutes 30 seconds; lint completed in 2 minutes 52 seconds and coverage in
+  3 minutes 39 seconds. Cargo itself finished cached compilation in under one
+  second before the tests ran.
+- The live SeaweedFS cache held 5,033 objects totaling about 4.37 GB at delivery.
 
 ## Findings and decisions
 
@@ -83,6 +103,14 @@ or compiler secret mounts.
 - A changed fingerprint intentionally incurs one cold seed build.
 - Redis is not part of hosted compilation; local/runtime diagnostics remain
   available explicitly.
+- Zot is authoritative for portable BuildKit layers. Remote refs are
+  deterministic per branch and task, cannot overwrite protected Main refs, and
+  restore Main as fallback.
+- SeaweedFS separates a Main read/write identity from a Remote read-only
+  identity. Newly introduced dependencies still become reusable immediately via
+  the branch Zot export; Main later publishes authoritative compiler objects.
+- Cache credentials use stable BuildKit secret identifiers and secret mounts;
+  credential contents do not participate in layer cache keys.
 
 ## References
 
@@ -93,3 +121,6 @@ or compiler secret mounts.
 - [Nook PR 812](https://github.com/meta-secret/nook/pull/812)
 - [Nook PR 816](https://github.com/meta-secret/nook/pull/816)
 - [Native cache proof PR 818](https://github.com/meta-secret/nook/pull/818)
+- [SeaweedFS and Zot cache repair PR 902](https://github.com/meta-secret/nook/pull/902)
+- [SeaweedFS and Zot cache repair plan](../../plans/unplanned/20260801T170000Z-repair-remote-rust-cold-cache-rw.md)
+- [SeaweedFS and Zot cache repair worklog](../../worklogs/unplanned/20260802-023613-pr-902.md)
