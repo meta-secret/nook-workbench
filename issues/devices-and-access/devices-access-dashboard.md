@@ -5,9 +5,9 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-01T04:18:33Z
-updated_at: 2026-08-01T20:18:53Z
+updated_at: 2026-08-03T15:51:57Z
 source_issues: []
-related_prs: [901]
+related_prs: [901, 910]
 depends_on: []
 ---
 
@@ -70,6 +70,7 @@ under their owning vault.
 
 - 2026-08-01: Direct implementation started after the access model and page scope were confirmed.
 - 2026-08-01: PR #901 passed exact-head validation and was squash-merged as `9fbdae27a5719c85ffcdd245dc431e36307c3757`.
+- 2026-08-03: PR #910 replaced the first dashboard presentation with the relationship-first chain-strength experience, passed exact-head validation, and was squash-merged as `7533bae8cbb3da2d01e40519404530fe64364249`.
 
 ## Findings and decisions
 
