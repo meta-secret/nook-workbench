@@ -4,6 +4,8 @@ feature: hive-isolated-agent-platform
 issue: issues/hive-isolated-agent-platform/hive-pr-lifecycle-reliability.md
 started_at: 2026-08-02T17:18:47Z
 agent: codex
+status: completed
+finished_at: 2026-08-03T10:32:28Z
 ---
 
 # Repair Hive dispatcher process exhaustion
@@ -64,12 +66,20 @@ contract mechanically before the final production soak.
 
 ## Completion evidence
 
-- A merged Nook pull request with green exact-head repository checks.
-- A pinned production Hive deployment with no accumulating defunct Git
-  children and a passing dispatcher health signal.
-- The waiting Main-failure incident is durably claimed and advances through a
-  Hive-owned repair or truthful terminal result.
-- Linked Workbench issue, worklog, and statistics records.
+- PRs #905 through #908 and #911 were squash-merged after exact-head Hive,
+  source-architecture, Rust ecosystem, and complete PR validation.
+- Production uses the public Zot digest
+  `sha256:95e575769d203a043b3f94734a88833a46984a89d3ba91b2c78275b45f7ce4dc`.
+  Four workers, dispatcher, observer, and reaper are ready with zero restarts.
+- Dispatcher health and progress remained green for more than two polling
+  intervals. The health contract found zero unreaped child processes.
+- The original Main run succeeded on its unchanged retry. Final merge commit
+  `44ae7e6ff28237a37ecc2d19aaf0dc69e7c4b436` passed Main run
+  [30803662302](https://github.com/meta-secret/nook/actions/runs/30803662302),
+  including both browser suites and deployment.
+- Routine deploy preserved the cluster-owned Codex Secret; explicit rotation
+  completed separately and restored the four-replica pool.
+- Linked Workbench issue, completion worklog, and PR statistics are published.
 
 ## Safety review
 

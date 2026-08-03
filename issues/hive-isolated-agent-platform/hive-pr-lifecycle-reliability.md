@@ -1,12 +1,12 @@
 ---
 title: Make Hive repair PR ownership reliable
 feature: hive-isolated-agent-platform
-status: in_progress
+status: done
 priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-02T17:18:47Z
+updated_at: 2026-08-03T10:32:28Z
 source_issues: []
 related_prs:
   - 865
@@ -16,6 +16,11 @@ related_prs:
   - 875
   - 876
   - 877
+  - 905
+  - 906
+  - 907
+  - 908
+  - 911
 depends_on:
   - issues/hive-isolated-agent-platform/build-k0s-kata-hive-agent-platform.md
 ---
@@ -100,6 +105,12 @@ claim through a merged, verified result or a truthful terminal supersession.
   dispatcher could no longer launch its synchronization operation. Production
   recovery, foreground cleanup, liveness coverage, and durable delivery proof
   are in progress.
+- 2026-08-03: Completed the dispatcher repair across PRs #905 through #908 and
+  #911. Foreground Git cleanup, bounded operations, health/progress probes,
+  token-free public-run reconciliation, cluster-owned credential preservation,
+  and portable explicit rotation are merged. Production is healthy on the
+  public Zot digest with four ready workers and zero restarts; the final merge
+  passed Main run 30803662302.
 
 ## Findings and decisions
 
