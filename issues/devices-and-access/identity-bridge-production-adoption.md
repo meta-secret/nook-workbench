@@ -1,6 +1,6 @@
 ---
 title: Adopt Identity Bridge as the production identity surface
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: codex
@@ -9,6 +9,7 @@ updated_at: 2026-08-04T17:51:51Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/914
+  - https://github.com/meta-secret/nook/pull/915
 depends_on: []
 ---
 
@@ -64,6 +65,9 @@ all existing authorized actions through contextually placed controls.
 - 2026-08-04: Review-driven refinements clarified device-key evidence,
   companion-session identity attribution, duplicate vault identification, and
   empty and locked-state evidence before squash merge.
+- 2026-08-04: A final hosted compact-width assertion completed after PR 914
+  auto-merged and exposed border-box overflow at 240 pixels. PR 915 owns the
+  required containment repair; the issue remains open until that proof passes.
 
 ## Delivered outcome
 
