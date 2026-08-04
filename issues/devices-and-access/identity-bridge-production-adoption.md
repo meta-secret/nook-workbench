@@ -1,11 +1,11 @@
 ---
 title: Adopt Identity Bridge as the production identity surface
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-04T10:36:29Z
-updated_at: 2026-08-04T17:51:51Z
+updated_at: 2026-08-04T19:55:55Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/914
@@ -67,7 +67,12 @@ all existing authorized actions through contextually placed controls.
   empty and locked-state evidence before squash merge.
 - 2026-08-04: A final hosted compact-width assertion completed after PR 914
   auto-merged and exposed border-box overflow at 240 pixels. PR 915 owns the
-  required containment repair; the issue remains open until that proof passes.
+  required containment repair.
+- 2026-08-04: PR 915 made every graph card border-box-contained, refit the
+  SvelteFlow graph whenever its canvas width changes, kept companion-session
+  identity labels honest, and added exact compact-layout polling. The focused
+  production Devices & access suite passed all ten scenarios and the full
+  hosted browser matrix passed before squash merge.
 
 ## Delivered outcome
 
@@ -76,6 +81,9 @@ key, and vault relationship graph from the existing typed application state.
 It supports both browsing directions, retains every authorized lifecycle and
 management action outside the graph, and remains honest when identity or vault
 evidence is unavailable. PR 914 merged as `50e69d0f9ff4d97f14e6590a0f291318ba1adebf`.
+The compact follow-up PR 915 merged as
+`c3145c0465f985e2e574721a4eb7846743e95ac1` after exact-head review,
+deployment, architecture, Rust, web, and browser validation all passed.
 
 ## Findings and decisions
 

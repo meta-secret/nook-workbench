@@ -4,7 +4,7 @@ feature: devices-and-access
 issue: issues/devices-and-access/identity-bridge-production-adoption.md
 started_at: 2026-08-04T10:36:29Z
 agent: codex
-completed_at: 2026-08-04T17:51:51Z
+completed_at: 2026-08-04T19:55:55Z
 ---
 
 # Task plan
@@ -84,6 +84,13 @@ management controls preserved. Formatting, generated localization parity,
 focused model checks, Svelte checks, the sealed UI demo, exact-head hosted web
 checks, browser coverage, architecture checks, Rust/WASM validation, and review
 thread resolution supplied completion evidence.
+
+The post-merge compact-width audit was completed in
+[PR 915](https://github.com/meta-secret/nook/pull/915), squash merged as
+`c3145c0465f985e2e574721a4eb7846743e95ac1`. It repaired card containment and
+canvas-resize refitting, corrected companion-session stage semantics, and
+passed the focused ten-scenario production suite plus the full hosted web E2E
+matrix at the exact merged head.
 
 ## Safety review
 
