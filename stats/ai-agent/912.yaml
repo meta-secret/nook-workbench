@@ -1,0 +1,124 @@
+---
+schema_version: 3
+source_pr:
+  number: 912
+  url: https://github.com/meta-secret/nook/pull/912
+  title: "Define identity and vault architecture"
+  change_surface: identity_vault_architecture_research
+  head_sha: ca71d02b85611811aea93ef6525b56ad50ebcded
+  pr_head_sha: 8d533572796c7003e72ebc9a811dc64fb72da7be
+  started_at: "2026-08-04T09:09:17Z"
+  opened_at: "2026-08-04T04:52:26Z"
+  merged_at: "2026-08-04T10:23:12Z"
+  elapsed_seconds: 4435
+  open_to_merge_seconds: 19846
+summary:
+  local_execution_count: 0
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 33
+  github_actions_seconds: 6481
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 1
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: "2026-08-04T10:23:12Z"
+  head_sha: ca71d02b85611811aea93ef6525b56ad50ebcded
+  by_type:
+    rust: 680
+    preflight: 108
+    web_unit: 327
+    e2e: 228
+  total: 1343
+local_execution_collection:
+  complete: false
+  warning: The required scratch ledger was not created at task start; format,
+    research checks, browser tests, demo-contract, and readiness evidence is
+    summarized in the worklog but omitted here rather than assigned invented
+    timestamps.
+local_executions: []
+github_actions_runs:
+- {workflow: "Web research", run_id: 30895434351, run_attempt: 1, head_sha: 11f549211, trigger: pull_request, started_at: "2026-08-04T09:14:15Z", finished_at: "2026-08-04T09:14:34Z", duration_seconds: 19, conclusion: failure}
+- {workflow: "Source architecture", run_id: 30895434307, run_attempt: 1, head_sha: 11f549211, trigger: pull_request, started_at: "2026-08-04T09:14:15Z", finished_at: "2026-08-04T09:14:47Z", duration_seconds: 32, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30895562991, run_attempt: 1, head_sha: 11f549211, trigger: pull_request, started_at: "2026-08-04T09:15:57Z", finished_at: "2026-08-04T09:18:47Z", duration_seconds: 170, conclusion: cancelled}
+- {workflow: "PR", run_id: 30895563384, run_attempt: 1, head_sha: 11f549211, trigger: pull_request, started_at: "2026-08-04T09:15:57Z", finished_at: "2026-08-04T09:20:35Z", duration_seconds: 278, conclusion: cancelled}
+- {workflow: "Source architecture", run_id: 30895734473, run_attempt: 1, head_sha: ecfca0c55, trigger: pull_request, started_at: "2026-08-04T09:18:19Z", finished_at: "2026-08-04T09:18:51Z", duration_seconds: 32, conclusion: success}
+- {workflow: "Web research", run_id: 30895735680, run_attempt: 1, head_sha: ecfca0c55, trigger: pull_request, started_at: "2026-08-04T09:18:20Z", finished_at: "2026-08-04T09:18:37Z", duration_seconds: 17, conclusion: failure}
+- {workflow: "PR", run_id: 30895745537, run_attempt: 1, head_sha: ecfca0c55, trigger: pull_request, started_at: "2026-08-04T09:18:29Z", finished_at: "2026-08-04T09:20:34Z", duration_seconds: 125, conclusion: cancelled}
+- {workflow: "Rust ecosystem checks", run_id: 30895746576, run_attempt: 1, head_sha: ecfca0c55, trigger: pull_request, started_at: "2026-08-04T09:18:29Z", finished_at: "2026-08-04T09:20:50Z", duration_seconds: 141, conclusion: cancelled}
+- {workflow: "Web research", run_id: 30895886370, run_attempt: 1, head_sha: 588be6acc, trigger: pull_request, started_at: "2026-08-04T09:20:26Z", finished_at: "2026-08-04T09:20:47Z", duration_seconds: 21, conclusion: failure}
+- {workflow: "Source architecture", run_id: 30895886518, run_attempt: 1, head_sha: 588be6acc, trigger: pull_request, started_at: "2026-08-04T09:20:26Z", finished_at: "2026-08-04T09:21:04Z", duration_seconds: 38, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30895894739, run_attempt: 1, head_sha: 588be6acc, trigger: pull_request, started_at: "2026-08-04T09:20:32Z", finished_at: "2026-08-04T09:23:31Z", duration_seconds: 179, conclusion: cancelled}
+- {workflow: "PR", run_id: 30895895484, run_attempt: 1, head_sha: 588be6acc, trigger: pull_request, started_at: "2026-08-04T09:20:33Z", finished_at: "2026-08-04T09:26:43Z", duration_seconds: 370, conclusion: cancelled}
+- {workflow: "Source architecture", run_id: 30896085614, run_attempt: 1, head_sha: fb7881719, trigger: pull_request, started_at: "2026-08-04T09:23:12Z", finished_at: "2026-08-04T09:23:39Z", duration_seconds: 27, conclusion: success}
+- {workflow: "Web research", run_id: 30896086199, run_attempt: 1, head_sha: fb7881719, trigger: pull_request, started_at: "2026-08-04T09:23:12Z", finished_at: "2026-08-04T09:23:57Z", duration_seconds: 45, conclusion: success}
+- {workflow: "PR", run_id: 30896088451, run_attempt: 1, head_sha: fb7881719, trigger: pull_request, started_at: "2026-08-04T09:23:14Z", finished_at: "2026-08-04T09:31:29Z", duration_seconds: 495, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30896088318, run_attempt: 1, head_sha: fb7881719, trigger: pull_request, started_at: "2026-08-04T09:23:14Z", finished_at: "2026-08-04T09:31:16Z", duration_seconds: 482, conclusion: success}
+- {workflow: "Source architecture", run_id: 30896696586, run_attempt: 1, head_sha: f3dd8ab4c, trigger: pull_request, started_at: "2026-08-04T09:31:31Z", finished_at: "2026-08-04T09:31:59Z", duration_seconds: 28, conclusion: success}
+- {workflow: "Web research", run_id: 30896696943, run_attempt: 1, head_sha: f3dd8ab4c, trigger: pull_request, started_at: "2026-08-04T09:31:32Z", finished_at: "2026-08-04T09:32:26Z", duration_seconds: 54, conclusion: success}
+- {workflow: "PR", run_id: 30896699704, run_attempt: 1, head_sha: f3dd8ab4c, trigger: pull_request, started_at: "2026-08-04T09:31:34Z", finished_at: "2026-08-04T09:39:00Z", duration_seconds: 446, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30896699574, run_attempt: 1, head_sha: f3dd8ab4c, trigger: pull_request, started_at: "2026-08-04T09:31:34Z", finished_at: "2026-08-04T09:38:56Z", duration_seconds: 442, conclusion: success}
+- {workflow: "Source architecture", run_id: 30897648237, run_attempt: 1, head_sha: eae7bb82c, trigger: pull_request, started_at: "2026-08-04T09:44:38Z", finished_at: "2026-08-04T09:45:05Z", duration_seconds: 27, conclusion: success}
+- {workflow: "Web research", run_id: 30897650162, run_attempt: 1, head_sha: eae7bb82c, trigger: pull_request, started_at: "2026-08-04T09:44:40Z", finished_at: "2026-08-04T09:45:48Z", duration_seconds: 68, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30897657226, run_attempt: 1, head_sha: eae7bb82c, trigger: pull_request, started_at: "2026-08-04T09:44:46Z", finished_at: "2026-08-04T09:52:42Z", duration_seconds: 476, conclusion: success}
+- {workflow: "PR", run_id: 30897657413, run_attempt: 1, head_sha: eae7bb82c, trigger: pull_request, started_at: "2026-08-04T09:44:46Z", finished_at: "2026-08-04T09:48:03Z", duration_seconds: 197, conclusion: failure}
+- {workflow: "PR", run_id: 30897657413, run_attempt: 2, head_sha: eae7bb82c, trigger: pull_request, started_at: "2026-08-04T09:48:51Z", finished_at: "2026-08-04T09:56:00Z", duration_seconds: 429, conclusion: cancelled}
+- {workflow: "Rust ecosystem checks", run_id: 30898464955, run_attempt: 1, head_sha: eae7bb82c, trigger: pull_request, started_at: "2026-08-04T09:55:55Z", finished_at: "2026-08-04T10:03:21Z", duration_seconds: 446, conclusion: success}
+- {workflow: "PR", run_id: 30898465272, run_attempt: 1, head_sha: eae7bb82c, trigger: pull_request, started_at: "2026-08-04T09:55:55Z", finished_at: "2026-08-04T10:02:36Z", duration_seconds: 401, conclusion: success}
+- {workflow: "Web research", run_id: 30899600769, run_attempt: 1, head_sha: 4bdb00d49, trigger: pull_request, started_at: "2026-08-04T10:11:31Z", finished_at: "2026-08-04T10:11:48Z", duration_seconds: 17, conclusion: failure}
+- {workflow: "Source architecture", run_id: 30899600964, run_attempt: 1, head_sha: 4bdb00d49, trigger: pull_request, started_at: "2026-08-04T10:11:32Z", finished_at: "2026-08-04T10:12:06Z", duration_seconds: 34, conclusion: success}
+- {workflow: "Source architecture", run_id: 30899804981, run_attempt: 1, head_sha: 8d5335727, trigger: pull_request, started_at: "2026-08-04T10:14:25Z", finished_at: "2026-08-04T10:15:01Z", duration_seconds: 36, conclusion: success}
+- {workflow: "Web research", run_id: 30899804938, run_attempt: 1, head_sha: 8d5335727, trigger: pull_request, started_at: "2026-08-04T10:14:25Z", finished_at: "2026-08-04T10:15:29Z", duration_seconds: 64, conclusion: success}
+- {workflow: "PR", run_id: 30899817271, run_attempt: 1, head_sha: 8d5335727, trigger: pull_request, started_at: "2026-08-04T10:14:36Z", finished_at: "2026-08-04T10:20:59Z", duration_seconds: 383, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30899816967, run_attempt: 1, head_sha: 8d5335727, trigger: pull_request, started_at: "2026-08-04T10:14:36Z", finished_at: "2026-08-04T10:22:18Z", duration_seconds: 462, conclusion: success}
+cache_telemetry:
+  collection:
+    complete: false
+    warnings:
+    - Cache artifacts were not retained for every short-lived or cancelled
+      attempt; no counters were inferred from incomplete evidence.
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+pr_retriggers:
+- {at: "2026-08-04T09:31:34Z", kind: validation_label, head_sha: f3dd8ab4c, reason: first_review_resolution}
+- {at: "2026-08-04T09:44:46Z", kind: validation_label, head_sha: eae7bb82c, reason: second_review_resolution}
+- {at: "2026-08-04T09:55:55Z", kind: validation_label, head_sha: eae7bb82c, reason: fresh_exact_head_after_failed_job_rerun}
+- {at: "2026-08-04T10:14:36Z", kind: validation_label, head_sha: 8d5335727, reason: final_review_resolution}
+merge_attempts:
+- {at: "2026-08-04T10:23:12Z", method: squash, outcome: success, reason: readiness_passed}
+comparison:
+  baseline_prs: [910]
+  baseline_quality: comparable
+  baseline_note: PR 910 is the immediately preceding Devices and access research
+    and security UX change and used the same complete hosted gate set.
+  elapsed_seconds_change_percent: -81.78
+  github_actions_seconds_change_percent: -71.71
+  test_inventory_total_change: 3
+  test_inventory_total_change_percent: 0.22
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+  - Several early research workflow failures for formatting, dead exports, and
+    stale imports could have been found before their pushes.
+  - Generated Playwright output briefly entered the change and required a
+    corrective push before final validation.
+  - Review loops were substantive and caught architecture, security,
+    accessibility, and consistency defects rather than repeating unchanged
+    validation without evidence.
+  - One failed-job rerun encountered a prior-attempt artifact mismatch; the
+    following fresh exact-head run passed.
+  - The generated-output ignore and canonical shared fixture were added before
+    merge, leaving no separate workflow or product repair to deliver.
+  required_actions: []
