@@ -1,13 +1,14 @@
 ---
 title: Adopt Identity Bridge as the production identity surface
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-04T10:36:29Z
-updated_at: 2026-08-04T10:36:29Z
+updated_at: 2026-08-04T17:51:51Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/914
 depends_on: []
 ---
 
@@ -46,17 +47,31 @@ all existing authorized actions through contextually placed controls.
 
 ## Acceptance criteria
 
-- [ ] Identity-first and vault-first browsing are available from the permanent access destination.
-- [ ] Devices, installation keys, identities, and vault grants remain visibly distinct.
-- [ ] The page renders real application state without mock identities, vaults, keys, or grants.
-- [ ] Existing access-related actions remain reachable in the state where they are authorized.
-- [ ] No-vault, unprepared, locked, unlocked, long-copy, mobile, and desktop states are coherent and accessible.
-- [ ] English and Russian catalogs remain in parity.
-- [ ] Focused tests and exact-head hosted validation pass before squash merge.
+- [x] Identity-first and vault-first browsing are available from the permanent access destination.
+- [x] Devices, installation keys, identities, and vault grants remain visibly distinct.
+- [x] The page renders real application state without mock identities, vaults, keys, or grants.
+- [x] Existing access-related actions remain reachable in the state where they are authorized.
+- [x] No-vault, unprepared, locked, unlocked, long-copy, mobile, and desktop states are coherent and accessible.
+- [x] English and Russian catalogs remain in parity.
+- [x] Focused tests and exact-head hosted validation pass before squash merge.
 
 ## Progress
 
 - 2026-08-04: Production adoption started from the merged Identity Bridge research baseline.
+- 2026-08-04: PR 914 replaced the production Devices & access dashboard with
+  the live Identity Bridge, preserved authorized setup and management actions,
+  and shipped responsive identity-first and vault-first navigation.
+- 2026-08-04: Review-driven refinements clarified device-key evidence,
+  companion-session identity attribution, duplicate vault identification, and
+  empty and locked-state evidence before squash merge.
+
+## Delivered outcome
+
+The permanent Devices & access destination now derives its identity, device
+key, and vault relationship graph from the existing typed application state.
+It supports both browsing directions, retains every authorized lifecycle and
+management action outside the graph, and remains honest when identity or vault
+evidence is unavailable. PR 914 merged as `50e69d0f9ff4d97f14e6590a0f291318ba1adebf`.
 
 ## Findings and decisions
 

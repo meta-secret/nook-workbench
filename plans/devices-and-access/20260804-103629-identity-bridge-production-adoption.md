@@ -4,6 +4,7 @@ feature: devices-and-access
 issue: issues/devices-and-access/identity-bridge-production-adoption.md
 started_at: 2026-08-04T10:36:29Z
 agent: codex
+completed_at: 2026-08-04T17:51:51Z
 ---
 
 # Task plan
@@ -71,6 +72,18 @@ the complete production adoption through a new pull request.
   perspectives and responsive layouts.
 - The new PR passes focused browser/domain evidence, the UI demo contract, all
   repository-owned exact-head checks, and is squash-merged.
+
+## Outcome
+
+Completed in [PR 914](https://github.com/meta-secret/nook/pull/914), squash
+merged as `50e69d0f9ff4d97f14e6590a0f291318ba1adebf`. The permanent page now uses a
+single live relationship projection for identity-first and vault-first
+browsing, with explicit device-key evidence, paired-device attribution, stable
+vault identifiers, and the existing setup, unlock, recovery, enrollment, and
+management controls preserved. Formatting, generated localization parity,
+focused model checks, Svelte checks, the sealed UI demo, exact-head hosted web
+checks, browser coverage, architecture checks, Rust/WASM validation, and review
+thread resolution supplied completion evidence.
 
 ## Safety review
 
