@@ -26,7 +26,7 @@ record exists.
 ## Issues
 
 - [x] [Remove Redis from hosted Rust builds](remove-redis-from-hosted-rust-builds.md)
-- [ ] [Add persistent URLs to vault application pages](persistent-vault-page-urls.md)
+- [x] [Add persistent URLs to vault application pages](persistent-vault-page-urls.md)
 
 ## References
 
