@@ -1,0 +1,145 @@
+---
+schema_version: 3
+source_pr:
+  number: 914
+  url: https://github.com/meta-secret/nook/pull/914
+  title: "Adopt Identity Bridge on Devices & access"
+  change_surface: identity_bridge_production_adoption
+  head_sha: 50e69d0f9ff4d97f14e6590a0f291318ba1adebf
+  pr_head_sha: ca5853e3f390739ef83105239dcebafc702865bc
+  started_at: "2026-08-04T12:17:10Z"
+  opened_at: "2026-08-04T12:17:10Z"
+  merged_at: "2026-08-04T17:51:51Z"
+  elapsed_seconds: 20081
+  open_to_merge_seconds: 20081
+summary:
+  local_execution_count: 0
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 70
+  github_actions_seconds: 30667
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: "2026-08-04T17:51:51Z"
+  head_sha: 50e69d0f9ff4d97f14e6590a0f291318ba1adebf
+  by_type:
+    rust: 680
+    preflight: 108
+    web_unit: 336
+    e2e: 230
+  total: 1354
+local_execution_collection:
+  complete: false
+  warning: The required scratch ledger was not created at task start; format,
+    focused tests, browser checks, demo-contract runs, and readiness evidence
+    are preserved in the Workbench worklog but omitted here rather than given
+    invented timestamps.
+local_executions: []
+github_actions_runs:
+- {workflow: "Source architecture", run_id: 30908427953, run_attempt: 1, head_sha: efa513e68, trigger: pull_request, started_at: "2026-08-04T12:17:16Z", finished_at: "2026-08-04T12:17:40Z", duration_seconds: 24, conclusion: success}
+- {workflow: "Remote task", run_id: 30908444119, run_attempt: 1, head_sha: efa513e68, trigger: workflow_dispatch, started_at: "2026-08-04T12:17:29Z", finished_at: "2026-08-04T12:23:19Z", duration_seconds: 350, conclusion: success}
+- {workflow: "Remote task", run_id: 30908457215, run_attempt: 1, head_sha: efa513e68, trigger: workflow_dispatch, started_at: "2026-08-04T12:17:41Z", finished_at: "2026-08-04T12:23:40Z", duration_seconds: 359, conclusion: success}
+- {workflow: "Remote task", run_id: 30908461904, run_attempt: 1, head_sha: efa513e68, trigger: workflow_dispatch, started_at: "2026-08-04T12:17:45Z", finished_at: "2026-08-04T12:34:24Z", duration_seconds: 999, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30908478441, run_attempt: 1, head_sha: efa513e68, trigger: pull_request, started_at: "2026-08-04T12:17:58Z", finished_at: "2026-08-04T12:25:19Z", duration_seconds: 441, conclusion: success}
+- {workflow: "PR", run_id: 30908478338, run_attempt: 1, head_sha: efa513e68, trigger: pull_request, started_at: "2026-08-04T12:17:58Z", finished_at: "2026-08-04T12:28:23Z", duration_seconds: 625, conclusion: success}
+- {workflow: "Source architecture", run_id: 30913090466, run_attempt: 1, head_sha: 6109e653e, trigger: pull_request, started_at: "2026-08-04T13:17:32Z", finished_at: "2026-08-04T13:18:01Z", duration_seconds: 29, conclusion: success}
+- {workflow: "Remote task", run_id: 30913141151, run_attempt: 1, head_sha: 6109e653e, trigger: workflow_dispatch, started_at: "2026-08-04T13:18:10Z", finished_at: "2026-08-04T13:23:17Z", duration_seconds: 307, conclusion: success}
+- {workflow: "Remote task", run_id: 30913141565, run_attempt: 1, head_sha: 6109e653e, trigger: workflow_dispatch, started_at: "2026-08-04T13:18:10Z", finished_at: "2026-08-04T13:30:27Z", duration_seconds: 737, conclusion: cancelled}
+- {workflow: "Remote task", run_id: 30913141654, run_attempt: 1, head_sha: 6109e653e, trigger: workflow_dispatch, started_at: "2026-08-04T13:18:10Z", finished_at: "2026-08-04T13:23:31Z", duration_seconds: 321, conclusion: success}
+- {workflow: "PR", run_id: 30913181738, run_attempt: 1, head_sha: 6109e653e, trigger: pull_request, started_at: "2026-08-04T13:18:40Z", finished_at: "2026-08-04T13:27:37Z", duration_seconds: 537, conclusion: cancelled}
+- {workflow: "Rust ecosystem checks", run_id: 30913184074, run_attempt: 1, head_sha: 6109e653e, trigger: pull_request, started_at: "2026-08-04T13:18:42Z", finished_at: "2026-08-04T13:27:13Z", duration_seconds: 511, conclusion: cancelled}
+- {workflow: "Source architecture", run_id: 30913850689, run_attempt: 1, head_sha: 626477640, trigger: pull_request, started_at: "2026-08-04T13:26:47Z", finished_at: "2026-08-04T13:27:17Z", duration_seconds: 30, conclusion: success}
+- {workflow: "Remote task", run_id: 30913863528, run_attempt: 1, head_sha: 626477640, trigger: workflow_dispatch, started_at: "2026-08-04T13:26:57Z", finished_at: "2026-08-04T13:47:47Z", duration_seconds: 1250, conclusion: success}
+- {workflow: "Remote task", run_id: 30913863569, run_attempt: 1, head_sha: 626477640, trigger: workflow_dispatch, started_at: "2026-08-04T13:26:57Z", finished_at: "2026-08-04T13:31:05Z", duration_seconds: 248, conclusion: success}
+- {workflow: "Remote task", run_id: 30913863565, run_attempt: 1, head_sha: 626477640, trigger: workflow_dispatch, started_at: "2026-08-04T13:26:57Z", finished_at: "2026-08-04T13:31:34Z", duration_seconds: 277, conclusion: success}
+- {workflow: "PR", run_id: 30913878308, run_attempt: 1, head_sha: 626477640, trigger: pull_request, started_at: "2026-08-04T13:27:08Z", finished_at: "2026-08-04T13:44:57Z", duration_seconds: 1069, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30913877850, run_attempt: 1, head_sha: 626477640, trigger: pull_request, started_at: "2026-08-04T13:27:08Z", finished_at: "2026-08-04T13:34:33Z", duration_seconds: 445, conclusion: success}
+- {workflow: "Source architecture", run_id: 30919379757, run_attempt: 1, head_sha: 8e09532d6, trigger: pull_request, started_at: "2026-08-04T14:31:23Z", finished_at: "2026-08-04T14:31:59Z", duration_seconds: 36, conclusion: success}
+- {workflow: "Remote task", run_id: 30919626454, run_attempt: 1, head_sha: 8e09532d6, trigger: workflow_dispatch, started_at: "2026-08-04T14:34:12Z", finished_at: "2026-08-04T14:39:40Z", duration_seconds: 328, conclusion: success}
+- {workflow: "Remote task", run_id: 30919632509, run_attempt: 1, head_sha: 8e09532d6, trigger: workflow_dispatch, started_at: "2026-08-04T14:34:16Z", finished_at: "2026-08-04T14:38:06Z", duration_seconds: 230, conclusion: success}
+- {workflow: "Remote task", run_id: 30919638708, run_attempt: 1, head_sha: 8e09532d6, trigger: workflow_dispatch, started_at: "2026-08-04T14:34:20Z", finished_at: "2026-08-04T14:54:06Z", duration_seconds: 1186, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30919652481, run_attempt: 1, head_sha: 8e09532d6, trigger: pull_request, started_at: "2026-08-04T14:34:29Z", finished_at: "2026-08-04T14:41:55Z", duration_seconds: 446, conclusion: success}
+- {workflow: "PR", run_id: 30919656147, run_attempt: 1, head_sha: 8e09532d6, trigger: pull_request, started_at: "2026-08-04T14:34:32Z", finished_at: "2026-08-04T14:45:05Z", duration_seconds: 633, conclusion: success}
+- {workflow: "Source architecture", run_id: 30922279751, run_attempt: 1, head_sha: 49fa353f5, trigger: pull_request, started_at: "2026-08-04T15:04:47Z", finished_at: "2026-08-04T15:05:10Z", duration_seconds: 23, conclusion: success}
+- {workflow: "Remote task", run_id: 30922332689, run_attempt: 1, head_sha: 49fa353f5, trigger: workflow_dispatch, started_at: "2026-08-04T15:05:23Z", finished_at: "2026-08-04T15:09:05Z", duration_seconds: 222, conclusion: success}
+- {workflow: "Remote task", run_id: 30922338480, run_attempt: 1, head_sha: 49fa353f5, trigger: workflow_dispatch, started_at: "2026-08-04T15:05:27Z", finished_at: "2026-08-04T15:08:57Z", duration_seconds: 210, conclusion: success}
+- {workflow: "Remote task", run_id: 30922344150, run_attempt: 1, head_sha: 49fa353f5, trigger: workflow_dispatch, started_at: "2026-08-04T15:05:31Z", finished_at: "2026-08-04T15:20:33Z", duration_seconds: 902, conclusion: success}
+- {workflow: "PR", run_id: 30922357937, run_attempt: 1, head_sha: 49fa353f5, trigger: pull_request, started_at: "2026-08-04T15:05:41Z", finished_at: "2026-08-04T15:15:23Z", duration_seconds: 582, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30922360702, run_attempt: 1, head_sha: 49fa353f5, trigger: pull_request, started_at: "2026-08-04T15:05:43Z", finished_at: "2026-08-04T15:12:57Z", duration_seconds: 434, conclusion: success}
+- {workflow: "Source architecture", run_id: 30926386441, run_attempt: 1, head_sha: a90fa3821, trigger: pull_request, started_at: "2026-08-04T15:52:57Z", finished_at: "2026-08-04T15:53:24Z", duration_seconds: 27, conclusion: success}
+- {workflow: "Remote task", run_id: 30926432494, run_attempt: 1, head_sha: a90fa3821, trigger: workflow_dispatch, started_at: "2026-08-04T15:53:29Z", finished_at: "2026-08-04T15:58:43Z", duration_seconds: 314, conclusion: success}
+- {workflow: "Remote task", run_id: 30926438398, run_attempt: 1, head_sha: a90fa3821, trigger: workflow_dispatch, started_at: "2026-08-04T15:53:33Z", finished_at: "2026-08-04T15:58:11Z", duration_seconds: 278, conclusion: success}
+- {workflow: "Remote task", run_id: 30926444338, run_attempt: 1, head_sha: a90fa3821, trigger: workflow_dispatch, started_at: "2026-08-04T15:53:38Z", finished_at: "2026-08-04T16:03:11Z", duration_seconds: 573, conclusion: failure}
+- {workflow: "Rust ecosystem checks", run_id: 30926749799, run_attempt: 1, head_sha: a90fa3821, trigger: pull_request, started_at: "2026-08-04T15:57:14Z", finished_at: "2026-08-04T16:04:53Z", duration_seconds: 459, conclusion: success}
+- {workflow: "PR", run_id: 30926750637, run_attempt: 1, head_sha: a90fa3821, trigger: pull_request, started_at: "2026-08-04T15:57:14Z", finished_at: "2026-08-04T16:06:19Z", duration_seconds: 545, conclusion: success}
+- {workflow: "Source architecture", run_id: 30927703642, run_attempt: 1, head_sha: 6fb4e367e, trigger: pull_request, started_at: "2026-08-04T16:08:40Z", finished_at: "2026-08-04T16:09:03Z", duration_seconds: 23, conclusion: success}
+- {workflow: "Remote task", run_id: 30927704044, run_attempt: 1, head_sha: 6fb4e367e, trigger: workflow_dispatch, started_at: "2026-08-04T16:08:41Z", finished_at: "2026-08-04T16:17:06Z", duration_seconds: 505, conclusion: failure}
+- {workflow: "Rust ecosystem checks", run_id: 30927716478, run_attempt: 1, head_sha: 6fb4e367e, trigger: pull_request, started_at: "2026-08-04T16:08:50Z", finished_at: "2026-08-04T16:16:35Z", duration_seconds: 465, conclusion: cancelled}
+- {workflow: "PR", run_id: 30927717172, run_attempt: 1, head_sha: 6fb4e367e, trigger: pull_request, started_at: "2026-08-04T16:08:51Z", finished_at: "2026-08-04T16:17:21Z", duration_seconds: 510, conclusion: cancelled}
+- {workflow: "Source architecture", run_id: 30928179818, run_attempt: 1, head_sha: a629b9bd1, trigger: pull_request, started_at: "2026-08-04T16:14:37Z", finished_at: "2026-08-04T16:15:01Z", duration_seconds: 24, conclusion: success}
+- {workflow: "Remote task", run_id: 30928287630, run_attempt: 1, head_sha: a629b9bd1, trigger: workflow_dispatch, started_at: "2026-08-04T16:15:55Z", finished_at: "2026-08-04T16:20:38Z", duration_seconds: 283, conclusion: success}
+- {workflow: "Remote task", run_id: 30928288046, run_attempt: 1, head_sha: a629b9bd1, trigger: workflow_dispatch, started_at: "2026-08-04T16:15:56Z", finished_at: "2026-08-04T16:20:15Z", duration_seconds: 259, conclusion: success}
+- {workflow: "Remote task", run_id: 30928287709, run_attempt: 1, head_sha: a629b9bd1, trigger: workflow_dispatch, started_at: "2026-08-04T16:15:56Z", finished_at: "2026-08-04T16:25:52Z", duration_seconds: 596, conclusion: failure}
+- {workflow: "Rust ecosystem checks", run_id: 30928293407, run_attempt: 1, head_sha: a629b9bd1, trigger: pull_request, started_at: "2026-08-04T16:16:00Z", finished_at: "2026-08-04T16:23:43Z", duration_seconds: 463, conclusion: success}
+- {workflow: "PR", run_id: 30928295864, run_attempt: 1, head_sha: a629b9bd1, trigger: pull_request, started_at: "2026-08-04T16:16:02Z", finished_at: "2026-08-04T16:27:44Z", duration_seconds: 702, conclusion: failure}
+- {workflow: "Source architecture", run_id: 30929279603, run_attempt: 1, head_sha: 9e104e317, trigger: pull_request, started_at: "2026-08-04T16:28:17Z", finished_at: "2026-08-04T16:28:38Z", duration_seconds: 21, conclusion: success}
+- {workflow: "Remote task", run_id: 30929290374, run_attempt: 1, head_sha: 9e104e317, trigger: workflow_dispatch, started_at: "2026-08-04T16:28:25Z", finished_at: "2026-08-04T16:38:30Z", duration_seconds: 605, conclusion: failure}
+- {workflow: "Remote task", run_id: 30929290551, run_attempt: 1, head_sha: 9e104e317, trigger: workflow_dispatch, started_at: "2026-08-04T16:28:25Z", finished_at: "2026-08-04T16:32:10Z", duration_seconds: 225, conclusion: success}
+- {workflow: "Remote task", run_id: 30929290724, run_attempt: 1, head_sha: 9e104e317, trigger: workflow_dispatch, started_at: "2026-08-04T16:28:25Z", finished_at: "2026-08-04T16:32:23Z", duration_seconds: 238, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30929295866, run_attempt: 1, head_sha: 9e104e317, trigger: pull_request, started_at: "2026-08-04T16:28:29Z", finished_at: "2026-08-04T16:36:07Z", duration_seconds: 458, conclusion: success}
+- {workflow: "PR", run_id: 30929296460, run_attempt: 1, head_sha: 9e104e317, trigger: pull_request, started_at: "2026-08-04T16:28:30Z", finished_at: "2026-08-04T16:40:28Z", duration_seconds: 718, conclusion: success}
+- {workflow: "Source architecture", run_id: 30932207965, run_attempt: 1, head_sha: d02d162fb, trigger: pull_request, started_at: "2026-08-04T17:04:43Z", finished_at: "2026-08-04T17:05:14Z", duration_seconds: 31, conclusion: success}
+- {workflow: "Remote task", run_id: 30932248423, run_attempt: 1, head_sha: d02d162fb, trigger: workflow_dispatch, started_at: "2026-08-04T17:05:12Z", finished_at: "2026-08-04T17:20:48Z", duration_seconds: 936, conclusion: failure}
+- {workflow: "Remote task", run_id: 30932248628, run_attempt: 1, head_sha: d02d162fb, trigger: workflow_dispatch, started_at: "2026-08-04T17:05:12Z", finished_at: "2026-08-04T17:08:55Z", duration_seconds: 223, conclusion: success}
+- {workflow: "Remote task", run_id: 30932248560, run_attempt: 1, head_sha: d02d162fb, trigger: workflow_dispatch, started_at: "2026-08-04T17:05:12Z", finished_at: "2026-08-04T17:09:27Z", duration_seconds: 255, conclusion: success}
+- {workflow: "PR", run_id: 30932255552, run_attempt: 1, head_sha: d02d162fb, trigger: pull_request, started_at: "2026-08-04T17:05:17Z", finished_at: "2026-08-04T17:18:33Z", duration_seconds: 796, conclusion: cancelled}
+- {workflow: "Rust ecosystem checks", run_id: 30932255203, run_attempt: 1, head_sha: d02d162fb, trigger: pull_request, started_at: "2026-08-04T17:05:17Z", finished_at: "2026-08-04T17:12:56Z", duration_seconds: 459, conclusion: success}
+- {workflow: "Source architecture", run_id: 30932761132, run_attempt: 1, head_sha: 2f7c9dc9a, trigger: pull_request, started_at: "2026-08-04T17:11:39Z", finished_at: "2026-08-04T17:12:10Z", duration_seconds: 31, conclusion: success}
+- {workflow: "Remote task", run_id: 30932788239, run_attempt: 1, head_sha: 2f7c9dc9a, trigger: workflow_dispatch, started_at: "2026-08-04T17:11:59Z", finished_at: "2026-08-04T17:15:51Z", duration_seconds: 232, conclusion: success}
+- {workflow: "Remote task", run_id: 30932794119, run_attempt: 1, head_sha: 2f7c9dc9a, trigger: workflow_dispatch, started_at: "2026-08-04T17:12:04Z", finished_at: "2026-08-04T17:16:37Z", duration_seconds: 273, conclusion: success}
+- {workflow: "Remote task", run_id: 30932800252, run_attempt: 1, head_sha: 2f7c9dc9a, trigger: workflow_dispatch, started_at: "2026-08-04T17:12:08Z", finished_at: "2026-08-04T17:35:40Z", duration_seconds: 1412, conclusion: failure}
+- {workflow: "Rust ecosystem checks", run_id: 30932906527, run_attempt: 1, head_sha: 2f7c9dc9a, trigger: pull_request, started_at: "2026-08-04T17:13:30Z", finished_at: "2026-08-04T17:21:15Z", duration_seconds: 465, conclusion: success}
+- {workflow: "PR", run_id: 30932907769, run_attempt: 1, head_sha: 2f7c9dc9a, trigger: pull_request, started_at: "2026-08-04T17:13:31Z", finished_at: "2026-08-04T17:27:48Z", duration_seconds: 857, conclusion: success}
+- {workflow: "Source architecture", run_id: 30935063295, run_attempt: 1, head_sha: ca5853e3f, trigger: pull_request, started_at: "2026-08-04T17:41:21Z", finished_at: "2026-08-04T17:41:59Z", duration_seconds: 38, conclusion: success}
+- {workflow: "Remote task", run_id: 30935093302, run_attempt: 1, head_sha: ca5853e3f, trigger: workflow_dispatch, started_at: "2026-08-04T17:41:44Z", finished_at: "2026-08-04T17:45:38Z", duration_seconds: 234, conclusion: success}
+- {workflow: "Remote task", run_id: 30935093367, run_attempt: 1, head_sha: ca5853e3f, trigger: workflow_dispatch, started_at: "2026-08-04T17:41:44Z", finished_at: "2026-08-04T17:52:41Z", duration_seconds: 657, conclusion: failure}
+- {workflow: "Remote task", run_id: 30935093349, run_attempt: 1, head_sha: ca5853e3f, trigger: workflow_dispatch, started_at: "2026-08-04T17:41:44Z", finished_at: "2026-08-04T17:47:17Z", duration_seconds: 333, conclusion: success}
+- {workflow: "Rust ecosystem checks", run_id: 30935100286, run_attempt: 1, head_sha: ca5853e3f, trigger: pull_request, started_at: "2026-08-04T17:41:51Z", finished_at: "2026-08-04T17:49:20Z", duration_seconds: 449, conclusion: success}
+- {workflow: "PR", run_id: 30935103589, run_attempt: 1, head_sha: ca5853e3f, trigger: pull_request, started_at: "2026-08-04T17:41:53Z", finished_at: "2026-08-04T17:56:57Z", duration_seconds: 904, conclusion: cancelled}
+cache_telemetry:
+  collection:
+    complete: false
+    warnings:
+    - Cache artifacts were not retained for every iterative or cancelled run;
+      no counters were inferred from incomplete evidence.
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+pr_retriggers:
+- {at: "2026-08-04T17:41:53Z", kind: validation_label, head_sha: ca5853e3f, reason: final_exact_head_validation}
+merge_attempts:
+- {at: "2026-08-04T17:51:51Z", method: squash, outcome: success, reason: readiness_passed}
+comparison:
+  baseline_prs: [912]
+  baseline_quality: comparable
+  baseline_note: The baseline is the immediately preceding Identity Bridge delivery stage.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: true
+  findings:
+  - Iterative graph and responsive validation produced repeated hosted runs while the UI contract was refined.
+  - Post-merge compact-width browser validation found card overflow and graph-refit defects; PR 915 delivered the repair.
+  - The final adoption preserved live identity, device, and vault evidence instead of shipping research fixtures.
+  required_actions: []
