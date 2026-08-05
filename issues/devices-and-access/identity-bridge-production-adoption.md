@@ -1,42 +1,45 @@
 ---
 title: Adopt Identity Bridge as the production identity surface
-status: done
+status: blocked
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-04T10:36:29Z
-updated_at: 2026-08-04T19:55:55Z
+updated_at: 2026-08-05T01:16:46Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/914
   - https://github.com/meta-secret/nook/pull/915
-depends_on: []
+  - https://github.com/meta-secret/nook/pull/918
+depends_on:
+  - issues/hive-isolated-agent-platform/main-failure-2a092671287bca3c174b6f30d758c27d73047013.md
 ---
 
 # Adopt Identity Bridge as the production identity surface
 
 ## Context
 
-The Identity Bridge research sketch now expresses Nook's target relationship
-model more clearly than the browser-device-centered production dashboard. The
-shipping surface should let a person browse identities or vaults, understand
-the device evidence behind an identity, and follow explicit identity-to-vault
-grants without losing the existing unlock, recovery, enrollment, and
-management behavior.
+The Identity Bridge research sketch supplied useful navigation and interaction
+hierarchy for the browser-device-centered production dashboard. Its original
+relationship model overreached, however: local browser identity state does not
+identify a passkey, device key, or identity-to-vault grant. The shipping
+surface must keep those independent facts separate while preserving unlock,
+recovery, enrollment, and management behavior.
 
 ## Outcome
 
-The permanent Devices & access destination becomes a fully integrated identity
-management surface based on Identity Bridge. It renders only live Rust/WASM
-state, remains useful before any vault exists and while locked, and preserves
-all existing authorized actions through contextually placed controls.
+The permanent Devices & access destination uses the useful Identity Bridge
+interaction hierarchy without presenting an identity-key-vault chain. It
+renders only live Rust/WASM state, remains useful before any vault exists and
+while locked, and preserves all existing authorized actions through
+contextually placed controls.
 
 ## Scope
 
 - Port the accepted Identity Bridge interaction hierarchy into the production
   shared Svelte application.
-- Drive both identity-first and vault-first perspectives from one typed,
-  truthful state projection rather than research fixtures.
+- Drive identity-state and vault-access perspectives from typed, truthful
+  projections rather than research fixtures or inferred relationships.
 - Preserve current setup, unlock, provider-label, device-management,
   backup-password, and vault navigation functionality.
 - Extend typed Rust/WASM contracts only where the target identity model cannot
@@ -48,8 +51,8 @@ all existing authorized actions through contextually placed controls.
 
 ## Acceptance criteria
 
-- [x] Identity-first and vault-first browsing are available from the permanent access destination.
-- [x] Devices, installation keys, identities, and vault grants remain visibly distinct.
+- [x] Identity-state and vault-access browsing are available from the permanent access destination.
+- [x] Local identity state and vault-access evidence remain visibly independent.
 - [x] The page renders real application state without mock identities, vaults, keys, or grants.
 - [x] Existing access-related actions remain reachable in the state where they are authorized.
 - [x] No-vault, unprepared, locked, unlocked, long-copy, mobile, and desktop states are coherent and accessible.
@@ -73,24 +76,43 @@ all existing authorized actions through contextually placed controls.
   identity labels honest, and added exact compact-layout polling. The focused
   production Devices & access suite passed all ten scenarios and the full
   hosted browser matrix passed before squash merge.
+- 2026-08-05: PR 918 corrected the underlying product model: local identity
+  state is no longer connected to a passkey or device key, device-key details
+  are no longer user-facing, and vault access is shown only as independent,
+  previously observed evidence.
+- 2026-08-05: PR 918 reached exact-head review closure and passed source
+  architecture, Rust, WASM, preview, extension, web check, and web unit
+  validation. Merge is blocked by the existing Main browser regression owned
+  by the linked Hive incident and PR 919; the same two unrelated
+  device-protection scenarios fail before the Devices & access matrix reaches
+  its remaining cases.
 
 ## Delivered outcome
 
-The permanent Devices & access destination now derives its identity, device
-key, and vault relationship graph from the existing typed application state.
-It supports both browsing directions, retains every authorized lifecycle and
-management action outside the graph, and remains honest when identity or vault
-evidence is unavailable. PR 914 merged as `50e69d0f9ff4d97f14e6590a0f291318ba1adebf`.
+The permanent Devices & access destination now presents local identity state
+and vault-access evidence as independent perspectives derived from existing
+typed application state. Device-key identifiers and inferred identity-key
+relationships are absent from the user-facing surface. It retains every
+authorized lifecycle and management action and remains honest when identity or
+vault evidence is unavailable. PR 914 merged as
+`50e69d0f9ff4d97f14e6590a0f291318ba1adebf`.
 The compact follow-up PR 915 merged as
 `c3145c0465f985e2e574721a4eb7846743e95ac1` after exact-head review,
 deployment, architecture, Rust, web, and browser validation all passed.
+PR 918 contains the corrective model and remains open until the linked Main
+browser regression is repaired and exact-head readiness can pass without a
+validation bypass.
 
 ## Findings and decisions
 
-- Identity and vault perspectives are views over one relationship model, not
-  separate stores.
-- Graph structure is explanatory navigation; existing management controls stay
-  in normal semantic product panels rather than becoming canvas-only actions.
+- Local identity state does not establish a relationship to a passkey, device
+  key, or vault.
+- A device key is an internal cryptographic mechanism, not a useful identity
+  object for this user-facing destination.
+- Identity and vault-access perspectives may share navigation and layout, but
+  they do not imply edges between their subjects.
+- Existing management controls stay in normal semantic product panels rather
+  than becoming canvas-only actions.
 
 ## References
 
