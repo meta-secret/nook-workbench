@@ -57,7 +57,7 @@ contextually placed controls.
 - [x] Existing access-related actions remain reachable in the state where they are authorized.
 - [x] No-vault, unprepared, locked, unlocked, long-copy, mobile, and desktop states are coherent and accessible.
 - [x] English and Russian catalogs remain in parity.
-- [x] Focused tests and exact-head hosted validation pass before squash merge.
+- [ ] Focused tests and exact-head hosted validation pass before squash merge.
 
 ## Progress
 
