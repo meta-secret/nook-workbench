@@ -1,11 +1,11 @@
 ---
 title: Adopt Identity Bridge as the production identity surface
-status: blocked
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-04T10:36:29Z
-updated_at: 2026-08-05T01:16:46Z
+updated_at: 2026-08-05T04:55:12Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/914
@@ -57,7 +57,7 @@ contextually placed controls.
 - [x] Existing access-related actions remain reachable in the state where they are authorized.
 - [x] No-vault, unprepared, locked, unlocked, long-copy, mobile, and desktop states are coherent and accessible.
 - [x] English and Russian catalogs remain in parity.
-- [ ] Focused tests and exact-head hosted validation pass before squash merge.
+- [x] Focused tests and exact-head hosted validation pass before squash merge.
 
 ## Progress
 
@@ -82,10 +82,13 @@ contextually placed controls.
   previously observed evidence.
 - 2026-08-05: PR 918 reached exact-head review closure and passed source
   architecture, Rust, WASM, preview, extension, web check, and web unit
-  validation. Merge is blocked by the existing Main browser regression owned
-  by the linked Hive incident and PR 919; the same two unrelated
-  device-protection scenarios fail before the Devices & access matrix reaches
-  its remaining cases.
+  validation. Merge was held until the existing Main browser regression owned
+  by the linked Hive incident and PR 919 was repaired.
+- 2026-08-05: After PR 919 merged and replacement Main passed, PR 918 rebased
+  onto current Main. Exact full run
+  [30975628549](https://github.com/meta-secret/nook/actions/runs/30975628549),
+  Rust ecosystem checks, source architecture, all review threads, preflight,
+  and readiness passed at `832e121f573a36c113778c184bac59cff7b6874c`.
 
 ## Delivered outcome
 
@@ -99,9 +102,8 @@ vault evidence is unavailable. PR 914 merged as
 The compact follow-up PR 915 merged as
 `c3145c0465f985e2e574721a4eb7846743e95ac1` after exact-head review,
 deployment, architecture, Rust, web, and browser validation all passed.
-PR 918 contains the corrective model and remains open until the linked Main
-browser regression is repaired and exact-head readiness can pass without a
-validation bypass.
+PR 918 squash-merged as `7fa1f2133cc3bc996c520ed09920ade6689f1aa5`
+after its dependency and every exact-head readiness gate passed.
 
 ## Findings and decisions
 
@@ -120,3 +122,4 @@ validation bypass.
 - `.cortex/design-docs/identity-vault-architecture.md`
 - `nook-app/nook-web/nook-web-research/src/experiments/identity-management/identity-bridge`
 - `nook-app/nook-web/nook-web-shared/src/vault-app/lib/components/DevicesAccessDashboard.svelte`
+- [PR 918](https://github.com/meta-secret/nook/pull/918)
