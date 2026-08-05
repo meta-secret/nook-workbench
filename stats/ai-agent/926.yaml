@@ -1,0 +1,328 @@
+schema_version: 3
+source_pr:
+  number: 926
+  url: https://github.com/meta-secret/nook/pull/926
+  title: Route reusable GitHub workflow shell into Taskfiles
+  change_surface: ci_taskfile_workflows
+  head_sha: 7ee48b3e57a6165e45d7d397baca6fc04e95cdf5
+  pr_head_sha: 1cd949ee43d650d92f938de6601b52fc0babbae1
+  started_at: '2026-08-05T16:35:08Z'
+  opened_at: '2026-08-05T16:44:04Z'
+  merged_at: '2026-08-05T17:46:36Z'
+  elapsed_seconds: 4288
+  open_to_merge_seconds: 3752
+summary:
+  local_execution_count: 6
+  local_check_count: 6
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 484
+  github_actions_run_count: 26
+  github_actions_seconds: 6835
+  pr_retrigger_count: 5
+  agent_requested_rerun_count: 5
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-08-05T17:47:30Z'
+  head_sha: 7ee48b3e57a6165e45d7d397baca6fc04e95cdf5
+  by_type:
+    rust: 683
+    preflight: 117
+    web_unit: 348
+    e2e: 228
+  total: 1376
+local_execution_collection:
+  complete: false
+  warning: Format durations approximate from host format runs during CI fix loops.
+local_executions:
+- command: task format
+  category: check
+  started_at: '2026-08-05T16:40:00Z'
+  finished_at: '2026-08-05T16:41:24Z'
+  duration_seconds: 84
+  outcome: passed
+  reason: pre_push_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-05T16:47:00Z'
+  finished_at: '2026-08-05T16:48:20Z'
+  duration_seconds: 80
+  outcome: passed
+  reason: post_merge_conflict_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-05T16:57:00Z'
+  finished_at: '2026-08-05T16:58:20Z'
+  duration_seconds: 80
+  outcome: passed
+  reason: ci_fix_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-05T17:08:00Z'
+  finished_at: '2026-08-05T17:09:20Z'
+  duration_seconds: 80
+  outcome: passed
+  reason: ci_fix_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-05T17:20:00Z'
+  finished_at: '2026-08-05T17:21:20Z'
+  duration_seconds: 80
+  outcome: passed
+  reason: ci_fix_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-05T17:31:00Z'
+  finished_at: '2026-08-05T17:32:20Z'
+  duration_seconds: 80
+  outcome: passed
+  reason: ci_fix_hygiene
+github_actions_runs:
+- workflow: Linear UI demos
+  run_id: 31031591847
+  run_attempt: 1
+  head_sha: 1cd949ee43d650d92f938de6601b52fc0babbae1
+  trigger: pull_request_target
+  started_at: '2026-08-05T17:46:39Z'
+  finished_at: '2026-08-05T17:46:51Z'
+  duration_seconds: 12
+  conclusion: success
+- workflow: Rust ecosystem checks
+  run_id: 31030462451
+  run_attempt: 1
+  head_sha: 1cd949ee43d650d92f938de6601b52fc0babbae1
+  trigger: pull_request
+  started_at: '2026-08-05T17:32:05Z'
+  finished_at: '2026-08-05T17:39:52Z'
+  duration_seconds: 467
+  conclusion: success
+- workflow: PR
+  run_id: 31030463118
+  run_attempt: 1
+  head_sha: 1cd949ee43d650d92f938de6601b52fc0babbae1
+  trigger: pull_request
+  started_at: '2026-08-05T17:32:05Z'
+  finished_at: '2026-08-05T17:45:49Z'
+  duration_seconds: 824
+  conclusion: success
+- workflow: Source architecture
+  run_id: 31030454128
+  run_attempt: 1
+  head_sha: 1cd949ee43d650d92f938de6601b52fc0babbae1
+  trigger: pull_request
+  started_at: '2026-08-05T17:31:58Z'
+  finished_at: '2026-08-05T17:32:23Z'
+  duration_seconds: 25
+  conclusion: success
+- workflow: Web research
+  run_id: 31030453112
+  run_attempt: 1
+  head_sha: 1cd949ee43d650d92f938de6601b52fc0babbae1
+  trigger: pull_request
+  started_at: '2026-08-05T17:31:58Z'
+  finished_at: '2026-08-05T17:32:59Z'
+  duration_seconds: 61
+  conclusion: success
+- workflow: "Hive verification \xB7 PR #926"
+  run_id: 31030453751
+  run_attempt: 1
+  head_sha: 1cd949ee43d650d92f938de6601b52fc0babbae1
+  trigger: pull_request
+  started_at: '2026-08-05T17:31:58Z'
+  finished_at: '2026-08-05T17:37:27Z'
+  duration_seconds: 329
+  conclusion: success
+- workflow: PR
+  run_id: 31029602156
+  run_attempt: 1
+  head_sha: 78644c5f898dd0032e8e687aaf7575b5d8b163aa
+  trigger: pull_request
+  started_at: '2026-08-05T17:21:00Z'
+  finished_at: '2026-08-05T17:29:17Z'
+  duration_seconds: 497
+  conclusion: failure
+- workflow: Rust ecosystem checks
+  run_id: 31029600882
+  run_attempt: 1
+  head_sha: 78644c5f898dd0032e8e687aaf7575b5d8b163aa
+  trigger: pull_request
+  started_at: '2026-08-05T17:20:59Z'
+  finished_at: '2026-08-05T17:27:48Z'
+  duration_seconds: 409
+  conclusion: success
+- workflow: Web research
+  run_id: 31029574135
+  run_attempt: 1
+  head_sha: 78644c5f898dd0032e8e687aaf7575b5d8b163aa
+  trigger: pull_request
+  started_at: '2026-08-05T17:20:39Z'
+  finished_at: '2026-08-05T17:21:38Z'
+  duration_seconds: 59
+  conclusion: success
+- workflow: Source architecture
+  run_id: 31029572577
+  run_attempt: 1
+  head_sha: 78644c5f898dd0032e8e687aaf7575b5d8b163aa
+  trigger: pull_request
+  started_at: '2026-08-05T17:20:38Z'
+  finished_at: '2026-08-05T17:21:13Z'
+  duration_seconds: 35
+  conclusion: success
+- workflow: "Hive verification \xB7 PR #926"
+  run_id: 31029572507
+  run_attempt: 1
+  head_sha: 78644c5f898dd0032e8e687aaf7575b5d8b163aa
+  trigger: pull_request
+  started_at: '2026-08-05T17:20:38Z'
+  finished_at: '2026-08-05T17:29:40Z'
+  duration_seconds: 542
+  conclusion: success
+- workflow: PR
+  run_id: 31028684170
+  run_attempt: 1
+  head_sha: 60b0eb468e10dacdcd317190608834f64514f902
+  trigger: pull_request
+  started_at: '2026-08-05T17:09:21Z'
+  finished_at: '2026-08-05T17:18:09Z'
+  duration_seconds: 528
+  conclusion: failure
+- workflow: Rust ecosystem checks
+  run_id: 31028683900
+  run_attempt: 1
+  head_sha: 60b0eb468e10dacdcd317190608834f64514f902
+  trigger: pull_request
+  started_at: '2026-08-05T17:09:21Z'
+  finished_at: '2026-08-05T17:18:04Z'
+  duration_seconds: 523
+  conclusion: success
+- workflow: Source architecture
+  run_id: 31028642776
+  run_attempt: 1
+  head_sha: 60b0eb468e10dacdcd317190608834f64514f902
+  trigger: pull_request
+  started_at: '2026-08-05T17:08:49Z'
+  finished_at: '2026-08-05T17:09:23Z'
+  duration_seconds: 34
+  conclusion: success
+- workflow: Web research
+  run_id: 31028642105
+  run_attempt: 1
+  head_sha: 60b0eb468e10dacdcd317190608834f64514f902
+  trigger: pull_request
+  started_at: '2026-08-05T17:08:49Z'
+  finished_at: '2026-08-05T17:09:55Z'
+  duration_seconds: 66
+  conclusion: success
+- workflow: "Hive verification \xB7 PR #926"
+  run_id: 31028642808
+  run_attempt: 1
+  head_sha: 60b0eb468e10dacdcd317190608834f64514f902
+  trigger: pull_request
+  started_at: '2026-08-05T17:08:49Z'
+  finished_at: '2026-08-05T17:14:41Z'
+  duration_seconds: 352
+  conclusion: success
+- workflow: PR
+  run_id: 31027747422
+  run_attempt: 1
+  head_sha: 5b6aadb6a1fb3664bf4577ad6955a2f1daa20a4b
+  trigger: pull_request
+  started_at: '2026-08-05T16:57:40Z'
+  finished_at: '2026-08-05T17:04:03Z'
+  duration_seconds: 383
+  conclusion: failure
+- workflow: Rust ecosystem checks
+  run_id: 31027747452
+  run_attempt: 1
+  head_sha: 5b6aadb6a1fb3664bf4577ad6955a2f1daa20a4b
+  trigger: pull_request
+  started_at: '2026-08-05T16:57:40Z'
+  finished_at: '2026-08-05T17:05:49Z'
+  duration_seconds: 489
+  conclusion: success
+- workflow: Source architecture
+  run_id: 31027736461
+  run_attempt: 1
+  head_sha: 5b6aadb6a1fb3664bf4577ad6955a2f1daa20a4b
+  trigger: pull_request
+  started_at: '2026-08-05T16:57:32Z'
+  finished_at: '2026-08-05T16:58:08Z'
+  duration_seconds: 36
+  conclusion: failure
+- workflow: Web research
+  run_id: 31027736459
+  run_attempt: 1
+  head_sha: 5b6aadb6a1fb3664bf4577ad6955a2f1daa20a4b
+  trigger: pull_request
+  started_at: '2026-08-05T16:57:32Z'
+  finished_at: '2026-08-05T16:58:43Z'
+  duration_seconds: 71
+  conclusion: success
+- workflow: "Hive verification \xB7 PR #926"
+  run_id: 31027736771
+  run_attempt: 1
+  head_sha: 5b6aadb6a1fb3664bf4577ad6955a2f1daa20a4b
+  trigger: pull_request
+  started_at: '2026-08-05T16:57:32Z'
+  finished_at: '2026-08-05T16:59:26Z'
+  duration_seconds: 114
+  conclusion: failure
+- workflow: PR
+  run_id: 31027087845
+  run_attempt: 1
+  head_sha: 8b01f5e0a7fe4d28f08757a28f2f74d2a5cf97a9
+  trigger: pull_request
+  started_at: '2026-08-05T16:49:21Z'
+  finished_at: '2026-08-05T16:55:15Z'
+  duration_seconds: 354
+  conclusion: failure
+- workflow: Rust ecosystem checks
+  run_id: 31027080643
+  run_attempt: 1
+  head_sha: 8b01f5e0a7fe4d28f08757a28f2f74d2a5cf97a9
+  trigger: pull_request
+  started_at: '2026-08-05T16:49:16Z'
+  finished_at: '2026-08-05T16:58:12Z'
+  duration_seconds: 536
+  conclusion: cancelled
+- workflow: "Hive verification \xB7 PR #926"
+  run_id: 31027073370
+  run_attempt: 1
+  head_sha: 8b01f5e0a7fe4d28f08757a28f2f74d2a5cf97a9
+  trigger: pull_request
+  started_at: '2026-08-05T16:49:10Z'
+  finished_at: '2026-08-05T16:49:50Z'
+  duration_seconds: 40
+  conclusion: failure
+- workflow: Web research
+  run_id: 31027072840
+  run_attempt: 1
+  head_sha: 8b01f5e0a7fe4d28f08757a28f2f74d2a5cf97a9
+  trigger: pull_request
+  started_at: '2026-08-05T16:49:10Z'
+  finished_at: '2026-08-05T16:49:42Z'
+  duration_seconds: 32
+  conclusion: failure
+- workflow: Source architecture
+  run_id: 31027073747
+  run_attempt: 1
+  head_sha: 8b01f5e0a7fe4d28f08757a28f2f74d2a5cf97a9
+  trigger: pull_request
+  started_at: '2026-08-05T16:49:10Z'
+  finished_at: '2026-08-05T16:49:27Z'
+  duration_seconds: 17
+  conclusion: failure
+comparison:
+  baseline_prs:
+  - 925
+  - 924
+  notes:
+  - 'More complete validation cycles than #925 because Task dir/ROOT_DIR, SIGPIPE, contract, and smoke-sentinel
+    failures required iterative exact-head revalidation.'
+  - Final green head still landed inside one wall-clock hour after PR open.
+waste_assessment:
+  findings:
+  - Most waste came from Task include dir resolution and contract tests still pointing at inline workflow
+    shell after extraction.
+  - No product-path rebuild waste beyond expected PR validation cost for workflow/script changes.
+  actionable_followups: []
