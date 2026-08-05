@@ -12,4 +12,5 @@ new worklog that links the superseded entry; do not rewrite historical
 experience out of the record.
 
 Worklogs summarize durable development context. They are not chat transcripts
-or raw command logs.
+or raw command logs. Link `issue` when an existing issue owns the task; omit the
+field for a direct request that has no issue record.

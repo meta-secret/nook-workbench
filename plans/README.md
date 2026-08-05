@@ -12,4 +12,6 @@ worklog.
 
 Use `plans/<feature>/<timestamp>-<task>.md` and start from
 [`_templates/plan.md`](_templates/plan.md). For a direct request with no feature
-record, use the most relevant feature or `unplanned`.
+record, use the most relevant feature or `unplanned`. The `issue` frontmatter
+field is required when an existing issue owns the task and omitted when the
+request arrived directly without an issue.

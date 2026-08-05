@@ -15,26 +15,32 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 2
-      - name: Enforce immutable task plans
+      - name: Enforce immutable records and baseline
         run: |
           set -euo pipefail
+          base_sha="${{ github.event.pull_request.base.sha || github.event.before }}"
           changed="$(
-            git diff --name-status HEAD^ HEAD -- \
+            git diff --name-status "$base_sha" HEAD -- \
               'plans/**/*.md' \
               ':(exclude)plans/README.md' \
-              ':(exclude)plans/_templates/**'
+              ':(exclude)plans/_templates/**' \
+              'scripts/legacy-validation-baseline.json'
           )"
           while IFS=$'\t' read -r status path _rest; do
             [ -z "$status" ] && continue
             if [ "$status" != "A" ]; then
-              echo "::error file=${path}::Published task plans are immutable; add a superseding plan instead."
+              if [ "$path" = "scripts/legacy-validation-baseline.json" ]; then
+                echo "::error file=${path}::The historical validation baseline is immutable."
+              else
+                echo "::error file=${path}::Published task plans are immutable; add a superseding plan instead."
+              fi
               exit 1
             fi
           done <<< "$changed"
       - uses: oven-sh/setup-bun@v2
       - name: Reject sensitive content
         run: |
-          bun test scripts/scan-sensitive.test.mjs
+          bun test scripts/scan-sensitive.test.mjs scripts/validate-records.test.mjs
           bun scripts/scan-sensitive.mjs
       - run: bun scripts/validate.mjs
       - name: Validate changed statistics

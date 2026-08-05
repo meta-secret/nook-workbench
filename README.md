@@ -83,6 +83,18 @@ everyone, so skipped local hooks do not remove the remote detection gates. If a
 real secret is ever detected after publication, rotate or revoke it first, then
 remove it from the repository and history.
 
+## Record validation
+
+`bun scripts/validate.mjs` enforces the current issue, plan, and worklog
+contracts across the complete repository. Records that predate those contracts
+remain immutable and are exempted only when both their content hash and exact
+known findings match `scripts/legacy-validation-baseline.json`. A new finding
+or any edit to historical content is therefore validated against the current
+schema. The baseline itself may be introduced once and is immutable afterward.
+
+Direct-request plans and worklogs may omit `issue`; when an issue already owns
+the work, records should continue to link it.
+
 See [AGENTS.md](AGENTS.md) for the full contract and the templates under
 [`issues/_templates/`](issues/_templates/) and
 [`plans/_templates/`](plans/_templates/),
