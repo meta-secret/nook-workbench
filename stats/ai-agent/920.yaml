@@ -1,0 +1,79 @@
+schema_version: 3
+source_pr:
+  number: 920
+  url: https://github.com/meta-secret/nook/pull/920
+  title: "Reject stale expensive validation dispatches"
+  change_surface: ci_remote_validation_preflight
+  head_sha: 001af89867715aa018d388d12a6a3b3475db10f2
+  pr_head_sha: ab90e058ca132c0d6c805c3dcd7940acb3faeebf
+  started_at: "2026-08-04T23:58:09Z"
+  opened_at: "2026-08-05T00:25:04Z"
+  merged_at: "2026-08-05T00:38:22Z"
+  elapsed_seconds: 2413
+  open_to_merge_seconds: 798
+summary:
+  local_execution_count: 0
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 6
+  github_actions_seconds: 955
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 1
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: "2026-08-05T00:40:03Z"
+  head_sha: 001af89867715aa018d388d12a6a3b3475db10f2
+  by_type:
+    rust: 680
+    preflight: 109
+    web_unit: 353
+    e2e: 232
+  total: 1374
+local_execution_collection:
+  complete: false
+  warning: The scratch execution ledger was not created at task start; the single successful task format execution is documented in the worklog but omitted here rather than assigned invented timestamps.
+local_executions: []
+github_actions_runs:
+  - {workflow: "Source architecture", run_id: 30963210847, run_attempt: 1, head_sha: ab90e058ca132c0d6c805c3dcd7940acb3faeebf, trigger: pull_request, started_at: "2026-08-05T00:25:08Z", finished_at: "2026-08-05T00:25:35Z", duration_seconds: 27, conclusion: success}
+  - {workflow: "Remote task", run_id: 30963217066, run_attempt: 1, head_sha: ab90e058ca132c0d6c805c3dcd7940acb3faeebf, trigger: workflow_dispatch, started_at: "2026-08-05T00:25:14Z", finished_at: "2026-08-05T00:26:43Z", duration_seconds: 89, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 30963482127, run_attempt: 1, head_sha: ab90e058ca132c0d6c805c3dcd7940acb3faeebf, trigger: pull_request, started_at: "2026-08-05T00:30:12Z", finished_at: "2026-08-05T00:30:19Z", duration_seconds: 7, conclusion: cancelled}
+  - {workflow: "PR", run_id: 30963482362, run_attempt: 1, head_sha: ab90e058ca132c0d6c805c3dcd7940acb3faeebf, trigger: pull_request, started_at: "2026-08-05T00:30:13Z", finished_at: "2026-08-05T00:30:19Z", duration_seconds: 6, conclusion: cancelled}
+  - {workflow: "Rust ecosystem checks", run_id: 30963487476, run_attempt: 1, head_sha: ab90e058ca132c0d6c805c3dcd7940acb3faeebf, trigger: pull_request, started_at: "2026-08-05T00:30:17Z", finished_at: "2026-08-05T00:38:02Z", duration_seconds: 465, conclusion: success}
+  - {workflow: "PR", run_id: 30963487508, run_attempt: 1, head_sha: ab90e058ca132c0d6c805c3dcd7940acb3faeebf, trigger: pull_request, started_at: "2026-08-05T00:30:17Z", finished_at: "2026-08-05T00:36:18Z", duration_seconds: 361, conclusion: success}
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+  collection:
+    complete: false
+    warnings:
+      - GitHub REST rate limiting prevented cache-artifact enumeration after the implementation PR merged; no counters were inferred.
+pr_retriggers:
+  - {at: "2026-08-05T00:30:17Z", kind: validation_label, head_sha: ab90e058ca132c0d6c805c3dcd7940acb3faeebf, reason: final_exact_head_validation}
+merge_attempts:
+  - {at: "2026-08-05T00:38:22Z", method: squash, outcome: success, reason: readiness_passed}
+comparison:
+  baseline_prs: [899]
+  baseline_quality: comparable
+  baseline_note: PR 899 is the newest completed source-architecture and preflight-enforcement change with the same hosted gate family, though it had a substantially broader Rust migration.
+  elapsed_seconds_change_percent: -1.15
+  github_actions_seconds_change_percent: -77.7
+  test_inventory_total_change: 84
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - The required sealed task format execution was a single cold image rebuild and was not repeated.
+    - The validation-label transition cancelled two just-started runs after 13 aggregate runner-seconds; the replacement exact-head runs completed successfully.
+    - Focused preflight, complete PR, Rust ecosystem, source-architecture, freshness, and readiness checks all passed on the final head.
+  required_actions: []
