@@ -1,0 +1,49 @@
+---
+title: Merge Rust ecosystem PR gates into PR workflow
+feature: unplanned
+issue: none
+started_at: 2026-08-06T04:00:00Z
+agent: cursor
+---
+
+# Task plan
+
+## Interpreted request
+
+Put labeled-PR Rust ecosystem gates in the same GitHub Actions workflow run as the existing PR product checks. Keep schedule, main-path, and manual ecosystem entry points as a thin separate workflow. Show all PR validation jobs on one Actions run page. Jobs must keep running in parallel.
+
+## Requirements
+
+- On `ci:validate` / `ci:full-e2e`, ecosystem jobs appear under the PR workflow run.
+- Ecosystem jobs stay parallel with native Rust, WASM, and verify.
+- Non-PR triggers remain: weekly schedule, path-filtered main push, and workflow_dispatch.
+- Shared job definitions avoid duplicated Bake steps.
+- Cortex and README describe the new ownership split.
+- Exact-head validation still uses the existing label gate.
+
+## Constraints and exclusions
+
+- Do not serialize ecosystem jobs behind product checks.
+- Do not expand PR permissions for the reusable ecosystem workflow beyond contents read.
+- Do not change Bake targets, deny/audit policy, or Kani package scope.
+- No UI or product code changes.
+
+## Initial plan
+
+1. Publish this plan and branch from origin/main.
+2. Extract ecosystem jobs into a reusable workflow with fuzz/cache inputs.
+3. Call that workflow from pr.yml after the validation-request gate.
+4. Slim rust-ecosystem.yml to non-PR triggers that call the same reusable workflow.
+5. Update quality, CI pipeline, rust-wasm, monorepo-setup, and README references.
+6. Format, open PR, validate, merge, and publish Workbench completion records.
+
+## Completion evidence
+
+- PR shows reusable ecosystem jobs under one PR workflow run.
+- Thin rust-ecosystem.yml has no pull_request trigger.
+- Docs name PR-owned ecosystem gates and the remaining non-PR workflow.
+- Exact-head PR checks pass and the PR merges.
+
+## Safety review
+
+- No raw prompt, transcript, secrets, private data, raw logs, or local paths.
