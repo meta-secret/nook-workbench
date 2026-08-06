@@ -97,22 +97,19 @@ controls.
 - 2026-08-06: PR 933 restored the protection → device-key → verified-vault
   dependency graph after passkey vault create, kept local identity free of
   membership edges, and added Playwright coverage for that journey. Squash
-  merged as .
+  merged as `3de74dedf7339975316aef1ac0fcbaff15891eae`.
 
 ## Delivered outcome
 
-The permanent Devices & access destination now presents local identity state
-and vault-access evidence as independent perspectives derived from existing
-typed application state. Device-key identifiers and inferred identity-key
-relationships are absent from the user-facing surface. It retains every
-authorized lifecycle and management action and remains honest when identity or
-vault evidence is unavailable. PR 914 merged as
-`50e69d0f9ff4d97f14e6590a0f291318ba1adebf`.
-The compact follow-up PR 915 merged as
-`c3145c0465f985e2e574721a4eb7846743e95ac1` after exact-head review,
-deployment, architecture, Rust, web, and browser validation all passed.
-PR 918 squash-merged as `7fa1f2133cc3bc996c520ed09920ade6689f1aa5`
-after its dependency and every exact-head readiness gate passed.
+The permanent Devices & access destination presents a truthful access-chain
+graph from live Rust/WASM state: protection unlocks the device key, and that
+key connects to vaults it opened. Local identity state remains visible without
+membership edges. Authorized lifecycle and management actions remain available.
+PR 914 merged as `50e69d0f9ff4d97f14e6590a0f291318ba1adebf`.
+PR 915 merged as `c3145c0465f985e2e574721a4eb7846743e95ac1`.
+PR 918 squash-merged as `7fa1f2133cc3bc996c520ed09920ade6689f1aa5`.
+PR 933 restored the access-chain graph as
+`3de74dedf7339975316aef1ac0fcbaff15891eae`.
 
 ## Findings and decisions
 
