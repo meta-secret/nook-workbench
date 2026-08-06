@@ -5,13 +5,14 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-04T10:36:29Z
-updated_at: 2026-08-06T06:15:00Z
+updated_at: 2026-08-06T09:12:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/914
   - https://github.com/meta-secret/nook/pull/915
   - https://github.com/meta-secret/nook/pull/918
   - https://github.com/meta-secret/nook/pull/933
+  - https://github.com/meta-secret/nook/pull/935
 depends_on:
   - issues/hive-isolated-agent-platform/main-failure-2a092671287bca3c174b6f30d758c27d73047013.md
 ---
@@ -99,17 +100,24 @@ controls.
   membership edges, and added Playwright coverage for that journey. Squash
   merged as `3de74dedf7339975316aef1ac0fcbaff15891eae`.
 
+
+- 2026-08-06: PR 935 made Identity first-class with App keys, identity-owned
+  vault DEKs, and a Nora-style Identity hub on Devices & access. Squash merged
+  as `6048e66e121b57e92b137fa30c0b32a847cb2434`.
+
 ## Delivered outcome
 
-The permanent Devices & access destination presents a truthful access-chain
-graph from live Rust/WASM state: protection unlocks the device key, and that
-key connects to vaults it opened. Local identity state remains visible without
-membership edges. Authorized lifecycle and management actions remain available.
+The permanent Devices & access destination centers a first-class Identity hub
+from live Rust/WASM state: passkeys protect app keys that are members of the
+Identity, and the Identity owns vault DEKs for vaults it can open. Authorized
+lifecycle and management actions remain available.
 PR 914 merged as `50e69d0f9ff4d97f14e6590a0f291318ba1adebf`.
 PR 915 merged as `c3145c0465f985e2e574721a4eb7846743e95ac1`.
 PR 918 squash-merged as `7fa1f2133cc3bc996c520ed09920ade6689f1aa5`.
 PR 933 restored the access-chain graph as
 `3de74dedf7339975316aef1ac0fcbaff15891eae`.
+PR 935 extracted Identity ownership as
+`6048e66e121b57e92b137fa30c0b32a847cb2434`.
 
 ## Findings and decisions
 
