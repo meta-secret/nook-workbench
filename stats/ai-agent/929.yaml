@@ -1,0 +1,110 @@
+schema_version: 3
+source_pr:
+  number: 929
+  url: https://github.com/meta-secret/nook/pull/929
+  title: Cache Rust ecosystem nightly BuildKit layers
+  change_surface: ci_buildkit_cache
+  head_sha: 843a42312b21be4406988319e4e4f7b46fa7057e
+  pr_head_sha: 843a42312b21be4406988319e4e4f7b46fa7057e
+  started_at: '2026-08-06T04:21:15Z'
+  opened_at: '2026-08-06T04:24:30Z'
+  merged_at: '2026-08-06T05:02:13Z'
+  elapsed_seconds: 2458
+  open_to_merge_seconds: 2263
+summary:
+  local_execution_count: 3
+  local_check_count: 3
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 346
+  github_actions_run_count: 3
+  github_actions_seconds: 2610
+  pr_retrigger_count: 2
+  agent_requested_rerun_count: 2
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-08-06T05:02:30Z'
+  head_sha: 843a42312b21be4406988319e4e4f7b46fa7057e
+  by_type:
+    rust: 682
+    preflight: 111
+    web_unit: 348
+    e2e: 228
+  total: 1369
+local_execution_collection:
+  complete: false
+  warning: Format durations approximate from host format runs. Test inventory
+    reused from adjacent PR 928 because local product inventories were not
+    remeasured.
+local_executions:
+- command: task format
+  category: check
+  started_at: '2026-08-06T04:22:30Z'
+  finished_at: '2026-08-06T04:24:00Z'
+  duration_seconds: 90
+  outcome: passed
+  reason: pre_push_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-06T04:33:00Z'
+  finished_at: '2026-08-06T04:35:43Z'
+  duration_seconds: 163
+  outcome: passed
+  reason: ci_fix_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-06T04:42:00Z'
+  finished_at: '2026-08-06T04:43:33Z'
+  duration_seconds: 93
+  outcome: passed
+  reason: merge_hygiene
+github_actions_runs:
+- workflow: Source architecture
+  run_id: 31071166630
+  run_attempt: 1
+  head_sha: 5ea646e5bb9c611114cf1bb13b6b73d5de7bead9
+  trigger: pull_request
+  started_at: '2026-08-06T04:24:35Z'
+  finished_at: '2026-08-06T04:24:56Z'
+  duration_seconds: 21
+  conclusion: success
+- workflow: PR
+  run_id: 31071187859
+  run_attempt: 1
+  head_sha: 5ea646e5bb9c611114cf1bb13b6b73d5de7bead9
+  trigger: pull_request
+  started_at: '2026-08-06T04:25:02Z'
+  finished_at: '2026-08-06T04:32:00Z'
+  duration_seconds: 418
+  conclusion: failure
+- workflow: PR
+  run_id: 31071947144
+  run_attempt: 1
+  head_sha: 843a42312b21be4406988319e4e4f7b46fa7057e
+  trigger: pull_request
+  started_at: '2026-08-06T04:40:50Z'
+  finished_at: '2026-08-06T05:01:41Z'
+  duration_seconds: 1251
+  conclusion: success
+comparison:
+  baseline_pr: 928
+  assessment: >-
+    Added three ecosystem BuildKit cache exporters and write policy. First
+    validation failed on a hard-coded exporter-count contract; second exact-head
+    validation passed after merging main's reusable checks workflow and covering
+    policy/deterministic siblings.
+waste:
+  actionable: true
+  findings:
+  - kind: missing_contract_update
+    detail: >-
+      First push omitted bumping the hosted exporter-count preflight assertion,
+      forcing a failed Native Rust verification cycle before the cache wiring
+      could land.
+    follow_up: none
+  - kind: incomplete_initial_scope
+    detail: >-
+      Initial change covered only nightly/fuzz/dylint; policy and deterministic
+      Bake gates had the same no-cache-to gap and needed a follow-up in-branch
+      expansion after merge from main.
+    follow_up: none
