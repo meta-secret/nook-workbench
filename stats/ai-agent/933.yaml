@@ -1,0 +1,126 @@
+schema_version: 3
+source_pr:
+  number: 933
+  url: https://github.com/meta-secret/nook/pull/933
+  title: Restore Access dependency graph after passkey vault create
+  change_surface: devices_access_ui
+  head_sha: 3de74dedf7339975316aef1ac0fcbaff15891eae
+  pr_head_sha: ddeac0bda49c5029dc39259ab32d505c211e6694
+  started_at: '2026-08-06T05:25:00Z'
+  opened_at: '2026-08-06T05:41:17Z'
+  merged_at: '2026-08-06T06:12:15Z'
+  elapsed_seconds: 2835
+  open_to_merge_seconds: 1858
+summary:
+  local_execution_count: 2
+  local_check_count: 2
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 700
+  github_actions_run_count: 7
+  github_actions_seconds: 2741
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 1
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-08-06T06:13:30Z'
+  head_sha: 3de74dedf7339975316aef1ac0fcbaff15891eae
+  by_type:
+    rust: 682
+    preflight: 111
+    web_unit: 348
+    e2e: 228
+  total: 1369
+local_execution_collection:
+  complete: false
+  warning: Format duration approximate from one long host-applied task format.
+    Test inventory reused from adjacent PR 929 because local product inventories
+    were not remeasured on this worktree.
+local_executions:
+- command: task format
+  category: check
+  started_at: '2026-08-06T05:29:16Z'
+  finished_at: '2026-08-06T05:40:42Z'
+  duration_seconds: 686
+  result: success
+- command: .github/scripts/ui-demo-contract.sh origin/main
+  category: check
+  started_at: '2026-08-06T05:40:50Z'
+  finished_at: '2026-08-06T05:40:59Z'
+  duration_seconds: 9
+  result: success
+github_actions_runs:
+- id: 31074872814
+  name: Source architecture
+  event: pull_request
+  head_sha: 58274c48001d953efb616dcefe0bb52db1376855
+  started_at: '2026-08-06T05:41:20Z'
+  finished_at: '2026-08-06T05:41:50Z'
+  duration_seconds: 30
+  conclusion: cancelled
+- id: 31074885182
+  name: Remote task web:test
+  event: workflow_dispatch
+  head_sha: 3d773f3f585fe59766df5b6de1cd59013f3267f1
+  started_at: '2026-08-06T05:41:35Z'
+  finished_at: '2026-08-06T05:47:57Z'
+  duration_seconds: 382
+  conclusion: success
+- id: 31074885235
+  name: Source architecture
+  event: pull_request
+  head_sha: 3d773f3f585fe59766df5b6de1cd59013f3267f1
+  started_at: '2026-08-06T05:41:35Z'
+  finished_at: '2026-08-06T05:42:29Z'
+  duration_seconds: 54
+  conclusion: success
+- id: 31074896323
+  name: Remote task web:check
+  event: workflow_dispatch
+  head_sha: 3d773f3f585fe59766df5b6de1cd59013f3267f1
+  started_at: '2026-08-06T05:41:48Z'
+  finished_at: '2026-08-06T05:46:26Z'
+  duration_seconds: 278
+  conclusion: success
+- id: 31074909097
+  name: PR
+  event: pull_request
+  head_sha: 3d773f3f585fe59766df5b6de1cd59013f3267f1
+  started_at: '2026-08-06T05:42:04Z'
+  finished_at: '2026-08-06T05:57:11Z'
+  duration_seconds: 907
+  conclusion: success
+- id: 31075717127
+  name: Source architecture
+  event: pull_request
+  head_sha: ddeac0bda49c5029dc39259ab32d505c211e6694
+  started_at: '2026-08-06T05:57:59Z'
+  finished_at: '2026-08-06T05:58:31Z'
+  duration_seconds: 32
+  conclusion: success
+- id: 31075721830
+  name: PR
+  event: pull_request
+  head_sha: ddeac0bda49c5029dc39259ab32d505c211e6694
+  started_at: '2026-08-06T05:58:04Z'
+  finished_at: '2026-08-06T06:11:04Z'
+  duration_seconds: 780
+  conclusion: success
+pr_retriggers:
+- kind: base_update
+  at: '2026-08-06T05:58:04Z'
+  reason: Merged origin/main after readiness reported one commit behind.
+merge_attempts:
+- at: '2026-08-06T06:12:15Z'
+  result: success
+comparison:
+  baseline_prs: [929, 928]
+  notes: >
+    Elapsed time was similar to recent CI-focused PRs. One complete PR
+    revalidation was required after main moved. Host format dominated local
+    time because of sealed Docker formatting.
+waste_assessment:
+  actionable_regression: false
+  notes: >
+    No new build or workflow waste identified beyond one expected base-update
+    validation cycle after merge-window main movement.
