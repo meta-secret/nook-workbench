@@ -1,0 +1,273 @@
+schema_version: 3
+source_pr:
+  number: 927
+  url: https://github.com/meta-secret/nook/pull/927
+  title: Nest Rust crates under nook-app/nook-platform
+  change_surface: monorepo_layout_rust
+  head_sha: 86c3d1e5c643d18d7097a2454811ecd60bee95c6
+  pr_head_sha: d79a92ae58575a82b4b38a5dd79acbfd0fa3e121
+  started_at: '2026-08-06T02:46:45Z'
+  opened_at: '2026-08-06T03:19:39Z'
+  merged_at: '2026-08-06T03:53:13Z'
+  elapsed_seconds: 3988
+  open_to_merge_seconds: 2014
+summary:
+  local_execution_count: 6
+  local_check_count: 6
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 1956
+  github_actions_run_count: 16
+  github_actions_seconds: 5410
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 3
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-08-06T03:55:53Z'
+  head_sha: 86c3d1e5c643d18d7097a2454811ecd60bee95c6
+  by_type:
+    rust: 682
+    preflight: 111
+    web_unit: 348
+    e2e: 228
+  total: 1369
+local_execution_collection:
+  complete: false
+  warning: Format durations approximate from host format runs during layout move and
+    CI fix loops. Web unit/e2e inventory reused from PR 926 because host node_modules
+    were unavailable.
+local_executions:
+- command: task format
+  category: check
+  started_at: '2026-08-06T02:50:31Z'
+  finished_at: '2026-08-06T03:16:04Z'
+  duration_seconds: 1533
+  outcome: failed
+  reason: pre_push_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-06T03:17:00Z'
+  finished_at: '2026-08-06T03:17:58Z'
+  duration_seconds: 58
+  outcome: failed
+  reason: pre_push_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-06T03:18:00Z'
+  finished_at: '2026-08-06T03:19:08Z'
+  duration_seconds: 68
+  outcome: passed
+  reason: pre_push_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-06T03:26:00Z'
+  finished_at: '2026-08-06T03:27:32Z'
+  duration_seconds: 92
+  outcome: passed
+  reason: ci_fix_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-06T03:31:30Z'
+  finished_at: '2026-08-06T03:33:10Z'
+  duration_seconds: 100
+  outcome: passed
+  reason: ci_fix_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-06T03:38:30Z'
+  finished_at: '2026-08-06T03:40:15Z'
+  duration_seconds: 105
+  outcome: passed
+  reason: ci_fix_hygiene
+github_actions_runs:
+- workflow: Rust ecosystem checks
+  run_id: 31069069266
+  run_attempt: 1
+  head_sha: d79a92ae58575a82b4b38a5dd79acbfd0fa3e121
+  trigger: pull_request
+  started_at: '2026-08-06T03:40:10Z'
+  finished_at: '2026-08-06T03:49:26Z'
+  duration_seconds: 556
+  conclusion: success
+- workflow: PR
+  run_id: 31069069369
+  run_attempt: 1
+  head_sha: d79a92ae58575a82b4b38a5dd79acbfd0fa3e121
+  trigger: pull_request
+  started_at: '2026-08-06T03:40:10Z'
+  finished_at: '2026-08-06T03:51:46Z'
+  duration_seconds: 696
+  conclusion: success
+- workflow: Source architecture
+  run_id: 31069065953
+  run_attempt: 1
+  head_sha: d79a92ae58575a82b4b38a5dd79acbfd0fa3e121
+  trigger: pull_request
+  started_at: '2026-08-06T03:40:07Z'
+  finished_at: '2026-08-06T03:40:46Z'
+  duration_seconds: 39
+  conclusion: success
+- workflow: PR
+  run_id: 31068726039
+  run_attempt: 1
+  head_sha: 2270fe5dd7fbaba4f46831d4aeeb679b152a55f0
+  trigger: pull_request
+  started_at: '2026-08-06T03:32:37Z'
+  finished_at: '2026-08-06T03:40:54Z'
+  duration_seconds: 497
+  conclusion: cancelled
+- workflow: Rust ecosystem checks
+  run_id: 31068725795
+  run_attempt: 1
+  head_sha: 2270fe5dd7fbaba4f46831d4aeeb679b152a55f0
+  trigger: pull_request
+  started_at: '2026-08-06T03:32:37Z'
+  finished_at: '2026-08-06T03:40:41Z'
+  duration_seconds: 484
+  conclusion: cancelled
+- workflow: Source architecture
+  run_id: 31068656190
+  run_attempt: 1
+  head_sha: 2270fe5dd7fbaba4f46831d4aeeb679b152a55f0
+  trigger: pull_request
+  started_at: '2026-08-06T03:31:07Z'
+  finished_at: '2026-08-06T03:31:43Z'
+  duration_seconds: 36
+  conclusion: success
+- workflow: Remote task
+  run_id: 31068512481
+  run_attempt: 1
+  head_sha: a68fd2e11dd2441fc048a654073ff3465384aa86
+  trigger: workflow_dispatch
+  started_at: '2026-08-06T03:28:04Z'
+  finished_at: '2026-08-06T03:29:12Z'
+  duration_seconds: 68
+  conclusion: failure
+- workflow: Rust ecosystem checks
+  run_id: 31068510692
+  run_attempt: 1
+  head_sha: a68fd2e11dd2441fc048a654073ff3465384aa86
+  trigger: pull_request
+  started_at: '2026-08-06T03:28:02Z'
+  finished_at: '2026-08-06T03:33:08Z'
+  duration_seconds: 306
+  conclusion: cancelled
+- workflow: PR
+  run_id: 31068510760
+  run_attempt: 1
+  head_sha: a68fd2e11dd2441fc048a654073ff3465384aa86
+  trigger: pull_request
+  started_at: '2026-08-06T03:28:02Z'
+  finished_at: '2026-08-06T03:35:02Z'
+  duration_seconds: 420
+  conclusion: cancelled
+- workflow: Source architecture
+  run_id: 31068506772
+  run_attempt: 1
+  head_sha: a68fd2e11dd2441fc048a654073ff3465384aa86
+  trigger: pull_request
+  started_at: '2026-08-06T03:27:56Z'
+  finished_at: '2026-08-06T03:28:35Z'
+  duration_seconds: 39
+  conclusion: success
+- workflow: Rust ecosystem checks
+  run_id: 31068163586
+  run_attempt: 1
+  head_sha: e2cedeacb441c4c23be25940413292f80769ac3d
+  trigger: pull_request
+  started_at: '2026-08-06T03:20:27Z'
+  finished_at: '2026-08-06T03:28:24Z'
+  duration_seconds: 477
+  conclusion: cancelled
+- workflow: PR
+  run_id: 31068163664
+  run_attempt: 1
+  head_sha: e2cedeacb441c4c23be25940413292f80769ac3d
+  trigger: pull_request
+  started_at: '2026-08-06T03:20:27Z'
+  finished_at: '2026-08-06T03:28:40Z'
+  duration_seconds: 493
+  conclusion: cancelled
+- workflow: Remote task
+  run_id: 31068149640
+  run_attempt: 1
+  head_sha: e2cedeacb441c4c23be25940413292f80769ac3d
+  trigger: workflow_dispatch
+  started_at: '2026-08-06T03:20:10Z'
+  finished_at: '2026-08-06T03:26:52Z'
+  duration_seconds: 402
+  conclusion: success
+- workflow: Remote task
+  run_id: 31068137209
+  run_attempt: 1
+  head_sha: e2cedeacb441c4c23be25940413292f80769ac3d
+  trigger: workflow_dispatch
+  started_at: '2026-08-06T03:19:56Z'
+  finished_at: '2026-08-06T03:21:27Z'
+  duration_seconds: 91
+  conclusion: failure
+- workflow: Remote task
+  run_id: 31068137130
+  run_attempt: 1
+  head_sha: e2cedeacb441c4c23be25940413292f80769ac3d
+  trigger: workflow_dispatch
+  started_at: '2026-08-06T03:19:56Z'
+  finished_at: '2026-08-06T03:32:45Z'
+  duration_seconds: 769
+  conclusion: success
+- workflow: Source architecture
+  run_id: 31068127819
+  run_attempt: 1
+  head_sha: e2cedeacb441c4c23be25940413292f80769ac3d
+  trigger: pull_request
+  started_at: '2026-08-06T03:19:43Z'
+  finished_at: '2026-08-06T03:20:20Z'
+  duration_seconds: 37
+  conclusion: success
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: 0.0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+  collection:
+    complete: false
+    warning: Cache telemetry artifacts not downloaded for this record.
+pr_retriggers:
+- kind: validation_label
+  at: '2026-08-06T03:28:02Z'
+  reason: rustfmt long-line assert after path rewrite
+- kind: validation_label
+  at: '2026-08-06T03:32:37Z'
+  reason: additional rustfmt wraps in core_ownership
+- kind: validation_label
+  at: '2026-08-06T03:40:10Z'
+  reason: dynamic consumer Cargo.toml path still used nook-app/{crate}
+merge_attempts:
+- at: '2026-08-06T03:53:13Z'
+  method: gh pr merge --squash
+  outcome: merged
+comparison:
+  baseline_prs:
+  - 926
+  - 925
+  elapsed_seconds_change_percent: -7.0
+  github_actions_seconds_change_percent: -20.8
+  test_inventory_total_change: -7
+  notes: Compared primarily with PR 926; PR 925 also reviewed. Baseline incomplete
+    for web inventory methodology because this host reused 926 web/e2e counts.
+waste_assessment:
+  had_avoidable_waste: true
+  items:
+  - First format bake rebuilt the whole Rust dependency graph after workspace member
+    path nesting; that cold cook was expected for the layout change.
+  - Three PR validation retriggers came from rustfmt on lengthened path strings and
+    one missed dynamic format!("nook-app/{consumer}") path in preflight.
+  - Mechanical path rewrites should include rustfmt on preflight before the first
+    push when path strings grow past line length.
