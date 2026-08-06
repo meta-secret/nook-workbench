@@ -1,0 +1,284 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-08-06T05:05:33.404Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 31072935321,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/31072935321",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "eb63edb4897768c57b84326bb86a401029492fa0",
+    "conclusion": "failure",
+    "created_at": "2026-08-06T05:02:16Z",
+    "started_at": "2026-08-06T05:02:16Z",
+    "completed_at": "2026-08-06T05:05:18Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 929,
+      "url": "https://github.com/meta-secret/nook/pull/929",
+      "title": "Cache Rust ecosystem nightly BuildKit layers"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 0,
+    "execution_seconds": 182,
+    "wall_seconds": 182,
+    "job_count": 7,
+    "step_count": 11,
+    "build_seconds": 160
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 1,
+      "remote_backend_job_count": 1,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 115,
+      "sccache_cache_hits": 55,
+      "sccache_cache_misses": 0,
+      "sccache_hit_rate_percent": 100,
+      "buildkit_completed_steps": 400,
+      "buildkit_cached_steps": 322,
+      "buildkit_cache_hit_rate_percent": 80.5
+    },
+    "jobs": [
+      {
+        "job": "rust",
+        "cache_backend": {
+          "kind": "remote",
+          "persistent": true,
+          "reason": "persistent_s3_service"
+        },
+        "sccache": {
+          "report_count": 3,
+          "compile_requests": 115,
+          "requests_executed": 57,
+          "cache_hits": 55,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0,
+          "hit_rate_percent": 100
+        },
+        "buildkit": {
+          "build_record_count": 8,
+          "completed_steps": 400,
+          "cached_steps": 322,
+          "cache_hit_rate_percent": 80.5,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      }
+    ],
+    "collection": {
+      "complete": true,
+      "warnings": []
+    }
+  },
+  "jobs": [
+    {
+      "id": 92524470478,
+      "name": "Native Rust verification",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_name": "GitHub Actions 1000016429",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-06T05:02:20Z",
+      "completed_at": "2026-08-06T05:05:18Z",
+      "duration_seconds": 178,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-06T05:02:21Z",
+          "completed_at": "2026-08-06T05:02:21Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-06T05:02:21Z",
+          "completed_at": "2026-08-06T05:02:22Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-06T05:02:22Z",
+          "completed_at": "2026-08-06T05:02:31Z",
+          "duration_seconds": 9
+        },
+        {
+          "number": 4,
+          "name": "Native Rust format, tests, and coverage",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-08-06T05:02:31Z",
+          "completed_at": "2026-08-06T05:05:11Z",
+          "duration_seconds": 160
+        },
+        {
+          "number": 5,
+          "name": "Export commit-keyed ***-core/auth coverage",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-08-06T05:05:11Z",
+          "completed_at": "2026-08-06T05:05:11Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 6,
+          "name": "Upload commit-keyed ***-core/auth coverage",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-08-06T05:05:11Z",
+          "completed_at": "2026-08-06T05:05:11Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 7,
+          "name": "Publish verified native BuildKit cache",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-08-06T05:05:11Z",
+          "completed_at": "2026-08-06T05:05:11Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 8,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-06T05:05:11Z",
+          "completed_at": "2026-08-06T05:05:12Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 15,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-06T05:05:12Z",
+          "completed_at": "2026-08-06T05:05:16Z",
+          "duration_seconds": 4
+        },
+        {
+          "number": 16,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-06T05:05:16Z",
+          "completed_at": "2026-08-06T05:05:16Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 17,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-06T05:05:16Z",
+          "completed_at": "2026-08-06T05:05:16Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 92524932309,
+      "name": "WASM verification and artifact",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-06T05:05:18Z",
+      "completed_at": "2026-08-06T05:05:18Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 92524932757,
+      "name": "UI demos",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-06T05:05:18Z",
+      "completed_at": "2026-08-06T05:05:18Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 92524932903,
+      "name": "Extension e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-06T05:05:18Z",
+      "completed_at": "2026-08-06T05:05:18Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 92524932945,
+      "name": "Verify web build",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-06T05:05:18Z",
+      "completed_at": "2026-08-06T05:05:18Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 92524933075,
+      "name": "Deploy development",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-06T05:05:18Z",
+      "completed_at": "2026-08-06T05:05:18Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 92524933076,
+      "name": "Web e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-06T05:05:18Z",
+      "completed_at": "2026-08-06T05:05:18Z",
+      "duration_seconds": 0,
+      "steps": []
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
