@@ -1,0 +1,145 @@
+schema_version: 3
+source_pr:
+  number: 928
+  url: https://github.com/meta-secret/nook/pull/928
+  title: Merge Rust ecosystem gates into labeled PR workflow
+  change_surface: ci_workflow_merge
+  head_sha: 8a34a05ce9ab3a93c396baad23e4da874560508a
+  pr_head_sha: beb258cdc2adb1931c2c590c9eab869a911ff2a5
+  started_at: '2026-08-06T03:58:00Z'
+  opened_at: '2026-08-06T04:05:08Z'
+  merged_at: '2026-08-06T04:32:47Z'
+  elapsed_seconds: 2087
+  open_to_merge_seconds: 1659
+summary:
+  local_execution_count: 2
+  local_check_count: 2
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 179
+  github_actions_run_count: 6
+  github_actions_seconds: 1574
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 1
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-08-06T04:33:15Z'
+  head_sha: 8a34a05ce9ab3a93c396baad23e4da874560508a
+  by_type:
+    rust: 682
+    preflight: 111
+    web_unit: 348
+    e2e: 228
+  total: 1369
+local_execution_collection:
+  complete: false
+  warning: Format durations approximate from host format runs. Web unit/e2e
+    inventory reused from PR 927 because host node_modules were unavailable.
+local_executions:
+- command: task format
+  category: check
+  started_at: '2026-08-06T04:03:00Z'
+  finished_at: '2026-08-06T04:04:29Z'
+  duration_seconds: 89
+  outcome: passed
+  reason: pre_push_hygiene
+- command: task format
+  category: check
+  started_at: '2026-08-06T04:14:30Z'
+  finished_at: '2026-08-06T04:16:00Z'
+  duration_seconds: 90
+  outcome: passed
+  reason: ci_fix_hygiene
+github_actions_runs:
+- workflow: Source architecture
+  run_id: 31070244953
+  run_attempt: 1
+  head_sha: aa6a7bf57a4c7291428b9871a71b06553c3c7667
+  trigger: pull_request
+  started_at: '2026-08-06T04:05:10Z'
+  finished_at: '2026-08-06T04:05:42Z'
+  duration_seconds: 32
+  conclusion: success
+- workflow: Remote task
+  run_id: 31070261209
+  run_attempt: 1
+  head_sha: aa6a7bf57a4c7291428b9871a71b06553c3c7667
+  trigger: workflow_dispatch
+  started_at: '2026-08-06T04:05:30Z'
+  finished_at: '2026-08-06T04:07:03Z'
+  duration_seconds: 93
+  conclusion: failure
+- workflow: PR
+  run_id: 31070287201
+  run_attempt: 1
+  head_sha: aa6a7bf57a4c7291428b9871a71b06553c3c7667
+  trigger: pull_request
+  started_at: '2026-08-06T04:06:03Z'
+  finished_at: '2026-08-06T04:14:39Z'
+  duration_seconds: 516
+  conclusion: failure
+- workflow: Remote task
+  run_id: 31070790266
+  run_attempt: 1
+  head_sha: beb258cdc2adb1931c2c590c9eab869a911ff2a5
+  trigger: workflow_dispatch
+  started_at: '2026-08-06T04:16:21Z'
+  finished_at: '2026-08-06T04:20:10Z'
+  duration_seconds: 229
+  conclusion: success
+- workflow: Source architecture
+  run_id: 31070790446
+  run_attempt: 1
+  head_sha: beb258cdc2adb1931c2c590c9eab869a911ff2a5
+  trigger: pull_request
+  started_at: '2026-08-06T04:16:21Z'
+  finished_at: '2026-08-06T04:16:54Z'
+  duration_seconds: 33
+  conclusion: success
+- workflow: PR
+  run_id: 31070797734
+  run_attempt: 1
+  head_sha: beb258cdc2adb1931c2c590c9eab869a911ff2a5
+  trigger: pull_request
+  started_at: '2026-08-06T04:16:31Z'
+  finished_at: '2026-08-06T04:27:42Z'
+  duration_seconds: 671
+  conclusion: success
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    sccache_hit_rate_percent: 0.0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+  collection:
+    complete: false
+    warning: Cache telemetry artifacts not downloaded for this record.
+pr_retriggers:
+- kind: validation_label
+  at: '2026-08-06T04:16:31Z'
+  reason: rustfmt for ecosystem isolated-cache assert
+merge_attempts:
+- at: '2026-08-06T04:32:47Z'
+  method: gh pr merge --squash
+  outcome: merged
+comparison:
+  baseline_prs:
+  - 927
+  - 926
+  elapsed_seconds_change_percent: -47.7
+  github_actions_seconds_change_percent: -70.9
+  test_inventory_total_change: 0
+  notes: Compared primarily with PR 927; PR 926 also reviewed. Smaller CI surface
+    than the platform layout move. One avoidable rustfmt retrigger.
+waste_assessment:
+  had_avoidable_waste: true
+  items:
+  - One PR validation retrigger came from rustfmt on a multiline assert in
+    preflight after the sccache contract update.
+  - Prefer rustfmt on touched preflight tests before the first validation label.
