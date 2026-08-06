@@ -1,0 +1,30 @@
+schema_version: 2
+source_pr:
+  number: 934
+  url: https://github.com/meta-secret/nook/pull/934
+  title: Fix same-PR BuildKit reuse for Rust ecosystem caches
+  change_surface: buildkit_cache_ecosystem_and_pr_publish
+  head_sha: 8b4d804bc3d2c7a94ce6c6099a8ddd85c015af56
+  started_at: 2026-08-06T07:42:40Z
+  opened_at: 2026-08-06T04:30:00Z
+  merged_at: null
+  elapsed_seconds: null
+  open_to_merge_seconds: null
+summary:
+  local_execution_count: 2
+  local_check_count: 0
+  local_test_count: 1
+  local_combined_count: 1
+  local_execution_seconds: 560
+  github_actions_run_count: 4
+  github_actions_seconds: 1800
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 2
+  merge_attempt_count: 0
+plan: plans/ci-cache/20260806-074240-buildkit-all-jobs-cache.md
+worklog: worklogs/ci-cache/20260806-095040-buildkit-all-jobs-cache.md
+proof:
+  seed_run: https://github.com/meta-secret/nook/actions/runs/31089532791
+  proof_run: https://github.com/meta-secret/nook/actions/runs/31090185124
+  policy_tools: CACHED
+  nightly: CACHED
