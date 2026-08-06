@@ -5,12 +5,13 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-04T10:36:29Z
-updated_at: 2026-08-05T04:55:12Z
+updated_at: 2026-08-06T06:15:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/914
   - https://github.com/meta-secret/nook/pull/915
   - https://github.com/meta-secret/nook/pull/918
+  - https://github.com/meta-secret/nook/pull/933
 depends_on:
   - issues/hive-isolated-agent-platform/main-failure-2a092671287bca3c174b6f30d758c27d73047013.md
 ---
@@ -28,11 +29,13 @@ recovery, enrollment, and management behavior.
 
 ## Outcome
 
-The permanent Devices & access destination uses the useful Identity Bridge
-interaction hierarchy without presenting an identity-key-vault chain. It
-renders only live Rust/WASM state, remains useful before any vault exists and
-while locked, and preserves all existing authorized actions through
-contextually placed controls.
+The permanent Devices & access destination uses the Identity Bridge
+interaction hierarchy with a truthful access-chain graph: protection unlocks
+the device key, and the device key connects to vaults it opened. Local
+identity state remains visible without membership edges. The page renders only
+live Rust/WASM state, remains useful before any vault exists and while locked,
+and preserves all existing authorized actions through contextually placed
+controls.
 
 ## Scope
 
@@ -90,6 +93,12 @@ contextually placed controls.
   Rust ecosystem checks, source architecture, all review threads, preflight,
   and readiness passed at `832e121f573a36c113778c184bac59cff7b6874c`.
 
+
+- 2026-08-06: PR 933 restored the protection → device-key → verified-vault
+  dependency graph after passkey vault create, kept local identity free of
+  membership edges, and added Playwright coverage for that journey. Squash
+  merged as .
+
 ## Delivered outcome
 
 The permanent Devices & access destination now presents local identity state
@@ -107,12 +116,13 @@ after its dependency and every exact-head readiness gate passed.
 
 ## Findings and decisions
 
-- Local identity state does not establish a relationship to a passkey, device
+- Local identity state does not establish membership from a passkey, device
   key, or vault.
-- A device key is an internal cryptographic mechanism, not a useful identity
-  object for this user-facing destination.
-- Identity and vault-access perspectives may share navigation and layout, but
-  they do not imply edges between their subjects.
+- Protection unlocking a device key, and that key opening vaults, are truthful
+  access-chain edges and belong on the canvas.
+- Identity and vault perspectives may share navigation and layout.
+  Membership edges to local identity remain forbidden until typed identity
+  records exist.
 - Existing management controls stay in normal semantic product panels rather
   than becoming canvas-only actions.
 
