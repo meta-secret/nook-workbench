@@ -1,0 +1,93 @@
+schema_version: 3
+source_pr:
+  number: 938
+  url: https://github.com/meta-secret/nook/pull/938
+  title: "Move Rust workspace under nook-platform with package-owned Bake caches"
+  change_surface: rust_workspace_bake_ownership
+  head_sha: 5099615d0e8c17b03c5c78194b179d5fd01f2611
+  pr_head_sha: fc8d9658b93cf03f494b380cf53a27448eedfaaa
+  started_at: "2026-08-07T06:32:00Z"
+  opened_at: "2026-08-07T06:32:05Z"
+  merged_at: "2026-08-07T08:00:14Z"
+  elapsed_seconds: 5294
+  open_to_merge_seconds: 5289
+summary:
+  local_execution_count: 3
+  local_check_count: 3
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 390
+  github_actions_run_count: 23
+  github_actions_seconds: 9294
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 3
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: "2026-08-07T08:01:00Z"
+  head_sha: 5099615d0e8c17b03c5c78194b179d5fd01f2611
+  by_type:
+    rust: 682
+    preflight: 111
+    web_unit: 348
+    e2e: 228
+  total: 1369
+local_execution_collection:
+  complete: false
+  warning: >-
+    Local executions cover host-applied task format and ui-demo-contract checks
+    from the final green/merge loop. Test inventory reuses PR 937 counts; full
+    inventory was not remeasured on this worktree after merge.
+local_executions:
+  - {command: task format, category: check, started_at: "2026-08-07T07:40:00Z", finished_at: "2026-08-07T07:42:00Z", duration_seconds: 120, outcome: passed, reason: pre_push_hygiene}
+  - {command: task format, category: check, started_at: "2026-08-07T07:46:10Z", finished_at: "2026-08-07T07:48:00Z", duration_seconds: 110, outcome: passed, reason: pre_push_hygiene}
+  - {command: ".github/scripts/ui-demo-contract.sh", category: check, started_at: "2026-08-07T07:48:00Z", finished_at: "2026-08-07T07:48:05Z", duration_seconds: 5, outcome: passed, reason: ui_demo_contract}
+github_actions_runs:
+  - {workflow: "Source architecture", run_id: 31154280431, run_attempt: 1, head_sha: 611c44d0febc90753ed7f1243120f3923a8ad654, trigger: pull_request, started_at: "2026-08-07T06:32:08Z", finished_at: "2026-08-07T06:32:43Z", duration_seconds: 35, conclusion: success}
+  - {workflow: "Hive verification · PR #938", run_id: 31154280447, run_attempt: 1, head_sha: 611c44d0febc90753ed7f1243120f3923a8ad654, trigger: pull_request, started_at: "2026-08-07T06:32:08Z", finished_at: "2026-08-07T06:39:03Z", duration_seconds: 415, conclusion: cancelled}
+  - {workflow: "PR", run_id: 31154305988, run_attempt: 1, head_sha: 611c44d0febc90753ed7f1243120f3923a8ad654, trigger: pull_request, started_at: "2026-08-07T06:32:33Z", finished_at: "2026-08-07T06:42:37Z", duration_seconds: 604, conclusion: cancelled}
+  - {workflow: "Rust ecosystem checks", run_id: 31154305840, run_attempt: 1, head_sha: 611c44d0febc90753ed7f1243120f3923a8ad654, trigger: pull_request, started_at: "2026-08-07T06:32:33Z", finished_at: "2026-08-07T06:39:12Z", duration_seconds: 399, conclusion: cancelled}
+  - {workflow: "Remote task", run_id: 31154359952, run_attempt: 1, head_sha: 611c44d0febc90753ed7f1243120f3923a8ad654, trigger: workflow_dispatch, started_at: "2026-08-07T06:33:27Z", finished_at: "2026-08-07T06:44:02Z", duration_seconds: 635, conclusion: success}
+  - {workflow: "Remote task", run_id: 31154363856, run_attempt: 1, head_sha: 611c44d0febc90753ed7f1243120f3923a8ad654, trigger: workflow_dispatch, started_at: "2026-08-07T06:33:30Z", finished_at: "2026-08-07T06:38:04Z", duration_seconds: 274, conclusion: success}
+  - {workflow: "Remote task", run_id: 31154372108, run_attempt: 1, head_sha: 611c44d0febc90753ed7f1243120f3923a8ad654, trigger: workflow_dispatch, started_at: "2026-08-07T06:33:39Z", finished_at: "2026-08-07T06:36:26Z", duration_seconds: 167, conclusion: success}
+  - {workflow: "Source architecture", run_id: 31154663744, run_attempt: 1, head_sha: f3b0cde3770028b06f9002e81eb7682f83a31219, trigger: pull_request, started_at: "2026-08-07T06:38:35Z", finished_at: "2026-08-07T06:39:11Z", duration_seconds: 36, conclusion: success}
+  - {workflow: "Hive verification · PR #938", run_id: 31154663630, run_attempt: 1, head_sha: f3b0cde3770028b06f9002e81eb7682f83a31219, trigger: pull_request, started_at: "2026-08-07T06:38:35Z", finished_at: "2026-08-07T06:45:50Z", duration_seconds: 435, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 31154669775, run_attempt: 1, head_sha: f3b0cde3770028b06f9002e81eb7682f83a31219, trigger: pull_request, started_at: "2026-08-07T06:38:41Z", finished_at: "2026-08-07T06:47:41Z", duration_seconds: 540, conclusion: success}
+  - {workflow: "PR", run_id: 31154669779, run_attempt: 1, head_sha: f3b0cde3770028b06f9002e81eb7682f83a31219, trigger: pull_request, started_at: "2026-08-07T06:38:41Z", finished_at: "2026-08-07T06:54:28Z", duration_seconds: 947, conclusion: failure}
+  - {workflow: "Remote task", run_id: 31154671581, run_attempt: 1, head_sha: f3b0cde3770028b06f9002e81eb7682f83a31219, trigger: workflow_dispatch, started_at: "2026-08-07T06:38:43Z", finished_at: "2026-08-07T06:54:24Z", duration_seconds: 941, conclusion: success}
+  - {workflow: "Remote task", run_id: 31154675855, run_attempt: 1, head_sha: f3b0cde3770028b06f9002e81eb7682f83a31219, trigger: workflow_dispatch, started_at: "2026-08-07T06:38:48Z", finished_at: "2026-08-07T06:43:04Z", duration_seconds: 256, conclusion: success}
+  - {workflow: "Source architecture", run_id: 31157482988, run_attempt: 1, head_sha: 02b6b2b209d97aa81ad0d8b271e3ba86f2f4dde5, trigger: pull_request, started_at: "2026-08-07T07:23:46Z", finished_at: "2026-08-07T07:24:51Z", duration_seconds: 65, conclusion: success}
+  - {workflow: "Hive verification · PR #938", run_id: 31157482985, run_attempt: 1, head_sha: 02b6b2b209d97aa81ad0d8b271e3ba86f2f4dde5, trigger: pull_request, started_at: "2026-08-07T07:23:46Z", finished_at: "2026-08-07T07:29:43Z", duration_seconds: 357, conclusion: success}
+  - {workflow: "PR", run_id: 31157494789, run_attempt: 1, head_sha: 02b6b2b209d97aa81ad0d8b271e3ba86f2f4dde5, trigger: pull_request, started_at: "2026-08-07T07:23:57Z", finished_at: "2026-08-07T07:37:06Z", duration_seconds: 789, conclusion: failure}
+  - {workflow: "Rust ecosystem checks", run_id: 31157494746, run_attempt: 1, head_sha: 02b6b2b209d97aa81ad0d8b271e3ba86f2f4dde5, trigger: pull_request, started_at: "2026-08-07T07:23:57Z", finished_at: "2026-08-07T07:32:15Z", duration_seconds: 498, conclusion: success}
+  - {workflow: "Source architecture", run_id: 31158901143, run_attempt: 1, head_sha: 6bd035c0dc4f13a5bc484e5d107fe0df3f6abc54, trigger: pull_request, started_at: "2026-08-07T07:45:12Z", finished_at: "2026-08-07T07:46:03Z", duration_seconds: 51, conclusion: success}
+  - {workflow: "Hive verification · PR #938", run_id: 31158901128, run_attempt: 1, head_sha: 6bd035c0dc4f13a5bc484e5d107fe0df3f6abc54, trigger: pull_request, started_at: "2026-08-07T07:45:11Z", finished_at: "2026-08-07T07:48:59Z", duration_seconds: 228, conclusion: cancelled}
+  - {workflow: "Source architecture", run_id: 31159106598, run_attempt: 1, head_sha: fc8d9658b93cf03f494b380cf53a27448eedfaaa, trigger: pull_request, started_at: "2026-08-07T07:48:20Z", finished_at: "2026-08-07T07:48:56Z", duration_seconds: 36, conclusion: success}
+  - {workflow: "Hive verification · PR #938", run_id: 31159106844, run_attempt: 1, head_sha: fc8d9658b93cf03f494b380cf53a27448eedfaaa, trigger: pull_request, started_at: "2026-08-07T07:48:20Z", finished_at: "2026-08-07T07:54:51Z", duration_seconds: 391, conclusion: success}
+  - {workflow: "PR", run_id: 31159112709, run_attempt: 1, head_sha: fc8d9658b93cf03f494b380cf53a27448eedfaaa, trigger: pull_request, started_at: "2026-08-07T07:48:25Z", finished_at: "2026-08-07T07:59:37Z", duration_seconds: 672, conclusion: success}
+  - {workflow: "Rust ecosystem checks", run_id: 31159112760, run_attempt: 1, head_sha: fc8d9658b93cf03f494b380cf53a27448eedfaaa, trigger: pull_request, started_at: "2026-08-07T07:48:26Z", finished_at: "2026-08-07T07:57:09Z", duration_seconds: 523, conclusion: success}
+cache_telemetry:
+  collection:
+    complete: false
+    warnings:
+      - Cache telemetry artifacts were not collected into a complete ledger for this PR.
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+pr_retriggers:
+  - {kind: validation_label, at: "2026-08-07T06:38:41Z", reason: policy_tools_and_companion_iteration}
+  - {kind: validation_label, at: "2026-08-07T07:23:57Z", reason: companion_wasm_seed_fix}
+  - {kind: validation_label, at: "2026-08-07T07:48:25Z", reason: ui_demo_contract_and_local_cache_default}
+merge_attempts:
+  - {at: "2026-08-07T08:00:14Z", outcome: merged, method: squash}
+comparison:
+  baseline_prs: [937, 935]
+  notes: >-
+    Open-to-merge (~1.5h) is much faster than PR 937's long e2e repair loop.
+    Two failed complete validations before the green head were expected after
+    the Bake ownership move (policy-tools PATH, companion WASM, demo contract).
+waste_assessment:
+  wasteful: false
+  notes: >-
+    Failures were product defects from the ownership move, not duplicated local
+    heavy suites. Local work stayed on format plus demo contract; validation was
+    hosted. No separate performance PR opened.
