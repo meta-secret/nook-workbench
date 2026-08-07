@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-04T10:36:29Z
-updated_at: 2026-08-06T09:12:00Z
+updated_at: 2026-08-07T04:20:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/914
@@ -13,6 +13,7 @@ related_prs:
   - https://github.com/meta-secret/nook/pull/918
   - https://github.com/meta-secret/nook/pull/933
   - https://github.com/meta-secret/nook/pull/935
+  - https://github.com/meta-secret/nook/pull/937
 depends_on:
   - issues/hive-isolated-agent-platform/main-failure-2a092671287bca3c174b6f30d758c27d73047013.md
 ---
@@ -105,6 +106,15 @@ controls.
   vault DEKs, and a Nora-style Identity hub on Devices & access. Squash merged
   as `6048e66e121b57e92b137fa30c0b32a847cb2434`.
 
+- 2026-08-07: PR 937 finished the Identity AppKey migration for Main Web e2e:
+  Identity vault-access handles, dual-read wipe helpers, Devices & access
+  EN/RU and Playwright alignment, and authorizeDeviceProtection handling for
+  locked Access (leave via back, restore deep link) and multi-vault picker.
+  Exact-head FULL_E2E validation succeeded on run
+  [31146205086](https://github.com/meta-secret/nook/actions/runs/31146205086)
+  and the PR squash-merged as `9c0c426c33986f23e4bffe3f9bcf36244885d3bc`.
+
+
 ## Delivered outcome
 
 The permanent Devices & access destination centers a first-class Identity hub
@@ -118,6 +128,8 @@ PR 933 restored the access-chain graph as
 `3de74dedf7339975316aef1ac0fcbaff15891eae`.
 PR 935 extracted Identity ownership as
 `6048e66e121b57e92b137fa30c0b32a847cb2434`.
+PR 937 completed the migration leftovers and Main Web e2e repair as
+`9c0c426c33986f23e4bffe3f9bcf36244885d3bc`.
 
 ## Findings and decisions
 
