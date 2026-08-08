@@ -25,6 +25,7 @@ record exists.
 
 ## Issues
 
+- [ ] [Apply strict TypeScript API discipline across Nook web](nook-web-typescript-api-discipline.md)
 - [x] [Remove Redis from hosted Rust builds](remove-redis-from-hosted-rust-builds.md)
 - [x] [Add persistent URLs to vault application pages](persistent-vault-page-urls.md)
 
