@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-07-27T05:45:15Z
-updated_at: 2026-08-02T02:36:13Z
+updated_at: 2026-08-08T12:30:53Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/805
@@ -13,6 +13,7 @@ related_prs:
   - https://github.com/meta-secret/nook/pull/816
   - https://github.com/meta-secret/nook/pull/818
   - https://github.com/meta-secret/nook/pull/902
+  - https://github.com/meta-secret/nook/pull/950
 depends_on: []
 ---
 
@@ -89,6 +90,12 @@ Main publishes protected refs and the authoritative SeaweedFS objects.
   3 minutes 39 seconds. Cargo itself finished cached compilation in under one
   second before the tests ran.
 - The live SeaweedFS cache held 5,033 objects totaling about 4.37 GB at delivery.
+- PR 950 audited every Rust-producing pull-request job, repaired orphaned
+  full-graph cache lineages, and added exact-head publication for each verified
+  producer. Its unchanged-head replay emitted zero Rust `Compiling` lines in
+  Native, WASM, Kani, Loom, policy, Dylint, fuzz, WASM Node, and Web jobs.
+- The PR 950 replay restored 602 BuildKit vertices as cached across those jobs.
+  All emitted sccache reports had zero misses.
 
 ## Findings and decisions
 
@@ -111,6 +118,13 @@ Main publishes protected refs and the authoritative SeaweedFS objects.
   the branch Zot export; Main later publishes authoritative compiler objects.
 - Cache credentials use stable BuildKit secret identifiers and secret mounts;
   credential contents do not participate in layer cache keys.
+- `Compiling` output with sccache hits is useful fallback evidence but is not a
+  BuildKit cache success. Same-head acceptance requires the complete consumer
+  leaf to restore without invoking Cargo.
+- Parallel consumers own separate exact scopes. In particular, WASM package
+  export and WASM Node tests cannot race while writing one mutable cache ref.
+- Local dependency candidates remain quarantined until a GitHub-hosted worker
+  validates and promotes them. Main remains the trusted cross-PR seed.
 
 ## References
 
@@ -124,3 +138,6 @@ Main publishes protected refs and the authoritative SeaweedFS objects.
 - [SeaweedFS and Zot cache repair PR 902](https://github.com/meta-secret/nook/pull/902)
 - [SeaweedFS and Zot cache repair plan](../../plans/unplanned/20260801T170000Z-repair-remote-rust-cold-cache-rw.md)
 - [SeaweedFS and Zot cache repair worklog](../../worklogs/unplanned/20260802-023613-pr-902.md)
+- [PR 950 cache-correctness plan](../../plans/unplanned/20260808T051149Z-pr950-all-job-rust-cache-audit.md)
+- [PR 950 completion worklog](../../worklogs/unplanned/20260808T123053Z-pr-950-rust-cache-correctness.md)
+- [All-job Rust cache repair PR 950](https://github.com/meta-secret/nook/pull/950)
