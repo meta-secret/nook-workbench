@@ -5,10 +5,11 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-09T01:45:14Z
+updated_at: 2026-08-09T03:28:00Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
+  - meta-secret/nook#955
 depends_on: []
 ---
 
@@ -22,7 +23,7 @@ The rules are:
 
 - one parameter per authored function or method;
 - named typed values for object call arguments;
-- named external-value models instead of authored `unknown`.
+- concrete domain values instead of authored `unknown` or generic value bags.
 
 This issue belongs to [Unplanned engineering repairs](README.md).
 
@@ -52,7 +53,7 @@ Excluded:
 - [x] Extension content and popup paths pass all three rules.
 - [x] Extension background and offscreen paths pass all three rules.
 - [x] Extension scripts and e2e paths pass all three rules.
-- [ ] Simple Vault and Sentinel paths pass all three rules.
+- [x] Simple Vault and Sentinel paths pass all three rules.
 - [ ] Main application and shared vault UI pass all three rules.
 - [x] Shared ESLint and preflight contracts prevent rule removal.
 - [ ] Exact-head repository-owned validation is green for every delivery PR.
@@ -63,8 +64,12 @@ Excluded:
   library slice.
 - 2026-08-09: Merged PR 952. The extension slice now passes the three rules,
   shared ESLint and preflight enforce them, and exact-head validation passed.
-  Simple Vault, Sentinel, the main application, and shared vault UI remain in
-  this rollout issue.
+- 2026-08-09: Merged PR 955. Simple Vault and Sentinel are statically enforced,
+  Sentinel's disabled extension boundary uses concrete domain types, and the
+  focused hosted web route now receives the exact source revision. All required
+  exact-head checks passed. The main application, shared vault UI, research
+  package, and removal of the extension's remaining generic transport model
+  remain in this rollout.
 
 ## Findings and decisions
 
@@ -75,10 +80,15 @@ Excluded:
 - Do not add a broad baseline or disable the rules for authored code.
 - Keep host callback exceptions local and documented.
 - Generic external-value bags are prohibited in domain and application APIs.
-  A structural external value is allowed only as a private untrusted-ingress
-  implementation detail that immediately narrows into a concrete domain type.
+  A generic transport representation may exist only inside a private ingress
+  adapter and must narrow immediately into a concrete domain type.
+- `ExternalValue` remains migration debt despite the earlier extension rollout;
+  it is not accepted as a reusable application API.
 
 ## References
 
-- [Task plan](../../plans/unplanned/20260808-051430-nook-web-typescript-api-rules.md)
+- [Initial task plan](../../plans/unplanned/20260808-051430-nook-web-typescript-api-rules.md)
+- [Completion task plan](../../plans/unplanned/20260809-015012-complete-nook-web-typescript-api-rules.md)
+- [PR 955 worklog](../../worklogs/unplanned/20260809-032800-pr-955-small-vault-packages.md)
 - [Nook PR 952](https://github.com/meta-secret/nook/pull/952)
+- [Nook PR 955](https://github.com/meta-secret/nook/pull/955)
