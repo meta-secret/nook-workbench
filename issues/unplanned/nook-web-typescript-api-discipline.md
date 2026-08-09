@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-08T05:48:00Z
+updated_at: 2026-08-09T01:45:14Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
@@ -48,19 +48,23 @@ Excluded:
 
 ## Acceptance criteria
 
-- [ ] Extension reusable libraries pass all three rules.
-- [ ] Extension content and popup paths pass all three rules.
-- [ ] Extension background and offscreen paths pass all three rules.
-- [ ] Extension scripts and e2e paths pass all three rules.
+- [x] Extension reusable libraries pass all three rules.
+- [x] Extension content and popup paths pass all three rules.
+- [x] Extension background and offscreen paths pass all three rules.
+- [x] Extension scripts and e2e paths pass all three rules.
 - [ ] Simple Vault and Sentinel paths pass all three rules.
 - [ ] Main application and shared vault UI pass all three rules.
-- [ ] Shared ESLint and preflight contracts prevent rule removal.
+- [x] Shared ESLint and preflight contracts prevent rule removal.
 - [ ] Exact-head repository-owned validation is green for every delivery PR.
 
 ## Progress
 
 - 2026-08-08: Opened PR 952 for shared enforcement and the first extension
   library slice.
+- 2026-08-09: Merged PR 952. The extension slice now passes the three rules,
+  shared ESLint and preflight enforce them, and exact-head validation passed.
+  Simple Vault, Sentinel, the main application, and shared vault UI remain in
+  this rollout issue.
 
 ## Findings and decisions
 
@@ -70,6 +74,9 @@ Excluded:
 - Migrate one enforced slice at a time.
 - Do not add a broad baseline or disable the rules for authored code.
 - Keep host callback exceptions local and documented.
+- Generic external-value bags are prohibited in domain and application APIs.
+  A structural external value is allowed only as a private untrusted-ingress
+  implementation detail that immediately narrows into a concrete domain type.
 
 ## References
 
