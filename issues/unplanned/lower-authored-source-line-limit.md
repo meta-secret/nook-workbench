@@ -5,10 +5,11 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-10T19:14:28Z
+updated_at: 2026-08-10T20:36:05Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
+  - meta-secret/nook#965
 depends_on: []
 ---
 
@@ -50,7 +51,7 @@ Excluded:
 - [ ] Every remaining authored source violation is decomposed below 750 lines.
 - [ ] Rust unit tests remain beside the focused implementation they cover.
 - [ ] The scanner, tests, and durable guidance enforce 750 lines.
-- [ ] Exact-head repository-owned validation passes for every delivery PR.
+- [x] Exact-head repository-owned validation passes for every delivery PR.
 
 ## Progress
 
@@ -59,6 +60,12 @@ Excluded:
   and exact-head native, WASM, web, preview, architecture, and ecosystem gates
   passed. The enforcement ceiling remains 1,000 until the remaining violations
   have been removed.
+- 2026-08-10: Merged PR 965. Extension pairing migration, sync-provider
+  arguments, event authorization, provider synchronization, security-epoch,
+  and IndexedDB device-identity responsibilities moved into focused production
+  modules. Every touched source is at or below 750 lines. Root formatting now
+  covers the standalone preflight crate mechanically. Exact-head focused and
+  complete validation passed without a PR retrigger.
 
 ## Findings and decisions
 
@@ -66,13 +73,15 @@ Excluded:
 - Deliver focused batches from the largest files downward, then lower the
   executable threshold in the final stack layer.
 - The first batch exposed a formatting ownership gap: the root formatter did
-  not cover the standalone preflight crate. Add mechanical coverage rather than
-  relying on a repeated manual command.
+  not cover the standalone preflight crate. PR 965 added mechanical coverage.
 - Focused Rust extraction includes moving or adding the direct unit tests in
   the same module before first review.
+- Production sibling modules need explicit visibility and direct imports after
+  extraction; strict all-target Clippy is the earliest complete proof of both
+  production and colocated-test ownership.
 
 ## References
 
 - [Task-start plan](../../plans/unplanned/2026-08-10T16-34-48Z-lower-source-line-limit.md)
 - [Nook PR 964](https://github.com/meta-secret/nook/pull/964)
-
+- [Nook PR 965](https://github.com/meta-secret/nook/pull/965)
