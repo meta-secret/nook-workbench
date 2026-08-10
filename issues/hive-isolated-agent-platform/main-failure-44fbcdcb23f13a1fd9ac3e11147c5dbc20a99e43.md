@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 44fbcdcb23f1
-status: ready
+status: done
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-10T19:15:30Z
-updated_at: 2026-08-10T19:15:30Z
+updated_at: 2026-08-10T19:44:05Z
 source_issues: []
 related_prs: [964]
 depends_on: []
@@ -45,6 +45,11 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:31423108444:attempt:1 -->
 - 2026-08-10T19:15:30Z: Main run [31423108444 attempt 1](https://github.com/meta-secret/nook/actions/runs/31423108444)
   failed for `44fbcdcb23f13a1fd9ac3e11147c5dbc20a99e43`. Failed jobs: Native Rust verification.
+
+<!-- main-run:31423108444:attempt:2 -->
+- 2026-08-10T19:44:05Z: Main run [31423108444 attempt 2](https://github.com/meta-secret/nook/actions/runs/31423108444)
+  succeeded for `44fbcdcb23f13a1fd9ac3e11147c5dbc20a99e43`; any active Hive repair is retired.
+<!-- hive-retired:successful-rerun -->
 
 ## Findings and decisions
 
