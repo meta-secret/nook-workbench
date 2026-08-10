@@ -5,12 +5,13 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-10T21:27:33Z
+updated_at: 2026-08-10T22:33:23Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
   - meta-secret/nook#965
   - meta-secret/nook#966
+  - meta-secret/nook#967
 depends_on: []
 ---
 
@@ -72,6 +73,11 @@ Excluded:
   into focused auth production modules with their behavior tests. All eight
   affected Rust files are below 750 lines. Focused and complete exact-head
   validation passed on the first attempt.
+- 2026-08-10: Merged PR 967. Hive Main-run selection, delivery readiness,
+  Neo4j migration and enqueue behavior, and the WASM manager session lifecycle
+  moved into focused production owners. All eight affected Rust files are below
+  750 lines. Focused validation passed. Complete exact-head validation passed
+  after one infrastructure-only retrigger caused by interrupted Zot streams.
 
 ## Findings and decisions
 
@@ -87,6 +93,8 @@ Excluded:
   production and colocated-test ownership.
 - Keep secret wire values in the parent wire owner while validated public
   digest, signing-key, and timestamp metadata lives in a focused submodule.
+- Correlated BuildKit `short read` failures across unrelated jobs require live
+  registry verification before an unchanged exact-head retrigger.
 
 ## References
 
@@ -94,3 +102,4 @@ Excluded:
 - [Nook PR 964](https://github.com/meta-secret/nook/pull/964)
 - [Nook PR 965](https://github.com/meta-secret/nook/pull/965)
 - [Nook PR 966](https://github.com/meta-secret/nook/pull/966)
+- [Nook PR 967](https://github.com/meta-secret/nook/pull/967)
