@@ -1,11 +1,11 @@
 ---
 title: Apply strict TypeScript API discipline across Nook web
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-10T05:33:00Z
+updated_at: 2026-08-10T06:01:00Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
@@ -13,6 +13,7 @@ related_prs:
   - meta-secret/nook#957
   - meta-secret/nook#961
   - meta-secret/nook#962
+  - meta-secret/nook#963
 depends_on: []
 ---
 
@@ -54,12 +55,12 @@ Excluded:
 
 - [x] Extension reusable libraries pass all three rules.
 - [x] Extension content and popup paths pass all three rules.
-- [x] Extension background and offscreen paths pass all three rules.
+- [ ] Extension background and offscreen paths pass all three rules.
 - [x] Extension scripts and e2e paths pass all three rules.
 - [x] Simple Vault and Sentinel paths pass all three rules.
 - [x] Main application and shared vault UI pass all three rules.
 - [x] Shared ESLint and preflight contracts prevent rule removal.
-- [x] Exact-head repository-owned validation is green for every delivery PR.
+- [ ] Exact-head repository-owned validation is green for every delivery PR.
 
 ## Progress
 
@@ -85,6 +86,11 @@ Excluded:
   Exact Main SHA `fa5ace79e7fb33b216a800fdaf0ede0e9455d457` passed Native,
   WASM, web build, UI demos, full web e2e, full extension e2e, and deployment in
   run 31357862575.
+- 2026-08-10: Late review feedback on PR 957 identified two remaining ingress
+  gaps after the earlier completion update. PR 963 moves concrete session
+  payload and login-options response decoding into companion Rust/WASM. The
+  issue is reopened until that repair passes exact-head validation and Main is
+  green again.
 
 ## Findings and decisions
 
@@ -110,4 +116,5 @@ Excluded:
 - [Nook PR 957](https://github.com/meta-secret/nook/pull/957)
 - [Nook PR 961](https://github.com/meta-secret/nook/pull/961)
 - [Nook PR 962](https://github.com/meta-secret/nook/pull/962)
+- [Nook PR 963](https://github.com/meta-secret/nook/pull/963)
 - [Completion worklog](../../worklogs/unplanned/20260810T053300Z-pr-957-web-api-rollout.md)
