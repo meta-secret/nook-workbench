@@ -5,12 +5,13 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-07-30T03:02:25Z
-updated_at: 2026-07-30T04:38:00Z
+updated_at: 2026-08-10T00:00:06Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/879
   - https://github.com/meta-secret/nook/pull/881
   - https://github.com/meta-secret/nook/pull/882
+  - https://github.com/meta-secret/nook/pull/959
 depends_on: []
 ---
 
@@ -26,34 +27,36 @@ storage, health, and recovery model.
 ## Outcome
 
 The production Linux node runs pinned Zot v2.1.18 in k0s with retained local
-storage. Existing Hive images survived the digest-verified migration, host
-Docker and k0s containerd continue using the private loopback endpoint, and the
-legacy Compose registry container is retired.
+storage. Existing Hive images survived the digest-verified migration. The
+registry now serves authenticated internal consumers through its stable
+ClusterIP and authenticated remote consumers through the HTTPS edge. The
+legacy Compose registry and loopback port-forward are retired.
+
+Zot reserves one CPU and 2 GiB of memory. It may burst to four CPUs and 8 GiB
+during concurrent BuildKit cache transfers.
 
 ## Scope
 
 - Add the Zot Kubernetes workload, retained local storage, configuration,
-  private host access path, migration, operations, recovery documentation, and
-  contract coverage.
+  authenticated access paths, migration, operations, recovery documentation,
+  and contract coverage.
 - Deploy and verify the merged implementation on the production node.
-- Keep hosted GitHub Actions caches unchanged until a safe authenticated
-  consumer path exists.
-- Exclude public unauthenticated exposure and secret-bearing access from
-  untrusted pull-request code.
+- Keep write credentials unavailable to untrusted pull-request code.
+- Exclude public unauthenticated exposure.
 
 ## Acceptance criteria
 
 - [x] Zot runs non-root with a read-only root filesystem, bounded resources,
       health probes, a pinned image digest, and retained local storage.
-- [x] The OCI API is reachable only through the server loopback path by
-      default.
+- [x] The OCI API requires authentication on both internal and public paths.
 - [x] Existing tagged registry content is copied and digest-verified before
       legacy registry shutdown.
-- [x] Hive image push and k0s/containerd pull behavior continues at the existing
+- [x] Hive image push and k0s/containerd pull behavior continues at the stable
       registry name.
 - [x] Repeated deployment is idempotent and restart-safe.
 - [x] Infrastructure contract coverage rejects lost persistence, unsafe
-      exposure, unpinned images, and incorrect migration ordering.
+      exposure, unpinned images, incorrect migration ordering, and resource
+      regressions.
 - [x] The merged revision is deployed and verified on the production node.
 
 ## Progress
@@ -66,26 +69,35 @@ legacy Compose registry container is retired.
 - Enabled Zot's `docker2s2` compatibility in PR #882 after the second
   production rehearsal exposed Docker Schema2 manifest rejection.
 - Migrated and verified all 26 legacy `nook-hive` tags before cutover.
-- Completed the full production deployment through the new loopback registry.
+- Completed the initial production deployment through the loopback registry.
+- Later retired the loopback port-forward in favor of authenticated ClusterIP
+  and HTTPS access for BuildKit cache consumers.
+- On 2026-08-09, merged PR #959 and deployed higher Zot capacity for concurrent
+  cache traffic. The live rollout and authenticated registry checks passed.
+- The merge-triggered Hive job overlapped the Zot metadata rebuild and received
+  one transient 502. Its failed job was rerun after readiness and passed.
 
 ## Findings and decisions
 
 - Zot rejects Docker Schema2 manifests by default; `http.compat: ["docker2s2"]`
   is required to preserve the existing manifest bytes and digest identity.
-- The server's existing `127.0.0.1:5000` registry endpoint remains the stable
-  Docker and containerd interface. There is no Service, Ingress, NodePort, or
-  wildcard host listener.
+- The original loopback-only access decision was superseded by authenticated
+  ClusterIP and HTTPS access. No host port-forward remains.
 - The retained PV stores data at `/var/lib/hive/zot`; the previous
   `nook-infra_registry-data` Docker volume remains available for recovery.
-- Hosted BuildKit cache replacement remains a separate trust decision:
-  untrusted pull-request code cannot safely receive a reusable private-registry
-  write credential, and GitHub-hosted runners cannot reach the loopback-only
-  endpoint.
+- Untrusted pull-request code does not receive a reusable registry write
+  credential. Cache publication remains limited to trusted paths.
+- Four CPUs is the initial burst ceiling because the production storage path,
+  rather than CPU, is expected to bound cold transfers. Raise it only when
+  production telemetry proves Zot is CPU-bound.
 
 ## References
 
 - `plans/hive-isolated-agent-platform/2026-07-30T03-02-25Z-run-private-zot-registry.md`
+- `plans/hive-isolated-agent-platform/20260809T232040Z-scale-zot-buildkit-capacity.md`
 - `worklogs/hive-isolated-agent-platform/2026-07-30T04-38-00Z-private-zot-registry.md`
+- `worklogs/hive-isolated-agent-platform/20260810T000006Z-pr-959-zot-capacity.md`
 - `issues/hive-isolated-agent-platform/connect-trusted-builds-to-zot-cache.md`
 - `infra/k0s/manifests/registry/zot.yaml`
 - `infra/tasks/registry.yml`
+
