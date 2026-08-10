@@ -5,11 +5,12 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-10T20:36:05Z
+updated_at: 2026-08-10T21:27:33Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
   - meta-secret/nook#965
+  - meta-secret/nook#966
 depends_on: []
 ---
 
@@ -66,6 +67,11 @@ Excluded:
   modules. Every touched source is at or below 750 lines. Root formatting now
   covers the standalone preflight crate mechanically. Exact-head focused and
   complete validation passed without a PR retrigger.
+- 2026-08-10: Merged PR 966. Sentinel deep-link handling, encrypted device
+  roster storage, enrollment-code envelopes, and public wire metadata moved
+  into focused auth production modules with their behavior tests. All eight
+  affected Rust files are below 750 lines. Focused and complete exact-head
+  validation passed on the first attempt.
 
 ## Findings and decisions
 
@@ -79,9 +85,12 @@ Excluded:
 - Production sibling modules need explicit visibility and direct imports after
   extraction; strict all-target Clippy is the earliest complete proof of both
   production and colocated-test ownership.
+- Keep secret wire values in the parent wire owner while validated public
+  digest, signing-key, and timestamp metadata lives in a focused submodule.
 
 ## References
 
 - [Task-start plan](../../plans/unplanned/2026-08-10T16-34-48Z-lower-source-line-limit.md)
 - [Nook PR 964](https://github.com/meta-secret/nook/pull/964)
 - [Nook PR 965](https://github.com/meta-secret/nook/pull/965)
+- [Nook PR 966](https://github.com/meta-secret/nook/pull/966)
