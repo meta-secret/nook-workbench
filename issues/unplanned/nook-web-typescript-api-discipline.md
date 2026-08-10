@@ -1,15 +1,18 @@
 ---
 title: Apply strict TypeScript API discipline across Nook web
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-09T03:28:00Z
+updated_at: 2026-08-10T05:33:00Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
   - meta-secret/nook#955
+  - meta-secret/nook#957
+  - meta-secret/nook#961
+  - meta-secret/nook#962
 depends_on: []
 ---
 
@@ -54,9 +57,9 @@ Excluded:
 - [x] Extension background and offscreen paths pass all three rules.
 - [x] Extension scripts and e2e paths pass all three rules.
 - [x] Simple Vault and Sentinel paths pass all three rules.
-- [ ] Main application and shared vault UI pass all three rules.
+- [x] Main application and shared vault UI pass all three rules.
 - [x] Shared ESLint and preflight contracts prevent rule removal.
-- [ ] Exact-head repository-owned validation is green for every delivery PR.
+- [x] Exact-head repository-owned validation is green for every delivery PR.
 
 ## Progress
 
@@ -70,6 +73,18 @@ Excluded:
   exact-head checks passed. The main application, shared vault UI, research
   package, and removal of the extension's remaining generic transport model
   remain in this rollout.
+- 2026-08-10: Merged PR 957. The remaining web packages now pass the strict API
+  rules, portable extension policy is owned by companion Rust/WASM, and generic
+  application value bags are prohibited. Its resulting Main run exposed
+  runtime-only regressions not exercised by the PR suite.
+- 2026-08-10: Merged PR 961 after repairing Svelte snippet rendering,
+  structured logging, and Rust/WASM enum use in demo stubs. Review feedback was
+  monitored while checks ran and was fixed before restarting validation.
+- 2026-08-10: Merged PR 962 after the resulting Main run exposed the final OTP
+  enum fixture, structured identity log, and extension session fixture gaps.
+  Exact Main SHA `fa5ace79e7fb33b216a800fdaf0ede0e9455d457` passed Native,
+  WASM, web build, UI demos, full web e2e, full extension e2e, and deployment in
+  run 31357862575.
 
 ## Findings and decisions
 
@@ -92,3 +107,7 @@ Excluded:
 - [PR 955 worklog](../../worklogs/unplanned/20260809-032800-pr-955-small-vault-packages.md)
 - [Nook PR 952](https://github.com/meta-secret/nook/pull/952)
 - [Nook PR 955](https://github.com/meta-secret/nook/pull/955)
+- [Nook PR 957](https://github.com/meta-secret/nook/pull/957)
+- [Nook PR 961](https://github.com/meta-secret/nook/pull/961)
+- [Nook PR 962](https://github.com/meta-secret/nook/pull/962)
+- [Completion worklog](../../worklogs/unplanned/20260810T053300Z-pr-957-web-api-rollout.md)
