@@ -1,0 +1,282 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-08-10T22:34:40.619Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 31438789253,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/31438789253",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "4ab326c77511d04327c40fc68c0267ffa5960001",
+    "conclusion": "failure",
+    "created_at": "2026-08-10T22:33:26Z",
+    "started_at": "2026-08-10T22:33:26Z",
+    "completed_at": "2026-08-10T22:34:26Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 967,
+      "url": "https://github.com/meta-secret/nook/pull/967",
+      "title": "Refactor Hive and WASM owners under 750 lines"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 0,
+    "execution_seconds": 60,
+    "wall_seconds": 60,
+    "job_count": 7,
+    "step_count": 11,
+    "build_seconds": 21
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 1,
+      "remote_backend_job_count": 1,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 56,
+      "buildkit_cached_steps": 38,
+      "buildkit_cache_hit_rate_percent": 67.86
+    },
+    "jobs": [
+      {
+        "job": "rust",
+        "cache_backend": {
+          "kind": "remote",
+          "persistent": true,
+          "reason": "persistent_s3_service"
+        },
+        "sccache": {
+          "report_count": 0,
+          "compile_requests": 0,
+          "requests_executed": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0
+        },
+        "buildkit": {
+          "build_record_count": 3,
+          "completed_steps": 56,
+          "cached_steps": 38,
+          "cache_hit_rate_percent": 67.86,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      }
+    ],
+    "collection": {
+      "complete": true,
+      "warnings": []
+    }
+  },
+  "jobs": [
+    {
+      "id": 93618846479,
+      "name": "Native Rust verification",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_name": "GitHub Actions 1000021837",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-10T22:33:36Z",
+      "completed_at": "2026-08-10T22:34:26Z",
+      "duration_seconds": 50,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-10T22:33:37Z",
+          "completed_at": "2026-08-10T22:33:38Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-10T22:33:38Z",
+          "completed_at": "2026-08-10T22:33:39Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-10T22:33:39Z",
+          "completed_at": "2026-08-10T22:33:59Z",
+          "duration_seconds": 20
+        },
+        {
+          "number": 4,
+          "name": "Native Rust format, tests, and coverage",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-08-10T22:33:59Z",
+          "completed_at": "2026-08-10T22:34:20Z",
+          "duration_seconds": 21
+        },
+        {
+          "number": 5,
+          "name": "Export commit-keyed ***-core/auth coverage",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-08-10T22:34:20Z",
+          "completed_at": "2026-08-10T22:34:20Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 6,
+          "name": "Upload commit-keyed ***-core/auth coverage",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-08-10T22:34:20Z",
+          "completed_at": "2026-08-10T22:34:20Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 7,
+          "name": "Publish verified native BuildKit cache",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-08-10T22:34:20Z",
+          "completed_at": "2026-08-10T22:34:20Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 8,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-10T22:34:20Z",
+          "completed_at": "2026-08-10T22:34:22Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 15,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-10T22:34:22Z",
+          "completed_at": "2026-08-10T22:34:22Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 16,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-10T22:34:22Z",
+          "completed_at": "2026-08-10T22:34:23Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 17,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-10T22:34:23Z",
+          "completed_at": "2026-08-10T22:34:23Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 93619062548,
+      "name": "WASM verification and artifact",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-10T22:34:26Z",
+      "completed_at": "2026-08-10T22:34:26Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 93619062914,
+      "name": "Web e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-10T22:34:26Z",
+      "completed_at": "2026-08-10T22:34:26Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 93619063164,
+      "name": "Extension e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-10T22:34:26Z",
+      "completed_at": "2026-08-10T22:34:26Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 93619063286,
+      "name": "UI demos",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-10T22:34:26Z",
+      "completed_at": "2026-08-10T22:34:26Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 93619063336,
+      "name": "Verify web build",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-10T22:34:26Z",
+      "completed_at": "2026-08-10T22:34:26Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 93619063428,
+      "name": "Deploy development",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-10T22:34:26Z",
+      "completed_at": "2026-08-10T22:34:26Z",
+      "duration_seconds": 0,
+      "steps": []
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
