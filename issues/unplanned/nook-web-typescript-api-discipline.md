@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-11T06:48:00Z
+updated_at: 2026-08-11T10:34:00Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
@@ -16,6 +16,7 @@ related_prs:
   - meta-secret/nook#963
   - meta-secret/nook#970
   - meta-secret/nook#974
+  - meta-secret/nook#978
 depends_on: []
 ---
 
@@ -66,6 +67,7 @@ Excluded:
 - [x] Paired-vault identity handoff projects only the Rust-owned payload.
 - [x] Saved-login reveal projects only the Rust-owned grant identity.
 - [x] Nested login-account wire values reject foreign fields in Rust.
+- [x] Lowercase `object` and generic substitutes cannot erase domain branches.
 
 ## Progress
 
@@ -116,6 +118,10 @@ Excluded:
   run 31462438440 passed every product gate for
   `c39c5d3a44157d1661573476670473a88598d52f`; Rust ecosystem rerun
   31462438649 passed after the first attempt hit a transient registry EOF.
+- 2026-08-11: Merged PR 978 after prohibiting lowercase `object` and generic
+  substitutes, migrating the enforced web sources to concrete values, and
+  adding malformed sensitive-request protection. Exact-head run 31482024448
+  passed every required gate with zero unresolved conversations.
 
 ## Findings and decisions
 
@@ -130,11 +136,14 @@ Excluded:
   adapter and must narrow immediately into a concrete domain type.
 - `ExternalValue` remains migration debt despite the earlier extension rollout;
   it is not accepted as a reusable application API.
+- Lowercase `object` has no boundary exception. The unavoidable `unknown`
+  exception is limited to allowlisted immediate transport decoders.
 
 ## References
 
 - [Initial task plan](../../plans/unplanned/20260808-051430-nook-web-typescript-api-rules.md)
 - [Completion task plan](../../plans/unplanned/20260809-015012-complete-nook-web-typescript-api-rules.md)
+- [Object-type prohibition plan](../../plans/unplanned/20260811T082229Z-typescript-object-type-ban.md)
 - [PR 955 worklog](../../worklogs/unplanned/20260809-032800-pr-955-small-vault-packages.md)
 - [Nook PR 952](https://github.com/meta-secret/nook/pull/952)
 - [Nook PR 955](https://github.com/meta-secret/nook/pull/955)
@@ -144,6 +153,8 @@ Excluded:
 - [Nook PR 963](https://github.com/meta-secret/nook/pull/963)
 - [Nook PR 970](https://github.com/meta-secret/nook/pull/970)
 - [Nook PR 974](https://github.com/meta-secret/nook/pull/974)
+- [Nook PR 978](https://github.com/meta-secret/nook/pull/978)
 - [Completion worklog](../../worklogs/unplanned/20260810T053300Z-pr-957-web-api-rollout.md)
 - [Final repair worklog](../../worklogs/unplanned/20260811T035440Z-pr-963-970-web-api-rollout-repair.md)
 - [Projection repair worklog](../../worklogs/unplanned/20260811T064800Z-pr-974-extension-session-projection-repair.md)
+- [Object-type prohibition worklog](../../worklogs/unplanned/20260811T103400Z-pr-978-typescript-concrete-values.md)
