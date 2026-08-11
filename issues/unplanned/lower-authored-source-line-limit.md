@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-11T06:29:00Z
+updated_at: 2026-08-11T06:58:20Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -16,6 +16,7 @@ related_prs:
   - meta-secret/nook#969
   - meta-secret/nook#972
   - meta-secret/nook#973
+  - meta-secret/nook#975
 depends_on: []
 ---
 
@@ -104,6 +105,10 @@ Excluded:
   moved into focused owners. All nine affected files are below 750 lines.
   Review-driven Rust test colocation and a current-Main rebase were validated
   by focused and complete exact-head suites before merge.
+- 2026-08-11: Merged PR 975. Compiler-cache delivery and remote platform
+  integration contracts moved into focused owners. All four affected files
+  are below 750 lines. Focused preflight and complete exact-head validation
+  passed after adding explicit nested integration-module paths.
 
 ## Findings and decisions
 
@@ -139,3 +144,4 @@ Excluded:
 - [Nook PR 969](https://github.com/meta-secret/nook/pull/969)
 - [Nook PR 972](https://github.com/meta-secret/nook/pull/972)
 - [Nook PR 973](https://github.com/meta-secret/nook/pull/973)
+- [Nook PR 975](https://github.com/meta-secret/nook/pull/975)
