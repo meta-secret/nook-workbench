@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-11T17:46:11Z
+updated_at: 2026-08-11T18:21:13Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -20,6 +20,7 @@ related_prs:
   - meta-secret/nook#976
   - meta-secret/nook#979
   - meta-secret/nook#982
+  - meta-secret/nook#983
 depends_on: []
 ---
 
@@ -130,6 +131,11 @@ Excluded:
   in TypeScript. Password-enrollment issuance now has a focused flow owner,
   every affected source is below 750 lines, and the exact-head suite plus a
   recorded enrollment demo passed before merge.
+- 2026-08-11: Merged PR 983. All ten secret import-format WASM bindings moved
+  into the existing secret-import adapter beside the parsing and application
+  support they consume. The public JavaScript export names remain unchanged,
+  both affected Rust owners are below 750 lines, and focused plus complete
+  exact-head validation passed before merge.
 
 ## Findings and decisions
 
@@ -169,3 +175,4 @@ Excluded:
 - [Nook PR 976](https://github.com/meta-secret/nook/pull/976)
 - [Nook PR 979](https://github.com/meta-secret/nook/pull/979)
 - [Nook PR 982](https://github.com/meta-secret/nook/pull/982)
+- [Nook PR 983](https://github.com/meta-secret/nook/pull/983)
