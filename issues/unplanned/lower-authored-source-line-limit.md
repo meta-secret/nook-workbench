@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-11T06:58:20Z
+updated_at: 2026-08-11T08:34:09Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -17,6 +17,7 @@ related_prs:
   - meta-secret/nook#972
   - meta-secret/nook#973
   - meta-secret/nook#975
+  - meta-secret/nook#976
 depends_on: []
 ---
 
@@ -109,6 +110,12 @@ Excluded:
   integration contracts moved into focused owners. All four affected files
   are below 750 lines. Focused preflight and complete exact-head validation
   passed after adding explicit nested integration-module paths.
+- 2026-08-11: Merged PR 976. Identity Bridge elements, device-access detail
+  panels, password selection, and Sentinel onboarding guidance moved into
+  focused UI owners. All seven affected production owners are below 750 lines.
+  Review and preflight feedback replaced implicit bindable absence with
+  explicit state, then replaced write-only bindings with a typed one-way
+  password-selection action. Focused and complete exact-head validation passed.
 
 ## Findings and decisions
 
@@ -145,3 +152,4 @@ Excluded:
 - [Nook PR 972](https://github.com/meta-secret/nook/pull/972)
 - [Nook PR 973](https://github.com/meta-secret/nook/pull/973)
 - [Nook PR 975](https://github.com/meta-secret/nook/pull/975)
+- [Nook PR 976](https://github.com/meta-secret/nook/pull/976)
