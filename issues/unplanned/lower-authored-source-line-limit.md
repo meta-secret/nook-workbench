@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-11T03:00:34Z
+updated_at: 2026-08-11T03:55:27Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -14,6 +14,7 @@ related_prs:
   - meta-secret/nook#967
   - meta-secret/nook#968
   - meta-secret/nook#969
+  - meta-secret/nook#972
 depends_on: []
 ---
 
@@ -91,6 +92,12 @@ Excluded:
   focused Rust/WASM production owners. All seven source owners are below 750
   lines. Three exact-head validation cycles passed: the original delivery, a
   current-Main rebase, and a review-driven test-ownership correction.
+- 2026-08-11: Merged PR 972. Secret-record WASM presentation, browser passkey
+  option construction, and Sentinel genesis finalization moved into focused
+  production owners. All six affected Rust files are below 750 lines. The
+  initial exact-head suite passed, then Main advanced; the rebased head passed
+  host formatting, focused validation, source architecture, and the complete
+  exact-head suite before merge.
 
 ## Findings and decisions
 
@@ -124,3 +131,4 @@ Excluded:
 - [Nook PR 967](https://github.com/meta-secret/nook/pull/967)
 - [Nook PR 968](https://github.com/meta-secret/nook/pull/968)
 - [Nook PR 969](https://github.com/meta-secret/nook/pull/969)
+- [Nook PR 972](https://github.com/meta-secret/nook/pull/972)
