@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-11T16:28:08Z
+updated_at: 2026-08-11T17:46:11Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -19,6 +19,7 @@ related_prs:
   - meta-secret/nook#975
   - meta-secret/nook#976
   - meta-secret/nook#979
+  - meta-secret/nook#982
 depends_on: []
 ---
 
@@ -123,6 +124,12 @@ Excluded:
   affected source owner is below 750 lines. Review-driven type and dependency
   corrections passed isolated extension tests and complete exact-head
   validation before merge.
+- 2026-08-11: Merged PR 982. Shared enrollment-provider selection and
+  shared-grant flush decisions moved from TypeScript into portable Rust and
+  typed WASM exports. Browser OAuth projection and storage orchestration remain
+  in TypeScript. Password-enrollment issuance now has a focused flow owner,
+  every affected source is below 750 lines, and the exact-head suite plus a
+  recorded enrollment demo passed before merge.
 
 ## Findings and decisions
 
@@ -161,3 +168,4 @@ Excluded:
 - [Nook PR 975](https://github.com/meta-secret/nook/pull/975)
 - [Nook PR 976](https://github.com/meta-secret/nook/pull/976)
 - [Nook PR 979](https://github.com/meta-secret/nook/pull/979)
+- [Nook PR 982](https://github.com/meta-secret/nook/pull/982)
