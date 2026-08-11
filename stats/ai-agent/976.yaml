@@ -1,0 +1,60 @@
+schema_version: 3
+source_pr:
+  number: 976
+  url: https://github.com/meta-secret/nook/pull/976
+  title: Refactor device access UI owners under 750 lines
+  change_surface: web_source_architecture_decomposition
+  head_sha: f4f9dea347cbefd0567b5767318f7c8205776c94
+  started_at: 2026-08-11T07:08:06Z
+  opened_at: 2026-08-11T07:10:57Z
+  merged_at: 2026-08-11T08:32:58Z
+  elapsed_seconds: 5092
+  open_to_merge_seconds: 4921
+summary: {local_execution_count: 8, local_check_count: 8, local_test_count: 0, local_combined_count: 0, local_execution_seconds: 980, github_actions_run_count: 10, github_actions_seconds: 3887, pr_retrigger_count: 2, agent_requested_rerun_count: 0, merge_attempt_count: 1}
+test_inventory:
+  measured_at: 2026-08-11T08:34:09Z
+  head_sha: f4f9dea347cbefd0567b5767318f7c8205776c94
+  by_type: {rust: 0, preflight: 1, web_unit: 0, e2e: 1}
+  total: 2
+local_executions:
+  - {command: task format, category: check, started_at: "2026-08-11T07:08:20Z", finished_at: "2026-08-11T07:10:30Z", duration_seconds: 130, outcome: passed, reason: initial_host_format}
+  - {command: task format, category: check, started_at: "2026-08-11T07:17:00Z", finished_at: "2026-08-11T07:20:20Z", duration_seconds: 200, outcome: passed, reason: unused_import_fix}
+  - {command: task format, category: check, started_at: "2026-08-11T07:31:00Z", finished_at: "2026-08-11T07:33:00Z", duration_seconds: 120, outcome: passed, reason: current_main_merge}
+  - {command: task format, category: check, started_at: "2026-08-11T07:49:10Z", finished_at: "2026-08-11T07:51:20Z", duration_seconds: 130, outcome: passed, reason: explicit_bindable_defaults}
+  - {command: task format, category: check, started_at: "2026-08-11T07:59:30Z", finished_at: "2026-08-11T08:01:20Z", duration_seconds: 110, outcome: passed, reason: second_current_main_merge}
+  - {command: task format, category: check, started_at: "2026-08-11T08:16:20Z", finished_at: "2026-08-11T08:18:40Z", duration_seconds: 140, outcome: passed, reason: one_way_password_selection}
+  - {command: ui-demo-contract, category: check, started_at: "2026-08-11T08:18:40Z", finished_at: "2026-08-11T08:18:41Z", duration_seconds: 1, outcome: passed, reason: ui_evidence_contract}
+  - {command: "task pr:ready PR=976", category: check, started_at: "2026-08-11T08:32:25Z", finished_at: "2026-08-11T08:32:34Z", duration_seconds: 9, outcome: passed, reason: exact_head_readiness_before_squash_merge}
+github_actions_runs:
+  - {workflow: Remote task, run_id: 31467941398, run_attempt: 1, head_sha: e707b7acbc45baeab270339eb5d3390068b9cc04, trigger: workflow_dispatch, started_at: "2026-08-11T07:11:14Z", finished_at: "2026-08-11T07:16:22Z", duration_seconds: 308, conclusion: failure, source_pr: 976}
+  - {workflow: Remote task, run_id: 31468580381, run_attempt: 1, head_sha: e8d739425a173b4ef8960c9dadb1a53e97d45991, trigger: workflow_dispatch, started_at: "2026-08-11T07:20:53Z", finished_at: "2026-08-11T07:30:24Z", duration_seconds: 571, conclusion: success, source_pr: 976}
+  - {workflow: Remote task, run_id: 31469425075, run_attempt: 1, head_sha: ef72af6f7f0edb63db75f1caf152bc3e03f1a7dc, trigger: workflow_dispatch, started_at: "2026-08-11T07:33:21Z", finished_at: "2026-08-11T07:42:22Z", duration_seconds: 541, conclusion: success, source_pr: 976}
+  - {workflow: PR, run_id: 31470071736, run_attempt: 1, head_sha: ef72af6f7f0edb63db75f1caf152bc3e03f1a7dc, trigger: pull_request, started_at: "2026-08-11T07:42:34Z", finished_at: "2026-08-11T07:48:59Z", duration_seconds: 385, conclusion: failure, source_pr: 976}
+  - {workflow: Remote task, run_id: 31470355841, run_attempt: 1, head_sha: ef72af6f7f0edb63db75f1caf152bc3e03f1a7dc, trigger: workflow_dispatch, started_at: "2026-08-11T07:46:36Z", finished_at: "2026-08-11T07:48:03Z", duration_seconds: 87, conclusion: failure, source_pr: 976}
+  - {workflow: Remote task, run_id: 31470708918, run_attempt: 1, head_sha: 53cfccd4da6cebd8ef5db3fdfd7043f8fe2d5d92, trigger: workflow_dispatch, started_at: "2026-08-11T07:51:43Z", finished_at: "2026-08-11T07:58:40Z", duration_seconds: 417, conclusion: success, source_pr: 976}
+  - {workflow: Remote task, run_id: 31471408351, run_attempt: 1, head_sha: 5c6c9828546954826a297f4c9e81a7aeda123443, trigger: workflow_dispatch, started_at: "2026-08-11T08:01:34Z", finished_at: "2026-08-11T08:09:31Z", duration_seconds: 477, conclusion: success, source_pr: 976}
+  - {workflow: PR, run_id: 31472003516, run_attempt: 1, head_sha: 5c6c9828546954826a297f4c9e81a7aeda123443, trigger: pull_request, started_at: "2026-08-11T08:09:48Z", finished_at: "2026-08-11T08:15:35Z", duration_seconds: 347, conclusion: failure, source_pr: 976}
+  - {workflow: Remote task, run_id: 31472669285, run_attempt: 1, head_sha: f4f9dea347cbefd0567b5767318f7c8205776c94, trigger: workflow_dispatch, started_at: "2026-08-11T08:19:08Z", finished_at: "2026-08-11T08:25:14Z", duration_seconds: 366, conclusion: success, source_pr: 976}
+  - {workflow: PR, run_id: 31473161786, run_attempt: 1, head_sha: f4f9dea347cbefd0567b5767318f7c8205776c94, trigger: pull_request, started_at: "2026-08-11T08:25:53Z", finished_at: "2026-08-11T08:32:21Z", duration_seconds: 388, conclusion: success, source_pr: 976}
+cache_telemetry:
+  totals: {job_count: 0, remote_backend_job_count: 0, direct_compile_job_count: 0, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0}
+  jobs: []
+pr_retriggers:
+  - {at: "2026-08-11T07:51:40Z", reason: explicit_bindable_defaults_after_preflight_and_review, agent_requested: false}
+  - {at: "2026-08-11T08:19:00Z", reason: replace_write_only_bindings_after_full_web_lint, agent_requested: false}
+merge_attempts:
+  - {at: "2026-08-11T08:32:58Z", method: squash, outcome: success, reason: exact_head_ready_and_resolved_review_threads}
+comparison:
+  baseline_prs: [975, 973]
+  baseline_quality: strong
+  baseline_note: PRs 975 and 973 are preceding source-architecture batches.
+  regression: true
+  regression_reasons:
+    - Focused web checks did not include the full web lint phase that found write-only bindable assignments.
+waste_assessment:
+  wasteful: true
+  findings:
+    - Parameterless bindables were caught only after the first complete validation attempt.
+    - The allowlisted focused web tasks did not exercise the full lint phase.
+  required_actions:
+    - Track focused hosted lint coverage separately from the source-size migration.
