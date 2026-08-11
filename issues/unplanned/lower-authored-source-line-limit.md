@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-11T03:55:27Z
+updated_at: 2026-08-11T06:29:00Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -15,6 +15,7 @@ related_prs:
   - meta-secret/nook#968
   - meta-secret/nook#969
   - meta-secret/nook#972
+  - meta-secret/nook#973
 depends_on: []
 ---
 
@@ -98,6 +99,11 @@ Excluded:
   initial exact-head suite passed, then Main advanced; the rebased head passed
   host formatting, focused validation, source architecture, and the complete
   exact-head suite before merge.
+- 2026-08-11: Merged PR 973. Authentication vocabulary, event operation
+  application, agent and local workflow contracts, and Bake proof support
+  moved into focused owners. All nine affected files are below 750 lines.
+  Review-driven Rust test colocation and a current-Main rebase were validated
+  by focused and complete exact-head suites before merge.
 
 ## Findings and decisions
 
@@ -132,3 +138,4 @@ Excluded:
 - [Nook PR 968](https://github.com/meta-secret/nook/pull/968)
 - [Nook PR 969](https://github.com/meta-secret/nook/pull/969)
 - [Nook PR 972](https://github.com/meta-secret/nook/pull/972)
+- [Nook PR 973](https://github.com/meta-secret/nook/pull/973)
