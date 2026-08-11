@@ -1,11 +1,11 @@
 ---
 title: Apply strict TypeScript API discipline across Nook web
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-11T03:54:40Z
+updated_at: 2026-08-11T04:22:12Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
@@ -62,6 +62,9 @@ Excluded:
 - [x] Main application and shared vault UI pass all three rules.
 - [x] Shared ESLint and preflight contracts prevent rule removal.
 - [x] Exact-head repository-owned validation is green for every delivery PR.
+- [ ] Paired-vault identity handoff projects only the Rust-owned payload.
+- [ ] Saved-login reveal projects only the Rust-owned grant identity.
+- [ ] Nested login-account wire values reject foreign fields in Rust.
 
 ## Progress
 
@@ -101,6 +104,11 @@ Excluded:
   Rust decoder shape. Exact-head run 31454944115 and Main run 31455749426
   passed all required gates, full web and extension e2e, UI demos, and
   development deployment for `f4e198b8323b80a53cc9de2e97db20b123e12dc5`.
+- 2026-08-11: Post-merge review on PR 963 identified three strict-boundary
+  defects that were not covered by the earlier validation. Reopened the issue
+  for a focused repair: project the paired handoff and login-reveal payloads,
+  make the nested login-account wire contract strict, add regression tests,
+  and revalidate the resulting Main head.
 
 ## Findings and decisions
 
