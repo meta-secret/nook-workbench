@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-11T08:34:09Z
+updated_at: 2026-08-11T16:28:08Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -18,6 +18,7 @@ related_prs:
   - meta-secret/nook#973
   - meta-secret/nook#975
   - meta-secret/nook#976
+  - meta-secret/nook#979
 depends_on: []
 ---
 
@@ -116,6 +117,12 @@ Excluded:
   Review and preflight feedback replaced implicit bindable absence with
   explicit state, then replaced write-only bindings with a typed one-way
   password-selection action. Focused and complete exact-head validation passed.
+- 2026-08-11: Merged PR 979. Extension session request handling, login
+  selection, queueing, offscreen lifecycle, vault operations, and website
+  passkey operations moved into focused Rust and TypeScript owners. Every
+  affected source owner is below 750 lines. Review-driven type and dependency
+  corrections passed isolated extension tests and complete exact-head
+  validation before merge.
 
 ## Findings and decisions
 
@@ -153,3 +160,4 @@ Excluded:
 - [Nook PR 973](https://github.com/meta-secret/nook/pull/973)
 - [Nook PR 975](https://github.com/meta-secret/nook/pull/975)
 - [Nook PR 976](https://github.com/meta-secret/nook/pull/976)
+- [Nook PR 979](https://github.com/meta-secret/nook/pull/979)
