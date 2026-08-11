@@ -1,11 +1,11 @@
 ---
 title: Apply strict TypeScript API discipline across Nook web
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-10T06:01:00Z
+updated_at: 2026-08-11T03:54:40Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
@@ -14,6 +14,7 @@ related_prs:
   - meta-secret/nook#961
   - meta-secret/nook#962
   - meta-secret/nook#963
+  - meta-secret/nook#970
 depends_on: []
 ---
 
@@ -55,12 +56,12 @@ Excluded:
 
 - [x] Extension reusable libraries pass all three rules.
 - [x] Extension content and popup paths pass all three rules.
-- [ ] Extension background and offscreen paths pass all three rules.
+- [x] Extension background and offscreen paths pass all three rules.
 - [x] Extension scripts and e2e paths pass all three rules.
 - [x] Simple Vault and Sentinel paths pass all three rules.
 - [x] Main application and shared vault UI pass all three rules.
 - [x] Shared ESLint and preflight contracts prevent rule removal.
-- [ ] Exact-head repository-owned validation is green for every delivery PR.
+- [x] Exact-head repository-owned validation is green for every delivery PR.
 
 ## Progress
 
@@ -91,6 +92,15 @@ Excluded:
   payload and login-options response decoding into companion Rust/WASM. The
   issue is reopened until that repair passes exact-head validation and Main is
   green again.
+- 2026-08-11: Merged PR 963 after moving the remaining extension session
+  ingress and closed response decoding into companion Rust/WASM. Exact-head
+  validation passed with zero unresolved review threads.
+- 2026-08-11: Main exposed a backup-code ownership race after PR 963. Merged
+  PR 970 after preserving the transport-owned copy through the asynchronous
+  Chrome boundary and normalizing the public success response to the strict
+  Rust decoder shape. Exact-head run 31454944115 and Main run 31455749426
+  passed all required gates, full web and extension e2e, UI demos, and
+  development deployment for `f4e198b8323b80a53cc9de2e97db20b123e12dc5`.
 
 ## Findings and decisions
 
@@ -117,4 +127,6 @@ Excluded:
 - [Nook PR 961](https://github.com/meta-secret/nook/pull/961)
 - [Nook PR 962](https://github.com/meta-secret/nook/pull/962)
 - [Nook PR 963](https://github.com/meta-secret/nook/pull/963)
+- [Nook PR 970](https://github.com/meta-secret/nook/pull/970)
 - [Completion worklog](../../worklogs/unplanned/20260810T053300Z-pr-957-web-api-rollout.md)
+- [Final repair worklog](../../worklogs/unplanned/20260811T035440Z-pr-963-970-web-api-rollout-repair.md)
