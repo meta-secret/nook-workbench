@@ -1,11 +1,11 @@
 ---
 title: Apply strict TypeScript API discipline across Nook web
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-11T04:22:12Z
+updated_at: 2026-08-11T06:48:00Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
@@ -15,6 +15,7 @@ related_prs:
   - meta-secret/nook#962
   - meta-secret/nook#963
   - meta-secret/nook#970
+  - meta-secret/nook#974
 depends_on: []
 ---
 
@@ -62,9 +63,9 @@ Excluded:
 - [x] Main application and shared vault UI pass all three rules.
 - [x] Shared ESLint and preflight contracts prevent rule removal.
 - [x] Exact-head repository-owned validation is green for every delivery PR.
-- [ ] Paired-vault identity handoff projects only the Rust-owned payload.
-- [ ] Saved-login reveal projects only the Rust-owned grant identity.
-- [ ] Nested login-account wire values reject foreign fields in Rust.
+- [x] Paired-vault identity handoff projects only the Rust-owned payload.
+- [x] Saved-login reveal projects only the Rust-owned grant identity.
+- [x] Nested login-account wire values reject foreign fields in Rust.
 
 ## Progress
 
@@ -109,6 +110,12 @@ Excluded:
   for a focused repair: project the paired handoff and login-reveal payloads,
   make the nested login-account wire contract strict, add regression tests,
   and revalidate the resulting Main head.
+- 2026-08-11: Merged PR 974 after moving all three final projections into
+  companion Rust/WASM and adding strict nested-wire regression coverage.
+  Exact-head run 31461538769 passed with zero unresolved conversations. Main
+  run 31462438440 passed every product gate for
+  `c39c5d3a44157d1661573476670473a88598d52f`; Rust ecosystem rerun
+  31462438649 passed after the first attempt hit a transient registry EOF.
 
 ## Findings and decisions
 
@@ -136,5 +143,7 @@ Excluded:
 - [Nook PR 962](https://github.com/meta-secret/nook/pull/962)
 - [Nook PR 963](https://github.com/meta-secret/nook/pull/963)
 - [Nook PR 970](https://github.com/meta-secret/nook/pull/970)
+- [Nook PR 974](https://github.com/meta-secret/nook/pull/974)
 - [Completion worklog](../../worklogs/unplanned/20260810T053300Z-pr-957-web-api-rollout.md)
 - [Final repair worklog](../../worklogs/unplanned/20260811T035440Z-pr-963-970-web-api-rollout-repair.md)
+- [Projection repair worklog](../../worklogs/unplanned/20260811T064800Z-pr-974-extension-session-projection-repair.md)
