@@ -1,8 +1,8 @@
 ---
 title: Enforce agent feature ownership boundaries
+feature: agent-workflow
 status: active
-created_at: 2026-08-11T06:51:04Z
-updated_at: 2026-08-11T06:51:04Z
+started_at: 2026-08-11T06:51:04Z
 agent: codex
 ---
 
@@ -28,16 +28,6 @@ agent.
 - Do not modify another active agent's branch or pull request.
 - Do not prevent a task owner from completing all issues in its own feature.
 - Do not prevent explicitly requested cross-feature coordination.
-
-## Change budget and PR sequence
-
-- Estimated authored changed lines: 260
-- Owning modules, packages, or layers: Agent workflow and dynamic-skill guidance
-- Public or cross-module interfaces: Agent ownership workflow contract
-- Delivery shape: One PR
-- Current PR estimated authored changed lines: 260
-- Current PR slice and acceptance evidence: Ownership rule and executable skill; Acceptance evidence: Cortex audit and focused contract checks pass
-- PR slices and acceptance evidence: Ownership rule and executable skill; Acceptance evidence: Cortex audit and focused contract checks pass
 
 ## Initial plan
 
