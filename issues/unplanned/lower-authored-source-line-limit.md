@@ -5,13 +5,14 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-10T22:33:23Z
+updated_at: 2026-08-11T00:27:40Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
   - meta-secret/nook#965
   - meta-secret/nook#966
   - meta-secret/nook#967
+  - meta-secret/nook#968
 depends_on: []
 ---
 
@@ -78,6 +79,12 @@ Excluded:
   moved into focused production owners. All eight affected Rust files are below
   750 lines. Focused validation passed. Complete exact-head validation passed
   after one infrastructure-only retrigger caused by interrupted Zot streams.
+- 2026-08-11: Merged PR 968. Hive Codex activity telemetry, dispatcher
+  Workbench Git lifecycle, observer presentation, and worker workspace behavior
+  moved into focused production owners. All nine affected Rust files are below
+  750 lines. Exact-head focused and complete validation passed after a
+  Linux-only unused import was removed. The replacement Main Hive and Rust
+  ecosystem workflows also passed.
 
 ## Findings and decisions
 
@@ -95,6 +102,9 @@ Excluded:
   digest, signing-key, and timestamp metadata lives in a focused submodule.
 - Correlated BuildKit `short read` failures across unrelated jobs require live
   registry verification before an unchanged exact-head retrigger.
+- Platform-gated test imports must move with their tests. Hosted Linux Clippy
+  remains the authoritative proof when a local macOS build cannot compile that
+  conditional path.
 
 ## References
 
@@ -103,3 +113,4 @@ Excluded:
 - [Nook PR 965](https://github.com/meta-secret/nook/pull/965)
 - [Nook PR 966](https://github.com/meta-secret/nook/pull/966)
 - [Nook PR 967](https://github.com/meta-secret/nook/pull/967)
+- [Nook PR 968](https://github.com/meta-secret/nook/pull/968)
