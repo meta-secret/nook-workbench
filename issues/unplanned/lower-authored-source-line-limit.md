@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-11T00:27:40Z
+updated_at: 2026-08-11T03:00:34Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -13,6 +13,7 @@ related_prs:
   - meta-secret/nook#966
   - meta-secret/nook#967
   - meta-secret/nook#968
+  - meta-secret/nook#969
 depends_on: []
 ---
 
@@ -85,6 +86,11 @@ Excluded:
   750 lines. Exact-head focused and complete validation passed after a
   Linux-only unused import was removed. The replacement Main Hive and Rust
   ecosystem workflows also passed.
+- 2026-08-11: Merged PR 969. Shared-storage grants, enrollment entry
+  encryption, secret-record presentation, and event-log transport moved into
+  focused Rust/WASM production owners. All seven source owners are below 750
+  lines. Three exact-head validation cycles passed: the original delivery, a
+  current-Main rebase, and a review-driven test-ownership correction.
 
 ## Findings and decisions
 
@@ -105,6 +111,9 @@ Excluded:
 - Platform-gated test imports must move with their tests. Hosted Linux Clippy
   remains the authoritative proof when a local macOS build cannot compile that
   conditional path.
+- A production extraction is incomplete when its direct Rust unit tests remain
+  in a sibling module. Review and source-architecture audits must verify test
+  ownership as well as production line counts.
 
 ## References
 
@@ -114,3 +123,4 @@ Excluded:
 - [Nook PR 966](https://github.com/meta-secret/nook/pull/966)
 - [Nook PR 967](https://github.com/meta-secret/nook/pull/967)
 - [Nook PR 968](https://github.com/meta-secret/nook/pull/968)
+- [Nook PR 969](https://github.com/meta-secret/nook/pull/969)
