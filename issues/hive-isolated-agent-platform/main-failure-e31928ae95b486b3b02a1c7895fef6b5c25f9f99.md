@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for e31928ae95b4
-status: ready
+status: done
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-12T21:49:53Z
-updated_at: 2026-08-12T21:49:53Z
+updated_at: 2026-08-12T22:23:33Z
 source_issues: []
 related_prs: [995]
 depends_on: []
@@ -45,6 +45,11 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:31644217603:attempt:1 -->
 - 2026-08-12T21:49:53Z: Main run [31644217603 attempt 1](https://github.com/meta-secret/nook/actions/runs/31644217603)
   failed for `e31928ae95b486b3b02a1c7895fef6b5c25f9f99`. Failed jobs: Native Rust verification.
+
+<!-- main-run:31644217603:attempt:2 -->
+- 2026-08-12T22:23:33Z: Main run [31644217603 attempt 2](https://github.com/meta-secret/nook/actions/runs/31644217603)
+  succeeded for `e31928ae95b486b3b02a1c7895fef6b5c25f9f99`; any active Hive repair is retired.
+<!-- hive-retired:successful-rerun -->
 
 ## Findings and decisions
 
