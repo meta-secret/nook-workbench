@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-12T01:46:39Z
+updated_at: 2026-08-12T11:46:13Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -23,6 +23,7 @@ related_prs:
   - meta-secret/nook#983
   - meta-secret/nook#984
   - meta-secret/nook#986
+  - meta-secret/nook#987
 depends_on: []
 ---
 
@@ -151,6 +152,13 @@ Excluded:
   password-form and companion-WASM owners are below 750 lines, and review
   corrections for label normalization, bridge ownership, and the UI demo
   passed focused and complete exact-head validation before merge.
+- 2026-08-12: Merged PR 987. Portable authentication observation bounds and
+  field-count validation moved from TypeScript into companion-core and both
+  typed WASM bridges. Chrome sender trust and lifecycle orchestration remain
+  in TypeScript, while the service worker was decomposed into cohesive routing
+  owners below 750 lines. Review-driven fixes preserved out-of-range inputs
+  for Rust rejection and made launcher intent explicit. Focused extension and
+  complete exact-head validation passed before merge.
 
 ## Findings and decisions
 
@@ -193,3 +201,4 @@ Excluded:
 - [Nook PR 983](https://github.com/meta-secret/nook/pull/983)
 - [Nook PR 984](https://github.com/meta-secret/nook/pull/984)
 - [Nook PR 986](https://github.com/meta-secret/nook/pull/986)
+- [Nook PR 987](https://github.com/meta-secret/nook/pull/987)
