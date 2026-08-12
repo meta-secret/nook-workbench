@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-12T00:14:57Z
+updated_at: 2026-08-12T01:46:39Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -22,6 +22,7 @@ related_prs:
   - meta-secret/nook#982
   - meta-secret/nook#983
   - meta-secret/nook#984
+  - meta-secret/nook#986
 depends_on: []
 ---
 
@@ -144,6 +145,12 @@ Excluded:
   WASM adapter tests cover the migrated policy. Review-driven type, token,
   name, refresh, and multi-vault corrections passed focused and complete
   exact-head validation before merge.
+- 2026-08-12: Merged PR 986. Authentication form priority and login-advance
+  label policy moved from TypeScript into portable Rust and both typed WASM
+  bridges. Browser DOM discovery and mutation remain in TypeScript. The
+  password-form and companion-WASM owners are below 750 lines, and review
+  corrections for label normalization, bridge ownership, and the UI demo
+  passed focused and complete exact-head validation before merge.
 
 ## Findings and decisions
 
@@ -185,3 +192,4 @@ Excluded:
 - [Nook PR 982](https://github.com/meta-secret/nook/pull/982)
 - [Nook PR 983](https://github.com/meta-secret/nook/pull/983)
 - [Nook PR 984](https://github.com/meta-secret/nook/pull/984)
+- [Nook PR 986](https://github.com/meta-secret/nook/pull/986)
