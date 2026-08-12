@@ -1,11 +1,11 @@
 ---
 title: Apply strict TypeScript API discipline across Nook web
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-12T08:13:00Z
+updated_at: 2026-08-12T21:49:00Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
@@ -21,6 +21,11 @@ related_prs:
   - meta-secret/nook#985
   - meta-secret/nook#988
   - meta-secret/nook#989
+  - meta-secret/nook#990
+  - meta-secret/nook#991
+  - meta-secret/nook#993
+  - meta-secret/nook#994
+  - meta-secret/nook#995
 depends_on: []
 ---
 
@@ -137,6 +142,13 @@ Excluded:
   enums instead of optional TypeScript flags. Exact-head validation passed with
   zero unresolved review threads. Remaining component, test, callable-name,
   final enforcement, and Main verification slices remain required.
+- 2026-08-12: Merged PRs 990, 991, 993, 994, and 995. The final vault and
+  shared-vault slices now use semantic named parameter contracts. Extension
+  persistence and vault sync decisions remain in Rust/WASM. Callable WASM
+  exports retain their authored Rust names. The raw-object checker now applies
+  to all production Nook web TypeScript and Svelte, and its repository
+  invariant requires global enforcement. PR 995 exact-head run 31625799287
+  passed every required gate with zero unresolved review threads.
 
 ## Findings and decisions
 
@@ -173,3 +185,4 @@ Excluded:
 - [Final repair worklog](../../worklogs/unplanned/20260811T035440Z-pr-963-970-web-api-rollout-repair.md)
 - [Projection repair worklog](../../worklogs/unplanned/20260811T064800Z-pr-974-extension-session-projection-repair.md)
 - [Object-type prohibition worklog](../../worklogs/unplanned/20260811T103400Z-pr-978-typescript-concrete-values.md)
+- [Final semantic-contract worklog](../../worklogs/unplanned/20260812T214900Z-pr-995-semantic-parameter-contracts.md)
