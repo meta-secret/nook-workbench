@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-12T11:46:13Z
+updated_at: 2026-08-12T13:25:18Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -24,6 +24,7 @@ related_prs:
   - meta-secret/nook#984
   - meta-secret/nook#986
   - meta-secret/nook#987
+  - meta-secret/nook#992
 depends_on: []
 ---
 
@@ -159,6 +160,14 @@ Excluded:
   owners below 750 lines. Review-driven fixes preserved out-of-range inputs
   for Rust rejection and made launcher intent explicit. Focused extension and
   complete exact-head validation passed before merge.
+- 2026-08-12: Merged PR 992. Vault connection probing and the
+  password-versus-enrollment gate moved from TypeScript into portable Rust
+  behind typed WASM decisions. Browser storage, provider I/O, reactive state,
+  translation, and lifecycle effects remain in TypeScript. The vault policy
+  and secret workflow were decomposed into focused connection owners below
+  750 lines. Focused and complete exact-head validation passed after restoring
+  two retained secret-module utilities and moving a stale ownership guard to
+  the new connection module.
 
 ## Findings and decisions
 
@@ -202,3 +211,4 @@ Excluded:
 - [Nook PR 984](https://github.com/meta-secret/nook/pull/984)
 - [Nook PR 986](https://github.com/meta-secret/nook/pull/986)
 - [Nook PR 987](https://github.com/meta-secret/nook/pull/987)
+- [Nook PR 992](https://github.com/meta-secret/nook/pull/992)
