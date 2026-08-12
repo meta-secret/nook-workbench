@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-12T21:49:00Z
+updated_at: 2026-08-12T22:25:00Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
@@ -149,6 +149,12 @@ Excluded:
   to all production Nook web TypeScript and Svelte, and its repository
   invariant requires global enforcement. PR 995 exact-head run 31625799287
   passed every required gate with zero unresolved review threads.
+- 2026-08-12: Verified the resulting Main head
+  `e31928ae95b486b3b02a1c7895fef6b5c25f9f99`. Main run 31644217603 and Rust
+  ecosystem run 31644218130 passed on attempt 2 after the first attempts hit a
+  correlated BuildKit cache-layer `unexpected EOF`. Loom run 31644217732 also
+  passed. Main completed Native Rust, WASM, web build, UI demos, full web e2e,
+  full extension e2e, and development deployment successfully.
 
 ## Findings and decisions
 
