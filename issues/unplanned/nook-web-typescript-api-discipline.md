@@ -20,6 +20,7 @@ related_prs:
   - meta-secret/nook#981
   - meta-secret/nook#985
   - meta-secret/nook#988
+  - meta-secret/nook#989
 depends_on: []
 ---
 
@@ -130,6 +131,12 @@ Excluded:
   contract names, and enforces those rules in Loom, the browser extension, and
   research. Reopened the issue until the main vault and shared vault source
   slices are migrated and the resulting Main head is green.
+- 2026-08-12: Merged PR 989. Shared application, content, runtime, vault-state,
+  and the first vault orchestration modules now require semantic parameter
+  contracts. Device authorization and provider-sync choices are Rust/WASM-owned
+  enums instead of optional TypeScript flags. Exact-head validation passed with
+  zero unresolved review threads. Remaining component, test, callable-name,
+  final enforcement, and Main verification slices remain required.
 
 ## Findings and decisions
 
