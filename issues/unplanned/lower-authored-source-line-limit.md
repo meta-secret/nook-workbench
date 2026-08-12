@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-12T13:25:18Z
+updated_at: 2026-08-12T15:05:35Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -25,6 +25,7 @@ related_prs:
   - meta-secret/nook#986
   - meta-secret/nook#987
   - meta-secret/nook#992
+  - meta-secret/nook#994
 depends_on: []
 ---
 
@@ -168,6 +169,13 @@ Excluded:
   750 lines. Focused and complete exact-head validation passed after restoring
   two retained secret-module utilities and moving a stale ownership guard to
   the new connection module.
+- 2026-08-12: Merged PR 994. Vault sync timer and storage-routing decisions
+  moved from TypeScript into portable Rust behind typed WASM decisions.
+  Browser timers, provider I/O, credentials, logging, and reactive effects
+  remain in TypeScript. The sync owner is now 703 lines, all affected sources
+  are below 750 lines, and Rust, actual-WASM, web, and headless-demo coverage
+  passed focused and complete exact-head validation. A named TypeScript request
+  type fixed the first complete run's API-lint finding before merge.
 
 ## Findings and decisions
 
@@ -212,3 +220,4 @@ Excluded:
 - [Nook PR 986](https://github.com/meta-secret/nook/pull/986)
 - [Nook PR 987](https://github.com/meta-secret/nook/pull/987)
 - [Nook PR 992](https://github.com/meta-secret/nook/pull/992)
+- [Nook PR 994](https://github.com/meta-secret/nook/pull/994)
