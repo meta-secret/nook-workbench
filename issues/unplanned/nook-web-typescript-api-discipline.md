@@ -1,11 +1,11 @@
 ---
 title: Apply strict TypeScript API discipline across Nook web
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-08T05:48:00Z
-updated_at: 2026-08-11T10:34:00Z
+updated_at: 2026-08-12T08:13:00Z
 source_issues: []
 related_prs:
   - meta-secret/nook#952
@@ -17,6 +17,9 @@ related_prs:
   - meta-secret/nook#970
   - meta-secret/nook#974
   - meta-secret/nook#978
+  - meta-secret/nook#981
+  - meta-secret/nook#985
+  - meta-secret/nook#988
 depends_on: []
 ---
 
@@ -122,6 +125,11 @@ Excluded:
   substitutes, migrating the enforced web sources to concrete values, and
   adding malformed sensitive-request protection. Exact-head run 31482024448
   passed every required gate with zero unresolved conversations.
+- 2026-08-12: Merged PRs 981, 985, and 988. The rollout now also requires
+  semantic named parameter contracts, bans object-valued defaults and generic
+  contract names, and enforces those rules in Loom, the browser extension, and
+  research. Reopened the issue until the main vault and shared vault source
+  slices are migrated and the resulting Main head is green.
 
 ## Findings and decisions
 
