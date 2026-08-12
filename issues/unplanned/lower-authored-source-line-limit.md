@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-11T18:21:13Z
+updated_at: 2026-08-12T00:14:57Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -21,6 +21,7 @@ related_prs:
   - meta-secret/nook#979
   - meta-secret/nook#982
   - meta-secret/nook#983
+  - meta-secret/nook#984
 depends_on: []
 ---
 
@@ -136,6 +137,13 @@ Excluded:
   support they consume. The public JavaScript export names remain unchanged,
   both affected Rust owners are below 750 lines, and focused plus complete
   exact-head validation passed before merge.
+- 2026-08-12: Merged PR 984. Provider construction, duplicate detection,
+  vault scoping, and OAuth credential merge policy moved from TypeScript into
+  portable Rust with typed WASM bindings. Browser storage and OAuth lifecycle
+  remain in the 737-line TypeScript adapter. Rust behavior tests and actual
+  WASM adapter tests cover the migrated policy. Review-driven type, token,
+  name, refresh, and multi-vault corrections passed focused and complete
+  exact-head validation before merge.
 
 ## Findings and decisions
 
@@ -176,3 +184,4 @@ Excluded:
 - [Nook PR 979](https://github.com/meta-secret/nook/pull/979)
 - [Nook PR 982](https://github.com/meta-secret/nook/pull/982)
 - [Nook PR 983](https://github.com/meta-secret/nook/pull/983)
+- [Nook PR 984](https://github.com/meta-secret/nook/pull/984)
