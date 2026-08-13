@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-10T16:34:48Z
-updated_at: 2026-08-12T15:05:35Z
+updated_at: 2026-08-13T03:51:27Z
 source_issues: []
 related_prs:
   - meta-secret/nook#964
@@ -26,6 +26,7 @@ related_prs:
   - meta-secret/nook#987
   - meta-secret/nook#992
   - meta-secret/nook#994
+  - meta-secret/nook#996
 depends_on: []
 ---
 
@@ -176,6 +177,14 @@ Excluded:
   are below 750 lines, and Rust, actual-WASM, web, and headless-demo coverage
   passed focused and complete exact-head validation. A named TypeScript request
   type fixed the first complete run's API-lint finding before merge.
+- 2026-08-13: Merged PR 996. Active-provider credential projection moved from
+  TypeScript into portable Rust behind typed WASM requests and outcomes.
+  Browser persistence, OAuth setup, folder handles, logging, translation, and
+  reactive state mutation remain in TypeScript. The provider adapter is now
+  736 lines, every changed source is below 750 lines, and review feedback
+  replaced TypeScript-authored Rust enum literals with Rust/WASM constructors.
+  Local Docker-backed formatting, focused hosted validation, and the complete
+  exact-head suite passed before merge.
 
 ## Findings and decisions
 
@@ -221,3 +230,4 @@ Excluded:
 - [Nook PR 987](https://github.com/meta-secret/nook/pull/987)
 - [Nook PR 992](https://github.com/meta-secret/nook/pull/992)
 - [Nook PR 994](https://github.com/meta-secret/nook/pull/994)
+- [Nook PR 996](https://github.com/meta-secret/nook/pull/996)
