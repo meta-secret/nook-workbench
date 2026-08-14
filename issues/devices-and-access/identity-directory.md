@@ -5,9 +5,10 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-13T03:58:00Z
-updated_at: 2026-08-13T03:58:00Z
+updated_at: 2026-08-14T18:05:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/997
 depends_on: []
 ---
 
@@ -38,6 +39,7 @@ without changing identity ids, app-key membership, or vault DEK envelopes.
 - Migrate `identity_record_v1` into the versioned directory atomically.
 - Keep vault creation bound to the selected identity.
 - Add behavior-focused Rust and actual-WASM persistence coverage.
+- Keep Sentinel identity association in the later enrollment slice.
 - Do not add the production management UI in this slice.
 
 ## Acceptance criteria
@@ -49,6 +51,14 @@ without changing identity ids, app-key membership, or vault DEK envelopes.
 - [ ] Vault creation uses the selected identity and preserves existing behavior.
 - [ ] Rust and actual-WASM tests cover creation, selection, migration, and invalid state.
 - [ ] Exact-head validation passes before squash merge.
+
+## Progress
+
+- 2026-08-14: PR 997 was reduced below the 5,000-authored-line ceiling.
+  Portable identity-directory, Simple-vault lifecycle, recovery, and epoch
+  invariants remain in this independently testable slice. Sentinel identity
+  association and its browser demonstrations remain in the ordered enrollment
+  work after this issue.
 
 ## References
 
