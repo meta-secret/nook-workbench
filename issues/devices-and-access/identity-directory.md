@@ -1,11 +1,11 @@
 ---
 title: Persist and select multiple identities
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-13T03:58:00Z
-updated_at: 2026-08-14T18:05:00Z
+updated_at: 2026-08-14T22:30:44Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/997
@@ -44,13 +44,13 @@ without changing identity ids, app-key membership, or vault DEK envelopes.
 
 ## Acceptance criteria
 
-- [ ] A person can own zero or more persisted identity records.
-- [ ] Existing singleton identity data migrates without loss.
-- [ ] Selection is explicit and rejects unknown identity ids.
-- [ ] Creating an identity requires a protected current app key.
-- [ ] Vault creation uses the selected identity and preserves existing behavior.
-- [ ] Rust and actual-WASM tests cover creation, selection, migration, and invalid state.
-- [ ] Exact-head validation passes before squash merge.
+- [x] A person can own zero or more persisted identity records.
+- [x] Existing singleton identity data migrates without loss.
+- [x] Selection is explicit and rejects unknown identity ids.
+- [x] Creating an identity requires a protected current app key.
+- [x] Vault creation uses the selected identity and preserves existing behavior.
+- [x] Rust and actual-WASM tests cover creation, selection, migration, and invalid state.
+- [x] Exact-head validation passes before squash merge.
 
 ## Progress
 
@@ -59,6 +59,11 @@ without changing identity ids, app-key membership, or vault DEK envelopes.
   invariants remain in this independently testable slice. Sentinel identity
   association and its browser demonstrations remain in the ordered enrollment
   work after this issue.
+- 2026-08-14: PR 997 squash-merged. The directory, singleton migration,
+  selection bridge, selected-identity vault creation, active-roster DEK
+  reconciliation, and crash-safe staged identity handoff are complete. Every
+  changed source file is at or below 750 lines. Exact-head PR validation and
+  the headless Devices and access demo passed.
 
 ## References
 
