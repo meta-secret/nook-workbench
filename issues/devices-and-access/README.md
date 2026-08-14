@@ -2,7 +2,7 @@
 title: "Feature: Identity management and access clarity"
 status: in_progress
 created_at: 2026-08-01T04:18:33Z
-updated_at: 2026-08-13T03:58:00Z
+updated_at: 2026-08-14T22:30:44Z
 ---
 
 # Feature: Identity management and access clarity
@@ -16,7 +16,7 @@ unknowns without exposing private key material.
 ## Issues
 
 - [x] [Build the Devices & access dashboard](devices-access-dashboard.md)
-- [ ] [Persist and select multiple identities](identity-directory.md)
+- [x] [Persist and select multiple identities](identity-directory.md)
 - [ ] [Enroll installation app keys into identities](identity-app-key-enrollment.md)
 - [ ] [Ship independent identity and access-method management](identity-access-methods-ui.md)
 
