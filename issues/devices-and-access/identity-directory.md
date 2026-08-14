@@ -1,11 +1,11 @@
 ---
 title: Persist and select multiple identities
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-13T03:58:00Z
-updated_at: 2026-08-14T22:30:44Z
+updated_at: 2026-08-14T22:45:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/997
@@ -51,6 +51,9 @@ without changing identity ids, app-key membership, or vault DEK envelopes.
 - [x] Vault creation uses the selected identity and preserves existing behavior.
 - [x] Rust and actual-WASM tests cover creation, selection, migration, and invalid state.
 - [x] Exact-head validation passes before squash merge.
+- [ ] Paired-vault handoff defers directory reconciliation until authenticated commit.
+- [ ] A concurrent directory update cannot leave Simple-vault genesis permanently blocked.
+- [ ] Ordinary and staged genesis use explicit Rust lifecycle variants.
 
 ## Progress
 
@@ -64,6 +67,10 @@ without changing identity ids, app-key membership, or vault DEK envelopes.
   reconciliation, and crash-safe staged identity handoff are complete. Every
   changed source file is at or below 750 lines. Exact-head PR validation and
   the headless Devices and access demo passed.
+- 2026-08-14: Four P1 review threads arrived after PR 997 merged. A focused
+  follow-up will fix the paired-handoff ordering, conflicted-marker recovery,
+  explicit staged-genesis lifecycle types, and dense architecture prose before
+  the issue returns to done.
 
 ## References
 
