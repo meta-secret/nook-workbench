@@ -2,7 +2,7 @@
 title: Deterministic agent workflows
 status: in_progress
 created_at: 2026-08-14T07:26:00Z
-updated_at: 2026-08-14T07:26:00Z
+updated_at: 2026-08-14T15:53:34Z
 ---
 
 # Deterministic agent workflows
@@ -26,6 +26,7 @@ Nook has a local static TypeScript workflow engine in Loom. It validates reviewe
 
 ## Issues
 
+- [ ] [Address PR 1000 review findings](address-pr-1000-review-findings.md)
 - [ ] [Reconcile Cortex semantic debt found by the first static workflow](cortex-semantic-debt.md)
 
 ## References
