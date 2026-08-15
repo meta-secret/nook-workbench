@@ -5,11 +5,12 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-13T03:58:00Z
-updated_at: 2026-08-15T00:30:08Z
+updated_at: 2026-08-15T14:08:27Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/997
   - https://github.com/meta-secret/nook/pull/1002
+  - https://github.com/meta-secret/nook/pull/1008
 depends_on: []
 ---
 
@@ -56,16 +57,16 @@ Epoch transitions and recovery preserve those ownership guarantees.
 - [x] Creating an identity requires a protected current app key.
 - [x] Vault creation uses the selected identity and preserves existing behavior.
 - [x] Rust and actual-WASM tests cover creation, selection, and migration.
-- [ ] Paired-vault handoff defers directory reconciliation until authenticated commit.
-- [ ] A concurrent directory update cannot leave Simple-vault genesis permanently blocked.
-- [ ] Ordinary and staged genesis use explicit Rust lifecycle variants.
+- [x] Paired-vault handoff defers directory reconciliation until authenticated commit.
+- [x] A concurrent directory update cannot leave Simple-vault genesis permanently blocked.
+- [x] Ordinary and staged genesis use explicit Rust lifecycle variants.
 - [ ] Identity DEK epochs reject rollback and resume interrupted transitions.
 - [ ] Remote installations reconcile verified epoch transitions safely.
 - [ ] Provider publication and import cannot expose a partial epoch transition.
 - [ ] Concurrent access grants cannot be erased or resurrected by rotation.
 - [ ] Legacy password entries have a usable upgrade path.
 - [ ] Destructive recovery commits atomically and has browser coverage.
-- [ ] Exact-head validation passes before PR 1002 squash-merges.
+- [x] Exact-head validation passes before PR 1002 squash-merges.
 
 ## Progress
 
@@ -81,9 +82,21 @@ Epoch transitions and recovery preserve those ownership guarantees.
 - 2026-08-15: PR 1002 also owns restoration and repair of the removed identity
   epoch, remote visibility, persistence, reconciliation, and browser-recovery
   work. The feature remains incomplete until those criteria pass.
+- 2026-08-15: The full restored implementation was preserved at commit
+  `553fdc6653c39f8c22c7f5622b2c2387e7817c16` and linked draft PR 1008 before
+  the work was divided by capability.
+- 2026-08-15: PR 1002 squash-merged as `e8b39601247b9986bf633bdb96d6c6cae095b508`.
+  It completed authenticated handoff, staged genesis, legacy app-key migration,
+  event-store integrity, and the semantic PR-split policy with zero unresolved
+  review threads and green exact-head validation.
+- 2026-08-15: PR 1008 remains the ordered successor for identity epochs,
+  provider reconciliation, password migration, and destructive recovery. The
+  issue remains in progress until that linked slice is complete.
 
 ## References
 
 - [Identity architecture](../../../.cortex/design-docs/identity-vault-architecture.md)
 - [Devices and access product spec](../../../.cortex/product-specs/devices-and-access.md)
 - [Superseding restoration plan](../../plans/devices-and-access/2026-08-15T00-30-08Z-pr-1002-restore-identity-security.md)
+- [Semantic split plan](../../plans/devices-and-access/2026-08-15T06-39-38Z-pr-1002-semantic-split.md)
+- [PR 1002 completion worklog](../../worklogs/devices-and-access/2026-08-15T14-08-27Z-pr-1002.md)
