@@ -1,11 +1,11 @@
 ---
 title: Migrate Cortex dynamic skills to document maps
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-15T02:54:05Z
-updated_at: 2026-08-15T02:54:05Z
+updated_at: 2026-08-15T04:15:00Z
 source_issues: []
 related_prs: []
 depends_on: [document-map-contract-and-enforcement.md]
@@ -38,11 +38,15 @@ internal document map.
 
 ## Progress
 
-- Depends on the contract and checker slice.
+- Contract and checker slice merged in Nook PR #1003.
+- Migration starts from merged commit
+  `ee825c3b6dd7da602d07a4bd9e0fd491aaecbc5e`.
 
 ## Findings and decisions
 
 - The migration changes navigation structure, not product or coding policy.
+- Active Nook PR #1002 owns `issue-scope-management.md`; that card remains in
+  the ledger until the foreign PR merges or closes.
 
 ## References
 
