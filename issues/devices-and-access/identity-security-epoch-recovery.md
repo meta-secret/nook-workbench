@@ -51,6 +51,12 @@ recovery invalidates stale runtimes without losing retired app-key evidence.
 - [ ] Remote installations reconcile verified transitions safely.
 - [ ] Provider publication and import cannot expose a partial transition.
 - [ ] Concurrent access grants survive rotation correctly.
+- [ ] Failed member revocation leaves live metadata unchanged.
+- [ ] Descendants of hidden epoch triggers remain quarantined.
+- [ ] Contracted accepted graphs rebuild metadata from an empty state.
+- [ ] Recovery retires the durable event signer before replacement enrollment.
+- [ ] Empty checkpoint metadata replacement is distinct from legacy retain.
+- [ ] A corrupt retired-ID ledger cannot block destructive recovery.
 - [ ] Legacy password entries have a tested upgrade path.
 - [ ] Recovery preserves retired app-key evidence and invalidates stale runtimes.
 - [ ] Rust, actual-WASM, and browser behavior coverage passes.
@@ -62,6 +68,11 @@ recovery invalidates stale runtimes without losing retired app-key evidence.
 - 2026-08-15: Full-work commit `553fdc6653c39f8c22c7f5622b2c2387e7817c16`
   was pushed to the preservation branch.
 - 2026-08-15: Draft PR 1008 opened before PR 1002 scope extraction.
+- 2026-08-15: Six later findings were moved with their complete owning
+  capability: immutable revocation staging, descendant quarantine, metadata
+  reconstruction, signer retirement, explicit empty replacement, and corrupt
+  ledger recovery. PR 1008 remains blocked from validation until all six have
+  behavior coverage.
 
 ## References
 
