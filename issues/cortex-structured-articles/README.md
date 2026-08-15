@@ -2,7 +2,7 @@
 title: Cortex structured articles
 status: in-progress
 created_at: 2026-08-15T07:11:40Z
-updated_at: 2026-08-15T09:46:00Z
+updated_at: 2026-08-15T09:49:00Z
 ---
 
 # Cortex structured articles
@@ -45,7 +45,7 @@ slices below the 5,000 authored-line limit.
 - [x] [Migrate structured dynamic skills A](dynamic-skills-a.md).
 - [x] [Migrate structured dynamic skills B](dynamic-skills-b.md).
 - [x] [Migrate structured workflows A](workflows-a.md).
-- [ ] Migrate the five largest workflow manuals in slice B.
+- [ ] [Migrate structured workflows B](workflows-b.md).
 - [ ] Migrate design documents in two bounded slices.
 - [ ] Migrate product specifications in bounded slices.
 - [ ] Migrate references, execution plans, and Cortex root documents.
