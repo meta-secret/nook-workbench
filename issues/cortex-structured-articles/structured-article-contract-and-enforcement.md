@@ -1,13 +1,14 @@
 ---
 title: Define the structured-article contract and enforcement
-status: in_progress
+status: done
 priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T07:11:40Z
-updated_at: 2026-08-15T07:11:40Z
+updated_at: 2026-08-15T08:57:02Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1011
 depends_on: []
 ---
 
@@ -38,12 +39,12 @@ legacy documents migrate through a shrinking ledger.
 
 ## Acceptance criteria
 
-- [ ] The canonical rule makes semantic structure explicit.
-- [ ] The executable skill is available to agents editing Cortex documents.
-- [ ] Loom parses Markdown syntax and ignores examples in code, HTML, and quotes.
-- [ ] New or migrated documents cannot bypass the structured-article audit.
-- [ ] The migration ledger cannot grow after its baseline.
-- [ ] Focused Loom, Cortex, preflight, and pre-push checks pass.
+- [x] The canonical rule makes semantic structure explicit.
+- [x] The executable skill is available to agents editing Cortex documents.
+- [x] Loom parses Markdown syntax and ignores examples in code, HTML, and quotes.
+- [x] New or migrated documents cannot bypass the structured-article audit.
+- [x] The migration ledger cannot grow after its baseline.
+- [x] Focused Loom, Cortex, preflight, and pre-push checks pass.
 
 ## Constraints
 
@@ -58,3 +59,28 @@ legacy documents migrate through a shrinking ledger.
 - [Feature summary](README.md)
 - [Task plan](../../plans/cortex-structured-articles/20260815T071140Z-contract-and-enforcement.md)
 - [Cortex document navigation](../cortex-document-navigation/README.md)
+
+## Progress
+
+- 2026-08-15: PR 1011 established the semantic article grammar, executable
+  skill, GFM-aware Loom audit, shrinking migration ledger, workflow trigger,
+  preflight contract, and focused regression suite.
+- 2026-08-15: Exact-head PR validation run 31875360411 and the Pages deployment
+  passed before squash merge as commit c8fd52ab.
+
+## Findings
+
+- Markdown definitions and pure HTML comments are transparent syntax. They must
+  not hide otherwise consecutive prose blocks or make an empty article appear
+  populated.
+- Procedure detection needs singular, plural, and qualified heading forms such
+  as runbooks, recovery procedures, and delivery sequences.
+- GFM table parsing is required because Cortex already uses tables as visible
+  reference structure.
+
+## Decisions
+
+- The audit enforces mechanically provable structure, not an arbitrary ratio of
+  list syntax.
+- Legacy documents remain explicit in one non-growing ledger until their body
+  structure is semantically migrated.
