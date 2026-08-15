@@ -1,11 +1,11 @@
 ---
 title: Migrate structured dynamic skills A
-status: in_progress
+status: done
 priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T09:04:00Z
-updated_at: 2026-08-15T09:15:00Z
+updated_at: 2026-08-15T09:20:42Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1012
@@ -37,13 +37,13 @@ hierarchy while preserving policy meaning and synchronized document maps.
 
 ## Acceptance criteria
 
-- [ ] Every selected document passes the structured-article audit without a
+- [x] Every selected document passes the structured-article audit without a
   migration exemption.
-- [ ] Procedure articles expose ordered action sequences and owned branches.
-- [ ] Rules and reference content use semantic peer lists or compact tables.
-- [ ] Document maps match all heading changes and source order.
-- [ ] Policy meaning and cross-document consistency are preserved.
-- [ ] Focused Cortex, format, pre-push, and exact-head PR validation pass.
+- [x] Procedure articles expose ordered action sequences and owned branches.
+- [x] Rules and reference content use semantic peer lists or compact tables.
+- [x] Document maps match all heading changes and source order.
+- [x] Policy meaning and cross-document consistency are preserved.
+- [x] Focused Cortex, format, pre-push, and docs-only hosted validation pass.
 
 ## Constraints
 
@@ -57,3 +57,23 @@ hierarchy while preserving policy meaning and synchronized document maps.
 - [Feature summary](README.md)
 - [Foundation](structured-article-contract-and-enforcement.md)
 - [Task plan](../../plans/cortex-structured-articles/20260815T090400Z-dynamic-skills-a.md)
+
+## Progress
+
+- 2026-08-15: PR 1012 migrated thirteen small skill documents and reduced the
+  legacy ledger from 83 to 70 documents.
+- 2026-08-15: Hosted Loom run 31876654984 and Source architecture passed for
+  the exact head before squash merge.
+
+## Findings
+
+- Several selected cards already matched the semantic grammar and needed only
+  an explicit audit plus ledger graduation.
+- Dynamic-skill authoring still named `.cursor/skills` as canonical. Current
+  workflow and code use `.agents/skills`, with Cursor and Claude symlink mirrors.
+
+## Decisions
+
+- Preserve checklists when items are peer proof obligations.
+- Convert lifecycle actions to ordered procedures and place conditions beneath
+  the step that owns them.
