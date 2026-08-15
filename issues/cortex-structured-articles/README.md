@@ -2,7 +2,7 @@
 title: Cortex structured articles
 status: in-progress
 created_at: 2026-08-15T07:11:40Z
-updated_at: 2026-08-15T07:11:40Z
+updated_at: 2026-08-15T08:57:02Z
 ---
 
 # Cortex structured articles
@@ -18,8 +18,9 @@ and subarticles instead of an undifferentiated manual.
 ## Current state
 
 All 83 Cortex documents have standardized relationship and document-map
-navigation. Their bodies still mix prose, bullets, tables, and procedures
-without one shared article grammar.
+navigation. PR 1011 added the shared article grammar and syntax-aware Loom
+enforcement. The legacy corpus is now tracked by a shrinking 83-document
+migration ledger.
 
 The corpus contains about 22,000 lines. Workflows, design documents, and dynamic
 skills are the largest families. The migration therefore requires bounded PR
@@ -40,7 +41,7 @@ slices below the 5,000 authored-line limit.
 
 ## Delivery sequence
 
-- [ ] [Define the structured-article contract and enforcement](structured-article-contract-and-enforcement.md)
+- [x] [Define the structured-article contract and enforcement](structured-article-contract-and-enforcement.md)
 - [ ] Migrate dynamic skills in two bounded slices.
 - [ ] Migrate workflows in two bounded slices.
 - [ ] Migrate design documents in two bounded slices.
@@ -53,4 +54,3 @@ slices below the 5,000 authored-line limit.
 - [Cortex document navigation](../cortex-document-navigation/README.md)
 - [Nook Cortex](https://github.com/meta-secret/nook/tree/main/.cortex)
 - [Cortex writer rule](../../plans/unplanned/20260805T160000Z-cortex-writer-rule.md)
-
