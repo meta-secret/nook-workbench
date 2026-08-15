@@ -1,13 +1,14 @@
 ---
 title: Migrate root Cortex documents and enable final enforcement
-status: in-progress
+status: done
 priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T10:54:00Z
-updated_at: 2026-08-15T10:54:00Z
+updated_at: 2026-08-15T11:07:19Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1021
 depends_on:
   - issues/cortex-structured-articles/supporting-docs.md
 ---
@@ -35,13 +36,13 @@ enforced without migration exemptions.
 
 ## Acceptance criteria
 
-- [ ] Root Cortex manuals have no ledger exemptions.
-- [ ] Rules, authority, architecture, commands, and procedures use semantic peer
+- [x] Root Cortex manuals have no ledger exemptions.
+- [x] Rules, authority, architecture, commands, and procedures use semantic peer
   and nested structures.
-- [ ] Ordered workflows and recovery actions use numbered steps.
-- [ ] Detailed rationale remains in clear explanation articles.
-- [ ] The migration ledger no longer exists.
-- [ ] Final Cortex audit, consistency review, pre-push, hosted Loom, and readiness
+- [x] Ordered workflows and recovery actions use numbered steps.
+- [x] Detailed rationale remains in clear explanation articles.
+- [x] The migration ledger no longer exists.
+- [x] Final Cortex audit, consistency review, pre-push, hosted Loom, and readiness
   pass.
 
 ## Constraints
@@ -59,10 +60,15 @@ enforced without migration exemptions.
 
 - 2026-08-15: Started the final three-document root slice from the fully
   migrated supporting-doc baseline.
+- 2026-08-15: PR 1021 migrated the root manuals, removed the final ledger, and
+  enabled corpus-wide enforcement without exemptions.
 
 ## Findings
 
-- Pending migration audit.
+- Removing the final exemptions exposed 31 dense articles: 23 in `AGENTS.md`,
+  seven in `ARCHITECTURE.md`, and one in `rules.md`.
+- The final audit reports zero broken links, index errors, density findings,
+  document-map findings, or article-structure findings across the corpus.
 
 ## Decisions
 
