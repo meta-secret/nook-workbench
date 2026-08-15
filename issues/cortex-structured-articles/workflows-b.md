@@ -1,11 +1,11 @@
 ---
 title: Migrate structured workflows B
-status: in_progress
+status: done
 priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T09:49:00Z
-updated_at: 2026-08-15T10:00:00Z
+updated_at: 2026-08-15T10:01:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1015
@@ -35,11 +35,11 @@ evidence through the universal semantic hierarchy.
 
 ## Acceptance criteria
 
-- [ ] No workflow manual remains in the ledger.
-- [ ] Lifecycle and recovery order is explicit.
-- [ ] Conditions, ownership, and peer rules use natural list hierarchy.
-- [ ] Detailed causal and architectural explanations remain intact.
-- [ ] Cortex audit, consistency review, pre-push, hosted Loom, and readiness pass.
+- [x] No workflow manual remains in the ledger.
+- [x] Lifecycle and recovery order is explicit.
+- [x] Conditions, ownership, and peer rules use natural list hierarchy.
+- [x] Detailed causal and architectural explanations remain intact.
+- [x] Cortex audit, consistency review, pre-push, hosted Loom, and readiness pass.
 
 ## Constraints
 
@@ -51,3 +51,22 @@ evidence through the universal semantic hierarchy.
 
 - [Feature summary](README.md)
 - [Task plan](../../plans/cortex-structured-articles/20260815T094900Z-workflows-b.md)
+
+## Progress
+
+- 2026-08-15: PR 1015 migrated the five largest manuals and removed every
+  workflow exemption.
+- 2026-08-15: Hosted Loom run 31878252118 and Source architecture passed on the
+  exact head before squash merge.
+
+## Findings
+
+- The PR manual had the largest concentration of hidden structure across sizing,
+  hosted validation, review, readiness, and reporting articles.
+- The quality manual already complied and graduated without cosmetic changes.
+
+## Decisions
+
+- Keep exact commands and code blocks stable while structuring surrounding
+  policy.
+- Preserve causality as prose when it cannot be reduced to independent rules.
