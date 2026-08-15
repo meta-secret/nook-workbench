@@ -1,11 +1,11 @@
 ---
 title: Migrate Cortex workflows and references to document maps
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-15T02:54:05Z
-updated_at: 2026-08-15T02:54:05Z
+updated_at: 2026-08-15T04:40:00Z
 source_issues: []
 related_prs: []
 depends_on: [migrate-dynamic-skills.md]
@@ -39,12 +39,16 @@ hierarchical internal map.
 
 ## Progress
 
-- Depends on the dynamic-skill family migration.
+- Contract and checker merged in Nook PR #1003.
+- The available dynamic-skill slice merged in Nook PR #1004.
+- This slice starts from merged commit
+  `62b993d335969c8f15e7d9c6407b81b7e23c7f4b`.
 
 ## Findings and decisions
 
-- Files owned by an active unrelated pull request remain read-only until that
-  pull request completes.
+- Active Nook PR #1002 owns `coding-bro.md`, `issues.md`, and
+  `pull-requests.md`; those files remain read-only.
+- The remaining 15 workflow/reference documents form a bounded slice.
 
 ## References
 
