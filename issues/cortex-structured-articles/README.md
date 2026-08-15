@@ -2,7 +2,7 @@
 title: Cortex structured articles
 status: in-progress
 created_at: 2026-08-15T07:11:40Z
-updated_at: 2026-08-15T10:35:00Z
+updated_at: 2026-08-15T10:42:54Z
 ---
 
 # Cortex structured articles
@@ -49,7 +49,7 @@ slices below the 5,000 authored-line limit.
 - [x] [Migrate structured design documents A](design-a.md).
 - [x] [Migrate structured design documents B](design-b.md).
 - [x] [Migrate structured product specifications A](product-a.md).
-- [ ] [Migrate structured product specifications B](product-b.md).
+- [x] [Migrate structured product specifications B](product-b.md).
 - [ ] Migrate references, execution plans, and Cortex root documents.
 - [ ] Remove the migration ledger and run the final semantic audit.
 
