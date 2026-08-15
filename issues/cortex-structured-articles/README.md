@@ -2,7 +2,7 @@
 title: Cortex structured articles
 status: in-progress
 created_at: 2026-08-15T07:11:40Z
-updated_at: 2026-08-15T09:23:00Z
+updated_at: 2026-08-15T09:34:29Z
 ---
 
 # Cortex structured articles
@@ -43,7 +43,7 @@ slices below the 5,000 authored-line limit.
 
 - [x] [Define the structured-article contract and enforcement](structured-article-contract-and-enforcement.md)
 - [x] [Migrate structured dynamic skills A](dynamic-skills-a.md).
-- [ ] [Migrate structured dynamic skills B](dynamic-skills-b.md).
+- [x] [Migrate structured dynamic skills B](dynamic-skills-b.md).
 - [ ] Migrate workflows in two bounded slices.
 - [ ] Migrate design documents in two bounded slices.
 - [ ] Migrate product specifications in bounded slices.
