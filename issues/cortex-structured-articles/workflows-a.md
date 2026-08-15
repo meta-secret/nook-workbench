@@ -1,11 +1,11 @@
 ---
 title: Migrate structured workflows A
-status: in_progress
+status: done
 priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T09:37:00Z
-updated_at: 2026-08-15T09:45:00Z
+updated_at: 2026-08-15T09:46:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1014
@@ -36,12 +36,12 @@ failure handling, and proof without losing operational explanation.
 
 ## Acceptance criteria
 
-- [ ] Selected workflow manuals have no ledger exemptions.
-- [ ] Procedures and recovery sequences use ordered steps.
-- [ ] Rules, choices, and ownership use peer and nested lists.
-- [ ] Detailed rationale remains within clear explanation articles.
-- [ ] Cortex audit and semantic consistency review pass.
-- [ ] Pre-push, hosted Loom, and readiness pass.
+- [x] Selected workflow manuals have no ledger exemptions.
+- [x] Procedures and recovery sequences use ordered steps.
+- [x] Rules, choices, and ownership use peer and nested lists.
+- [x] Detailed rationale remains within clear explanation articles.
+- [x] Cortex audit and semantic consistency review pass.
+- [x] Pre-push, hosted Loom, and readiness pass.
 
 ## Constraints
 
@@ -53,3 +53,22 @@ failure handling, and proof without losing operational explanation.
 
 - [Feature summary](README.md)
 - [Task plan](../../plans/cortex-structured-articles/20260815T093700Z-workflows-a.md)
+
+## Progress
+
+- 2026-08-15: PR 1014 migrated seven workflow manuals and reduced the ledger by
+  those paths.
+- 2026-08-15: Hosted Loom run 31877711626 and Source architecture passed on the
+  exact head before squash merge.
+
+## Findings
+
+- Four manuals required material restructuring; three already complied and
+  graduated after semantic review.
+- Exact-head invalidation and timeout cleanup became clearer as explicit
+  condition-to-action sequences.
+
+## Decisions
+
+- Preserve command examples verbatim while structuring the rules around them.
+- Use ordered recovery steps only where order changes the outcome.
