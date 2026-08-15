@@ -5,9 +5,10 @@ priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T09:04:00Z
-updated_at: 2026-08-15T09:04:00Z
+updated_at: 2026-08-15T09:15:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1012
 depends_on:
   - issues/cortex-structured-articles/structured-article-contract-and-enforcement.md
 ---
