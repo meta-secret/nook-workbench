@@ -1,13 +1,14 @@
 ---
 title: Migrate structured design documents A
-status: in-progress
+status: done
 priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T10:01:35Z
-updated_at: 2026-08-15T10:01:35Z
+updated_at: 2026-08-15T10:10:44Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1016
 depends_on:
   - issues/cortex-structured-articles/workflows-b.md
 ---
@@ -37,12 +38,12 @@ ownership, and ordered implementation work through a transparent hierarchy.
 
 ## Acceptance criteria
 
-- [ ] Selected design documents have no ledger exemptions.
-- [ ] Invariants, alternatives, and ownership use peer and nested lists.
-- [ ] Ordered implementation or migration sequences use numbered steps.
-- [ ] Detailed rationale remains within clear explanation articles.
-- [ ] Cortex audit and semantic consistency review pass.
-- [ ] Pre-push, hosted Loom, and readiness pass.
+- [x] Selected design documents have no ledger exemptions.
+- [x] Invariants, alternatives, and ownership use peer and nested lists.
+- [x] Ordered implementation or migration sequences use numbered steps.
+- [x] Detailed rationale remains within clear explanation articles.
+- [x] Cortex audit and semantic consistency review pass.
+- [x] Pre-push, hosted Loom, and readiness pass.
 
 ## Constraints
 
@@ -59,12 +60,19 @@ ownership, and ordered implementation work through a transparent hierarchy.
 
 - 2026-08-15: Selected the eight smallest design documents as the first bounded
   architecture slice.
+- 2026-08-15: PR 1016 graduated all eight paths and passed hosted Loom run
+  31878800988 plus Source architecture before squash merge.
 
 ## Findings
 
-- Pending migration audit.
+- Three manuals needed material structure changes. Five already expressed their
+  semantics through tables, checklists, or peer lists and graduated unchanged.
+- Identity-directory transactions, WebAuthn ceremonies, Sentinel lifecycle,
+  and provider capabilities became explicit nested contracts.
 
 ## Decisions
 
 - Treat structure as a representation of meaning, not a target percentage of
   bullets.
+- Preserve already clear architecture prose instead of creating presentation-
+  only churn.
