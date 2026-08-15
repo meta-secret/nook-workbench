@@ -1,11 +1,11 @@
 ---
 title: Migrate structured dynamic skills B
-status: in_progress
+status: done
 priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T09:23:00Z
-updated_at: 2026-08-15T09:33:00Z
+updated_at: 2026-08-15T09:34:29Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1013
@@ -36,12 +36,12 @@ procedure, branch, and proof hierarchy without changing its durable policy.
 
 ## Acceptance criteria
 
-- [ ] No dynamic-skill document remains in the migration ledger.
-- [ ] Ordered lists represent real action order rather than peer facts.
-- [ ] Nested lists represent real ownership, branches, or exceptions.
-- [ ] Long explanation remains readable and policy-complete.
-- [ ] Maps, links, executable mirrors, and current code remain consistent.
-- [ ] Cortex audit, format, pre-push, hosted Loom, and readiness pass.
+- [x] No dynamic-skill document remains in the migration ledger.
+- [x] Ordered lists represent real action order rather than peer facts.
+- [x] Nested lists represent real ownership, branches, or exceptions.
+- [x] Long explanation remains readable and policy-complete.
+- [x] Maps, links, executable mirrors, and current code remain consistent.
+- [x] Cortex audit, format, pre-push, hosted Loom, and readiness pass.
 
 ## Constraints
 
@@ -55,3 +55,24 @@ procedure, branch, and proof hierarchy without changing its durable policy.
 - [Feature summary](README.md)
 - [Slice A](dynamic-skills-a.md)
 - [Task plan](../../plans/cortex-structured-articles/20260815T092300Z-dynamic-skills-b.md)
+
+## Progress
+
+- 2026-08-15: PR 1013 migrated the remaining sixteen skill cards and removed
+  every dynamic-skill path from the legacy ledger.
+- 2026-08-15: Hosted Loom run 31877285245 and Source architecture passed on the
+  exact head before squash merge.
+
+## Findings
+
+- The largest readability gains came from enforcement descriptions, ownership
+  policy, and cross-language examples where prose hid peer rules or branches.
+- Five cards already exposed correct semantic structure and graduated without
+  cosmetic edits.
+
+## Decisions
+
+- A document can graduate unchanged when semantic review and the active audit
+  both prove compliance.
+- Rules that may be read in any order use bullets; recovery and delivery actions
+  retain ordered steps.
