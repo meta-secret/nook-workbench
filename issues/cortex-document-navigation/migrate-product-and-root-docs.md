@@ -1,11 +1,11 @@
 ---
 title: Migrate product specifications and root Cortex documents
-status: blocked
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-15T02:54:05Z
-updated_at: 2026-08-15T06:29:58Z
+updated_at: 2026-08-15T06:34:00Z
 source_issues: []
 related_prs: [1007]
 depends_on: [migrate-design-and-execution-docs.md]
@@ -15,8 +15,9 @@ depends_on: [migrate-design-and-execution-docs.md]
 
 ## Context
 
-This is the final family of [Cortex document navigation](README.md). Active
-foreign ownership requires an available-files slice followed by final cleanup.
+This is the final family of [Cortex document navigation](README.md). The user
+authorized the remaining documents to migrate from current `main` while PR
+#1002 absorbs the navigation through regular main merges.
 
 ## Outcome
 
@@ -25,10 +26,9 @@ document-map contract with no exemptions.
 
 ## Scope
 
-- Migrate `.cortex/product-specs/**/*.md`.
-- Migrate root `.cortex/*.md` documents.
+- Migrate the ten paths still listed in the migration ledger.
 - Give `AGENTS.md` a concise task-oriented map of its critical rules.
-- Remove the migration ledger after its final entry is migrated.
+- Remove the migration ledger.
 - Run a final full-tree Cortex mechanical and semantic audit.
 
 ## Acceptance criteria
@@ -40,19 +40,17 @@ document-map contract with no exemptions.
 
 ## Progress
 
-- Nook PR #1007 migrated all 11 available product specs plus `ARCHITECTURE.md`
-  and `rules.md`.
-- Navigation summaries preserve exact identifiers and current product behavior.
-- The migration ledger now contains only the ten files owned by PR #1002.
+- PRs #1003 through #1007 migrated all other Cortex documents.
+- The final slice starts from Nook commit
+  `5acf3d1c164cf12f25cecbaf6c5043a3cd229f77`.
 
 ## Findings and decisions
 
-- PR #1002 still owns `AGENTS.md`, two product specs, three design docs, one
-  dynamic skill, and three workflows.
-- Final cleanup cannot edit those files until ownership clears.
+- PR #1002 will absorb navigation changes during its periodic main merges.
+- Its own Cortex audit must map any headings added after this current-main
+  baseline.
 
 ## References
 
 - [Feature summary](README.md)
 - [Nook PR #1007](https://github.com/meta-secret/nook/pull/1007)
-- [Delivery worklog](../../worklogs/cortex-document-navigation/20260815T062958Z-pr-1007-product-root.md)
