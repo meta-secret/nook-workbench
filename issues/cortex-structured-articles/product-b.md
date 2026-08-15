@@ -1,13 +1,14 @@
 ---
 title: Migrate structured product specifications B
-status: in-progress
+status: done
 priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T10:35:00Z
-updated_at: 2026-08-15T10:35:00Z
+updated_at: 2026-08-15T10:42:54Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1019
 depends_on:
   - issues/cortex-structured-articles/product-a.md
 ---
@@ -35,13 +36,13 @@ security boundaries, and ownership through the shared semantic grammar.
 
 ## Acceptance criteria
 
-- [ ] No product specification remains in the migration ledger.
-- [ ] Requirements, choices, states, and security boundaries use semantic peer
+- [x] No product specification remains in the migration ledger.
+- [x] Requirements, choices, states, and security boundaries use semantic peer
   and nested structures.
-- [ ] Ordered ceremonies, user flows, and recovery work use numbered steps.
-- [ ] Detailed rationale remains in clear explanation articles.
-- [ ] Cortex audit and semantic consistency review pass.
-- [ ] Pre-push, hosted Loom, and readiness pass.
+- [x] Ordered ceremonies, user flows, and recovery work use numbered steps.
+- [x] Detailed rationale remains in clear explanation articles.
+- [x] Cortex audit and semantic consistency review pass.
+- [x] Pre-push, hosted Loom, and readiness pass.
 
 ## Constraints
 
@@ -58,11 +59,17 @@ security boundaries, and ownership through the shared semantic grammar.
 
 - 2026-08-15: Started the final five product specifications from the merged
   slice-A baseline.
+- 2026-08-15: PR 1019 removed every remaining product exemption and passed
+  hosted Loom run 31880161826 plus Source architecture before squash merge.
 
 ## Findings
 
-- Pending migration audit.
+- Four dense articles across three specs needed material restructuring.
+  Password manager and password envelope already complied.
+- The extension device-key and storage boundary became a complete hierarchy of
+  ownership, persistence, migration, handoff, and nonce rules.
 
 ## Decisions
 
 - Graduate already clear specs without presentation-only churn.
+- Preserve exact cryptographic inputs, outputs, and persistence prohibitions.
