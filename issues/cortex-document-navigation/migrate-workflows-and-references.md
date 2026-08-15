@@ -1,13 +1,13 @@
 ---
 title: Migrate Cortex workflows and references to document maps
-status: in_progress
+status: blocked
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-15T02:54:05Z
-updated_at: 2026-08-15T04:40:00Z
+updated_at: 2026-08-15T05:25:15Z
 source_issues: []
-related_prs: []
+related_prs: [1005]
 depends_on: [migrate-dynamic-skills.md]
 ---
 
@@ -34,23 +34,27 @@ hierarchical internal map.
 ## Acceptance criteria
 
 - [ ] Every workflow and reference passes the document-map audit.
-- [ ] Existing commands and cross-document links remain valid.
-- [ ] Cortex link and density checks pass.
+- [x] Existing commands and cross-document links remain valid.
+- [x] Cortex link and density checks pass.
 
 ## Progress
 
-- Contract and checker merged in Nook PR #1003.
-- The available dynamic-skill slice merged in Nook PR #1004.
-- This slice starts from merged commit
-  `62b993d335969c8f15e7d9c6407b81b7e23c7f4b`.
+- Nook PR #1005 migrated all 6 references and 9 available workflows.
+- Navigation now appears immediately after each title, with former preambles
+  represented as indexed `Overview` articles.
+- Three semantic review rounds replaced misleading mechanical summaries with
+  article-specific routing text.
+- Focused Cortex, Loom, preflight, hosted source, and readiness checks passed.
 
 ## Findings and decisions
 
 - Active Nook PR #1002 owns `coding-bro.md`, `issues.md`, and
-  `pull-requests.md`; those files remain read-only.
-- The remaining 15 workflow/reference documents form a bounded slice.
+  `pull-requests.md`; those files remain the only workflow ledger entries.
+- The issue remains blocked until those files can migrate from post-#1002
+  content.
 
 ## References
 
 - [Feature summary](README.md)
-- [Coding workflow](https://github.com/meta-secret/nook/blob/main/.cortex/workflows/coding-bro.md)
+- [Nook PR #1005](https://github.com/meta-secret/nook/pull/1005)
+- [Delivery worklog](../../worklogs/cortex-document-navigation/20260815T052515Z-pr-1005-workflows-references.md)
