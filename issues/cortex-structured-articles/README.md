@@ -1,8 +1,8 @@
 ---
 title: Cortex structured articles
-status: in-progress
+status: done
 created_at: 2026-08-15T07:11:40Z
-updated_at: 2026-08-15T10:54:00Z
+updated_at: 2026-08-15T11:07:19Z
 ---
 
 # Cortex structured articles
@@ -18,13 +18,12 @@ and subarticles instead of an undifferentiated manual.
 ## Current state
 
 All 83 Cortex documents have standardized relationship and document-map
-navigation. PR 1011 added the shared article grammar and syntax-aware Loom
-enforcement. The legacy corpus is now tracked by a shrinking 83-document
-migration ledger.
+navigation plus visible semantic article structure. Loom enforces the shared
+grammar across the complete corpus without migration exemptions.
 
-The corpus contains about 22,000 lines. Workflows, design documents, and dynamic
-skills are the largest families. The migration therefore requires bounded PR
-slices below the 5,000 authored-line limit.
+The roughly 22,000-line corpus was migrated through 11 bounded PRs. Every slice
+remained below the 5,000 authored-line limit, and the final ledger was deleted
+after the corpus-wide audit passed.
 
 ## Decisions
 
@@ -51,7 +50,7 @@ slices below the 5,000 authored-line limit.
 - [x] [Migrate structured product specifications A](product-a.md).
 - [x] [Migrate structured product specifications B](product-b.md).
 - [x] [Migrate structured references and execution plans](supporting-docs.md).
-- [ ] [Migrate root Cortex documents and enable final enforcement](final-enforcement.md).
+- [x] [Migrate root Cortex documents and enable final enforcement](final-enforcement.md).
 
 ## References
 
