@@ -1,11 +1,11 @@
 ---
 title: Migrate Cortex design documents and execution plans
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-15T02:54:05Z
-updated_at: 2026-08-15T02:54:05Z
+updated_at: 2026-08-15T05:27:00Z
 source_issues: []
 related_prs: []
 depends_on: [migrate-workflows-and-references.md]
@@ -39,11 +39,15 @@ section hierarchy before detailed content.
 
 ## Progress
 
-- Depends on the workflow and reference migration.
+- Foundation, dynamic-skill, and workflow/reference slices have merged.
+- This slice starts from Nook commit
+  `8690bacc3a205998169c6bc8692fc30c20220561`.
 
 ## Findings and decisions
 
-- Active unrelated ownership must finish before overlapping documents move.
+- Active Nook PR #1002 owns three design documents; they remain read-only.
+- The remaining 12 design documents and 5 execution plans form one bounded
+  documentation slice.
 
 ## References
 
