@@ -1,11 +1,11 @@
 ---
 title: Migrate product specifications and root Cortex documents
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-15T02:54:05Z
-updated_at: 2026-08-15T02:54:05Z
+updated_at: 2026-08-15T05:51:00Z
 source_issues: []
 related_prs: []
 depends_on: [migrate-design-and-execution-docs.md]
@@ -15,9 +15,8 @@ depends_on: [migrate-design-and-execution-docs.md]
 
 ## Context
 
-This is the final slice of [Cortex document navigation](README.md). It migrates
-the remaining product and repository entrypoint documents and closes the
-temporary migration boundary.
+This is the final family of [Cortex document navigation](README.md). Active
+foreign ownership requires an available-files slice followed by final cleanup.
 
 ## Outcome
 
@@ -41,11 +40,16 @@ document-map contract with no exemptions.
 
 ## Progress
 
-- Depends on the design and execution-plan migration.
+- Foundation, dynamic-skill, workflow/reference, and design/execution slices
+  have merged.
+- This slice starts from Nook commit
+  `b2c05d809425e9ead314df50b09c1ab14d3f3670`.
 
 ## Findings and decisions
 
-- This slice is the completion boundary for the feature.
+- Nook PR #1002 owns `AGENTS.md`, two product specs, and other deferred files.
+- The 11 available product specs plus `ARCHITECTURE.md` and `rules.md` form one
+  bounded slice.
 
 ## References
 
