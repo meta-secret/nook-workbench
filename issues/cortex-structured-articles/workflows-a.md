@@ -5,9 +5,10 @@ priority: p1
 automation: agent
 owner: codex
 created_at: 2026-08-15T09:37:00Z
-updated_at: 2026-08-15T09:37:00Z
+updated_at: 2026-08-15T09:45:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1014
 depends_on:
   - issues/cortex-structured-articles/dynamic-skills-b.md
 ---
