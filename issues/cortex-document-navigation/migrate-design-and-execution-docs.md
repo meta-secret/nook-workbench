@@ -1,13 +1,13 @@
 ---
 title: Migrate Cortex design documents and execution plans
-status: in_progress
+status: blocked
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-15T02:54:05Z
-updated_at: 2026-08-15T05:27:00Z
+updated_at: 2026-08-15T05:49:22Z
 source_issues: []
-related_prs: []
+related_prs: [1006]
 depends_on: [migrate-workflows-and-references.md]
 ---
 
@@ -34,22 +34,23 @@ section hierarchy before detailed content.
 ## Acceptance criteria
 
 - [ ] Every design document and execution plan passes the document-map audit.
-- [ ] Historical and superseding relationships remain clear.
-- [ ] Existing links and document-family indexes remain valid.
+- [x] Historical and superseding relationships remain clear.
+- [x] Existing links and document-family indexes remain valid.
 
 ## Progress
 
-- Foundation, dynamic-skill, and workflow/reference slices have merged.
-- This slice starts from Nook commit
-  `8690bacc3a205998169c6bc8692fc30c20220561`.
+- Nook PR #1006 migrated all 5 execution plans and 12 available design docs.
+- Map summaries are grounded in target-article content.
+- Design-index links describe catalog direction rather than dependencies.
+- Focused local, hosted, and readiness checks passed.
 
 ## Findings and decisions
 
-- Active Nook PR #1002 owns three design documents; they remain read-only.
-- The remaining 12 design documents and 5 execution plans form one bounded
-  documentation slice.
+- Active Nook PR #1002 owns three design documents; those remain the only
+  family ledger entries and block full completion.
 
 ## References
 
 - [Feature summary](README.md)
-- [Design index](https://github.com/meta-secret/nook/blob/main/.cortex/design-docs/index.md)
+- [Nook PR #1006](https://github.com/meta-secret/nook/pull/1006)
+- [Delivery worklog](../../worklogs/cortex-document-navigation/20260815T054922Z-pr-1006-design-execution.md)
