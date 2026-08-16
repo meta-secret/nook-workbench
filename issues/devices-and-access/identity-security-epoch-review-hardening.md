@@ -1,11 +1,11 @@
 ---
 title: Harden identity security epochs after PR 1008 review
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-16T04:06:11Z
-updated_at: 2026-08-16T04:06:11Z
+updated_at: 2026-08-16T05:13:20Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1008
@@ -41,17 +41,17 @@ and persisted event contraction fail safely under the reviewed edge cases.
 
 ## Acceptance criteria
 
-- [ ] Every active PR 1008 review finding is verified and corrected.
-- [ ] Post-commit failure cannot leave an old-epoch session usable.
-- [ ] Concurrent join requests cannot poison a valid security rotation.
-- [ ] Decrypt error paths zeroize partial plaintext buffers.
-- [ ] Checkpoint snapshots remove omitted old-epoch secrets.
-- [ ] Active device grants use current checkpoint envelopes.
-- [ ] Contracted persisted graphs contain no orphan event rows.
-- [ ] Migration documentation is internally consistent.
-- [ ] Focused Rust coverage and exact-head PR validation pass.
-- [ ] Original PR 1008 threads link to the correction and are resolved.
-- [ ] The correction PR squash-merges and completion records are published.
+- [x] Every active PR 1008 review finding is verified and corrected.
+- [x] Post-commit failure cannot leave an old-epoch session usable.
+- [x] Concurrent join requests cannot poison a valid security rotation.
+- [x] Decrypt error paths zeroize partial plaintext buffers.
+- [x] Checkpoint snapshots remove omitted old-epoch secrets.
+- [x] Active device grants use current checkpoint envelopes.
+- [x] Contracted persisted graphs contain no orphan event rows.
+- [x] Migration documentation is internally consistent.
+- [x] Focused Rust coverage and exact-head PR validation pass.
+- [x] Original PR 1008 threads link to the correction and are resolved.
+- [x] The correction PR squash-merges and completion records are published.
 
 ## Progress
 
@@ -60,6 +60,12 @@ and persisted event contraction fail safely under the reviewed edge cases.
 - 2026-08-16: Opened PR 1022 from current Main with all seven corrections and
   behavior-focused Rust regression coverage. The original PR 1008 threads now
   link to the correction and are resolved.
+- 2026-08-16: Addressed two additional exact-head findings before waiting for
+  validation: checkpoint selection now tolerates a concurrent neutral head,
+  and the event-log design documents the fail-closed live-session reset.
+- 2026-08-16: Exact-head validation run 31927946413 passed on `d857c22`, the
+  readiness audit reported zero unresolved threads, and PR 1022 squash-merged
+  as `c59724966fb18283604c8b068eca1d924ac382b5`.
 
 ## Findings and decisions
 
