@@ -7,7 +7,8 @@ owner: codex
 created_at: 2026-08-16T06:50:56Z
 updated_at: 2026-08-16T06:50:56Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1025
 depends_on: []
 ---
 
@@ -50,6 +51,8 @@ relevant paths change. Main-push Loom coverage remains path-scoped.
 
 - 2026-08-16: Audited all workflow triggers after PR 1024 and identified Loom
   plus Source architecture as the only additional compatible PR-run pair.
+- 2026-08-16: Opened [PR 1025](https://github.com/meta-secret/nook/pull/1025)
+  with one Repository policy workflow and conditional Loom steps.
 
 ## Findings and decisions
 
