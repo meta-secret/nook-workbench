@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 396e459e5d8a
-status: ready
+status: done
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-12T04:16:26Z
-updated_at: 2026-08-12T04:16:26Z
+updated_at: 2026-08-16T20:09:54Z
 source_issues: []
 related_prs: [985]
 depends_on: []
@@ -45,6 +45,13 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:31561831394:attempt:1 -->
 - 2026-08-12T04:16:26Z: Main run [31561831394 attempt 1](https://github.com/meta-secret/nook/actions/runs/31561831394)
   failed for `396e459e5d8a3f2bd483e9c9960cd9d2547dfe00`. Failed jobs: UI demos, Web e2e.
+
+<!-- main-run:31834552729:attempt:1 -->
+- 2026-08-16T20:09:54Z: Retired as obsolete after descendant Main run
+  [31834552729 attempt 1](https://github.com/meta-secret/nook/actions/runs/31834552729)
+  succeeded for `3caec258bb69a96f83a18affe7bdccece6ca53ee`, which contains this
+  failed revision. No separate Hive repair remains necessary.
+<!-- hive-retired:successful-rerun -->
 
 ## Findings and decisions
 

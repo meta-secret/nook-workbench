@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for ddbb7c139bb5
-status: ready
+status: done
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-12T11:33:48Z
-updated_at: 2026-08-12T11:33:48Z
+updated_at: 2026-08-16T20:09:54Z
 source_issues: []
 related_prs: [989]
 depends_on: []
@@ -45,6 +45,13 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:31590362691:attempt:1 -->
 - 2026-08-12T11:33:48Z: Main run [31590362691 attempt 1](https://github.com/meta-secret/nook/actions/runs/31590362691)
   failed for `ddbb7c139bb55cbf3721cb5e0de663b65bcc7760`. Failed jobs: Deploy development.
+
+<!-- main-run:31834552729:attempt:1 -->
+- 2026-08-16T20:09:54Z: Retired as obsolete after descendant Main run
+  [31834552729 attempt 1](https://github.com/meta-secret/nook/actions/runs/31834552729)
+  succeeded for `3caec258bb69a96f83a18affe7bdccece6ca53ee`, which contains this
+  failed revision. No separate Hive repair remains necessary.
+<!-- hive-retired:successful-rerun -->
 
 ## Findings and decisions
 

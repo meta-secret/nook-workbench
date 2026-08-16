@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 3c374a8c212a
-status: ready
+status: done
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-10T04:54:05Z
-updated_at: 2026-08-10T04:54:05Z
+updated_at: 2026-08-16T20:09:54Z
 source_issues: []
 related_prs: [961]
 depends_on: []
@@ -45,6 +45,13 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:31355878782:attempt:1 -->
 - 2026-08-10T04:54:05Z: Main run [31355878782 attempt 1](https://github.com/meta-secret/nook/actions/runs/31355878782)
   failed for `3c374a8c212ae38ba9d745fb1b7c1fd3ba309d36`. Failed jobs: Extension e2e, UI demos.
+
+<!-- main-run:31834552729:attempt:1 -->
+- 2026-08-16T20:09:54Z: Retired as obsolete after descendant Main run
+  [31834552729 attempt 1](https://github.com/meta-secret/nook/actions/runs/31834552729)
+  succeeded for `3caec258bb69a96f83a18affe7bdccece6ca53ee`, which contains this
+  failed revision. No separate Hive repair remains necessary.
+<!-- hive-retired:successful-rerun -->
 
 ## Findings and decisions
 
