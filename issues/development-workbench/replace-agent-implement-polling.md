@@ -5,9 +5,9 @@ priority: p2
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-16T19:50:45Z
-updated_at: 2026-08-16T19:56:05Z
+updated_at: 2026-08-16T20:14:55Z
 source_issues: []
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/1030"]
 depends_on: []
 ---
 
@@ -59,6 +59,8 @@ handoff, and worklog publication remain intact.
 - [ ] Workbench issue, worklog, and agent statistics are completed after merge.
 
 ## Progress
+
+- 2026-08-16T20:14:55Z: Opened [Nook PR #1030](https://github.com/meta-secret/nook/pull/1030) from the focused explicit-dispatch branch.
 
 - 2026-08-16: Measured 38 scheduled runs and 2,529 seconds of aggregate runner
   time in the preceding 24 hours.
