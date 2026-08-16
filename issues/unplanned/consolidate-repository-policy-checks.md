@@ -1,11 +1,11 @@
 ---
 title: Consolidate automatic repository policy checks
-status: in_progress
+status: done
 priority: p2
 automation: manual
 owner: codex
 created_at: 2026-08-16T06:50:56Z
-updated_at: 2026-08-16T06:50:56Z
+updated_at: 2026-08-16T07:28:53Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1025
@@ -40,12 +40,12 @@ relevant paths change. Main-push Loom coverage remains path-scoped.
 
 ## Acceptance criteria
 
-- [ ] A Loom-relevant PR head creates one automatic policy workflow run.
-- [ ] Every PR still runs source architecture enforcement.
-- [ ] Loom verification skips unrelated PR changes.
-- [ ] Relevant Main pushes still run Loom verification.
-- [ ] Exact-head PR validation passes with zero unresolved threads.
-- [ ] The PR squash-merges and Workbench completion records are published.
+- [x] A Loom-relevant PR head creates one automatic policy workflow run.
+- [x] Every PR still runs source architecture enforcement.
+- [x] Loom verification skips unrelated PR changes.
+- [x] Relevant Main pushes still run Loom verification.
+- [x] Exact-head PR validation passes with zero unresolved threads.
+- [x] The PR squash-merges and Workbench completion records are published.
 
 ## Progress
 
@@ -53,6 +53,11 @@ relevant paths change. Main-push Loom coverage remains path-scoped.
   plus Source architecture as the only additional compatible PR-run pair.
 - 2026-08-16: Opened [PR 1025](https://github.com/meta-secret/nook/pull/1025)
   with one Repository policy workflow and conditional Loom steps.
+- 2026-08-16: Review found that default rename detection could hide a watched
+  source moved out of its policy path. Disabled rename detection and added a
+  structural contract for deletion-side classification.
+- 2026-08-16: Automatic run 31933420052 and complete exact-head run
+  31933444566 passed. PR 1025 squash-merged as `a589ec0eb`.
 
 ## Findings and decisions
 
