@@ -1,0 +1,86 @@
+schema_version: 3
+source_pr:
+  number: 980
+  url: https://github.com/meta-secret/nook/pull/980
+  title: Repair extension recovery-code regression test
+  change_surface: extension_backup_code_persistence_and_regression_coverage
+  head_sha: 1356b17a3c821f6dff54888d5536dc394539bae4
+  started_at: 2026-08-11T10:57:03Z
+  opened_at: 2026-08-11T10:57:20Z
+  merged_at: 2026-08-11T15:08:36Z
+  elapsed_seconds: 15093
+  open_to_merge_seconds: 15076
+summary:
+  local_execution_count: 0
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 2
+  github_actions_seconds: 2838
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: 2026-08-16T20:00:00Z
+  head_sha: 1356b17a3c821f6dff54888d5536dc394539bae4
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions: []
+github_actions_runs:
+  - workflow: PR
+    run_id: 31503557009
+    run_attempt: 1
+    head_sha: 1b124feb7dc9de1a24abfb7d0ce5afbcc029fe8a
+    trigger: pull_request
+    started_at: 2026-08-11T14:48:21Z
+    finished_at: 2026-08-11T15:06:39Z
+    duration_seconds: 1098
+    conclusion: success
+    source_pr: 980
+  - workflow: Main
+    run_id: 31505426552
+    run_attempt: 1
+    head_sha: 1356b17a3c821f6dff54888d5536dc394539bae4
+    trigger: push
+    started_at: 2026-08-11T15:08:39Z
+    finished_at: 2026-08-11T15:36:49Z
+    duration_seconds: 1740
+    conclusion: success
+    source_pr: 980
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+pr_retriggers:
+  - at: 2026-08-11T14:48:21Z
+    reason: final_full_validation_after_actionable_review_fixes
+    kind: validation
+merge_attempts:
+  - at: 2026-08-11T15:08:36Z
+    method: squash
+    outcome: success
+    reason: exact_head_full_e2e_validation_passed_and_all_review_threads_resolved
+comparison:
+  baseline_prs: [969]
+  baseline_quality: weak
+  baseline_note: PR 969 was the preceding integration change but had a different Rust source-architecture surface.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+    - Cancelled validations belonged to replaced heads while actionable review findings were fixed.
+    - The final exact-head Main-equivalent validation and post-merge Main run both passed.
+  required_actions: []
