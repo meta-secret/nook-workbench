@@ -5,7 +5,7 @@ priority: p2
 automation: manual
 owner: codex
 created_at: 2026-08-16T05:29:27Z
-updated_at: 2026-08-16T06:00:49Z
+updated_at: 2026-08-16T06:19:11Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1023
@@ -63,6 +63,10 @@ consumers do not create empty runs for the PR-close event.
 - 2026-08-16: Exact-head review identified that positive path filters overlap
   on mixed product-plus-minds pushes. Superseded the exception with one Main
   orchestrator and product-job classification.
+- 2026-08-16: Squash-merged PR 1023 as `f6bea343d`. Post-merge evidence showed
+  the source-branch filter does not stop close-induced `workflow_run` runs.
+- 2026-08-16: Started a focused follow-up to move close cancellation out of
+  the `PR` workflow and into the existing trusted close workflow.
 
 ## Findings and decisions
 
