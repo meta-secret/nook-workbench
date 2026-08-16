@@ -5,7 +5,7 @@ priority: p2
 automation: manual
 owner: codex
 created_at: 2026-08-16T05:29:27Z
-updated_at: 2026-08-16T05:29:27Z
+updated_at: 2026-08-16T05:47:16Z
 source_issues: []
 related_prs: []
 depends_on: []
@@ -44,7 +44,8 @@ PR consumers do not create empty runs for the PR-close event.
 - [ ] A Rust-affecting Main revision produces one authoritative `Main` run.
 - [ ] Dependency policy, deterministic tests, fuzz, Kani, and Dylint remain parallel.
 - [ ] Scheduled, manual, and minds-only PR ecosystem entry points remain valid.
-- [ ] Main statistics and failure handoff observe ecosystem failures through `Main`.
+- [ ] Main statistics and failure handoff observe product ecosystem failures through `Main`.
+- [ ] Minds-only merges retain specialist merged-head ecosystem coverage.
 - [ ] PR close does not create skipped handoff or demo-publisher workflow runs.
 - [ ] Exact-head PR validation passes and the correction PR squash-merges.
 
@@ -52,12 +53,16 @@ PR consumers do not create empty runs for the PR-close event.
 
 - 2026-08-16: Compared Main run 31928499672 with Rust ecosystem run
   31928499711 and confirmed distinct checks on the same merged SHA.
+- 2026-08-16: Advisory review found that removing every ecosystem push trigger
+  would leave minds-only merges uncovered because Main ignores `agentic-ai/**`.
 
 ## Findings and decisions
 
 - Consolidate workflow ownership, not job implementation.
 - Preserve the reusable ecosystem workflow so PR, Main, schedule, manual, and
   minds-only entry points share one job definition.
+- Retain a narrow `agentic-ai/minds/**` Main-push entry point in the specialist
+  workflow. Main does not run for that isolated workspace.
 - Keep Loom independent because it must validate Cortex and agent-only changes
   that intentionally do not start the product Main pipeline.
 - Keep trusted publishers and collectors independent so untrusted or incomplete
