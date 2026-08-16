@@ -1,8 +1,8 @@
 ---
 title: "Versioned development workbench"
-status: done
+status: active
 created_at: 2026-07-25T00:00:00Z
-updated_at: 2026-07-26T00:45:34Z
+updated_at: 2026-08-16T19:50:45Z
 ---
 
 # Versioned development workbench
@@ -19,6 +19,8 @@ repository.
 Workbench is the system of record for Nook planning, agent worklogs, AI-agent
 statistics, and Main-build statistics. Nook's workflows publish here directly,
 and the product repository no longer uses GitHub Issues or stores `.stats`.
+The remaining active repair removes wasteful scheduled implementation scans
+while preserving explicit agent execution.
 
 ## Decisions
 
@@ -33,6 +35,7 @@ and the product repository no longer uses GitHub Issues or stores `.stats`.
 ## Issues
 
 - [x] [Migrate Nook development context into Workbench](migrate-nook-development-context.md)
+- [ ] [Replace scheduled agent polling with explicit dispatch](replace-agent-implement-polling.md)
 
 ## References
 
