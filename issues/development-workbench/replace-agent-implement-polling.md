@@ -1,11 +1,11 @@
 ---
 title: Replace scheduled agent polling with explicit dispatch
-status: ready
+status: in_progress
 priority: p2
 automation: manual
-owner: unassigned
+owner: cypherkitty
 created_at: 2026-08-16T19:50:45Z
-updated_at: 2026-08-16T19:50:45Z
+updated_at: 2026-08-16T19:56:05Z
 source_issues: []
 related_prs: []
 depends_on: []
