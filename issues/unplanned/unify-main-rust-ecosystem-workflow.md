@@ -9,6 +9,7 @@ updated_at: 2026-08-16T06:19:11Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1023
+  - https://github.com/meta-secret/nook/pull/1024
 depends_on: []
 ---
 
@@ -67,6 +68,8 @@ consumers do not create empty runs for the PR-close event.
   the source-branch filter does not stop close-induced `workflow_run` runs.
 - 2026-08-16: Started a focused follow-up to move close cancellation out of
   the `PR` workflow and into the existing trusted close workflow.
+- 2026-08-16: Opened [PR 1024](https://github.com/meta-secret/nook/pull/1024)
+  for the post-merge close-cancellation correction.
 
 ## Findings and decisions
 
