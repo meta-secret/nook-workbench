@@ -43,6 +43,8 @@ Preserve the two active repairs that already own useful pull requests.
 ## Completion evidence
 
 - Seven incident records marked done with descendant Main evidence.
+- Two already-completed incident records supplied with their missing
+  retirement signal.
 - Hive durable state no longer reports those incidents as active.
 - The two useful active Hive pull requests remain untouched.
 
