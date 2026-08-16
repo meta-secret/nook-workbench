@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 8e7c8edf1e81
-status: ready
+status: in_progress
 priority: p1
 automation: hive
-owner: unassigned
+owner: codex
 created_at: 2026-08-11T03:22:20Z
-updated_at: 2026-08-11T03:22:20Z
+updated_at: 2026-08-11T03:30:00Z
 source_issues: []
 related_prs: [969]
 depends_on: []
@@ -45,6 +45,8 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:31453968361:attempt:1 -->
 - 2026-08-11T03:22:20Z: Main run [31453968361 attempt 1](https://github.com/meta-secret/nook/actions/runs/31453968361)
   failed for `8e7c8edf1e810d3aacd54c60b73a7a7d34aff27e`. Failed jobs: Extension e2e.
+- 2026-08-11T03:30:00Z: Hive repair started. The retained Extension e2e
+  evidence and the current backup-code flow are under investigation.
 
 ## Findings and decisions
 
