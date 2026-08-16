@@ -9,6 +9,7 @@ updated_at: 2026-08-16T04:06:11Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1008
+  - https://github.com/meta-secret/nook/pull/1022
 depends_on:
   - identity-security-epoch-recovery.md
 ---
@@ -56,6 +57,9 @@ and persisted event contraction fail safely under the reviewed edge cases.
 
 - 2026-08-16: Claimed the post-merge review correction after seven active P1
   threads appeared on PR 1008.
+- 2026-08-16: Opened PR 1022 from current Main with all seven corrections and
+  behavior-focused Rust regression coverage. The original PR 1008 threads now
+  link to the correction and are resolved.
 
 ## Findings and decisions
 
