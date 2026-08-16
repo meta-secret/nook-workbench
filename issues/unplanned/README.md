@@ -25,7 +25,7 @@ record exists.
 
 ## Issues
 
-- [ ] [Consolidate automatic repository policy checks](consolidate-repository-policy-checks.md)
+- [x] [Consolidate automatic repository policy checks](consolidate-repository-policy-checks.md)
 - [x] [Unify Main and Rust ecosystem orchestration](unify-main-rust-ecosystem-workflow.md)
 - [ ] [Apply strict TypeScript API discipline across Nook web](nook-web-typescript-api-discipline.md)
 - [x] [Remove Redis from hosted Rust builds](remove-redis-from-hosted-rust-builds.md)
