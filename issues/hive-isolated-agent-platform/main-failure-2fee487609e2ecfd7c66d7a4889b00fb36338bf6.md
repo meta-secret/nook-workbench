@@ -35,10 +35,10 @@ request while preserving the failing revision and workflow evidence.
 
 ## Acceptance criteria
 
-- [ ] The failure is explained and fixed with targeted regression coverage.
-- [ ] The fix PR passes exact-head repository-owned checks, including the
+- [x] The failure is explained and fixed with targeted regression coverage.
+- [x] The fix PR passes exact-head repository-owned checks, including the
   Main-equivalent browser suites.
-- [ ] The fix is squash-merged and the incident records its PR and validation.
+- [x] The fix is squash-merged and the incident records its PR and validation.
 
 ## Progress
 
@@ -59,6 +59,8 @@ request while preserving the failing revision and workflow evidence.
   normal enrollment actions removed the saved confirmation before the browser
   could observe it. PR #980 covered the completed path with the Main-equivalent
   extension suite.
+- PR #980 statistics remain unpublished because the installed GitHub CLI does
+  not support the `attempt` JSON field required by the current Loom collector.
 
 ## References
 
