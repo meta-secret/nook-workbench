@@ -2,7 +2,7 @@
 title: Unplanned engineering repairs
 status: active
 created_at: 2026-07-27T05:45:15Z
-updated_at: 2026-07-27T09:26:40Z
+updated_at: 2026-08-16T05:29:27Z
 ---
 
 # Unplanned engineering repairs
@@ -25,6 +25,7 @@ record exists.
 
 ## Issues
 
+- [ ] [Unify Main and Rust ecosystem orchestration](unify-main-rust-ecosystem-workflow.md)
 - [ ] [Apply strict TypeScript API discipline across Nook web](nook-web-typescript-api-discipline.md)
 - [x] [Remove Redis from hosted Rust builds](remove-redis-from-hosted-rust-builds.md)
 - [x] [Add persistent URLs to vault application pages](persistent-vault-page-urls.md)
