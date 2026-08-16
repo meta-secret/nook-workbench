@@ -1,11 +1,11 @@
 ---
 title: Unify Main and Rust ecosystem orchestration
-status: in_progress
+status: done
 priority: p2
 automation: manual
 owner: codex
 created_at: 2026-08-16T05:29:27Z
-updated_at: 2026-08-16T06:19:11Z
+updated_at: 2026-08-16T06:48:09Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1023
@@ -45,13 +45,13 @@ consumers do not create empty runs for the PR-close event.
 
 ## Acceptance criteria
 
-- [ ] A Rust-affecting Main revision produces one authoritative `Main` run.
-- [ ] Dependency policy, deterministic tests, fuzz, Kani, and Dylint remain parallel.
-- [ ] Scheduled, manual, and minds-only PR ecosystem entry points remain valid.
-- [ ] Main statistics and failure handoff observe product ecosystem failures through `Main`.
-- [ ] Minds-only merges retain specialist merged-head ecosystem coverage.
-- [ ] PR close does not create skipped handoff or demo-publisher workflow runs.
-- [ ] Exact-head PR validation passes and the correction PR squash-merges.
+- [x] A Rust-affecting Main revision produces one authoritative `Main` run.
+- [x] Dependency policy, deterministic tests, fuzz, Kani, and Dylint remain parallel.
+- [x] Scheduled, manual, and minds-only PR ecosystem entry points remain valid.
+- [x] Main statistics and failure handoff observe product ecosystem failures through `Main`.
+- [x] Minds-only merges retain specialist merged-head ecosystem coverage.
+- [x] PR close does not create skipped handoff or demo-publisher workflow runs.
+- [x] Exact-head PR validation passes and the correction PR squash-merges.
 
 ## Progress
 
@@ -70,6 +70,11 @@ consumers do not create empty runs for the PR-close event.
   the `PR` workflow and into the existing trusted close workflow.
 - 2026-08-16: Opened [PR 1024](https://github.com/meta-secret/nook/pull/1024)
   for the post-merge close-cancellation correction.
+- 2026-08-16: Exact-head run 31931853912 passed the product pipeline and all
+  five parallel ecosystem jobs. PR 1024 squash-merged as `c9e0a6406`.
+- 2026-08-16: Post-merge close run 31932234749 completed as the only trusted
+  close consumer. No close-triggered `PR`, handoff, or demo-publisher run was
+  created.
 
 ## Findings and decisions
 
