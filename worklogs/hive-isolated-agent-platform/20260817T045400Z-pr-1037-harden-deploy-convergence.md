@@ -69,6 +69,9 @@ multiple worker heartbeat intervals.
 
 ## Remaining work
 
-No follow-up is required for this incident. One old terminal
-`ContainerStatusUnknown` pod record remains as harmless Kubernetes history and
-correctly does not block future deployments.
+No follow-up is required for this deploy-convergence incident. One old
+terminal `ContainerStatusUnknown` pod record remains as harmless Kubernetes
+history and correctly does not block future deployments. Open Hive product
+repair PRs remain separate delivery records: their retained tasks are truthful
+terminal outcomes rather than active work, so they require product or hosted-CI
+reconciliation before they can merge.
