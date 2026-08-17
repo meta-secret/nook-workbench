@@ -6,9 +6,10 @@ priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-17T00:38:27Z
+updated_at: 2026-08-17T03:08:35Z
 source_issues: []
 related_prs:
+  - 1036
   - 865
   - 872
   - 873
@@ -52,6 +53,7 @@ claim through a merged, verified result or a truthful terminal supersession.
 - Rust and infrastructure regression coverage.
 - Graceful graph-client rollout that releases in-flight worker leases before
   the coordinator socket exits.
+- Terminal-pod-aware graph-client drain and bounded ready-pool convergence.
 
 ## Acceptance criteria
 
@@ -68,6 +70,10 @@ claim through a merged, verified result or a truthful terminal supersession.
 - [x] The merged platform is deployed and verified live.
 - [x] A production rollout leaves no `RUNNING` lease owned by a removed Hive
       Pod.
+- [ ] Terminal `Evicted` pod records cannot block a completed graph-client
+      drain.
+- [ ] Normal disposable-worker replacement cannot race a one-shot post-rollout
+      ready-replica assertion.
 
 ## Progress
 
@@ -118,6 +124,13 @@ claim through a merged, verified result or a truthful terminal supersession.
   accumulated expired leases and blocked pull requests. A bounded
   dependency-depth repair is in progress under plan
   `plans/hive-isolated-agent-platform/20260817T003635Z-bound-hive-blocker-amplification.md`.
+- 2026-08-17: PR #1036 merged and deployed the schema-9 bounded dependency
+  repair. Live monitoring showed no post-deploy task creation while legacy
+  blocker leaves drained to truthful failures. The deploy itself exposed two
+  operational convergence defects: terminal `Evicted` pod records blocked the
+  graph-client drain, and a one-shot ready count raced expected worker
+  replacement. Follow-up hardening is in progress under plan
+  `plans/hive-isolated-agent-platform/20260817T030835Z-harden-hive-deploy-convergence.md`.
 
 ## Findings and decisions
 
