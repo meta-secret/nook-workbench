@@ -1,14 +1,15 @@
 ---
 title: Make Hive repair PR ownership reliable
 feature: hive-isolated-agent-platform
-status: in_progress
+status: done
 priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-17T03:40:00Z
+updated_at: 2026-08-17T04:54:00Z
 source_issues: []
 related_prs:
+  - 1037
   - 1038
   - 1036
   - 865
@@ -71,9 +72,9 @@ claim through a merged, verified result or a truthful terminal supersession.
 - [x] The merged platform is deployed and verified live.
 - [x] A production rollout leaves no `RUNNING` lease owned by a removed Hive
       Pod.
-- [ ] Terminal `Evicted` pod records cannot block a completed graph-client
+- [x] Terminal `Evicted` pod records cannot block a completed graph-client
       drain.
-- [ ] Normal disposable-worker replacement cannot race a one-shot post-rollout
+- [x] Normal disposable-worker replacement cannot race a one-shot post-rollout
       ready-replica assertion.
 
 ## Progress
@@ -137,6 +138,13 @@ claim through a merged, verified result or a truthful terminal supersession.
   was deployed and passed live login-shell plus Kata/Bubblewrap diagnostics.
   Eligible historical Main-repair roots were rearmed on the fixed release;
   remaining Hive product PRs continue under their durable worker owners.
+- 2026-08-17: PR #1037 completed deploy convergence hardening. The drain now
+  ignores only terminal pod records, terminating graph clients remain
+  fail-closed, and readiness requires repeated samples of four non-terminating
+  ready workers. The merged image deployed on the first attempt, survived a
+  forced disposable-worker replacement, and remained at four ready workers
+  with zero restarts. Repeated queue snapshots contained no active work and no
+  new task creation, so this lifecycle reliability incident is complete.
 
 ## Findings and decisions
 

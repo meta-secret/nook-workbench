@@ -4,6 +4,9 @@ feature: hive-isolated-agent-platform
 issue: issues/hive-isolated-agent-platform/hive-pr-lifecycle-reliability.md
 started_at: 2026-08-17T03:08:35Z
 agent: codex
+status: completed
+finished_at: 2026-08-17T04:54:00Z
+nook_pr: 1037
 ---
 
 # Harden Hive deploy convergence
