@@ -6,7 +6,7 @@ priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-17T05:10:00Z
+updated_at: 2026-08-17T05:16:00Z
 source_issues: []
 related_prs:
   - 1041
@@ -152,6 +152,10 @@ claim through a merged, verified result or a truthful terminal supersession.
   with Traefik healthy at 2 GiB and zero restarts. The latest durable queue
   snapshot is terminal on embedded Codex usage exhaustion until August 20.
   Eight Hive PRs remain open, so the incident is not complete.
+- 2026-08-17: The final audit restored missing `hive` ownership labels on
+  PRs #1029 and #1034, then removed one exact stale
+  `ContainerStatusUnknown` rollout pod. All four workers, the observer, reaper,
+  and Workbench dispatcher remained fully available afterward.
 
 ## Findings and decisions
 
