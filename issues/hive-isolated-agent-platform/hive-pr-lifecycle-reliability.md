@@ -1,12 +1,12 @@
 ---
 title: Make Hive repair PR ownership reliable
 feature: hive-isolated-agent-platform
-status: done
+status: in_progress
 priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-03T10:32:28Z
+updated_at: 2026-08-17T00:38:27Z
 source_issues: []
 related_prs:
   - 865
@@ -111,6 +111,13 @@ claim through a merged, verified result or a truthful terminal supersession.
   and portable explicit rotation are merged. Production is healthy on the
   public Zot digest with four ready workers and zero restarts; the final merge
   passed Main run 30803662302.
+- 2026-08-17: Reopened after live monitoring found recursive blocker
+  amplification. Prerequisite workers repeatedly requested new credential,
+  infrastructure-access, and toolchain prerequisites that their descendants
+  could not obtain. The four-worker pool remained busy while real Main repairs
+  accumulated expired leases and blocked pull requests. A bounded
+  dependency-depth repair is in progress under plan
+  `plans/hive-isolated-agent-platform/20260817T003635Z-bound-hive-blocker-amplification.md`.
 
 ## Findings and decisions
 
