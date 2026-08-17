@@ -6,9 +6,10 @@ priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-17T05:16:00Z
+updated_at: 2026-08-17T18:00:00Z
 source_issues: []
 related_prs:
+  - 1046
   - 1041
   - 1037
   - 1038
@@ -156,6 +157,7 @@ claim through a merged, verified result or a truthful terminal supersession.
   PRs #1029 and #1034, then removed one exact stale
   `ContainerStatusUnknown` rollout pod. All four workers, the observer, reaper,
   and Workbench dispatcher remained fully available afterward.
+- 2026-08-17: PR #1046 aligned live Hive workers to Sol with a ChatGPT-supportable Spark fallback and added operator queue cancel. The merged image was deployed; superseded durable blockers were cancelled. Three live members were running afterward, including the newest Main repairs and the open pull request 1039 child. Remaining Hive product pull requests continue under worker ownership.
 
 ## Findings and decisions
 
