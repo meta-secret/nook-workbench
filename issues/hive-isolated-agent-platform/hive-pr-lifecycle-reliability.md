@@ -6,9 +6,10 @@ priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-17T03:08:35Z
+updated_at: 2026-08-17T03:40:00Z
 source_issues: []
 related_prs:
+  - 1038
   - 1036
   - 865
   - 872
@@ -131,6 +132,11 @@ claim through a merged, verified result or a truthful terminal supersession.
   graph-client drain, and a one-shot ready count raced expected worker
   replacement. Follow-up hardening is in progress under plan
   `plans/hive-isolated-agent-platform/20260817T030835Z-harden-hive-deploy-convergence.md`.
+- 2026-08-17: PR #1038 restored Cargo and rustfmt in worker login shells and
+  added behavior-first production-stage verification. The exact merged image
+  was deployed and passed live login-shell plus Kata/Bubblewrap diagnostics.
+  Eligible historical Main-repair roots were rearmed on the fixed release;
+  remaining Hive product PRs continue under their durable worker owners.
 
 ## Findings and decisions
 
@@ -140,6 +146,9 @@ claim through a merged, verified result or a truthful terminal supersession.
   planning cadence rather than immutable execution provenance.
 - Runtime-facing CLI calls are tested against the argument surface shipped in
   the production image; newer local-only flags are not assumed.
+- Embedded Codex keeps its login-shell execution contract. The worker image
+  must configure required toolchain paths for that shell and prove them as the
+  non-root Hive user during the production-stage build.
 
 ## References
 
@@ -147,3 +156,4 @@ claim through a merged, verified result or a truthful terminal supersession.
 - `.cortex/design-docs/hive-isolated-agent-platform.md`
 - `agentic-ai/minds/hive/`
 - `worklogs/hive-isolated-agent-platform/2026-07-29T21-55-00Z-hive-pr-lifecycle-reliability.md`
+- `worklogs/hive-isolated-agent-platform/20260817T032945Z-pr-1038-login-shell-toolchain.md`
