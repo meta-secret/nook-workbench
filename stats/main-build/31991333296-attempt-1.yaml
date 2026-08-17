@@ -1,0 +1,618 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-08-17T03:33:48.213Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 31991333296,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/31991333296",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "9b15ce53620f828ec4bc5f39153d7056824936ab",
+    "conclusion": "success",
+    "created_at": "2026-08-17T03:29:47Z",
+    "started_at": "2026-08-17T03:29:47Z",
+    "completed_at": "2026-08-17T03:33:35Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1038,
+      "url": "https://github.com/meta-secret/nook/pull/1038",
+      "title": "fix(hive): retain Rust tools in login shells"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 0,
+    "execution_seconds": 228,
+    "wall_seconds": 228,
+    "job_count": 13,
+    "step_count": 40
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "id": 95275332808,
+      "name": "Rust ecosystem / Dependency policy and RustSec",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000029467",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:50Z",
+      "completed_at": "2026-08-17T03:33:35Z",
+      "duration_seconds": 225,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:51Z",
+          "completed_at": "2026-08-17T03:29:52Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:52Z",
+          "completed_at": "2026-08-17T03:29:54Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:54Z",
+          "completed_at": "2026-08-17T03:30:14Z",
+          "duration_seconds": 20
+        },
+        {
+          "number": 4,
+          "name": "Run dependency policy",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:14Z",
+          "completed_at": "2026-08-17T03:33:32Z",
+          "duration_seconds": 198
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:33:32Z",
+          "completed_at": "2026-08-17T03:33:33Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:33:33Z",
+          "completed_at": "2026-08-17T03:33:33Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:33:33Z",
+          "completed_at": "2026-08-17T03:33:33Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 95275332837,
+      "name": "Rust ecosystem / Cargo fuzz smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000029469",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:50Z",
+      "completed_at": "2026-08-17T03:30:29Z",
+      "duration_seconds": 39,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:51Z",
+          "completed_at": "2026-08-17T03:29:52Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:52Z",
+          "completed_at": "2026-08-17T03:29:53Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:53Z",
+          "completed_at": "2026-08-17T03:30:12Z",
+          "duration_seconds": 19
+        },
+        {
+          "number": 4,
+          "name": "Bake rust-fuzz-smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:12Z",
+          "completed_at": "2026-08-17T03:30:26Z",
+          "duration_seconds": 14
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:26Z",
+          "completed_at": "2026-08-17T03:30:27Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:27Z",
+          "completed_at": "2026-08-17T03:30:27Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:27Z",
+          "completed_at": "2026-08-17T03:30:27Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 95275332686,
+      "name": "Classify Main paths",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000029466",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:51Z",
+      "completed_at": "2026-08-17T03:29:58Z",
+      "duration_seconds": 7,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:52Z",
+          "completed_at": "2026-08-17T03:29:52Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 2,
+          "name": "Checkout complete push history",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:52Z",
+          "completed_at": "2026-08-17T03:29:55Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 3,
+          "name": "Detect product changes",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:55Z",
+          "completed_at": "2026-08-17T03:29:55Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 6,
+          "name": "Post Checkout complete push history",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:55Z",
+          "completed_at": "2026-08-17T03:29:56Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 7,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:56Z",
+          "completed_at": "2026-08-17T03:29:56Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 95275332778,
+      "name": "Rust ecosystem / Dylint repository lints",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000029468",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:51Z",
+      "completed_at": "2026-08-17T03:30:33Z",
+      "duration_seconds": 42,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:52Z",
+          "completed_at": "2026-08-17T03:29:52Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:52Z",
+          "completed_at": "2026-08-17T03:29:53Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:53Z",
+          "completed_at": "2026-08-17T03:30:13Z",
+          "duration_seconds": 20
+        },
+        {
+          "number": 4,
+          "name": "Bake rust-dylint",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:13Z",
+          "completed_at": "2026-08-17T03:30:31Z",
+          "duration_seconds": 18
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:31Z",
+          "completed_at": "2026-08-17T03:30:32Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:32Z",
+          "completed_at": "2026-08-17T03:30:32Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:32Z",
+          "completed_at": "2026-08-17T03:30:32Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 95275332833,
+      "name": "Rust ecosystem / Kani bounded proofs",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000029470",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:52Z",
+      "completed_at": "2026-08-17T03:30:40Z",
+      "duration_seconds": 48,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:53Z",
+          "completed_at": "2026-08-17T03:29:54Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:54Z",
+          "completed_at": "2026-08-17T03:29:55Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:55Z",
+          "completed_at": "2026-08-17T03:30:17Z",
+          "duration_seconds": 22
+        },
+        {
+          "number": 4,
+          "name": "Bake Kani bounded proofs",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:17Z",
+          "completed_at": "2026-08-17T03:30:36Z",
+          "duration_seconds": 19
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:36Z",
+          "completed_at": "2026-08-17T03:30:37Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:37Z",
+          "completed_at": "2026-08-17T03:30:37Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:37Z",
+          "completed_at": "2026-08-17T03:30:37Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 95275332845,
+      "name": "Rust ecosystem / Proptest, Insta, and Loom",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "GitHub Actions 1000029471",
+      "runner_group_name": "GitHub Actions",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:52Z",
+      "completed_at": "2026-08-17T03:30:37Z",
+      "duration_seconds": 45,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:52Z",
+          "completed_at": "2026-08-17T03:29:53Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:53Z",
+          "completed_at": "2026-08-17T03:29:54Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:29:54Z",
+          "completed_at": "2026-08-17T03:30:11Z",
+          "duration_seconds": 17
+        },
+        {
+          "number": 4,
+          "name": "Bake rust-ecosystem-deterministic",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:11Z",
+          "completed_at": "2026-08-17T03:30:35Z",
+          "duration_seconds": 24
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:35Z",
+          "completed_at": "2026-08-17T03:30:36Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:36Z",
+          "completed_at": "2026-08-17T03:30:36Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-17T03:30:36Z",
+          "completed_at": "2026-08-17T03:30:36Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 95275356669,
+      "name": "Native Rust verification",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:59Z",
+      "completed_at": "2026-08-17T03:29:58Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 95275356783,
+      "name": "WASM verification and artifact",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:59Z",
+      "completed_at": "2026-08-17T03:29:59Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 95275357072,
+      "name": "Web e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:59Z",
+      "completed_at": "2026-08-17T03:29:59Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 95275357081,
+      "name": "Extension e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:59Z",
+      "completed_at": "2026-08-17T03:29:59Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 95275357097,
+      "name": "Verify web build",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:59Z",
+      "completed_at": "2026-08-17T03:29:59Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 95275357174,
+      "name": "UI demos",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:59Z",
+      "completed_at": "2026-08-17T03:29:59Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 95275357213,
+      "name": "Deploy development",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "started_at": "2026-08-17T03:29:59Z",
+      "completed_at": "2026-08-17T03:29:59Z",
+      "duration_seconds": 0,
+      "steps": []
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [
+      {
+        "run_id": 31988816004,
+        "run_attempt": 1
+      },
+      {
+        "run_id": 31644217603,
+        "run_attempt": 2
+      }
+    ],
+    "baseline_quality": "comparable",
+    "baseline_note": "Two most recent successful Main attempts from the same workflow",
+    "wall_seconds_change_percent": -77.1,
+    "execution_seconds_change_percent": -77,
+    "regression": false,
+    "regression_reasons": []
+  }
+}
