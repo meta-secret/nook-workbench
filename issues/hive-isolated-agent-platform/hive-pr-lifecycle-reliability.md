@@ -1,14 +1,15 @@
 ---
 title: Make Hive repair PR ownership reliable
 feature: hive-isolated-agent-platform
-status: done
+status: in_progress
 priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-17T04:54:00Z
+updated_at: 2026-08-17T05:10:00Z
 source_issues: []
 related_prs:
+  - 1041
   - 1037
   - 1038
   - 1036
@@ -66,7 +67,7 @@ claim through a merged, verified result or a truthful terminal supersession.
 - [x] Ready PRs are squash-merged and the owning task becomes completed.
 - [x] The reaper controller reconciles its NetworkPolicy without authorization
       failures.
-- [x] Existing Hive repair PRs have no unattended open remainder.
+- [ ] Existing Hive repair PRs have no unattended open remainder.
 - [x] A merged repair with unresolved actionable review produces and owns a
       follow-up repair instead of exhausting the root retry budget.
 - [x] The merged platform is deployed and verified live.
@@ -145,6 +146,12 @@ claim through a merged, verified result or a truthful terminal supersession.
   forced disposable-worker replacement, and remained at four ready workers
   with zero restarts. Repeated queue snapshots contained no active work and no
   new task creation, so this lifecycle reliability incident is complete.
+- 2026-08-17: PR #1041 raised the host-network Traefik registry edge from
+  256 MiB to 2 GiB after production OOM evidence. Exact-head validation, Hive
+  verification, and readiness passed; the merged Compose contract was deployed
+  with Traefik healthy at 2 GiB and zero restarts. The latest durable queue
+  snapshot is terminal on embedded Codex usage exhaustion until August 20.
+  Eight Hive PRs remain open, so the incident is not complete.
 
 ## Findings and decisions
 
@@ -157,6 +164,9 @@ claim through a merged, verified result or a truthful terminal supersession.
 - Embedded Codex keeps its login-shell execution contract. The worker image
   must configure required toolchain paths for that shell and prove them as the
   non-root Hive user during the production-stage build.
+- The host-network Traefik registry edge has a 2 GiB memory limit. Registry
+  connection resets and short reads must be checked against kernel OOM evidence
+  before attributing them to Zot or a worker branch.
 
 ## References
 
@@ -165,3 +175,4 @@ claim through a merged, verified result or a truthful terminal supersession.
 - `agentic-ai/minds/hive/`
 - `worklogs/hive-isolated-agent-platform/2026-07-29T21-55-00Z-hive-pr-lifecycle-reliability.md`
 - `worklogs/hive-isolated-agent-platform/20260817T032945Z-pr-1038-login-shell-toolchain.md`
+- `worklogs/hive-isolated-agent-platform/20260817T051000Z-pr-1041-registry-proxy-memory.md`
