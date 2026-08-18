@@ -1,0 +1,108 @@
+schema_version: 3
+source_pr:
+  number: 1053
+  url: "https://github.com/meta-secret/nook/pull/1053"
+  title: "docs(cortex): improve security domain architecture flowchart with structured subgraphs"
+  change_surface: ".cortex architecture security domain diagram"
+  head_sha: "4f2cb0fe7f86185a0d755f00bb35ac51df2f9540"
+  started_at: "2026-08-18T06:20:00Z"
+  opened_at: "2026-08-18T06:24:45Z"
+  merged_at: "2026-08-18T06:28:23Z"
+  elapsed_seconds: 503
+  open_to_merge_seconds: 218
+summary:
+  local_execution_count: 5
+  local_check_count: 3
+  local_test_count: 0
+  local_combined_count: 2
+  local_execution_seconds: 467
+  github_actions_run_count: 1
+  github_actions_seconds: 46
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: "2026-08-18T06:28:30.000Z"
+  head_sha: "4f2cb0fe7f86185a0d755f00bb35ac51df2f9540"
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: "task loom:cortex-audit"
+    category: "check"
+    started_at: "2026-08-18T06:19:46Z"
+    finished_at: "2026-08-18T06:19:51Z"
+    duration_seconds: 5
+    outcome: "passed"
+    reason: "cortex audit check"
+  - command: "task loom:pre-push"
+    category: "combined"
+    started_at: "2026-08-18T06:19:53Z"
+    finished_at: "2026-08-18T06:22:36Z"
+    duration_seconds: 163
+    outcome: "passed"
+    reason: "pre-push hygiene before commit and push"
+  - command: "task pr:review-local"
+    category: "check"
+    started_at: "2026-08-18T06:22:45Z"
+    finished_at: "2026-08-18T06:24:34Z"
+    duration_seconds: 109
+    outcome: "passed"
+    reason: "advisory local review"
+  - command: "task loom:pr-land validate"
+    category: "combined"
+    started_at: "2026-08-18T06:24:49Z"
+    finished_at: "2026-08-18T06:27:54Z"
+    duration_seconds: 185
+    outcome: "passed"
+    reason: "complete validation dispatch and review request"
+  - command: "task pr:ready PR=1053"
+    category: "check"
+    started_at: "2026-08-18T06:28:08Z"
+    finished_at: "2026-08-18T06:28:13Z"
+    duration_seconds: 5
+    outcome: "passed"
+    reason: "readiness check before squash merge"
+github_actions_runs:
+  - workflow: "Repository policy"
+    run_id: 32106811457
+    run_attempt: 1
+    head_sha: "4f2cb0fe7f86185a0d755f00bb35ac51df2f9540"
+    trigger: "pull_request"
+    started_at: "2026-08-18T06:24:53Z"
+    finished_at: "2026-08-18T06:25:39Z"
+    duration_seconds: 46
+    conclusion: "success"
+    source_pr: 1053
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+pr_retriggers: []
+merge_attempts:
+  - at: "2026-08-18T06:28:23Z"
+    method: "squash"
+    outcome: "success"
+    reason: "readiness passed with green checks and zero unresolved threads"
+comparison:
+  baseline_prs:
+    - 1047
+    - 1052
+  baseline_quality: "good"
+  baseline_note: "Nearest cortex documentation PRs."
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
