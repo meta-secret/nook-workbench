@@ -2,7 +2,7 @@
 title: Restore failed Main verification for a589ec0ebb37
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-16T07:44:55Z
 updated_at: 2026-08-18T05:25:00Z

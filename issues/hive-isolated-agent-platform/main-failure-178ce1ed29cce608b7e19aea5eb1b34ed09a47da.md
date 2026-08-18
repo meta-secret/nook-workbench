@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 178ce1ed29cc
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-07-27T06:37:03Z
 updated_at: 2026-08-18T05:25:00Z

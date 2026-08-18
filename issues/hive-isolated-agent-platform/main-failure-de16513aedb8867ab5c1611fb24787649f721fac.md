@@ -2,7 +2,7 @@
 title: Restore failed Main verification for de16513aedb8
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-07-27T10:31:46Z
 updated_at: 2026-08-18T05:25:00Z

@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 0e4e1ffa049e
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-07-26T22:49:36Z
 updated_at: 2026-08-18T05:25:00Z

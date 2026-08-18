@@ -2,7 +2,7 @@
 title: Restore failed Main verification for ee825c3b6dd7
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-15T04:34:03Z
 updated_at: 2026-08-18T05:25:00Z

@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 2e927077b1a4
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-15T07:49:17Z
 updated_at: 2026-08-18T05:25:00Z

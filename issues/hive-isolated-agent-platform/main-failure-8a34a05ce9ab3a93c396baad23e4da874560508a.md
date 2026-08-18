@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 8a34a05ce9ab
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-06T04:43:32Z
 updated_at: 2026-08-18T05:25:00Z

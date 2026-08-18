@@ -2,7 +2,7 @@
 title: Restore failed Main verification for f74b5b2e075c
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-07-28T21:40:39Z
 updated_at: 2026-08-18T05:25:00Z

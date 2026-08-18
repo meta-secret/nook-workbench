@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 7fa1f2133cc3
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-05T05:18:36Z
 updated_at: 2026-08-18T05:25:00Z

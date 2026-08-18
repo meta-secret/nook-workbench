@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 61630537fd88
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-07-26T14:43:27Z
 updated_at: 2026-08-18T05:25:00Z

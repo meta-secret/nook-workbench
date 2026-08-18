@@ -2,7 +2,7 @@
 title: Restore failed Main verification for d966af23c253
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-07-28T12:42:49Z
 updated_at: 2026-08-18T05:25:00Z

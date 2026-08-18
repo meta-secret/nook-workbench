@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 72ccc67d763f
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-07-26T16:56:40Z
 updated_at: 2026-08-18T05:25:00Z

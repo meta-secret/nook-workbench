@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 3f4737cee1fb
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-17T05:00:06Z
 updated_at: 2026-08-18T05:25:00Z

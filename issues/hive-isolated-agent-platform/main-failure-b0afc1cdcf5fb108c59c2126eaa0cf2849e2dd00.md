@@ -2,7 +2,7 @@
 title: Restore failed Main verification for b0afc1cdcf5f
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-11T07:46:15Z
 updated_at: 2026-08-18T05:25:00Z

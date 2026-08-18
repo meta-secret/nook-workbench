@@ -2,7 +2,7 @@
 title: Restore failed Main verification for c6ce64209105
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-17T06:45:02Z
 updated_at: 2026-08-18T05:25:00Z

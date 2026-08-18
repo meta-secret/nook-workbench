@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 5acf3d1c164c
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-15T06:30:59Z
 updated_at: 2026-08-18T05:25:00Z

@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 18130ea603cd
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-10T00:15:48Z
 updated_at: 2026-08-18T05:25:00Z

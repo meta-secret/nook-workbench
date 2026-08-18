@@ -2,7 +2,7 @@
 title: Restore failed Main verification for 7ee48b3e57a6
 status: cancelled
 priority: p1
-automation: hive
+automation: manual
 owner: unassigned
 created_at: 2026-08-05T18:16:16Z
 updated_at: 2026-08-18T05:25:00Z
