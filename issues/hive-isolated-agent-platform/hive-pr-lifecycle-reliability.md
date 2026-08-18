@@ -6,9 +6,10 @@ priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-17T18:00:00Z
+updated_at: 2026-08-18T23:35:00Z
 source_issues: []
 related_prs:
+  - 1050
   - 1046
   - 1041
   - 1037
@@ -157,6 +158,7 @@ claim through a merged, verified result or a truthful terminal supersession.
   PRs #1029 and #1034, then removed one exact stale
   `ContainerStatusUnknown` rollout pod. All four workers, the observer, reaper,
   and Workbench dispatcher remained fully available afterward.
+- 2026-08-18: PR #1050 squash-merged the unique password-recovery and paired-extension unlock repair after exact-head Main-equivalent browser and extension suites passed. Superseded Hive product pull requests 1028, 1031, 1033, 1034, 1039, 1040, and 1051 were closed. Isolated Main-repair workers were not rearmed. Pull requests 1027, 1048, and 913 remain open by explicit instruction, so the unattended-remainder criterion is still incomplete.
 - 2026-08-17: PR #1046 aligned live Hive workers to Sol with a ChatGPT-supportable Spark fallback and added operator queue cancel. The merged image was deployed; superseded durable blockers were cancelled. Three live members were running afterward, including the newest Main repairs and the open pull request 1039 child. Remaining Hive product pull requests continue under worker ownership.
 
 ## Findings and decisions
