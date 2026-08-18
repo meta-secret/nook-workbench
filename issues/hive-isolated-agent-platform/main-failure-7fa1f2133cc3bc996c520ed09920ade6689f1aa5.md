@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 7fa1f2133cc3
-status: ready
+status: cancelled
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-05T05:18:36Z
-updated_at: 2026-08-05T05:18:36Z
+updated_at: 2026-08-18T05:25:00Z
 source_issues: []
 related_prs: [918]
 depends_on: []
@@ -43,6 +43,7 @@ request while preserving the failing revision and workflow evidence.
 ## Progress
 
 <!-- main-run:30976530967:attempt:1 -->
+- 2026-08-18T05:25:00Z: Cancelled. Unique remaining repair continues on Nook pull request 1050. Isolated Main-repair workers must not enqueue this incident again.
 - 2026-08-05T05:18:36Z: Main run [30976530967 attempt 1](https://github.com/meta-secret/nook/actions/runs/30976530967)
   failed for `7fa1f2133cc3bc996c520ed09920ade6689f1aa5`. Failed jobs: Verify web build.
 

@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 516dc0f81f9e
-status: ready
+status: cancelled
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-17T05:22:32Z
-updated_at: 2026-08-17T05:22:32Z
+updated_at: 2026-08-18T05:25:00Z
 source_issues: []
 related_prs: [1041]
 depends_on: []
@@ -43,6 +43,7 @@ request while preserving the failing revision and workflow evidence.
 ## Progress
 
 <!-- main-run:31996802344:attempt:1 -->
+- 2026-08-18T05:25:00Z: Cancelled. Unique remaining repair continues on Nook pull request 1050. Isolated Main-repair workers must not enqueue this incident again.
 - 2026-08-17T05:22:32Z: Main run [31996802344 attempt 1](https://github.com/meta-secret/nook/actions/runs/31996802344)
   failed for `516dc0f81f9eafeaaa5a68f794d970bb0db8f185`. Failed jobs: Extension e2e, Rust ecosystem / Cargo fuzz smoke, Rust ecosystem / Dependency policy and RustSec, Web e2e.
 

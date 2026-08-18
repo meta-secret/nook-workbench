@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for a589ec0ebb37
-status: ready
+status: cancelled
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-16T07:44:55Z
-updated_at: 2026-08-16T07:44:55Z
+updated_at: 2026-08-18T05:25:00Z
 source_issues: []
 related_prs: [1025]
 depends_on: []
@@ -43,6 +43,7 @@ request while preserving the failing revision and workflow evidence.
 ## Progress
 
 <!-- main-run:31933959999:attempt:1 -->
+- 2026-08-18T05:25:00Z: Cancelled. Unique remaining repair continues on Nook pull request 1050. Isolated Main-repair workers must not enqueue this incident again.
 - 2026-08-16T07:44:55Z: Main run [31933959999 attempt 1](https://github.com/meta-secret/nook/actions/runs/31933959999)
   failed for `a589ec0ebb370e2d3f37d13da1279c508163cb2e`. Failed jobs: Extension e2e, Web e2e.
 
