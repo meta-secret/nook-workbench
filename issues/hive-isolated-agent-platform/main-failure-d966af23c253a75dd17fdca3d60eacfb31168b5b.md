@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for d966af23c253
-status: ready
+status: cancelled
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-07-28T12:42:49Z
-updated_at: 2026-07-28T12:42:49Z
+updated_at: 2026-08-18T05:25:00Z
 source_issues: []
 related_prs: [850]
 depends_on: []
@@ -43,6 +43,7 @@ request while preserving the failing revision and workflow evidence.
 ## Progress
 
 <!-- main-run:30354920851:attempt:1 -->
+- 2026-08-18T05:25:00Z: Cancelled. Unique remaining repair continues on Nook pull request 1050. Isolated Main-repair workers must not enqueue this incident again.
 - 2026-07-28T12:42:49Z: Main run [30354920851 attempt 1](https://github.com/meta-secret/nook/actions/runs/30354920851)
   failed for `d966af23c253a75dd17fdca3d60eacfb31168b5b`. Failed jobs: Extension e2e, Web e2e.
 

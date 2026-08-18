@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for f6bea343d892
-status: ready
+status: cancelled
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-16T06:34:53Z
-updated_at: 2026-08-16T06:34:53Z
+updated_at: 2026-08-18T05:25:00Z
 source_issues: []
 related_prs: [1023]
 depends_on: []
@@ -43,6 +43,7 @@ request while preserving the failing revision and workflow evidence.
 ## Progress
 
 <!-- main-run:31931093821:attempt:1 -->
+- 2026-08-18T05:25:00Z: Cancelled. Unique remaining repair continues on Nook pull request 1050. Isolated Main-repair workers must not enqueue this incident again.
 - 2026-08-16T06:34:53Z: Main run [31931093821 attempt 1](https://github.com/meta-secret/nook/actions/runs/31931093821)
   failed for `f6bea343d89213083f1c78e22cabd98706d5e7b6`. Failed jobs: Extension e2e, Web e2e.
 

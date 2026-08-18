@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 24fc31da7617
-status: ready
+status: cancelled
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-07-27T00:16:18Z
-updated_at: 2026-07-27T00:16:18Z
+updated_at: 2026-08-18T05:25:00Z
 source_issues: []
 related_prs: [795]
 depends_on: []
@@ -43,6 +43,7 @@ request while preserving the failing revision and workflow evidence.
 ## Progress
 
 <!-- main-run:30225748668:attempt:1 -->
+- 2026-08-18T05:25:00Z: Cancelled. Unique remaining repair continues on Nook pull request 1050. Isolated Main-repair workers must not enqueue this incident again.
 - 2026-07-27T00:16:18Z: Main run [30225748668 attempt 1](https://github.com/meta-secret/nook/actions/runs/30225748668)
   failed for `24fc31da76174b4667d0f2ee17709f11ede3b7fa`. Failed jobs: Extension e2e, UI demos.
 

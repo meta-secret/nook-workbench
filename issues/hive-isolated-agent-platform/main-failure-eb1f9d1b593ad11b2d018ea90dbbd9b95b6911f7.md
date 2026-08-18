@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for eb1f9d1b593a
-status: ready
+status: cancelled
 priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-07-31T06:35:13Z
-updated_at: 2026-07-31T06:35:13Z
+updated_at: 2026-08-18T05:25:00Z
 source_issues: []
 related_prs: [889]
 depends_on: []
@@ -43,6 +43,7 @@ request while preserving the failing revision and workflow evidence.
 ## Progress
 
 <!-- main-run:30609451376:attempt:1 -->
+- 2026-08-18T05:25:00Z: Cancelled. Unique remaining repair continues on Nook pull request 1050. Isolated Main-repair workers must not enqueue this incident again.
 - 2026-07-31T06:35:13Z: Main run [30609451376 attempt 1](https://github.com/meta-secret/nook/actions/runs/30609451376)
   failed for `eb1f9d1b593ad11b2d018ea90dbbd9b95b6911f7`. Failed jobs: Native Rust verification.
 
