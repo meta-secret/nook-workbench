@@ -1,16 +1,17 @@
 ---
 title: Make Hive repair PR ownership reliable
 feature: hive-isolated-agent-platform
-status: in_progress
+status: done
 priority: critical
 automation: manual
 owner: codex
 created_at: 2026-07-28T22:31:28Z
-updated_at: 2026-08-19T00:30:00Z
+updated_at: 2026-08-19T01:20:00Z
 source_issues: []
 related_prs:
   - 1050
   - 1027
+  - 1048
   - 1055
   - 1046
   - 1041
@@ -162,6 +163,7 @@ claim through a merged, verified result or a truthful terminal supersession.
   and Workbench dispatcher remained fully available afterward.
 - 2026-08-18: PR #1050 squash-merged the unique password-recovery and paired-extension unlock repair after exact-head Main-equivalent browser and extension suites passed. Superseded Hive product pull requests 1028, 1031, 1033, 1034, 1039, 1040, and 1051 were closed. Isolated Main-repair workers were not rearmed. Pull requests 1027, 1048, and 913 remain open by explicit instruction, so the unattended-remainder criterion is still incomplete.
 - 2026-08-19: PR #1027 squash-merged the unique BuildKit frontend retry after exact-head Main-equivalent browser and extension suites passed. Hive PR #1055 was closed because current main already had the ownership-guard phrases. Experiment PR #913 was closed as superseded by Identity Bridge on main. No Hive-labeled pull request remains open. Isolated Main-repair workers were not rearmed. Sequential Rust crate cache-layer PR #1048 remains the last non-Hive remainder.
+- 2026-08-19: PR #1048 squash-merged sequential Rust crate BuildKit cache layers without reverting vault unlock. Default-branch Main run 32203115093 succeeded on 977554b6d8409c81b9cd8b187130d2e4ec3a9e33. No Nook pull request remains open. Isolated Main-repair workers were not rearmed. This remainder close-out is complete.
 - 2026-08-17: PR #1046 aligned live Hive workers to Sol with a ChatGPT-supportable Spark fallback and added operator queue cancel. The merged image was deployed; superseded durable blockers were cancelled. Three live members were running afterward, including the newest Main repairs and the open pull request 1039 child. Remaining Hive product pull requests continue under worker ownership.
 
 ## Findings and decisions
