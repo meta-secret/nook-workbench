@@ -5,9 +5,9 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-01T04:18:33Z
-updated_at: 2026-08-03T15:51:57Z
+updated_at: 2026-08-19T08:03:16Z
 source_issues: []
-related_prs: [901, 910]
+related_prs: [901, 910, 1059]
 depends_on: []
 ---
 
@@ -71,12 +71,14 @@ under their owning vault.
 - 2026-08-01: Direct implementation started after the access model and page scope were confirmed.
 - 2026-08-01: PR #901 passed exact-head validation and was squash-merged as `9fbdae27a5719c85ffcdd245dc431e36307c3757`.
 - 2026-08-03: PR #910 replaced the first dashboard presentation with the relationship-first chain-strength experience, passed exact-head validation, and was squash-merged as `7533bae8cbb3da2d01e40519404530fe64364249`.
+- 2026-08-19: PR #1059 widened the Access shell, moved Identity/Vault browse to a top strip, and hid the 1:1 app-key List card. Exact-head validation passed and the PR was squash-merged as `4593d6ee8f976aac4f544cf97f3ed4a410e5e47b`.
 
 ## Findings and decisions
 
 - A browser-reported authenticator attachment, transport, or backup flag is evidence; a passkey-provider name is user-supplied unless independently verifiable.
 - The first implementation keeps one current protected device identity per application origin, matching the existing persistence and application-isolation model.
 - Backup passwords are vault access methods, not device-key protection methods.
+- A passkey, PIN, or companion session unwraps one local app key. List presents that protector. Graph still shows the app-key node.
 
 ## References
 
