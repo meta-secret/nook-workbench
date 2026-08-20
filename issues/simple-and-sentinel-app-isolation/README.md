@@ -1,8 +1,8 @@
 ---
 title: "Feature: Simple and Sentinel app isolation"
-status: in_progress
+status: done
 created_at: 2026-07-25T23:56:27Z
-updated_at: 2026-08-20T05:16:25Z
+updated_at: 2026-08-20T12:44:14Z
 ---
 
 # Feature: Simple and Sentinel app isolation
@@ -23,4 +23,4 @@ Workbench issue contract.
 - [x] [#364: Migrate unified-origin vaults safely and add cross-app navigation](gh-364-migrate-unified-origin-vaults-safely-and-add-cross-app-navigation.md)
 - [x] [#367: Deploy and verify simple.nokey.sh and sentinel.nokey.sh](gh-367-deploy-and-verify-simple-nokey-sh-and-sentinel-nokey-sh.md)
 - [x] [#368: Add complete isolation tests, localization, and architecture documentation](gh-368-add-complete-isolation-tests-localization-and-architecture-documentation.md)
-- [ ] [Reduce the vault startup WASM critical path](reduce-vault-startup-wasm-critical-path.md)
+- [x] [Reduce the vault startup WASM critical path](reduce-vault-startup-wasm-critical-path.md)
