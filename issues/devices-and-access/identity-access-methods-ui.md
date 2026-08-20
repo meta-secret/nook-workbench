@@ -1,11 +1,11 @@
 ---
 title: Ship independent identity and access-method management
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-13T03:58:00Z
-updated_at: 2026-08-20T05:02:50Z
+updated_at: 2026-08-20T07:14:08Z
 source_issues: []
 related_prs:
   - 1061
@@ -56,3 +56,7 @@ Access methods tab. Provider names and browser evidence show their provenance.
   already-delivered wide Access canvas, deduplicated top browse control,
   passkey-only List projection, and retained app-key Graph inspection. The
   broader independent identity-management outcome remains ready.
+- 2026-08-20: The approved production direction combines a persistent identity
+  rail with a flat selected-identity key inventory. Implementation started for
+  real directory selection, identity creation, public app-key enumeration,
+  responsive behavior, translations, and browser evidence.
