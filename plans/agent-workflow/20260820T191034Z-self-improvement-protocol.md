@@ -24,7 +24,8 @@ into the existing Cortex sources of truth.
 - Require an end-of-task self-improvement review for substantial work.
 - Require evidence before durable promotion.
 - Prefer updating an existing Cortex authority over creating a new document.
-- Keep `.cortex/INDEX.md` synchronized when persistent knowledge changes.
+- Keep `.cortex/knowledge-graph.md` synchronized when persistent knowledge
+  changes.
 - Integrate the lifecycle into the normal implementation and pull-request flow.
 - Add executable agent guidance and focused repository enforcement.
 - Preserve the rule that no Cortex change is required when nothing durable was
