@@ -5,9 +5,10 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-13T03:58:00Z
-updated_at: 2026-08-13T03:58:00Z
+updated_at: 2026-08-20T05:02:50Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1061
 depends_on:
   - issues/devices-and-access/identity-directory.md
   - issues/devices-and-access/identity-app-key-enrollment.md
@@ -48,3 +49,10 @@ Access methods tab. Provider names and browser evidence show their provenance.
 - [ ] Existing no-vault, locked, and unlocked states remain coherent.
 - [ ] English and Russian catalogs remain in parity.
 - [ ] Exact-head validation and the UI demo contract pass before squash merge.
+
+## Progress
+
+- 2026-08-20: PR 1061 added hosted Playwright regression evidence for the
+  already-delivered wide Access canvas, deduplicated top browse control,
+  passkey-only List projection, and retained app-key Graph inspection. The
+  broader independent identity-management outcome remains ready.
