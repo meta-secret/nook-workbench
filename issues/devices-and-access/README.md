@@ -18,6 +18,7 @@ unknowns without exposing private key material.
 - [x] [Build the Devices & access dashboard](devices-access-dashboard.md)
 - [x] [Persist and select multiple identities](identity-directory.md)
 - [ ] [Enroll installation app keys into identities](identity-app-key-enrollment.md)
+- [ ] [Provision an independent local keyring for each identity](independent-local-identity-keyring.md)
 - [ ] [Ship independent identity and access-method management](identity-access-methods-ui.md)
 
 ## Ordered delivery
@@ -27,7 +28,9 @@ unknowns without exposing private key material.
 2. Add a typed Rust enrollment protocol for linking another installation app
    key to an identity and updating identity-held vault envelopes.
 3. Add the production Svelte management surface. Keep the relationship graph.
-   Add identity creation and selection plus a flat access-method tab.
+   Add identity selection plus a flat access-method inventory.
+4. Provision an independently protected local app key for each newly created
+   identity, then enable the Add identity action.
 
 ## Durable boundaries
 

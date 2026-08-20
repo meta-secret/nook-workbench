@@ -5,10 +5,11 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-13T03:58:00Z
-updated_at: 2026-08-20T07:14:08Z
+updated_at: 2026-08-20T16:56:12Z
 source_issues: []
 related_prs:
   - 1061
+  - 1063
 depends_on:
   - issues/devices-and-access/identity-directory.md
   - issues/devices-and-access/identity-app-key-enrollment.md
@@ -43,12 +44,12 @@ Access methods tab. Provider names and browser evidence show their provenance.
 
 - [ ] Identities can be created and selected without opening a vault.
 - [ ] App-key membership and device-linking actions are explicit.
-- [ ] The graph and flat Access methods tabs represent the same selected identity.
-- [ ] Provider labels state whether they were named by the user or reported by the browser.
-- [ ] Unknown provider data remains unknown.
-- [ ] Existing no-vault, locked, and unlocked states remain coherent.
-- [ ] English and Russian catalogs remain in parity.
-- [ ] Exact-head validation and the UI demo contract pass before squash merge.
+- [x] The graph and flat Access methods tabs represent the same selected identity.
+- [x] Provider labels state whether they were named by the user or reported by the browser.
+- [x] Unknown provider data remains unknown.
+- [x] Existing no-vault, locked, and unlocked states remain coherent.
+- [x] English and Russian catalogs remain in parity.
+- [x] Exact-head validation and the UI demo contract pass before squash merge.
 
 ## Progress
 
@@ -56,7 +57,12 @@ Access methods tab. Provider names and browser evidence show their provenance.
   already-delivered wide Access canvas, deduplicated top browse control,
   passkey-only List projection, and retained app-key Graph inspection. The
   broader independent identity-management outcome remains ready.
-- 2026-08-20: The approved production direction combines a persistent identity
-  rail with a flat selected-identity key inventory. Implementation started for
-  real directory selection, identity creation, public app-key enumeration,
-  responsive behavior, translations, and browser evidence.
+- 2026-08-20: PR 1063 implements the approved persistent identity rail and flat
+  selected-identity key inventory. It projects real directory members, scopes
+  vault evidence to the selected identity, preserves companion and locked-state
+  provenance, and bootstraps the initial Personal identity after protection.
+  Additional identity creation remains disabled until a new identity can own
+  an independent protected local app key.
+- 2026-08-20: PR 1063 squash-merged as `1e1818592a860032e3c58db49a08affa8e482b2a`.
+  Exact head `700a17c4775d158c98c314a67c17a87eb6fa696e` passed focused and complete
+  hosted validation, the UI demo contract, clean Codex review, and readiness.

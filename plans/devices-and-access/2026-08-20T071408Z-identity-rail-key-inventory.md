@@ -20,7 +20,7 @@ the main workspace.
 - Load every persisted identity and its explicit local selection from the typed
   Rust/WASM directory.
 - Let a person select an identity from the identity rail.
-- Let an authorized, prepared browser create another labeled identity.
+- Bootstrap the first labeled identity after local app-key protection.
 - Show every public app-key member for the selected identity.
 - Show the current browser's protector evidence next to its app key.
 - Keep vault access visually separate from the key inventory.
@@ -39,6 +39,8 @@ the main workspace.
   content to TypeScript or the DOM.
 - Do not add a second component system or a new visual theme.
 - Do not implement the separate cross-installation app-key enrollment protocol.
+- Do not enable additional identity creation until it can provision a distinct
+  protected local app key instead of reusing another identity's key.
 - Do not present a fake Add key success path before that protocol exists.
 - Preserve the existing graph and technical evidence as progressive disclosure
   where it remains useful.
@@ -50,14 +52,15 @@ the main workspace.
 - Public or cross-module interfaces: Extend the typed NookIdentityDirectorySnapshot member projection without exposing secrets
 - Delivery shape: One PR
 - Current PR estimated authored changed lines: 1,400
-- Current PR slice and acceptance evidence: Identity rail, selection, creation, key inventory, responsive states, translations, and product contract; Acceptance evidence: Rust/WASM tests, focused browser tests, UI demo, and complete exact-head validation pass
-- PR slices and acceptance evidence: Identity rail, selection, creation, key inventory, responsive states, translations, and product contract; Acceptance evidence: Rust/WASM tests, focused browser tests, UI demo, and complete exact-head validation pass
+- Current PR slice and acceptance evidence: Identity rail, selection, initial identity bootstrap, key inventory, responsive states, translations, and product contract; Acceptance evidence: Rust/WASM tests, focused web tests, UI demo, and complete exact-head validation pass
+- PR slices and acceptance evidence: Identity rail, selection, initial identity bootstrap, key inventory, responsive states, translations, and product contract; Acceptance evidence: Rust/WASM tests, focused web tests, UI demo, and complete exact-head validation pass
 
 ## Initial plan
 
 1. Extend the Rust-owned directory snapshot with safe per-member data and tests.
-2. Build the identity rail, creation interaction, and selected-identity key
-   inventory from existing Nook primitives and evidence.
+2. Build the identity rail and selected-identity key inventory from existing
+   Nook primitives and evidence. Keep additional creation unavailable until it
+   can provision an independent protected key.
 3. Preserve vault access and technical inspection through progressive
    disclosure.
 4. Update the product specification and EN/RU catalogs.
@@ -67,13 +70,20 @@ the main workspace.
 
 ## Completion evidence
 
-- Browser tests show multiple identities, selection, creation, and key scoping.
+- Web tests show multiple identities, production selection, and key scoping.
 - The UI demo shows the approved desktop hierarchy and responsive collapse.
 - Rust and actual-WASM tests prove safe member enumeration and directory
   selection.
 - The product spec, translations, generated keys, and implementation agree.
 - Exact-head repository checks and readiness pass with no actionable threads.
 - The PR is squash-merged and linked Workbench completion records are visible.
+
+## Delivered boundary
+
+- The first protection ceremony creates the initial Personal identity.
+- Existing persisted identities are listed and selectable without opening a vault.
+- Add identity and Add key remain visibly unavailable because the required
+  independent local keyring and enrollment protocol are separate security work.
 
 ## Safety review
 
