@@ -31,6 +31,7 @@ Loom leaf tools now generate discovery YAML, decode blueprints, and defaultable 
 
 - [ ] [Address PR 1000 review findings](address-pr-1000-review-findings.md)
 - [ ] [Reconcile Cortex semantic debt found by the first static workflow](cortex-semantic-debt.md)
+- [ ] [Add event-sourced subagent processing records](event-sourced-subagent-processing.md)
 
 ## References
 
