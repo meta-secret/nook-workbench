@@ -1,13 +1,13 @@
 ---
 title: Event-sourced subagent processing records
-status: in_progress
+status: completed
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-21T01:58:50Z
-updated_at: 2026-08-21T01:58:50Z
+updated_at: 2026-08-21T06:40:41Z
 source_issues: []
-related_prs: []
+related_prs: [1068]
 depends_on: []
 ---
 
@@ -43,22 +43,29 @@ review, and terminal reporting.
 
 ## Acceptance criteria
 
-- [ ] Every agent task attempt has its own append-only `events.jsonl` file.
-- [ ] Every completed agent attempt has an agent-authored Markdown materialized
+- [x] Every agent task attempt has its own append-only `events.jsonl` file.
+- [x] Every completed agent attempt has an agent-authored Markdown materialized
       view.
-- [ ] Workflow synthesis consumes completed child views and publishes a final
+- [x] Workflow synthesis consumes completed child views and publishes a final
       workflow view.
-- [ ] Processing artifacts live below a repository-local gitignored directory.
-- [ ] Tests prove event identity, sequence, append-only behavior, view
+- [x] Processing artifacts live below a repository-local gitignored directory.
+- [x] Tests prove event identity, sequence, append-only behavior, view
       materialization, path isolation, retries, failures, and parent aggregation.
-- [ ] Cortex and executable skills define the event-store and materialized-view
+- [x] Cortex and executable skills define the event-store and materialized-view
       contract consistently with current Loom code.
-- [ ] Exact-head hosted validation and readiness pass before squash merge.
+- [x] Exact-head hosted validation and readiness pass before squash merge.
 
 ## Progress
 
 - Ownership verified against current branches, pull requests, and Workbench.
 - Implementation plan published before repository edits.
+- Merged Nook PR #1068 with immutable per-attempt streams, agent-authored and
+  Loom-authored views, recursive parent aggregation, and root delivery views.
+- Added `task loom:agent-delegation:record REQUEST=<request.json>` so ordinary
+  collaboration-tool delegation follows the same processing contract as
+  compiled Loom workflows.
+- Closed every exact-head review finding and passed the complete hosted gate,
+  readiness audit, and squash merge.
 
 ## Findings and decisions
 
@@ -68,12 +75,19 @@ review, and terminal reporting.
   terminal result.
 - The workflow journal remains the scheduling authority. Per-agent streams are
   scoped action logs and must not become competing schedulers.
+- Replay verifies canonical projection paths, content hashes, typed results,
+  action-stream identity, parent lineage, activity bounds, view authorship,
+  root bytes, and the projected task-terminal set.
+- A child produces the bounded action and typed semantic-result request. Loom
+  owns canonical serialization and hashing. Each parent consumes verified child
+  views and authors the next aggregate until the root delivery report.
 
 ## References
 
 - Nook PR #1000
 - Nook PR #1001
 - Nook PR #1067
+- Nook PR #1068
 - `.cortex/workflows/subagent-delegation.md`
 - `.cortex/design-docs/agent-workflow-orchestration.md`
 - `agentic-ai/loom/src/agent-workflow/`
