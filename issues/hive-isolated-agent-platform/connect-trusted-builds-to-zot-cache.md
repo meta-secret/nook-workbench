@@ -1,11 +1,11 @@
 ---
 title: Connect trusted builds to the private Zot cache
-status: proposed
+status: in_progress
 priority: p2
 automation: manual
-owner: unassigned
+owner: cypherkitty
 created_at: 2026-07-30T04:38:00Z
-updated_at: 2026-07-30T04:38:00Z
+updated_at: 2026-08-21T05:05:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/879
@@ -52,13 +52,19 @@ pull-request jobs retain a credential-free cache backend.
 
 ## Progress
 
-- No implementation started.
+- 2026-08-21: Claimed for implementation through the repository-scoped ARC
+  scale set described by
+  `plans/hive-isolated-agent-platform/20260821T010000Z-run-trusted-actions-on-k0s-with-arc.md`.
 
 ## Findings and decisions
 
 - The production registry is intentionally loopback-only today.
 - Registry hosting and safe CI cache consumption are separate trust and
   networking problems.
+- ARC runners will use Kubernetes container hooks and the Buildx Kubernetes
+  driver on the existing Kata Dragonball microVM runtime.
+- Docker-in-Docker, Sysbox, nested container engines, and host runtime socket
+  mounts are prohibited.
 
 ## References
 
