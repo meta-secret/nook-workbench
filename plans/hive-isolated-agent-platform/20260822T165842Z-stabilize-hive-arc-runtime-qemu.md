@@ -38,10 +38,16 @@ isolation and cache-performance work while restoring reliable job completion.
 
 ## Completion evidence
 
-- Static contracts select QEMU only for `nook-k0s-hive`.
-- Exact-head validation and review are green.
-- Production reports both scale sets ready with capacity ten.
-- A fresh Hive ARC runner completes verification without Pod replacement.
+- Static contracts select QEMU for ephemeral ARC builders while persistent Hive
+  workers remain on Dragonball.
+- Exact-head validation, focused remote preflight, review, and readiness are
+  green at `0d7207e1ea`.
+- PR 1076 squash-merged as `96ed258e0f`; the exact merge is deployed.
+- Production reports both scale sets dispatch-ready with capacity ten.
+- A fresh QEMU runner completed the PR Hive job in 2m10s, with 1m39s in Rust
+  verification and no Pod replacement.
+- The exact merged Main job completed Rust verification in 1m04s on
+  `nook-k0s-hive`.
 
 ## Safety review
 

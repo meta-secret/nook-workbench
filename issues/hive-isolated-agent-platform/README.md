@@ -25,8 +25,9 @@ work, reviewed Nook pull requests, and verified Main outcomes.
   delivered private 32 GiB reflink-backed BuildKit state for every ephemeral
   Kata guest, ten-runner scale sets, and production cache-hydration proof.
 - [Stabilize the Hive ARC runtime with Kata QEMU](stabilize-hive-arc-runtime-qemu.md)
-  — follows the evidence-backed runtime fallback after Dragonball lost a normal
-  Hive verification sandbox.
+  — delivered the evidence-backed QEMU fallback after Dragonball lost a normal
+  Hive verification sandbox; fresh Hive verification now completes in about
+  one to two minutes.
 
 Generated `main-failure-*.md` records in this directory are durable incident
 handoffs owned by the Hive dispatcher.
