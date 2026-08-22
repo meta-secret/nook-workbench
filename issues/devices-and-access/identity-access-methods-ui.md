@@ -5,11 +5,12 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-13T03:58:00Z
-updated_at: 2026-08-20T16:56:12Z
+updated_at: 2026-08-22T08:30:11Z
 source_issues: []
 related_prs:
   - 1061
   - 1063
+  - 1072
 depends_on:
   - issues/devices-and-access/identity-directory.md
   - issues/devices-and-access/identity-app-key-enrollment.md
@@ -66,3 +67,10 @@ Access methods tab. Provider names and browser evidence show their provenance.
 - 2026-08-20: PR 1063 squash-merged as `1e1818592a860032e3c58db49a08affa8e482b2a`.
   Exact head `700a17c4775d158c98c314a67c17a87eb6fa696e` passed focused and complete
   hosted validation, the UI demo contract, clean Codex review, and readiness.
+- 2026-08-22: PR 1072 made the flat key inventory and relationship graph
+  mutually exclusive List and Graph representations of the selected identity.
+  List is the default; inventory inspection opens Graph at the matching node,
+  and identities without local graph evidence remain in List. Exact head
+  `7da2a038102e66edea848e7edc59431a8a76c258` passed the full browser suite,
+  complete validation, clean Codex review, and readiness before squash-merging
+  as `0d462693dc981a0ec874b06f9abec31b97217af6`.
