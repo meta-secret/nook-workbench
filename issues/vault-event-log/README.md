@@ -1,8 +1,8 @@
 ---
 title: Vault event log and replication architecture
-status: done
+status: proposed
 created_at: 2026-07-26T08:29:14Z
-updated_at: 2026-07-26T16:07:42Z
+updated_at: 2026-08-22T21:11:54Z
 ---
 
 # Vault event log and replication architecture
@@ -38,6 +38,7 @@ I/O, lifecycle, and presentation responsibilities.
 
 - [x] [Extract portable replication mechanics from nook-core](extract-nook-replication-crate.md)
 - [x] [Extract portable vault event-log domain from nook-core](extract-nook-event-log-crate.md)
+- [ ] [Redact vault event-session signing material from Debug](redact-vault-event-session-signing-material.md)
 
 ## References
 
