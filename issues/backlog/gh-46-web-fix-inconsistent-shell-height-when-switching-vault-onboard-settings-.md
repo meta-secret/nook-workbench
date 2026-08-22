@@ -5,9 +5,9 @@ priority: p2
 automation: manual
 owner: "unassigned"
 created_at: 2026-06-25T06:14:15Z
-updated_at: 2026-06-25T17:07:37Z
+updated_at: 2026-08-22T10:31:29Z
 source_issues: ["https://github.com/meta-secret/nook/issues/46"]
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/1073"]
 depends_on: []
 legacy_labels: ["bug"]
 legacy_state_reason: "COMPLETED"
@@ -61,3 +61,12 @@ The authenticated shell is rendered in `nook-web/src/App.svelte` inside the `rou
 ## Historical comments
 
 No comments.
+
+## Follow-up completion
+
+[Nook PR 1073](https://github.com/meta-secret/nook/pull/1073) fixed the
+remaining authenticated-shell overflow defect. Expanded vault security guidance
+now keeps its natural height inside the desktop scroll owner instead of shrinking
+and clipping its lower recommendations. A short-height Playwright regression and
+headless UI demo prove that the final action can be reached while bottom
+navigation remains visible.
