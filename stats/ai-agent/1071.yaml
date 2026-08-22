@@ -1,0 +1,96 @@
+schema_version: 3
+source_pr:
+  number: 1071
+  url: https://github.com/meta-secret/nook/pull/1071
+  title: Reuse private ARC BuildKit state
+  change_surface: ARC persistent private BuildKit state, Kata runtime upgrades, scale-set routing, cache publication, infrastructure contracts, and Cortex guidance
+  head_sha: a9f64df4eb7e13457b1d9507b2448368a8f5c7e6
+  started_at: 2026-08-22T00:37:42Z
+  opened_at: 2026-08-22T01:29:56Z
+  merged_at: 2026-08-22T15:24:37Z
+  elapsed_seconds: 53215
+  open_to_merge_seconds: 50081
+summary:
+  local_execution_count: 0
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 3
+  github_actions_seconds: 8150
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: 2026-08-22T15:24:37Z
+  head_sha: a9f64df4eb7e13457b1d9507b2448368a8f5c7e6
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions: []
+github_actions_runs:
+  - workflow: PR
+    run_id: 32580045793
+    run_attempt: 1
+    head_sha: a9f64df4eb7e13457b1d9507b2448368a8f5c7e6
+    trigger: pull_request
+    started_at: 2026-08-22T14:53:35Z
+    finished_at: 2026-08-22T15:22:41Z
+    duration_seconds: 1746
+    conclusion: success
+    source_pr: 1071
+  - workflow: Hive
+    run_id: 32581607156
+    run_attempt: 1
+    head_sha: 3eb864ae5eb682a8b51c6d87c125ca1cc277e540
+    trigger: push
+    started_at: 2026-08-22T15:24:39Z
+    finished_at: 2026-08-22T16:05:51Z
+    duration_seconds: 2472
+    conclusion: success
+    source_pr: 1071
+  - workflow: Main
+    run_id: 32581607282
+    run_attempt: 1
+    head_sha: 3eb864ae5eb682a8b51c6d87c125ca1cc277e540
+    trigger: push
+    started_at: 2026-08-22T15:24:39Z
+    finished_at: 2026-08-22T16:30:11Z
+    duration_seconds: 3932
+    conclusion: cancelled
+    source_pr: 1071
+cache_telemetry:
+  totals:
+    job_count: 2
+    remote_backend_job_count: 2
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+pr_retriggers: []
+merge_attempts:
+  - at: 2026-08-22T15:24:37Z
+    method: squash
+    outcome: success
+    reason: Exact-head readiness passed with green checks, clean review, and zero unresolved threads
+comparison:
+  baseline_prs:
+    - 1070
+    - 1069
+  baseline_quality: strong
+  baseline_note: PR 1070 provides the immediate ten-runner and Zot cache-path baseline; PR 1069 provides the original ARC placement baseline.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: true
+  findings:
+    - The first trusted Main cache publication compiled and serialized a missing release lineage after verification, making the workflow look slow even though ARC reduced Hive verification from 7m34 to 1m36.
+    - Interactive guest exec destabilized one Dragonball diagnostic attempt; normal workflow execution was already proven healthy.
+  required_actions:
+    - Track Main-only verified-cache publication latency separately from verification and avoid guest exec in Dragonball operational probes.

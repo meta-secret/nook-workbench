@@ -21,6 +21,9 @@ work, reviewed Nook pull requests, and verified Main outcomes.
   capabilities, cache topology, and operational verification.
 - [Automate unchanged-web deployment attestations](automate-agentic-only-deployment-attestations.md)
   — proposed lightweight ruleset compliance for agentic-only pull requests.
+- [Reuse private ARC BuildKit state](reuse-private-arc-buildkit-state.md) —
+  delivered private 32 GiB reflink-backed BuildKit state for every ephemeral
+  Kata guest, ten-runner scale sets, and production cache-hydration proof.
 
 Generated `main-failure-*.md` records in this directory are durable incident
 handoffs owned by the Hive dispatcher.

@@ -33,8 +33,6 @@ decompression and full filesystem copies.
 - Sensitive credentials and operational data must not enter source, logs,
   artifacts, or Workbench records.
 
-## Change budget and PR sequence
-
 - Estimated authored changed lines: 900
 - Owning modules, packages, or layers: ARC manifests, BuildKit wrapper image, k0s ARC deployment and smoke operations, cache-selection scripts, static infrastructure contracts, and engineering-harness architecture
 - Public or cross-module interfaces: `nook-k0s`, `task infra:arc:deploy`, `task infra:arc:smoke`, and BuildKit cache source selection
@@ -68,6 +66,25 @@ decompression and full filesystem copies.
   Pods using distinct clones of the same seed.
 - A repeated smoke run spends materially less time hydrating BuildKit state.
 - The merged Main result remains healthy.
+
+- PR 1071 passed exact-head validation, current-head review, readiness, and
+  squash merge at commit `3eb864ae5eb682a8b51c6d87c125ca1cc277e540`.
+- Production runs ARC 0.14.2 with `nook-k0s` and `nook-k0s-hive` at
+  `minRunners: 0` and `maxRunners: 10`.
+- Each job receives a new Kata guest and a private privileged BuildKit daemon.
+  Docker-in-Docker, Sysbox, shared writable BuildKit, and retained runners are
+  absent.
+- The 32 GiB job image is a reflink clone from a controlled seed. Live storage
+  showed 15.86 GiB logical seed data and about 120 KiB exclusive allocation.
+- Hive Rust verification completed in 1m36 on ARC compared with 7m34 on the
+  linked hosted-runner baseline.
+- The first trusted Main publication exposed a separate cold lineage cost.
+  That phase built missing release dependencies and exported the verified
+  lineage after verification; it was not registry download latency.
+- Live builder usage reached about 19 GiB for Hive and 22 GiB for native Main.
+  This evidence retains the 32 GiB capacity instead of reducing it to 24 GiB.
+- Dragonball completed the normal Hive workload. Interactive guest exec proved
+  unsafe as an operator diagnostic and is excluded from the runbook path.
 
 ## Safety review
 

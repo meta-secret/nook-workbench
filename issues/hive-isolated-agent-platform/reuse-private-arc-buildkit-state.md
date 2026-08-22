@@ -1,14 +1,15 @@
 ---
 title: Reuse private ARC BuildKit state
 feature: hive-isolated-agent-platform
-status: in_progress
+status: done
 priority: high
 automation: manual
 owner: codex
 created_at: 2026-08-22T00:37:42Z
-updated_at: 2026-08-22T00:37:42Z
+updated_at: 2026-08-22T16:32:53Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1071
 depends_on:
   - issues/hive-isolated-agent-platform/connect-trusted-builds-to-zot-cache.md
 ---
@@ -49,18 +50,18 @@ retains an isolated writable filesystem and private BuildKit daemon.
 
 ## Acceptance criteria
 
-- [ ] Ten ephemeral runner Pods remain schedulable and use distinct writable
+- [x] Ten ephemeral runner Pods remain schedulable and use distinct writable
       BuildKit filesystem images.
-- [ ] A new job clones the reusable seed through filesystem reflinks instead of
+- [x] A new job clones the reusable seed through filesystem reflinks instead of
       copying 32 GiB.
-- [ ] The runner and build process cannot mount another job's writable state.
-- [ ] BuildKit capacity is 32 GiB with a bounded garbage-collection target.
-- [ ] Seed promotion occurs only after a successful trusted ARC smoke run and
+- [x] The runner and build process cannot mount another job's writable state.
+- [x] BuildKit capacity is 32 GiB with a bounded garbage-collection target.
+- [x] Seed promotion occurs only after a successful trusted ARC smoke run and
       after its guest has stopped writing.
-- [ ] Stale job images are cleaned without removing active Pod state.
-- [ ] Exact-head validation and live cold-versus-warm evidence demonstrate
+- [x] Stale job images are cleaned without removing active Pod state.
+- [x] Exact-head validation and live cold-versus-warm evidence demonstrate
       reduced cache hydration time.
-- [ ] The pull request is reviewed, merged, deployed, and verified.
+- [x] The pull request is reviewed, merged, deployed, and verified.
 
 ## Progress
 
@@ -68,6 +69,14 @@ retains an isolated writable filesystem and private BuildKit daemon.
   guests share one ext4 filesystem backed by two rotational disks in RAID0.
   The node has no CSI snapshot driver, but its kernel and installed tooling
   support a non-destructive loop-backed Btrfs reflink pool.
+- 2026-08-22: PR 1071 was reviewed, squash-merged, and deployed. Both ARC scale
+  sets are dispatch-ready with zero warm runners and capacity for ten jobs.
+- 2026-08-22: The production seed occupies 15.86 GiB logically but only about
+  120 KiB exclusively. Fresh job images therefore share unchanged extents
+  instead of copying their 32 GiB logical capacity.
+- 2026-08-22: Hive Rust verification moved from 7m34 on the hosted runner to
+  1m36 on `nook-k0s-hive`. The remaining long Main-only phase is verified-cache
+  construction and publication, not the Hive verification step.
 
 ## Decisions
 
@@ -75,3 +84,9 @@ retains an isolated writable filesystem and private BuildKit daemon.
   adequate headroom across native, coverage, policy, and export workloads.
 - Treat the BuildKit filesystem size as logical capacity. Reflink clones share
   unchanged extents and allocate storage only for changed blocks.
+- Keep 32 GiB. Production builders reached about 19 GiB and 22 GiB, so 24 GiB
+  would leave insufficient safety margin for cache publication and garbage
+  collection.
+- Avoid interactive guest exec as an operational diagnostic on Dragonball.
+  Normal workflow execution is healthy, but operator exec can destabilize the
+  sandbox and should be replaced with GitHub, Kubernetes, and host telemetry.
