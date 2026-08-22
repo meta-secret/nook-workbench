@@ -31,6 +31,12 @@ work, reviewed Nook pull requests, and verified Main outcomes.
 - [Route trusted Main workloads through ARC](route-trusted-main-workloads-through-arc.md)
   — moves the remaining hard-coded hosted Main lanes onto the repository's
   `nook-k0s` route so local BuildKit and Zot can benefit the full pipeline.
+- [Eliminate the ARC verified-cache publication tail](eliminate-arc-cache-publication-tail.md)
+  — measures and removes redundant serialized registry export while preserving
+  concurrent per-microVM BuildKit isolation.
+- [Parallelize native Rust verification on ARC](parallelize-native-rust-verification.md)
+  — decomposes the remaining forty-minute native critical path without
+  weakening format, clippy, test, or coverage evidence.
 
 Generated `main-failure-*.md` records in this directory are durable incident
 handoffs owned by the Hive dispatcher.
