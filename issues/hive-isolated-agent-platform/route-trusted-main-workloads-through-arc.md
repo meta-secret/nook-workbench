@@ -1,12 +1,12 @@
 ---
 title: Route trusted Main workloads through ARC
 feature: hive-isolated-agent-platform
-status: in_progress
+status: done
 priority: high
 automation: manual
 owner: codex
 created_at: 2026-08-22T17:38:27Z
-updated_at: 2026-08-22T17:38:27Z
+updated_at: 2026-08-22T21:53:00Z
 source_issues: []
 related_prs:
   - 1077
@@ -33,12 +33,12 @@ unchanged.
 
 ## Acceptance criteria
 
-- [ ] Every Main job uses the repository runner route with a hosted fallback.
-- [ ] Workflow and manifest contracts prevent regression to hard-coded hosted
+- [x] Every Main job uses the repository runner route with a hosted fallback.
+- [x] Workflow and manifest contracts prevent regression to hard-coded hosted
       runners.
-- [ ] Formatting, focused contracts, exact-head validation, and review pass.
-- [ ] The pull request is merged.
-- [ ] A post-merge Main run reports `nook-k0s` labels for the formerly hosted
+- [x] Formatting, focused contracts, exact-head validation, and review pass.
+- [x] The pull request is merged.
+- [x] A post-merge Main run reports `nook-k0s` labels for the formerly hosted
       lanes.
 
 ## Progress
@@ -48,3 +48,12 @@ unchanged.
   cluster capacity as the queue and cache-locality defect.
 - 2026-08-22: PR 1077 opened with every explicit Main job on the configured
   runner route and a static regression contract.
+- 2026-08-22: PR 1077 squash-merged as
+  `2ad17a912b9781c7965dfd3b2e8878a53ecc71ad` after the complete exact-head gate,
+  deployment, clean review, and readiness audit passed.
+- 2026-08-22: Merged Main run 32599101656 reported `nook-k0s` on classification,
+  native Rust, and every Rust ecosystem lane. ARC materialized ten simultaneous
+  general-runner microVMs under repository load.
+- 2026-08-22: Merged Hive run 32599101547 passed on `nook-k0s-hive`. It separated
+  a 13m16s verification from an 18m21s verified-cache publication tail, which is
+  now tracked independently.
