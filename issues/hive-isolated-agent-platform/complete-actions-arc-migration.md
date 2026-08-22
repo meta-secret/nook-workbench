@@ -1,13 +1,14 @@
 ---
 title: Complete the trusted GitHub Actions ARC migration
-status: in_progress
+status: done
 priority: high
 automation: manual
 owner: codex
 created_at: 2026-08-22T22:05:00Z
-updated_at: 2026-08-22T22:05:00Z
+updated_at: 2026-08-22T23:48:34Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1080
 depends_on:
   - issues/hive-isolated-agent-platform/route-trusted-main-workloads-through-arc.md
 ---
@@ -39,21 +40,31 @@ runtime-specific boundaries.
 
 ## Acceptance criteria
 
-- [ ] Every workflow job is classified as ARC or an explicit hosted exception.
-- [ ] Eligible same-repository jobs use the configured ARC route.
-- [ ] Fork, Dependabot, release, deployment, and required hosted-runtime jobs do
+- [x] Every workflow job is classified as ARC or an explicit hosted exception.
+- [x] Eligible same-repository jobs use the configured ARC route.
+- [x] Fork, Dependabot, release, deployment, and required hosted-runtime jobs do
       not receive private ARC credentials.
-- [ ] Static tests reject new unclassified or hard-coded placement.
-- [ ] Exact-head validation and review pass, and the PR is merged.
+- [x] Static tests reject new unclassified or hard-coded placement.
+- [x] Exact-head validation and review pass, and the PR is merged.
 
 ## Progress
 
 - 2026-08-22: Scope claimed from the direct operator request. Existing PR 1079
   belongs to a separate testing-quality task and remains read-only.
+- 2026-08-22: Audited all 19 workflow files, added an exhaustive typed
+  job-placement contract, validated live general and Hive ARC execution, and
+  merged PR 1080.
 
 ## Findings and decisions
 
-- No findings yet.
+- Trusted build jobs already used ARC; remaining GitHub-hosted jobs are explicit
+  trust, deployment, AI-agent, scheduled, or runtime-specific exceptions.
+- Same-repository Dependabot pull requests were eligible for ARC under the old
+  same-repository condition. Pull-request author identity now excludes them.
+- Label-triggered Hive jobs must use pull-request author identity instead of
+  `github.actor`, which can identify the human labeler.
+- The legacy `nook` runner cleanup workflow manages the separately registered
+  persistent Docker pool and is not an ARC delivery workload.
 
 ## References
 
