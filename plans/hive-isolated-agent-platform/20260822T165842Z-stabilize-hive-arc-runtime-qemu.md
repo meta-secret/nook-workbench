@@ -47,7 +47,8 @@ isolation and cache-performance work while restoring reliable job completion.
 - A fresh QEMU runner completed the PR Hive job in 2m10s, with 1m39s in Rust
   verification and no Pod replacement.
 - The exact merged Main job completed Rust verification in 1m04s on
-  `nook-k0s-hive`.
+  `nook-k0s-hive`; the full Hive job succeeded in 10m08s after a separate
+  8m31s registry-cache publication.
 
 ## Safety review
 

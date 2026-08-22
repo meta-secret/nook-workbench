@@ -47,4 +47,4 @@ and capacity for ten simultaneous jobs.
 - 2026-08-22: PR 1076 merged at `96ed258e0f` and the exact merge was deployed.
   A fresh QEMU ARC runner completed the PR Hive job in 2m10s, including 1m39s
   for Rust verification. The exact merged Main job completed Rust verification
-  in 1m04s without sandbox replacement.
+  in 1m04s without sandbox replacement and finished successfully.

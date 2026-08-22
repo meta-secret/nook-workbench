@@ -16,8 +16,8 @@ summary:
   local_test_count: 0
   local_combined_count: 4
   local_execution_seconds: 0
-  github_actions_run_count: 3
-  github_actions_seconds: 2003
+  github_actions_run_count: 4
+  github_actions_seconds: 2656
   pr_retrigger_count: 1
   agent_requested_rerun_count: 1
   merge_attempt_count: 1
@@ -76,6 +76,16 @@ github_actions_runs:
     started_at: 2026-08-22T17:03:18Z
     finished_at: 2026-08-22T17:12:45Z
     duration_seconds: 567
+    conclusion: success
+    source_pr: 1076
+  - workflow: Hive
+    run_id: 32587659293
+    run_attempt: 1
+    head_sha: 96ed258e0fc7a51222675a56d98870d4164b1040
+    trigger: push
+    started_at: 2026-08-22T17:24:58Z
+    finished_at: 2026-08-22T17:35:51Z
+    duration_seconds: 653
     conclusion: success
     source_pr: 1076
 cache_telemetry:
