@@ -28,6 +28,9 @@ work, reviewed Nook pull requests, and verified Main outcomes.
   — delivered the evidence-backed QEMU fallback after Dragonball lost a normal
   Hive verification sandbox; fresh Hive verification now completes in about
   one to two minutes.
+- [Route trusted Main workloads through ARC](route-trusted-main-workloads-through-arc.md)
+  — moves the remaining hard-coded hosted Main lanes onto the repository's
+  `nook-k0s` route so local BuildKit and Zot can benefit the full pipeline.
 
 Generated `main-failure-*.md` records in this directory are durable incident
 handoffs owned by the Hive dispatcher.
