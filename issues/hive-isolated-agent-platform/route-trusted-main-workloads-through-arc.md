@@ -8,7 +8,8 @@ owner: codex
 created_at: 2026-08-22T17:38:27Z
 updated_at: 2026-08-22T17:38:27Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1077
 depends_on:
   - issues/hive-isolated-agent-platform/reuse-private-arc-buildkit-state.md
   - issues/hive-isolated-agent-platform/stabilize-hive-arc-runtime-qemu.md
@@ -45,3 +46,5 @@ unchanged.
 - 2026-08-22: Main run 32584048197 reported four active product lanes on
   `ubuntu-latest` runners while ARC was idle, identifying routing rather than
   cluster capacity as the queue and cache-locality defect.
+- 2026-08-22: PR 1077 opened with every explicit Main job on the configured
+  runner route and a static regression contract.
