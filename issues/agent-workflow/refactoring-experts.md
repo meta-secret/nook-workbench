@@ -1,13 +1,14 @@
 ---
 title: Add structural refactoring experts
-status: in_progress
+status: completed
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-23T04:12:41Z
-updated_at: 2026-08-23T04:12:41Z
+updated_at: 2026-08-23T06:16:23Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1084
 depends_on:
   - issues/agent-workflow/named-module-subagent-foundation.md
 ---
@@ -40,13 +41,13 @@ a refactoring sequence. The delivery owner decides and applies changes.
 
 ## Acceptance criteria
 
-- [ ] Three stable project-scoped roles are discoverable by name.
-- [ ] Each role has a distinct responsibility and exact context boundary.
-- [ ] Successful analysis returns complete typed refactoring evidence.
-- [ ] Cortex deterministic-extraction findings distinguish semantic policy from
+- [x] Three stable project-scoped roles are discoverable by name.
+- [x] Each role has a distinct responsibility and exact context boundary.
+- [x] Successful analysis returns complete typed refactoring evidence.
+- [x] Cortex deterministic-extraction findings distinguish semantic policy from
       mechanical work suitable for Loom.
-- [ ] Runtime and audit tests reject capability, context, role, and result drift.
-- [ ] Cortex, Loom, exact-head hosted validation, review, and readiness pass.
+- [x] Runtime and audit tests reject capability, context, role, and result drift.
+- [x] Cortex, Loom, exact-head hosted validation, review, and readiness pass.
 
 ## Decisions
 
@@ -60,4 +61,3 @@ a refactoring sequence. The delivery owner decides and applies changes.
 
 - [Deterministic agent workflows](README.md)
 - [Named module-subagent foundation](named-module-subagent-foundation.md)
-
