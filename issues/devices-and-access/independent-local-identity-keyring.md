@@ -1,11 +1,11 @@
 ---
 title: Provision an independent local keyring for each identity
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-20T16:00:00Z
-updated_at: 2026-08-20T16:00:00Z
+updated_at: 2026-08-23T07:19:01Z
 source_issues: []
 related_prs:
   - 1063
@@ -47,3 +47,10 @@ to select and unlock the correct local keyring later.
 - [ ] Devices & access enables Add identity only when the secure flow is available.
 - [ ] Rust and actual-WASM tests cover creation, switching, lock, and recovery.
 - [ ] Exact-head validation passes before squash merge.
+
+## Progress
+
+- 2026-08-23: Claimed for direct implementation. The published start plan is
+  `plans/devices-and-access/20260823T071643Z-independent-local-identity-keyring.md`.
+  The delivery includes the secure provider contract and the focused Devices &
+  access interaction refactor in one PR.
