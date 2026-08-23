@@ -1,11 +1,11 @@
 ---
 title: Eliminate the ARC verified-cache publication tail
-status: done
+status: in_progress
 priority: high
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-22T21:33:00Z
-updated_at: 2026-08-23T05:42:00Z
+updated_at: 2026-08-23T05:49:00Z
 source_issues: []
 related_prs:
   - 1077
@@ -57,6 +57,11 @@ sharing a writable BuildKit daemon or another job's mutable filesystem.
   worker with generation-checked Btrfs reflink promotion. Exact-head Hive and
   ordinary smoke runs completed with reusable state, and ten concurrent
   ordinary runtime jobs succeeded on one ephemeral scale set.
+- 2026-08-23: Post-merge Main evidence showed that production jobs still run a
+  multi-minute minimal registry handoff because only the operational smoke path
+  requests local seed promotion. Reopened the issue for a bounded follow-up
+  that lets successful trusted jobs request promotion without exposing the host
+  cache-control directory to job code.
 
 ## Findings and decisions
 
