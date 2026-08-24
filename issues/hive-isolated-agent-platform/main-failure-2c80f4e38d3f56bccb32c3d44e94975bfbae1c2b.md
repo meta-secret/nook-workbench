@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 2c80f4e38d3f
-status: ready
+status: in_progress
 priority: p1
-automation: hive
-owner: unassigned
+automation: manual
+owner: cypherkitty
 created_at: 2026-08-24T22:12:40Z
-updated_at: 2026-08-24T22:12:40Z
+updated_at: 2026-08-24T22:18:00Z
 source_issues: []
 related_prs: [1099]
 depends_on: []
@@ -45,11 +45,13 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:32781096434:attempt:1 -->
 - 2026-08-24T22:12:40Z: Main run [32781096434 attempt 1](https://github.com/meta-secret/nook/actions/runs/32781096434)
   failed for `2c80f4e38d3f56bccb32c3d44e94975bfbae1c2b`. Failed jobs: Fresh WASM cache restore proof.
+- 2026-08-24T22:18:00Z: Claimed for manual repair after confirming no Hive worker was active. The publisher restored the dependency graph locally but the resulting registry cache omitted the three expensive cook/test stages required by a fresh hosted worker.
 
 ## Findings and decisions
 
 - Main failure records include job names and workflow links, never raw logs or
   credentials.
+- Keep publication and proof in the exact same Dockerfile/context lineage and make the publisher's terminal graph explicit.
 
 ## References
 
