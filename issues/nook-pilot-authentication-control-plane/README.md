@@ -84,12 +84,12 @@ resulting workflow observation and saved-login availability.
 - `nook-app/nook-web/nook-web-app/tests/unit/lib/password-form-identity-context.test.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/lib/password-form-submission.test.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/lib/password-forms.test.ts`
+- `nook-app/nook-web/nook-web-app/e2e/demos/nook-pilot.demo.spec.ts`
+- `nook-app/nook-web/nook-web-app/e2e/demos/static-chrome-stub.ts`
 
 ### PR #1097: extension presentation and rendered behavior
 
 - `.cortex/product-specs/browser-extension.md`
-- `nook-app/nook-web/nook-web-app/e2e/demos/nook-pilot.demo.spec.ts`
-- `nook-app/nook-web/nook-web-app/e2e/demos/static-chrome-stub.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/lib/widget-position.test.ts`
 - Every changed file under `nook-app/nook-web/nook-web-extension/`.
 
