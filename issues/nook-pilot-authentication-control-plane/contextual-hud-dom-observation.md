@@ -31,7 +31,7 @@ page controls, and submit only the accepted local ceremony control.
 
 - Included: password-field and form DOM observation, rendered actionability,
   local scope identity, control selection and submission, generated-test setup,
-  and focused browser unit tests.
+  focused browser unit tests, and the owning Playwright demo evidence.
 - Excluded: Rust semantic policy, extension saved-login lookup, Pilot rendering,
   and extension Playwright journeys.
 
@@ -42,6 +42,8 @@ page controls, and submit only the accepted local ceremony control.
   scoped-submit cases have focused browser regressions.
 - [ ] Page actuation cannot escape the accepted form or local container.
 - [ ] Shared web formatting, type, lint, and focused unit checks pass.
+- [ ] The updated Nook Pilot UI demo proves the changed authentication-control
+  boundary through the rendered browser contract.
 
 ## Progress
 
@@ -59,4 +61,3 @@ page controls, and submit only the accepted local ceremony control.
 
 - [Superseding delivery plan](../../plans/nook-pilot-authentication-control-plane/2026-08-24T14-59-55Z-contextual-hud-multi-pr-sequence.md)
 - [Nook PR #1096](https://github.com/meta-secret/nook/pull/1096)
-
