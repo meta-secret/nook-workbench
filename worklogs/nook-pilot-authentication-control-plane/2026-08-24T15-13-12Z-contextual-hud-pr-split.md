@@ -15,9 +15,9 @@ agent: codex
 ## Outcome
 
 Replaced the oversized contextual Pilot delivery shape with three ordered draft
-pull requests. The full reviewed implementation remains preserved, every changed
-file has one owning slice, and the final stacked tree is identical to the
-preserved full-work tree.
+pull requests. The full reviewed baseline remains preserved, every changed file
+has one owning slice, and later exact-head review fixes remain isolated in their
+owning slice.
 
 ## Progress
 
@@ -43,7 +43,11 @@ preserved full-work tree.
 - The first rewritten PR #1087 retained two internal-API catalog entries for
   consumers introduced only by PR #1097. Exact-slice policy validation caught the
   mismatch. The entries moved to PR #1097 and the stack was rebased without
-  changing the preserved final tree.
+  changing the preserved baseline.
+- Exact-head browser tests then exposed two scoped actuation regressions. PR #1096
+  now preserves the Rust-selected localized control, normalizes root submissions
+  to their owning form, and rejects generic fallback activation. The control-query
+  primitives moved to a focused module so `password-forms.ts` remains 932 lines.
 
 ## Decisions
 
@@ -60,12 +64,16 @@ preserved full-work tree.
   trees.
 - PR #1087 is 25 files with 2,783 changed lines at
   `47aff944d33b1579a886dbcd7946a1e4ec297567`.
-- PR #1096 is 11 files with 3,257 changed lines at
-  `4a654edd6edcb036a686c44dcf9df351780ac93b`.
+- PR #1096 is 12 files with 3,371 changed lines at
+  `00a819683d2baccb09d1cf9eaeafc9206b742c64`.
 - PR #1097 is 31 files with 1,454 changed lines at
-  `e3a91922703972b8b5ae06c26c82b11162b028b2`.
-- The final remote tree hash matches the preserved full-work tree hash
-  `07b6c8d456ae10690c868e491c883a875747130a`.
+  `bf2487cba4354431dffc723934112ff22f000535`.
+- The preserved full-work baseline tree is
+  `07b6c8d456ae10690c868e491c883a875747130a`; the final stack adds the scoped
+  actuation review fix and has exact tree
+  `e1f645a299c92f248dcd736b5e2b96bb2a0840f5`.
+- Focused browser submission suites pass 61 of 61 tests. Compact-policy and
+  runtime-message suites pass 31 of 31 tests.
 
 ## Remaining work
 
