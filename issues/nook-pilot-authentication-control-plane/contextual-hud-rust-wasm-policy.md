@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T00:26:43Z
+updated_at: 2026-08-25T00:39:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1087"]
 depends_on: []
@@ -38,8 +38,7 @@ typed decisions without adding web policy.
 
 ## Acceptance criteria
 
-- [ ] Authentication actionability and workflow policy is Rust-owned and
-  behavior-tested.
+- [ ] Authentication actionability, workflow policy, and semantic approval requirement are Rust-owned and behavior-tested.
 - [ ] WASM adapters expose concrete typed observations and decisions.
 - [ ] Localized, destructive, recovery, OTP, password-only, and password-update
   cases have focused Rust regressions.
@@ -48,11 +47,12 @@ typed decisions without adding web policy.
 ## Progress
 
 - 2026-08-25: PR #1087 is reduced to this slice at exact head
-  `9b7a85ddb2c4ef9f9defd50255f61d22307eb838`. Repository policy and all 299
+  `85654f5b08963e825a1a15664826b2725bd40a13`. Repository policy and all 299
   Loom tests pass after moving downstream-only consumer registration to PR #1097.
 - 2026-08-25: Exact-head review now accepts `Reset password` only with
   `new-password` evidence and rejects OTP resend/request-new-code controls.
   Rust domain tests, the WASM boundary, and Clippy pass.
+- 2026-08-25: Exact-head review restored a semantic `AuthenticationApprovalRequirement`: executable actions require `explicit-user-approval`, while manual takeover carries `takeover-required`. Missing approval policy is rejected at the WASM boundary. The focused workflow suite passes 30 tests and the focused companion-WASM boundary test passes.
 
 ## Findings and decisions
 
