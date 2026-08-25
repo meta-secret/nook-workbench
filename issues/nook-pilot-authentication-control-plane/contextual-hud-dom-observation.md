@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T00:06:10Z
+updated_at: 2026-08-25T00:17:57Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1096"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-rust-wasm-policy.md"]
@@ -48,8 +48,9 @@ page controls, and submit only the accepted local ceremony control.
 ## Progress
 
 - 2026-08-25: Draft PR #1096 is reduced to this slice at exact head
-  `4a654edd6edcb036a686c44dcf9df351780ac93b`. Its localized-control regressions
-  preserve the Rust-selected control for scoped browser actuation.
+  `00a819683d2baccb09d1cf9eaeafc9206b742c64`. Its localized-control regressions preserve the Rust-selected control for
+  scoped browser actuation, normalize root submissions to the owning form, and
+  reject generic fallback controls. The focused suites pass 61 of 61 tests.
 
 ## Findings and decisions
 
