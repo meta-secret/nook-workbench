@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-24T15:04:00Z
+updated_at: 2026-08-25T00:06:10Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1096"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-rust-wasm-policy.md"]
@@ -47,8 +47,9 @@ page controls, and submit only the accepted local ceremony control.
 
 ## Progress
 
-- 2026-08-24: Draft PR #1096 preserves the complete implementation tree from
-  `f75f7b8bb90a77bce72de86de5a131d3f7a1c58d` before reduction to this slice.
+- 2026-08-25: Draft PR #1096 is reduced to this slice at exact head
+  `4a654edd6edcb036a686c44dcf9df351780ac93b`. Its localized-control regressions
+  preserve the Rust-selected control for scoped browser actuation.
 
 ## Findings and decisions
 
