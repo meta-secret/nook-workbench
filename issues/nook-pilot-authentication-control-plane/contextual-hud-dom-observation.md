@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T00:39:00Z
+updated_at: 2026-08-25T00:55:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1096"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-rust-wasm-policy.md"]
@@ -41,6 +41,7 @@ page controls, and submit only the accepted local ceremony control.
 - [ ] Hidden, clipped, covered, disabled, recovery, localized, form-less, and
   scoped-submit cases have focused browser regressions.
 - [ ] Page actuation cannot escape the accepted form or local container.
+- [ ] Generic unowned controls cannot become authentication actions from nearby field evidence.
 - [ ] Shared web formatting, type, lint, and focused unit checks pass.
 - [ ] The updated Nook Pilot UI demo proves the changed authentication-control
   boundary through the rendered browser contract.
@@ -48,9 +49,9 @@ page controls, and submit only the accepted local ceremony control.
 ## Progress
 
 - 2026-08-25: Draft PR #1096 is reduced to this slice at exact head
-  `d152ef295e137bcbf0f837d516d684fc21a9060d`. Its localized-control regressions preserve the Rust-selected control for
+  `33873f1871eb70f4c17f9e7b84c06650613585d2`. Its localized-control regressions preserve the Rust-selected control for
   scoped browser actuation, normalize root submissions to the owning form, and
-  reject generic fallback controls. The focused suites pass 63 of 63 tests, including reset-password and OTP resend DOM regressions. The owning demo and Chrome stub carry the required Rust approval field.
+  reject generic fallback controls. The five owning DOM suites pass 103 of 103 tests against freshly rebuilt companion WASM, including reset-password, OTP resend, scoped localized-control, and unowned-control regressions. The owning demo and Chrome stub carry the required Rust approval field. The extension observation-scheduling test moves to PR #1097 with its implementation.
 
 ## Findings and decisions
 
