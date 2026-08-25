@@ -2,7 +2,7 @@
 title: "Feature: Nook Pilot authentication control plane"
 status: in_progress
 created_at: 2026-07-25T23:56:27Z
-updated_at: 2026-08-25T00:06:10Z
+updated_at: 2026-08-25T00:17:57Z
 ---
 
 # Feature: Nook Pilot authentication control plane
@@ -36,17 +36,18 @@ Workbench issue contract.
 
 ## Contextual HUD delivery sequence
 
-The complete contextual HUD implementation is preserved at Nook commit
-`f75f7b8bb90a77bce72de86de5a131d3f7a1c58d`. Delivery proceeds in this order:
+The contextual HUD baseline is preserved at Nook commit
+`f75f7b8bb90a77bce72de86de5a131d3f7a1c58d`. Exact-head review added the scoped
+actuation fix in PR #1096. Delivery proceeds in this order:
 
 1. [PR #1087](https://github.com/meta-secret/nook/pull/1087) at
    `47aff944d33b1579a886dbcd7946a1e4ec297567` owns Rust/WASM authentication
    actionability policy and typed interfaces.
 2. [PR #1096](https://github.com/meta-secret/nook/pull/1096) at
-   `4a654edd6edcb036a686c44dcf9df351780ac93b` owns shared browser DOM
+   `00a819683d2baccb09d1cf9eaeafc9206b742c64` owns shared browser DOM
    observation, scoping, and actuation.
 3. [PR #1097](https://github.com/meta-secret/nook/pull/1097) at
-   `e3a91922703972b8b5ae06c26c82b11162b028b2` owns extension Pilot visibility,
+   `bf2487cba4354431dffc723934112ff22f000535` owns extension Pilot visibility,
    saved-login compact presentation, final consumer registration, and rendered
    browser coverage.
 
@@ -78,6 +79,7 @@ resulting workflow observation and saved-login availability.
 
 ### PR #1096: shared DOM observation and actuation
 
+- `nook-app/nook-web/nook-web-shared/src/extension/authentication-advance-controls.ts`
 - `nook-app/nook-web/nook-web-shared/src/extension/password-form-fields.ts`
 - `nook-app/nook-web/nook-web-shared/src/extension/password-forms.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/setup-wasm.ts`
@@ -98,4 +100,6 @@ resulting workflow observation and saved-login availability.
 - Every changed file under `nook-app/nook-web/nook-web-extension/`.
 
 The three inventories cover every file changed by the preserved full-work
-commit relative to its original Main baseline.
+commit relative to its original Main baseline, plus the focused review-fix module
+owned by PR #1096. The final stacked tree is
+`e1f645a299c92f248dcd736b5e2b96bb2a0840f5`.
