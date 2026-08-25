@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-20T16:00:00Z
-updated_at: 2026-08-25T19:50:39Z
+updated_at: 2026-08-25T19:51:24Z
 source_issues: []
 related_prs:
   - 1063
@@ -96,3 +96,5 @@ to select and unlock the correct local keyring later.
   Actions run 32891112654, repository policy passed in run 32891098625, the
   preview deployed to `https://pr-1105.nokey-sh.pages.dev`, all review
   conversations are resolved, and `task pr:ready PR=1105` reported ready.
+- 2026-08-25: PR 1105 squash-merged to Nook `main` as
+  `86387bf86e44a4234a676b87353b0efbd392a395`.
