@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T17:47:00Z
+updated_at: 2026-08-25T18:28:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -42,6 +42,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - [x] Default page unlock requests do not create a detached companion window.
 - [x] English and Russian catalogs remain in parity.
 - [x] Focused extension unit, lint, TypeScript, Svelte, browser, and pre-push checks pass.
+- [x] Lock cleanup scrubs in-memory picker state before fallible session-storage access.
+- [x] Pilot remounts and remains actionable after the host page removes its mounted element.
 - [ ] Hosted Playwright and PR validation pass on the updated exact head.
 
 ## Progress
@@ -50,6 +52,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - 2026-08-25: PR #1097 was split as slice 3 of 3, merged current main `6e54dfbadd2b8a41090ac96bbe946d7c994781c9`, and reached exact head `70efcdb7aab4cf510ae61b5da33993773ab2c130`. The extension package passes 246 tests, lint, TypeScript, Svelte, formatting, Cortex-session hygiene, architecture guards, and mandatory pre-push hygiene.
 - 2026-08-25: Local Brave proves both the normal QR stage/confirm flow and cancellation of a staged enrollment across lock/unlock. The cancellation test waits beyond multiple evidence-watch cycles and verifies that neither the OTP field nor the vault authenticator is populated.
 - 2026-08-25: All active review conversations are addressed and resolved. Exact-head focused extension execution, full PR validation, and Codex review are running. Previous-head BuildKit/ARC failures are classified as infrastructure evidence, not product-test failures.
+
+- 2026-08-25: Review follow-up reached exact head `306708bff8e349c559129cc1eb7c84700599305c`. In-memory picker requests are now scrubbed before fallible storage cleanup, and the mounted Pilot recovers if host-page code removes its element. The extension passes 252 tests, clean lint, TypeScript, and Svelte checks; focused Brave proves remount plus saved-login completion. Source architecture, Cortex session hygiene, and pre-push checks pass. All review conversations are resolved. Exact-head focused browser execution and full PR validation were dispatched once; shared build infrastructure remains the external readiness risk.
 
 ## Findings and decisions
 
@@ -60,6 +64,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - Mixed backup-code forms route through the Rust workflow policy rather than TypeScript business rules.
 - Pairing completion invalidates cached match metadata again and refreshes mounted authentication surfaces.
 - Authentication-context mutation invalidates action generations, cancels both login and authenticator pickers, and remounts action DOM so disabled or stale controls cannot survive.
+- Authorization cleanup clears in-memory picker state synchronously before session-storage lookup or removal can fail.
+- If host-page code removes the mounted Pilot element, the content script invalidates the old action context and schedules a clean remount.
 - Session lock and expiry invalidate the enrollment generation, stop evidence watching, dismiss Rust-staged enrollment before session close, and prevent late stage responses from becoming active.
 - Empty 2FA state copy points users to the toolbar menu; Pilot does not add a page-level vault control.
 - The browser-extension product specification owns this surface boundary.
