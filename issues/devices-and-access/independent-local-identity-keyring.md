@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-20T16:00:00Z
-updated_at: 2026-08-23T07:19:01Z
+updated_at: 2026-08-25T09:32:32Z
 source_issues: []
 related_prs:
   - 1063
@@ -40,12 +40,12 @@ to select and unlock the correct local keyring later.
 
 ## Acceptance criteria
 
-- [ ] Two locally created identities never share the same app key.
-- [ ] Creating an identity requires and completes a protection ceremony.
-- [ ] Lock and reload preserve the selected keyring without exposing secrets.
-- [ ] Interrupted setup is resumable or rolls back without an orphan identity.
-- [ ] Devices & access enables Add identity only when the secure flow is available.
-- [ ] Rust and actual-WASM tests cover creation, switching, lock, and recovery.
+- [x] Two locally created identities never share the same app key.
+- [x] Creating an identity requires and completes a protection ceremony.
+- [x] Lock and reload preserve the selected keyring without exposing secrets.
+- [x] Interrupted setup is resumable or rolls back without an orphan identity.
+- [x] Devices & access enables Add identity only when the secure flow is available.
+- [x] Rust and actual-WASM tests cover creation, switching, lock, and recovery.
 - [ ] Exact-head validation passes before squash merge.
 
 ## Progress
@@ -54,3 +54,9 @@ to select and unlock the correct local keyring later.
   `plans/devices-and-access/20260823T071643Z-independent-local-identity-keyring.md`.
   The delivery includes the secure provider contract and the focused Devices &
   access interaction refactor in one PR.
+- 2026-08-25: Implementation is complete on exact head
+  `739d501bc8616804b9f44d743d5972cd5d739549`, based on `origin/main`
+  `d41d457222844812fe9fca0fd6081a694fbd1767`. Focused browser evidence is
+  green: 14 Devices & access scenarios, two recovery/migration WASM
+  regressions, and the rendered UI demo. Final advisory review and hosted PR
+  validation remain before merge.
