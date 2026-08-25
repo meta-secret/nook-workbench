@@ -2,7 +2,7 @@
 title: "Feature: Nook Pilot authentication control plane"
 status: in_progress
 created_at: 2026-07-25T23:56:27Z
-updated_at: 2026-08-25T00:39:00Z
+updated_at: 2026-08-25T00:55:00Z
 ---
 
 # Feature: Nook Pilot authentication control plane
@@ -40,13 +40,13 @@ The contextual HUD baseline is preserved at Nook commit
 `f75f7b8bb90a77bce72de86de5a131d3f7a1c58d`. Exact-head review added Rust policy and semantic approval fixes in PR #1087, scoped actuation fixes in PR #1096, and approval enforcement in PR #1097. Delivery proceeds in this order:
 
 1. [PR #1087](https://github.com/meta-secret/nook/pull/1087) at
-   `85654f5b08963e825a1a15664826b2725bd40a13` owns Rust/WASM authentication
+   `bfbc338498c248b5164b66670e0a228c16d2b633` owns Rust/WASM authentication
    actionability policy and typed interfaces.
 2. [PR #1096](https://github.com/meta-secret/nook/pull/1096) at
-   `d152ef295e137bcbf0f837d516d684fc21a9060d` owns shared browser DOM
+   `33873f1871eb70f4c17f9e7b84c06650613585d2` owns shared browser DOM
    observation, scoping, and actuation.
 3. [PR #1097](https://github.com/meta-secret/nook/pull/1097) at
-   `38994976f6908095eb224d2dafcfd7f8e3cd299e` owns extension Pilot visibility,
+   `6dda5c55eaf2dab9d7dd79e8cb2ce02fc02d13ff` owns extension Pilot visibility,
    saved-login compact presentation, final consumer registration, and rendered
    browser coverage.
 
@@ -83,7 +83,6 @@ resulting workflow observation and saved-login availability.
 - `nook-app/nook-web/nook-web-shared/src/extension/password-form-fields.ts`
 - `nook-app/nook-web/nook-web-shared/src/extension/password-forms.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/setup-wasm.ts`
-- `nook-app/nook-web/nook-web-app/tests/unit/lib/authentication-observation.test.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/lib/passkey-controls.test.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/lib/password-form-actionability.test.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/lib/password-form-identity-context.test.ts`
@@ -94,6 +93,7 @@ resulting workflow observation and saved-login availability.
 
 ### PR #1097: extension presentation and rendered behavior
 
+- `nook-app/nook-web/nook-web-app/tests/unit/lib/authentication-observation.test.ts`
 - `.cortex/product-specs/browser-extension.md`
 - `agentic-ai/loom/src/module-experts/catalog.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/lib/widget-position.test.ts`
@@ -102,4 +102,4 @@ resulting workflow observation and saved-login availability.
 The three inventories cover every file changed by the preserved full-work
 commit relative to its original Main baseline, plus the focused review-fix module
 owned by PR #1096. The final stacked tree is
-`ff3a906ab90d1000e06612036a301ea3a59a8ecf`.
+`d302b7c8c692a1ba3da6d010c056c3e517161a68`.
