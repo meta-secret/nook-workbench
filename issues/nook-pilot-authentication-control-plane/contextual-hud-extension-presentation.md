@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T08:42:00Z
+updated_at: 2026-08-25T08:48:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -36,12 +36,17 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - [x] The host-page surface contains no Open vault, Take over, or vault-status control.
 - [x] The toolbar popup contains Open Simple Vault.
 - [x] The toolbar popup has no Ready or Stay ready destination.
+- [ ] The unlocked toolbar uses a compact identity and connection-status row instead of a hero, explanation, or decorative mark.
+- [ ] A connected vault has one dominant Open Simple Vault action and one subdued Pair another vault action.
+- [ ] An unconnected vault has one dominant Connect to Simple Vault action without a competing Open Simple Vault control.
 - [x] Default page unlock requests do not create a detached companion window.
 - [x] English and Russian catalogs remain in parity.
 - [x] Focused extension unit, lint, TypeScript, Svelte, and pre-push checks pass.
 - [x] Hosted Playwright and PR validation pass on the updated exact head.
 
 ## Progress
+
+- 2026-08-25: User screenshot review found that the toolbar popup still lacked a clear visual purpose. The follow-up removes hero-scale copy and redundant controls. It keeps only compact connection context and the action that changes the current state.
 
 - 2026-08-25: PR #1097 reached exact head `d5fc39645e9cb45a578d589141e8d647dea82b52` on current main `d41d457222844812fe9fca0fd6081a694fbd1767`. The extension package passes 241 tests, lint, TypeScript, host formatting, and mandatory pre-push hygiene. Exact-head PR run [32825626788](https://github.com/meta-secret/nook/actions/runs/32825626788) passed all 17 jobs, including full extension and both full web E2E shards. Codex found no major issues and active unresolved review threads are zero.
 - 2026-08-25: Focused run [32825675111](https://github.com/meta-secret/nook/actions/runs/32825675111) completed the allowlisted `extension:e2e` task successfully, then its diagnostics wrapper repeated the runner-only `EACCES` failure while scanning Chromium profile artifacts. The exact-head PR extension job passed, so this is not a product-test failure.
