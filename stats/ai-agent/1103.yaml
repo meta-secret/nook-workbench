@@ -1,0 +1,75 @@
+schema_version: 3
+source_pr:
+  number: 1103
+  url: https://github.com/meta-secret/nook/pull/1103
+  title: "infra: prove Kubernetes cache portability"
+  change_surface: production-derived local k3d Zot and rootless BuildKit cache proof
+  head_sha: 7b9400c685c1a0c88cfa7735f20273ab6dbc1b5a
+  started_at: 2026-08-25T05:37:02Z
+  opened_at: 2026-08-25T06:45:04Z
+  merged_at: 2026-08-25T07:58:45Z
+  elapsed_seconds: 8503
+  open_to_merge_seconds: 4421
+summary:
+  local_execution_count: 8
+  local_check_count: 2
+  local_test_count: 3
+  local_combined_count: 3
+  local_execution_seconds: 494
+  github_actions_run_count: 18
+  github_actions_seconds: 3467
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 1
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: 2026-08-25T08:00:00Z
+  head_sha: 7b9400c685c1a0c88cfa7735f20273ab6dbc1b5a
+  by_type: {rust: 0, preflight: 0, web_unit: 0, e2e: 0}
+  total: 0
+local_executions:
+  - {command: task format and Loom pre-push gates, category: combined, outcome: success, duration_seconds: 10}
+  - {command: "task infra:kubernetes-cache:prove", category: test, outcome: success, duration_seconds: 150}
+  - {command: task format and Loom pre-push gates, category: combined, outcome: success, duration_seconds: 10}
+  - {command: "task infra:kubernetes-cache:prove", category: test, outcome: success, duration_seconds: 150}
+  - {command: task format and Loom pre-push gates, category: combined, outcome: success, duration_seconds: 10}
+  - {command: "task infra:kubernetes-cache:prove", category: test, outcome: success, duration_seconds: 150}
+  - {command: "task pr:ready PR=1103", category: check, outcome: failed, duration_seconds: 8, reason: unresolved review threads}
+  - {command: "task pr:ready PR=1103", category: check, outcome: success, duration_seconds: 6}
+github_actions_runs:
+  - {workflow: Remote task, run_id: 32818356461, run_attempt: 1, head_sha: e961baaa0bf7434cb30dd321a29e04dad5afa5a5, trigger: workflow_dispatch, duration_seconds: 142, conclusion: success, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32818367905, run_attempt: 1, head_sha: e961baaa0bf7434cb30dd321a29e04dad5afa5a5, trigger: workflow_dispatch, duration_seconds: 48, conclusion: failure, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32818642816, run_attempt: 1, head_sha: 822f870f5d6f3554f1bea47ff6951e4d793fae0c, trigger: workflow_dispatch, duration_seconds: 134, conclusion: success, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32818647913, run_attempt: 1, head_sha: 822f870f5d6f3554f1bea47ff6951e4d793fae0c, trigger: workflow_dispatch, duration_seconds: 389, conclusion: failure, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32819582326, run_attempt: 1, head_sha: 560af0410d394ac979488c2dbd7ccb1a45c1c307, trigger: workflow_dispatch, duration_seconds: 140, conclusion: success, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32819587736, run_attempt: 1, head_sha: 560af0410d394ac979488c2dbd7ccb1a45c1c307, trigger: workflow_dispatch, duration_seconds: 392, conclusion: failure, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32820359605, run_attempt: 1, head_sha: 5ceae134beac1cf7c8b9e8a745995c00ecfabb66, trigger: workflow_dispatch, duration_seconds: 156, conclusion: success, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32820365104, run_attempt: 1, head_sha: 5ceae134beac1cf7c8b9e8a745995c00ecfabb66, trigger: workflow_dispatch, duration_seconds: 100, conclusion: failure, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32820674494, run_attempt: 1, head_sha: 07d1734345e056f30b56f05bf31f5df908620f93, trigger: workflow_dispatch, duration_seconds: 198, conclusion: success, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32820680787, run_attempt: 1, head_sha: 07d1734345e056f30b56f05bf31f5df908620f93, trigger: workflow_dispatch, duration_seconds: 128, conclusion: failure, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32821116944, run_attempt: 1, head_sha: c096516dc913b0724fd7d746892708248ded735c, trigger: workflow_dispatch, duration_seconds: 198, conclusion: success, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32821127806, run_attempt: 1, head_sha: c096516dc913b0724fd7d746892708248ded735c, trigger: workflow_dispatch, duration_seconds: 105, conclusion: failure, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32821580072, run_attempt: 1, head_sha: d8348da8b64f396b9a6662677d468148b6cf9b00, trigger: workflow_dispatch, duration_seconds: 42, conclusion: cancelled, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32821592203, run_attempt: 1, head_sha: d8348da8b64f396b9a6662677d468148b6cf9b00, trigger: workflow_dispatch, duration_seconds: 26, conclusion: cancelled, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32822185660, run_attempt: 1, head_sha: 32f067c8ef85a41d21a566acc0e23cad323f4e89, trigger: workflow_dispatch, duration_seconds: 144, conclusion: success, source_pr: 1103}
+  - {workflow: PR, run_id: 32822409131, run_attempt: 1, head_sha: 32f067c8ef85a41d21a566acc0e23cad323f4e89, trigger: pull_request, duration_seconds: 483, conclusion: success, source_pr: 1103}
+  - {workflow: Remote task, run_id: 32823465745, run_attempt: 1, head_sha: 7b9400c685c1a0c88cfa7735f20273ab6dbc1b5a, trigger: workflow_dispatch, duration_seconds: 149, conclusion: success, source_pr: 1103}
+  - {workflow: PR, run_id: 32823488341, run_attempt: 1, head_sha: 7b9400c685c1a0c88cfa7735f20273ab6dbc1b5a, trigger: pull_request, duration_seconds: 493, conclusion: success, source_pr: 1103}
+cache_telemetry:
+  totals: {job_count: 0, remote_backend_job_count: 0, direct_compile_job_count: 0, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0}
+  jobs: []
+pr_retriggers:
+  - {at: "2026-08-25T07:49:18Z", kind: agent_requested, trigger: complete_validation, reason: review feedback changed the exact head}
+merge_attempts:
+  - {at: "2026-08-25T07:58:45Z", method: squash, outcome: success, reason: exact-head readiness passed on current Main with green checks and zero unresolved threads}
+comparison:
+  baseline_prs: [1083, 1069]
+  baseline_quality: strong
+  baseline_note: Recent ARC deliveries establish the production k0s and BuildKit boundaries that this local proof derives from.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: true
+  findings:
+    - Hosted k3d experiments consumed six failed runtime runs before the owner clarified that local runtime evidence was sufficient.
+    - The final delivery removed all hosted k3d routing and retained the successful static preflight and exact-head PR validation paths.
+  required_actions: []
