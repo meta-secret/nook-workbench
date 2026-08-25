@@ -1,11 +1,11 @@
 ---
 title: Provision an independent local keyring for each identity
-status: in_progress
+status: blocked
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-20T16:00:00Z
-updated_at: 2026-08-25T17:44:12Z
+updated_at: 2026-08-25T18:08:15Z
 source_issues: []
 related_prs:
   - 1063
@@ -77,3 +77,11 @@ to select and unlock the correct local keyring later.
   raw app-key identifier remains an internal security fact and may appear only
   in an advanced disclosure. Work resumed under the superseding plan
   `plans/devices-and-access/20260825T174412Z-passkey-app-hierarchy.md`.
+- 2026-08-25: PR 1105 now presents apps beneath their passkey or PIN, keeps the
+  raw app ID behind Advanced, and describes remote apps only as linked to the
+  identity. Exact head `be2e22fe532d0fb98b9f2d91d4c0e4dbc8e87f40` also
+  retains an atomic rollback-readable provider projection. All four P1 review
+  conversations have targeted replies and are resolved. Local format, Cortex,
+  UI demo, and pre-push gates pass, but hosted validation run 32881570128 and
+  repository-policy run 32881551792 stopped before product compilation because
+  the private build worker could not reach the required compiler-cache service.
