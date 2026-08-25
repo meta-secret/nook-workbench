@@ -2,7 +2,7 @@
 title: "Feature: Nook Pilot authentication control plane"
 status: in_progress
 created_at: 2026-07-25T23:56:27Z
-updated_at: 2026-08-24T15:04:00Z
+updated_at: 2026-08-25T00:06:10Z
 ---
 
 # Feature: Nook Pilot authentication control plane
@@ -39,12 +39,16 @@ Workbench issue contract.
 The complete contextual HUD implementation is preserved at Nook commit
 `f75f7b8bb90a77bce72de86de5a131d3f7a1c58d`. Delivery proceeds in this order:
 
-1. [PR #1087](https://github.com/meta-secret/nook/pull/1087) owns Rust/WASM
-   authentication actionability policy and typed interfaces.
-2. [PR #1096](https://github.com/meta-secret/nook/pull/1096) owns shared browser
-   DOM observation, scoping, and actuation.
-3. [PR #1097](https://github.com/meta-secret/nook/pull/1097) owns extension Pilot
-   visibility, saved-login compact presentation, and rendered browser coverage.
+1. [PR #1087](https://github.com/meta-secret/nook/pull/1087) at
+   `47aff944d33b1579a886dbcd7946a1e4ec297567` owns Rust/WASM authentication
+   actionability policy and typed interfaces.
+2. [PR #1096](https://github.com/meta-secret/nook/pull/1096) at
+   `4a654edd6edcb036a686c44dcf9df351780ac93b` owns shared browser DOM
+   observation, scoping, and actuation.
+3. [PR #1097](https://github.com/meta-secret/nook/pull/1097) at
+   `e3a91922703972b8b5ae06c26c82b11162b028b2` owns extension Pilot visibility,
+   saved-login compact presentation, final consumer registration, and rendered
+   browser coverage.
 
 The stable cross-module interface is the typed authentication page observation
 and advance-control decision exported by companion WASM. Shared web code supplies
@@ -70,7 +74,6 @@ resulting workflow observation and saved-login availability.
 - `.cortex/dynamic-skills/index.md`
 - `.cortex/dynamic-skills/rust-coding.md`
 - `.cortex/dynamic-skills/rust-typescript-code-separation.md`
-- `agentic-ai/loom/src/module-experts/catalog.ts`
 - Every changed file under `nook-app/nook-platform/`.
 
 ### PR #1096: shared DOM observation and actuation
@@ -90,6 +93,7 @@ resulting workflow observation and saved-login availability.
 ### PR #1097: extension presentation and rendered behavior
 
 - `.cortex/product-specs/browser-extension.md`
+- `agentic-ai/loom/src/module-experts/catalog.ts`
 - `nook-app/nook-web/nook-web-app/tests/unit/lib/widget-position.test.ts`
 - Every changed file under `nook-app/nook-web/nook-web-extension/`.
 
