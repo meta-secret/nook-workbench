@@ -27,8 +27,10 @@ storage, policy, authentication, restart, and cache-reuse boundaries.
 - Keep the existing fast Bake and Zot simulator as an independent proof.
 - Expose one documented Task entrypoint and enforce its structure with static
   preflight contracts.
-- Deliver through focused hosted evidence, exact-head validation, review,
-  readiness, squash merge, and Workbench completion records.
+- Run the k3d runtime proof locally. Keep hosted CI limited to static contracts
+  and normal exact-head validation.
+- Deliver through exact-head validation, review, readiness, squash merge, and
+  Workbench completion records.
 
 ## Constraints and exclusions
 
@@ -39,6 +41,7 @@ storage, policy, authentication, restart, and cache-reuse boundaries.
   GitHub ARC lifecycle, production capacity, or production performance.
 - Keep active production-provisioning work and its pull request read-only.
 - Do not weaken production manifests merely to make the simulation pass.
+- Do not change ARC routing or deployment workflows for the local proof.
 - Do not run heavy product validation locally.
 
 ## Change budget and PR sequence
@@ -48,8 +51,8 @@ storage, policy, authentication, restart, and cache-reuse boundaries.
 - Public or cross-module interfaces: `task infra:kubernetes-cache:prove`; no product runtime API changes
 - Delivery shape: One PR
 - Current PR estimated authored changed lines: 2,400
-- Current PR slice and acceptance evidence: Complete containerized Kubernetes cache proof; Acceptance evidence: static manifest contracts, k3d runtime scenarios, focused hosted proof, and exact-head PR validation
-- PR slices and acceptance evidence: Complete containerized Kubernetes cache proof; Acceptance evidence: static manifest contracts, k3d runtime scenarios, focused hosted proof, and exact-head PR validation
+- Current PR slice and acceptance evidence: Complete containerized Kubernetes cache proof; Acceptance evidence: static manifest contracts, local k3d runtime scenarios, and exact-head PR validation
+- PR slices and acceptance evidence: Complete containerized Kubernetes cache proof; Acceptance evidence: static manifest contracts, local k3d runtime scenarios, and exact-head PR validation
 
 ## Initial plan
 
@@ -57,7 +60,8 @@ storage, policy, authentication, restart, and cache-reuse boundaries.
 2. Add deterministic lifecycle orchestration and fixture builds through disposable Kubernetes clients.
 3. Assert security, policy, persistence, isolation, restoration, and cleanup behavior.
 4. Add preflight and Cortex coverage without replacing the existing fast proof.
-5. Format, review, push, run focused hosted evidence, validate the exact head, resolve findings, merge, and publish completion records.
+5. Format, review, push, run the local k3d proof, validate static contracts on
+   the exact head, resolve findings, merge, and publish completion records.
 
 ## Completion evidence
 
