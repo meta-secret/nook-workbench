@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T00:17:57Z
+updated_at: 2026-08-25T00:26:43Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -49,9 +49,9 @@ password-change workflows remain useful and expanded.
 ## Progress
 
 - 2026-08-25: Draft PR #1097 is reduced to this slice at exact head
-  `bf2487cba4354431dffc723934112ff22f000535`. The final stack contains preserved full-work baseline
-  `f75f7b8bb90a77bce72de86de5a131d3f7a1c58d` plus the PR #1096 review fix, with
-  exact tree `e1f645a299c92f248dcd736b5e2b96bb2a0840f5`.
+  `459be5431b8b7c0f40acfefd4e7ed1167d675d5e`. The final stack contains preserved full-work baseline
+  `f75f7b8bb90a77bce72de86de5a131d3f7a1c58d` plus the PR #1087 and PR #1096 review fixes, with
+  exact tree `94b6fc9e67dd2a1ce0c5086d2400146b01ce48af`.
 
 ## Findings and decisions
 
