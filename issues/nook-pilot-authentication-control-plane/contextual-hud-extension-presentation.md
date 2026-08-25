@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T19:43:00Z
+updated_at: 2026-08-25T20:02:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -62,6 +62,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - 2026-08-25: Hosted browser execution resumed. Repository policy, Rust ecosystem, Hive, Web research, native Rust, WASM, web verification, WASM Node, coverage, and Rust proof/lint jobs passed at `e8783e513078df5a2d67c7e4a443f956c8ff7b88`. The UI demo found that connected state depended on routed-navigation localStorage even though the demo URL already declared the state. Exact head `3459f5b0a2938d318c125bbbeb864b3cdca9825c` now derives the demo stub from that URL. The extension E2E job stopped in Bun with SIGILL before tests; the focused vault-app suite exposed existing device-recovery failures outside this slice. Exact-head validation and review are restarting.
 
 - 2026-08-25: Delayed exact-head review produced four further authorization findings, all fixed at `65b94eee3676704993ea808417cd1d7ffe745817`. Enrollment evidence now invalidates pending DOM actions before async policy work; regular observations include page-wide checkpoints; lock, expiry, and access revocation centrally scrub staged authenticator URIs; and picker surfaces created after an authorization-generation change are closed. Targeted replies are visible and all review conversations are resolved. The extension passes 254 tests with clean lint, TypeScript, and Svelte checks; source architecture, formatting, Cortex-session hygiene, and pre-push checks pass. Exact-head hosted validation and review are restarting.
+
+- 2026-08-25: The owned three-PR stack was synchronized bottom-up so every slice includes current main without exposing main-owned release changes in later slice diffs: #1087 `4c54491b561d249e1dc36f035bfbea7bbb38b368`, #1096 `d601625d2eae5101178c510a38fdcc5c03cda087`, and #1097 base `d601625d2eae5101178c510a38fdcc5c03cda087`. Two additional presentation P1s were fixed at exact head `3fbcfc8b52531bf88bc1cf9ff1db1838af2ebf5d`: competing external authentication mutations invalidate and remove stale actions before scanning, and post-confirmation enrollment state is freshly classified by Rust before another action is exposed. All targeted replies are visible and every review conversation is resolved. Exact-head hosted validation and review are restarting.
 
 ## Findings and decisions
 
