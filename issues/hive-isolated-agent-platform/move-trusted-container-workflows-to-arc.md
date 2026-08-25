@@ -1,13 +1,15 @@
 ---
 title: Move trusted container workflows onto ARC
-status: in_progress
+status: done
 priority: high
 automation: manual
 owner: codex
 created_at: 2026-08-25T05:53:58Z
-updated_at: 2026-08-25T05:53:58Z
+updated_at: 2026-08-25T17:18:58Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1102
+  - 1104
 depends_on:
   - issues/hive-isolated-agent-platform/complete-actions-arc-migration.md
 ---
@@ -41,13 +43,13 @@ reach private infrastructure.
 
 ## Acceptance criteria
 
-- [ ] The remote browser suite runs successfully on `nook-k0s`.
-- [ ] Every workflow job has an explicit, executable placement classification.
-- [ ] All trusted compatible jobs use ARC; hosted jobs are limited to explicit
+- [x] The remote browser suite runs successfully on `nook-k0s`.
+- [x] Every workflow job has an explicit, executable placement classification.
+- [x] All trusted compatible jobs use ARC; hosted jobs are limited to explicit
       untrusted-input exceptions.
-- [ ] Kubernetes job containers and services replace runtime Docker calls in
+- [x] Kubernetes job containers and services replace runtime Docker calls in
       the migrated paths.
-- [ ] Focused contracts, exact-head validation, performance evidence, review,
+- [x] Focused contracts, exact-head validation, performance evidence, review,
       and merge pass.
 
 ## Progress
@@ -55,6 +57,12 @@ reach private infrastructure.
 - 2026-08-25: The triggering remote browser run was measured at 29m28s on a
   GitHub-hosted runner. The current workflow inventory contains 45 jobs, 14 ARC
   routes, and 31 hosted placements.
+- 2026-08-25: PR 1102 moved trusted workflow execution onto ARC through
+  rootless BuildKit and Kubernetes job containers, with hosted execution kept
+  only for untrusted sources.
+- 2026-08-25: PR 1104 closed the four deferred review findings. Exact-head
+  validation and readiness passed, both pull requests merged, and the review
+  threads were answered and resolved.
 
 ## Findings and decisions
 
@@ -66,6 +74,9 @@ reach private infrastructure.
 ## References
 
 - Nook PR 1101
+- Nook PR 1102
+- Nook PR 1104
+- `worklogs/hive-isolated-agent-platform/20260825T171858Z-close-deferred-arc-review-findings.md`
 - `.github/workflows/remote.yml`
 - `infra/k0s/manifests/arc/runner-scale-set-values.yaml`
 - `.github/scripts/runner-placement.ts`
