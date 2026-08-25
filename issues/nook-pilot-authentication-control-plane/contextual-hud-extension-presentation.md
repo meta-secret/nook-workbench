@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T00:39:00Z
+updated_at: 2026-08-25T00:55:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -31,7 +31,7 @@ password-change workflows remain useful and expanded.
 ## Scope
 
 - Included: extension observation scheduling, typed message adapters,
-  saved-login availability cache, background routing, Pilot state and rendering,
+  saved-login availability cache, background routing, observation scheduling, Pilot state and rendering,
   product specification, UI demo, extension unit tests, Playwright coverage,
   and final registration of the newly wired WASM consumers.
 - Excluded: Rust actionability policy and shared DOM classification internals.
@@ -49,9 +49,9 @@ password-change workflows remain useful and expanded.
 ## Progress
 
 - 2026-08-25: Draft PR #1097 is reduced to this slice at exact head
-  `38994976f6908095eb224d2dafcfd7f8e3cd299e`. The final stack contains preserved full-work baseline
+  `6dda5c55eaf2dab9d7dd79e8cb2ce02fc02d13ff`. The final stack contains preserved full-work baseline
   `f75f7b8bb90a77bce72de86de5a131d3f7a1c58d` plus the PR #1087 and PR #1096 review fixes, with
-  exact tree `ff3a906ab90d1000e06612036a301ea3a59a8ecf`. The widget now refuses `takeover-required` and manual `take-over` actions. The focused approval and adapter suites pass 33 tests; the full extension check passes 221 tests with zero Svelte diagnostics.
+  exact tree `d302b7c8c692a1ba3da6d010c056c3e517161a68`. The widget now refuses `takeover-required` and manual `take-over` actions. The focused approval and adapter suites pass 33 tests; the full extension check passes 221 tests with zero Svelte diagnostics. The extension-owned observation scheduling contract passes 5 tests.
 
 ## Findings and decisions
 
