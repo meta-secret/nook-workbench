@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T19:12:00Z
+updated_at: 2026-08-25T19:20:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -58,6 +58,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - 2026-08-25: A second exact-head review found and closed two P1 gaps at replacement head `fa2b8edc20f2cb8467a92f20bd133c2f240d4536`. Enrollment presentation now invalidates pending direct authentication actions and cancels pickers before acceptance or rejection. The expiry regression waits on the actual response callback. The extension passes 253 tests and focused Brave QR enrollment; all review conversations are resolved. Replacement-head hosted validation and review were dispatched.
 
 - 2026-08-25: Recovered hosted validation exposed one repository-policy failure rather than a product failure: the new typed passkey consumer was absent from the internal-API expert catalog. Exact head `e8783e513078df5a2d67c7e4a443f956c8ff7b88` registers that consumer. Module-expert validation, Cortex audit, the complete 299-test Loom suite, session hygiene, formatting, and pre-push checks pass locally. Exact-head hosted validation and review are restarting.
+
+- 2026-08-25: Hosted browser execution resumed. Repository policy, Rust ecosystem, Hive, Web research, native Rust, WASM, web verification, WASM Node, coverage, and Rust proof/lint jobs passed at `e8783e513078df5a2d67c7e4a443f956c8ff7b88`. The UI demo found that connected state depended on routed-navigation localStorage even though the demo URL already declared the state. Exact head `3459f5b0a2938d318c125bbbeb864b3cdca9825c` now derives the demo stub from that URL. The extension E2E job stopped in Bun with SIGILL before tests; the focused vault-app suite exposed existing device-recovery failures outside this slice. Exact-head validation and review are restarting.
 
 ## Findings and decisions
 
