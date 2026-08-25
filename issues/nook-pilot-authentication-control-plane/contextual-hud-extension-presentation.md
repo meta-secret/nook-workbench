@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T19:40:40Z
+updated_at: 2026-08-25T19:48:10Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -68,6 +68,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - 2026-08-25: The three-PR stack was synchronized bottom-up to current main `deeba434cb336cd6575d368e0bdf9ecb56861f0b`: #1087 `f1b15f2ee`, #1096 `7eff88403`, and #1097 exact head `59b4ce9f38364c5ef74d6c047348016dacee8506`. Review-body P1 follow-up `382b484bd` serializes OTP enrollment staging against authorization changes during the asynchronous vault-grant lookup, clears the caller-owned URI immediately, rejects stale authorization, and scrubs every local rejection/success path. Exact-head extension checks pass 254 tests, lint, TypeScript, and Svelte diagnostics; architecture, Cortex-session, and pre-push gates pass. Hosted focused browser execution, full PR validation, and Codex review were restarted for `59b4ce9f3`.
 
 - 2026-08-25: Exact-head repository-policy run 32890250112 found four authored `undefined` picker-surface sentinels introduced by the authorization-race correction. Exact head `5983d91562ec11dcddf369a17d2dbce3594d1630` replaces them with a shared discriminated `None | Window | Tab` surface and typed stale-surface cleanup. The focused policy regression and the complete extension gate (254 tests, lint, TypeScript, Svelte), architecture, Cortex-session, and pre-push checks pass locally. Hosted validation and Codex review are being replaced for this head.
+
+- 2026-08-25: Exact-head PR run 32890974484 exposed two incomplete shared web-app unit fixtures after `manualCheckpointPresent` became a required page-observation fact. Exact head `7cc44c65179ce2d5dc972a392d5af700fc20626d` supplies that explicit fact in both fixtures. Web-app, Simple, and Sentinel checks pass locally, as does the focused 6-test observation suite; formatting, architecture, Cortex-session, and pre-push gates remain green. Hosted validation and Codex review are being replaced for this head.
 
 ## Findings and decisions
 
