@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T18:48:00Z
+updated_at: 2026-08-25T19:12:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -56,6 +56,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - 2026-08-25: Review follow-up reached exact head `306708bff8e349c559129cc1eb7c84700599305c`. In-memory picker requests are now scrubbed before fallible storage cleanup, and the mounted Pilot recovers if host-page code removes its element. The extension passes 252 tests, clean lint, TypeScript, and Svelte checks; focused Brave proves remount plus saved-login completion. Source architecture, Cortex session hygiene, and pre-push checks pass. All review conversations are resolved. Exact-head focused browser run [32883956018](https://github.com/meta-secret/nook/actions/runs/32883956018) failed while building the exact-source browser image before product execution. Full PR run [32883963485](https://github.com/meta-secret/nook/actions/runs/32883963485) failed at the same shared BuildKit/sccache health boundary before product execution; its independent Rust ecosystem run passed. No unchanged-head retry was started.
 
 - 2026-08-25: A second exact-head review found and closed two P1 gaps at replacement head `fa2b8edc20f2cb8467a92f20bd133c2f240d4536`. Enrollment presentation now invalidates pending direct authentication actions and cancels pickers before acceptance or rejection. The expiry regression waits on the actual response callback. The extension passes 253 tests and focused Brave QR enrollment; all review conversations are resolved. Replacement-head hosted validation and review were dispatched.
+
+- 2026-08-25: Recovered hosted validation exposed one repository-policy failure rather than a product failure: the new typed passkey consumer was absent from the internal-API expert catalog. Exact head `e8783e513078df5a2d67c7e4a443f956c8ff7b88` registers that consumer. Module-expert validation, Cortex audit, the complete 299-test Loom suite, session hygiene, formatting, and pre-push checks pass locally. Exact-head hosted validation and review are restarting.
 
 ## Findings and decisions
 
