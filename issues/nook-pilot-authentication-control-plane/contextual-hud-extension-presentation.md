@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T19:48:10Z
+updated_at: 2026-08-25T20:13:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -71,6 +71,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 
 - 2026-08-25: Exact-head PR run 32890974484 exposed two incomplete shared web-app unit fixtures after `manualCheckpointPresent` became a required page-observation fact. Exact head `7cc44c65179ce2d5dc972a392d5af700fc20626d` supplies that explicit fact in both fixtures. Web-app, Simple, and Sentinel checks pass locally, as does the focused 6-test observation suite; formatting, architecture, Cortex-session, and pre-push gates remain green. Hosted validation and Codex review are being replaced for this head.
 
+- 2026-08-25: The three-PR stack was synchronized bottom-up to current main `86387bf86e44a4234a676b87353b0efbd392a395`: #1087 `b318a15a03e0474427b980cc2ce09f6d84863414`, #1096 `05270fd8329d2da5ef3c2cba0fce5854cfd70e0d`, and #1097 exact head `e744564292cc5664fa7f560ba020aa2b6ee7a4d0`. The latest exact-head review found two P1 authorization gaps. Enrollment staging now requires an unlocked session and retains the concurrent-lock generation guard; cancellation and every post-enrollment return now clear stale actions and request fresh Rust workflow classification instead of selecting actions from TypeScript DOM hints. Targeted replies are visible and all review conversations are resolved. Fresh WASM, the 254-test extension gate, shared web checks, the focused six-test observation suite, source architecture, authored-TypeScript policy, formatting, Cortex-session hygiene, and pre-push checks pass locally. Hosted focused browser execution, full PR validation, and exact-head review are restarting.
+
 ## Findings and decisions
 
 - Extension-origin passkey and PIN protection remains in the trusted toolbar popup.
@@ -86,6 +88,9 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - Session lock and expiry invalidate the enrollment generation, stop evidence watching, dismiss Rust-staged enrollment before session close, and prevent late stage responses from becoming active.
 - Empty 2FA state copy points users to the toolbar menu; Pilot does not add a page-level vault control.
 - The browser-extension product specification owns this surface boundary.
+
+- Authenticator enrollment staging requires both a currently unlocked companion session and an unchanged authorization generation before retaining the caller-owned OTP URI.
+- Enrollment cancellation and all post-enrollment returns request fresh Rust workflow classification; raw DOM hints never directly recreate actionable enrollment controls.
 
 ## References
 
