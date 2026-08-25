@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T02:05:00Z
+updated_at: 2026-08-25T08:42:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -25,7 +25,7 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 
 ## Scope
 
-- Included: extension presentation policy, toolbar popup, default unlock routing, localized copy, product specification, UI demos, extension tests, and browser contracts.
+- Included: extension presentation policy, toolbar popup, default unlock routing, localized copy, product specification, UI demos, extension tests, browser contracts, pairing/import surface refresh, and account-picker cancellation.
 - Excluded: Rust workflow classification, shared DOM scoping, vault cryptography, and website passkey policy.
 
 ## Acceptance criteria
@@ -39,18 +39,22 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - [x] Default page unlock requests do not create a detached companion window.
 - [x] English and Russian catalogs remain in parity.
 - [x] Focused extension unit, lint, TypeScript, Svelte, and pre-push checks pass.
-- [ ] Hosted Playwright and PR validation pass on the updated exact head.
+- [x] Hosted Playwright and PR validation pass on the updated exact head.
 
 ## Progress
 
-- 2026-08-25: PR #1097 reached exact head `7f3cbdf39e18eabd1c7937d63e85372ae12b8565`. The correction removes 742 lines while adding 234. The extension package passes 221 tests, lint, TypeScript, and Svelte with zero diagnostics. Cortex audit and mandatory pre-push hygiene pass. Hosted validation remains deferred while the build path is unstable.
+- 2026-08-25: PR #1097 reached exact head `d5fc39645e9cb45a578d589141e8d647dea82b52` on current main `d41d457222844812fe9fca0fd6081a694fbd1767`. The extension package passes 241 tests, lint, TypeScript, host formatting, and mandatory pre-push hygiene. Exact-head PR run [32825626788](https://github.com/meta-secret/nook/actions/runs/32825626788) passed all 17 jobs, including full extension and both full web E2E shards. Codex found no major issues and active unresolved review threads are zero.
+- 2026-08-25: Focused run [32825675111](https://github.com/meta-secret/nook/actions/runs/32825675111) completed the allowlisted `extension:e2e` task successfully, then its diagnostics wrapper repeated the runner-only `EACCES` failure while scanning Chromium profile artifacts. The exact-head PR extension job passed, so this is not a product-test failure.
 
 ## Findings and decisions
 
 - Extension-origin passkey and PIN protection remains in the trusted toolbar popup.
 - Default unlock uses the toolbar popup API. Pairing and bounded account pickers retain their explicit trusted surfaces.
 - The host-page DOM receives no vault status, account label, or secret value.
-- The browser-extension product specification now owns this surface boundary.
+- Pairing completion invalidates cached match metadata again and refreshes mounted authentication surfaces.
+- Authentication-context mutation cancels both login and authenticator pickers. Stable-workflow rescans remount action DOM so disabled or stale controls cannot survive.
+- Empty 2FA state copy points users to the toolbar menu; Pilot does not add a page-level vault control.
+- The browser-extension product specification owns this surface boundary.
 
 ## References
 
