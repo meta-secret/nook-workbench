@@ -1,11 +1,11 @@
 ---
 title: Provision an independent local keyring for each identity
-status: blocked
+status: in_progress
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-20T16:00:00Z
-updated_at: 2026-08-25T17:38:00Z
+updated_at: 2026-08-25T17:44:12Z
 source_issues: []
 related_prs:
   - 1063
@@ -72,3 +72,8 @@ to select and unlock the correct local keyring later.
   gates are blocked before compilation because the private ARC BuildKit worker
   cannot reach the required SeaweedFS compiler-cache bucket. Three unchanged
   exact-head retries reproduced the infrastructure failure.
+- 2026-08-25: Product direction now treats a passkey or PIN as the managed
+  protection object and each protected Nook app as subordinate context. The
+  raw app-key identifier remains an internal security fact and may appear only
+  in an advanced disclosure. Work resumed under the superseding plan
+  `plans/devices-and-access/20260825T174412Z-passkey-app-hierarchy.md`.
