@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T19:35:15Z
+updated_at: 2026-08-25T19:40:40Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -66,6 +66,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - 2026-08-25: The owned three-PR stack was synchronized bottom-up so every slice includes current main without exposing main-owned release changes in later slice diffs: #1087 `4c54491b561d249e1dc36f035bfbea7bbb38b368`, #1096 `d601625d2eae5101178c510a38fdcc5c03cda087`, and #1097 base `d601625d2eae5101178c510a38fdcc5c03cda087`. Two additional presentation P1s were fixed at exact head `3fbcfc8b52531bf88bc1cf9ff1db1838af2ebf5d`: competing external authentication mutations invalidate and remove stale actions before scanning, and post-confirmation enrollment state is freshly classified by Rust before another action is exposed. All targeted replies are visible and every review conversation is resolved. Exact-head hosted validation and review are restarting.
 
 - 2026-08-25: The three-PR stack was synchronized bottom-up to current main `deeba434cb336cd6575d368e0bdf9ecb56861f0b`: #1087 `f1b15f2ee`, #1096 `7eff88403`, and #1097 exact head `59b4ce9f38364c5ef74d6c047348016dacee8506`. Review-body P1 follow-up `382b484bd` serializes OTP enrollment staging against authorization changes during the asynchronous vault-grant lookup, clears the caller-owned URI immediately, rejects stale authorization, and scrubs every local rejection/success path. Exact-head extension checks pass 254 tests, lint, TypeScript, and Svelte diagnostics; architecture, Cortex-session, and pre-push gates pass. Hosted focused browser execution, full PR validation, and Codex review were restarted for `59b4ce9f3`.
+
+- 2026-08-25: Exact-head repository-policy run 32890250112 found four authored `undefined` picker-surface sentinels introduced by the authorization-race correction. Exact head `5983d915652daf8902843850439128d3711716c2` replaces them with a shared discriminated `None | Window | Tab` surface and typed stale-surface cleanup. The focused policy regression and the complete extension gate (254 tests, lint, TypeScript, Svelte), architecture, Cortex-session, and pre-push checks pass locally. Hosted validation and Codex review are being replaced for this head.
 
 ## Findings and decisions
 
