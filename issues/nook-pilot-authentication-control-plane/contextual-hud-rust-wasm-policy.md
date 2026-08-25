@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T00:06:10Z
+updated_at: 2026-08-25T00:26:43Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1087"]
 depends_on: []
@@ -48,8 +48,11 @@ typed decisions without adding web policy.
 ## Progress
 
 - 2026-08-25: PR #1087 is reduced to this slice at exact head
-  `47aff944d33b1579a886dbcd7946a1e4ec297567`. Repository policy and all 299
+  `9b7a85ddb2c4ef9f9defd50255f61d22307eb838`. Repository policy and all 299
   Loom tests pass after moving downstream-only consumer registration to PR #1097.
+- 2026-08-25: Exact-head review now accepts `Reset password` only with
+  `new-password` evidence and rejects OTP resend/request-new-code controls.
+  Rust domain tests, the WASM boundary, and Clippy pass.
 
 ## Findings and decisions
 
