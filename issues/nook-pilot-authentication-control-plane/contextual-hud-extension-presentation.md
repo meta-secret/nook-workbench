@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T20:31:00Z
+updated_at: 2026-08-25T21:01:33Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -74,6 +74,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - 2026-08-25: The three-PR stack was synchronized bottom-up to current main `86387bf86e44a4234a676b87353b0efbd392a395`: #1087 `b318a15a03e0474427b980cc2ce09f6d84863414`, #1096 `05270fd8329d2da5ef3c2cba0fce5854cfd70e0d`, and #1097 exact head `e744564292cc5664fa7f560ba020aa2b6ee7a4d0`. The latest exact-head review found two P1 authorization gaps. Enrollment staging now requires an unlocked session and retains the concurrent-lock generation guard; cancellation and every post-enrollment return now clear stale actions and request fresh Rust workflow classification instead of selecting actions from TypeScript DOM hints. Targeted replies are visible and all review conversations are resolved. Fresh WASM, the 254-test extension gate, shared web checks, the focused six-test observation suite, source architecture, authored-TypeScript policy, formatting, Cortex-session hygiene, and pre-push checks pass locally. Hosted focused browser execution, full PR validation, and exact-head review are restarting.
 
 - 2026-08-25: Current main advanced to `a064a47c68eb9122f9045290ac434d6c2409fc0f`, and the owned stack was synchronized bottom-up again: #1087 `4329d52083c05933a014ab197cf60091488b928e`, #1096 `96a9d84a4021806643090bffc379b8e250654a9b`, and #1097 exact head `b84c1b31ab944e48f5d90afbcf94ffefbe8e2b9a`. Exact-head review found two further P1s. Active staged enrollment now remains mounted across normal page mutations, while actual host removal cancels and dismisses the ceremony before rescan. The product spec now correctly assigns Pilot presentation policy to `nook-companion-core`. The failed UI demo also showed that generic reclassification erased the saved-authenticator confirmation; the replacement head retains that confirmation and adds only the Rust-approved follow-up action. All targeted replies are visible and every review conversation is resolved. The extension passes 257 tests with clean lint, TypeScript, and Svelte checks; Cortex audit, source architecture, formatting, session hygiene, and pre-push gates pass. Hosted exact-head validation and review are restarting.
+
+- 2026-08-25: Exact-head review follow-up reached 0938dde5efc8ea9a016de3e2a199f31edced2bfd. Rust now prioritizes recovery-code capture when a completed setup leaves its QR visible. Manual-checkpoint mutations immediately invalidate actions, cancel staged enrollment, and remove Pilot. Authorization-boundary clearing synchronously stops pending login-save observers before async dismissal. Same-workflow reclassification rebuilds cleared retry actions. Targeted replies are visible and all review conversations are resolved. Focused authentication-workflow tests pass 31/31; the extension gate passes 258 tests with clean lint, TypeScript, and Svelte diagnostics; the toolbar popup UI demo, Cortex audit, source architecture, formatting, session hygiene, and pre-push gates pass. Exact-head hosted validation and review are restarting.
 
 ## Findings and decisions
 
