@@ -40,6 +40,10 @@ preserved full-work tree.
   records. The new records introduced no findings, so the concurrency-safe
   publisher made the validated changed records durable on Main and the redundant
   Workbench PR was closed.
+- The first rewritten PR #1087 retained two internal-API catalog entries for
+  consumers introduced only by PR #1097. Exact-slice policy validation caught the
+  mismatch. The entries moved to PR #1097 and the stack was rebased without
+  changing the preserved final tree.
 
 ## Decisions
 
@@ -54,9 +58,12 @@ preserved full-work tree.
 
 - Mandatory pre-push format and UI-demo contract passed on all three exact slice
   trees.
-- PR #1087 is 26 files with 2,785 changed lines.
-- PR #1096 is 11 files with 3,257 changed lines.
-- PR #1097 is 30 files with 1,452 changed lines.
+- PR #1087 is 25 files with 2,783 changed lines at
+  `47aff944d33b1579a886dbcd7946a1e4ec297567`.
+- PR #1096 is 11 files with 3,257 changed lines at
+  `4a654edd6edcb036a686c44dcf9df351780ac93b`.
+- PR #1097 is 31 files with 1,454 changed lines at
+  `e3a91922703972b8b5ae06c26c82b11162b028b2`.
 - The final remote tree hash matches the preserved full-work tree hash
   `07b6c8d456ae10690c868e491c883a875747130a`.
 
