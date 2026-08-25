@@ -2,7 +2,7 @@
 title: "Feature: Nook Pilot authentication control plane"
 status: in_progress
 created_at: 2026-07-25T23:56:27Z
-updated_at: 2026-08-25T00:17:57Z
+updated_at: 2026-08-25T00:26:43Z
 ---
 
 # Feature: Nook Pilot authentication control plane
@@ -37,17 +37,17 @@ Workbench issue contract.
 ## Contextual HUD delivery sequence
 
 The contextual HUD baseline is preserved at Nook commit
-`f75f7b8bb90a77bce72de86de5a131d3f7a1c58d`. Exact-head review added the scoped
-actuation fix in PR #1096. Delivery proceeds in this order:
+`f75f7b8bb90a77bce72de86de5a131d3f7a1c58d`. Exact-head review added Rust policy fixes in PR #1087 and scoped actuation
+fixes in PR #1096. Delivery proceeds in this order:
 
 1. [PR #1087](https://github.com/meta-secret/nook/pull/1087) at
-   `47aff944d33b1579a886dbcd7946a1e4ec297567` owns Rust/WASM authentication
+   `9b7a85ddb2c4ef9f9defd50255f61d22307eb838` owns Rust/WASM authentication
    actionability policy and typed interfaces.
 2. [PR #1096](https://github.com/meta-secret/nook/pull/1096) at
-   `00a819683d2baccb09d1cf9eaeafc9206b742c64` owns shared browser DOM
+   `a0ca3fad3f74dde376c926f496eb4df13154e97b` owns shared browser DOM
    observation, scoping, and actuation.
 3. [PR #1097](https://github.com/meta-secret/nook/pull/1097) at
-   `bf2487cba4354431dffc723934112ff22f000535` owns extension Pilot visibility,
+   `459be5431b8b7c0f40acfefd4e7ed1167d675d5e` owns extension Pilot visibility,
    saved-login compact presentation, final consumer registration, and rendered
    browser coverage.
 
@@ -102,4 +102,4 @@ resulting workflow observation and saved-login availability.
 The three inventories cover every file changed by the preserved full-work
 commit relative to its original Main baseline, plus the focused review-fix module
 owned by PR #1096. The final stacked tree is
-`e1f645a299c92f248dcd736b5e2b96bb2a0840f5`.
+`94b6fc9e67dd2a1ce0c5086d2400146b01ce48af`.
