@@ -1,11 +1,11 @@
 ---
 title: Provision an independent local keyring for each identity
-status: in_progress
+status: completed
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-20T16:00:00Z
-updated_at: 2026-08-25T18:12:25Z
+updated_at: 2026-08-25T19:50:39Z
 source_issues: []
 related_prs:
   - 1063
@@ -47,7 +47,7 @@ to select and unlock the correct local keyring later.
 - [x] Interrupted setup is resumable or rolls back without an orphan identity.
 - [x] Devices & access enables Add identity only when the secure flow is available.
 - [x] Rust and actual-WASM tests cover creation, switching, lock, and recovery.
-- [ ] Exact-head validation passes before squash merge.
+- [x] Exact-head validation passes before squash merge.
 
 ## Progress
 
@@ -90,3 +90,9 @@ to select and unlock the correct local keyring later.
   `plans/devices-and-access/20260825T181225Z-passkey-recognition-card.md`.
   It adds safe credential, keeper, creation, and last-use evidence to the list
   and graph cards without restoring browser diagnostics.
+- 2026-08-25: Delivery head `bc42f032ed64919f16de248fd6bad5c6f3f39115`
+  contains current `origin/main` at
+  `deeba434cb336cd6575d368e0bdf9ecb56861f0b`. Required validation passed in
+  Actions run 32891112654, repository policy passed in run 32891098625, the
+  preview deployed to `https://pr-1105.nokey-sh.pages.dev`, all review
+  conversations are resolved, and `task pr:ready PR=1105` reported ready.
