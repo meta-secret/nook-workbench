@@ -1,13 +1,14 @@
 ---
 title: Make home-node operator SSH browserless on the local network
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-25T18:26:02Z
-updated_at: 2026-08-25T18:26:02Z
+updated_at: 2026-08-25T19:25:50Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1106
 depends_on:
   - issues/hive-isolated-agent-platform/move-trusted-container-workflows-to-arc.md
 ---
@@ -38,16 +39,17 @@ explicit off-network recovery path.
 
 ## Acceptance criteria
 
-- [ ] A repository Task installs the managed LAN SSH alias idempotently.
-- [ ] The alias uses public-key authentication and the pinned host identity.
-- [ ] Home-node infrastructure Tasks do not open a browser on the local path.
-- [ ] Static contracts cover the alias, identity pin, and fallback separation.
-- [ ] Exact-head validation, review, readiness, and merge pass.
+- [x] A repository Task installs the managed LAN SSH alias idempotently.
+- [x] The alias uses public-key authentication and the pinned host identity.
+- [x] Home-node infrastructure Tasks do not open a browser on the local path.
+- [x] Static contracts cover the alias, identity pin, and fallback separation.
+- [x] Exact-head validation, review, readiness, and merge pass.
 
 ## Progress
 
 - 2026-08-25: Direct key-authenticated LAN SSH was proven from the operator
   machine using the existing trusted host identity.
+- 2026-08-25: PR #1106 merged the managed `nook-home-lan` route after exact-head validation and live browserless SSH proof.
 
 ## Findings and decisions
 
