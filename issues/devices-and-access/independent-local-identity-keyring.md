@@ -1,14 +1,15 @@
 ---
 title: Provision an independent local keyring for each identity
-status: in_progress
+status: blocked
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-20T16:00:00Z
-updated_at: 2026-08-25T09:32:32Z
+updated_at: 2026-08-25T17:38:00Z
 source_issues: []
 related_prs:
   - 1063
+  - 1105
 depends_on:
   - issues/devices-and-access/identity-directory.md
 ---
@@ -60,3 +61,14 @@ to select and unlock the correct local keyring later.
   green: 14 Devices & access scenarios, two recovery/migration WASM
   regressions, and the rendered UI demo. Final advisory review and hosted PR
   validation remain before merge.
+- 2026-08-25: PR 1105 is updated to exact head
+  `58881c35ac29ee111842c74a8282d692137fdb05`, including repairs for all three
+  P1 review findings: failed imports restore the atomically captured prior
+  identity selection, legacy profile ownership is rechecked inside the write
+  transaction, and Rust rejects extension grants for a non-active identity.
+  The latest full browser run reached product tests and passed every Devices &
+  access and recovery scenario before an unrelated Sentinel scenario failed.
+  Required exact-head Rust, extension, web, browser-WASM, and repository-policy
+  gates are blocked before compilation because the private ARC BuildKit worker
+  cannot reach the required SeaweedFS compiler-cache bucket. Three unchanged
+  exact-head retries reproduced the infrastructure failure.
