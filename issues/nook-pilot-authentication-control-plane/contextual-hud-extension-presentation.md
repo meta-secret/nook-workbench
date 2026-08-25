@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T19:20:00Z
+updated_at: 2026-08-25T19:43:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -60,6 +60,8 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - 2026-08-25: Recovered hosted validation exposed one repository-policy failure rather than a product failure: the new typed passkey consumer was absent from the internal-API expert catalog. Exact head `e8783e513078df5a2d67c7e4a443f956c8ff7b88` registers that consumer. Module-expert validation, Cortex audit, the complete 299-test Loom suite, session hygiene, formatting, and pre-push checks pass locally. Exact-head hosted validation and review are restarting.
 
 - 2026-08-25: Hosted browser execution resumed. Repository policy, Rust ecosystem, Hive, Web research, native Rust, WASM, web verification, WASM Node, coverage, and Rust proof/lint jobs passed at `e8783e513078df5a2d67c7e4a443f956c8ff7b88`. The UI demo found that connected state depended on routed-navigation localStorage even though the demo URL already declared the state. Exact head `3459f5b0a2938d318c125bbbeb864b3cdca9825c` now derives the demo stub from that URL. The extension E2E job stopped in Bun with SIGILL before tests; the focused vault-app suite exposed existing device-recovery failures outside this slice. Exact-head validation and review are restarting.
+
+- 2026-08-25: Delayed exact-head review produced four further authorization findings, all fixed at `65b94eee3676704993ea808417cd1d7ffe745817`. Enrollment evidence now invalidates pending DOM actions before async policy work; regular observations include page-wide checkpoints; lock, expiry, and access revocation centrally scrub staged authenticator URIs; and picker surfaces created after an authorization-generation change are closed. Targeted replies are visible and all review conversations are resolved. The extension passes 254 tests with clean lint, TypeScript, and Svelte checks; source architecture, formatting, Cortex-session hygiene, and pre-push checks pass. Exact-head hosted validation and review are restarting.
 
 ## Findings and decisions
 
