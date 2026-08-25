@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-24T15:04:00Z
+updated_at: 2026-08-25T00:06:10Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1087"]
 depends_on: []
@@ -47,9 +47,9 @@ typed decisions without adding web policy.
 
 ## Progress
 
-- 2026-08-24: Complete implementation preserved at
-  `f75f7b8bb90a77bce72de86de5a131d3f7a1c58d`; PR #1087 will be reduced to this
-  slice only after successor PRs and the preservation inventory are durable.
+- 2026-08-25: PR #1087 is reduced to this slice at exact head
+  `47aff944d33b1579a886dbcd7946a1e4ec297567`. Repository policy and all 299
+  Loom tests pass after moving downstream-only consumer registration to PR #1097.
 
 ## Findings and decisions
 
