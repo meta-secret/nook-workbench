@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-22T18:40:13Z
-updated_at: 2026-08-22T18:40:13Z
+updated_at: 2026-08-26T17:15:10Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -23,7 +23,7 @@ before it becomes Nook's default development style.
 
 A reviewed feature plan exercises independent lower-level experts, accepted
 dependency baselines, `internal_api_expert`, a web consumer, parent synthesis,
-and delivery-owner integration without bypassing the event journal.
+and delivery-owner integration through the active harness.
 
 ## Scope
 
@@ -38,12 +38,13 @@ and delivery-owner integration without bypassing the event journal.
 
 ## Acceptance criteria
 
-- [ ] Every reached node has an immutable attempt stream and semantic view.
+- [ ] Every reached node has an exact baseline, isolated workspace, and verified
+      commit handoff; optional human evidence does not control execution.
 - [ ] No child exceeds hierarchy depth three or schedules an undeclared child.
 - [ ] Provider tests pass before consumer implementation begins.
 - [ ] The consumer builds against accepted provider and internal API contracts.
-- [ ] Parent integration, exact-head hosted validation, readiness, and squash
-      merge complete successfully.
+- [ ] Parent integration, focused local validation, readiness, and squash merge
+      complete successfully.
 - [ ] Pilot findings are reflected into existing authorities without creating
       duplicate workflow prose.
 
@@ -55,9 +56,10 @@ and delivery-owner integration without bypassing the event journal.
 
 - A module node is not automatically a pull request. PR boundaries remain
   independently mergeable feature slices.
+- The harness agent owns dispatch and communication. Repository tooling owns
+  only reviewed module policy and deterministic Git safety checks.
 
 ## References
 
 - `.cortex/workflows/subagent-delegation.md`
 - `agentic-ai/loom/src/agent-workflow/`
-

@@ -2,7 +2,7 @@
 title: Deterministic agent workflows
 status: in_progress
 created_at: 2026-08-14T07:26:00Z
-updated_at: 2026-08-23T03:18:44Z
+updated_at: 2026-08-26T17:15:10Z
 ---
 
 # Deterministic agent workflows
@@ -22,10 +22,10 @@ merged in Nook PR #1068.
 Nine stable, read-only module experts now resolve their exact module, skill, and
 authority context from immutable source snapshots. Typed plan authorization,
 expert evidence, adapter provenance, and depth-two or depth-three lineage merged
-in Nook PR #1082. The next sequence adds typed module-context planning, then
-isolated writes, then a contract-first bottom-up delivery pilot. This remains a
-local Loom and Codex workflow. Hive is not part of this internal development
-path.
+in Nook PR #1082. The next sequence adds typed module-context planning, isolated
+writes, deterministic commit integration, and a contract-first bottom-up
+delivery pilot. The active harness owns subagent lifecycle. Nook owns module
+policy and Git safety. Hive is not part of this internal development path.
 
 Loom leaf tools now generate discovery YAML, decode blueprints, and defaultable
 Task aliases from typed example documents. Sample YAML files under the Loom
@@ -33,14 +33,16 @@ package are gone. That slice merged in Nook PR #1045.
 
 ## Decisions
 
-- Graph topology is compiled TypeScript, never YAML, Markdown, or
+- The module dependency graph is reviewed typed data, never Markdown or
   prompt-generated state.
-- Loom schedules local static runs and reuses existing deterministic leaf tools.
-- One fresh worker executes each reached agent task attempt.
-- The parent owns scheduling, integration, journal writes, and delivery
-  lifecycle state.
-- The local workflow journal is the sole scheduling authority for this
-  development system. Distributed execution is outside its scope.
+- The active harness schedules native subagents and owns their parent-child
+  tree, communication, retries, cancellation, and barriers.
+- Nook does not implement another model runner, scheduler, transcript protocol,
+  or harness adapter.
+- One fresh isolated worktree executes each write attempt.
+- The delivery parent owns commit acceptance, integration, and delivery state.
+- JSONL journals and Markdown summaries are optional human evidence and never
+  control execution.
 - Lace is not part of the production path.
 - Leaf-tool requests stay domain YAML. Canonical examples live as typed objects
   in Loom.
@@ -73,4 +75,3 @@ package are gone. That slice merged in Nook PR #1045.
 - [Implementation plan](../../plans/agent-workflow/20260814T052642Z-static-agent-workflows.md)
 - [Typed request examples plan](../../plans/agent-workflow/20260817T054500Z-typed-request-examples.md)
 - [Named module experts plan](../../plans/agent-workflow/20260822T184013Z-module-subagent-foundation.md)
-

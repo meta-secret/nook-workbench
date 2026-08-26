@@ -1,11 +1,11 @@
 ---
 title: Typed module context and read-only DAG planning
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-22T18:40:13Z
-updated_at: 2026-08-22T18:40:13Z
+updated_at: 2026-08-26T17:15:10Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -21,7 +21,7 @@ graph before they can safely participate in implementation.
 
 ## Outcome
 
-Loom validates and dry-runs a reviewed module delivery DAG whose nodes identify
+Nook validates and dry-runs a reviewed module delivery DAG whose nodes identify
 consumer-driven API contracts, expert profiles, resources, dependencies,
 acceptance evidence, and parent-owned joins.
 
@@ -32,9 +32,9 @@ acceptance evidence, and parent-owned joins.
 - Assemble bounded context from current manifests, public entry points,
   consumers, Cortex anchors, relevant skills, tests, and accepted inputs.
 - Add a general read-only module DAG and deterministic ready-wave projection.
-- Record agent-definition, expert-profile, skill-bundle, context-bundle, and
-  plan digests in attempt evidence.
-- Keep Markdown and Workbench records as semantic views, not scheduler inputs.
+- Keep optional human evidence separate from harness-owned agent lifecycle.
+- Keep Markdown and Workbench records as semantic views, not scheduler inputs
+  or continuation prerequisites.
 - Exclude repository writes.
 
 ## Acceptance criteria
@@ -49,15 +49,17 @@ acceptance evidence, and parent-owned joins.
 
 ## Progress
 
-- Waiting for the named module-subagent foundation.
+- Named module experts are available.
+- Harness-native module planning is now the active first slice.
 
 ## Findings and decisions
 
 - Discovered dependencies provide context. Only the reviewed typed plan owns
-  runtime topology.
+  module dependency order.
+- The active harness owns its parent-child tree, dispatch, communication,
+  retries, cancellation, and barriers.
 
 ## References
 
 - `agentic-ai/loom/src/agent-workflow/`
 - `.cortex/design-docs/agent-workflow-orchestration.md`
-
