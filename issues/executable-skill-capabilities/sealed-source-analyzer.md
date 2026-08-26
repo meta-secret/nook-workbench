@@ -1,13 +1,14 @@
 ---
 title: Execute source analysis in sealed containment
-status: ready
+status: in_progress
 priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-26T08:05:41Z
-updated_at: 2026-08-26T08:05:41Z
+updated_at: 2026-08-26T09:53:06Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1130
 depends_on:
   - issues/executable-skill-capabilities/executable-source-policy.md
 ---
@@ -41,6 +42,11 @@ teardown bounds and returns a verifiable receipt.
 ## Progress
 
 - Depends on pure source policy.
+- Draft PR #1130 is the 2,865-line successor to source-policy PR #1129 in
+  official GitHub stack #1131.
+- The focused analyzer suite passes with 21 tests and 71 assertions.
+- Full Loom verification passes with 398 tests and 2,249 assertions. Semantic
+  containment review remains in progress before hosted validation.
 
 ## Findings and decisions
 
