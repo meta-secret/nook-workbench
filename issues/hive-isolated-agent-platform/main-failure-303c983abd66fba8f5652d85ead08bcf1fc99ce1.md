@@ -5,7 +5,7 @@ priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-26T23:47:49Z
-updated_at: 2026-08-26T23:47:49Z
+updated_at: 2026-08-26T23:57:33Z
 source_issues: []
 related_prs: [1163]
 depends_on: []
@@ -45,6 +45,10 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:33024401056:attempt:1 -->
 - 2026-08-26T23:47:49Z: Main run [33024401056 attempt 1](https://github.com/meta-secret/nook/actions/runs/33024401056)
   failed for `303c983abd66fba8f5652d85ead08bcf1fc99ce1`. Failed jobs: Native Rust verification, Rust ecosystem / Dylint repository lints, Rust ecosystem / Proptest, Insta, and Loom.
+
+<!-- main-run:33024401056:attempt:2 -->
+- 2026-08-26T23:57:33Z: Main run [33024401056 attempt 2](https://github.com/meta-secret/nook/actions/runs/33024401056)
+  failed for `303c983abd66fba8f5652d85ead08bcf1fc99ce1`. Failed jobs: Rust ecosystem / Proptest, Insta, and Loom, WASM verification and artifact.
 
 ## Findings and decisions
 
