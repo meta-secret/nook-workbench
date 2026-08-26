@@ -55,12 +55,15 @@ does not create a competing agent scheduler or transcript protocol.
 
 ## Completion evidence
 
-- Each slice merges from current Main without depending on unmerged foreign
-  work.
-- Focused local tests pass without Docker or hosted browser E2E.
-- The three existing issues and their worklogs link the merged PRs and final
-  evidence.
-- Cortex describes only behavior proven by the completed pilot.
+- PR #1151 established the native-harness authority boundary.
+- PR #1152 added strict typed plan validation and deterministic waves.
+- PR #1156 added isolated direct-child worktrees and verified commit handoffs.
+- PR #1159 added deterministic private-ref wave integration and exact
+  downstream frontiers.
+- PR #1160 proved the complete core-to-WASM-to-web chain in one focused test.
+- Every implementation PR stayed below 3,000 changed lines. Focused local
+  validation and independent P1/P2 review passed. Hosted workflows were
+  intentionally cancelled under the task's no-hosted-validation constraint.
 
 ## Safety review
 

@@ -1,13 +1,13 @@
 ---
 title: Isolated-write module DAG execution
-status: proposed
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-22T18:40:13Z
-updated_at: 2026-08-26T17:15:10Z
+updated_at: 2026-08-26T19:40:15Z
 source_issues: []
-related_prs: []
+related_prs: [1156, 1159]
 depends_on:
   - issues/agent-workflow/typed-module-context-and-read-only-dag.md
 ---
@@ -40,17 +40,25 @@ baseline.
 
 ## Acceptance criteria
 
-- [ ] Concurrent writers cannot share a worktree or overlap resource claims.
-- [ ] Out-of-scope changes and dirty or drifting baselines fail closed.
-- [ ] Dependents see only accepted, digest-verified ancestor changes.
-- [ ] Shared files remain serialized under the delivery owner or an explicit
+- [x] Concurrent writers cannot share a worktree or overlap resource claims.
+- [x] Out-of-scope changes and dirty or drifting baselines fail closed.
+- [x] Dependents see only accepted, digest-verified ancestor changes.
+- [x] Shared files remain serialized under the delivery owner or an explicit
       integration node.
-- [ ] Failure, cancellation, retry, and cleanup paths have focused tests.
-- [ ] Focused local validation and readiness pass before squash merge.
+- [x] Failure, cancellation, retry, and cleanup paths have focused tests.
+- [x] Focused local validation and independent review passed before squash
+      merge. Hosted validation was intentionally excluded by task authority.
 
 ## Progress
 
-- Waiting for typed read-only module planning.
+- Disposable direct-child worktrees start at exact commits and yield verified
+  one-commit handoffs constrained to declared write claims.
+- Deterministic tree integration uses a temporary index and a plan-private CAS
+  ref. It leaves the source branch, index, worktree, and non-private refs
+  untouched.
+- Squash-merged Nook PRs
+  [#1156](https://github.com/meta-secret/nook/pull/1156) and
+  [#1159](https://github.com/meta-secret/nook/pull/1159).
 
 ## Findings and decisions
 
