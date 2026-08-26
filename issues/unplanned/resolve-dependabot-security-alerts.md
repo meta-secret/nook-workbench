@@ -1,13 +1,13 @@
 ---
 title: Resolve open Dependabot security alerts
-status: in_progress
+status: completed
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-26T04:27:46Z
-updated_at: 2026-08-26T04:45:54Z
+updated_at: 2026-08-26T06:08:16Z
 source_issues: []
-related_prs: []
+related_prs: [1117]
 depends_on: []
 ---
 
@@ -15,16 +15,16 @@ depends_on: []
 
 ## Context
 
-The repository has a current set of dependency vulnerabilities reported by
-GitHub Dependabot. This focused repair belongs to
+The repository had 23 dependency vulnerabilities reported by GitHub
+Dependabot. This focused repair belongs to
 [Unplanned engineering repairs](README.md) and supersedes no completed
 dependency-refresh history.
 
 ## Outcome
 
-All open Dependabot alerts are remediated through supported dependency versions,
-the exact replacement head passes repository validation, and GitHub reports zero
-open Dependabot alerts after the fix reaches the default branch.
+All 23 alerts closed through patched dependency resolution. Pull request 1117
+is squash-merged, every exact-head repository gate passed, and GitHub reports
+zero open Dependabot alerts on the default branch. No alert was dismissed.
 
 ## Scope
 
@@ -42,33 +42,43 @@ open Dependabot alerts after the fix reaches the default branch.
 
 ## Acceptance criteria
 
-- [ ] Every alert open at task start resolves through a patched dependency graph
+- [x] Every alert open at task start resolves through a patched dependency graph
   or a documented, evidence-backed non-applicability decision.
-- [ ] No vulnerable resolved version remains in the affected lockfiles.
-- [ ] Repository-owned exact-head validation and readiness pass.
-- [ ] The implementation pull request is squash-merged.
-- [ ] GitHub reports zero open Dependabot alerts on the default branch.
+- [x] No vulnerable resolved version remains in the affected lockfiles.
+- [x] Repository-owned exact-head validation and readiness pass.
+- [x] The implementation pull request is squash-merged.
+- [x] GitHub reports zero open Dependabot alerts on the default branch.
 
 ## Progress
 
-- Inventory confirmed 23 alerts across the CI agent npm lockfile and Minds Rust
-  lockfile.
-- The user expanded the task to include the latest Codex revision. The delivery
-  plan is being superseded before implementation to account for adapter and
-  security-source work.
+- Inventoried 23 alerts across the CI agent npm lockfile and Minds Rust lockfile.
+- Updated Undici to 6.28.0 and verified `npm audit` reports zero vulnerabilities.
+- Pinned a latest-derived Codex security revision and a Hickory compatibility
+  revision that resolve patched Gix, JSON Web Token, OpenTelemetry, tar, and DNS
+  packages without RustSec exceptions.
+- Migrated Hive to the latest Codex auth, configuration, and turn-input APIs.
+- Passed exact-head dependency policy, RustSec, Hive verification, complete PR
+  validation, deployment, and Cloud review at
+  `eb47e3c488ab51bb153171212a1e4c721cd1a350`.
+- Squash-merged PR 1117 as
+  `c870f29da013320b331c3c84165707bb98fc2ade`.
+- Verified the live Dependabot API reports zero open alerts after default-branch
+  recomputation.
 
 ## Findings and decisions
 
-- Multiple advisories share the same vulnerable package version, so alert count
-  is not the dependency-update count.
-- Prefer patched versions over dismissals. Any dismissal requires specific
-  non-applicability evidence and must not conceal a reachable vulnerable graph.
-- Latest upstream Codex still constrains affected Gix, JSON Web Token,
-  OpenTelemetry, tar, and Hickory dependency lines. Moving the revision alone
-  would leave alerts open, so the selected source must be latest-derived and
-  security-patched.
+- Multiple advisories shared vulnerable package versions, so remediation was
+  verified against both the advisory inventory and the resolved graphs.
+- Latest upstream Codex still constrained affected dependencies. The exact
+  source remains latest-derived and security-patched until upstream absorbs the
+  fixes.
+- Rama's Hickory Resolver 0.25 API required a narrow source-compatible backport
+  of the 0.26.1 Proto security fixes.
+- No advisory was dismissed or ignored.
 
 ## References
 
+- [Pull request 1117](https://github.com/meta-secret/nook/pull/1117)
 - [Dependabot alerts](https://github.com/meta-secret/nook/security/dependabot)
+- [Superseding delivery plan](../../plans/unplanned/20260826T044554Z-latest-codex-dependabot-remediation.md)
 - [Prior repository dependency refresh](refresh-repository-dependencies.md)
