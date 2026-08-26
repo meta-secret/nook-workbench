@@ -1,46 +1,36 @@
 ---
 title: Enforce active 3,000-line semantic splitting
-status: in_progress
+status: completed
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-26T04:22:43Z
-updated_at: 2026-08-26T05:26:02Z
+updated_at: 2026-08-26T22:55:21Z
 source_issues: []
-related_prs: [https://github.com/meta-secret/nook/pull/1119]
+related_prs: [https://github.com/meta-secret/nook/pull/1157]
 depends_on: [issues/pr-delivery-efficiency/review-first-stabilization.md]
 ---
 
 # Enforce active 3,000-line semantic splitting
 
-## Context
+## Outcome
 
-The existing 5,000-line ceiling leaves too little review-fix headroom. Agents
-must measure earlier and split by domain responsibility before a pull request
-becomes difficult to review.
-
-## Scope
-
-- Make 3,000 authored changed lines the active pull-request limit.
-- Treat a difference of roughly 10 to 15 lines as immaterial.
-- Re-estimate continuously from the intended immediate base.
-- Trigger semantic decomposition before crossing the limit.
-- Inventory logical domain changes, interfaces, tests, migrations, and documentation.
-- Create focused dependent layers with GitHub stacked pull requests.
-- Keep independent layers directly based on current `main`.
-- Preserve every moved behavior in a linked successor before reducing a predecessor.
+Merged PR 1157 enforces a 3,000 authored changed-line budget with a 15-line hard
+tolerance. Agents inventory logical domains at 2,700 lines, split before the
+limit, compare each dependent slice against its immediate predecessor, and use
+ordinary predecessor-based pull requests when GitHub stacked-PR UI support is
+unavailable. Independent slices remain based on current `main`.
 
 ## Acceptance criteria
 
-- [ ] Planning and implementation gates use the 3,000-line active boundary.
-- [ ] Agents receive a warning early enough to preserve review-fix headroom.
-- [ ] Near-limit work invokes the semantic split procedure.
-- [ ] Stack layers are independently reviewable and use immediate-base diffs.
-- [ ] GitHub public-preview unavailability has a documented ordinary-branch fallback.
-- [ ] Every layer retains exact-head review, validation, readiness, and squash merge.
+- [x] Planning and implementation gates use the 3,000-line active boundary.
+- [x] Agents receive a warning early enough to preserve review-fix headroom.
+- [x] Near-limit work invokes the semantic split procedure.
+- [x] Stack layers are independently reviewable and use immediate-base diffs.
+- [x] GitHub public-preview unavailability has a documented ordinary-branch fallback.
+- [x] Every layer retains exact-head review, validation, readiness, and squash merge.
 
-## References
+## Evidence
 
-- [Feature](README.md)
-- [Review stabilization](review-first-stabilization.md)
-- [GitHub stacked pull requests](https://docs.github.com/en/pull-requests/reference/stacked-pull-requests)
+- PR 1157 merged as `df202c0f02f07a22177d6b66025840b711a85db2`.
+- Superseded PR 1119 was closed after PR 1157 landed the policy directly on main.
