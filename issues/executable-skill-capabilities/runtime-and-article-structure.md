@@ -5,7 +5,7 @@ priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-26T00:31:23Z
+updated_at: 2026-08-26T01:10:49Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1088
@@ -59,9 +59,11 @@ results.
   lines at exact head `c97894c96df8997ddc2c7463e05b4c317243d143`.
 - PR #1089 now retains only the dormant article provider in 3,756 changed
   lines at exact head `b540bf9a978d867d927abd7f03b8bf0ef9e45018`.
-- PR #1108 isolates runtime reachability enforcement below 3,100 changed lines.
-- PR #1093 isolates pure source policy in 1,381 changed lines as the fifth slice
-  of the revised nine-PR stack.
+- Finite loader and generated-artifact provenance are now a separate fourth
+  slice after the combined reachability patch approached the 5,000-line cap.
+- PR #1108 remains the focused runtime graph slice after that extraction.
+- PR #1093 isolates pure source policy in 1,381 changed lines as the sixth slice
+  of the ten-PR stack.
 
 ## Findings and decisions
 
@@ -73,6 +75,9 @@ results.
   It must not share a PR with pure executable-source policy.
 - Exact review also proved active audit normalization is independently owned.
   It must precede, not inflate, the dormant provider PR.
+- Applying the runtime boundary to every executable script exposed legitimate
+  finite loaders and generated artifacts. Their proof belongs in a predecessor,
+  not in path allowlists or an oversized reachability PR.
 
 ## References
 
