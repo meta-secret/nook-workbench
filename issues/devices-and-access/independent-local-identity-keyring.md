@@ -5,11 +5,12 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-20T16:00:00Z
-updated_at: 2026-08-25T19:51:24Z
+updated_at: 2026-08-26T01:33:25Z
 source_issues: []
 related_prs:
   - 1063
   - 1105
+  - 1110
 depends_on:
   - issues/devices-and-access/identity-directory.md
 ---
@@ -98,3 +99,10 @@ to select and unlock the correct local keyring later.
   conversations are resolved, and `task pr:ready PR=1105` reported ready.
 - 2026-08-25: PR 1105 squash-merged to Nook `main` as
   `86387bf86e44a4234a676b87353b0efbd392a395`.
+- 2026-08-26: PR 1110 repairs the zero-vault **Use identity** blank-screen
+  regression on exact head `4280149a54170abb5be00e8de5aab4867cfd91f3`.
+  All 14 Devices & access scenarios, the UI demo, Rust, WASM, web, extension,
+  preview, policy, and exact-head review checks pass. Merge is blocked because
+  three product-running full-browser cycles reproduced unrelated local browser
+  deletion and Sentinel participant-response failures. The blocker worklog is
+  `worklogs/devices-and-access/20260826T013325Z-pr-1110.md`.
