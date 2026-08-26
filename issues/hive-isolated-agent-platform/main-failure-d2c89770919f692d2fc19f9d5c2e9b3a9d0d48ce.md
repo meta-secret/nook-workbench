@@ -5,7 +5,7 @@ priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-26T22:59:08Z
-updated_at: 2026-08-26T23:04:39Z
+updated_at: 2026-08-26T23:07:02Z
 source_issues: []
 related_prs: [1118]
 depends_on: []
@@ -48,6 +48,10 @@ request while preserving the failing revision and workflow evidence.
 
 <!-- main-run:33021179211:attempt:2 -->
 - 2026-08-26T23:04:39Z: Main run [33021179211 attempt 2](https://github.com/meta-secret/nook/actions/runs/33021179211)
+  failed for `d2c89770919f692d2fc19f9d5c2e9b3a9d0d48ce`. Failed jobs: Native Rust verification.
+
+<!-- main-run:33021179211:attempt:3 -->
+- 2026-08-26T23:07:02Z: Main run [33021179211 attempt 3](https://github.com/meta-secret/nook/actions/runs/33021179211)
   failed for `d2c89770919f692d2fc19f9d5c2e9b3a9d0d48ce`. Failed jobs: Native Rust verification.
 
 ## Findings and decisions
