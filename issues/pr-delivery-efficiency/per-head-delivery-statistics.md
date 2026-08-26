@@ -1,15 +1,15 @@
 ---
 title: Record per-head delivery statistics
-status: in_progress
+status: completed
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-26T04:22:43Z
-updated_at: 2026-08-26T07:55:00Z
+updated_at: 2026-08-26T22:55:21Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1116
-  - https://github.com/meta-secret/nook/pull/1120
+  - https://github.com/meta-secret/nook/pull/1121
 depends_on: []
 ---
 
@@ -17,52 +17,29 @@ depends_on: []
 
 ## Context
 
-The statistics assembler uses the squash merge commit as the pull-request head.
-It then filters a short repository-wide Actions listing to that commit. The
-result can contain post-merge workflows while omitting validation for the actual
-pull-request heads.
+The previous statistics path could substitute the squash merge commit for the
+actual pull-request head and omit earlier delivery attempts. That made review
+and validation imbalance impossible to measure reliably.
 
-## Scope
+## Outcome
 
-- Preserve the final implementation head separately from the squash merge commit.
-- Collect repository-owned Actions runs across every pull-request head.
-- Record review requests, review results, findings, validation cycles, and cancellation timing.
-- Derive obsolete validation duration without summing overlapping wall-clock time.
-- Add focused schema, assembler, and regression coverage.
-- Update the statistics authority and Workbench schema contract.
-
-## Delivery split
-
-- PR 1116 owns the 1,393-line GitHub evidence collector foundation.
-- PR 1120 owns the 1,736-line schema and assembly integration.
-- The split was required when the combined review-fix head reached 3,129
-  authored lines, above the 3,015-line hard ceiling.
-- Review stabilization depends on PR 1120 because it consumes the published
-  per-head metrics contract.
-- Repeated review batches opened the review circuit before another hosted
-  validation run. Manual `E2E (PR)` dispatch provenance moved to its own
-  required focused issue because the workflow API does not expose the resolved
-  pull-request head.
-
-## Progress
-
-- 2026-08-26: Cancelled the only post-timeout hosted validation run as soon as
-  late review findings arrived.
-- 2026-08-26: Opened the three-batch review circuit and stopped validation.
-- 2026-08-26: Kept queue timing, chronological delivery heads, review-derived
-  supersession, and merge cutoffs in the collector slice. Split manual E2E
-  provenance into a workflow-owned successor.
+PR 1116 added paginated, attempt-level GitHub evidence across every delivery
+head. PR 1121 added durable manual E2E provenance and absorbed the schema-v4
+integration. Workbench statistics now publish delivery heads, exact-head review
+requests and results, finding batches, validation cycles, cancellation timing,
+retrigger counts, and non-overlapping obsolete validation duration.
 
 ## Acceptance criteria
 
-- [ ] A squash merge cannot replace the final pull-request head in statistics.
-- [ ] Earlier validation heads remain present after merge.
-- [ ] Review and validation events are bound to exact head SHAs.
-- [ ] Obsolete and cancelled compute is derivable from detailed events.
-- [ ] Missing or truncated run collection fails closed.
-- [ ] Exact-head validation, review, readiness, merge, and completion records succeed.
+- [x] A squash merge cannot replace the final pull-request head in statistics.
+- [x] Earlier validation heads remain present after merge.
+- [x] Review and validation events are bound to exact head SHAs.
+- [x] Obsolete and cancelled compute is derivable from detailed events.
+- [x] Missing or truncated run collection fails closed.
+- [x] Exact-head validation, review, readiness, merge, and completion records succeed.
 
-## References
+## Evidence
 
-- [Feature](README.md)
-- [Implementation plan](../../plans/pr-delivery-efficiency/20260826T042243Z-three-slice-delivery-efficiency.md)
+- Collector merge: `264231fd2aa3f18b71afa8fe35faea078d973c66`.
+- Schema and manual E2E provenance merge: `c9677bf973532302a42c9800171899159fcad489`.
+- The superseded intermediate PR 1120 was closed after PR 1121 absorbed its integration.
