@@ -3,7 +3,7 @@ title: Efficient review and validation delivery
 status: in_progress
 automation: manual
 created_at: 2026-08-26T04:22:43Z
-updated_at: 2026-08-26T04:22:43Z
+updated_at: 2026-08-26T06:39:10Z
 ---
 
 # Efficient review and validation delivery
@@ -30,6 +30,8 @@ stabilizes, so review-driven replacement heads can consume repeated pipelines.
 - Use GitHub stacked pull requests only when later slices depend on lower slices.
 - Keep independent slices based directly on current `main`.
 - Preserve squash as one commit per pull request.
+- Split the statistics slice into collector foundation and schema integration
+  after the combined head exceeded the new hard ceiling.
 
 ## Issues
 

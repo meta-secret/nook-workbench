@@ -5,9 +5,11 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-26T04:22:43Z
-updated_at: 2026-08-26T04:22:43Z
+updated_at: 2026-08-26T06:39:10Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1116
+  - https://github.com/meta-secret/nook/pull/1120
 depends_on: []
 ---
 
@@ -28,6 +30,15 @@ pull-request heads.
 - Derive obsolete validation duration without summing overlapping wall-clock time.
 - Add focused schema, assembler, and regression coverage.
 - Update the statistics authority and Workbench schema contract.
+
+## Delivery split
+
+- PR 1116 owns the 1,393-line GitHub evidence collector foundation.
+- PR 1120 owns the 1,736-line schema and assembly integration.
+- The split was required when the combined review-fix head reached 3,129
+  authored lines, above the 3,015-line hard ceiling.
+- Review stabilization depends on PR 1120 because it consumes the published
+  per-head metrics contract.
 
 ## Acceptance criteria
 
