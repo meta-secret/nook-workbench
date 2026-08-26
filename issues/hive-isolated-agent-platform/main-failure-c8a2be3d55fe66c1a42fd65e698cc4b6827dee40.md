@@ -5,7 +5,7 @@ priority: p1
 automation: hive
 owner: unassigned
 created_at: 2026-08-26T23:28:05Z
-updated_at: 2026-08-26T23:28:05Z
+updated_at: 2026-08-26T23:33:25Z
 source_issues: []
 related_prs: [1162]
 depends_on: []
@@ -45,6 +45,10 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:33023126357:attempt:1 -->
 - 2026-08-26T23:28:05Z: Main run [33023126357 attempt 1](https://github.com/meta-secret/nook/actions/runs/33023126357)
   failed for `c8a2be3d55fe66c1a42fd65e698cc4b6827dee40`. Failed jobs: Native Rust verification, Rust ecosystem / Cargo fuzz smoke, Rust ecosystem / Proptest, Insta, and Loom.
+
+<!-- main-run:33023126357:attempt:2 -->
+- 2026-08-26T23:33:25Z: Main run [33023126357 attempt 2](https://github.com/meta-secret/nook/actions/runs/33023126357)
+  failed for `c8a2be3d55fe66c1a42fd65e698cc4b6827dee40`. Failed jobs: Native Rust verification.
 
 ## Findings and decisions
 
