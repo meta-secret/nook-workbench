@@ -1,13 +1,14 @@
 ---
 title: Close runnable configuration reachability
-status: ready
+status: done
 priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-26T08:05:41Z
-updated_at: 2026-08-26T08:05:41Z
+updated_at: 2026-08-26T09:34:53Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1123
 depends_on:
   - issues/executable-skill-capabilities/finite-loader-specialization.md
 ---
@@ -33,18 +34,20 @@ reach dormant providers through scripts, aliases, symlinks, or action hooks.
 
 ## Acceptance criteria
 
-- [ ] Every runnable configuration surface is inventoried.
-- [ ] Local action and script closure fails closed on missing or unsafe paths.
-- [ ] Symlink and extensionless execution behavior is covered.
-- [ ] Focused tests, full validation, and exact-head review pass.
+- [x] Every runnable configuration surface is inventoried.
+- [x] Local action and script closure fails closed on missing or unsafe paths.
+- [x] Symlink and extensionless execution behavior is covered.
+- [x] Focused tests, full validation, and exact-head review pass.
 
 ## Progress
 
-- Depends on finite loader specialization.
+- Merged PR #1123 as `e46604482b085fd21181ef17dfd6b58fab9abe04`.
 
 ## Findings and decisions
 
 - Configuration reachability is a separate root set from production Loom.
+- Catalog strings remain inert; only actual imports and executable command
+  launches enter the runnable configuration closure.
 
 ## References
 
