@@ -5,10 +5,11 @@ priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-26T00:20:04Z
+updated_at: 2026-08-26T00:31:23Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1088
+  - https://github.com/meta-secret/nook/pull/1109
   - https://github.com/meta-secret/nook/pull/1089
   - https://github.com/meta-secret/nook/pull/1108
 depends_on: []
@@ -54,10 +55,10 @@ results.
 
 - Architecture and repository inventory completed.
 - PR #1088 isolates shared TypeScript tooling in 2,645 changed lines.
-- Active Cortex article normalization is being extracted into a focused
-  predecessor of approximately 1,400 changed lines.
-- PR #1089 will retain only the dormant article provider at approximately
-  3,700 changed lines after that extraction.
+- PR #1109 publishes active Cortex article normalization in 1,407 changed
+  lines at exact head `c97894c96df8997ddc2c7463e05b4c317243d143`.
+- PR #1089 now retains only the dormant article provider in 3,756 changed
+  lines at exact head `b540bf9a978d867d927abd7f03b8bf0ef9e45018`.
 - PR #1108 isolates runtime reachability enforcement below 3,100 changed lines.
 - PR #1093 isolates pure source policy in 1,381 changed lines as the fifth slice
   of the revised nine-PR stack.
