@@ -7,7 +7,7 @@ owner: cypherkitty
 created_at: 2026-08-26T04:22:43Z
 updated_at: 2026-08-26T05:26:02Z
 source_issues: []
-related_prs: []
+related_prs: [https://github.com/meta-secret/nook/pull/1119]
 depends_on: [issues/pr-delivery-efficiency/review-first-stabilization.md]
 ---
 
