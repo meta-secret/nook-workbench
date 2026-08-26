@@ -5,7 +5,7 @@ priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-25T23:30:00Z
+updated_at: 2026-08-26T00:20:04Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1088
@@ -54,9 +54,13 @@ results.
 
 - Architecture and repository inventory completed.
 - PR #1088 isolates shared TypeScript tooling in 2,645 changed lines.
-- PR #1089 isolates the dormant article provider in 4,773 changed lines.
-- PR #1108 isolates runtime reachability enforcement in 2,484 changed lines.
-- Pure source policy follows as the fourth slice of the revised eight-PR stack.
+- Active Cortex article normalization is being extracted into a focused
+  predecessor of approximately 1,400 changed lines.
+- PR #1089 will retain only the dormant article provider at approximately
+  3,700 changed lines after that extraction.
+- PR #1108 isolates runtime reachability enforcement below 3,100 changed lines.
+- PR #1093 isolates pure source policy in 1,381 changed lines as the fifth slice
+  of the revised nine-PR stack.
 
 ## Findings and decisions
 
@@ -66,6 +70,8 @@ results.
 - Instruction-only skills remain the default.
 - Exact review proved runtime reachability is an independent security boundary.
   It must not share a PR with pure executable-source policy.
+- Exact review also proved active audit normalization is independently owned.
+  It must precede, not inflate, the dormant provider PR.
 
 ## References
 
