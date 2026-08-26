@@ -5,7 +5,7 @@ priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-26T08:05:41Z
-updated_at: 2026-08-26T10:04:49Z
+updated_at: 2026-08-26T10:36:15Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1130
@@ -43,14 +43,19 @@ teardown bounds and returns a verifiable receipt.
 ## Progress
 
 - Depends on pure source policy.
-- Official GitHub stack #1133 separates PR #1130's 2,158-line containment
-  layer from PR #1132's 776-line runtime integration layer.
+- Official GitHub stack #1135 separates PR #1130's 2,145-line containment
+  layer from PR #1132's 800-line runtime integration and documentation layer.
 - Review-driven fixes bind Docker commands to the verified Unix endpoint, pin
   the Dockerfile frontend digest, close inherited-pipe deadline races, bound
   pending requests before serialization, and repair live acceptance paths.
 - Focused tests pass with 17 containment tests and six runtime tests. Full Loom
-  verification passes with 394 tests on #1130 and 400 tests on #1132.
-- Exact-head review has no remaining finding. Hosted readiness remains pending.
+  verification passes with 396 tests on #1130. PR #1132 retains its six focused
+  runtime tests after the exact-head rebase.
+- PR #1130 review fixes recover stale image caches, preserve removal attempts
+  after a teardown authority-probe failure, and accept stopped Linux zombies in
+  process-group tests. All five review threads are answered and resolved.
+- PR #1130 is rebased on current main. Its exact-head review and final readiness
+  audit remain pending before the bottom stack layer merges.
 
 ## Findings and decisions
 

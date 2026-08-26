@@ -1,13 +1,15 @@
 ---
 title: Add immutable source closure and skill registry
-status: ready
+status: in_progress
 priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-26T08:05:41Z
-updated_at: 2026-08-26T08:05:41Z
+updated_at: 2026-08-26T10:36:15Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1134
+  - https://github.com/meta-secret/nook/pull/1136
 depends_on:
   - issues/executable-skill-capabilities/sealed-source-analyzer.md
 ---
@@ -40,7 +42,22 @@ registry authority while the production catalog remains empty.
 
 ## Progress
 
-- Depends on the sealed source analyzer.
+- Official GitHub stack #1135 owns the 2,310-line closure layer in PR #1134
+  and the 1,488-line registry layer in PR #1136.
+- Closure plans bind source, manifest, package, lock, and declared policy bytes
+  into one deterministic digest. Only the production sealed analyzer wrapper
+  can mint a registry-acceptable plan.
+- Package provenance rejects unexpected authority fields, external runtime
+  dependencies, non-allowlisted development packages, and lifecycle hooks.
+- Canonical path checks reject ancestor symlinks while descriptor reads bind
+  worktree bytes to the frozen Git tree.
+- The production registry remains empty. Injected candidate planning is
+  confined to a findings-only diagnostic API and cannot mint opaque authority.
+- Focused closure tests pass with 15 tests and 56 assertions. Focused registry
+  tests pass with 14 tests and 38 assertions. Full Loom verification passes
+  with 431 tests and 2,366 assertions on PR #1136.
+- Independent exact-head semantic review reports no remaining closure finding.
+  Registry semantic review and hosted delivery remain pending.
 
 ## Findings and decisions
 
