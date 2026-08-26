@@ -5,10 +5,11 @@ priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-26T08:05:41Z
-updated_at: 2026-08-26T09:53:06Z
+updated_at: 2026-08-26T10:04:49Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1130
+  - https://github.com/meta-secret/nook/pull/1132
 depends_on:
   - issues/executable-skill-capabilities/executable-source-policy.md
 ---
@@ -42,11 +43,14 @@ teardown bounds and returns a verifiable receipt.
 ## Progress
 
 - Depends on pure source policy.
-- Draft PR #1130 is the 2,865-line successor to source-policy PR #1129 in
-  official GitHub stack #1131.
-- The focused analyzer suite passes with 21 tests and 71 assertions.
-- Full Loom verification passes with 398 tests and 2,249 assertions. Semantic
-  containment review remains in progress before hosted validation.
+- Official GitHub stack #1133 separates PR #1130's 2,158-line containment
+  layer from PR #1132's 776-line runtime integration layer.
+- Review-driven fixes bind Docker commands to the verified Unix endpoint, pin
+  the Dockerfile frontend digest, close inherited-pipe deadline races, bound
+  pending requests before serialization, and repair live acceptance paths.
+- Focused tests pass with 17 containment tests and six runtime tests. Full Loom
+  verification passes with 394 tests on #1130 and 400 tests on #1132.
+- Exact-head review has no remaining finding. Hosted readiness remains pending.
 
 ## Findings and decisions
 

@@ -1,11 +1,11 @@
 ---
 title: Add pure executable source policy
-status: in_progress
+status: completed
 priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-26T08:05:41Z
-updated_at: 2026-08-26T09:46:29Z
+updated_at: 2026-08-26T10:04:49Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1093
@@ -34,19 +34,20 @@ without launching a process or granting execution authority.
 
 ## Acceptance criteria
 
-- [ ] Forbidden capabilities are denied semantically.
-- [ ] Policy evaluation has no process or runtime authority.
-- [ ] Provider source acceptance is covered with real values.
-- [ ] Focused tests, full validation, and exact-head review pass.
+- [x] Forbidden capabilities are denied semantically.
+- [x] Policy evaluation has no process or runtime authority.
+- [x] Provider source acceptance is covered with real values.
+- [x] Focused tests, full validation, and exact-head review pass.
 
 ## Progress
 
 - PR #1093 is source material and will be reconstructed after reachability.
 - PR #1129 reconstructs the source-policy-only slice on the merged reachability
   baseline. Its immediate diff is 1,381 additions across two files.
-- The focused source-policy suite passes with 19 tests and 136 assertions.
-- The full Loom gate passes with 375 tests and 2,170 assertions. Exact-head
-  semantic review and hosted readiness remain in progress.
+- Review-driven traversal and syntax fail-open cases are covered. The focused
+  source-policy suite passes with 21 tests and 144 assertions.
+- Full Loom verification passes with 377 tests and 2,178 assertions.
+- PR #1129 passed exact-head readiness and merged as `97ed5f4f1`.
 
 ## Findings and decisions
 
