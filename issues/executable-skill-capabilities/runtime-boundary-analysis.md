@@ -1,13 +1,14 @@
 ---
 title: Add executable runtime boundary analysis
-status: in_progress
+status: done
 priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-26T08:05:41Z
-updated_at: 2026-08-26T08:05:41Z
+updated_at: 2026-08-26T08:24:08Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1122
 depends_on: []
 ---
 
@@ -33,18 +34,23 @@ module loaders, ambient capability recovery, and dormant provider imports.
 
 ## Acceptance criteria
 
-- [ ] Evaluator and module-loader escape routes fail closed.
-- [ ] Local lexical shadows and inert strings remain accepted.
-- [ ] Production Loom cannot runtime-import dormant providers.
-- [ ] Focused tests, full validation, and exact-head review pass.
+- [x] Evaluator and module-loader escape routes fail closed.
+- [x] Local lexical shadows and inert strings remain accepted.
+- [x] Production Loom cannot runtime-import dormant providers.
+- [x] Focused tests, full validation, and exact-head review pass.
 
 ## Progress
 
 - Extracted as the first successor to oversized PR #1108.
+- Merged PR #1122 at `ae11a4a67075d9095f3b4a89c0cfff01b72156e2`.
+- Restacked the three remaining reachability PRs as GitHub stack #1127.
 
 ## Findings and decisions
 
 - The semantic boundary is a stable dependency for later closure walkers.
+- Agentic-only paths do not produce the Pages deployment required by the
+  repository ruleset. Exact readiness passed, so the owner dissolved and
+  recreated the stack around an authorized admin squash merge.
 
 ## References
 
