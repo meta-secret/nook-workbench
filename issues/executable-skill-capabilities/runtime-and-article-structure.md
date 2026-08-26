@@ -5,13 +5,17 @@ priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-26T01:10:49Z
+updated_at: 2026-08-26T08:05:41Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1088
   - https://github.com/meta-secret/nook/pull/1109
   - https://github.com/meta-secret/nook/pull/1089
   - https://github.com/meta-secret/nook/pull/1108
+  - https://github.com/meta-secret/nook/pull/1111
+  - https://github.com/meta-secret/nook/pull/1113
+  - https://github.com/meta-secret/nook/pull/1114
+  - https://github.com/meta-secret/nook/pull/1115
 depends_on: []
 ---
 
@@ -64,6 +68,11 @@ results.
 - PR #1108 remains the focused runtime graph slice after that extraction.
 - PR #1093 isolates pure source policy in 1,381 changed lines as the sixth slice
   of the ten-PR stack.
+- PRs #1088, #1111, #1113, #1109, #1089, #1114, and #1115 merged as the
+  completed lower layers of GitHub stack #1112.
+- PR #1108 grew beyond the review limit and is retained only as source material.
+  Four focused issues now preserve its boundary, loader, configuration, and
+  runtime-closure responsibilities before source policy resumes.
 
 ## Findings and decisions
 
@@ -78,6 +87,8 @@ results.
 - Applying the runtime boundary to every executable script exposed legitimate
   finite loaders and generated artifacts. Their proof belongs in a predecessor,
   not in path allowlists or an oversized reachability PR.
+- Cortex Markdown prohibits authored HTML. Reachability and later runtime work
+  must not restore an HTML parser, browser parser, or HTML-bearing fixture.
 
 ## References
 
