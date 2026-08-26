@@ -2,7 +2,7 @@
 title: Unplanned engineering repairs
 status: active
 created_at: 2026-07-27T05:45:15Z
-updated_at: 2026-08-16T06:50:56Z
+updated_at: 2026-08-26T04:27:46Z
 ---
 
 # Unplanned engineering repairs
@@ -30,6 +30,7 @@ record exists.
 - [ ] [Apply strict TypeScript API discipline across Nook web](nook-web-typescript-api-discipline.md)
 - [x] [Remove Redis from hosted Rust builds](remove-redis-from-hosted-rust-builds.md)
 - [x] [Add persistent URLs to vault application pages](persistent-vault-page-urls.md)
+- [ ] [Resolve open Dependabot security alerts](resolve-dependabot-security-alerts.md)
 
 ## References
 
