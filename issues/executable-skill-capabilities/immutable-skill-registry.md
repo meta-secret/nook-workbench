@@ -5,7 +5,7 @@ priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-26T08:05:41Z
-updated_at: 2026-08-26T10:36:15Z
+updated_at: 2026-08-26T11:16:06Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1134
@@ -42,7 +42,7 @@ registry authority while the production catalog remains empty.
 
 ## Progress
 
-- Official GitHub stack #1135 owns the 2,310-line closure layer in PR #1134
+- Official GitHub stack #1139 owns the 2,310-line closure layer in PR #1134
   and the 1,488-line registry layer in PR #1136.
 - Closure plans bind source, manifest, package, lock, and declared policy bytes
   into one deterministic digest. Only the production sealed analyzer wrapper
@@ -56,8 +56,8 @@ registry authority while the production catalog remains empty.
 - Focused closure tests pass with 15 tests and 56 assertions. Focused registry
   tests pass with 14 tests and 38 assertions. Full Loom verification passes
   with 431 tests and 2,366 assertions on PR #1136.
-- Independent exact-head semantic review reports no remaining closure finding.
-  Registry semantic review and hosted delivery remain pending.
+- Independent semantic reviews report no remaining closure or registry
+  findings. Hosted delivery follows PR #1132 in the stack.
 
 ## Findings and decisions
 
