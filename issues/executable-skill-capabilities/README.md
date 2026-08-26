@@ -2,7 +2,7 @@
 title: Executable skill capability packages
 status: in_progress
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-23T06:27:05Z
+updated_at: 2026-08-26T08:05:41Z
 ---
 
 # Executable skill capability packages
@@ -37,6 +37,15 @@ profiles than skills, which should be preserved.
 ## Issues
 
 - [ ] [Runtime and article-structure capability](runtime-and-article-structure.md)
+- [ ] [Runtime boundary analysis](runtime-boundary-analysis.md)
+- [ ] [Finite loader specialization](finite-loader-specialization.md)
+- [ ] [Runnable configuration closure](runnable-configuration-closure.md)
+- [ ] [Production runtime reachability](production-runtime-reachability.md)
+- [ ] [Executable source policy](executable-source-policy.md)
+- [ ] [Sealed source analyzer](sealed-source-analyzer.md)
+- [ ] [Immutable skill registry](immutable-skill-registry.md)
+- [ ] [Sealed skill executor](sealed-skill-executor.md)
+- [ ] [Cortex article activation](cortex-article-activation.md)
 - [ ] [Skill authoring and catalog audit](skill-authoring-and-catalog.md)
 - [ ] [Cortex document-map capability](cortex-document-map-capability.md)
 - [ ] [Cortex writer and consistency capabilities](cortex-quality-capabilities.md)
