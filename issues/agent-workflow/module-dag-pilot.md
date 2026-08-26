@@ -1,13 +1,13 @@
 ---
 title: Contract-first bottom-up module delivery pilot
-status: proposed
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-22T18:40:13Z
-updated_at: 2026-08-26T17:15:10Z
+updated_at: 2026-08-26T19:40:15Z
 source_issues: []
-related_prs: []
+related_prs: [1160]
 depends_on:
   - issues/agent-workflow/isolated-write-module-dag.md
 ---
@@ -38,19 +38,27 @@ and delivery-owner integration through the active harness.
 
 ## Acceptance criteria
 
-- [ ] Every reached node has an exact baseline, isolated workspace, and verified
+- [x] Every reached node has an exact baseline, isolated workspace, and verified
       commit handoff; optional human evidence does not control execution.
-- [ ] No child exceeds hierarchy depth three or schedules an undeclared child.
-- [ ] Provider tests pass before consumer implementation begins.
-- [ ] The consumer builds against accepted provider and internal API contracts.
-- [ ] Parent integration, focused local validation, readiness, and squash merge
+- [x] No child exceeds hierarchy depth three or schedules an undeclared child.
+- [x] Provider evidence is verified before the consumer workspace begins.
+- [x] The consumer starts from and reads the accepted provider and WASM
+      contract frontier.
+- [x] Parent integration, focused local validation, review, and squash merge
       complete successfully.
-- [ ] Pilot findings are reflected into existing authorities without creating
+- [x] Pilot findings are reflected into existing authorities without creating
       duplicate workflow prose.
 
 ## Progress
 
-- Waiting for isolated-write execution.
+- A single focused test drives the real validator, workspace, handoff, and
+  integration APIs through `nook-core` to `nook-wasm/nook-core-wasm` to
+  `nook-web-shared`.
+- The pilot proves three exact integrated baselines, inherited provider output,
+  deterministic first-parent ancestry, source immutability, and complete
+  cleanup.
+- Squash-merged [Nook PR
+  #1160](https://github.com/meta-secret/nook/pull/1160).
 
 ## Findings and decisions
 

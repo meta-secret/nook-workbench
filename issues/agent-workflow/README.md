@@ -2,7 +2,7 @@
 title: Deterministic agent workflows
 status: in_progress
 created_at: 2026-08-14T07:26:00Z
-updated_at: 2026-08-26T17:15:10Z
+updated_at: 2026-08-26T19:40:15Z
 ---
 
 # Deterministic agent workflows
@@ -19,13 +19,12 @@ reviewed topology, executes read-only Codex workers, joins typed results, and
 records append-only run and attempt journals. Event-sourced agent processing
 merged in Nook PR #1068.
 
-Nine stable, read-only module experts now resolve their exact module, skill, and
-authority context from immutable source snapshots. Typed plan authorization,
-expert evidence, adapter provenance, and depth-two or depth-three lineage merged
-in Nook PR #1082. The next sequence adds typed module-context planning, isolated
-writes, deterministic commit integration, and a contract-first bottom-up
-delivery pilot. The active harness owns subagent lifecycle. Nook owns module
-policy and Git safety. Hive is not part of this internal development path.
+Nine stable, read-only module experts resolve their exact module, skill, and
+authority context from immutable source snapshots. Typed module-DAG validation,
+isolated write worktrees, verified commit handoffs, deterministic private-ref
+integration, and the core-to-WASM-to-web pilot are complete. The active harness
+owns subagent lifecycle. Nook owns module policy and Git safety. Hive is not
+part of this internal development path.
 
 Loom leaf tools now generate discovery YAML, decode blueprints, and defaultable
 Task aliases from typed example documents. Sample YAML files under the Loom
@@ -62,9 +61,9 @@ package are gone. That slice merged in Nook PR #1045.
 - [ ] [Reconcile Cortex semantic debt found by the first static workflow](cortex-semantic-debt.md)
 - [x] [Add event-sourced subagent processing records](event-sourced-subagent-processing.md)
 - [x] [Add the named module-subagent foundation](named-module-subagent-foundation.md)
-- [ ] [Add typed module context and read-only DAG planning](typed-module-context-and-read-only-dag.md)
-- [ ] [Add isolated-write module DAG execution](isolated-write-module-dag.md)
-- [ ] [Pilot contract-first bottom-up module delivery](module-dag-pilot.md)
+- [x] [Add typed module context and read-only DAG planning](typed-module-context-and-read-only-dag.md)
+- [x] [Add isolated-write module DAG execution](isolated-write-module-dag.md)
+- [x] [Pilot contract-first bottom-up module delivery](module-dag-pilot.md)
 
 ## References
 
@@ -72,6 +71,11 @@ package are gone. That slice merged in Nook PR #1045.
 - [Nook PR #1045](https://github.com/meta-secret/nook/pull/1045)
 - [Nook PR #1068](https://github.com/meta-secret/nook/pull/1068)
 - [Nook PR #1082](https://github.com/meta-secret/nook/pull/1082)
+- [Nook PR #1151](https://github.com/meta-secret/nook/pull/1151)
+- [Nook PR #1152](https://github.com/meta-secret/nook/pull/1152)
+- [Nook PR #1156](https://github.com/meta-secret/nook/pull/1156)
+- [Nook PR #1159](https://github.com/meta-secret/nook/pull/1159)
+- [Nook PR #1160](https://github.com/meta-secret/nook/pull/1160)
 - [Implementation plan](../../plans/agent-workflow/20260814T052642Z-static-agent-workflows.md)
 - [Typed request examples plan](../../plans/agent-workflow/20260817T054500Z-typed-request-examples.md)
 - [Named module experts plan](../../plans/agent-workflow/20260822T184013Z-module-subagent-foundation.md)
