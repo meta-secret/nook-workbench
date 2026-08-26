@@ -1,11 +1,11 @@
 ---
 title: Enforce active 3,000-line semantic splitting
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-26T04:22:43Z
-updated_at: 2026-08-26T04:22:43Z
+updated_at: 2026-08-26T05:26:02Z
 source_issues: []
 related_prs: []
 depends_on: [issues/pr-delivery-efficiency/review-first-stabilization.md]
