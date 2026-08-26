@@ -7,7 +7,8 @@ owner: cypherkitty
 created_at: 2026-08-26T07:55:00Z
 updated_at: 2026-08-26T07:55:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1121
 depends_on:
   - issues/pr-delivery-efficiency/per-head-delivery-statistics.md
 ---
@@ -45,6 +46,8 @@ time or commit-history heuristics.
 ## Progress
 
 - The need was isolated after the collector review circuit opened on PR 1116.
+- Draft PR 1121 publishes the source PR in the run title and the resolved full
+  head SHA in a bounded metadata artifact. Collector ingestion remains next.
 
 ## Findings and decisions
 
@@ -58,3 +61,4 @@ time or commit-history heuristics.
 - [Feature](README.md)
 - [Statistics issue](per-head-delivery-statistics.md)
 - [Nook PR 1116](https://github.com/meta-secret/nook/pull/1116)
+- [Nook PR 1121](https://github.com/meta-secret/nook/pull/1121)
