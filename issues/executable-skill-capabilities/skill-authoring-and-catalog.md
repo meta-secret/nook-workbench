@@ -1,13 +1,14 @@
 ---
 title: Add executable skill authoring and catalog verification
-status: ready
+status: done
 priority: p1
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-23T06:27:05Z
+updated_at: 2026-08-26T17:47:03Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1147
 depends_on:
   - issues/executable-skill-capabilities/runtime-and-article-structure.md
 ---
@@ -34,20 +35,26 @@ capability packages, and role-routing skills without conflating them.
 
 ## Acceptance criteria
 
-- [ ] Scaffolding creates deterministic reviewed layouts without semantic filler
+- [x] Scaffolding creates deterministic reviewed layouts without semantic filler
       code.
-- [ ] Audits reject missing, duplicate, unregistered, extra, or mismatched
+- [x] Audits reject missing, duplicate, unregistered, extra, or mismatched
       capability packages.
-- [ ] Canonical Cortex, agent wrappers, and host symlinks stay synchronized.
-- [ ] Focused and repository verification passes.
+- [x] Canonical Cortex, agent wrappers, and host symlinks stay synchronized.
+- [x] Focused and repository verification passes.
 
 ## Progress
 
-- Depends on the runtime foundation.
+- PR [#1147](https://github.com/meta-secret/nook/pull/1147) added the shared
+  discoverable YAML command protocol and executable-skill verification.
+- The delivery remained independent from the separately owned registry,
+  closure, analyzer, and runtime activation work.
 
 ## Findings and decisions
 
 - A skill receives code only when it owns a stable deterministic mechanism.
+- Executable skills expose finite domain actions, exact YAML examples and
+  schemas, bounded request transport, and YAML-only results through one shared
+  invocation contract.
 
 ## References
 
