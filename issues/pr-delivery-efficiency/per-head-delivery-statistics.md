@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-26T04:22:43Z
-updated_at: 2026-08-26T06:39:10Z
+updated_at: 2026-08-26T07:55:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1116
@@ -39,6 +39,19 @@ pull-request heads.
   authored lines, above the 3,015-line hard ceiling.
 - Review stabilization depends on PR 1120 because it consumes the published
   per-head metrics contract.
+- Repeated review batches opened the review circuit before another hosted
+  validation run. Manual `E2E (PR)` dispatch provenance moved to its own
+  required focused issue because the workflow API does not expose the resolved
+  pull-request head.
+
+## Progress
+
+- 2026-08-26: Cancelled the only post-timeout hosted validation run as soon as
+  late review findings arrived.
+- 2026-08-26: Opened the three-batch review circuit and stopped validation.
+- 2026-08-26: Kept queue timing, chronological delivery heads, review-derived
+  supersession, and merge cutoffs in the collector slice. Split manual E2E
+  provenance into a workflow-owned successor.
 
 ## Acceptance criteria
 

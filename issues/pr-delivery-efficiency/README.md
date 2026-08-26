@@ -3,7 +3,7 @@ title: Efficient review and validation delivery
 status: in_progress
 automation: manual
 created_at: 2026-08-26T04:22:43Z
-updated_at: 2026-08-26T06:39:10Z
+updated_at: 2026-08-26T07:55:00Z
 ---
 
 # Efficient review and validation delivery
@@ -36,6 +36,7 @@ stabilizes, so review-driven replacement heads can consume repeated pipelines.
 ## Issues
 
 - [ ] [Record per-head delivery statistics](per-head-delivery-statistics.md)
+- [ ] [Expose manual E2E pull-request provenance](manual-e2e-provenance.md)
 - [ ] [Stabilize review before complete validation](review-first-stabilization.md)
 - [ ] [Enforce active 3,000-line semantic splitting](three-thousand-line-stacks.md)
 
