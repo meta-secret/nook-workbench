@@ -1,11 +1,11 @@
 ---
 title: Stabilize review before complete validation
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-26T04:22:43Z
-updated_at: 2026-08-26T04:22:43Z
+updated_at: 2026-08-26T05:08:28Z
 source_issues: []
 related_prs: []
 depends_on: [issues/pr-delivery-efficiency/per-head-delivery-statistics.md]
