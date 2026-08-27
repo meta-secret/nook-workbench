@@ -2,7 +2,7 @@
 title: Executable skill capability packages
 status: in_progress
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-27T16:02:02Z
+updated_at: 2026-08-27T19:12:59Z
 ---
 
 # Executable skill capability packages
@@ -17,10 +17,15 @@ generic discovery, capability validation, and deterministic Git safety.
 
 ## Current state
 
-Project skills are agent-invocable Markdown wrappers. Repository-specific
-mechanics and their tests are centralized in Loom, so semantic ownership and
-implementation locality do not align. The repository already has fewer agent
-profiles than skills, which should be preserved.
+PR [#1170](https://github.com/meta-secret/nook/pull/1170) completed the
+authority migration. Team-owned Cortex Markdown is now the sole source of
+project skill semantics. Harness-specific `.agents/skills`, `.cursor/skills`,
+`.claude/skills`, TOML agent profiles, and `skills-lock.json` are retired.
+
+Loom retains deterministic mechanics, audits, and harness-neutral execution.
+The active harness still owns native subagent lifecycle. Remaining focused
+issues must be evaluated against this boundary before dispatch; references to
+the retired mirrors are historical context, not current authority.
 
 ## Decisions
 
@@ -42,6 +47,18 @@ profiles than skills, which should be preserved.
   loading.
 - Prefer real values, temporary repositories, bounded local services, and
   container integration tests over mocks.
+- Keep project skill semantics only in team-owned Cortex Markdown.
+- Treat harness adapters as thin routing inputs. They must not duplicate team
+  contracts or skill prompts.
+- Keep deterministic executable capabilities in Loom when Markdown alone
+  cannot enforce the contract.
+
+## Progress
+
+- 2026-08-27: PR [#1170](https://github.com/meta-secret/nook/pull/1170)
+  removed the harness skill mirrors and registry, preserved deterministic Loom
+  capabilities, added authority guards for active agent inputs, and made hosted
+  prompt changes run the same policy checks.
 
 ## Issues
 
