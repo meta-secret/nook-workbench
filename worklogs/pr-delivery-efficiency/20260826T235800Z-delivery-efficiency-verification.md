@@ -15,7 +15,9 @@ agent: codex
 
 The schema-v4 Workbench sample currently contains three PRs: 1147, 1148, and 1155. Across them it records 25 delivery heads, 23 review requests, 25 validation cycles, 56 Actions runs, 16,667 Actions seconds, and 22 validation retriggers. It also records 1,668 obsolete-validation seconds and 1,876 cancelled-validation seconds.
 
-Per PR, that is 8.33 heads, 7.67 review requests, 8.33 validations, 18.67 Actions runs, about 92.6 Actions minutes, and 7.33 retriggers. Every sampled PR had at least five validation cycles. This confirms the review/change/validation loop and substantial repeated CI cost, while the sample is still too small to generalize repository-wide or prove the separate report of more than 200 review comments.
+Per PR, that is 8.33 heads, 7.67 review requests, 8.33 validations, 18.67 Actions runs, about 92.6 Actions minutes, and 7.33 retriggers. Every sampled PR had at least five validation cycles. This confirms the review/change/validation loop and substantial repeated CI cost, while the schema-v4 sample is still too small for a repository-wide trend claim.
+
+A direct GitHub count confirms the reported 200-plus review volume on PR 1118 with an important distinction: 101 inline review comments, 49 PR comments, and 59 submitted reviews produce 209 review/comment events. It was not more than 200 inline comments alone.
 
 ## Delivered controls
 
