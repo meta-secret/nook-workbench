@@ -5,9 +5,9 @@ priority: p1
 automation: hive
 owner: cypherkitty
 created_at: 2026-08-27T10:18:41Z
-updated_at: 2026-08-27T16:04:11Z
+updated_at: 2026-08-27T16:38:06Z
 source_issues: []
-related_prs: [1167]
+related_prs: [1167, 1168]
 depends_on: []
 ---
 
@@ -35,7 +35,7 @@ request while preserving the failing revision and workflow evidence.
 
 ## Acceptance criteria
 
-- [ ] The failure is explained and fixed with targeted regression coverage.
+- [x] The failure is explained and fixed with targeted regression coverage.
 - [ ] The fix PR passes exact-head repository-owned checks, including the
   Main-equivalent browser suites.
 - [ ] The fix is squash-merged and the incident records its PR and validation.
@@ -48,6 +48,9 @@ request while preserving the failing revision and workflow evidence.
 - 2026-08-27T16:04:11Z: Interactive delivery ownership was explicitly
   authorized. The repair will preserve Kubernetes-native ARC execution and use
   a reviewed Main-fix pull request.
+- 2026-08-27T16:38:06Z: Opened [Nook PR #1168](https://github.com/meta-secret/nook/pull/1168)
+  at exact head `14bbc4bfb889e0119fea475e4280ca294520b082` with `ci:full-e2e`.
+  Focused contracts and the pre-push gate are green.
 
 ## Findings and decisions
 
@@ -56,7 +59,14 @@ request while preserving the failing revision and workflow evidence.
 - ARC and k8s runtime isolation must use ordinary Pods. Browser software may be
   preinstalled in the Pod image or installed directly in the runner Pod; nested
   container runtimes remain prohibited.
+- Live evidence tied the export EOFs to an OOM-killed BuildKit shard. All
+  shared Rust/WASM writers now force zstd and use rotated cache generations.
+- WASM artifact verification is independent from cache publication. Cache
+  publication remains a visible deployment gate but cannot suppress prepared-Pod
+  Playwright evidence.
 
 ## References
 
 - [Failed Main run](https://github.com/meta-secret/nook/actions/runs/33061821960)
+- [Repair PR #1168](https://github.com/meta-secret/nook/pull/1168)
+- [Delivery plan](../../plans/hive-isolated-agent-platform/20260827T160411Z-restore-main-kubernetes-native-arc.md)
