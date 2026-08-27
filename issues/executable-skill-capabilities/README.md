@@ -2,7 +2,7 @@
 title: Executable skill capability packages
 status: in_progress
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-26T08:05:41Z
+updated_at: 2026-08-27T16:02:02Z
 ---
 
 # Executable skill capability packages
@@ -10,9 +10,10 @@ updated_at: 2026-08-26T08:05:41Z
 ## Goal
 
 Give Nook a large composable skill catalog used by a small stable set of agent
-profiles. Mechanically executable skills own focused TypeScript capability
-packages with strong contracts and tests. Loom remains the generic trusted
-control plane.
+profiles. Mechanically executable skills own focused TypeScript applications
+with strong contracts, tests, and a discoverable domain-YAML command protocol.
+The active harness owns native subagent lifecycle. Shared tooling retains only
+generic discovery, capability validation, and deterministic Git safety.
 
 ## Current state
 
@@ -27,8 +28,16 @@ profiles than skills, which should be preserved.
 - Add code only when a skill owns a deterministic mechanical capability.
 - Use a reviewed static registry. Manifests never choose arbitrary imports or
   commands.
-- Keep scheduling, isolation, lineage, journals, replay, receipts, barriers,
-  and authority in Loom.
+- Let the active harness own worker creation, communication, scheduling,
+  retries, cancellation, barriers, and synthesis.
+- Keep deterministic task-contract, resource-claim, baseline, handoff, and
+  integration validation in the owning skill applications.
+- Do not use Docker, DinD, a nested daemon, or a host runtime socket for skill
+  execution.
+- Give every executable skill a regular Bun and TypeScript project shape with
+  focused tests and the repository TypeScript quality rules.
+- Reuse one MCP-like domain-YAML discovery and invocation protocol. Commands
+  expose schemas and exact examples and reject unknown fields.
 - Keep mandatory enforcement registered independently of model-selected skill
   loading.
 - Prefer real values, temporary repositories, bounded local services, and
@@ -50,6 +59,11 @@ profiles than skills, which should be preserved.
 - [ ] [Cortex document-map capability](cortex-document-map-capability.md)
 - [ ] [Cortex writer and consistency capabilities](cortex-quality-capabilities.md)
 - [ ] [Classify remaining mechanics and normalize Loom](normalize-local-mechanics.md)
+- [ ] [Restore the discoverable YAML protocol](discoverable-yaml-protocol.md)
+- [ ] [Move repository policy mechanics into skills](repository-policy-capabilities.md)
+- [ ] [Move delivery inspection mechanics into skills](delivery-inspection-capabilities.md)
+- [ ] [Move expert contracts into skills](expert-contract-capabilities.md)
+- [ ] [Make subagent delivery harness-native](harness-native-subagent-delivery.md)
 
 ## References
 
