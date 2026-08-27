@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for effd9ce00a9d
-status: ready
+status: in_progress
 priority: p1
 automation: hive
-owner: unassigned
+owner: cypherkitty
 created_at: 2026-08-27T10:18:41Z
-updated_at: 2026-08-27T10:18:41Z
+updated_at: 2026-08-27T16:04:11Z
 source_issues: []
 related_prs: [1167]
 depends_on: []
@@ -45,11 +45,17 @@ request while preserving the failing revision and workflow evidence.
 <!-- main-run:33061821960:attempt:1 -->
 - 2026-08-27T10:18:41Z: Main run [33061821960 attempt 1](https://github.com/meta-secret/nook/actions/runs/33061821960)
   failed for `effd9ce00a9d9ac00d21c9e44adbb3eb97b0d8bc`. Failed jobs: WASM verification and artifact.
+- 2026-08-27T16:04:11Z: Interactive delivery ownership was explicitly
+  authorized. The repair will preserve Kubernetes-native ARC execution and use
+  a reviewed Main-fix pull request.
 
 ## Findings and decisions
 
 - Main failure records include job names and workflow links, never raw logs or
   credentials.
+- ARC and k8s runtime isolation must use ordinary Pods. Browser software may be
+  preinstalled in the Pod image or installed directly in the runner Pod; nested
+  container runtimes remain prohibited.
 
 ## References
 
