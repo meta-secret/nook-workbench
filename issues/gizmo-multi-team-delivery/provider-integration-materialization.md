@@ -1,11 +1,11 @@
 ---
 title: "Integrate and materialize verified providers"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T14:05:00Z
+updated_at: 2026-08-28T14:48:14Z
 source_issues: []
 related_prs: [1184]
 depends_on: ["issues/gizmo-multi-team-delivery/admission-evidence-authority.md"]
@@ -58,45 +58,45 @@ resources through repeatable cleanup.
 
 ## Acceptance criteria
 
-- [ ] The typed issue is done and this branch starts from its merged Main
+- [x] The typed issue is done and this branch starts from its merged Main
   frontier with all required plan, evidence, admission, provenance, and export
   interfaces available.
-- [ ] Full-work commit `ce47c73562755427d6471cf1209f50db625fb023`
+- [x] Full-work commit `ce47c73562755427d6471cf1209f50db625fb023`
   remains linked and the four listed files preserve all assigned integration
   behavior.
-- [ ] The slice measures 1,252 authored changed lines before review repair and
+- [x] The slice measures 1,252 authored changed lines before review repair and
   remains below 3,000 lines with every authored source file at or below 1,000.
-- [ ] Accepted write providers are terminal-successful, owner-accepted,
+- [x] Accepted write providers are terminal-successful, owner-accepted,
   commit-verified against their declared frontier and scope, and integrated
   before a dependent consumer becomes ready.
-- [ ] Accepted read-only evidence satisfies only its declared edge and never
+- [x] Accepted read-only evidence satisfies only its declared edge and never
   enters Git ancestry or gains scheduling, mutation, retry, or lifecycle
   authority.
-- [ ] Consumer worktrees start at exact integrated frontiers containing the
+- [x] Consumer worktrees start at exact integrated frontiers containing the
   complete direct and transitive predecessor closure, without unrelated task
   output.
-- [ ] Integration rejects wrong repository or worktree identity, unauthorized
+- [x] Integration rejects wrong repository or worktree identity, unauthorized
   commits, path-scope escape, stale generation or attempt evidence, mutable
   submissions, forged handoffs, and post-verification drift.
-- [ ] Finalization fails while any required task, lease disposition, provider
+- [x] Finalization fails while any required task, lease disposition, provider
   edge, exact-head verdict, or integration state is incomplete; the all-task
   barrier is used only there.
-- [ ] Cleanup is safe after success or failure, preserves required provenance,
+- [x] Cleanup is safe after success or failure, preserves required provenance,
   and is idempotent across repeated calls.
-- [ ] Integration and core-WASM-web pilot tests prove immediate local
+- [x] Integration and core-WASM-web pilot tests prove immediate local
   disposition, evidence-only acceptance, predecessor closure, incomplete
   finalization rejection, immutability, forged-handoff and drift rejection,
   and idempotent cleanup.
-- [ ] Web-development review confirms typed integration boundaries,
+- [x] Web-development review confirms typed integration boundaries,
   deterministic state transitions, behavior-focused coverage, and cohesive
   files below the source ceiling; `integration.ts` is decomposed by
   responsibility if repair would push it beyond its preserved 971 lines.
-- [ ] Security returns a non-blocking exact-head verdict for commit, path,
+- [x] Security returns a non-blocking exact-head verdict for commit, path,
   evidence, frontier, finalization, and cleanup trust boundaries.
-- [ ] Focused integration and pilot tests, complete Loom tests,
+- [x] Focused integration and pilot tests, complete Loom tests,
   TypeScript-state and source-architecture checks, pre-push, hosted exact-head
   validation, required verdicts, and readiness pass.
-- [ ] The final successor squash-merges and all three issue updates, worklogs,
+- [x] The final successor squash-merges and all three issue updates, worklogs,
   statistics, and the feature completion state are published.
 
 ## Progress
@@ -108,10 +108,15 @@ resources through repeatable cleanup.
 - Generation-lifecycle PR 1183 merged as
   `172ddec77c0e34b477ac9c87b4a3aeeb681a08d4`; provider integration is now
   claimed from that exact frontier.
-- Provider-integration PR 1184 is open at exact head
-  `14f32c940d29870f37279a5c42b590b7cd2e863f`. Functional, Web-development,
-  and Security exact-head reviews pass; focused, full Loom, source-architecture,
-  TypeScript-state, formatting, lint, and type checks are green.
+- Provider-integration PR 1184 merged as
+  `c4e0d8464c04ce0529950cf4a13e830be5570a5e` from final reviewed head
+  `94fa316d79cfc1699f23f76328fec96ffeabb5dd`. Functional, Web-development,
+  Security, and local Codex reviews passed. Focused tests passed 66/66, full
+  Loom passed 572/572, source architecture passed 7/7, TypeScript state passed
+  8/8, repository policy passed, and readiness returned ready.
+- The final path-union audit found all 25 paths changed by the preservation
+  source covered by PRs 1172, 1181, 1182, 1183, and 1184. Draft PR 1176 was
+  closed without merge at 2026-08-28T14:48:14Z.
 
 ## Findings and decisions
 
@@ -132,4 +137,6 @@ resources through repeatable cleanup.
 - [Provider finalization superseding plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T140217Z-provider-integration-finalization-superseding.md)
 - [Superseding plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T005630Z-gizmo-multi-team-dispatch-superseding.md)
 - [Nook PR 1172 root predecessor](https://github.com/meta-secret/nook/pull/1172)
+- [Nook PR 1184 provider integration](https://github.com/meta-secret/nook/pull/1184)
+- [Retired preservation draft PR 1176](https://github.com/meta-secret/nook/pull/1176)
 - [Preserved full-work commit](https://github.com/meta-secret/nook/commit/ce47c73562755427d6471cf1209f50db625fb023)
