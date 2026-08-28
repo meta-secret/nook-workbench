@@ -1,13 +1,13 @@
 ---
 title: "Implement admission and evidence authority"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-28T06:14:53Z
-updated_at: 2026-08-28T09:09:34Z
+updated_at: 2026-08-28T11:30:00Z
 source_issues: []
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/1182"]
 depends_on: ["issues/gizmo-multi-team-delivery/typed-plan-evidence-admission.md"]
 ---
 
@@ -15,9 +15,9 @@ depends_on: ["issues/gizmo-multi-team-delivery/typed-plan-evidence-admission.md"
 
 ## Context
 
-This issue consumes the merged typed plan and validation foundation. It owns
+This completed issue consumes the merged typed plan and validation foundation. It owns
 runtime generation authority, deterministic admission, immutable leases,
-conclusive disposition, generation restart, and authenticated evidence without
+conclusive disposition, and authenticated evidence for one immutable generation without
 giving plans or evidence worker-lifecycle authority.
 
 AI owns semantics and acceptance. Web development implements the listed
@@ -28,8 +28,7 @@ evidence, and stale-state rejection. Gizmo owns delivery lifecycle.
 
 Gizmo can authorize exact task attempts from an accepted plan, select a stable
 maximal safe ready set within concurrency and lease limits, freeze every
-capability and claim, retain leases through conclusive disposition, restart a
-new generation without stale state, and verify evidence against its exact
+capability and claim, retain leases through conclusive disposition, and verify evidence against its exact
 source, plan, generation, task, attempt, team, functional owner, claims,
 artifact digest, terminal verdict, and frozen acceptance requirements.
 
@@ -51,25 +50,25 @@ artifact digest, terminal verdict, and frozen acceptance requirements.
 
 ## Acceptance criteria
 
-- [ ] Begins from the merged plan/validation foundation and changes none of its
+- [x] Begins from the merged plan/validation foundation and changes none of its
   owned files.
-- [ ] Admission selects a deterministic maximal safe ready set and blocks
+- [x] Admission selects a deterministic maximal safe ready set and blocks
   consumers until every direct provider barrier is satisfied.
-- [ ] Admitted arrays, lineage, claims, owner data, and acceptance evidence are
+- [x] Admitted arrays, lineage, claims, owner data, and acceptance evidence are
   deep-copied and frozen against caller mutation.
-- [ ] Claims remain leased through accepted, rejected, failed, and cancelled
+- [x] Claims remain leased through accepted, rejected, failed, and cancelled
   disposition; every disposition deterministically recomputes readiness.
-- [ ] Generation restart migrates no old attempt, evidence, lease, or private
-  integration state.
-- [ ] Evidence rejects forged, stale, mismatched, or self-asserted task,
+- [x] Generation restart is excluded from this bounded successor and assigned
+  to the authenticated generation-lifecycle successor.
+- [x] Evidence rejects forged, stale, mismatched, or self-asserted task,
   attempt, team, functional owner, source, claim, artifact, verdict, and
   acceptance data.
-- [ ] Current wave integration remains buildable; final task-at-a-time
+- [x] Current wave integration remains buildable; final task-at-a-time
   integration APIs are not exported before their owning successor.
-- [ ] Focused admission, mutation, positive evidence, and adversarial evidence
+- [x] Focused admission, mutation, positive evidence, and adversarial evidence
   tests, complete Loom checks, TypeScript-state, source architecture, pre-push,
   exact-head hosted validation, required verdicts, and readiness pass.
-- [ ] The PR squash-merges before provider integration is claimed, then its
+- [x] The PR squash-merges before provider integration is claimed, then its
   issue update, worklog, and statistics are published.
 
 ## Progress
@@ -83,6 +82,11 @@ artifact digest, terminal verdict, and frozen acceptance requirements.
   registrar from the barrel does not make its source-module export private.
   Scope now includes a dedicated authority seam so evidence minting can remain
   inseparable from complete verification without an emitted module cycle.
+- 2026-08-28: PR 1182 passed the full Loom suite (557 passing, 13 intentional
+  integration-pending skips), source architecture, TypeScript-state, focused
+  admission/evidence tests, exact-head AI, Web, and Security verdicts, and
+  repository readiness. It squash-merged as
+  `413cb40378732b1e731868e3f2f635e7b1c4f7c9`.
 
 ## Findings and decisions
 
