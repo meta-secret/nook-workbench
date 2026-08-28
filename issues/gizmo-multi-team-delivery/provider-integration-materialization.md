@@ -8,7 +8,7 @@ created_at: 2026-08-28T00:56:30Z
 updated_at: 2026-08-28T00:56:30Z
 source_issues: []
 related_prs: []
-depends_on: ["issues/gizmo-multi-team-delivery/typed-plan-evidence-admission.md"]
+depends_on: ["issues/gizmo-multi-team-delivery/admission-evidence-authority.md"]
 ---
 
 # Integrate and materialize verified providers
@@ -16,10 +16,10 @@ depends_on: ["issues/gizmo-multi-team-delivery/typed-plan-evidence-admission.md"
 ## Context
 
 This is the final slice of [Gizmo multi-team delivery](README.md). It begins only
-after the typed plan, evidence, and admission issue merges. It consumes that
-stable interface to integrate accepted providers locally, materialize complete
-consumer frontiers, finalize only after the all-task barrier, and clean up
-idempotently.
+after the typed plan/validation and admission/evidence issues merge. It consumes
+those stable interfaces to integrate accepted providers locally, materialize
+complete consumer frontiers, finalize only after the all-task barrier, and
+clean up idempotently.
 
 AI owns the capability and acceptance. Web development implements the listed
 TypeScript integration and test files under the AI contract. Security reviews
@@ -101,8 +101,9 @@ resources through repeatable cleanup.
 
 ## Progress
 
-- No implementation started. This successor remains proposed until the typed
-  predecessor merges and Gizmo records the exact integrated frontier.
+- No implementation started. This successor remains proposed until the
+  admission/evidence predecessor merges and Gizmo records the exact integrated
+  frontier.
 
 ## Findings and decisions
 
