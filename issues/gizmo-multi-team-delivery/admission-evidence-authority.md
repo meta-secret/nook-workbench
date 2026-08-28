@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-28T06:14:53Z
-updated_at: 2026-08-28T08:17:10Z
+updated_at: 2026-08-28T09:09:34Z
 source_issues: []
 related_prs: []
 depends_on: ["issues/gizmo-multi-team-delivery/typed-plan-evidence-admission.md"]
@@ -35,8 +35,9 @@ artifact digest, terminal verdict, and frozen acceptance requirements.
 
 ## Scope
 
-- Estimated authored changed lines: 1,900.
+- Estimated authored changed lines: 2,950.
 - Included source files:
+  - `agentic-ai/loom/src/module-delivery/authority.ts`
   - `agentic-ai/loom/src/module-delivery/admission.ts`
   - `agentic-ai/loom/src/module-delivery/evidence.ts`
   - `agentic-ai/loom/src/module-delivery/index.ts`
@@ -78,6 +79,10 @@ artifact digest, terminal verdict, and frozen acceptance requirements.
 - 2026-08-28: Foundation PR 1181 merged as
   `5e060a38516076dd0416ee12a138020cd70ea5ee`; admission/evidence is now claimed
   from that exact frontier under a focused immutable plan.
+- 2026-08-28: Exact-head Security review proved that omitting a raw evidence
+  registrar from the barrel does not make its source-module export private.
+  Scope now includes a dedicated authority seam so evidence minting can remain
+  inseparable from complete verification without an emitted module cycle.
 
 ## Findings and decisions
 
@@ -85,10 +90,13 @@ artifact digest, terminal verdict, and frozen acceptance requirements.
   the provider execution team.
 - Optional evidence remains input data and cannot authorize workers, retries,
   scheduling, integration, or lifecycle operations.
+- Source-module reachability is part of the capability boundary; private
+  registration cannot rely on barrel omission.
 
 ## References
 
 - [Superseding runtime split plan](../../plans/agent-orchestration/20260828T061453Z-gizmo-multi-team-runtime-resplit.md)
 - [Focused admission/evidence plan](../../plans/agent-orchestration/20260828T081710Z-admission-evidence-authority.md)
+- [Superseding private authority plan](../../plans/agent-orchestration/20260828T090934Z-private-admission-authority-seam.md)
 - [Typed plan foundation](typed-plan-evidence-admission.md)
 - [Preservation draft PR 1176](https://github.com/meta-secret/nook/pull/1176)
