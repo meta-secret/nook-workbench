@@ -5,9 +5,9 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T12:32:00Z
+updated_at: 2026-08-28T14:05:00Z
 source_issues: []
-related_prs: []
+related_prs: [1184]
 depends_on: ["issues/gizmo-multi-team-delivery/admission-evidence-authority.md"]
 ---
 
@@ -108,6 +108,10 @@ resources through repeatable cleanup.
 - Generation-lifecycle PR 1183 merged as
   `172ddec77c0e34b477ac9c87b4a3aeeb681a08d4`; provider integration is now
   claimed from that exact frontier.
+- Provider-integration PR 1184 is open at exact head
+  `14f32c940d29870f37279a5c42b590b7cd2e863f`. Functional, Web-development,
+  and Security exact-head reviews pass; focused, full Loom, source-architecture,
+  TypeScript-state, formatting, lint, and type checks are green.
 
 ## Findings and decisions
 
@@ -125,6 +129,7 @@ resources through repeatable cleanup.
 
 ## References
 
+- [Provider finalization superseding plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T140217Z-provider-integration-finalization-superseding.md)
 - [Superseding plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T005630Z-gizmo-multi-team-dispatch-superseding.md)
 - [Nook PR 1172 root predecessor](https://github.com/meta-secret/nook/pull/1172)
 - [Preserved full-work commit](https://github.com/meta-secret/nook/commit/ce47c73562755427d6471cf1209f50db625fb023)
