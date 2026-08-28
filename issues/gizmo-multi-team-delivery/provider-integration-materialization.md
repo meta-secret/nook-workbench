@@ -1,11 +1,11 @@
 ---
 title: "Integrate and materialize verified providers"
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T11:30:00Z
+updated_at: 2026-08-28T12:32:00Z
 source_issues: []
 related_prs: []
 depends_on: ["issues/gizmo-multi-team-delivery/admission-evidence-authority.md"]
@@ -105,6 +105,9 @@ resources through repeatable cleanup.
   `413cb40378732b1e731868e3f2f635e7b1c4f7c9`.
 - Provider integration remains proposed behind the authenticated
   generation-lifecycle successor required by the superseding split plan.
+- Generation-lifecycle PR 1183 merged as
+  `172ddec77c0e34b477ac9c87b4a3aeeb681a08d4`; provider integration is now
+  claimed from that exact frontier.
 
 ## Findings and decisions
 
