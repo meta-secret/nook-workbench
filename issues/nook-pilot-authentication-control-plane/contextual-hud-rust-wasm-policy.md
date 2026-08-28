@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T00:55:00Z
+updated_at: 2026-08-28T03:39:34Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1087"]
 depends_on: []
@@ -54,6 +54,7 @@ typed decisions without adding web policy.
   Rust domain tests, the WASM boundary, and Clippy pass.
 - 2026-08-25: Exact-head review restored a semantic `AuthenticationApprovalRequirement`: executable actions require `explicit-user-approval`, while manual takeover carries `takeover-required`. Missing approval policy is rejected at the WASM boundary. The focused workflow suite passes 30 tests and the focused companion-WASM boundary test passes.
 - 2026-08-25: Exact-head review now requires owned-form or explicit local-container scope for login-labeled controls. `AuthenticationAdvanceControlObservation` owns classification through `observation.classify()`. Fifteen focused page-classification tests, the companion-WASM boundary test, and Clippy pass.
+- 2026-08-28: PR #1087 is complete at exact head `0c98fe82f9f96484617fa48bfe7f3d65e62a97a9`: current-head review is clean, the security-owner verdict is satisfied, and the focused Rust/WASM plus repository-policy checks pass. Two exact-head hosted validation attempts reproduce the shared web BuildKit health failure (`_buildx:healthy`, exit 201), so readiness and the exact-head GitHub Pages deployment remain blocked externally; PR #1087 stays open for dependent #1096/#1097.
 
 ## Findings and decisions
 
@@ -66,4 +67,3 @@ typed decisions without adding web policy.
 
 - [Superseding delivery plan](../../plans/nook-pilot-authentication-control-plane/2026-08-24T14-59-55Z-contextual-hud-multi-pr-sequence.md)
 - [Nook PR #1087](https://github.com/meta-secret/nook/pull/1087)
-
