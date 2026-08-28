@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T00:56:30Z
+updated_at: 2026-08-28T05:14:40Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -17,13 +17,15 @@ join.
 
 ## Current state
 
-The complete implementation is preserved at Nook commit
-`ce47c73562755427d6471cf1209f50db625fb023`, measured from Main commit
-`5cc4957201a0c4a06c871b385ec99b1d4f05c7c0`. Its 4,399 authored changed lines
-(3,820 additions and 579 deletions) are assigned to three dependency-ordered,
-independently buildable slices. PR 1172 is in progress toward the assigned
-629-line Cortex-only shape; the typed and integration successors remain
-proposed until their predecessors merge.
+The Cortex contract and executable structural-audit slice merged in PR 1172 as
+`31868536a39a7f3d7b2aae8a06a7dfcd6f0f9528`. Review expanded the slice to 28
+files and 2,760 authored changed lines so all governing authorities, generated
+router behavior, and drift tests agree.
+
+The runtime-oriented implementation remains preserved at Nook commit
+`ce47c73562755427d6471cf1209f50db625fb023` and draft PR 1176. The typed runtime
+and provider-integration issues remain open and must be reconstructed from the
+merged contract frontier in dependency order.
 
 ## Decisions
 
@@ -49,8 +51,8 @@ proposed until their predecessors merge.
 
 ## Issues
 
-- [ ] [Cortex multi-team delivery contracts](cortex-multi-team-contracts.md) —
-  629 authored lines; in progress in PR 1172.
+- [x] [Cortex multi-team delivery contracts](cortex-multi-team-contracts.md) —
+  2,760 authored lines; merged in PR 1172.
 - [ ] [Typed plan, evidence, and admission](typed-plan-evidence-admission.md) —
   2,518 authored lines; proposed after the Cortex slice.
 - [ ] [Provider integration and materialization](provider-integration-materialization.md)
@@ -58,7 +60,7 @@ proposed until their predecessors merge.
 
 ## Preservation inventory
 
-### Slice 1: Cortex contracts — 629 lines
+### Slice 1: Cortex contracts and structural enforcement — 2,760 lines
 
 - `.cortex/AGENTS.md`
 - `.cortex/gizmo/AGENTS.md`
@@ -70,6 +72,13 @@ proposed until their predecessors merge.
 - `.cortex/knowledge-graph.md`
 - `.cortex/teams/ai/architecture/module-experts.md`
 - `.cortex/teams/ai/design-docs/agent-workflow-orchestration.md`
+- Related Cortex authority and navigation documents required for semantic
+  consistency.
+- `agentic-ai/loom/src/lib/cortex-index.ts`
+- `agentic-ai/loom/src/structural-experts/audit.ts`
+- `agentic-ai/loom/src/structural-experts/catalog.ts`
+- `agentic-ai/loom/tests/cortex-index.test.ts`
+- `agentic-ai/loom/tests/structural-experts/catalog.test.ts`
 
 ### Slice 2: Typed plan, evidence, and admission — 2,518 lines
 
@@ -95,7 +104,7 @@ proposed until their predecessors merge.
 
 ## Feature acceptance criteria
 
-- [ ] The linked draft preserves full-work commit
+- [x] The linked draft preserves full-work commit
   `ce47c73562755427d6471cf1209f50db625fb023` before PR 1172 scope reduction.
 - [ ] The three issue inventories account for all 26 changed files and all
   4,399 authored changed lines without overlap or omission.
@@ -128,4 +137,5 @@ proposed until their predecessors merge.
 
 - [Superseding delivery plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T005630Z-gizmo-multi-team-dispatch-superseding.md)
 - [Nook PR 1172](https://github.com/meta-secret/nook/pull/1172)
+- [Preservation draft PR 1176](https://github.com/meta-secret/nook/pull/1176)
 - [Preserved full-work commit](https://github.com/meta-secret/nook/commit/ce47c73562755427d6471cf1209f50db625fb023)
