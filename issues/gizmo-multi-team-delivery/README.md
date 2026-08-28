@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T05:14:40Z
+updated_at: 2026-08-28T06:14:53Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -23,9 +23,11 @@ files and 2,760 authored changed lines so all governing authorities, generated
 router behavior, and drift tests agree.
 
 The runtime-oriented implementation remains preserved at Nook commit
-`ce47c73562755427d6471cf1209f50db625fb023` and draft PR 1176. The typed runtime
-and provider-integration issues remain open and must be reconstructed from the
-merged contract frontier in dependency order.
+`ce47c73562755427d6471cf1209f50db625fb023` and draft PR 1176. Compatibility,
+AI, web-development, and Security review repaired the typed candidate but
+expanded it to 3,052 authored lines. The runtime is therefore being delivered
+through three remaining dependency-ordered successors: plan/validation,
+admission/evidence, and provider integration.
 
 ## Decisions
 
@@ -37,14 +39,15 @@ merged contract frontier in dependency order.
   claim, Git-frontier, and lifecycle trust boundaries. Gizmo alone owns handoff
   integration, Workbench state, PR sequencing, exact-head verdicts, readiness,
   and merge lifecycle.
-- Delivery order is Cortex contracts, typed plan/evidence/admission, then
-  provider integration/materialization. A successor starts from the merged
-  predecessor frontier and consumes only buildable interfaces present there.
+- Delivery order is Cortex contracts, typed plan/validation,
+  admission/evidence authority, then provider integration/materialization. A
+  successor starts from the merged predecessor frontier and consumes only
+  buildable interfaces present there.
 - The full-work commit must remain reachable from a linked draft before PR 1172
   is reduced. No full-work behavior may be dropped during reconstruction.
-- The 2,518-line typed slice must be re-measured after compatibility repair. If
-  it reaches 3,000 authored lines, it receives another cohesive responsibility
-  split rather than compressed code or reduced evidence.
+- The corrected typed slice measured 3,052 authored lines and is split between
+  stable plan validation and runtime admission/evidence authority. Required
+  behavior and adversarial evidence are retained instead of compressed.
 - Authenticated optional evidence is read-only and has no scheduling or lifecycle
   authority. Plan mutation creates a new immutable generation; old attempts,
   evidence, and private integration state do not migrate.
@@ -53,8 +56,10 @@ merged contract frontier in dependency order.
 
 - [x] [Cortex multi-team delivery contracts](cortex-multi-team-contracts.md) —
   2,760 authored lines; merged in PR 1172.
-- [ ] [Typed plan, evidence, and admission](typed-plan-evidence-admission.md) —
-  2,518 authored lines; proposed after the Cortex slice.
+- [ ] [Typed plan and validation foundation](typed-plan-evidence-admission.md) —
+  approximately 1,800 authored lines; in progress after the Cortex slice.
+- [ ] [Admission and evidence authority](admission-evidence-authority.md) —
+  approximately 1,900 authored lines; proposed after typed validation.
 - [ ] [Provider integration and materialization](provider-integration-materialization.md)
   — 1,252 authored lines; proposed after the typed slice.
 
@@ -80,22 +85,25 @@ merged contract frontier in dependency order.
 - `agentic-ai/loom/tests/cortex-index.test.ts`
 - `agentic-ai/loom/tests/structural-experts/catalog.test.ts`
 
-### Slice 2: Typed plan, evidence, and admission — 2,518 lines
+### Slice 2: Typed plan and validation foundation — approximately 1,800 lines
 
-- `agentic-ai/loom/src/module-delivery/admission.ts`
 - `agentic-ai/loom/src/module-delivery/codec.ts`
 - `agentic-ai/loom/src/module-delivery/domain.ts`
+- `agentic-ai/loom/src/module-delivery/resource-claim-containment.ts`
+- `agentic-ai/loom/src/module-delivery/validation.ts`
+- `agentic-ai/loom/tests/module-delivery/cli.test.ts`
+- `agentic-ai/loom/tests/module-delivery/plan-validation.test.ts`
+
+### Slice 3: Admission and evidence authority — approximately 1,900 lines
+
+- `agentic-ai/loom/src/module-delivery/admission.ts`
 - `agentic-ai/loom/src/module-delivery/evidence.ts`
 - `agentic-ai/loom/src/module-delivery/index.ts`
 - `agentic-ai/loom/src/module-delivery/integration-provenance.ts`
-- `agentic-ai/loom/src/module-delivery/resource-claim-containment.ts`
-- `agentic-ai/loom/src/module-delivery/validation.ts`
 - `agentic-ai/loom/tests/module-delivery/admission.test.ts`
-- `agentic-ai/loom/tests/module-delivery/cli.test.ts`
 - `agentic-ai/loom/tests/module-delivery/evidence.test.ts`
-- `agentic-ai/loom/tests/module-delivery/plan-validation.test.ts`
 
-### Slice 3: Provider integration and materialization — 1,252 lines
+### Slice 4: Provider integration and materialization — 1,252 preserved lines
 
 - `agentic-ai/loom/src/module-delivery/integration.ts`
 - `agentic-ai/loom/tests/module-delivery/core-wasm-web-pilot.test.ts`
@@ -106,8 +114,8 @@ merged contract frontier in dependency order.
 
 - [x] The linked draft preserves full-work commit
   `ce47c73562755427d6471cf1209f50db625fb023` before PR 1172 scope reduction.
-- [ ] The three issue inventories account for all 26 changed files and all
-  4,399 authored changed lines without overlap or omission.
+- [ ] The four issue inventories account for all 26 preserved files and every
+  compatibility/security repair without overlap or omission.
 - [ ] Every slice is independently buildable, below 3,000 authored lines, and
   merged in dependency order from current Main.
 - [ ] Tests prove plan version 2, authenticated evidence, generation authority,
@@ -119,7 +127,7 @@ merged contract frontier in dependency order.
 - [ ] Each PR passes its focused tests, repository policy, pre-push hygiene,
   hosted exact-head validation, required reviews, readiness, and squash merge.
 - [ ] Workbench issue updates, worklogs, and delivery statistics are published
-  after every merge; the feature remains incomplete until all three issues are
+  after every merge; the feature remains incomplete until all four issues are
   done.
 
 ## Exclusions
@@ -136,6 +144,7 @@ merged contract frontier in dependency order.
 ## References
 
 - [Superseding delivery plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T005630Z-gizmo-multi-team-dispatch-superseding.md)
+- [Superseding runtime split plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T061453Z-gizmo-multi-team-runtime-resplit.md)
 - [Nook PR 1172](https://github.com/meta-secret/nook/pull/1172)
 - [Preservation draft PR 1176](https://github.com/meta-secret/nook/pull/1176)
 - [Preserved full-work commit](https://github.com/meta-secret/nook/commit/ce47c73562755427d6471cf1209f50db625fb023)
