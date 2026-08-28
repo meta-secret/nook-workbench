@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T00:56:30Z
+updated_at: 2026-08-28T11:30:00Z
 source_issues: []
 related_prs: []
 depends_on: ["issues/gizmo-multi-team-delivery/admission-evidence-authority.md"]
@@ -101,9 +101,10 @@ resources through repeatable cleanup.
 
 ## Progress
 
-- No implementation started. This successor remains proposed until the
-  admission/evidence predecessor merges and Gizmo records the exact integrated
-  frontier.
+- Admission/evidence PR 1182 merged as
+  `413cb40378732b1e731868e3f2f635e7b1c4f7c9`.
+- Provider integration remains proposed behind the authenticated
+  generation-lifecycle successor required by the superseding split plan.
 
 ## Findings and decisions
 
