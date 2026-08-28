@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T06:14:53Z
+updated_at: 2026-08-28T08:14:41Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -22,12 +22,11 @@ The Cortex contract and executable structural-audit slice merged in PR 1172 as
 files and 2,760 authored changed lines so all governing authorities, generated
 router behavior, and drift tests agree.
 
-The runtime-oriented implementation remains preserved at Nook commit
-`ce47c73562755427d6471cf1209f50db625fb023` and draft PR 1176. Compatibility,
-AI, web-development, and Security review repaired the typed candidate but
-expanded it to 3,052 authored lines. The runtime is therefore being delivered
-through three remaining dependency-ordered successors: plan/validation,
-admission/evidence, and provider integration.
+The runtime-oriented implementation remains preserved in draft PR 1176. The
+typed plan/validation successor merged in PR 1181 as
+`5e060a38516076dd0416ee12a138020cd70ea5ee`. Admission/evidence and provider
+integration remain, in that dependency order, before the preservation draft
+can be retired.
 
 ## Decisions
 
@@ -56,8 +55,8 @@ admission/evidence, and provider integration.
 
 - [x] [Cortex multi-team delivery contracts](cortex-multi-team-contracts.md) —
   2,760 authored lines; merged in PR 1172.
-- [ ] [Typed plan and validation foundation](typed-plan-evidence-admission.md) —
-  approximately 1,800 authored lines; in progress after the Cortex slice.
+- [x] [Typed plan and validation foundation](typed-plan-evidence-admission.md) —
+  2,698 authored lines; merged in PR 1181.
 - [ ] [Admission and evidence authority](admission-evidence-authority.md) —
   approximately 1,900 authored lines; proposed after typed validation.
 - [ ] [Provider integration and materialization](provider-integration-materialization.md)
