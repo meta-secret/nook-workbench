@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T08:14:41Z
+updated_at: 2026-08-28T11:30:00Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -24,9 +24,11 @@ router behavior, and drift tests agree.
 
 The runtime-oriented implementation remains preserved in draft PR 1176. The
 typed plan/validation successor merged in PR 1181 as
-`5e060a38516076dd0416ee12a138020cd70ea5ee`. Admission/evidence and provider
-integration remain, in that dependency order, before the preservation draft
-can be retired.
+`5e060a38516076dd0416ee12a138020cd70ea5ee`, and the single-generation
+admission/evidence successor merged in PR 1182 as
+`413cb40378732b1e731868e3f2f635e7b1c4f7c9`. Authenticated generation lifecycle
+and provider integration remain, in that dependency order, before the
+preservation draft can be retired.
 
 ## Decisions
 
@@ -57,8 +59,8 @@ can be retired.
   2,760 authored lines; merged in PR 1172.
 - [x] [Typed plan and validation foundation](typed-plan-evidence-admission.md) —
   2,698 authored lines; merged in PR 1181.
-- [ ] [Admission and evidence authority](admission-evidence-authority.md) —
-  approximately 1,900 authored lines; proposed after typed validation.
+- [x] [Admission and evidence authority](admission-evidence-authority.md) —
+  2,996 authored additions; merged in PR 1182.
 - [ ] [Provider integration and materialization](provider-integration-materialization.md)
   — 1,252 authored lines; proposed after the typed slice.
 
