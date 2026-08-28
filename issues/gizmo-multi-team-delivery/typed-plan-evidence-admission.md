@@ -1,13 +1,13 @@
 ---
 title: "Implement typed plan and validation foundation"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T06:43:07Z
+updated_at: 2026-08-28T08:14:41Z
 source_issues: []
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/1181"]
 depends_on: ["issues/gizmo-multi-team-delivery/cortex-multi-team-contracts.md"]
 ---
 
@@ -52,23 +52,23 @@ precedence, rejects cycles, and produces a stable accepted-plan digest.
 
 ## Acceptance criteria
 
-- [ ] Starts from merged PR 1172 Main frontier and consumes no unmerged API.
-- [ ] Legacy plans remain buildable for the current wave integration layer.
-- [ ] The public plan input type is version-exact; the legacy wave fixture uses
+- [x] Starts from merged PR 1172 Main frontier and consumes no unmerged API.
+- [x] Legacy plans remain buildable for the current wave integration layer.
+- [x] The public plan input type is version-exact; the legacy wave fixture uses
   a separately named compatibility view and cannot broaden new plan input.
-- [ ] Version-2 plans round-trip generation, execution team, functional owner,
+- [x] Version-2 plans round-trip generation, execution team, functional owner,
   acceptance owner, frozen parent lineage, evidence-input schema, expected
   producer identities, bounded claims, and acceptance evidence.
-- [ ] Validation rejects missing or mismatched providers, owners, lineage,
+- [x] Validation rejects missing or mismatched providers, owners, lineage,
   evidence inputs, escaped claims, hierarchy violations, conflicting
   precedence, and cycles.
-- [ ] Plan digests are stable and bind every security-relevant field.
-- [ ] Every authored source file is at or below 1,000 lines and the complete
+- [x] Plan digests are stable and bind every security-relevant field.
+- [x] Every authored source file is at or below 1,000 lines and the complete
   PR is below 3,000 authored lines without compression or test-only extraction.
-- [ ] Focused codec, CLI, and validation tests, legacy integration tests,
+- [x] Focused codec, CLI, and validation tests, legacy integration tests,
   TypeScript-state, source-architecture, Loom validation, pre-push, exact-head
   hosted validation, required verdicts, and readiness pass.
-- [ ] The PR squash-merges before admission/evidence work is claimed, then its
+- [x] The PR squash-merges before admission/evidence work is claimed, then its
   issue update, worklog, and statistics are published.
 
 ## Progress
@@ -80,6 +80,15 @@ precedence, rejects cycles, and produces a stable accepted-plan digest.
 - 2026-08-28: Exact public input typing exposed one legacy integration-test
   consumer. Its type-only annotation is now included so compatibility is
   explicit rather than weakening the public plan alias.
+- 2026-08-28: PR 1181 passed exact-head AI, web-development, and Security
+  review at `363b68a1cd1a2d84725ca210aff718b6f37219bf`; the focused suite reported
+  45 passing and 13 deliberately gated integration tests, while the complete
+  Loom suite reported 551 passing and 13 gated tests with no failures.
+- 2026-08-28: PR 1181 passed hosted policy and readiness, then squash-merged as
+  `5e060a38516076dd0416ee12a138020cd70ea5ee`. The configured administrator
+  bypass was required because the repository requires a `github-pages`
+  deployment while `agentic-ai/**` is excluded from the workflow that creates
+  it; no failed check or review block was waived.
 
 ## Findings and decisions
 
@@ -94,4 +103,5 @@ precedence, rejects cycles, and produces a stable accepted-plan digest.
 - [Superseding runtime split plan](../../plans/agent-orchestration/20260828T061453Z-gizmo-multi-team-runtime-resplit.md)
 - [Superseding compatibility repair plan](../../plans/agent-orchestration/20260828T064307Z-typed-plan-consumer-repair.md)
 - [Nook PR 1172](https://github.com/meta-secret/nook/pull/1172)
+- [Nook PR 1181](https://github.com/meta-secret/nook/pull/1181)
 - [Preservation draft PR 1176](https://github.com/meta-secret/nook/pull/1176)
