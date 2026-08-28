@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T06:14:53Z
+updated_at: 2026-08-28T06:43:07Z
 source_issues: []
 related_prs: []
 depends_on: ["issues/gizmo-multi-team-delivery/cortex-multi-team-contracts.md"]
@@ -44,6 +44,7 @@ precedence, rejects cycles, and produces a stable accepted-plan digest.
   - `agentic-ai/loom/src/module-delivery/validation.ts`
 - Included test files:
   - `agentic-ai/loom/tests/module-delivery/cli.test.ts`
+  - `agentic-ai/loom/tests/module-delivery/integration.test.ts` (type-only legacy compatibility annotation)
   - `agentic-ai/loom/tests/module-delivery/plan-validation.test.ts`
 - Excluded: admission, evidence verification, integration provenance, barrel
   activation, provider Git integration, finalization, cleanup, Cortex edits,
@@ -53,6 +54,8 @@ precedence, rejects cycles, and produces a stable accepted-plan digest.
 
 - [ ] Starts from merged PR 1172 Main frontier and consumes no unmerged API.
 - [ ] Legacy plans remain buildable for the current wave integration layer.
+- [ ] The public plan input type is version-exact; the legacy wave fixture uses
+  a separately named compatibility view and cannot broaden new plan input.
 - [ ] Version-2 plans round-trip generation, execution team, functional owner,
   acceptance owner, frozen parent lineage, evidence-input schema, expected
   producer identities, bounded claims, and acceptance evidence.
@@ -74,6 +77,9 @@ precedence, rejects cycles, and produces a stable accepted-plan digest.
   implementation, but the corrected combined typed slice measured 3,052 lines.
   The stable plan/validation responsibility is now claimed as the first
   independently buildable successor.
+- 2026-08-28: Exact public input typing exposed one legacy integration-test
+  consumer. Its type-only annotation is now included so compatibility is
+  explicit rather than weakening the public plan alias.
 
 ## Findings and decisions
 
@@ -86,6 +92,6 @@ precedence, rejects cycles, and produces a stable accepted-plan digest.
 ## References
 
 - [Superseding runtime split plan](../../plans/agent-orchestration/20260828T061453Z-gizmo-multi-team-runtime-resplit.md)
+- [Superseding compatibility repair plan](../../plans/agent-orchestration/20260828T064307Z-typed-plan-consumer-repair.md)
 - [Nook PR 1172](https://github.com/meta-secret/nook/pull/1172)
 - [Preservation draft PR 1176](https://github.com/meta-secret/nook/pull/1176)
-
