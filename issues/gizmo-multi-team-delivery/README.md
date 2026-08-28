@@ -1,8 +1,8 @@
 ---
 title: "Feature: Gizmo multi-team delivery"
-status: in_progress
+status: done
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T12:32:00Z
+updated_at: 2026-08-28T14:48:14Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -22,14 +22,15 @@ The Cortex contract and executable structural-audit slice merged in PR 1172 as
 files and 2,760 authored changed lines so all governing authorities, generated
 router behavior, and drift tests agree.
 
-The runtime-oriented implementation remains preserved in draft PR 1176. The
-typed plan/validation successor merged in PR 1181 as
+The typed plan/validation successor merged in PR 1181 as
 `5e060a38516076dd0416ee12a138020cd70ea5ee`, and the single-generation
 admission/evidence successor merged in PR 1182 as
 `413cb40378732b1e731868e3f2f635e7b1c4f7c9`. Authenticated generation lifecycle
 merged in PR 1183 as `172ddec77c0e34b477ac9c87b4a3aeeb681a08d4`.
-Provider integration is the final remaining successor before the preservation
-draft can be retired.
+Provider integration merged in PR 1184 as
+`c4e0d8464c04ce0529950cf4a13e830be5570a5e`. A final path-union audit found
+all 25 preservation paths covered by the five merged successors, so draft PR
+1176 was retired without merge.
 
 ## Decisions
 
@@ -64,8 +65,8 @@ draft can be retired.
   2,996 authored additions; merged in PR 1182.
 - [x] [Authenticated generation lifecycle](generation-lifecycle-authority.md) —
   merged in PR 1183.
-- [ ] [Provider integration and materialization](provider-integration-materialization.md)
-  — 1,252 authored lines; proposed after the typed slice.
+- [x] [Provider integration and materialization](provider-integration-materialization.md)
+  — 2,635 authored additions; merged in PR 1184.
 
 ## Preservation inventory
 
@@ -118,20 +119,20 @@ draft can be retired.
 
 - [x] The linked draft preserves full-work commit
   `ce47c73562755427d6471cf1209f50db625fb023` before PR 1172 scope reduction.
-- [ ] The four issue inventories account for all 26 preserved files and every
+- [x] The five issue inventories account for all 25 preservation paths and every
   compatibility/security repair without overlap or omission.
-- [ ] Every slice is independently buildable, below 3,000 authored lines, and
+- [x] Every slice is independently buildable, below 3,000 authored additions, and
   merged in dependency order from current Main.
-- [ ] Tests prove plan version 2, authenticated evidence, generation authority,
+- [x] Tests prove plan version 2, authenticated evidence, generation authority,
   cycle and precedence handling, conflict-safe capacity admission, lease
   retention, disposition, provider-local integration, predecessor closure,
   exact frontiers, finalization, drift rejection, and idempotent cleanup.
-- [ ] Security returns a non-blocking exact-head verdict for every slice that
+- [x] Security returns a non-blocking exact-head verdict for every slice that
   reaches a trust boundary; Gizmo does not waive a team or Security block.
-- [ ] Each PR passes its focused tests, repository policy, pre-push hygiene,
+- [x] Each PR passes its focused tests, repository policy, pre-push hygiene,
   hosted exact-head validation, required reviews, readiness, and squash merge.
-- [ ] Workbench issue updates, worklogs, and delivery statistics are published
-  after every merge; the feature remains incomplete until all four issues are
+- [x] Workbench issue updates, worklogs, and delivery statistics are published
+  after every merge; the feature remains incomplete until all five issues are
   done.
 
 ## Exclusions
@@ -150,5 +151,7 @@ draft can be retired.
 - [Superseding delivery plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T005630Z-gizmo-multi-team-dispatch-superseding.md)
 - [Superseding runtime split plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T061453Z-gizmo-multi-team-runtime-resplit.md)
 - [Nook PR 1172](https://github.com/meta-secret/nook/pull/1172)
+- [Nook PR 1184](https://github.com/meta-secret/nook/pull/1184)
+- [Provider finalization superseding plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T140217Z-provider-integration-finalization-superseding.md)
 - [Preservation draft PR 1176](https://github.com/meta-secret/nook/pull/1176)
 - [Preserved full-work commit](https://github.com/meta-secret/nook/commit/ce47c73562755427d6471cf1209f50db625fb023)
