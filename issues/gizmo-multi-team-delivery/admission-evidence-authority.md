@@ -1,11 +1,11 @@
 ---
 title: "Implement admission and evidence authority"
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-28T06:14:53Z
-updated_at: 2026-08-28T06:14:53Z
+updated_at: 2026-08-28T08:17:10Z
 source_issues: []
 related_prs: []
 depends_on: ["issues/gizmo-multi-team-delivery/typed-plan-evidence-admission.md"]
@@ -75,6 +75,9 @@ artifact digest, terminal verdict, and frozen acceptance requirements.
 
 - Corrected implementation exists as a local full-candidate handoff and will be
   reconstructed from the merged foundation after its PR lands.
+- 2026-08-28: Foundation PR 1181 merged as
+  `5e060a38516076dd0416ee12a138020cd70ea5ee`; admission/evidence is now claimed
+  from that exact frontier under a focused immutable plan.
 
 ## Findings and decisions
 
@@ -86,5 +89,6 @@ artifact digest, terminal verdict, and frozen acceptance requirements.
 ## References
 
 - [Superseding runtime split plan](../../plans/agent-orchestration/20260828T061453Z-gizmo-multi-team-runtime-resplit.md)
+- [Focused admission/evidence plan](../../plans/agent-orchestration/20260828T081710Z-admission-evidence-authority.md)
 - [Typed plan foundation](typed-plan-evidence-admission.md)
 - [Preservation draft PR 1176](https://github.com/meta-secret/nook/pull/1176)
