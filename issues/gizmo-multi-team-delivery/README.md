@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-28T11:30:00Z
+updated_at: 2026-08-28T12:32:00Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -27,8 +27,9 @@ typed plan/validation successor merged in PR 1181 as
 `5e060a38516076dd0416ee12a138020cd70ea5ee`, and the single-generation
 admission/evidence successor merged in PR 1182 as
 `413cb40378732b1e731868e3f2f635e7b1c4f7c9`. Authenticated generation lifecycle
-and provider integration remain, in that dependency order, before the
-preservation draft can be retired.
+merged in PR 1183 as `172ddec77c0e34b477ac9c87b4a3aeeb681a08d4`.
+Provider integration is the final remaining successor before the preservation
+draft can be retired.
 
 ## Decisions
 
@@ -61,8 +62,8 @@ preservation draft can be retired.
   2,698 authored lines; merged in PR 1181.
 - [x] [Admission and evidence authority](admission-evidence-authority.md) —
   2,996 authored additions; merged in PR 1182.
-- [ ] [Authenticated generation lifecycle](generation-lifecycle-authority.md) —
-  in progress from merged PR 1182 frontier.
+- [x] [Authenticated generation lifecycle](generation-lifecycle-authority.md) —
+  merged in PR 1183.
 - [ ] [Provider integration and materialization](provider-integration-materialization.md)
   — 1,252 authored lines; proposed after the typed slice.
 
