@@ -61,6 +61,8 @@ preservation draft can be retired.
   2,698 authored lines; merged in PR 1181.
 - [x] [Admission and evidence authority](admission-evidence-authority.md) —
   2,996 authored additions; merged in PR 1182.
+- [ ] [Authenticated generation lifecycle](generation-lifecycle-authority.md) —
+  in progress from merged PR 1182 frontier.
 - [ ] [Provider integration and materialization](provider-integration-materialization.md)
   — 1,252 authored lines; proposed after the typed slice.
 
