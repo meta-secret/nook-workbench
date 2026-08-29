@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-29T06:18:08Z
-updated_at: 2026-08-29T07:00:56Z
+updated_at: 2026-08-29T07:15:30Z
 source_issues: []
 related_prs: []
 depends_on: []
@@ -23,19 +23,20 @@ module DAGs, and unsupported ordinary multi-team delegation remains fail-closed.
 
 ## Outcome
 
-One Gizmo Prime assigns each feature to one named Gizmo by default. Multiple
-Team Agents may contribute to that Gizmo's single pull request. Only when the
+One Gizmo Prime assigns each feature to one named passive Gizmo record by
+default. Multiple Team Agents may contribute to that record's single pull
+request. Only when the
 feature is expected to exceed or actually grows beyond 2,000 authored changed
 lines does Gizmo Prime split it at semantic boundaries and create additional
-Gizmos, one per pull-request slice. Gizmo Prime accepts exact-head handoffs,
-owns any native GitHub stack, and may issue corrected contracts only to Gizmos
-that have not started; active work requires a new immutable generation.
+Gizmo records, one per pull-request slice. Gizmo Prime routes existing Team
+Agent attempts by Gizmo ID, accepts their handoffs directly, aggregates the
+slice evidence, and owns any native GitHub stack.
 
 ## Scope
 
-- Add a validated Gizmo Prime mission plan with one Gizmo by default, unique Gizmo
-  names, exactly one PR slice per Gizmo, dependency order, stable interfaces, a
-  one-level controller hierarchy, and explicit Team Agent task ownership.
+- Add a validated Gizmo Prime mission plan with one passive Gizmo record by
+  default, unique Gizmo names, exactly one PR slice per record, dependency
+  order, stable interfaces, and explicit Team Agent task ownership.
 - Make cardinality adaptive: Team Agent count cannot create pull requests;
   additional Gizmos require a semantic split caused by the measured 2,000-line
   ceiling or a genuinely independent delivery boundary.
@@ -52,7 +53,7 @@ that have not started; active work requires a new immutable generation.
 - [x] A small feature remains one Gizmo and one pull request even when multiple Team Agents contribute.
 - [x] A feature above 2,000 authored changed lines requires semantic, individually estimated Gizmo slices at or below the ceiling.
 - [x] Every ownership unit maps to one declared Gizmo; Team Agent count cannot determine PR count.
-- [x] A Gizmo cannot create or nest another Gizmo.
+- [x] A Gizmo record cannot create or nest another Gizmo and has no process lifecycle.
 - [x] Exactly 2,000 authored changed lines remains valid as one PR; 1,500 remains the split-planning warning.
 - [x] Gizmo Prime alone controls native GitHub stacks and final completion.
 - [ ] Exact-head local review, hosted validation, readiness, and merge pass for the one required PR.
@@ -60,8 +61,8 @@ that have not started; active work requires a new immutable generation.
 ## Progress
 
 - The complete adaptive policy and executable Workbench mapping are implemented
-  locally in one 1,129-line PR candidate.
-- Workbench tests pass 94/94, preflight Workbench tests pass 16/16, source-size
+  locally in one 1,195-line PR candidate.
+- Workbench tests pass 94/94, preflight Workbench tests pass 17/17, source-size
   checks pass, and Cortex audit plus pre-push pass.
 - Architecture review rejected restoration of the unfinished ordinary-
   delegation runtime as unnecessary duplication for this feature.
@@ -69,11 +70,12 @@ that have not started; active work requires a new immutable generation.
 ## Findings and decisions
 
 - Gizmo Prime is the single mission owner and stack integrator.
-- A named Gizmo is an orchestration role, not a sixth engineering team.
+- A named Gizmo is a passive immutable PR-slice ownership record, not a running
+  controller, worker attempt, or sixth engineering team.
 - Feature-to-Gizmo cardinality defaults to one; Team Agent count is independent
   from PR count, and size-driven splitting creates the minimum useful Gizmos.
-- Controller depth is exactly one beneath Gizmo Prime; Team Agent task depth is
-  tracked separately and cannot grant controller-creation authority.
+- Gizmo Prime alone coordinates Team Agents and receives their existing typed
+  handoffs; the record introduces no intermediate transport or lifecycle.
 - Human-readable names use `Gizmo: <Slice Name>` and are paired with immutable
   identifiers such as `gizmo:<slice-slug>`.
 - The active harness remains the only process-lifecycle authority.
