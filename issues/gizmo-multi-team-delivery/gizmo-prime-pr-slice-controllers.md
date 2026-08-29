@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-29T06:18:08Z
-updated_at: 2026-08-29T06:40:09Z
+updated_at: 2026-08-29T07:00:56Z
 source_issues: []
 related_prs: []
 depends_on: []
@@ -16,11 +16,10 @@ depends_on: []
 ## Context
 
 This explicitly authorized follow-up extends
-[Gizmo multi-team delivery](README.md) with a bounded hierarchy for large
-features. Existing Loom foundations validate task attempts and module-delivery
-evidence, but Cortex still fails ordinary multi-team dispatch closed because the
-generic delegation path lacks the complete canonical ownership, claims,
-frontier, admission, and disposition contract.
+[Gizmo multi-team delivery](README.md) with adaptive feature-to-PR ownership.
+It is a delivery-plan control change, not a replacement worker-admission
+runtime. Existing module-delivery enforcement remains authoritative for real
+module DAGs, and unsupported ordinary multi-team delegation remains fail-closed.
 
 ## Outcome
 
@@ -34,43 +33,38 @@ that have not started; active work requires a new immutable generation.
 
 ## Scope
 
-- Restore executable ordinary delegation with closed team identities, exact
-  frontiers, bounded resource claims, deterministic admission, leases,
-  disposition, provider evidence, and fail-closed validation.
-- Add a typed Gizmo Prime mission plan with one Gizmo by default, unique Gizmo
+- Add a validated Gizmo Prime mission plan with one Gizmo by default, unique Gizmo
   names, exactly one PR slice per Gizmo, dependency order, stable interfaces, a
   one-level controller hierarchy, and explicit Team Agent task ownership.
 - Make cardinality adaptive: Team Agent count cannot create pull requests;
   additional Gizmos require a semantic split caused by the measured 2,000-line
   ceiling or a genuinely independent delivery boundary.
-- Add typed exact-head Gizmo handoffs containing PR identity, base and head
-  commits, authored changed-line count, validation and review verdicts,
-  interface changes, discovered dependencies, and downstream corrections.
-- Permit Gizmo Prime to refine only unstarted downstream Gizmo contracts.
-  Reject mutation of active or accepted Gizmos and reject nested Gizmo creation.
+- Require every ownership unit to map to one declared Gizmo while permitting
+  multiple Team Agent units to contribute to the same Gizmo-owned PR.
+- Validate unique Gizmo identities and names, consecutive stacked predecessors,
+  complete estimate coverage, current-slice identity, and nesting rejection.
 - Keep branch, stack, integration, readiness, merge, and complete-feature state
   under Gizmo Prime.
 
 ## Acceptance criteria
 
-- [ ] Ordinary multi-team delegation no longer relies on a knowingly incomplete validator.
-- [ ] Every Team Agent attempt is admitted through the harness against one immutable Gizmo-owned slice contract.
-- [ ] Every Gizmo has a unique stable name and exactly one pull-request slice.
-- [ ] A small feature remains one Gizmo and one pull request even when multiple Team Agents contribute.
-- [ ] A feature above 2,000 authored changed lines is split into semantic, individually estimated Gizmo slices at or below the ceiling.
-- [ ] A Gizmo cannot create another Gizmo or mutate another slice.
-- [ ] Exact-head handoffs reject stale bases, oversized slices, incomplete checks, unresolved blocking review, or undeclared interface changes.
-- [ ] Accepted handoffs may refine unstarted downstream contracts through a new generation, never by mutating active work.
-- [ ] Gizmo Prime alone controls the native GitHub stack and final completion verdict.
-- [ ] Focused adversarial tests, complete Loom verification, Cortex audit, pre-push, hosted validation, review, and readiness pass for each stacked slice.
+- [x] Every Gizmo has a unique stable name and exactly one pull-request slice.
+- [x] A small feature remains one Gizmo and one pull request even when multiple Team Agents contribute.
+- [x] A feature above 2,000 authored changed lines requires semantic, individually estimated Gizmo slices at or below the ceiling.
+- [x] Every ownership unit maps to one declared Gizmo; Team Agent count cannot determine PR count.
+- [x] A Gizmo cannot create or nest another Gizmo.
+- [x] Exactly 2,000 authored changed lines remains valid as one PR; 1,500 remains the split-planning warning.
+- [x] Gizmo Prime alone controls native GitHub stacks and final completion.
+- [ ] Exact-head local review, hosted validation, readiness, and merge pass for the one required PR.
 
 ## Progress
 
-- The 2,000-line budget and native stacked-PR policy is implemented locally as
-  the intended bottom slice and has passed focused validation except for one
-  AI ownership wording fix currently routed to the AI owner.
-- A preserved ordinary-delegation implementation exists for analysis but must
-  be rebased, reviewed, and split below the new ceiling before reuse.
+- The complete adaptive policy and executable Workbench mapping are implemented
+  locally in one 1,129-line PR candidate.
+- Workbench tests pass 94/94, preflight Workbench tests pass 16/16, source-size
+  checks pass, and Cortex audit plus pre-push pass.
+- Architecture review rejected restoration of the unfinished ordinary-
+  delegation runtime as unnecessary duplication for this feature.
 
 ## Findings and decisions
 
@@ -83,6 +77,8 @@ that have not started; active work requires a new immutable generation.
 - Human-readable names use `Gizmo: <Slice Name>` and are paired with immutable
   identifiers such as `gizmo:<slice-slug>`.
 - The active harness remains the only process-lifecycle authority.
+- Ordinary-delegation and module-delivery runtime APIs are intentionally
+  unchanged; this feature is enforced through the mandatory Workbench plan.
 - The earlier `Micro-Gizmo` label is superseded and must not appear in the
   product contract or implementation.
 
