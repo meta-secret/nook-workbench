@@ -13,9 +13,11 @@ Nook's `.cortex` architecture and workflow rules.
 - A focused issue materialized from a feature slice records that slice's stable
   lowercase kebab-case `gizmo_id`. Once present, the ID is immutable.
 - A stacked focused issue records its trusted existing `stack_branch` and
-  temporary `stack_predecessor_branch` together. They must be distinct valid
-  same-repository branch names and are immutable once present. Workbench does
-  not perform live branch or pull-request checks.
+  original temporary `stack_predecessor_branch` together. They must be
+  distinct valid same-repository branch names and are immutable historical
+  identities once present. After the predecessor merges, the live successor
+  PR may target `main` and the predecessor branch may be deleted. Workbench
+  does not perform live branch or pull-request checks.
 - Put feature-wide context and the issue index in
   `issues/<feature>/README.md`.
 - Put every task-owning agent's completion or blocked summary in

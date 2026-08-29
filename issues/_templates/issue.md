@@ -22,8 +22,11 @@ of the Gizmo PR slice that materialized this issue. Remove the field only when
 the issue is historical or standalone and has no originating slice.
 
 For a stacked slice, record both the trusted existing successor branch as
-`stack_branch` and its temporary PR base as `stack_predecessor_branch`. Keep
-both absent for a standalone main-based flow. Concrete values are immutable.
+`stack_branch` and its original temporary PR base as
+`stack_predecessor_branch`. These are immutable historical stack identities:
+after the predecessor merges, the live successor PR may be retargeted to
+`main` and the predecessor branch may be deleted. Keep both fields absent for
+a standalone main-based flow.
 
 ## Context
 
