@@ -1,0 +1,254 @@
+---
+schema_version: 4
+source_pr:
+  number: 1198
+  url: https://github.com/meta-secret/nook/pull/1198
+  title: Enforce adaptive 2,000-line PR delivery
+  change_surface: agentic_ai
+  head_sha: 9806aca4770af61dcfd8ca92b02ba133697fb2ff
+  merge_sha: '082f6d74c9ef4fa4c46f1b7dbfabcbaacb62367c'
+  started_at: '2026-08-29T06:18:08Z'
+  opened_at: '2026-08-29T08:17:40Z'
+  merged_at: '2026-08-29T13:07:09Z'
+  elapsed_seconds: 24541
+  open_to_merge_seconds: 17369
+summary:
+  local_execution_count: 0
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 11
+  github_actions_seconds: 1236
+  delivery_head_count: 4
+  review_request_count: 1
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 1
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-08-29T13:11:35.344Z'
+  head_sha: 9806aca4770af61dcfd8ca92b02ba133697fb2ff
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions: []
+github_actions_runs:
+- workflow: PR
+  run_id: 33253875925
+  run_attempt: 1
+  head_sha: 9806aca4770af61dcfd8ca92b02ba133697fb2ff
+  trigger: pull_request
+  started_at: '2026-08-29T12:59:50Z'
+  finished_at: '2026-08-29T13:06:19Z'
+  duration_seconds: 389
+  conclusion: success
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33253836124
+  run_attempt: 1
+  head_sha: 9806aca4770af61dcfd8ca92b02ba133697fb2ff
+  trigger: pull_request_target
+  started_at: '2026-08-29T12:58:45Z'
+  finished_at: '2026-08-29T12:58:58Z'
+  duration_seconds: 13
+  conclusion: success
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33253459291
+  run_attempt: 1
+  head_sha: 9806aca4770af61dcfd8ca92b02ba133697fb2ff
+  trigger: pull_request_target
+  started_at: '2026-08-29T12:49:11Z'
+  finished_at: '2026-08-29T12:50:10Z'
+  duration_seconds: 59
+  conclusion: success
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33253459673
+  run_attempt: 1
+  head_sha: 9806aca4770af61dcfd8ca92b02ba133697fb2ff
+  trigger: pull_request
+  started_at: '2026-08-29T12:49:11Z'
+  finished_at: '2026-08-29T12:52:28Z'
+  duration_seconds: 197
+  conclusion: success
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33242967140
+  run_attempt: 1
+  head_sha: 1d30ef93118a6f684a14b0fdad0faaf4662c9ac9
+  trigger: pull_request
+  started_at: '2026-08-29T08:21:50Z'
+  finished_at: '2026-08-29T08:25:02Z'
+  duration_seconds: 192
+  conclusion: failure
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33242965775
+  run_attempt: 1
+  head_sha: 1d30ef93118a6f684a14b0fdad0faaf4662c9ac9
+  trigger: pull_request_target
+  started_at: '2026-08-29T08:21:48Z'
+  finished_at: '2026-08-29T08:22:53Z'
+  duration_seconds: 65
+  conclusion: success
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33242858148
+  run_attempt: 1
+  head_sha: 66167920ceae607c399d2ca9e345c2c6c12cc6fb
+  trigger: pull_request_target
+  started_at: '2026-08-29T08:19:03Z'
+  finished_at: '2026-08-29T08:19:15Z'
+  duration_seconds: 12
+  conclusion: success
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33242835705
+  run_attempt: 1
+  head_sha: 66167920ceae607c399d2ca9e345c2c6c12cc6fb
+  trigger: pull_request
+  started_at: '2026-08-29T08:18:23Z'
+  finished_at: '2026-08-29T08:21:35Z'
+  duration_seconds: 192
+  conclusion: failure
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33242834234
+  run_attempt: 1
+  head_sha: 66167920ceae607c399d2ca9e345c2c6c12cc6fb
+  trigger: pull_request_target
+  started_at: '2026-08-29T08:18:21Z'
+  finished_at: '2026-08-29T08:19:21Z'
+  duration_seconds: 60
+  conclusion: success
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33242810543
+  run_attempt: 1
+  head_sha: e1908c17d2533c1c50ab33d7dae81ae813aa830b
+  trigger: pull_request_target
+  started_at: '2026-08-29T08:17:44Z'
+  finished_at: '2026-08-29T08:17:51Z'
+  duration_seconds: 7
+  conclusion: success
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33242810541
+  run_attempt: 1
+  head_sha: e1908c17d2533c1c50ab33d7dae81ae813aa830b
+  trigger: pull_request
+  started_at: '2026-08-29T08:17:44Z'
+  finished_at: '2026-08-29T08:18:34Z'
+  duration_seconds: 50
+  conclusion: cancelled
+  source_pr: 1198
+  source_attributed: true
+  validation_requested: true
+delivery_heads:
+- head_sha: e1908c17d2533c1c50ab33d7dae81ae813aa830b
+  first_observed_at: '2026-08-29T08:17:44Z'
+  last_observed_at: '2026-08-29T08:18:34Z'
+  final: false
+  action_run_count: 2
+  action_seconds: 57
+  obsolete_action_seconds: 13
+- head_sha: 66167920ceae607c399d2ca9e345c2c6c12cc6fb
+  first_observed_at: '2026-08-29T08:18:21Z'
+  last_observed_at: '2026-08-29T08:21:35Z'
+  final: false
+  action_run_count: 3
+  action_seconds: 264
+  obsolete_action_seconds: 0
+- head_sha: 1d30ef93118a6f684a14b0fdad0faaf4662c9ac9
+  first_observed_at: '2026-08-29T08:21:48Z'
+  last_observed_at: '2026-08-29T08:25:02Z'
+  final: false
+  action_run_count: 2
+  action_seconds: 257
+  obsolete_action_seconds: 0
+- head_sha: 9806aca4770af61dcfd8ca92b02ba133697fb2ff
+  first_observed_at: '2026-08-29T12:49:11Z'
+  last_observed_at: '2026-08-29T13:06:19Z'
+  final: true
+  action_run_count: 4
+  action_seconds: 658
+  obsolete_action_seconds: 0
+review_events:
+- head_sha: 9806aca4770af61dcfd8ca92b02ba133697fb2ff
+  requested_at: '2026-08-29T12:54:30Z'
+  completed_at: '2026-08-29T12:58:28Z'
+  reviewer: codex
+  outcome: clean
+  requested: true
+  finding_count: 0
+  latency_seconds: 238
+validation_cycles:
+- workflow: PR
+  head_sha: 9806aca4770af61dcfd8ca92b02ba133697fb2ff
+  run_id: 33253875925
+  run_attempt: 1
+  started_at: '2026-08-29T12:59:50Z'
+  finished_at: '2026-08-29T13:06:19Z'
+  duration_seconds: 389
+  conclusion: success
+  obsolete_seconds: 0
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+pr_retriggers: []
+merge_attempts:
+- at: '2026-08-29T13:07:09Z'
+  method: squash
+  outcome: success
+  reason: readiness_passed
+comparison:
+  baseline_prs:
+  - 1172
+  baseline_quality: weak
+  baseline_note: PR 1172 is the nearest Cortex policy delivery but predates the 2,000-line
+    stacked-PR controls.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []

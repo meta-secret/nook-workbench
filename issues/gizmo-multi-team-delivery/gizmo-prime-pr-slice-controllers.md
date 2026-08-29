@@ -1,12 +1,12 @@
 ---
 title: "Gizmo Prime and named PR-slice Gizmos"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: gizmo-adaptive-pr-policy
 created_at: 2026-08-29T06:18:08Z
-updated_at: 2026-08-29T12:50:15Z
+updated_at: 2026-08-29T13:07:09Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1198"]
 depends_on: []
@@ -57,12 +57,13 @@ slice evidence, and owns any native GitHub stack.
 - [x] A Gizmo record cannot create or nest another Gizmo and has no process lifecycle.
 - [x] Exactly 2,000 authored changed lines remains valid as one PR; 1,500 remains the split-planning warning.
 - [x] Gizmo Prime alone controls native GitHub stacks and final completion.
-- [ ] Exact-head local review, hosted validation, readiness, and merge pass for the bounded predecessor PR.
+- [x] Exact-head local review, hosted validation, readiness, and merge pass for the bounded predecessor PR.
 
 ## Progress
 
-- The policy and validator predecessor is bounded at 1,995 authored changed
-  lines on exact head `9806aca` after the mandatory 1,500-line split review.
+- The policy and validator predecessor merged from exact 1,995-line source head
+  `9806aca4770af61dcfd8ca92b02ba133697fb2ff` as Main squash commit
+  `082f6d74c9ef4fa4c46f1b7dbfabcbaacb62367c`.
 - Review identified typed runtime and trusted workflow integration as separate
   dependent semantic layers before either could push a pull request beyond the
   2,000-line ceiling.
@@ -81,6 +82,10 @@ slice evidence, and owns any native GitHub stack.
   PR 1201.
 - Architecture review rejected restoration of the unfinished ordinary-
   delegation runtime as unnecessary duplication for this feature.
+- Exact-head Codex review was clean, all required jobs in Actions run
+  [33253875925](https://github.com/meta-secret/nook/actions/runs/33253875925)
+  passed, and the `pr-1198` preview deployment succeeded before the squash
+  merge at `2026-08-29T13:07:09Z`.
 
 ## Findings and decisions
 

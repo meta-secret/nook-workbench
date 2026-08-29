@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-29T12:50:15Z
+updated_at: 2026-08-29T13:07:09Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -38,15 +38,18 @@ Gizmo Prime adds Gizmos only when the feature is expected to exceed or actually
 grows beyond the 2,000 authored changed-line ceiling, or when work is genuinely
 independent. Team Agent count never determines pull-request count.
 
-The follow-up is now a three-slice native GitHub stack. PR 1198 owns the policy
-and validator foundation at 1,995 authored changed lines. PR 1199 owns the
-CI-agent stacked-delivery runtime and behavior tests at 1,596 lines. Exact-head
-review of that runtime exposed a separate trusted workflow-integration scope;
-keeping it in PR 1199 would have crossed the 2,000-line ceiling, so PR 1201 owns
-workflow-SHA tooling, no-runtime ARC formatting, and environment/no-op
-hardening at 1,112 lines. GitHub stack 1200 records the order PR 1198, PR 1199,
-then PR 1201. The third slice exists because review revealed a distinct
-size-bounded semantic layer, not because another Team Agent contributed.
+The follow-up is a three-slice native GitHub stack. PR 1198 merged the policy
+and validator foundation from its exact 1,995-line source head
+`9806aca4770af61dcfd8ca92b02ba133697fb2ff` as Main squash commit
+`082f6d74c9ef4fa4c46f1b7dbfabcbaacb62367c`. PR 1199 remains in progress with
+the CI-agent stacked-delivery runtime and behavior tests at 1,596 lines.
+Exact-head review of that runtime exposed a separate trusted workflow-
+integration scope; keeping it in PR 1199 would have crossed the 2,000-line
+ceiling, so in-progress PR 1201 owns workflow-SHA tooling, no-runtime ARC
+formatting, and environment/no-op hardening at 1,112 lines. GitHub stack 1200
+records the order PR 1198, PR 1199, then PR 1201. The third slice exists because
+review revealed a distinct size-bounded semantic layer, not because another
+Team Agent contributed.
 
 ## Decisions
 
