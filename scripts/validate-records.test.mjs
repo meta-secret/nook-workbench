@@ -29,7 +29,7 @@ title: Direct task
 feature: unplanned
 started_at: 2026-08-29T07:30:00Z
 agent: codex
-gizmo_id: null
+gizmo_id: gizmo-direct-task
 ---
 
 ## Interpreted request
@@ -228,7 +228,7 @@ title: New contract
 feature: delivery
 started_at: 2026-08-29T07:30:00Z
 agent: codex
-gizmo_id: null
+gizmo_id: gizmo-new-contract
 ---
 
 ## Interpreted request
@@ -281,7 +281,7 @@ x
     expect(await validateRecords(root)).toEqual([]);
   });
 
-  test("requires post-activation plans to record a valid gizmo_id or null", async () => {
+  test("rejects a null post-activation plan gizmo_id", async () => {
     const root = await fixtureRoot();
     await writeFile(
       join(root, "plans", "invalid-gizmo.md"),
@@ -290,7 +290,7 @@ title: Invalid plan mapping
 feature: delivery
 started_at: 2026-08-29T07:30:00Z
 agent: codex
-gizmo_id: Gizmo Auth Core
+gizmo_id: null
 ---
 
 ## Interpreted request
@@ -312,7 +312,7 @@ x
 
     const findings = await validateRecords(root);
     expect(findings.map(({ message }) => message)).toEqual([
-      "gizmo_id must be null or a lowercase kebab-case identifier",
+      "gizmo_id must be a lowercase kebab-case identifier",
     ]);
   });
 

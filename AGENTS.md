@@ -76,5 +76,6 @@ directly from a user, the plan and worklog are still required.
 
 Plans published at or after `2026-08-29T07:30:00Z` must include
 `## Change budget and PR sequence` between constraints and the initial plan.
-Their frontmatter records the current lowercase kebab-case `gizmo_id`, or
-`null` only for a standalone direct request without a Gizmo slice.
+Their frontmatter must record the current lowercase kebab-case `gizmo_id`.
+Every feature or direct-request plan has one default feature-slice Gizmo;
+post-activation plans cannot use `null`.

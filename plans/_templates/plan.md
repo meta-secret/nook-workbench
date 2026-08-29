@@ -4,13 +4,13 @@ feature: feature-slug
 issue: issues/feature-slug/focused-deliverable.md
 started_at: 2026-01-01T00:00:00Z
 agent: codex
-gizmo_id: null
+gizmo_id: feature-slice
 ---
 
 # Task plan
 
-Replace `null` with the current feature-slice Gizmo ID. Keep `null` only for a
-standalone direct request that has no Gizmo slice.
+Replace `feature-slice` with the plan's concrete lowercase kebab-case Gizmo ID.
+Every plan has one default feature-slice Gizmo, including a direct request.
 
 ## Interpreted request
 

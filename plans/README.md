@@ -17,8 +17,8 @@ per-PR authored-line estimates, PR sequence mode, predecessor order, ownership
 units, interfaces, and acceptance evidence.
 
 The same post-activation plan frontmatter records `gizmo_id` as the current
-lowercase kebab-case slice ID. Use `null` only for a standalone direct request
-that has no Gizmo slice.
+lowercase kebab-case slice ID. Every feature or direct-request plan has one
+default feature-slice Gizmo; `null` is not valid for a post-activation plan.
 
 Use `plans/<feature>/<timestamp>-<task>.md` and start from
 [`_templates/plan.md`](_templates/plan.md). For a direct request with no feature

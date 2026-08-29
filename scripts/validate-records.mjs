@@ -87,6 +87,10 @@ function validGizmoId(value) {
   return value === "null" || gizmoIdPattern.test(value);
 }
 
+function validPlanGizmoId(value) {
+  return value !== "null" && gizmoIdPattern.test(value);
+}
+
 function validStackBranch(value) {
   if (
     !value ||
@@ -226,13 +230,13 @@ function validateMetadata(area, path, text, metadata, sha256, findings) {
       addFinding(findings, path, sha256, "missing gizmo_id");
     } else if (
       metadata.has("gizmo_id") &&
-      !validGizmoId(metadata.get("gizmo_id"))
+      !validPlanGizmoId(metadata.get("gizmo_id"))
     ) {
       addFinding(
         findings,
         path,
         sha256,
-        "gizmo_id must be null or a lowercase kebab-case identifier",
+        "gizmo_id must be a lowercase kebab-case identifier",
       );
     }
   }
