@@ -1,9 +1,9 @@
 ---
 title: Efficient review and validation delivery
-status: completed
+status: in_progress
 automation: manual
 created_at: 2026-08-26T04:22:43Z
-updated_at: 2026-08-26T22:55:21Z
+updated_at: 2026-08-29T05:59:30Z
 ---
 
 # Efficient review and validation delivery
@@ -26,6 +26,10 @@ blocking later heads.
 The repository also enforces a 3,000 authored-line pull-request budget with a
 2,700-line planning checkpoint and semantic split or stack procedure.
 
+A focused follow-up is lowering that ceiling to 2,000 authored changed lines
+and making predecessor-linked stacked pull requests mandatory whenever one
+feature requires multiple dependent slices to stay inside the ceiling.
+
 ## Decisions
 
 - Measure delivery per exact pull-request head rather than squash merge commit.
@@ -36,6 +40,11 @@ The repository also enforces a 3,000 authored-line pull-request budget with a
 - Target 3,000 authored changed lines and split by logical domain near 2,700.
 - Use dependent stacked pull requests only when later slices require earlier ones.
 - Keep independent slices based directly on current `main`.
+- Preserve the authored changed-line measure as additions plus deletions; do
+  not weaken the boundary to additions-only accounting.
+- Require dependent slices above the active ceiling to use linked predecessor
+  bases, then retarget and revalidate each successor after its predecessor
+  merges.
 
 ## Issues
 
@@ -43,6 +52,7 @@ The repository also enforces a 3,000 authored-line pull-request budget with a
 - [x] [Expose manual E2E pull-request provenance](manual-e2e-provenance.md)
 - [x] [Stabilize review before complete validation](review-first-stabilization.md)
 - [x] [Enforce active 3,000-line semantic splitting](three-thousand-line-stacks.md)
+- [ ] [Lower the active ceiling and require dependent stacks](two-thousand-line-stacks.md)
 
 ## References
 
