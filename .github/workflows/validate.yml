@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           fetch-depth: 2
+      - uses: oven-sh/setup-bun@v2
       - name: Enforce immutable records and baseline
         run: |
           set -euo pipefail
@@ -37,7 +38,7 @@ jobs:
               exit 1
             fi
           done <<< "$changed"
-      - name: Enforce immutable focused-issue Gizmo IDs
+      - name: Enforce immutable focused-issue identity
         run: |
           set -euo pipefail
           base_sha="${{ github.event.pull_request.base.sha || github.event.before }}"
@@ -51,14 +52,20 @@ jobs:
               case "$after_path" in
                 */README.md|issues/_templates/*) continue ;;
               esac
-              before="$(git show "$base_sha:$before_path" | sed -n 's/^gizmo_id:[[:space:]]*//p' | head -n 1)"
-              after="$(sed -n 's/^gizmo_id:[[:space:]]*//p' "$after_path" | head -n 1)"
-              if ! bun scripts/gizmo-id-transition.mjs "$before" "$after"; then
-                echo "::error file=${after_path}::gizmo_id is immutable once recorded."
+              before_gizmo="$(git show "$base_sha:$before_path" | sed -n 's/^gizmo_id:[[:space:]]*//p' | head -n 1)"
+              after_gizmo="$(sed -n 's/^gizmo_id:[[:space:]]*//p' "$after_path" | head -n 1)"
+              before_branch="$(git show "$base_sha:$before_path" | sed -n 's/^stack_branch:[[:space:]]*//p' | head -n 1)"
+              after_branch="$(sed -n 's/^stack_branch:[[:space:]]*//p' "$after_path" | head -n 1)"
+              before_predecessor="$(git show "$base_sha:$before_path" | sed -n 's/^stack_predecessor_branch:[[:space:]]*//p' | head -n 1)"
+              after_predecessor="$(sed -n 's/^stack_predecessor_branch:[[:space:]]*//p' "$after_path" | head -n 1)"
+              if ! bun scripts/focused-issue-transition.mjs \
+                "$before_gizmo" "$after_gizmo" \
+                "$before_branch" "$after_branch" \
+                "$before_predecessor" "$after_predecessor"; then
+                echo "::error file=${after_path}::focused-issue identity fields are immutable once recorded."
                 exit 1
               fi
             done
-      - uses: oven-sh/setup-bun@v2
       - name: Reject sensitive content
         run: |
           bun test scripts/scan-sensitive.test.mjs scripts/validate-records.test.mjs

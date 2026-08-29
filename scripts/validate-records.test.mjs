@@ -7,7 +7,7 @@ import {
   reconcileLegacyFindings,
   validateRecords,
 } from "./validate-records.mjs";
-import { validateGizmoIdTransition } from "./gizmo-id-transition.mjs";
+import { validateFocusedIssueTransition } from "./focused-issue-transition.mjs";
 
 async function fixtureRoot() {
   const root = await mkdtemp(join(tmpdir(), "workbench-validation-"));
@@ -107,6 +107,8 @@ title: Valid Gizmo mapping
 status: ready
 automation: agent
 gizmo_id: gizmo-auth-core
+stack_branch: codex/auth-core
+stack_predecessor_branch: codex/auth-foundation
 created_at: 2026-08-29T08:00:00Z
 updated_at: 2026-08-29T08:00:00Z
 ---
@@ -129,6 +131,71 @@ updated_at: 2026-08-29T08:00:00Z
     expect(findings.map(({ message }) => message)).toEqual([
       "gizmo_id must be a lowercase kebab-case identifier",
     ]);
+  });
+
+  test("requires a complete valid and distinct stacked-branch pair", async () => {
+    const root = await fixtureRoot();
+    await writeFile(
+      join(root, "issues", "missing-predecessor.md"),
+      `---
+title: Missing predecessor
+status: proposed
+automation: manual
+stack_branch: codex/auth-core
+created_at: 2026-08-29T08:00:00Z
+updated_at: 2026-08-29T08:00:00Z
+---
+`,
+    );
+    await writeFile(
+      join(root, "issues", "invalid-branch.md"),
+      `---
+title: Invalid stack branch
+status: proposed
+automation: manual
+stack_branch: codex/../auth-core
+stack_predecessor_branch: codex/auth-foundation
+created_at: 2026-08-29T08:00:00Z
+updated_at: 2026-08-29T08:00:00Z
+---
+`,
+    );
+    await writeFile(
+      join(root, "issues", "same-branch.md"),
+      `---
+title: Same stack branch
+status: proposed
+automation: manual
+stack_branch: codex/auth-core
+stack_predecessor_branch: codex/auth-core
+created_at: 2026-08-29T08:00:00Z
+updated_at: 2026-08-29T08:00:00Z
+---
+`,
+    );
+    await writeFile(
+      join(root, "issues", "invalid-predecessor.md"),
+      `---
+title: Invalid predecessor branch
+status: proposed
+automation: manual
+stack_branch: codex/auth-core
+stack_predecessor_branch: -bad-base
+created_at: 2026-08-29T08:00:00Z
+updated_at: 2026-08-29T08:00:00Z
+---
+`,
+    );
+
+    const findings = await validateRecords(root);
+    expect(findings.map(({ message }) => message).sort()).toEqual(
+      [
+        "stack_branch and stack_predecessor_branch must be present together",
+        "stack_branch is not a valid branch name",
+        "stack_predecessor_branch is not a valid branch name",
+        "stack branches must be distinct",
+      ].sort(),
+    );
   });
 
   test("rejects an empty focused issue gizmo_id", async () => {
@@ -283,19 +350,35 @@ x
     ]);
   });
 
-  test("preserves a present focused-issue gizmo_id across updates", () => {
+  test("preserves present focused-issue identity fields across updates", () => {
+    const unbound = { gizmoId: "", stackBranch: "", stackPredecessorBranch: "" };
+    const legacy = {
+      gizmoId: "null",
+      stackBranch: "",
+      stackPredecessorBranch: "",
+    };
+    const bound = {
+      gizmoId: "gizmo-auth-core",
+      stackBranch: "codex/auth-core",
+      stackPredecessorBranch: "codex/auth-foundation",
+    };
+    expect(() => validateFocusedIssueTransition(unbound, bound)).not.toThrow();
+    expect(() => validateFocusedIssueTransition(legacy, bound)).not.toThrow();
+    expect(() => validateFocusedIssueTransition(bound, bound)).not.toThrow();
     expect(() =>
-      validateGizmoIdTransition("gizmo-auth-core", "gizmo-auth-core"),
-    ).not.toThrow();
-    expect(() => validateGizmoIdTransition("", "gizmo-auth-core")).not.toThrow();
+      validateFocusedIssueTransition(bound, { ...bound, gizmoId: "" }),
+    ).toThrow("immutable");
     expect(() =>
-      validateGizmoIdTransition("null", "gizmo-auth-core"),
-    ).not.toThrow();
-    expect(() => validateGizmoIdTransition("gizmo-auth-core", "")).toThrow(
-      "immutable",
-    );
+      validateFocusedIssueTransition(bound, {
+        ...bound,
+        stackBranch: "codex/new-auth-core",
+      }),
+    ).toThrow("immutable");
     expect(() =>
-      validateGizmoIdTransition("gizmo-auth-core", "gizmo-web-shell"),
+      validateFocusedIssueTransition(bound, {
+        ...bound,
+        stackPredecessorBranch: "",
+      }),
     ).toThrow("immutable");
   });
 

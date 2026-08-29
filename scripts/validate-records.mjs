@@ -87,6 +87,28 @@ function validGizmoId(value) {
   return value === "null" || gizmoIdPattern.test(value);
 }
 
+function validStackBranch(value) {
+  if (
+    !value ||
+    value === "null" ||
+    value.length > 255 ||
+    value === "@" ||
+    value.startsWith("-") ||
+    value.startsWith("/") ||
+    value.endsWith("/") ||
+    value.endsWith(".") ||
+    value.includes("..") ||
+    value.includes("//") ||
+    value.includes("@{") ||
+    /[\u0000-\u0020\u007f~^:?*\[\\]/u.test(value)
+  ) {
+    return false;
+  }
+  return value
+    .split("/")
+    .every((component) => !component.startsWith(".") && !component.endsWith(".lock"));
+}
+
 function validateMetadata(area, path, text, metadata, sha256, findings) {
   const requiredMetadata =
     area === "issues"
@@ -128,6 +150,35 @@ function validateMetadata(area, path, text, metadata, sha256, findings) {
       sha256,
       "gizmo_id must be a lowercase kebab-case identifier",
     );
+  }
+  if (area === "issues") {
+    const hasStackBranch = metadata.has("stack_branch");
+    const hasStackPredecessor = metadata.has("stack_predecessor_branch");
+    if (hasStackBranch !== hasStackPredecessor) {
+      addFinding(
+        findings,
+        path,
+        sha256,
+        "stack_branch and stack_predecessor_branch must be present together",
+      );
+    } else if (hasStackBranch) {
+      const stackBranch = metadata.get("stack_branch");
+      const predecessorBranch = metadata.get("stack_predecessor_branch");
+      if (!validStackBranch(stackBranch)) {
+        addFinding(findings, path, sha256, "stack_branch is not a valid branch name");
+      }
+      if (!validStackBranch(predecessorBranch)) {
+        addFinding(
+          findings,
+          path,
+          sha256,
+          "stack_predecessor_branch is not a valid branch name",
+        );
+      }
+      if (stackBranch === predecessorBranch) {
+        addFinding(findings, path, sha256, "stack branches must be distinct");
+      }
+    }
   }
   if (area === "worklogs") {
     if (!validWorklogStatuses.has(metadata.get("status"))) {

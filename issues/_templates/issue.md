@@ -5,6 +5,9 @@ priority: p2
 automation: manual
 owner: unassigned
 gizmo_id: originating-feature-slice
+# For a stacked slice, uncomment both fields and replace both values.
+# stack_branch: feature-slice-branch
+# stack_predecessor_branch: predecessor-slice-branch
 created_at: 2026-01-01T00:00:00Z
 updated_at: 2026-01-01T00:00:00Z
 source_issues: []
@@ -17,6 +20,10 @@ depends_on: []
 Replace `originating-feature-slice` with the immutable lowercase kebab-case ID
 of the Gizmo PR slice that materialized this issue. Remove the field only when
 the issue is historical or standalone and has no originating slice.
+
+For a stacked slice, record both the trusted existing successor branch as
+`stack_branch` and its temporary PR base as `stack_predecessor_branch`. Keep
+both absent for a standalone main-based flow. Concrete values are immutable.
 
 ## Context
 

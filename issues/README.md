@@ -20,5 +20,12 @@ lowercase kebab-case ID as `gizmo_id` in YAML frontmatter. The field is optional
 for historical or standalone issues without an originating slice and immutable
 once recorded.
 
+A stacked slice also records both `stack_branch` (the trusted existing
+successor branch) and `stack_predecessor_branch` (its temporary PR base). Both
+must be valid, distinct same-repository branch names and become immutable once
+recorded. Omit both for legacy, standalone, or main-based flow. Workbench does
+not verify remote existence or a live PR base; Nook's delivery workflow owns
+those checks.
+
 Copy the templates from [`_templates/`](./_templates/). Do not use GitHub
 Issues in either this repository or `meta-secret/nook` for new work.
