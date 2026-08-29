@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-29T08:19:11Z
+updated_at: 2026-08-29T12:50:15Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -38,12 +38,15 @@ Gizmo Prime adds Gizmos only when the feature is expected to exceed or actually
 grows beyond the 2,000 authored changed-line ceiling, or when work is genuinely
 independent. Team Agent count never determines pull-request count.
 
-The follow-up itself reached 1,904 authored changed lines and exact-head review
-identified remaining trusted-workflow repairs. Before exceeding 2,000, delivery
-was split into a native stack: policy and validator foundation first, trusted
-stacked-implementation runtime second.
-GitHub recognizes predecessor PR 1198 and draft successor PR 1199 as stack
-1200, and the successor preserves the complete pre-split head.
+The follow-up is now a three-slice native GitHub stack. PR 1198 owns the policy
+and validator foundation at 1,995 authored changed lines. PR 1199 owns the
+CI-agent stacked-delivery runtime and behavior tests at 1,596 lines. Exact-head
+review of that runtime exposed a separate trusted workflow-integration scope;
+keeping it in PR 1199 would have crossed the 2,000-line ceiling, so PR 1201 owns
+workflow-SHA tooling, no-runtime ARC formatting, and environment/no-op
+hardening at 1,112 lines. GitHub stack 1200 records the order PR 1198, PR 1199,
+then PR 1201. The third slice exists because review revealed a distinct
+size-bounded semantic layer, not because another Team Agent contributed.
 
 ## Decisions
 
@@ -93,10 +96,16 @@ GitHub recognizes predecessor PR 1198 and draft successor PR 1199 as stack
 - [x] [Provider integration and materialization](provider-integration-materialization.md)
   — 2,635 authored additions; merged in PR 1184.
 - [ ] [Gizmo Prime and named PR-slice Gizmos](gizmo-prime-pr-slice-controllers.md) —
-  adaptive policy, plan validation, and canonical slice identity.
+  1,995 authored changed lines in PR 1198; adaptive policy, plan validation,
+  and canonical slice identity.
 - [ ] [Trusted stacked PR implementation runtime](trusted-stacked-pr-runtime.md) —
-  privileged-tooling isolation, successor-state validation, and base-relative
+  1,596 authored changed lines in PR 1199; typed stacked state validation,
+  strict edit/deliver runtime behavior, artifact exclusion, and base-relative
   authored-line budgeting.
+- [ ] [Trusted stacked PR workflow integration](trusted-stacked-pr-workflow.md) —
+  1,112 authored changed lines in PR 1201; workflow-SHA tooling, no-runtime ARC
+  formatting, secure environment transport, no-op preservation, and trusted
+  publication.
 
 ## Preservation inventory
 
@@ -182,6 +191,10 @@ GitHub recognizes predecessor PR 1198 and draft successor PR 1199 as stack
 - [Superseding runtime split plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T061453Z-gizmo-multi-team-runtime-resplit.md)
 - [Nook PR 1172](https://github.com/meta-secret/nook/pull/1172)
 - [Nook PR 1184](https://github.com/meta-secret/nook/pull/1184)
+- [Final three-slice stack plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/gizmo-multi-team-delivery/20260829T125015Z-final-three-pr-stack-superseding.md)
+- [Nook PR 1198](https://github.com/meta-secret/nook/pull/1198)
+- [Nook PR 1199](https://github.com/meta-secret/nook/pull/1199)
+- [Nook PR 1201](https://github.com/meta-secret/nook/pull/1201)
 - [Provider finalization superseding plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260828T140217Z-provider-integration-finalization-superseding.md)
 - [Preservation draft PR 1176](https://github.com/meta-secret/nook/pull/1176)
 - [Preserved full-work commit](https://github.com/meta-secret/nook/commit/ce47c73562755427d6471cf1209f50db625fb023)

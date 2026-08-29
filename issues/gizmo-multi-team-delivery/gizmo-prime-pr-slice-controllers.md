@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: gizmo-adaptive-pr-policy
 created_at: 2026-08-29T06:18:08Z
-updated_at: 2026-08-29T08:19:11Z
+updated_at: 2026-08-29T12:50:15Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1198"]
 depends_on: []
@@ -61,13 +61,13 @@ slice evidence, and owns any native GitHub stack.
 
 ## Progress
 
-- The policy and validator predecessor is bounded at 1,533 authored changed
-  lines after the mandatory 1,500-line split review.
-- The complete feature reached 1,904 lines before remaining security/lifecycle
-  findings, so the full head is being preserved on a linked native-stack
-  successor before this predecessor is reduced.
-- GitHub now recognizes PR 1198 and successor PR 1199 as native stack 1200; PR
-  1198 is the bounded 1,533-line predecessor.
+- The policy and validator predecessor is bounded at 1,995 authored changed
+  lines on exact head `9806aca` after the mandatory 1,500-line split review.
+- Review identified typed runtime and trusted workflow integration as separate
+  dependent semantic layers before either could push a pull request beyond the
+  2,000-line ceiling.
+- GitHub stack 1200 now records PR 1198, runtime successor PR 1199, and workflow
+  successor PR 1201 in dependency order.
 - Nook Workbench tests pass 104/104, preflight Workbench tests pass 19/19,
   source-size checks pass in the clean implementation worktree, and Cortex audit
   plus pre-push pass.
@@ -76,8 +76,9 @@ slice evidence, and owns any native GitHub stack.
 - Exact-head review found the later-slice identity gap before publication; the
   trusted issue-to-plan binding now closes it.
 - Exact-head review also found that the initial stack workflow loaded PR-head
-  tooling with privileged credentials and lacked a retargeted-main state. Those
-  repairs belong to the linked runtime successor.
+  tooling with privileged credentials and lacked a retargeted-main state. Typed
+  state behavior belongs to PR 1199; trusted workflow integration belongs to
+  PR 1201.
 - Architecture review rejected restoration of the unfinished ordinary-
   delegation runtime as unnecessary duplication for this feature.
 
@@ -97,8 +98,9 @@ slice evidence, and owns any native GitHub stack.
   unchanged; this feature is enforced through the mandatory Workbench plan.
 - The earlier `Micro-Gizmo` label is superseded and must not appear in the
   product contract or implementation.
-- Crossing the complete-feature ceiling creates the second Gizmo and PR; Team
-  Agent count remains irrelevant to that split.
+- Crossing the complete-feature ceiling and later review-discovered semantic
+  boundaries created the minimum three bounded Gizmos and PRs; Team Agent count
+  remains irrelevant to those splits.
 
 ## References
 
@@ -106,4 +108,6 @@ slice evidence, and owns any native GitHub stack.
 - [Prior multi-team delivery feature](README.md)
 - [PR-size follow-up](../pr-delivery-efficiency/two-thousand-line-stacks.md)
 - [Trusted stack runtime successor](trusted-stacked-pr-runtime.md)
+- [Trusted stack workflow successor](trusted-stacked-pr-workflow.md)
+- [Final three-slice stack plan](../../plans/gizmo-multi-team-delivery/20260829T125015Z-final-three-pr-stack-superseding.md)
 - [Superseded naming record](micro-gizmo-pr-controllers.md)
