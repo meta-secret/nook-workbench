@@ -12,6 +12,7 @@ related_prs:
   - 1063
   - 1072
   - 1186
+  - 1191
 depends_on:
   - issues/devices-and-access/identity-directory.md
   - issues/devices-and-access/identity-app-key-enrollment.md
@@ -86,3 +87,4 @@ Access methods tab. Provider names and browser evidence show their provenance.
   checks, exact-head preview deployment, and readiness before squash-merging as
   `6109a9fdbcfa0845cb22a742a9f2c65ae6d4ac6a`. The two broader independent
   identity-creation and device-linking criteria remain open.
+- 2026-08-29: PR 1191 removed the misleading disabled Add app action and helper copy because app enrollment occurs when another installation creates or joins a vault. Exact head `7fc3fe5e0274de22a51d9573214446ad5aabee96` passed focused component and Playwright regressions, UI demo, clean Codex review, all required checks, and exact-head preview deployment before squash-merging as `e18bf94248ac285278ff26e6d368ce138d12b813`. The broader independent identity-creation and device-linking criteria remain open.
