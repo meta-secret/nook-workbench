@@ -1,8 +1,8 @@
 ---
 title: "Feature: Gizmo multi-team delivery"
-status: in_progress
+status: done
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-29T14:08:58Z
+updated_at: 2026-08-29T14:29:51Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -46,11 +46,12 @@ stacked-delivery runtime from its final 1,643-line head as Main commit
 `0b9bbe548ae975ec3c58588cf65727efbb23302c`.
 Exact-head review of that runtime exposed a separate trusted workflow-
 integration scope; keeping it in PR 1199 would have crossed the 2,000-line
-ceiling, so in-progress PR 1201 owns workflow-SHA tooling, no-runtime ARC
-formatting, and environment/no-op hardening at 1,193 lines. GitHub stack 1200
-records the order PR 1198, PR 1199, then PR 1201. The third slice exists because
-review revealed a distinct size-bounded semantic layer, not because another
-Team Agent contributed.
+ceiling, so PR 1201 owned workflow-SHA tooling, no-runtime ARC formatting, and
+environment/no-op hardening at 1,193 lines. It merged as Main commit
+`96d91bb9b8eafff56b1e79b564efdaa5d36d83ef`, completing GitHub stack 1200 in
+the order PR 1198, PR 1199, then PR 1201. The third slice existed because review
+revealed a distinct size-bounded semantic layer, not because another Team Agent
+contributed.
 
 ## Decisions
 
@@ -106,7 +107,7 @@ Team Agent contributed.
   1,643 authored changed lines in PR 1199; typed stacked state validation,
   strict edit/deliver runtime behavior, artifact exclusion, and base-relative
   authored-line budgeting.
-- [ ] [Trusted stacked PR workflow integration](trusted-stacked-pr-workflow.md) —
+- [x] [Trusted stacked PR workflow integration](trusted-stacked-pr-workflow.md) —
   1,193 authored changed lines in PR 1201; workflow-SHA tooling, no-runtime ARC
   formatting, secure environment transport, no-op preservation, and trusted
   publication.

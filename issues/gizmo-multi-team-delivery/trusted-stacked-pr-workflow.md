@@ -1,6 +1,6 @@
 ---
 title: "Trusted stacked PR workflow integration"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
@@ -8,7 +8,7 @@ gizmo_id: gizmo-stacked-pr-workflow
 stack_branch: codex/pr-size-stacked-workflow
 stack_predecessor_branch: codex/pr-size-stacked-runtime
 created_at: 2026-08-29T12:50:15Z
-updated_at: 2026-08-29T12:50:15Z
+updated_at: 2026-08-29T14:29:51Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1201"]
 depends_on: [issues/gizmo-multi-team-delivery/trusted-stacked-pr-runtime.md]
@@ -68,16 +68,18 @@ validated result while preserving standalone and stacked lifecycle semantics.
   and delivery, and continue to Workbench publication.
 - [x] Open and merged reruns are idempotent; closed-unmerged and orphan states
   fail closed; stacked delivery retains exact frozen head/base validation.
-- [x] The exact PR 1201 diff is 1,112 authored additions plus deletions and all
+- [x] The exact PR 1201 diff is 1,193 authored additions plus deletions and all
   authored source files remain within the 1,000-line file ceiling.
-- [ ] Hosted validation, exact-head readiness, and squash merge pass for PR 1201.
+- [x] Hosted validation, exact-head readiness, and squash merge pass for PR 1201.
 
 ## Progress
 
-- PR 1201 is bounded at 1,112 authored changed lines on exact head `e6fbd837` and
-  is based on the PR 1199 runtime branch in GitHub stack 1200.
+- PR 1201 squash-merged its final 1,193-line source head
+  `a2217226a1ade734d2fdc5732772a8e04ec3d367` as Main commit
+  `96d91bb9b8eafff56b1e79b564efdaa5d36d83ef` after PR 1199 merged.
 - Focused CI-agent, Workbench, source-size, formatting, and Cortex validation
-  pass at the recorded head; merge-lifecycle evidence remains pending.
+  passed at the recorded head together with full hosted PR validation and the
+  real `pr-1201` preview deployment.
 
 ## Findings and decisions
 
@@ -89,6 +91,8 @@ validated result while preserving standalone and stacked lifecycle semantics.
   runtime's monolithic `implement` command remains compatible for PR 1199.
 - Gizmo Prime alone owns stack integration, retargeting, readiness, merge, and
   feature completion.
+- Exact workflow and Node-eval digests remain narrow, while adversarial dynamic
+  workspace executable paths are rejected rather than normalized away.
 
 ## References
 
