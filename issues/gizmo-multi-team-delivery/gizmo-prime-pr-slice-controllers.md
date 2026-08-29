@@ -6,9 +6,9 @@ automation: manual
 owner: cypherkitty
 gizmo_id: gizmo-adaptive-pr-policy
 created_at: 2026-08-29T06:18:08Z
-updated_at: 2026-08-29T08:16:02Z
+updated_at: 2026-08-29T08:19:11Z
 source_issues: []
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/1198"]
 depends_on: []
 ---
 
@@ -66,6 +66,8 @@ slice evidence, and owns any native GitHub stack.
 - The complete feature reached 1,904 lines before remaining security/lifecycle
   findings, so the full head is being preserved on a linked native-stack
   successor before this predecessor is reduced.
+- GitHub now recognizes PR 1198 and successor PR 1199 as native stack 1200; PR
+  1198 is the bounded 1,533-line predecessor.
 - Nook Workbench tests pass 104/104, preflight Workbench tests pass 19/19,
   source-size checks pass in the clean implementation worktree, and Cortex audit
   plus pre-push pass.

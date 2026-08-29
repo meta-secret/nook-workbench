@@ -8,9 +8,9 @@ gizmo_id: gizmo-stacked-pr-runtime
 stack_branch: codex/pr-size-stacked-runtime
 stack_predecessor_branch: codex/pr-size-stacked-policy
 created_at: 2026-08-29T08:16:02Z
-updated_at: 2026-08-29T08:16:02Z
+updated_at: 2026-08-29T08:19:11Z
 source_issues: []
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/1199"]
 depends_on: [issues/gizmo-multi-team-delivery/gizmo-prime-pr-slice-controllers.md]
 ---
 
@@ -53,6 +53,8 @@ current semantic slice against its validated PR base.
 ## Progress
 
 - The full 1,904-line feature head is ready for preservation on this successor.
+- GitHub native stack 1200 now links predecessor PR 1198 and this draft
+  successor PR 1199; the full pre-split head is preserved remotely.
 - Initial branch/base plumbing passed 101 CI-agent tests and focused preflight,
   but exact-head review correctly blocked trusted PR-head execution and the
   missing retargeted-main state.
@@ -71,3 +73,4 @@ current semantic slice against its validated PR base.
 - [Feature index](README.md)
 - [Predecessor issue](gizmo-prime-pr-slice-controllers.md)
 - [Superseding stack plan](../../plans/gizmo-multi-team-delivery/20260829T081602Z-adaptive-policy-native-stack-superseding.md)
+- [Nook PR 1199](https://github.com/meta-secret/nook/pull/1199)

@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-29T08:16:02Z
+updated_at: 2026-08-29T08:19:11Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -42,6 +42,8 @@ The follow-up itself reached 1,904 authored changed lines and exact-head review
 identified remaining trusted-workflow repairs. Before exceeding 2,000, delivery
 was split into a native stack: policy and validator foundation first, trusted
 stacked-implementation runtime second.
+GitHub recognizes predecessor PR 1198 and draft successor PR 1199 as stack
+1200, and the successor preserves the complete pre-split head.
 
 ## Decisions
 
