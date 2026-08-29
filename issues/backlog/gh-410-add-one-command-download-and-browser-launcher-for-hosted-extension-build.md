@@ -1,13 +1,13 @@
 ---
 title: "Add one-command download and browser launcher for hosted extension builds"
-status: done
+status: in_progress
 priority: p2
 automation: manual
-owner: "unassigned"
+owner: "cypherkitty"
 created_at: 2026-07-15T08:15:11Z
-updated_at: 2026-07-15T09:22:22Z
+updated_at: 2026-08-29T00:06:00Z
 source_issues: ["https://github.com/meta-secret/nook/issues/410"]
-related_prs: []
+related_prs: ["https://github.com/meta-secret/nook/pull/1190"]
 depends_on: []
 legacy_labels: ["enhancement"]
 legacy_state_reason: "COMPLETED"
@@ -79,3 +79,11 @@ directory and launches an isolated browser profile with it loaded.
 ## Historical comments
 
 No comments.
+
+## Progress
+
+- 2026-08-29: Reopened the launcher boundary for executable-selection hardening. PR [#1190](https://github.com/meta-secret/nook/pull/1190) restricts explicit browser selection to reviewed platform paths, validates executability before probing or launch, and adds focused missing and non-executable coverage. Exact-head review and repository validation are pending.
+
+## Findings and decisions
+
+- Explicit browser overrides are a security-sensitive executable-selection boundary. The launcher accepts only the finite reviewed Chrome and Brave platform paths; arbitrary executable paths remain intentionally unsupported.
