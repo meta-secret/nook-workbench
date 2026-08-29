@@ -5,9 +5,10 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-27T16:02:02Z
-updated_at: 2026-08-27T16:02:02Z
+updated_at: 2026-08-29T00:39:41Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1187
 depends_on: []
 ---
 
@@ -47,15 +48,21 @@ results and corrective failures.
 ## Progress
 
 - User explicitly restored implementation authority after the earlier revert.
+- PR 1187 was narrowed to the bounded shell command-analysis prerequisite after
+  review showed that configuration discovery and platform launch hardening need
+  independent ownership and validation.
+- Hosted-browser launch hardening merged separately in PR 1190. Configuration
+  and runtime-root inventory remains assigned to a dependent successor.
 
 ## Findings and decisions
 
 - Direct reviewed Bun execution replaces the abandoned Docker-backed runtime.
 - This slice grants no scheduling, delivery, network, or arbitrary command
   authority.
+- Shell analysis fails closed on dynamic execution and retains an exact finite
+  catalog for reviewed source seams; it does not itself activate a skill.
 
 ## References
 
 - Nook PRs 1147 and 1154.
 - `.agents/skills/cortex-article-structure/`.
-
