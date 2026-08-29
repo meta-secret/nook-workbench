@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-29T06:18:08Z
+updated_at: 2026-08-29T06:40:09Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -32,11 +32,11 @@ Provider integration merged in PR 1184 as
 all 25 preservation paths covered by the five merged successors, so draft PR
 1176 was retired without merge.
 
-A new explicitly authorized follow-up is adding named Gizmo controllers under
-Gizmo Prime. Gizmo Prime will assign one semantic PR slice to each Gizmo, accept
-exact-head typed handoffs, and refine only unstarted downstream slice contracts.
-This follow-up also closes the remaining ordinary-delegation admission gap that
-currently prevents nested orchestration from executing safely.
+A new explicitly authorized follow-up is making feature delivery adaptive under
+Gizmo Prime. Every feature starts with one named Gizmo and one pull request.
+Gizmo Prime adds Gizmos only when the feature is expected to exceed or actually
+grows beyond the 2,000 authored changed-line ceiling, or when work is genuinely
+independent. Team Agent count never determines pull-request count.
 
 ## Decisions
 
@@ -63,6 +63,10 @@ currently prevents nested orchestration from executing safely.
 - Gizmo Prime is the one mission owner and native-stack integrator.
 - A named Gizmo is a one-PR orchestration controller, not an implementation
   worker or a new engineering team identity.
+- One feature defaults to one Gizmo and one pull request. Additional Gizmos are
+  created only for semantic size splits or genuinely independent delivery.
+- Multiple Team Agents may contribute to one Gizmo-owned pull request; their
+  count never forces additional pull requests.
 - Gizmo names are stable and unique within one mission. Controllers may
   request harness-managed team-worker attempts for their own slice, but may not
   create another Gizmo.
