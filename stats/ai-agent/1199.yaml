@@ -1,0 +1,427 @@
+---
+schema_version: 4
+source_pr:
+  number: 1199
+  url: https://github.com/meta-secret/nook/pull/1199
+  title: Validate trusted stacked PR runtime
+  change_surface: agentic_ai_stacked_pr_runtime
+  head_sha: cb6c06878de29261ab35e180394fa7fb73dd370b
+  merge_sha: 0b9bbe548ae975ec3c58588cf65727efbb23302c
+  started_at: '2026-08-29T08:16:02Z'
+  opened_at: '2026-08-29T08:17:45Z'
+  merged_at: '2026-08-29T14:08:58Z'
+  elapsed_seconds: 21176
+  open_to_merge_seconds: 21073
+summary:
+  local_execution_count: 0
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 23
+  github_actions_seconds: 1873
+  delivery_head_count: 8
+  review_request_count: 1
+  review_finding_batch_count: 1
+  review_finding_count: 2
+  validation_cycle_count: 0
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 2
+test_inventory:
+  measured_at: '2026-08-29T14:14:15.330Z'
+  head_sha: cb6c06878de29261ab35e180394fa7fb73dd370b
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions: []
+github_actions_runs:
+- workflow: Cancel obsolete PR validation
+  run_id: 33256655225
+  run_attempt: 1
+  head_sha: cb6c06878de29261ab35e180394fa7fb73dd370b
+  trigger: pull_request_target
+  started_at: '2026-08-29T14:05:08Z'
+  finished_at: '2026-08-29T14:05:20Z'
+  duration_seconds: 12
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33256514760
+  run_attempt: 1
+  head_sha: cb6c06878de29261ab35e180394fa7fb73dd370b
+  trigger: pull_request
+  started_at: '2026-08-29T14:01:59Z'
+  finished_at: '2026-08-29T14:05:14Z'
+  duration_seconds: 195
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33256513635
+  run_attempt: 1
+  head_sha: cb6c06878de29261ab35e180394fa7fb73dd370b
+  trigger: pull_request_target
+  started_at: '2026-08-29T14:01:58Z'
+  finished_at: '2026-08-29T14:02:57Z'
+  duration_seconds: 59
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33255412922
+  run_attempt: 1
+  head_sha: 33c9cc5fa12818579c7ad17d18cb4b8323a57dfe
+  trigger: pull_request_target
+  started_at: '2026-08-29T13:35:38Z'
+  finished_at: '2026-08-29T13:35:49Z'
+  duration_seconds: 11
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33255363163
+  run_attempt: 1
+  head_sha: 33c9cc5fa12818579c7ad17d18cb4b8323a57dfe
+  trigger: pull_request
+  started_at: '2026-08-29T13:34:30Z'
+  finished_at: '2026-08-29T13:37:41Z'
+  duration_seconds: 191
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33255362253
+  run_attempt: 1
+  head_sha: 33c9cc5fa12818579c7ad17d18cb4b8323a57dfe
+  trigger: pull_request_target
+  started_at: '2026-08-29T13:34:29Z'
+  finished_at: '2026-08-29T13:35:28Z'
+  duration_seconds: 59
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33254853458
+  run_attempt: 1
+  head_sha: c001397ea6a2333b1eb560273335f3899cc6eeff
+  trigger: pull_request
+  started_at: '2026-08-29T13:22:23Z'
+  finished_at: '2026-08-29T13:25:44Z'
+  duration_seconds: 201
+  conclusion: failure
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33254851895
+  run_attempt: 1
+  head_sha: c001397ea6a2333b1eb560273335f3899cc6eeff
+  trigger: pull_request_target
+  started_at: '2026-08-29T13:22:20Z'
+  finished_at: '2026-08-29T13:23:23Z'
+  duration_seconds: 63
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33254226289
+  run_attempt: 1
+  head_sha: 12b10dba9e46cae941cd6fdf15ee53cf757cbeab
+  trigger: pull_request
+  started_at: '2026-08-29T13:07:47Z'
+  finished_at: '2026-08-29T13:10:19Z'
+  duration_seconds: 152
+  conclusion: failure
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33254224370
+  run_attempt: 1
+  head_sha: 12b10dba9e46cae941cd6fdf15ee53cf757cbeab
+  trigger: pull_request_target
+  started_at: '2026-08-29T13:07:43Z'
+  finished_at: '2026-08-29T13:08:43Z'
+  duration_seconds: 60
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33254207299
+  run_attempt: 1
+  head_sha: 073b80f0f5b5d24cb6d59dc6f42f6dc9069e9e25
+  trigger: pull_request
+  started_at: '2026-08-29T13:07:17Z'
+  finished_at: '2026-08-29T13:08:03Z'
+  duration_seconds: 46
+  conclusion: cancelled
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33254205938
+  run_attempt: 1
+  head_sha: 073b80f0f5b5d24cb6d59dc6f42f6dc9069e9e25
+  trigger: pull_request_target
+  started_at: '2026-08-29T13:07:15Z'
+  finished_at: '2026-08-29T13:08:18Z'
+  duration_seconds: 63
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33254203620
+  run_attempt: 1
+  head_sha: 037a66c4bb8b5af6754451fd0a1d12a7753dffaf
+  trigger: pull_request_target
+  started_at: '2026-08-29T13:07:12Z'
+  finished_at: '2026-08-29T13:08:11Z'
+  duration_seconds: 59
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33253837886
+  run_attempt: 1
+  head_sha: 037a66c4bb8b5af6754451fd0a1d12a7753dffaf
+  trigger: pull_request_target
+  started_at: '2026-08-29T12:58:48Z'
+  finished_at: '2026-08-29T12:58:58Z'
+  duration_seconds: 10
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33253460668
+  run_attempt: 1
+  head_sha: 037a66c4bb8b5af6754451fd0a1d12a7753dffaf
+  trigger: pull_request_target
+  started_at: '2026-08-29T12:49:13Z'
+  finished_at: '2026-08-29T12:50:16Z'
+  duration_seconds: 63
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33253460676
+  run_attempt: 1
+  head_sha: 037a66c4bb8b5af6754451fd0a1d12a7753dffaf
+  trigger: pull_request
+  started_at: '2026-08-29T12:49:13Z'
+  finished_at: '2026-08-29T12:51:38Z'
+  duration_seconds: 145
+  conclusion: failure
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33242966513
+  run_attempt: 1
+  head_sha: c6a7e13cb16e200c6b3df18fc001b3a7c5b92d49
+  trigger: pull_request
+  started_at: '2026-08-29T08:21:49Z'
+  finished_at: '2026-08-29T08:25:04Z'
+  duration_seconds: 195
+  conclusion: failure
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33242966356
+  run_attempt: 1
+  head_sha: c6a7e13cb16e200c6b3df18fc001b3a7c5b92d49
+  trigger: pull_request
+  started_at: '2026-08-29T08:21:49Z'
+  finished_at: '2026-08-29T08:21:52Z'
+  duration_seconds: 3
+  conclusion: cancelled
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33242965626
+  run_attempt: 1
+  head_sha: c6a7e13cb16e200c6b3df18fc001b3a7c5b92d49
+  trigger: pull_request_target
+  started_at: '2026-08-29T08:21:48Z'
+  finished_at: '2026-08-29T08:22:47Z'
+  duration_seconds: 59
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33242965986
+  run_attempt: 1
+  head_sha: c6a7e13cb16e200c6b3df18fc001b3a7c5b92d49
+  trigger: pull_request_target
+  started_at: '2026-08-29T08:21:48Z'
+  finished_at: '2026-08-29T08:22:48Z'
+  duration_seconds: 60
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33242860978
+  run_attempt: 1
+  head_sha: bcd551876fed8b5104ce0d7c6846f491798fdde4
+  trigger: pull_request_target
+  started_at: '2026-08-29T08:19:07Z'
+  finished_at: '2026-08-29T08:19:18Z'
+  duration_seconds: 11
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33242812420
+  run_attempt: 1
+  head_sha: bcd551876fed8b5104ce0d7c6846f491798fdde4
+  trigger: pull_request_target
+  started_at: '2026-08-29T08:17:48Z'
+  finished_at: '2026-08-29T08:17:58Z'
+  duration_seconds: 10
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33242812409
+  run_attempt: 1
+  head_sha: bcd551876fed8b5104ce0d7c6846f491798fdde4
+  trigger: pull_request
+  started_at: '2026-08-29T08:17:48Z'
+  finished_at: '2026-08-29T08:20:14Z'
+  duration_seconds: 146
+  conclusion: success
+  source_pr: 1199
+  source_attributed: true
+  validation_requested: true
+delivery_heads:
+- head_sha: bcd551876fed8b5104ce0d7c6846f491798fdde4
+  first_observed_at: '2026-08-29T08:17:48Z'
+  last_observed_at: '2026-08-29T08:20:14Z'
+  final: false
+  action_run_count: 3
+  action_seconds: 167
+  obsolete_action_seconds: 0
+- head_sha: c6a7e13cb16e200c6b3df18fc001b3a7c5b92d49
+  first_observed_at: '2026-08-29T08:21:48Z'
+  last_observed_at: '2026-08-29T08:25:04Z'
+  final: false
+  action_run_count: 4
+  action_seconds: 317
+  obsolete_action_seconds: 0
+- head_sha: 037a66c4bb8b5af6754451fd0a1d12a7753dffaf
+  first_observed_at: '2026-08-29T12:49:13Z'
+  last_observed_at: '2026-08-29T13:08:11Z'
+  final: false
+  action_run_count: 4
+  action_seconds: 277
+  obsolete_action_seconds: 56
+- head_sha: 073b80f0f5b5d24cb6d59dc6f42f6dc9069e9e25
+  first_observed_at: '2026-08-29T13:07:15Z'
+  last_observed_at: '2026-08-29T13:08:18Z'
+  final: false
+  action_run_count: 2
+  action_seconds: 109
+  obsolete_action_seconds: 55
+- head_sha: 12b10dba9e46cae941cd6fdf15ee53cf757cbeab
+  first_observed_at: '2026-08-29T13:07:43Z'
+  last_observed_at: '2026-08-29T13:10:19Z'
+  final: false
+  action_run_count: 2
+  action_seconds: 212
+  obsolete_action_seconds: 0
+- head_sha: c001397ea6a2333b1eb560273335f3899cc6eeff
+  first_observed_at: '2026-08-29T13:22:20Z'
+  last_observed_at: '2026-08-29T13:25:44Z'
+  final: false
+  action_run_count: 2
+  action_seconds: 264
+  obsolete_action_seconds: 0
+- head_sha: 33c9cc5fa12818579c7ad17d18cb4b8323a57dfe
+  first_observed_at: '2026-08-29T13:34:29Z'
+  last_observed_at: '2026-08-29T13:55:38Z'
+  final: false
+  action_run_count: 3
+  action_seconds: 261
+  obsolete_action_seconds: 0
+- head_sha: cb6c06878de29261ab35e180394fa7fb73dd370b
+  first_observed_at: '2026-08-29T14:01:58Z'
+  last_observed_at: '2026-08-29T14:05:20Z'
+  final: true
+  action_run_count: 3
+  action_seconds: 266
+  obsolete_action_seconds: 0
+review_events:
+- head_sha: 33c9cc5fa12818579c7ad17d18cb4b8323a57dfe
+  requested_at: '2026-08-29T13:45:36Z'
+  completed_at: '2026-08-29T13:55:38Z'
+  reviewer: codex
+  outcome: findings
+  requested: true
+  finding_count: 2
+  latency_seconds: 602
+validation_cycles: []
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+pr_retriggers: []
+merge_attempts:
+- at: '2026-08-29T14:07:45Z'
+  method: squash
+  outcome: blocked
+  reason: global ruleset required a github-pages deployment for an agentic-only slice
+- at: '2026-08-29T14:08:58Z'
+  method: squash
+  outcome: success
+  reason: exact-head readiness and review threads were clean; no-op deployment inherited
+    the byte-identical verified preview
+comparison:
+  baseline_prs:
+  - 1198
+  baseline_quality: strong
+  baseline_note: PR 1198 is the immediate policy predecessor in the same native stack.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: true
+  findings:
+  - Exact-head review found safe-directory ordering and predecessor identity gaps
+    before merge.
+  - The global deployment ruleset required an explicit no-op deployment even though
+    the deployable tree was byte-identical to the verified predecessor preview.
+  required_actions:
+  - Add a repository-owned no-op preview handoff for changes whose complete deployable
+    surface is unchanged.

@@ -1,6 +1,6 @@
 ---
 title: "Trusted stacked PR implementation runtime"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
@@ -8,7 +8,7 @@ gizmo_id: gizmo-stacked-pr-runtime
 stack_branch: codex/pr-size-stacked-runtime
 stack_predecessor_branch: codex/pr-size-stacked-policy
 created_at: 2026-08-29T08:16:02Z
-updated_at: 2026-08-29T12:50:15Z
+updated_at: 2026-08-29T14:08:58Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1199"]
 depends_on: [issues/gizmo-multi-team-delivery/gizmo-prime-pr-slice-controllers.md]
@@ -61,17 +61,20 @@ its validated PR base.
   targets fail closed in behavior tests.
 - [x] Oversized authored work is pushed and preserved before budget rejection;
   plan/worklog artifacts do not enter the authored change set.
-- [ ] Hosted validation, exact-head readiness, and squash merge pass for PR 1199.
+- [x] Hosted validation, exact-head readiness, and squash merge pass for PR 1199.
 
 ## Progress
 
-- PR 1199 is bounded at 1,596 authored changed lines on exact head `037a66c` and
-  remains based on the PR 1198 policy branch in GitHub stack 1200.
+- PR 1199 squash-merged its final 1,643-line source head
+  `cb6c06878de29261ab35e180394fa7fb73dd370b` as Main commit
+  `0b9bbe548ae975ec3c58588cf65727efbb23302c`.
 - Runtime behavior tests cover standalone compatibility, strict edit/deliver
   separation, native-stack adjacency, live and post-merge predecessor states,
   exact head/base drift, containment, and preservation before size rejection.
 - Exact-head review separated direct-host workflow execution and formatting
   into PR 1201 rather than allowing this runtime slice to exceed 2,000 lines.
+- Final review moved trusted Git setup before worktree inspection and bound the
+  live predecessor to the same repository and exact frozen base SHA.
 
 ## Findings and decisions
 
@@ -83,6 +86,9 @@ its validated PR base.
   source-task transport, rerun orchestration, and Workbench result publication.
 - Gizmo Prime owns native stack registration, retargeting, validation, and
   bottom-up merge.
+- The deployable tree was byte-identical to the verified PR 1198 preview, so
+  the global Pages rule was satisfied with an explicit no-op exact-head
+  deployment before squash merge.
 
 ## References
 

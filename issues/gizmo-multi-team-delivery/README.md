@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-29T13:07:09Z
+updated_at: 2026-08-29T14:08:58Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -41,12 +41,13 @@ independent. Team Agent count never determines pull-request count.
 The follow-up is a three-slice native GitHub stack. PR 1198 merged the policy
 and validator foundation from its exact 1,995-line source head
 `9806aca4770af61dcfd8ca92b02ba133697fb2ff` as Main squash commit
-`082f6d74c9ef4fa4c46f1b7dbfabcbaacb62367c`. PR 1199 remains in progress with
-the CI-agent stacked-delivery runtime and behavior tests at 1,596 lines.
+`082f6d74c9ef4fa4c46f1b7dbfabcbaacb62367c`. PR 1199 then merged the CI-agent
+stacked-delivery runtime from its final 1,643-line head as Main commit
+`0b9bbe548ae975ec3c58588cf65727efbb23302c`.
 Exact-head review of that runtime exposed a separate trusted workflow-
 integration scope; keeping it in PR 1199 would have crossed the 2,000-line
 ceiling, so in-progress PR 1201 owns workflow-SHA tooling, no-runtime ARC
-formatting, and environment/no-op hardening at 1,112 lines. GitHub stack 1200
+formatting, and environment/no-op hardening at 1,193 lines. GitHub stack 1200
 records the order PR 1198, PR 1199, then PR 1201. The third slice exists because
 review revealed a distinct size-bounded semantic layer, not because another
 Team Agent contributed.
@@ -98,15 +99,15 @@ Team Agent contributed.
   merged in PR 1183.
 - [x] [Provider integration and materialization](provider-integration-materialization.md)
   — 2,635 authored additions; merged in PR 1184.
-- [ ] [Gizmo Prime and named PR-slice Gizmos](gizmo-prime-pr-slice-controllers.md) —
+- [x] [Gizmo Prime and named PR-slice Gizmos](gizmo-prime-pr-slice-controllers.md) —
   1,995 authored changed lines in PR 1198; adaptive policy, plan validation,
   and canonical slice identity.
-- [ ] [Trusted stacked PR implementation runtime](trusted-stacked-pr-runtime.md) —
-  1,596 authored changed lines in PR 1199; typed stacked state validation,
+- [x] [Trusted stacked PR implementation runtime](trusted-stacked-pr-runtime.md) —
+  1,643 authored changed lines in PR 1199; typed stacked state validation,
   strict edit/deliver runtime behavior, artifact exclusion, and base-relative
   authored-line budgeting.
 - [ ] [Trusted stacked PR workflow integration](trusted-stacked-pr-workflow.md) —
-  1,112 authored changed lines in PR 1201; workflow-SHA tooling, no-runtime ARC
+  1,193 authored changed lines in PR 1201; workflow-SHA tooling, no-runtime ARC
   formatting, secure environment transport, no-op preservation, and trusted
   publication.
 
