@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-29T06:12:27Z
+updated_at: 2026-08-29T06:18:08Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -32,8 +32,8 @@ Provider integration merged in PR 1184 as
 all 25 preservation paths covered by the five merged successors, so draft PR
 1176 was retired without merge.
 
-A new explicitly authorized follow-up is adding named Micro-Gizmo controllers.
-The main Gizmo will assign one semantic PR slice to each Micro-Gizmo, accept
+A new explicitly authorized follow-up is adding named Gizmo controllers under
+Gizmo Prime. Gizmo Prime will assign one semantic PR slice to each Gizmo, accept
 exact-head typed handoffs, and refine only unstarted downstream slice contracts.
 This follow-up also closes the remaining ordinary-delegation admission gap that
 currently prevents nested orchestration from executing safely.
@@ -60,12 +60,13 @@ currently prevents nested orchestration from executing safely.
 - Authenticated optional evidence is read-only and has no scheduling or lifecycle
   authority. Plan mutation creates a new immutable generation; old attempts,
   evidence, and private integration state do not migrate.
-- A Micro-Gizmo is a one-PR orchestration controller, not an implementation
+- Gizmo Prime is the one mission owner and native-stack integrator.
+- A named Gizmo is a one-PR orchestration controller, not an implementation
   worker or a new engineering team identity.
-- Micro-Gizmo names are stable and unique within one mission. Controllers may
+- Gizmo names are stable and unique within one mission. Controllers may
   request harness-managed team-worker attempts for their own slice, but may not
-  create another Micro-Gizmo.
-- The main Gizmo alone owns the complete feature DAG, GitHub stack, cross-slice
+  create another Gizmo.
+- Gizmo Prime alone owns the complete feature DAG, GitHub stack, cross-slice
   contract correction, integration order, final readiness, and completion.
 
 ## Issues
@@ -80,7 +81,7 @@ currently prevents nested orchestration from executing safely.
   merged in PR 1183.
 - [x] [Provider integration and materialization](provider-integration-materialization.md)
   — 2,635 authored additions; merged in PR 1184.
-- [ ] [Named Micro-Gizmo PR controllers](micro-gizmo-pr-controllers.md) —
+- [ ] [Gizmo Prime and named PR-slice Gizmos](gizmo-prime-pr-slice-controllers.md) —
   executable ordinary delegation plus one-controller-per-PR orchestration.
 
 ## Preservation inventory

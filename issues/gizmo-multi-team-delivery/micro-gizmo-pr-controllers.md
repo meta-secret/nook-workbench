@@ -1,17 +1,22 @@
 ---
-title: "Named Micro-Gizmo PR controllers"
-status: in_progress
+title: "Superseded Micro-Gizmo naming record"
+status: cancelled
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-29T06:12:27Z
-updated_at: 2026-08-29T06:12:27Z
+updated_at: 2026-08-29T06:18:08Z
 source_issues: []
 related_prs: []
 depends_on: []
 ---
 
-# Named Micro-Gizmo PR controllers
+# Superseded Micro-Gizmo naming record
+
+This issue is superseded by
+[Gizmo Prime and named PR-slice Gizmos](gizmo-prime-pr-slice-controllers.md).
+The legacy path is retained because the published plan that references it is
+immutable. No implementation should introduce the term `Micro-Gizmo`.
 
 ## Context
 
