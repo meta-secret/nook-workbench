@@ -5,12 +5,13 @@ priority: p1
 automation: manual
 owner: codex
 created_at: 2026-08-13T03:58:00Z
-updated_at: 2026-08-22T08:30:11Z
+updated_at: 2026-08-29T00:24:29Z
 source_issues: []
 related_prs:
   - 1061
   - 1063
   - 1072
+  - 1186
 depends_on:
   - issues/devices-and-access/identity-directory.md
   - issues/devices-and-access/identity-app-key-enrollment.md
@@ -74,3 +75,14 @@ Access methods tab. Provider names and browser evidence show their provenance.
   `7da2a038102e66edea848e7edc59431a8a76c258` passed the full browser suite,
   complete validation, clean Codex review, and readiness before squash-merging
   as `0d462693dc981a0ec874b06f9abec31b97217af6`.
+- 2026-08-29: PR 1186 made vault opening explain the linked identities before
+  authentication through a Rust-owned, typed WASM projection; device-key unlock
+  now fails closed unless the current browser has an actual vault grant, while
+  backup-password recovery remains a direct vault path. It also removed Access
+  from vault navigation, retained standalone Devices & access, and stabilized
+  authenticated routing, focus, invitation gating, lock reachability, and
+  mobile auxiliary controls. Exact head
+  `92ffdbb05adf14acf0b356afa6fd0fb0a7f71198` passed clean review, all required
+  checks, exact-head preview deployment, and readiness before squash-merging as
+  `6109a9fdbcfa0845cb22a742a9f2c65ae6d4ac6a`. The two broader independent
+  identity-creation and device-linking criteria remain open.
