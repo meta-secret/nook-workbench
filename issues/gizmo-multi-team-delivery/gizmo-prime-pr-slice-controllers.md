@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: gizmo-adaptive-pr-policy
 created_at: 2026-08-29T06:18:08Z
-updated_at: 2026-08-29T07:39:32Z
+updated_at: 2026-08-29T08:16:02Z
 source_issues: []
 related_prs: []
 depends_on: []
@@ -57,19 +57,25 @@ slice evidence, and owns any native GitHub stack.
 - [x] A Gizmo record cannot create or nest another Gizmo and has no process lifecycle.
 - [x] Exactly 2,000 authored changed lines remains valid as one PR; 1,500 remains the split-planning warning.
 - [x] Gizmo Prime alone controls native GitHub stacks and final completion.
-- [ ] Exact-head local review, hosted validation, readiness, and merge pass for the one required PR.
+- [ ] Exact-head local review, hosted validation, readiness, and merge pass for the bounded predecessor PR.
 
 ## Progress
 
-- The complete adaptive policy, canonical slice identity binding, and executable
-  Workbench mapping are implemented locally in one 1,357-line PR candidate.
-- Nook Workbench tests pass 97/97, preflight Workbench tests pass 18/18,
+- The policy and validator predecessor is bounded at 1,533 authored changed
+  lines after the mandatory 1,500-line split review.
+- The complete feature reached 1,904 lines before remaining security/lifecycle
+  findings, so the full head is being preserved on a linked native-stack
+  successor before this predecessor is reduced.
+- Nook Workbench tests pass 104/104, preflight Workbench tests pass 19/19,
   source-size checks pass in the clean implementation worktree, and Cortex audit
   plus pre-push pass.
 - Workbench templates and validation now publish the budget section, validate
   concrete Gizmo IDs, and prevent a concrete issue Gizmo ID from changing.
 - Exact-head review found the later-slice identity gap before publication; the
   trusted issue-to-plan binding now closes it.
+- Exact-head review also found that the initial stack workflow loaded PR-head
+  tooling with privileged credentials and lacked a retargeted-main state. Those
+  repairs belong to the linked runtime successor.
 - Architecture review rejected restoration of the unfinished ordinary-
   delegation runtime as unnecessary duplication for this feature.
 
@@ -89,10 +95,13 @@ slice evidence, and owns any native GitHub stack.
   unchanged; this feature is enforced through the mandatory Workbench plan.
 - The earlier `Micro-Gizmo` label is superseded and must not appear in the
   product contract or implementation.
+- Crossing the complete-feature ceiling creates the second Gizmo and PR; Team
+  Agent count remains irrelevant to that split.
 
 ## References
 
 - [Current delegation policy](https://github.com/meta-secret/nook/blob/main/.cortex/gizmo/workflows/subagent-delegation.md)
 - [Prior multi-team delivery feature](README.md)
 - [PR-size follow-up](../pr-delivery-efficiency/two-thousand-line-stacks.md)
+- [Trusted stack runtime successor](trusted-stacked-pr-runtime.md)
 - [Superseded naming record](micro-gizmo-pr-controllers.md)

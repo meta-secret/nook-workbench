@@ -2,7 +2,7 @@
 title: "Feature: Gizmo multi-team delivery"
 status: in_progress
 created_at: 2026-08-28T00:56:30Z
-updated_at: 2026-08-29T06:40:09Z
+updated_at: 2026-08-29T08:16:02Z
 ---
 
 # Feature: Gizmo multi-team delivery
@@ -38,6 +38,11 @@ Gizmo Prime adds Gizmos only when the feature is expected to exceed or actually
 grows beyond the 2,000 authored changed-line ceiling, or when work is genuinely
 independent. Team Agent count never determines pull-request count.
 
+The follow-up itself reached 1,904 authored changed lines and exact-head review
+identified remaining trusted-workflow repairs. Before exceeding 2,000, delivery
+was split into a native stack: policy and validator foundation first, trusted
+stacked-implementation runtime second.
+
 ## Decisions
 
 - Cortex owns semantic policy, the active harness owns worker lifecycle, and
@@ -61,15 +66,15 @@ independent. Team Agent count never determines pull-request count.
   authority. Plan mutation creates a new immutable generation; old attempts,
   evidence, and private integration state do not migrate.
 - Gizmo Prime is the one mission owner and native-stack integrator.
-- A named Gizmo is a one-PR orchestration controller, not an implementation
-  worker or a new engineering team identity.
+- A named feature-slice Gizmo is a passive immutable one-PR Workbench record,
+  not a controller, implementation worker, or engineering team identity.
 - One feature defaults to one Gizmo and one pull request. Additional Gizmos are
   created only for semantic size splits or genuinely independent delivery.
 - Multiple Team Agents may contribute to one Gizmo-owned pull request; their
   count never forces additional pull requests.
-- Gizmo names are stable and unique within one mission. Controllers may
-  request harness-managed team-worker attempts for their own slice, but may not
-  create another Gizmo.
+- Gizmo names and IDs are stable and unique within one mission. Gizmo Prime
+  routes harness-managed Team Agent attempts to their assigned passive slice
+  records; records perform no work and cannot create another Gizmo.
 - Gizmo Prime alone owns the complete feature DAG, GitHub stack, cross-slice
   contract correction, integration order, final readiness, and completion.
 
@@ -86,7 +91,10 @@ independent. Team Agent count never determines pull-request count.
 - [x] [Provider integration and materialization](provider-integration-materialization.md)
   — 2,635 authored additions; merged in PR 1184.
 - [ ] [Gizmo Prime and named PR-slice Gizmos](gizmo-prime-pr-slice-controllers.md) —
-  executable ordinary delegation plus one-controller-per-PR orchestration.
+  adaptive policy, plan validation, and canonical slice identity.
+- [ ] [Trusted stacked PR implementation runtime](trusted-stacked-pr-runtime.md) —
+  privileged-tooling isolation, successor-state validation, and base-relative
+  authored-line budgeting.
 
 ## Preservation inventory
 
