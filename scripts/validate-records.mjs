@@ -12,10 +12,22 @@ const validStatuses = new Set([
 ]);
 const validAutomation = new Set(["manual", "agent"]);
 const validWorklogStatuses = new Set(["in_progress", "blocked", "completed"]);
+const planBudgetContractStartedAt = "2026-08-29T07:30:00Z";
+const isoTimestampPattern = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/;
+const gizmoIdPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const legacyPlanSections = [
+  "## Interpreted request",
+  "## Requirements",
+  "## Constraints and exclusions",
+  "## Initial plan",
+  "## Completion evidence",
+  "## Safety review",
+];
 const requiredPlanSections = [
   "## Interpreted request",
   "## Requirements",
   "## Constraints and exclusions",
+  "## Change budget and PR sequence",
   "## Initial plan",
   "## Completion evidence",
   "## Safety review",
@@ -71,6 +83,10 @@ function addFinding(findings, path, sha256, message) {
   findings.push({ path, sha256, message });
 }
 
+function validGizmoId(value) {
+  return value === "null" || gizmoIdPattern.test(value);
+}
+
 function validateMetadata(area, path, text, metadata, sha256, findings) {
   const requiredMetadata =
     area === "issues"
@@ -101,6 +117,18 @@ function validateMetadata(area, path, text, metadata, sha256, findings) {
       "automation must be manual or agent",
     );
   }
+  if (
+    area === "issues" &&
+    metadata.has("gizmo_id") &&
+    !validGizmoId(metadata.get("gizmo_id"))
+  ) {
+    addFinding(
+      findings,
+      path,
+      sha256,
+      "gizmo_id must be a lowercase kebab-case identifier",
+    );
+  }
   if (area === "worklogs") {
     if (!validWorklogStatuses.has(metadata.get("status"))) {
       addFinding(
@@ -122,12 +150,38 @@ function validateMetadata(area, path, text, metadata, sha256, findings) {
   }
   if (area === "plans") {
     const actualHeadings = headings(text);
-    if (JSON.stringify(actualHeadings) !== JSON.stringify(requiredPlanSections)) {
+    const startedAt = metadata.get("started_at");
+    const usesRequiredPlanSections =
+      startedAt &&
+      isoTimestampPattern.test(startedAt) &&
+      startedAt >= planBudgetContractStartedAt;
+    const expectedSections = usesRequiredPlanSections
+      ? [requiredPlanSections]
+      : [legacyPlanSections, requiredPlanSections];
+    const reportedSections =
+      expectedSections.length === 1 ? requiredPlanSections : legacyPlanSections;
+    const hasValidSections = expectedSections.some(
+      (sections) => JSON.stringify(actualHeadings) === JSON.stringify(sections),
+    );
+    if (!hasValidSections) {
       addFinding(
         findings,
         path,
         sha256,
-        `plan sections must exactly match ${requiredPlanSections.join(", ")}`,
+        `plan sections must exactly match ${reportedSections.join(", ")}`,
+      );
+    }
+    if (usesRequiredPlanSections && !metadata.has("gizmo_id")) {
+      addFinding(findings, path, sha256, "missing gizmo_id");
+    } else if (
+      metadata.has("gizmo_id") &&
+      !validGizmoId(metadata.get("gizmo_id"))
+    ) {
+      addFinding(
+        findings,
+        path,
+        sha256,
+        "gizmo_id must be null or a lowercase kebab-case identifier",
       );
     }
   }

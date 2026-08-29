@@ -37,6 +37,27 @@ jobs:
               exit 1
             fi
           done <<< "$changed"
+      - name: Enforce immutable focused-issue Gizmo IDs
+        run: |
+          set -euo pipefail
+          base_sha="${{ github.event.pull_request.base.sha || github.event.before }}"
+          git diff --name-status "$base_sha" HEAD -- 'issues/**/*.md' |
+            while IFS=$'\t' read -r status first_path second_path; do
+              case "$status" in
+                M) before_path="$first_path"; after_path="$first_path" ;;
+                R*) before_path="$first_path"; after_path="$second_path" ;;
+                *) continue ;;
+              esac
+              case "$after_path" in
+                */README.md|issues/_templates/*) continue ;;
+              esac
+              before="$(git show "$base_sha:$before_path" | sed -n 's/^gizmo_id:[[:space:]]*//p' | head -n 1)"
+              after="$(sed -n 's/^gizmo_id:[[:space:]]*//p' "$after_path" | head -n 1)"
+              if ! bun scripts/gizmo-id-transition.mjs "$before" "$after"; then
+                echo "::error file=${after_path}::gizmo_id is immutable once recorded."
+                exit 1
+              fi
+            done
       - uses: oven-sh/setup-bun@v2
       - name: Reject sensitive content
         run: |

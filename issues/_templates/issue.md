@@ -4,6 +4,7 @@ status: proposed
 priority: p2
 automation: manual
 owner: unassigned
+gizmo_id: originating-feature-slice
 created_at: 2026-01-01T00:00:00Z
 updated_at: 2026-01-01T00:00:00Z
 source_issues: []
@@ -12,6 +13,10 @@ depends_on: []
 ---
 
 # Focused deliverable
+
+Replace `originating-feature-slice` with the immutable lowercase kebab-case ID
+of the Gizmo PR slice that materialized this issue. Remove the field only when
+the issue is historical or standalone and has no originating slice.
 
 ## Context
 

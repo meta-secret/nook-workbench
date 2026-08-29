@@ -10,6 +10,8 @@ Nook's `.cortex` architecture and workflow rules.
   `plans/<feature>/<timestamp>-<task>.md` before implementation begins.
 - Put planned, blocked, deferred, or independently deliverable work in
   `issues/<feature>/<issue>.md`.
+- A focused issue materialized from a feature slice records that slice's stable
+  lowercase kebab-case `gizmo_id`. Once present, the ID is immutable.
 - Put feature-wide context and the issue index in
   `issues/<feature>/README.md`.
 - Put every task-owning agent's completion or blocked summary in
@@ -65,3 +67,8 @@ across repositories.
 An agent completing a Nook task must update the associated issue and add a
 worklog linked to its task plan. If no issue existed because the task arrived
 directly from a user, the plan and worklog are still required.
+
+Plans published at or after `2026-08-29T07:30:00Z` must include
+`## Change budget and PR sequence` between constraints and the initial plan.
+Their frontmatter records the current lowercase kebab-case `gizmo_id`, or
+`null` only for a standalone direct request without a Gizmo slice.

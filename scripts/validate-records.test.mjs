@@ -7,6 +7,7 @@ import {
   reconcileLegacyFindings,
   validateRecords,
 } from "./validate-records.mjs";
+import { validateGizmoIdTransition } from "./gizmo-id-transition.mjs";
 
 async function fixtureRoot() {
   const root = await mkdtemp(join(tmpdir(), "workbench-validation-"));
@@ -26,8 +27,9 @@ describe("Workbench record validation", () => {
       `---
 title: Direct task
 feature: unplanned
-started_at: 2026-08-05T00:00:00Z
+started_at: 2026-08-29T07:30:00Z
 agent: codex
+gizmo_id: null
 ---
 
 ## Interpreted request
@@ -35,6 +37,8 @@ x
 ## Requirements
 x
 ## Constraints and exclusions
+x
+## Change budget and PR sequence
 x
 ## Initial plan
 x
@@ -92,6 +96,207 @@ updated_at: 2026-08-05T00:00:00Z
     expect(findings.map(({ message }) => message)).toEqual([
       "automation must be manual or agent",
     ]);
+  });
+
+  test("validates a focused issue gizmo_id whenever it is present", async () => {
+    const root = await fixtureRoot();
+    await writeFile(
+      join(root, "issues", "valid.md"),
+      `---
+title: Valid Gizmo mapping
+status: ready
+automation: agent
+gizmo_id: gizmo-auth-core
+created_at: 2026-08-29T08:00:00Z
+updated_at: 2026-08-29T08:00:00Z
+---
+`,
+    );
+    await writeFile(
+      join(root, "issues", "invalid.md"),
+      `---
+title: Invalid Gizmo mapping
+status: proposed
+automation: manual
+gizmo_id: Gizmo Auth Core
+created_at: 2026-08-29T08:00:00Z
+updated_at: 2026-08-29T08:00:00Z
+---
+`,
+    );
+
+    const findings = await validateRecords(root);
+    expect(findings.map(({ message }) => message)).toEqual([
+      "gizmo_id must be a lowercase kebab-case identifier",
+    ]);
+  });
+
+  test("rejects an empty focused issue gizmo_id", async () => {
+    const root = await fixtureRoot();
+    await writeFile(
+      join(root, "issues", "empty.md"),
+      `---
+title: Empty Gizmo mapping
+status: proposed
+automation: manual
+gizmo_id:
+created_at: 2026-08-29T08:00:00Z
+updated_at: 2026-08-29T08:00:00Z
+---
+`,
+    );
+
+    const findings = await validateRecords(root);
+    expect(findings.map(({ message }) => message)).toEqual([
+      "gizmo_id must be a lowercase kebab-case identifier",
+    ]);
+  });
+
+  test("requires the change-budget H2 for plans after contract activation", async () => {
+    const root = await fixtureRoot();
+    await writeFile(
+      join(root, "plans", "new-contract.md"),
+      `---
+title: New contract
+feature: delivery
+started_at: 2026-08-29T07:30:00Z
+agent: codex
+gizmo_id: null
+---
+
+## Interpreted request
+x
+## Requirements
+x
+## Constraints and exclusions
+x
+## Initial plan
+x
+## Completion evidence
+x
+## Safety review
+x
+`,
+    );
+
+    const findings = await validateRecords(root);
+    expect(findings.map(({ message }) => message)).toEqual([
+      "plan sections must exactly match ## Interpreted request, ## Requirements, ## Constraints and exclusions, ## Change budget and PR sequence, ## Initial plan, ## Completion evidence, ## Safety review",
+    ]);
+  });
+
+  test("accepts the legacy six-H2 plan shape before contract activation", async () => {
+    const root = await fixtureRoot();
+    await writeFile(
+      join(root, "plans", "legacy-contract.md"),
+      `---
+title: Legacy contract
+feature: delivery
+started_at: 2026-08-29T07:29:59Z
+agent: codex
+---
+
+## Interpreted request
+x
+## Requirements
+x
+## Constraints and exclusions
+x
+## Initial plan
+x
+## Completion evidence
+x
+## Safety review
+x
+`,
+    );
+
+    expect(await validateRecords(root)).toEqual([]);
+  });
+
+  test("requires post-activation plans to record a valid gizmo_id or null", async () => {
+    const root = await fixtureRoot();
+    await writeFile(
+      join(root, "plans", "invalid-gizmo.md"),
+      `---
+title: Invalid plan mapping
+feature: delivery
+started_at: 2026-08-29T07:30:00Z
+agent: codex
+gizmo_id: Gizmo Auth Core
+---
+
+## Interpreted request
+x
+## Requirements
+x
+## Constraints and exclusions
+x
+## Change budget and PR sequence
+x
+## Initial plan
+x
+## Completion evidence
+x
+## Safety review
+x
+`,
+    );
+
+    const findings = await validateRecords(root);
+    expect(findings.map(({ message }) => message)).toEqual([
+      "gizmo_id must be null or a lowercase kebab-case identifier",
+    ]);
+  });
+
+  test("rejects a post-activation plan with no gizmo_id", async () => {
+    const root = await fixtureRoot();
+    await writeFile(
+      join(root, "plans", "missing-gizmo.md"),
+      `---
+title: Missing plan mapping
+feature: delivery
+started_at: 2026-08-29T07:30:00Z
+agent: codex
+---
+
+## Interpreted request
+x
+## Requirements
+x
+## Constraints and exclusions
+x
+## Change budget and PR sequence
+x
+## Initial plan
+x
+## Completion evidence
+x
+## Safety review
+x
+`,
+    );
+
+    const findings = await validateRecords(root);
+    expect(findings.map(({ message }) => message)).toEqual([
+      "missing gizmo_id",
+    ]);
+  });
+
+  test("preserves a present focused-issue gizmo_id across updates", () => {
+    expect(() =>
+      validateGizmoIdTransition("gizmo-auth-core", "gizmo-auth-core"),
+    ).not.toThrow();
+    expect(() => validateGizmoIdTransition("", "gizmo-auth-core")).not.toThrow();
+    expect(() =>
+      validateGizmoIdTransition("null", "gizmo-auth-core"),
+    ).not.toThrow();
+    expect(() => validateGizmoIdTransition("gizmo-auth-core", "")).toThrow(
+      "immutable",
+    );
+    expect(() =>
+      validateGizmoIdTransition("gizmo-auth-core", "gizmo-web-shell"),
+    ).toThrow("immutable");
   });
 
   test("exempts only exact findings on immutable historical content", () => {
