@@ -4,8 +4,9 @@ status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
+gizmo_id: gizmo-adaptive-pr-policy
 created_at: 2026-08-29T06:18:08Z
-updated_at: 2026-08-29T07:15:30Z
+updated_at: 2026-08-29T07:39:32Z
 source_issues: []
 related_prs: []
 depends_on: []
@@ -60,10 +61,15 @@ slice evidence, and owns any native GitHub stack.
 
 ## Progress
 
-- The complete adaptive policy and executable Workbench mapping are implemented
-  locally in one 1,195-line PR candidate.
-- Workbench tests pass 94/94, preflight Workbench tests pass 17/17, source-size
-  checks pass, and Cortex audit plus pre-push pass.
+- The complete adaptive policy, canonical slice identity binding, and executable
+  Workbench mapping are implemented locally in one 1,357-line PR candidate.
+- Nook Workbench tests pass 97/97, preflight Workbench tests pass 18/18,
+  source-size checks pass in the clean implementation worktree, and Cortex audit
+  plus pre-push pass.
+- Workbench templates and validation now publish the budget section, validate
+  concrete Gizmo IDs, and prevent a concrete issue Gizmo ID from changing.
+- Exact-head review found the later-slice identity gap before publication; the
+  trusted issue-to-plan binding now closes it.
 - Architecture review rejected restoration of the unfinished ordinary-
   delegation runtime as unnecessary duplication for this feature.
 
@@ -76,8 +82,8 @@ slice evidence, and owns any native GitHub stack.
   from PR count, and size-driven splitting creates the minimum useful Gizmos.
 - Gizmo Prime alone coordinates Team Agents and receives their existing typed
   handoffs; the record introduces no intermediate transport or lifecycle.
-- Human-readable names use `Gizmo: <Slice Name>` and are paired with immutable
-  identifiers such as `gizmo:<slice-slug>`.
+- Human-readable names are paired with immutable lowercase-hyphenated IDs such
+  as `gizmo-adaptive-pr-policy`.
 - The active harness remains the only process-lifecycle authority.
 - Ordinary-delegation and module-delivery runtime APIs are intentionally
   unchanged; this feature is enforced through the mandatory Workbench plan.
