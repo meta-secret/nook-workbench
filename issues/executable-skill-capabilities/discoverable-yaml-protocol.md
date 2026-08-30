@@ -6,11 +6,13 @@ automation: manual
 owner: cypherkitty
 gizmo_id: executable-skill-yaml-protocol
 created_at: 2026-08-27T16:02:02Z
-updated_at: 2026-08-30T22:39:44Z
+updated_at: 2026-08-30T22:54:30Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1187
   - https://github.com/meta-secret/nook/pull/1189
+  - https://github.com/meta-secret/nook/pull/1236
+  - https://github.com/meta-secret/nook/pull/1237
 depends_on: []
 ---
 
@@ -42,13 +44,13 @@ results and corrective failures.
 
 ## Acceptance criteria
 
-- [ ] Discovery returns command descriptions, schemas, exact examples, and
+- [x] Discovery returns command descriptions, schemas, exact examples, and
       resolved examples.
-- [ ] Requests use one domain root with strict unknown-field rejection and no
+- [x] Requests use one domain root with strict unknown-field rejection and no
       generic name-and-arguments envelope.
 - [ ] Article-structure execution has exact diagnostic parity with the current
       Cortex audit.
-- [ ] Skill TypeScript passes formatting, lint, type checking, source-size,
+- [x] Skill TypeScript passes formatting, lint, type checking, source-size,
       focused tests, and exact-head validation.
 
 ## Progress
@@ -68,6 +70,14 @@ results and corrective failures.
 - The completed combined implementation at `72d5eec184d5743f680b5303bd247ff75b860af3`
   measures 2,467 authored lines, so protocol and article activation are now an
   ordered native two-PR stack. This issue owns the 1,680-line predecessor.
+- The protocol predecessor merged through PR 1236. Its exact source head
+  `5511c12dafe2884396f3a5163e1edbc2c354a836` measured 1,910 raw and 1,703
+  authored changed lines and squash-merged as
+  `d94f1b56711f7b0b404590696664fe7efa6a1ff4` after package, Loom, expert,
+  source, TypeScript, Cortex, review, PR, and Pages gates passed.
+- The protocol slice is complete. The overall feature remains in progress
+  while successor PR 1237 delivers article schema registration, invocation,
+  and diagnostic parity.
 
 ## Findings and decisions
 
