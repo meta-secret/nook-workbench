@@ -1,12 +1,12 @@
 ---
 title: Add the Team Plan runner
-status: blocked
+status: in_progress
 priority: p1
-automation: agent
+automation: manual
 owner: cypherkitty
 gizmo_id: team-plan-runner
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T21:44:25Z
+updated_at: 2026-08-30T21:45:55Z
 source_issues: []
 related_prs: []
 depends_on: []
@@ -82,10 +82,20 @@ leases, reconstructs exact state, and joins only a completed run.
 - [ ] Canonical Cortex prose names Team Plan/Gizmo team runner and removes the
       ordinary multi-team block only to the extent proven by executable tests.
 
+## Progress
+
+- Trusted implementation run 33337223701 claimed the issue and stopped before
+  planning or code changes because its external planning credential was
+  rejected.
+- The active harness is continuing through a single AI-team bootstrap attempt
+  from the exact current main commit. That attempt cannot write Cortex. The
+  tested Team Plan runner will authorize the later bounded Cortex activation
+  attempt at its exact branch frontier.
+
 ## Authorization
 
 The user explicitly selected and requested this architectural prerequisite on
-2026-08-30. Dispatch it with `major_change_authorized: true`.
+2026-08-30.
 
 ## References
 
