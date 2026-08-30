@@ -1,12 +1,12 @@
 ---
 title: Restore the discoverable executable-skill YAML protocol
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: executable-skill-yaml-protocol
 created_at: 2026-08-27T16:02:02Z
-updated_at: 2026-08-30T22:54:30Z
+updated_at: 2026-08-30T23:23:42Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1187
@@ -39,8 +39,8 @@ results and corrective failures.
   TypeScript project contract.
 - Preserve automatic all-owner executable-package discovery, frozen installs,
   and fail-closed source and configuration audits.
-- Exclude article schema validation and action activation, other skill
-  migrations, and native subagent lifecycle changes.
+- Keep article schema validation and action activation in the linked successor
+  slice; exclude other skill migrations and native subagent lifecycle changes.
 
 ## Acceptance criteria
 
@@ -48,7 +48,7 @@ results and corrective failures.
       resolved examples.
 - [x] Requests use one domain root with strict unknown-field rejection and no
       generic name-and-arguments envelope.
-- [ ] Article-structure execution has exact diagnostic parity with the current
+- [x] Article-structure execution has exact diagnostic parity with the current
       Cortex audit.
 - [x] Skill TypeScript passes formatting, lint, type checking, source-size,
       focused tests, and exact-head validation.
@@ -78,6 +78,13 @@ results and corrective failures.
 - The protocol slice is complete. The overall feature remains in progress
   while successor PR 1237 delivers article schema registration, invocation,
   and diagnostic parity.
+- Successor PR 1237 exact source head
+  `4c5c880ec6c490a1edc49d300ed8d7517dda17ce` completed article schema
+  registration, static invocation, and diagnostic parity and squash-merged as
+  `8b6ad02770796b9937d71377bd4a4b11fcf732fd`. Its 11-path, 972-authored-line
+  slice passed both package suites, 82 focused tests, full Loom with 656 tests
+  and 4,492 assertions, expert audits, architecture and TypeScript gates,
+  exact-head review, PR workflow 33341338685, and readiness.
 
 ## Findings and decisions
 
@@ -92,8 +99,12 @@ results and corrective failures.
   wrapper contents.
 - This slice exposes only the static `skillToolsList` action. The active harness
   retains all agent and subagent lifecycle authority.
+- The linked successor registers only the reviewed article action. It returns
+  validated diagnostics and does not create, schedule, or communicate with
+  agents or subagents.
 
 ## References
 
 - Nook PRs 1147 and 1154.
-- `.agents/skills/cortex-article-structure/`.
+- `.cortex/teams/ai/dynamic-skills/executable-skill-host/`.
+- `.cortex/teams/ai/dynamic-skills/cortex-article-structure/`.
