@@ -1,12 +1,12 @@
 ---
 title: Add the Team Plan runner
-status: ready
+status: in_progress
 priority: p1
 automation: agent
 owner: cypherkitty
 gizmo_id: team-plan-runner
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T00:00:00Z
+updated_at: 2026-08-30T21:44:10Z
 source_issues: []
 related_prs: []
 depends_on: []
