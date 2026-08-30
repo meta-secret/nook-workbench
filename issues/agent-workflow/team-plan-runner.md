@@ -1,14 +1,14 @@
 ---
 title: Add the Team Plan runner
-status: in_progress
+status: in_review
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: team-plan-runner
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T21:45:55Z
+updated_at: 2026-08-30T22:37:38Z
 source_issues: []
-related_prs: []
+related_prs: [1239]
 depends_on: []
 ---
 
@@ -66,20 +66,20 @@ leases, reconstructs exact state, and joins only a completed run.
 
 ## Acceptance criteria
 
-- [ ] One immutable Team Plan starts only from a reviewed module-delivery plan
+- [x] One immutable Team Plan starts only from a reviewed module-delivery plan
       and exact Git baseline.
-- [ ] Selection returns only the deterministic, capacity-safe, conflict-free,
+- [x] Selection returns only the deterministic, capacity-safe, conflict-free,
       evidence-complete attempts authorized by existing module-delivery policy.
-- [ ] Attempt leases and results are source-bound, cardinality-safe, persisted,
+- [x] Attempt leases and results are source-bound, cardinality-safe, persisted,
       and reconstructable after process restart.
-- [ ] Failed, rejected, stale, or incomplete attempts cannot advance provider
+- [x] Failed, rejected, stale, or incomplete attempts cannot advance provider
       evidence or consumer frontiers.
-- [ ] Finalization fails closed until every required node has an accepted
+- [x] Finalization fails closed until every required node has an accepted
       disposition and the integration frontier is complete.
-- [ ] The active harness remains the sole owner of native subagent lifecycle.
+- [x] The active harness remains the sole owner of native subagent lifecycle.
 - [ ] Focused Loom tests and repository validation pass at the published exact
       PR head.
-- [ ] Canonical Cortex prose names Team Plan/Gizmo team runner and removes the
+- [x] Canonical Cortex prose names Team Plan/Gizmo team runner and removes the
       ordinary multi-team block only to the extent proven by executable tests.
 
 ## Progress
@@ -87,10 +87,16 @@ leases, reconstructs exact state, and joins only a completed run.
 - Trusted implementation run 33337223701 claimed the issue and stopped before
   planning or code changes because its external planning credential was
   rejected.
-- The active harness is continuing through a single AI-team bootstrap attempt
-  from the exact current main commit. That attempt cannot write Cortex. The
-  tested Team Plan runner will authorize the later bounded Cortex activation
-  attempt at its exact branch frontier.
+- The active harness bootstrapped the AI-owned runtime without a Cortex grant,
+  then corrected the typed owner boundary so Gizmo Prime remains a functional
+  and acceptance owner rather than becoming a worker team.
+- Team Plan generation 2 admitted exactly one AI Cortex writer at source
+  `3e91e80a10a207a7cc10f9d421f6213633e1fc58`, recorded its verified handoff,
+  reconstructed the released lease and integrated frontier, and finalized at
+  `55b613a24bc24e6eec34ba7c0d28ddb192270cc5`.
+- Nook PR #1239 is open at exact head
+  `17b1bf6a1646bdb74fab345495f88bfa154612dc`; focused tests and Cortex audit
+  pass locally, and hosted exact-head review and validation are pending.
 
 ## Authorization
 
