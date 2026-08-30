@@ -1,0 +1,291 @@
+---
+schema_version: 4
+source_pr:
+  number: 1236
+  url: https://github.com/meta-secret/nook/pull/1236
+  title: 'feat(skills): restore strict YAML command protocol'
+  change_surface: executable_skill_strict_yaml_protocol_and_static_discovery
+  head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  merge_sha: d94f1b56711f7b0b404590696664fe7efa6a1ff4
+  started_at: '2026-08-30T22:06:13Z'
+  opened_at: '2026-08-30T22:11:42Z'
+  merged_at: '2026-08-30T22:54:30Z'
+  elapsed_seconds: 2897
+  open_to_merge_seconds: 2568
+summary:
+  local_execution_count: 0
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 14
+  github_actions_seconds: 2581
+  delivery_head_count: 3
+  review_request_count: 1
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 1
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: '2026-08-30T22:56:42.598Z'
+  head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions: []
+github_actions_runs:
+- workflow: PR
+  run_id: 33339983492
+  run_attempt: 1
+  head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  trigger: pull_request
+  started_at: '2026-08-30T22:45:17Z'
+  finished_at: '2026-08-30T22:53:38Z'
+  duration_seconds: 501
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33339837171
+  run_attempt: 1
+  head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  trigger: pull_request_target
+  started_at: '2026-08-30T22:41:48Z'
+  finished_at: '2026-08-30T22:42:02Z'
+  duration_seconds: 14
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: 'Hive verification · PR #1236'
+  run_id: 33339703227
+  run_attempt: 1
+  head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  trigger: pull_request
+  started_at: '2026-08-30T22:38:42Z'
+  finished_at: '2026-08-30T22:44:04Z'
+  duration_seconds: 322
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33339703241
+  run_attempt: 1
+  head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  trigger: pull_request
+  started_at: '2026-08-30T22:38:42Z'
+  finished_at: '2026-08-30T22:42:41Z'
+  duration_seconds: 239
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33339701873
+  run_attempt: 1
+  head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  trigger: pull_request_target
+  started_at: '2026-08-30T22:38:40Z'
+  finished_at: '2026-08-30T22:39:39Z'
+  duration_seconds: 59
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: ".github/workflows/rust-dependency-updates.yml"
+  run_id: 33339700881
+  run_attempt: 1
+  head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  trigger: push
+  started_at: '2026-08-30T22:38:38Z'
+  finished_at: '2026-08-30T22:38:38Z'
+  duration_seconds: 0
+  conclusion: failure
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33339053220
+  run_attempt: 1
+  head_sha: 36a9af37ebba3a929e4d6bd9cdfb327998abfabd
+  trigger: pull_request
+  started_at: '2026-08-30T22:24:12Z'
+  finished_at: '2026-08-30T22:28:05Z'
+  duration_seconds: 233
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: 'Hive verification · PR #1236'
+  run_id: 33339053363
+  run_attempt: 1
+  head_sha: 36a9af37ebba3a929e4d6bd9cdfb327998abfabd
+  trigger: pull_request
+  started_at: '2026-08-30T22:24:12Z'
+  finished_at: '2026-08-30T22:31:17Z'
+  duration_seconds: 425
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33339051976
+  run_attempt: 1
+  head_sha: 36a9af37ebba3a929e4d6bd9cdfb327998abfabd
+  trigger: pull_request_target
+  started_at: '2026-08-30T22:24:11Z'
+  finished_at: '2026-08-30T22:25:11Z'
+  duration_seconds: 60
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: ".github/workflows/rust-dependency-updates.yml"
+  run_id: 33339050448
+  run_attempt: 1
+  head_sha: 36a9af37ebba3a929e4d6bd9cdfb327998abfabd
+  trigger: push
+  started_at: '2026-08-30T22:24:08Z'
+  finished_at: '2026-08-30T22:24:08Z'
+  duration_seconds: 0
+  conclusion: failure
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: Cancel obsolete PR validation
+  run_id: 33338478502
+  run_attempt: 1
+  head_sha: 44f5b747f0835f04303afbb77117be8c26a9a1d7
+  trigger: pull_request_target
+  started_at: '2026-08-30T22:11:45Z'
+  finished_at: '2026-08-30T22:11:55Z'
+  duration_seconds: 10
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: Repository policy
+  run_id: 33338478531
+  run_attempt: 1
+  head_sha: 44f5b747f0835f04303afbb77117be8c26a9a1d7
+  trigger: pull_request
+  started_at: '2026-08-30T22:11:45Z'
+  finished_at: '2026-08-30T22:15:20Z'
+  duration_seconds: 215
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: 'Hive verification · PR #1236'
+  run_id: 33338478447
+  run_attempt: 1
+  head_sha: 44f5b747f0835f04303afbb77117be8c26a9a1d7
+  trigger: pull_request
+  started_at: '2026-08-30T22:11:45Z'
+  finished_at: '2026-08-30T22:20:08Z'
+  duration_seconds: 503
+  conclusion: success
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+- workflow: ".github/workflows/rust-dependency-updates.yml"
+  run_id: 33338468262
+  run_attempt: 1
+  head_sha: 44f5b747f0835f04303afbb77117be8c26a9a1d7
+  trigger: push
+  started_at: '2026-08-30T22:11:33Z'
+  finished_at: '2026-08-30T22:11:33Z'
+  duration_seconds: 0
+  conclusion: failure
+  source_pr: 1236
+  source_attributed: true
+  validation_requested: true
+delivery_heads:
+- head_sha: 44f5b747f0835f04303afbb77117be8c26a9a1d7
+  first_observed_at: '2026-08-30T22:11:33Z'
+  last_observed_at: '2026-08-30T22:20:08Z'
+  final: false
+  action_run_count: 4
+  action_seconds: 728
+  obsolete_action_seconds: 0
+- head_sha: 36a9af37ebba3a929e4d6bd9cdfb327998abfabd
+  first_observed_at: '2026-08-30T22:24:08Z'
+  last_observed_at: '2026-08-30T22:31:17Z'
+  final: false
+  action_run_count: 4
+  action_seconds: 718
+  obsolete_action_seconds: 0
+- head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  first_observed_at: '2026-08-30T22:38:38Z'
+  last_observed_at: '2026-08-30T22:53:38Z'
+  final: true
+  action_run_count: 6
+  action_seconds: 1135
+  obsolete_action_seconds: 0
+review_events:
+- head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  requested_at: '2026-08-30T22:41:56Z'
+  completed_at: '2026-08-30T22:44:51Z'
+  reviewer: codex
+  outcome: clean
+  requested: true
+  finding_count: 0
+  latency_seconds: 175
+validation_cycles:
+- workflow: PR
+  head_sha: 5511c12dafe2884396f3a5163e1edbc2c354a836
+  run_id: 33339983492
+  run_attempt: 1
+  started_at: '2026-08-30T22:45:17Z'
+  finished_at: '2026-08-30T22:53:38Z'
+  duration_seconds: 501
+  conclusion: success
+  obsolete_seconds: 0
+cache_telemetry:
+  totals:
+    job_count: 0
+    remote_backend_job_count: 0
+    direct_compile_job_count: 0
+    sccache_compile_requests: 0
+    sccache_cache_hits: 0
+    sccache_cache_misses: 0
+    buildkit_completed_steps: 0
+    buildkit_cached_steps: 0
+  jobs: []
+pr_retriggers: []
+merge_attempts:
+- at: '2026-08-30T22:54:30Z'
+  method: squash
+  outcome: success
+  reason: repository_readiness_passed
+comparison:
+  baseline_prs:
+  - 1199
+  - 1184
+  baseline_quality: weak
+  baseline_note: PRs 1199 and 1184 are recent agentic runtime deliveries, but neither
+    matches this strict YAML host and package-boundary surface closely enough for
+    a strong baseline.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings:
+  - The combined capability was split into two semantic PRs so the protocol predecessor
+    stayed below the authored-line delivery bound.
+  - The exact protocol head completed clean review, the full PR workflow, and Pages
+    verification without a validation rerun.
+  - Local validation outcomes are preserved in the worklog, but no timestamped local
+    execution journal was retained, so local duration metrics are intentionally omitted.
+  required_actions: []
