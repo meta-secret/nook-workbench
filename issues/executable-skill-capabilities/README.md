@@ -2,7 +2,7 @@
 title: Executable skill capability packages
 status: in_progress
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-27T19:12:59Z
+updated_at: 2026-08-30T22:06:13Z
 ---
 
 # Executable skill capability packages
@@ -52,6 +52,9 @@ the retired mirrors are historical context, not current authority.
   contracts or skill prompts.
 - Keep deterministic executable capabilities in Loom when Markdown alone
   cannot enforce the contract.
+- Deliver the restored YAML protocol before article activation in a native
+  two-PR stack because their combined authored implementation exceeds 2,000
+  lines.
 
 ## Progress
 

@@ -4,8 +4,9 @@ status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
+gizmo_id: executable-skill-yaml-protocol
 created_at: 2026-08-27T16:02:02Z
-updated_at: 2026-08-29T00:39:41Z
+updated_at: 2026-08-30T22:06:13Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1187
@@ -28,11 +29,15 @@ results and corrective failures.
 
 ## Scope
 
-- Restore the shared domain-YAML discovery and invocation protocol.
-- Activate the existing article-structure provider through the static catalog.
-- Remove the duplicate Loom article-structure implementation.
-- Preserve exact Cortex audit findings and mandatory enforcement.
-- Exclude other skill migrations and native subagent lifecycle changes.
+- Add the provider-neutral domain-YAML discovery and invocation package under
+  the AI-owned executable-skill host.
+- Enforce the exact single-token inline-YAML transport, closed tools-list
+  action, strict YAML grammar, bounded results, redacted failures, and pinned
+  TypeScript project contract.
+- Preserve automatic all-owner executable-package discovery, frozen installs,
+  and fail-closed source and configuration audits.
+- Exclude article schema validation and action activation, other skill
+  migrations, and native subagent lifecycle changes.
 
 ## Acceptance criteria
 
@@ -53,6 +58,9 @@ results and corrective failures.
   independent ownership and validation.
 - Hosted-browser launch hardening merged separately in PR 1190. Configuration
   and runtime-root inventory remains assigned to a dependent successor.
+- The completed combined implementation at `72d5eec184d5743f680b5303bd247ff75b860af3`
+  measures 2,467 authored lines, so protocol and article activation are now an
+  ordered native two-PR stack. This issue owns the 1,680-line predecessor.
 
 ## Findings and decisions
 
@@ -61,6 +69,8 @@ results and corrective failures.
   authority.
 - Shell analysis fails closed on dynamic execution and retains an exact finite
   catalog for reviewed source seams; it does not itself activate a skill.
+- This slice exposes only the static `skillToolsList` action. The active harness
+  retains all agent and subagent lifecycle authority.
 
 ## References
 
