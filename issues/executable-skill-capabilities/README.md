@@ -2,7 +2,7 @@
 title: Executable skill capability packages
 status: in_progress
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-30T22:06:13Z
+updated_at: 2026-08-30T23:23:42Z
 ---
 
 # Executable skill capability packages
@@ -62,6 +62,11 @@ the retired mirrors are historical context, not current authority.
   removed the harness skill mirrors and registry, preserved deterministic Loom
   capabilities, added authority guards for active agent inputs, and made hosted
   prompt changes run the same policy checks.
+- 2026-08-30: PRs [#1236](https://github.com/meta-secret/nook/pull/1236)
+  and [#1237](https://github.com/meta-secret/nook/pull/1237) delivered the
+  strict inline-YAML discovery protocol and the first statically registered,
+  owner-local Cortex article action. The broader feature remains in progress
+  because the other focused migration and boundary issues below remain open.
 
 ## Issues
 
@@ -74,12 +79,12 @@ the retired mirrors are historical context, not current authority.
 - [ ] [Sealed source analyzer](sealed-source-analyzer.md)
 - [ ] [Immutable skill registry](immutable-skill-registry.md)
 - [ ] [Sealed skill executor](sealed-skill-executor.md)
-- [ ] [Cortex article activation](cortex-article-activation.md)
+- [x] [Cortex article activation](cortex-article-activation.md)
 - [ ] [Skill authoring and catalog audit](skill-authoring-and-catalog.md)
 - [ ] [Cortex document-map capability](cortex-document-map-capability.md)
 - [ ] [Cortex writer and consistency capabilities](cortex-quality-capabilities.md)
 - [ ] [Classify remaining mechanics and normalize Loom](normalize-local-mechanics.md)
-- [ ] [Restore the discoverable YAML protocol](discoverable-yaml-protocol.md)
+- [x] [Restore the discoverable YAML protocol](discoverable-yaml-protocol.md)
 - [ ] [Move repository policy mechanics into skills](repository-policy-capabilities.md)
 - [ ] [Move delivery inspection mechanics into skills](delivery-inspection-capabilities.md)
 - [ ] [Move expert contracts into skills](expert-contract-capabilities.md)
@@ -87,6 +92,6 @@ the retired mirrors are historical context, not current authority.
 
 ## References
 
-- Nook `.agents/skills/` project skills.
+- Nook `.cortex/teams/*/dynamic-skills/` project skills.
 - Nook `agentic-ai/loom/` orchestration and verification runtime.
 - Nook Cortex agent and structural-refactoring architecture.
