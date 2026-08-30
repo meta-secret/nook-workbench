@@ -5,6 +5,8 @@ priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: cortex-article-yaml-activation
+stack_branch: codex/cortex-article-yaml-activation
+stack_predecessor_branch: codex/executable-skill-yaml-protocol-v2
 created_at: 2026-08-26T08:05:41Z
 updated_at: 2026-08-30T22:06:13Z
 source_issues: []
