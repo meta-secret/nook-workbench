@@ -2,7 +2,7 @@
 title: Deterministic agent workflows
 status: in_progress
 created_at: 2026-08-14T07:26:00Z
-updated_at: 2026-08-26T19:40:15Z
+updated_at: 2026-08-30T00:00:00Z
 ---
 
 # Deterministic agent workflows
@@ -29,6 +29,10 @@ part of this internal development path.
 Loom leaf tools now generate discovery YAML, decode blueprints, and defaultable
 Task aliases from typed example documents. Sample YAML files under the Loom
 package are gone. That slice merged in Nook PR #1045.
+
+The remaining multi-team gap is now tracked as the Team Plan runner: a durable
+adapter over the existing module-delivery admission contract, without adding a
+second scheduler or model runner.
 
 ## Decisions
 
@@ -64,6 +68,7 @@ package are gone. That slice merged in Nook PR #1045.
 - [x] [Add typed module context and read-only DAG planning](typed-module-context-and-read-only-dag.md)
 - [x] [Add isolated-write module DAG execution](isolated-write-module-dag.md)
 - [x] [Pilot contract-first bottom-up module delivery](module-dag-pilot.md)
+- [ ] [Add the Team Plan runner](team-plan-runner.md)
 
 ## References
 
