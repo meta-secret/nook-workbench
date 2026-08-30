@@ -6,10 +6,11 @@ automation: manual
 owner: cypherkitty
 gizmo_id: executable-skill-yaml-protocol
 created_at: 2026-08-27T16:02:02Z
-updated_at: 2026-08-30T22:06:13Z
+updated_at: 2026-08-30T22:39:44Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1187
+  - https://github.com/meta-secret/nook/pull/1189
 depends_on: []
 ---
 
@@ -58,6 +59,12 @@ results and corrective failures.
   independent ownership and validation.
 - Hosted-browser launch hardening merged separately in PR 1190. Configuration
   and runtime-root inventory remains assigned to a dependent successor.
+- PR 1189 completed the trusted Docker executable and configuration isolation
+  prerequisite at exact head `a3bc2b00037b9fa13859abdccc39e4fb97ff9a4f`.
+  It squash-merged as `80b8a5a20e8d4158f991df524d676f73dadfa0bf`
+  after exact-head review, repository checks, deployment, and readiness passed.
+  This prerequisite is not one of the two declared slices in the governing
+  native-stack plan; both protocol and article-activation slices remain open.
 - The completed combined implementation at `72d5eec184d5743f680b5303bd247ff75b860af3`
   measures 2,467 authored lines, so protocol and article activation are now an
   ordered native two-PR stack. This issue owns the 1,680-line predecessor.
@@ -69,6 +76,10 @@ results and corrective failures.
   authority.
 - Shell analysis fails closed on dynamic execution and retains an exact finite
   catalog for reviewed source seams; it does not itself activate a skill.
+- Trusted Docker initializers now snapshot only required authentication state,
+  strip ambient selectors and proxy-derived build arguments, use a fixed system
+  utility path, and bind canonical Loom source-seam digests to the reviewed
+  wrapper contents.
 - This slice exposes only the static `skillToolsList` action. The active harness
   retains all agent and subagent lifecycle authority.
 
