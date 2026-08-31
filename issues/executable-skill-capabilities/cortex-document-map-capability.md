@@ -5,7 +5,7 @@ priority: p2
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-31T00:55:35Z
+updated_at: 2026-08-31T01:41:57Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -21,20 +21,25 @@ skill ownership after the authoring contract is available.
 
 ## Outcome
 
-The Cortex document-map skill owns its parser, checks, verification, fixtures,
-and tests while Loom retains generic invocation and audit aggregation.
+The Cortex document-map skill has a regular TypeScript provider foundation
+that owns its parser, checks, independent verification, fixtures, and tests.
+The existing Loom implementation remains authoritative until the separately
+reviewed activation issue integrates the provider.
 
 ## Scope
 
-- Move document-structure and migration-ledger mechanics to the skill package.
-- Preserve exact Cortex audit behavior and mandatory registration.
+- Add the owner-local parser, migration renderer, action contracts, result
+  codec, and genuinely independent semantic verification.
+- Preserve exact Cortex diagnostics without activating the provider yet.
 - Exclude prose-density, link, and skill-registry checks.
 
 ## Acceptance criteria
 
-- [ ] Exact current findings and migration behavior remain compatible.
-- [ ] Focused real-value and filesystem tests live with the skill.
-- [ ] Loom contains no document-map-specific semantic implementation.
+- [ ] Exact current findings and migration behavior are proven by provider
+      tests, including transient and invalid-syntax topology cases.
+- [ ] The regular Bun and TypeScript project has strict request/result codecs,
+      independent semantic verification, and adversarial tamper coverage.
+- [ ] The provider remains inactive until its stacked activation issue.
 
 ## Progress
 
@@ -42,6 +47,9 @@ and tests while Loom retains generic invocation and audit aggregation.
 - 2026-08-31: Claimed for the owner-local executable application slice after
   confirming the dependency is done and the scope is disjoint from the active
   Team Plan stack.
+- 2026-08-31: Independent review proved complete verification would exceed the
+  2,000-line PR limit if combined with activation. The work is now a native
+  two-PR stack: provider foundation, then verified activation and Loom removal.
 
 ## Findings and decisions
 
@@ -50,4 +58,5 @@ and tests while Loom retains generic invocation and audit aggregation.
 
 ## References
 
-- `.agents/skills/cortex-document-map/SKILL.md`
+- `.cortex/teams/ai/dynamic-skills/cortex-document-map/SKILL.md`
+- [Verified activation](cortex-document-map-activation.md)
