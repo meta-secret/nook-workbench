@@ -44,7 +44,7 @@ binds destructive discard to the intended immutable run.
 
 ## Progress
 
-- The accepted successor head is `984865bb9f49e31c38a7ff34cbc02cd20dc3c11d`.
+- The accepted successor head is `009b6e8957dccef6ad011d2e1878b6e1010db100`.
 - The slice measures 945 authored additions plus deletions.
 
 ## Findings and decisions
