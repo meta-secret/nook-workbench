@@ -2,7 +2,7 @@
 title: Executable skill capability packages
 status: in_progress
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-30T23:23:42Z
+updated_at: 2026-08-31T16:48:08Z
 ---
 
 # Executable skill capability packages
@@ -67,6 +67,11 @@ the retired mirrors are historical context, not current authority.
   strict inline-YAML discovery protocol and the first statically registered,
   owner-local Cortex article action. The broader feature remains in progress
   because the other focused migration and boundary issues below remain open.
+- 2026-08-31: PRs [#1246](https://github.com/meta-secret/nook/pull/1246)
+  and [#1247](https://github.com/meta-secret/nook/pull/1247) moved the Cortex
+  document-map parser, topology audit, and independent result verification into
+  its owner-local TypeScript skill application, activated the closed YAML action,
+  and removed the duplicate semantic implementation from Loom.
 
 ## Issues
 
@@ -81,8 +86,8 @@ the retired mirrors are historical context, not current authority.
 - [ ] [Sealed skill executor](sealed-skill-executor.md)
 - [x] [Cortex article activation](cortex-article-activation.md)
 - [ ] [Skill authoring and catalog audit](skill-authoring-and-catalog.md)
-- [ ] [Cortex document-map capability](cortex-document-map-capability.md)
-- [ ] [Activate the verified Cortex document-map provider](cortex-document-map-activation.md)
+- [x] [Cortex document-map capability](cortex-document-map-capability.md)
+- [x] [Activate the verified Cortex document-map provider](cortex-document-map-activation.md)
 - [ ] [Cortex writer and consistency capabilities](cortex-quality-capabilities.md)
 - [ ] [Classify remaining mechanics and normalize Loom](normalize-local-mechanics.md)
 - [x] [Restore the discoverable YAML protocol](discoverable-yaml-protocol.md)
