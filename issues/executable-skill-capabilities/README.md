@@ -82,6 +82,7 @@ the retired mirrors are historical context, not current authority.
 - [x] [Cortex article activation](cortex-article-activation.md)
 - [ ] [Skill authoring and catalog audit](skill-authoring-and-catalog.md)
 - [ ] [Cortex document-map capability](cortex-document-map-capability.md)
+- [ ] [Activate the verified Cortex document-map provider](cortex-document-map-activation.md)
 - [ ] [Cortex writer and consistency capabilities](cortex-quality-capabilities.md)
 - [ ] [Classify remaining mechanics and normalize Loom](normalize-local-mechanics.md)
 - [x] [Restore the discoverable YAML protocol](discoverable-yaml-protocol.md)
