@@ -5,7 +5,7 @@ priority: p2
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-14T07:26:00Z
-updated_at: 2026-08-31T05:34:29Z
+updated_at: 2026-08-31T07:21:00Z
 source_issues: []
 related_prs: [https://github.com/meta-secret/nook/pull/1000, https://github.com/meta-secret/nook/pull/1256]
 depends_on: []
@@ -35,27 +35,25 @@ Reconcile verified Cortex inconsistencies in focused, size-bounded documentation
 
 - [ ] Every retained finding is verified against current code or executable Task and CI entrypoints.
 - [ ] Cortex documents agree with one another and with implementation behavior.
-- [ ] `task loom:cortex-audit` passes.
-- [ ] The static Cortex semantic workflow is run once against the final exact head and produces no P1 inconsistency in the changed scope.
-- [ ] Changes remain within one focused PR or are split before implementation begins.
+- [x] `task loom:cortex-audit` passes.
+- [x] The static Cortex semantic workflow is run once against the final exact head and produces no P1 inconsistency in the changed scope.
+- [x] Changes remain within one focused PR or are split before implementation begins.
 
 ## Progress
 
 - PR #1000 produced typed, source-attributed findings from separate document and runtime lanes.
-- No implementation has started for the broader semantic-debt follow-up.
-- 2026-08-31: Published the bounded TypeScript-native contract compiler experiment
-  as Nook PR #1256 at exact head `34fc99ec769584d4e267d20e3881512dc64ba546`.
-- 2026-08-31: Exact-head Codex review found three unresolved P1 compiler gaps:
-  context owner/path validation, complete Markdown link parsing, and persisted
-  safeguards that cannot be bypassed by a general-only scope.
+- The broader semantic-debt reconciliation remains unimplemented.
+- PR #1256 now contains a self-contained TypeScript executable skill for selected consistency contracts; Loom only adapts Markdown references and invokes it.
+- Five review rounds exposed ownership spoofing, Markdown-resolution, persistence, traversal, and host-registration gaps. Every visible thread was addressed and resolved.
+- Final exact head `bf872d73a750978370996f42ebc3cd038286f447` received a clean Codex review; hosted validation reaches only the known 19-test module-expert catalog baseline.
 
 ## Findings and decisions
 
 - Mechanical Cortex checks do not prove semantic agreement; both evidence classes are required.
 - Agent-authored findings are proposals until a delivery owner verifies them against source.
-- The follow-up must not blindly apply every model recommendation. In particular, cancellation must continue to fail closed for read-only workers and must not create terminal state while an adapter can still operate.
-- Markdown remains the readable authority; only selected policy relationships
-  should be promoted into typed compile-time contracts.
+- Markdown remains the readable authority; selected relationships are compiled by their owning executable skill.
+- Loom must not accumulate policy registries or per-skill enforcement rules; it remains a deterministic adapter and caller.
+- The follow-up must not blindly apply every model recommendation. Cancellation must continue to fail closed for read-only workers and must not create terminal state while an adapter can still operate.
 
 ## References
 
@@ -63,4 +61,5 @@ Reconcile verified Cortex inconsistencies in focused, size-bounded documentation
 - [Nook PR #1256](https://github.com/meta-secret/nook/pull/1256)
 - [Implementation plan](../../plans/agent-workflow/20260814T052642Z-static-agent-workflows.md)
 - [Contract compiler plan](../../plans/agent-workflow/20260831T052249Z-cortex-contract-compiler-superseding.md)
-- [Contract compiler worklog](../../worklogs/agent-workflow/20260831T053429Z-cortex-contract-compiler.md)
+- [Initial compiler experiment](../../worklogs/agent-workflow/20260831T053429Z-cortex-contract-compiler.md)
+- [Ownership correction and review closeout](../../worklogs/agent-workflow/20260831T070322Z-cortex-contract-compiler-followup.md)
