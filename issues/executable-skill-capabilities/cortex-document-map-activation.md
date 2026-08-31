@@ -1,13 +1,14 @@
 ---
 title: Activate the verified Cortex document-map provider
-status: ready
+status: done
 priority: p2
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-31T01:41:57Z
-updated_at: 2026-08-31T01:41:57Z
+updated_at: 2026-08-31T16:48:08Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1247
 depends_on:
   - issues/executable-skill-capabilities/cortex-document-map-capability.md
 ---
@@ -33,15 +34,19 @@ provider, and Loom contains no document-map-specific semantic implementation.
 
 ## Acceptance criteria
 
-- [ ] Tools discovery exposes the exact schema and copyable YAML example.
-- [ ] Unknown fields, unsafe paths, malformed results, and tampering fail closed.
-- [ ] Exact current Cortex diagnostics remain compatible.
-- [ ] Loom retains only generic aggregation and no document-map semantics.
-- [ ] Hosted exact-head gates, review, readiness, and merge are complete.
+- [x] Tools discovery exposes the exact schema and copyable YAML example.
+- [x] Unknown fields, unsafe paths, malformed results, and tampering fail closed.
+- [x] Exact current Cortex diagnostics remain compatible.
+- [x] Loom retains only generic aggregation and no document-map semantics.
+- [x] Hosted exact-head gates, review, readiness, and merge are complete.
 
 ## Progress
 
 - Depends on the provider foundation.
+- 2026-08-31: PR [#1247](https://github.com/meta-secret/nook/pull/1247)
+  merged the closed YAML-host action and mandatory Cortex-audit integration on
+  top of the provider foundation. Full hosted policy and PR validation, two
+  independent reviews, and the exact-head Codex review were clean.
 
 ## Findings and decisions
 
