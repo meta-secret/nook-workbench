@@ -6,9 +6,9 @@ automation: manual
 owner: cypherkitty
 gizmo_id: team-plan-runner
 created_at: 2026-08-30T00:00:00Z
-updated_at: 2026-08-30T22:37:38Z
+updated_at: 2026-08-31T00:32:16Z
 source_issues: []
-related_prs: [1239]
+related_prs: [1239, 1241]
 depends_on: []
 ---
 
@@ -16,96 +16,76 @@ depends_on: []
 
 ## Context
 
-Nook already has the complete typed module-delivery admission domain and a
-separate durable generic delegation journal. Ordinary multi-team work remains
-fail-closed because no executable adapter combines those two authorities. The
-generic journal cannot prove the canonical admission contract, while the
-module-delivery validator only validates a bounded plan and does not persist a
-live run.
-
-The product vault-conflict redesign is waiting on this capability so its Rust,
-WASM, web, and security ownership can execute through the repository's trusted
-multi-team path.
+Nook already had typed module-delivery admission and a separate generic
+delegation journal, but ordinary multi-team work remained fail-closed because
+no executable adapter combined those authorities. The provider-vault conflict
+redesign is waiting on this capability so Rust, WASM, web, and security work can
+execute through the trusted multi-team path.
 
 ## Outcome
 
-Provide one small Loom capability called **Team Plan** (described to humans as
-the **Gizmo team runner**) that durably executes the existing module-delivery
-admission contract. It validates an immutable team plan, exposes only
-authorized attempts to the active harness, records attempt dispositions and
-leases, reconstructs exact state, and joins only a completed run.
+Provide one Loom capability called **Team Plan** (the **Gizmo team runner** in
+human-facing prose) that durably executes reviewed module-delivery plans. It
+validates an immutable plan, exposes only authorized attempts, records leases
+and dispositions, reconstructs exact state, supports immutable-generation
+restart, and joins only completed runs.
 
 ## Scope
 
-- Reuse the existing `module-delivery` authority, admission, resource-claim,
-  evidence, integration, and frontier types; do not duplicate their decisions.
-- Add a persisted Team Plan run adapter and focused CLI/Task entry points for
-  starting a run, selecting the next authorized attempts, recording results,
-  and finalizing the run.
-- Bind every run to the exact source commit and immutable plan digest.
-- Persist enough reviewed events to reconstruct admissions, attempt leases,
-  dispositions, accepted provider evidence, and exact frontiers without
-  trusting Markdown summaries or worker output.
-- Keep native subagent lifecycle, communication, cancellation, and model
-  execution in the active harness.
-- Add adversarial behavior tests for ineligible work, conflicting or
-  over-capacity claims, stale attempts, missing provider evidence, plan/source
-  drift, and premature finalization.
-- Update the canonical Cortex delegation gate only after the executable runner
-  and tests prove the complete contract.
-- Keep all authored files below 1,000 lines and total authored additions plus
-  deletions below 2,000 lines.
+- Reuse the existing module-delivery authority and typed policy decisions.
+- Admit ordinary read-only and write tasks through closed team profiles while
+  keeping ordinary evidence synthesis fail-closed.
+- Persist crash-consistent, strictly decoded journals below the 4 MiB ceiling.
+- Pin accepted writes and redacted accepted-evidence receipts under immutable
+  run-scoped Git CAS refs without retaining raw provider output.
+- Recover stale locks, canonicalize journal paths, keep workspaces outside the
+  source repository, and explicitly discard only authenticated finalized runs.
+- Expose deterministic start, select, record, restart, and finalize commands;
+  keep native subagent lifecycle in the active harness.
+- Activate only the canonical Cortex delegation behavior proven by tests.
 
 ## Non-goals
 
-- No new model runner, scheduler, transcript protocol, hosted service, or Hive
+- No model runner, scheduler, transcript protocol, hosted service, or Hive
   integration.
-- No product vault UI or cryptographic-domain changes in this slice.
-- No second admission model and no web/TypeScript reimplementation of domain
-  eligibility.
+- No product vault UI or cryptographic-domain changes in this prerequisite.
+- No second admission model or web reimplementation of domain eligibility.
 
 ## Acceptance criteria
 
-- [x] One immutable Team Plan starts only from a reviewed module-delivery plan
-      and exact Git baseline.
-- [x] Selection returns only the deterministic, capacity-safe, conflict-free,
-      evidence-complete attempts authorized by existing module-delivery policy.
-- [x] Attempt leases and results are source-bound, cardinality-safe, persisted,
-      and reconstructable after process restart.
-- [x] Failed, rejected, stale, or incomplete attempts cannot advance provider
-      evidence or consumer frontiers.
-- [x] Finalization fails closed until every required node has an accepted
-      disposition and the integration frontier is complete.
-- [x] The active harness remains the sole owner of native subagent lifecycle.
-- [ ] Focused Loom tests and repository validation pass at the published exact
-      PR head.
-- [x] Canonical Cortex prose names Team Plan/Gizmo team runner and removes the
-      ordinary multi-team block only to the extent proven by executable tests.
+- [x] Immutable Team Plans start only from reviewed plans and exact Git state.
+- [x] Selection is deterministic, capacity-safe, conflict-free, and evidence-complete.
+- [x] Leases, results, retries, and immutable restarts reconstruct after process failure.
+- [x] Raw provider evidence is absent from the journal and pinned durable receipt.
+- [x] Stale, forged, incomplete, or out-of-scope work cannot advance the run.
+- [x] Finalization fails closed until every required node and frontier completes.
+- [x] The active harness remains the sole native subagent lifecycle owner.
+- [x] Foundation and runtime slices each remain at or below 2,000 authored lines.
+- [ ] Both exact PR heads pass hosted review, validation, readiness, and merge.
 
 ## Progress
 
-- Trusted implementation run 33337223701 claimed the issue and stopped before
-  planning or code changes because its external planning credential was
-  rejected.
-- The active harness bootstrapped the AI-owned runtime without a Cortex grant,
-  then corrected the typed owner boundary so Gizmo Prime remains a functional
-  and acceptance owner rather than becoming a worker team.
-- Team Plan generation 2 admitted exactly one AI Cortex writer at source
-  `3e91e80a10a207a7cc10f9d421f6213633e1fc58`, recorded its verified handoff,
-  reconstructed the released lease and integrated frontier, and finalized at
-  `55b613a24bc24e6eec34ba7c0d28ddb192270cc5`.
-- Nook PR #1239 is open at exact head
-  `17b1bf6a1646bdb74fab345495f88bfa154612dc`; focused tests and Cortex audit
-  pass locally, and hosted exact-head review and validation are pending.
+- The delivery was split into GitHub native stack #1242 after exact-head review
+  proved that a single safe correction would exceed the PR limit.
+- Foundation PR #1239 is published at
+  `3f7f3e65b66e05fb9a6a74481227c708c33597ed`: 1,999 authored lines; 77 focused
+  tests and 327 assertions; strict storage, locking, admission, ownership, and
+  redacted receipt restoration.
+- Runtime PR #1241 is published at
+  `8094bad1c85ad66d03c5f850cc3c295901159584`: 1,996 authored lines; 83 focused
+  tests and 354 assertions; restartable runtime, run-scoped artifacts, bounded
+  CLI input, explicit discard, and canonical Cortex activation.
+- Local format, lint, strict TypeScript, diff, and Cortex audit gates pass at the
+  published stack head. Fresh hosted exact-head review and validation are in progress.
 
 ## Authorization
 
 The user explicitly selected and requested this architectural prerequisite on
-2026-08-30.
+2026-08-30 and requested the simpler name Team Plan.
 
 ## References
 
 - `.cortex/gizmo/workflows/subagent-delegation.md`
 - `agentic-ai/loom/src/agent-workflow/`
 - `agentic-ai/loom/src/module-delivery/`
-- `.github/workflows/agent-implement.yml`
+- `agentic-ai/loom/src/team-plan/`
