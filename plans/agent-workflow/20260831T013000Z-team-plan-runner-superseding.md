@@ -53,7 +53,7 @@ pattern from returning.
 - PR slices, estimates, and acceptance evidence:
 1. Gizmo ID: team-plan-admission; Gizmo name: Team Plan admission; Predecessor Gizmo ID: None; Typed admission and trusted canonical receipt replay; Estimated authored changed lines: 1155; Acceptance evidence: 83 module-delivery tests and 668 complete Loom tests pass.
 2. Gizmo ID: team-plan-journal; Gizmo name: Team Plan journal; Predecessor Gizmo ID: team-plan-admission; Durable bounded lifecycle journal; Estimated authored changed lines: 1982; Acceptance evidence: 677 complete Loom tests and the hosted source-policy gate pass.
-3. Gizmo ID: team-plan-runner; Gizmo name: Team Plan runner; Predecessor Gizmo ID: team-plan-journal; Runtime engine, restart compatibility, and discard APIs; Estimated authored changed lines: 1872; Acceptance evidence: 683 complete Loom tests and pre-push pass.
+3. Gizmo ID: team-plan-runner; Gizmo name: Team Plan runner; Predecessor Gizmo ID: team-plan-journal; Runtime engine, restart compatibility, and discard APIs; Estimated authored changed lines: 1870; Acceptance evidence: 683 complete Loom tests and pre-push pass.
 4. Gizmo ID: team-plan-commands; Gizmo name: Team Plan commands; Predecessor Gizmo ID: team-plan-runner; CLI and Task wiring; Estimated authored changed lines: 265; Acceptance evidence: 684 complete Loom tests and pre-push pass.
 
 ## Initial plan
