@@ -60,7 +60,7 @@ lifecycle.
   runner are separate cohesive ownership boundaries.
 - Historical published heads were PR #1239 at `3f7f3e65b66e05fb9a6a74481227c708c33597ed`
   and PR #1241 at `8094bad1c85ad66d03c5f850cc3c295901159584`.
-- The accepted runner head is `bf2c7610df39b2ea08589301388bc1f6f9f80c6f`.
+- The accepted runner head is `fc82d969b56c7761e60fb5a14524667f38aa6ff4`.
 - The slice measures 1,870 authored additions plus deletions.
 
 ## Authorization
