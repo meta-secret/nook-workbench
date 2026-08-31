@@ -23,8 +23,9 @@ adapter over accepted admission and journal state.
 
 ## Outcome
 
-Team Plan exposes deterministic start, select, record, restart, finalize, and
-discard commands while the active harness retains worker lifecycle.
+Team Plan provides the deterministic engine for start, select, record,
+restart, finalize, and discard while the active harness retains worker
+lifecycle.
 
 ## Scope
 
@@ -33,8 +34,9 @@ discard commands while the active harness retains worker lifecycle.
 - Pin accepted writes and canonical redacted receipts in private run-scoped Git
   state.
 - Keep workspaces outside the source repository.
-- Expose deterministic runner and discard commands.
+- Provide deterministic runner and discard APIs.
 - Keep native worker lifecycle in the active harness.
+- Exclude CLI and Task exposure, which belongs to the commands successor.
 
 ## Non-goals
 
@@ -74,4 +76,5 @@ Plan components.
 - `agentic-ai/loom/src/team-plan/`
 - [Team Plan admission](team-plan-admission.md)
 - [Team Plan journal](team-plan-journal.md)
+- [Team Plan commands](team-plan-commands.md)
 - [Superseding plan](../../plans/agent-workflow/20260831T013000Z-team-plan-runner-superseding.md)

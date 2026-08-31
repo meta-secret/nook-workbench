@@ -47,8 +47,8 @@ lease, and Git-frontier state.
 
 ## Progress
 
-- The accepted local head is `8f4699fb78e703939202980b72cf14e7f655df56`.
-- The slice measures 837 authored additions plus deletions.
+- The accepted local head is `3dcdb4441e22e5fa9e54ec5cd919f4b23cfda1ec`.
+- The slice measures 864 authored additions plus deletions.
 
 ## Findings and decisions
 
@@ -60,5 +60,6 @@ lease, and Git-frontier state.
 
 - [Team Plan journal](team-plan-journal.md)
 - [Team Plan runner](team-plan-runner.md)
+- [Team Plan commands](team-plan-commands.md)
 - [Superseding plan](../../plans/agent-workflow/20260831T013000Z-team-plan-runner-superseding.md)
 - [Nook PR #1239](https://github.com/meta-secret/nook/pull/1239)
