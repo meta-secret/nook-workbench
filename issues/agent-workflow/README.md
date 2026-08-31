@@ -71,6 +71,7 @@ model runner.
 - [x] [Pilot contract-first bottom-up module delivery](module-dag-pilot.md)
 - [ ] [Add Team Plan admission](team-plan-admission.md)
 - [ ] [Add the Team Plan journal](team-plan-journal.md)
+- [ ] [Fix Team Plan journal lifecycle edges](team-plan-journal-fixes.md)
 - [ ] [Add the Team Plan runner](team-plan-runner.md)
 - [ ] [Expose Team Plan commands](team-plan-commands.md)
 

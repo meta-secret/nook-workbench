@@ -44,7 +44,7 @@ finalization, and discard after process failure.
 
 ## Progress
 
-- The accepted journal head is `53484823fbccdbf2807296e4ba261ee082092d85`.
+- The accepted journal head is `e747acfa1eeff5ee027a377bbd073f57a9b915a9`.
 - The slice measures 1,995 authored additions plus deletions.
 
 ## Findings and decisions
@@ -55,6 +55,7 @@ finalization, and discard after process failure.
 ## References
 
 - [Team Plan admission](team-plan-admission.md)
+- [Team Plan journal fixes](team-plan-journal-fixes.md)
 - [Team Plan runner](team-plan-runner.md)
 - [Team Plan commands](team-plan-commands.md)
 - [Superseding plan](../../plans/agent-workflow/20260831T013000Z-team-plan-runner-superseding.md)

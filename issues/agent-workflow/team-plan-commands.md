@@ -44,8 +44,8 @@ finalize, and discard.
 
 ## Progress
 
-- The accepted commands head is `4c202c9d1bbebe3df22ee8e9bf7a809392db9f37`.
-- The commands slice measures 499 authored changed lines.
+- The accepted commands head is `c17b74c8951334b5b536bc31d7afcdc619124126`.
+- The commands slice measures 520 authored changed lines.
 
 ## Findings and decisions
 
@@ -58,6 +58,7 @@ finalize, and discard.
 
 - [Team Plan admission](team-plan-admission.md)
 - [Team Plan journal](team-plan-journal.md)
+- [Team Plan journal fixes](team-plan-journal-fixes.md)
 - [Team Plan runner](team-plan-runner.md)
 - [Superseding plan](../../plans/agent-workflow/20260831T013000Z-team-plan-runner-superseding.md)
 - [Nook PR #1249](https://github.com/meta-secret/nook/pull/1249)

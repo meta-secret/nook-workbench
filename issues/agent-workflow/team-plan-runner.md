@@ -6,12 +6,12 @@ automation: manual
 owner: cypherkitty
 gizmo_id: team-plan-runner
 stack_branch: codex/team-plan-runner-runtime
-stack_predecessor_branch: codex/team-plan-runner-storage
+stack_predecessor_branch: codex/team-plan-journal-fixes
 created_at: 2026-08-30T00:00:00Z
 updated_at: 2026-08-31T01:30:00Z
 source_issues: []
 related_prs: [1239, 1241]
-depends_on: [team-plan-journal.md]
+depends_on: [team-plan-journal-fixes.md]
 ---
 
 # Add the Team Plan runner
@@ -60,8 +60,8 @@ lifecycle.
   runner are separate cohesive ownership boundaries.
 - Historical published heads were PR #1239 at `3f7f3e65b66e05fb9a6a74481227c708c33597ed`
   and PR #1241 at `8094bad1c85ad66d03c5f850cc3c295901159584`.
-- The accepted runner head is `fc82d969b56c7761e60fb5a14524667f38aa6ff4`.
-- The slice measures 1,870 authored additions plus deletions.
+- The accepted runner head is `e933e99656e1ac795290d67dbb776e28453fab3a`.
+- The slice measures 1,884 authored additions plus deletions.
 
 ## Authorization
 
@@ -77,5 +77,6 @@ Plan components.
 - `agentic-ai/loom/src/team-plan/`
 - [Team Plan admission](team-plan-admission.md)
 - [Team Plan journal](team-plan-journal.md)
+- [Team Plan journal fixes](team-plan-journal-fixes.md)
 - [Team Plan commands](team-plan-commands.md)
 - [Superseding plan](../../plans/agent-workflow/20260831T013000Z-team-plan-runner-superseding.md)
