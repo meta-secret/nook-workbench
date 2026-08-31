@@ -1,0 +1,279 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-08-31T00:15:04.895Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 33341701831,
+    "run_attempt": 2,
+    "url": "https://github.com/meta-secret/nook/actions/runs/33341701831",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "8b6ad02770796b9937d71377bd4a4b11fcf732fd",
+    "conclusion": "failure",
+    "created_at": "2026-08-31T00:03:45Z",
+    "started_at": "2026-08-31T00:03:53Z",
+    "completed_at": "2026-08-31T00:14:43Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1237,
+      "url": "https://github.com/meta-secret/nook/pull/1237",
+      "title": "feat(skills): activate Cortex article YAML action"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 10,
+    "execution_seconds": 650,
+    "wall_seconds": 660,
+    "job_count": 3,
+    "step_count": 19
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "id": 99343087892,
+      "name": "Rust ecosystem / Dylint repository lints",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "nook-k0s-khhgj-runner-9wtmp",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-08-31T00:03:53Z",
+      "completed_at": "2026-08-31T00:05:45Z",
+      "duration_seconds": 112,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:03:54Z",
+          "completed_at": "2026-08-31T00:03:55Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:03:55Z",
+          "completed_at": "2026-08-31T00:03:58Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:03:58Z",
+          "completed_at": "2026-08-31T00:04:38Z",
+          "duration_seconds": 40
+        },
+        {
+          "number": 4,
+          "name": "Bake rust-dylint",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:04:38Z",
+          "completed_at": "2026-08-31T00:05:42Z",
+          "duration_seconds": 64
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:05:42Z",
+          "completed_at": "2026-08-31T00:05:42Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:05:42Z",
+          "completed_at": "2026-08-31T00:05:42Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:05:42Z",
+          "completed_at": "2026-08-31T00:05:42Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 99343089367,
+      "name": "Extension e2e",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_name": "nook-k0s-container-dcgjf-runner-6zsfs",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s-container"
+      ],
+      "started_at": "2026-08-31T00:03:55Z",
+      "completed_at": "2026-08-31T00:14:31Z",
+      "duration_seconds": 636,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:03:57Z",
+          "completed_at": "2026-08-31T00:03:57Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 2,
+          "name": "Initialize containers",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-08-31T00:03:57Z",
+          "completed_at": "2026-08-31T00:14:27Z",
+          "duration_seconds": 630
+        },
+        {
+          "number": 3,
+          "name": "Extension e2e",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-08-31T00:14:27Z",
+          "completed_at": "2026-08-31T00:14:27Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 6,
+          "name": "Stop containers",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:14:27Z",
+          "completed_at": "2026-08-31T00:14:29Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 7,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:14:29Z",
+          "completed_at": "2026-08-31T00:14:29Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 99343089394,
+      "name": "UI demos",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_name": "nook-k0s-container-dcgjf-runner-jsw4c",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s-container"
+      ],
+      "started_at": "2026-08-31T00:03:56Z",
+      "completed_at": "2026-08-31T00:14:43Z",
+      "duration_seconds": 647,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:03:58Z",
+          "completed_at": "2026-08-31T00:04:03Z",
+          "duration_seconds": 5
+        },
+        {
+          "number": 2,
+          "name": "Initialize containers",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-08-31T00:04:03Z",
+          "completed_at": "2026-08-31T00:14:32Z",
+          "duration_seconds": 629
+        },
+        {
+          "number": 3,
+          "name": "Headless UI demos",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-08-31T00:14:32Z",
+          "completed_at": "2026-08-31T00:14:32Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 4,
+          "name": "Upload complete Main UI demo artifact",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-08-31T00:14:32Z",
+          "completed_at": "2026-08-31T00:14:33Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 5,
+          "name": "Publish largest Main UI demos to the merged PR issue",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-08-31T00:14:33Z",
+          "completed_at": "2026-08-31T00:14:33Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 10,
+          "name": "Stop containers",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:14:33Z",
+          "completed_at": "2026-08-31T00:14:35Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 11,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-08-31T00:14:35Z",
+          "completed_at": "2026-08-31T00:14:35Z",
+          "duration_seconds": 0
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
