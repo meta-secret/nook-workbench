@@ -44,8 +44,8 @@ finalize, and discard.
 
 ## Progress
 
-- The accepted commands head is `35fffbe4bb4e87ee3281e07a7b6df637dc93cd62`.
-- The commands slice measures 775 authored changed lines.
+- The accepted commands head is `2792e182264c86945c98023364d47e6ea266a83b`.
+- The commands slice measures 901 authored changed lines.
 
 ## Findings and decisions
 

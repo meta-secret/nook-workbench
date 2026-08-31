@@ -50,15 +50,15 @@ pattern from returning.
 - Public or cross-module interfaces: Canonical redacted receipt restoration and Team Plan journal and runner APIs.
 - Delivery shape: Multiple PRs
 - PR sequence mode: Stacked PRs
-- Current PR estimated authored changed lines: 1531
-- Current PR slice and acceptance evidence: Typed admission, trusted canonical receipt replay, and Cortex policy; Acceptance evidence: 89 module-delivery tests and 674 complete Loom tests pass.
+- Current PR estimated authored changed lines: 1552
+- Current PR slice and acceptance evidence: Typed admission, trusted canonical receipt replay, and Cortex policy; Acceptance evidence: 90 module-delivery tests and 675 complete Loom tests pass.
 - PR slices, estimates, and acceptance evidence:
-1. Gizmo ID: team-plan-admission; Gizmo name: Team Plan admission; Predecessor Gizmo ID: None; Typed admission and trusted canonical receipt replay; Estimated authored changed lines: 1531; Acceptance evidence: 89 module-delivery tests and 674 complete Loom tests pass.
+1. Gizmo ID: team-plan-admission; Gizmo name: Team Plan admission; Predecessor Gizmo ID: None; Typed admission and trusted canonical receipt replay; Estimated authored changed lines: 1552; Acceptance evidence: 90 module-delivery tests and 675 complete Loom tests pass.
 2. Gizmo ID: team-plan-journal; Gizmo name: Team Plan journal; Predecessor Gizmo ID: team-plan-admission; Durable bounded lifecycle journal; Estimated authored changed lines: 1995; Acceptance evidence: 680 complete Loom tests and pre-push pass.
-3. Gizmo ID: team-plan-journal-fixes; Gizmo name: Team Plan journal fixes; Predecessor Gizmo ID: team-plan-journal; Journal lifecycle and reachable Git hardening; Estimated authored changed lines: 950; Acceptance evidence: 687 complete Loom tests and pre-push pass.
+3. Gizmo ID: team-plan-journal-fixes; Gizmo name: Team Plan journal fixes; Predecessor Gizmo ID: team-plan-journal; Journal lifecycle and reachable Git hardening; Estimated authored changed lines: 1629; Acceptance evidence: 690 complete Loom tests and pre-push pass.
 4. Gizmo ID: team-plan-runner; Gizmo name: Team Plan runner; Predecessor Gizmo ID: team-plan-journal-fixes; Runtime engine, restart compatibility, and discard APIs; Estimated authored changed lines: 1884; Acceptance evidence: 690 complete Loom tests and pre-push pass.
-5. Gizmo ID: team-plan-runner-fixes; Gizmo name: Team Plan runner fixes; Predecessor Gizmo ID: team-plan-runner; Failed-run finalization, durable frontier retention, bounded plan reads, and run-bound discard; Estimated authored changed lines: 621; Acceptance evidence: 694 complete Loom tests and pre-push pass.
-6. Gizmo ID: team-plan-commands; Gizmo name: Team Plan commands; Predecessor Gizmo ID: team-plan-runner-fixes; CLI, Task, and canonical documentation wiring; Estimated authored changed lines: 775; Acceptance evidence: 697 complete Loom tests and pre-push pass.
+5. Gizmo ID: team-plan-runner-fixes; Gizmo name: Team Plan runner fixes; Predecessor Gizmo ID: team-plan-runner; Failed-run finalization, durable frontier retention, bounded plan reads, and run-bound discard; Estimated authored changed lines: 945; Acceptance evidence: 700 complete Loom tests and pre-push pass.
+6. Gizmo ID: team-plan-commands; Gizmo name: Team Plan commands; Predecessor Gizmo ID: team-plan-runner-fixes; CLI, Task, and canonical documentation wiring; Estimated authored changed lines: 901; Acceptance evidence: 703 complete Loom tests and pre-push pass.
 
 ## Initial plan
 
