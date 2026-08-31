@@ -73,6 +73,7 @@ model runner.
 - [ ] [Add the Team Plan journal](team-plan-journal.md)
 - [ ] [Fix Team Plan journal lifecycle edges](team-plan-journal-fixes.md)
 - [ ] [Add the Team Plan runner](team-plan-runner.md)
+- [ ] [Fix Team Plan runner recovery edges](team-plan-runner-fixes.md)
 - [ ] [Expose Team Plan commands](team-plan-commands.md)
 
 ## References

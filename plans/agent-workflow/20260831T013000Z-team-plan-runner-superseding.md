@@ -39,31 +39,33 @@ pattern from returning.
 - Mission controller: Gizmo Prime
 - Current Gizmo ID: team-plan-admission
 - Estimated authored changed lines: 4853
-- Owning modules, packages, or layers: Module-delivery admission, Team Plan journal, Team Plan journal fixes, Team Plan runner, and Team Plan commands.
+- Owning modules, packages, or layers: Module-delivery admission, Team Plan journal, Team Plan journal fixes, Team Plan runner, Team Plan runner fixes, and Team Plan commands.
 - Ownership units:
 1. Capability: Typed admission and trusted canonical receipt replay; Gizmo ID: team-plan-admission; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: Module-delivery tests and complete Loom verification pass without receipt key material.
 2. Capability: Durable Team Plan journal; Gizmo ID: team-plan-journal; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: Journal retry, lock, capacity, append, finalization, and discard tests pass.
 3. Capability: Team Plan journal lifecycle fixes; Gizmo ID: team-plan-journal-fixes; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: PID-namespace lock, temporary cleanup, execution-precedence, identifier, and fixed Git PATH tests pass.
 4. Capability: Team Plan runner; Gizmo ID: team-plan-runner; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: Runner restart, canonical receipt replay, and discard tests pass.
-5. Capability: Team Plan command exposure; Gizmo ID: team-plan-commands; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: CLI and Task command tests plus reachable source-policy checks pass.
+5. Capability: Team Plan runner recovery fixes; Gizmo ID: team-plan-runner-fixes; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: Failed-run finalization, durable frontier retention, bounded plan read, and run-bound discard tests pass.
+6. Capability: Team Plan command exposure; Gizmo ID: team-plan-commands; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: CLI and Task command tests plus reachable source-policy checks pass.
 - Public or cross-module interfaces: Canonical redacted receipt restoration and Team Plan journal and runner APIs.
 - Delivery shape: Multiple PRs
 - PR sequence mode: Stacked PRs
-- Current PR estimated authored changed lines: 1470
-- Current PR slice and acceptance evidence: Typed admission, trusted canonical receipt replay, and Cortex policy; Acceptance evidence: 88 module-delivery tests and 673 complete Loom tests pass.
+- Current PR estimated authored changed lines: 1531
+- Current PR slice and acceptance evidence: Typed admission, trusted canonical receipt replay, and Cortex policy; Acceptance evidence: 89 module-delivery tests and 674 complete Loom tests pass.
 - PR slices, estimates, and acceptance evidence:
-1. Gizmo ID: team-plan-admission; Gizmo name: Team Plan admission; Predecessor Gizmo ID: None; Typed admission and trusted canonical receipt replay; Estimated authored changed lines: 1470; Acceptance evidence: 88 module-delivery tests and 673 complete Loom tests pass.
+1. Gizmo ID: team-plan-admission; Gizmo name: Team Plan admission; Predecessor Gizmo ID: None; Typed admission and trusted canonical receipt replay; Estimated authored changed lines: 1531; Acceptance evidence: 89 module-delivery tests and 674 complete Loom tests pass.
 2. Gizmo ID: team-plan-journal; Gizmo name: Team Plan journal; Predecessor Gizmo ID: team-plan-admission; Durable bounded lifecycle journal; Estimated authored changed lines: 1995; Acceptance evidence: 680 complete Loom tests and pre-push pass.
-3. Gizmo ID: team-plan-journal-fixes; Gizmo name: Team Plan journal fixes; Predecessor Gizmo ID: team-plan-journal; Journal lifecycle and reachable Git hardening; Estimated authored changed lines: 191; Acceptance evidence: 684 complete Loom tests and pre-push pass.
+3. Gizmo ID: team-plan-journal-fixes; Gizmo name: Team Plan journal fixes; Predecessor Gizmo ID: team-plan-journal; Journal lifecycle and reachable Git hardening; Estimated authored changed lines: 759; Acceptance evidence: 687 complete Loom tests and pre-push pass.
 4. Gizmo ID: team-plan-runner; Gizmo name: Team Plan runner; Predecessor Gizmo ID: team-plan-journal-fixes; Runtime engine, restart compatibility, and discard APIs; Estimated authored changed lines: 1884; Acceptance evidence: 690 complete Loom tests and pre-push pass.
-5. Gizmo ID: team-plan-commands; Gizmo name: Team Plan commands; Predecessor Gizmo ID: team-plan-runner; CLI and Task wiring; Estimated authored changed lines: 520; Acceptance evidence: 692 complete Loom tests and pre-push pass.
+5. Gizmo ID: team-plan-runner-fixes; Gizmo name: Team Plan runner fixes; Predecessor Gizmo ID: team-plan-runner; Failed-run finalization, durable frontier retention, bounded plan reads, and run-bound discard; Estimated authored changed lines: 621; Acceptance evidence: 694 complete Loom tests and pre-push pass.
+6. Gizmo ID: team-plan-commands; Gizmo name: Team Plan commands; Predecessor Gizmo ID: team-plan-runner-fixes; CLI, Task, and canonical documentation wiring; Estimated authored changed lines: 775; Acceptance evidence: 697 complete Loom tests and pre-push pass.
 
 ## Initial plan
 
 1. Publish the corrected three-slice Workbench hierarchy.
 2. Integrate and validate admission, journal, and runner on exact predecessor
    commits.
-3. Replace the existing PR heads and register the native five-PR stack.
+3. Replace the existing PR heads and register the native six-PR stack.
 4. Resolve exact-head review and validation findings.
 5. Merge bottom-up, verify remote main, and close the lifecycle records.
 
@@ -73,7 +75,7 @@ pattern from returning.
   material.
 - Cortex explicitly prohibits project-internal receipt cryptography.
 - Each exact PR head is within budget and passes required checks.
-- All five PRs merge bottom-up and remote main contains the complete runner.
+- All six PRs merge bottom-up and remote main contains the complete runner.
 
 ## Safety review
 

@@ -47,8 +47,8 @@ lease, and Git-frontier state.
 
 ## Progress
 
-- The accepted local head is `46b74c0b10afa1b3298ecd90a4cd4b2416109769`.
-- The slice measures 1,470 authored additions plus deletions.
+- The accepted local head is `efbf18c8884e05571e4f76c842c4985f01a00c1b`.
+- The slice measures 1,531 authored additions plus deletions.
 
 ## Findings and decisions
 

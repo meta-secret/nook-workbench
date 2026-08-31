@@ -44,8 +44,8 @@ precedence, PID namespaces, partial writes, and reachable Git execution.
 
 ## Progress
 
-- The accepted successor head is `31e7be4d056071a98e8e47a1d272ecd58ce84e03`.
-- The slice measures 191 authored additions plus deletions.
+- The accepted successor head is `8b6e9e0493a62b83d04aba813fdcc8c5116e9200`.
+- The slice measures 759 authored additions plus deletions.
 
 ## Findings and decisions
 

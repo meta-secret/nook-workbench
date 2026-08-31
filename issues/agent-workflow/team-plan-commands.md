@@ -6,12 +6,12 @@ automation: manual
 owner: cypherkitty
 gizmo_id: team-plan-commands
 stack_branch: codex/team-plan-runner-commands
-stack_predecessor_branch: codex/team-plan-runner-runtime
+stack_predecessor_branch: codex/team-plan-runner-fixes
 created_at: 2026-08-31T01:50:00Z
 updated_at: 2026-08-31T01:50:00Z
 source_issues: []
 related_prs: []
-depends_on: [team-plan-runner.md]
+depends_on: [team-plan-runner-fixes.md]
 ---
 
 # Expose Team Plan commands
@@ -44,8 +44,8 @@ finalize, and discard.
 
 ## Progress
 
-- The accepted commands head is `c17b74c8951334b5b536bc31d7afcdc619124126`.
-- The commands slice measures 520 authored changed lines.
+- The accepted commands head is `32cd61d5ee32c10700c9983a06c4606b3a064d65`.
+- The commands slice measures 775 authored changed lines.
 
 ## Findings and decisions
 
@@ -60,5 +60,6 @@ finalize, and discard.
 - [Team Plan journal](team-plan-journal.md)
 - [Team Plan journal fixes](team-plan-journal-fixes.md)
 - [Team Plan runner](team-plan-runner.md)
+- [Team Plan runner fixes](team-plan-runner-fixes.md)
 - [Superseding plan](../../plans/agent-workflow/20260831T013000Z-team-plan-runner-superseding.md)
 - [Nook PR #1249](https://github.com/meta-secret/nook/pull/1249)
