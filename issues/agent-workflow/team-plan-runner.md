@@ -51,7 +51,7 @@ lifecycle.
 - [x] Raw worker evidence is absent from the journal and pinned receipt.
 - [x] The active harness remains the sole native worker lifecycle owner.
 - [x] Finalized runs expose explicit durable discard.
-- [ ] The runner slice remains below 2,000 authored changed lines.
+- [x] The runner slice remains below 2,000 authored changed lines.
 - [ ] PR #1241 passes exact-head hosted review and validation.
 
 ## Progress
@@ -60,7 +60,8 @@ lifecycle.
   runner are separate cohesive ownership boundaries.
 - Historical published heads were PR #1239 at `3f7f3e65b66e05fb9a6a74481227c708c33597ed`
   and PR #1241 at `8094bad1c85ad66d03c5f850cc3c295901159584`.
-- The new runtime head is being reconstructed on the accepted journal slice.
+- The accepted runner head is `9781ebc96c8ff4139e2f069ddb648f3419ed3c0a`.
+- The slice measures 1,872 authored additions plus deletions.
 
 ## Authorization
 

@@ -44,8 +44,8 @@ finalization, and discard after process failure.
 
 ## Progress
 
-- The accepted journal-core head is `172741e04`.
-- The slice measures 1,960 authored additions plus deletions.
+- The accepted journal head is `76017bd903bbf43b2d3c6117cee1602c32d75561`.
+- The slice measures 1,982 authored additions plus deletions.
 
 ## Findings and decisions
 

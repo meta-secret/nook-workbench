@@ -43,18 +43,18 @@ pattern from returning.
 - Ownership units:
 1. Capability: Typed admission and trusted canonical receipt replay; Gizmo ID: team-plan-admission; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: Module-delivery tests and complete Loom verification pass without receipt key material.
 2. Capability: Durable Team Plan journal; Gizmo ID: team-plan-journal; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: Journal retry, lock, capacity, append, finalization, and discard tests pass.
-3. Capability: Team Plan runner and commands; Gizmo ID: team-plan-runner; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: Runner restart, canonical receipt replay, command, and discard tests pass.
+3. Capability: Team Plan runner; Gizmo ID: team-plan-runner; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: Runner restart, canonical receipt replay, and discard tests pass.
 4. Capability: Team Plan command exposure; Gizmo ID: team-plan-commands; Functional owner: AI; Expertise provider: None; Expertise allowed code paths: None; Expertise allowed test paths: None; Expertise forbidden paths: None; Expertise consumer interfaces: None; Expertise acceptance evidence: None; Capability acceptance evidence: CLI and Task command tests plus reachable source-policy checks pass.
 - Public or cross-module interfaces: Canonical redacted receipt restoration and Team Plan journal and runner APIs.
 - Delivery shape: Multiple PRs
 - PR sequence mode: Stacked PRs
-- Current PR estimated authored changed lines: 864
-- Current PR slice and acceptance evidence: Typed admission, trusted canonical receipt replay, and Cortex policy; Acceptance evidence: 78 module-delivery tests and 663 complete Loom tests pass.
+- Current PR estimated authored changed lines: 1155
+- Current PR slice and acceptance evidence: Typed admission, trusted canonical receipt replay, and Cortex policy; Acceptance evidence: 83 module-delivery tests and 668 complete Loom tests pass.
 - PR slices, estimates, and acceptance evidence:
-1. Gizmo ID: team-plan-admission; Gizmo name: Team Plan admission; Predecessor Gizmo ID: None; Typed admission and trusted canonical receipt replay; Estimated authored changed lines: 864; Acceptance evidence: Module-delivery and complete Loom verification pass.
-2. Gizmo ID: team-plan-journal; Gizmo name: Team Plan journal; Predecessor Gizmo ID: team-plan-admission; Durable bounded lifecycle journal; Estimated authored changed lines: 1960; Acceptance evidence: Focused journal tests and TypeScript gates pass.
-3. Gizmo ID: team-plan-runner; Gizmo name: Team Plan runner; Predecessor Gizmo ID: team-plan-journal; Runtime engine, restart compatibility, and discard APIs; Estimated authored changed lines: 1734; Acceptance evidence: Focused runtime tests and TypeScript gates pass.
-4. Gizmo ID: team-plan-commands; Gizmo name: Team Plan commands; Predecessor Gizmo ID: team-plan-runner; CLI, Task wiring, and reachable source-policy fixes; Estimated authored changed lines: 295; Acceptance evidence: Command tests, complete Loom verification, and exact-head hosted checks pass.
+1. Gizmo ID: team-plan-admission; Gizmo name: Team Plan admission; Predecessor Gizmo ID: None; Typed admission and trusted canonical receipt replay; Estimated authored changed lines: 1155; Acceptance evidence: 83 module-delivery tests and 668 complete Loom tests pass.
+2. Gizmo ID: team-plan-journal; Gizmo name: Team Plan journal; Predecessor Gizmo ID: team-plan-admission; Durable bounded lifecycle journal; Estimated authored changed lines: 1982; Acceptance evidence: 677 complete Loom tests and the hosted source-policy gate pass.
+3. Gizmo ID: team-plan-runner; Gizmo name: Team Plan runner; Predecessor Gizmo ID: team-plan-journal; Runtime engine, restart compatibility, and discard APIs; Estimated authored changed lines: 1872; Acceptance evidence: 683 complete Loom tests and pre-push pass.
+4. Gizmo ID: team-plan-commands; Gizmo name: Team Plan commands; Predecessor Gizmo ID: team-plan-runner; CLI and Task wiring; Estimated authored changed lines: 265; Acceptance evidence: 684 complete Loom tests and pre-push pass.
 
 ## Initial plan
 

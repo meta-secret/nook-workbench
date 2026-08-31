@@ -39,14 +39,13 @@ finalize, and discard.
 - [x] Finalized discard is available through Task and CLI.
 - [x] Reachable Git and process probes use fixed environment keys and static
   executable paths.
-- [ ] Focused command tests and complete Loom verification pass.
+- [x] Focused command tests and complete Loom verification pass.
 - [ ] The commands PR passes exact-head hosted review and validation.
 
 ## Progress
 
-- The accepted complete provider snapshot is being split at the command
-  boundary.
-- The commands slice is estimated at 295 authored changed lines.
+- The accepted commands head is `51d67bd3abfb656be0ef750175e4089d007fe1ad`.
+- The commands slice measures 265 authored changed lines.
 
 ## Findings and decisions
 
@@ -61,3 +60,4 @@ finalize, and discard.
 - [Team Plan journal](team-plan-journal.md)
 - [Team Plan runner](team-plan-runner.md)
 - [Superseding plan](../../plans/agent-workflow/20260831T013000Z-team-plan-runner-superseding.md)
+- [Nook PR #1249](https://github.com/meta-secret/nook/pull/1249)
