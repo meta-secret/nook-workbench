@@ -1,11 +1,11 @@
 ---
 title: Move Cortex document-map mechanics to its skill
-status: ready
+status: in_progress
 priority: p2
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-23T06:27:05Z
+updated_at: 2026-08-31T00:55:35Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -39,6 +39,9 @@ and tests while Loom retains generic invocation and audit aggregation.
 ## Progress
 
 - Depends on the authoring and catalog slice.
+- 2026-08-31: Claimed for the owner-local executable application slice after
+  confirming the dependency is done and the scope is disjoint from the active
+  Team Plan stack.
 
 ## Findings and decisions
 
