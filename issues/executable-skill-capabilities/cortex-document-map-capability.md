@@ -1,13 +1,14 @@
 ---
 title: Move Cortex document-map mechanics to its skill
-status: in_progress
+status: done
 priority: p2
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-23T06:27:05Z
-updated_at: 2026-08-31T01:41:57Z
+updated_at: 2026-08-31T16:48:08Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1246
 depends_on:
   - issues/executable-skill-capabilities/skill-authoring-and-catalog.md
 ---
@@ -35,11 +36,11 @@ reviewed activation issue integrates the provider.
 
 ## Acceptance criteria
 
-- [ ] Exact current findings and migration behavior are proven by provider
+- [x] Exact current findings and migration behavior are proven by provider
       tests, including transient and invalid-syntax topology cases.
-- [ ] The regular Bun and TypeScript project has strict request/result codecs,
+- [x] The regular Bun and TypeScript project has strict request/result codecs,
       independent semantic verification, and adversarial tamper coverage.
-- [ ] The provider remains inactive until its stacked activation issue.
+- [x] The provider remains inactive until its stacked activation issue.
 
 ## Progress
 
@@ -50,6 +51,9 @@ reviewed activation issue integrates the provider.
 - 2026-08-31: Independent review proved complete verification would exceed the
   2,000-line PR limit if combined with activation. The work is now a native
   two-PR stack: provider foundation, then verified activation and Loom removal.
+- 2026-08-31: PR [#1246](https://github.com/meta-secret/nook/pull/1246)
+  merged the owner-local provider foundation after exact-head local, hosted, and
+  independent review evidence passed.
 
 ## Findings and decisions
 
