@@ -1,14 +1,14 @@
 ---
 title: Disable headless UI demos in GitHub Actions
-status: in_progress
+status: done
 priority: p2
 automation: manual
 owner: codex
 gizmo_id: disable-headless-ui-demos
 created_at: 2026-09-02T04:25:35Z
-updated_at: 2026-09-02T04:25:35Z
+updated_at: 2026-09-02T07:03:42Z
 source_issues: []
-related_prs: []
+related_prs: [1287]
 depends_on: []
 ---
 
@@ -34,14 +34,19 @@ jobs while retaining their workflow bodies for a later re-enable.
 
 ## Acceptance criteria
 
-- [ ] PR and Main workflow jobs cannot execute headless UI demos.
-- [ ] Trusted UI-demo publishing jobs remain present but cannot execute.
-- [ ] Rust, WASM, Node, web, preview, and browser-regression gates retain their existing requirements.
-- [ ] Workflow syntax, repository topology checks, exact-head validation, and readiness pass.
+- [x] PR and Main workflow jobs cannot execute headless UI demos.
+- [x] Trusted UI-demo publishing jobs remain present but cannot execute.
+- [x] Rust, WASM, Node, web, preview, and browser-regression gates retain their existing requirements.
+- [x] Workflow syntax, repository topology checks, exact-head validation, and readiness pass.
 
 ## Progress
 
 - 2026-09-02: Started the bounded workflow-only repair.
+- 2026-09-02: [Nook PR 1287](https://github.com/meta-secret/nook/pull/1287)
+  passed exact-head validation and readiness, then squash-merged as
+  `e68921b67987162af5693506b1806a08ea00546d`.
+- 2026-09-02: Published the post-merge
+  [agent statistics](https://github.com/meta-secret/nook-workbench/blob/main/stats/ai-agent/1287.yaml).
 
 ## Findings and decisions
 
@@ -51,3 +56,5 @@ jobs while retaining their workflow bodies for a later re-enable.
 ## References
 
 - [Nook repository](https://github.com/meta-secret/nook)
+- [Superseding delivery plan](../../plans/unplanned/20260902T045112Z-disable-headless-ui-demos-superseding.md)
+- [Completion worklog](../../worklogs/unplanned/20260902T070342Z-pr-1287-disable-headless-ui-demos.md)
