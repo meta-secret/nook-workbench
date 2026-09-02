@@ -1,11 +1,11 @@
 ---
 title: "Define contextual Pilot authentication actionability in Rust and WASM"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-29T19:54:48Z
+updated_at: 2026-09-02T16:44:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1087", "https://github.com/meta-secret/nook/pull/1096", "https://github.com/meta-secret/nook/pull/1097", "https://github.com/meta-secret/nook/pull/1202", "https://github.com/meta-secret/nook/pull/1203", "https://github.com/meta-secret/nook/pull/1204", "https://github.com/meta-secret/nook/pull/1205", "https://github.com/meta-secret/nook/pull/1206", "https://github.com/meta-secret/nook/pull/1207", "https://github.com/meta-secret/nook/pull/1209", "https://github.com/meta-secret/nook/pull/1211", "https://github.com/meta-secret/nook/pull/1212", "https://github.com/meta-secret/nook/pull/1213", "https://github.com/meta-secret/nook/pull/1214", "https://github.com/meta-secret/nook/pull/1215", "https://github.com/meta-secret/nook/pull/1216", "https://github.com/meta-secret/nook/pull/1217", "https://github.com/meta-secret/nook/pull/1218", "https://github.com/meta-secret/nook/pull/1219", "https://github.com/meta-secret/nook/pull/1221"]
 depends_on: []
@@ -38,11 +38,11 @@ typed decisions without adding web policy.
 
 ## Acceptance criteria
 
-- [ ] Authentication actionability, workflow policy, and semantic approval requirement are Rust-owned and behavior-tested.
-- [ ] WASM adapters expose concrete typed observations and decisions.
-- [ ] Localized, destructive, recovery, OTP, password-only, and password-update
+- [x] Authentication actionability, workflow policy, and semantic approval requirement are Rust-owned and behavior-tested.
+- [x] WASM adapters expose concrete typed observations and decisions.
+- [x] Localized, destructive, recovery, OTP, password-only, and password-update
   cases have focused Rust regressions.
-- [ ] Companion-core and both changed WASM boundary checks pass.
+- [x] Companion-core and both changed WASM boundary checks pass.
 
 ## Progress
 
@@ -59,6 +59,7 @@ typed decisions without adding web policy.
 - 2026-08-29: The active stack is #1218 -> #1219 -> #1205 -> #1206 -> #1207 -> #1209 -> #1211 -> #1212 -> #1213 -> #1214 -> #1215 -> #1216 -> #1217 -> #1221. Exact-head review and GitHub Actions run remotely in parallel; local validation is limited to formatting and diff sanity.
 - 2026-08-29: PR #1218 head `67f6b0f4ef46a757450a7de64c0c172721f0fb2d` fixes the shared native/WASM Clippy failure and has fresh exact-head review and Actions running. Review-fixed heads for #1211 (`16894bb7f92be745c5d8527549e168e4753bcaa3`), #1212 (`772adbb0b987870267bfd342fc8fb7fcef343539`), and #1213 (`e0b03c96461e80775d8fdbc5f51cf195c76ec567`) are pushed with their addressed threads resolved.
 - 2026-08-29: Review remediation is committed locally for #1214, #1215, and #1217. Upper-stack relinking paused safely during the #1214 rebase onto #1213; it must be completed before those heads are pushed. Delivery remains in progress and must merge bottom-up, retargeting and shrinking descendants after each squash merge.
+- 2026-09-02: The accepted Rust/WASM policy, runtime, and execution boundaries are merged through PRs #1202-#1207 and #1209. Picker invalidation, passkey validation, and trusted observation follow-ups are merged in #1211, #1213, and #1214. The obsolete staged-enrollment successors were closed after direct-save PR #1301 merged.
 
 ## Findings and decisions
 

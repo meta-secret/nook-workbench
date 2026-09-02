@@ -1,8 +1,8 @@
 ---
 title: "Feature: Nook Pilot authentication control plane"
-status: in_progress
+status: done
 created_at: 2026-07-25T23:56:27Z
-updated_at: 2026-08-25T00:55:00Z
+updated_at: 2026-09-02T16:44:00Z
 ---
 
 # Feature: Nook Pilot authentication control plane
@@ -16,9 +16,9 @@ Workbench issue contract.
 
 ## Issues
 
-- [ ] [Contextual HUD Rust/WASM policy](contextual-hud-rust-wasm-policy.md)
-- [ ] [Contextual HUD shared DOM observation](contextual-hud-dom-observation.md)
-- [ ] [Contextual HUD extension presentation](contextual-hud-extension-presentation.md)
+- [x] [Contextual HUD Rust/WASM policy](contextual-hud-rust-wasm-policy.md)
+- [x] [Contextual HUD shared DOM observation](contextual-hud-dom-observation.md)
+- [x] [Contextual HUD extension presentation](contextual-hud-extension-presentation.md)
 
 - [x] [#239: Add 2FA/TOTP secrets and login-time code autofill](gh-239-add-2fa-totp-secrets-and-login-time-code-autofill.md)
 - [x] [#461: Epic: Nook Pilot authentication control plane](gh-461-epic-nook-pilot-authentication-control-plane.md)

@@ -1,11 +1,11 @@
 ---
 title: "Keep Nook Pilot compact and action-first"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T23:17:00Z
+updated_at: 2026-09-02T16:44:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1097"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-dom-observation.md"]
@@ -44,9 +44,11 @@ Pilot stays absent without a safe authentication action. Login flows stay compac
 - [x] Focused extension unit, lint, TypeScript, Svelte, browser, and pre-push checks pass.
 - [x] Lock cleanup scrubs in-memory picker state before fallible session-storage access.
 - [x] Pilot remounts and remains actionable after the host page removes its mounted element.
-- [ ] Hosted Playwright and PR validation pass on the updated exact head.
+- [x] Hosted Playwright and PR validation pass on the updated exact head.
 
 ## Progress
+
+- 2026-09-02: The combined identity and vault toolbar presentation merged in PR #1212. Trusted observation and passkey follow-ups merged in #1213 and #1214. Direct authenticator persistence merged in #1301 with exact-head hosted validation. PRs #1097, #1215, #1216, #1217, and #1221 were closed because their remaining history duplicated merged successors or preserved rejected lifecycle behavior.
 
 - 2026-08-25: User screenshot review found that the toolbar popup still lacked a clear visual purpose. The follow-up removes hero-scale copy and redundant controls. It keeps only compact connection context and the action that changes the current state.
 - 2026-08-25: PR #1097 was split as slice 3 of 3, merged current main `6e54dfbadd2b8a41090ac96bbe946d7c994781c9`, and reached exact head `70efcdb7aab4cf510ae61b5da33993773ab2c130`. The extension package passes 246 tests, lint, TypeScript, Svelte, formatting, Cortex-session hygiene, architecture guards, and mandatory pre-push hygiene.

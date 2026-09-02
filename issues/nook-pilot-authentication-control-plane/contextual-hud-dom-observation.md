@@ -1,11 +1,11 @@
 ---
 title: "Observe and actuate scoped authentication controls in shared web code"
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-08-24T15:04:00Z
-updated_at: 2026-08-25T00:55:00Z
+updated_at: 2026-09-02T16:44:00Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1096"]
 depends_on: ["issues/nook-pilot-authentication-control-plane/contextual-hud-rust-wasm-policy.md"]
@@ -37,13 +37,13 @@ page controls, and submit only the accepted local ceremony control.
 
 ## Acceptance criteria
 
-- [ ] DOM observations match the typed Rust/WASM interface from the first slice.
-- [ ] Hidden, clipped, covered, disabled, recovery, localized, form-less, and
+- [x] DOM observations match the typed Rust/WASM interface from the first slice.
+- [x] Hidden, clipped, covered, disabled, recovery, localized, form-less, and
   scoped-submit cases have focused browser regressions.
-- [ ] Page actuation cannot escape the accepted form or local container.
-- [ ] Generic unowned controls cannot become authentication actions from nearby field evidence.
-- [ ] Shared web formatting, type, lint, and focused unit checks pass.
-- [ ] The updated Nook Pilot UI demo proves the changed authentication-control
+- [x] Page actuation cannot escape the accepted form or local container.
+- [x] Generic unowned controls cannot become authentication actions from nearby field evidence.
+- [x] Shared web formatting, type, lint, and focused unit checks pass.
+- [x] The updated Nook Pilot UI demo proves the changed authentication-control
   boundary through the rendered browser contract.
 
 ## Progress
@@ -52,6 +52,7 @@ page controls, and submit only the accepted local ceremony control.
   `33873f1871eb70f4c17f9e7b84c06650613585d2`. Its localized-control regressions preserve the Rust-selected control for
   scoped browser actuation, normalize root submissions to the owning form, and
   reject generic fallback controls. The five owning DOM suites pass 103 of 103 tests against freshly rebuilt companion WASM, including reset-password, OTP resend, scoped localized-control, and unowned-control regressions. The owning demo and Chrome stub carry the required Rust approval field. The extension observation-scheduling test moves to PR #1097 with its implementation.
+- 2026-09-02: The bounded observation provider merged in #1205, with runtime integration in #1206 and trusted mutation/revalidation coverage in #1207 and #1214. Current main contains the accepted DOM boundary and its hosted validation evidence.
 
 ## Findings and decisions
 
