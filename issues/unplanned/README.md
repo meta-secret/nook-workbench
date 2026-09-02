@@ -31,7 +31,7 @@ record exists.
 - [x] [Remove Redis from hosted Rust builds](remove-redis-from-hosted-rust-builds.md)
 - [x] [Add persistent URLs to vault application pages](persistent-vault-page-urls.md)
 - [ ] [Resolve open Dependabot security alerts](resolve-dependabot-security-alerts.md)
-- [ ] [Disable headless UI demos in GitHub Actions](disable-headless-ui-demos.md)
+- [x] [Disable headless UI demos in GitHub Actions](disable-headless-ui-demos.md)
 
 ## References
 
