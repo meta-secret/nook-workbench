@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: disable-headless-ui-demos
 created_at: 2026-09-02T04:25:35Z
-updated_at: 2026-09-02T07:03:42Z
+updated_at: 2026-09-02T07:05:00Z
 source_issues: []
 related_prs: [1287]
 depends_on: []
@@ -29,7 +29,8 @@ jobs while retaining their workflow bodies for a later re-enable.
 
 - Disable the PR and Main UI-demo jobs.
 - Keep the PR preview gate green when the intentionally disabled demo job skips.
-- Disable the trusted UI-demo publish and close jobs.
+- Disable new trusted UI-demo publication while retaining close cleanup for
+  previously published issues.
 - Exclude demo scripts, specs, task definitions, and product behavior.
 
 ## Acceptance criteria
@@ -51,7 +52,8 @@ jobs while retaining their workflow bodies for a later re-enable.
 ## Findings and decisions
 
 - Preserve the dormant implementation rather than deleting demo tasks, scripts, or specifications.
-- Treat an intentionally skipped demo job as success only in the PR aggregation step; retain fail-closed handling for every non-demo dependency.
+- Keep PR readiness structurally independent of the skipped demo job; do not
+  rewrite a skipped or failed demo result to success.
 
 ## References
 
