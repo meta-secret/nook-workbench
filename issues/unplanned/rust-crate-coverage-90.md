@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-04T22:00:46Z
+updated_at: 2026-09-04T22:42:15Z
 source_issues: []
-related_prs: []
+related_prs: [1349]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -24,7 +24,8 @@ The first authorized iterative slice raises Lace from 86.48 percent to an indepe
 
 ## Scope
 
-- Add behavior-focused retry and dependency-chain tests for Lace.
+- Add behavior-focused generator tests for nested contracts, retry settings, payload defaults, and invalid inputs in Lace.
+- Configure an explicit 60-second instrumented browser-suite timeout and assert its policy contract after hosted failures proved the default 20-second limit insufficient.
 - Raise the Lace registry floor only after hosted measurement proves at least 90 percent.
 - Preserve the `nook-fuzz` non-testable harness and vendored `arrayref` as the only explicit exclusions.
 - Exclude other crate floors, product behavior changes, aggregate masking, local Rust builds, and any new coverage exemption from this slice.
@@ -32,7 +33,7 @@ The first authorized iterative slice raises Lace from 86.48 percent to an indepe
 ## Acceptance criteria
 
 - [ ] Lace independently reaches at least 90 percent line coverage.
-- [ ] Added tests assert meaningful retry or dependency-chain behavior and do not exist only to execute lines.
+- [ ] Added tests assert meaningful generator output and error behavior and do not exist only to execute lines.
 - [ ] The Lace floor is raised from 75 percent to 90 percent only with matching hosted evidence.
 - [ ] One Nook pull request stays at or below 2,000 authored additions and passes exact-head hosted validation, review, readiness, and merge.
 
@@ -40,15 +41,15 @@ The first authorized iterative slice raises Lace from 86.48 percent to an indepe
 
 - Merged exact-head reports measure `nook-wasm` at 51.42 percent across 229 declared tests and `nook-companion-wasm` at 27.55 percent across eight tests.
 - Hive measures 73.73 percent, Lace 86.48 percent, and authenticator-domain 87.93 percent.
-- No successor branch, implementation commit, or pull request was created because admission failed the repository size constraint before implementation.
-- The user explicitly authorized an iterative pull-request sequence on 2026-09-04. The first independently deliverable slice is Lace because only twelve additional production lines need coverage.
+- The initial admission assessment preceded implementation; the user explicitly authorized an iterative pull-request sequence on 2026-09-04, superseding that blocker.
+- Pull request 1349 adds two Lace generator tests and raises its floor to 90 percent. Hosted coverage measured 94.49 percent; all checks passed on head f05d4c51d before Main advanced. The current merged-base head is undergoing fresh validation.
+- The complete authored diff is 67 additions. Browser-runner failures were diagnosed as a 20-second whole-suite timeout, not an external ChromeDriver kill; both browser validation paths passed with the explicit 60-second limit.
 
 ## Findings and decisions
 
-- Reaching 90 percent requires at least 10,769 newly executed `nook-wasm` lines, 807 `nook-companion-wasm` lines, 1,514 Hive lines, 12 Lace lines, and three authenticator-domain lines: 13,105 production lines in total.
-- The same reports require coverage of roughly 2,330 additional currently unexecuted functions across the five deficit crates.
-- A behavior-test implementation is estimated at 4,500 to 7,500 authored additions. The repository permits at most 2,000 additions and prohibits automatic splitting, stacking, or a size-driven successor sequence.
-- Do not create a nominal pull request, weaken a floor, or add exclusions to manufacture compliance. A new explicit delivery-shape decision is required before implementation can start.
+- Earlier budget estimates were planning hypotheses, not evidence that 90 percent is impossible. Instrumented line totals must not be described as exclusively production code without verifying the report's source classification.
+- The user-authorized serial delivery shape permits focused iterations while preserving the 2,000-authored-addition limit per pull request.
+- Do not weaken floors, add exclusions, or use assertion-free tests to manufacture compliance.
 - The iterative authorization resolves the delivery-shape blocker. Each crate slice receives its own one-PR plan and must merge before the next slice begins.
 
 ## References
