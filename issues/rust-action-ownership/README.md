@@ -7,7 +7,8 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 ## Focused deliverables
 
 - [Architecture and lint foundation](foundation.md): policy, compiler diagnostics, and fixture evidence.
-- [Incremental domain adoption](domain-adoption.md): migrate one cohesive domain at a time after foundation delivery.
+- [Incremental domain adoption](domain-adoption.md): complete coverage inventory and domain sequence.
+- [Credential-fill ownership](credential-fill.md): first product module enforcement and consumer migration.
 
 ## Shared decisions and interfaces
 
