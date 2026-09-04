@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-extension-pairing
 created_at: 2026-09-04T21:17:00Z
-updated_at: 2026-09-04T21:17:00Z
+updated_at: 2026-09-04T21:30:00Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -41,6 +41,8 @@ Existing pairing creation, refresh, storage conversion, JSON validation, legacy 
 ## Progress
 
 - 2026-09-04: Read-only inventory selected five files and a 900-addition budget. Implementation has not started.
+
+- 2026-09-04: Five-file implementation committed at 9ff7215, with 445 additions and 20 tests retained. Pre-publication review found two incorrectly renamed instance calls in tests, plus selection-mode and JSON-validation booleans needing named domain representations. Repair remains within this scope and budget; branch is not published.
 
 ## Findings and decisions
 
