@@ -1,0 +1,53 @@
+---
+title: Own extension pairing and persistence operations
+status: in_progress
+priority: p1
+automation: manual
+owner: cypherkitty
+gizmo_id: rust-action-ownership-extension-pairing
+created_at: 2026-09-04T21:17:00Z
+updated_at: 2026-09-04T21:17:00Z
+source_issues: []
+related_prs: []
+depends_on:
+  - issues/rust-action-ownership/foundation.md
+---
+
+# Own extension pairing and persistence operations
+
+## Context
+
+The [project migration](README.md) next adopts the complete companion pairing-state and persistence classification domain.
+
+## Outcome
+
+Existing pairing creation, refresh, storage conversion, JSON validation, legacy decoding, and persistence classification belong to meaningful existing types. Module ownership enforcement rejects unowned helpers.
+
+## Scope
+
+- Migrate 13 production functions and six fixture helpers across the pairing, existing legacy, and persistence modules.
+- Update core reexports and nine companion WASM delegations without changing browser exports.
+- Preserve all existing legacy handling; add no new migration or recovery path.
+- Keep browser-supplied access observations distinct from verified authorization; do not add artificial typestates to data transformations.
+
+## Acceptance criteria
+
+- [ ] All domain operations and fixture helpers have meaningful owners; both ownership lints are enabled.
+- [ ] All 20 existing core tests and host pairing-grant behavior remain intact and pass hosted checks.
+- [ ] Old free APIs and their reexports are removed with all consumers migrated.
+- [ ] WASM export signatures, serialization, error precedence, and legacy behavior remain unchanged.
+- [ ] Exact-head validation and review pass before squash merge.
+
+## Progress
+
+- 2026-09-04: Read-only inventory selected five files and a 900-addition budget. Implementation has not started.
+
+## Findings and decisions
+
+- PR 1344 touches the two shared root files only to remove Clippy lint attributes; exact diff inspection found no overlap with pairing reexports or delegate bodies. Its lint-policy changes and external task state remain untouched.
+- JSON validation is structural validation, not proof of cryptographic authorization.
+
+## References
+
+- [Pairing state](https://github.com/meta-secret/nook/blob/main/nook-app/nook-platform/nook-companion-core/src/extension_pairing_state.rs)
+- [Domain inventory](domain-adoption.md)
