@@ -6,9 +6,9 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-credential-fill
 created_at: 2026-09-04T20:42:00Z
-updated_at: 2026-09-04T20:42:00Z
+updated_at: 2026-09-04T20:48:00Z
 source_issues: []
-related_prs: []
+related_prs: [1342]
 depends_on:
   - issues/rust-action-ownership/foundation.md
 ---
@@ -40,6 +40,8 @@ Credential-fill planning, classification, and test construction have meaningful 
 ## Progress
 
 - 2026-09-04: Selected this domain after checking active PR ownership; no implementation started.
+
+- 2026-09-04: [PR 1342](https://github.com/meta-secret/nook/pull/1342) opened; three-file ownership migration committed, all 31 existing test names preserved, hosted validation and exact-head review dispatched.
 
 ## Findings and decisions
 
