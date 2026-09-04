@@ -10,6 +10,7 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 - [Incremental domain adoption](domain-adoption.md): complete coverage inventory and domain sequence.
 - [Credential-fill ownership](credential-fill.md): merged in PR 1342.
 - [Account-picker phase ownership](account-picker.md): private phase types and hosted compile-fail tests in PR 1345.
+- [Extension pairing and persistence](extension-pairing.md): domain operation ownership and unchanged browser contracts.
 
 ## Shared decisions and interfaces
 
