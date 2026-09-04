@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-account-picker
 created_at: 2026-09-04T20:51:00Z
-updated_at: 2026-09-04T21:27:00Z
+updated_at: 2026-09-04T22:01:45.936Z
 source_issues: []
 related_prs: [1345]
 depends_on:
@@ -48,6 +48,8 @@ Active and cleaning authorization states carry only their phase-specific data an
 - 2026-09-04: [PR 1345](https://github.com/meta-secret/nook/pull/1345) opened after security review; hosted native validation now executes the four actual-source contract examples. Validation is running.
 
 - 2026-09-04: Accepted four review findings: explicit doctest panic, anonymous boolean evidence, reusable cleaning capability, and stale-epoch/pending conflation. Superseding [consuming transition plan](../../plans/rust-action-ownership/2026-09-04T21-26-00Z-account-picker-consuming.md) expands the bounded ABI/adapter repair; prior design remains in its immutable start plan.
+
+- 2026-09-04: Replacement-head review identified discarded typed completion outcomes and remaining boolean evidence at browser callers. WEB and SECURITY agreed to expose typed outcomes, use generated evidence, reject lock/startup cleanup through existing failure paths, and preserve a successful import while skipping refresh after rejected cleanup. Superseding plan: [caller outcomes](https://github.com/meta-secret/nook-workbench/blob/4982ee445932a91d3da77685b7e78c9a2f9144b5/plans/rust-action-ownership/2026-09-04T21-52-00Z-account-picker-outcomes.md). Eleven files remain within the 1100-addition plan; repair is underway.
 
 ## Findings and decisions
 
