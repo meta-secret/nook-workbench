@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-09-04T19:33:00Z
-updated_at: 2026-09-04T20:44:00Z
+updated_at: 2026-09-04T22:57:10Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -30,7 +30,7 @@ Migrate cohesive domain action flows independently, giving each state its availa
 
 ## Acceptance criteria
 
-- [ ] First selected domain and consumer boundary documented before edits.
+- [x] First selected domain and consumer boundary documented before edits.
 - [ ] Valid transition behavior covered by Rust tests.
 - [ ] Invalid action ordering and advanced-state construction rejected by compile-fail tests.
 - [ ] Dylint activated for the migrated scope with no blanket suppression.
@@ -56,14 +56,14 @@ Initial inventory at Nook commit `b2bc663c0ed6d963f3ce13461731a5887dfafa3b` cove
 
 | Package | Rust files | Function candidates | Adoption status |
 |---|---:|---:|---|
-| nook-core | 109 | 526 | Pending; auth/vault overlaps active PR 1335 |
-| nook-auth2 | 43 | 245 | Pending; active PR 1335 overlap |
+| nook-core | 109 | 526 | Sentinel response adapters validating in PR 1348; remaining domains pending |
+| nook-auth2 | 43 | 245 | Checked participant response validating in PR 1348; quorum lifecycle inventoried next |
 | nook-authenticator-domain | 1 | 0 | Existing method ownership; construction review pending |
 | nook-replication | 3 | 1 | Pending |
 | nook-event-log | 14 | 41 | Pending |
-| nook-companion-core | 52 | 169 | Credential-fill merged; account-picker validating |
+| nook-companion-core | 52 | 169 | Credential-fill merged; picker and pairing validating; authenticator decoders in progress |
 | nook-companion-wasm | 8 | 93 | Credential-fill consumers migrated in PR 1342 |
-| nook-wasm | 98 | 719 | Pending |
+| nook-wasm | 98 | 719 | Sentinel response consumers validating; remaining adapters pending |
 | nook-app-common | 4 | 14 | Pending; distinguish generated translations |
 | nook-domain-api | 14 | 82 | Foundation merged; intentional negative fixtures retained |
 | fuzz | 1 | 0 | Framework boundary review pending |
@@ -86,9 +86,16 @@ Each domain requires both ownership-enforcement evidence and a semantic construc
 ## Companion domain follow-through
 
 - Credential-fill core and adapters: completed in PR 1342.
-- Account-picker phase model: PR 1345 validating; public runtime facade remains unchanged.
-- Pairing state, existing legacy decoding, and persistence classification: next cohesive ownership candidate, 13 production functions and six fixtures across five files; preserve 20 core tests. Root exports overlap active PR 1344 and require a fresh integration check before implementation.
-- Authenticator response decoders, website response decoders, origin/vault-host policy, and session protocol form subsequent cohesive ownership groups.
+- Account-picker: PR 1345 validating consuming Rust/WASM lifecycle transitions, typed browser completion outcomes, concurrency behavior, and compile-fail probes.
+- Pairing state, existing legacy decoding, and persistence classification: PR 1347 validating ownership of 13 production operations and six fixtures across five files; all 20 original tests plus two JSON validation tests passed on the previous exact head. Current base refresh requires fresh hosted evidence.
+- Authenticator response decoders: implementation underway across six core modules and their WASM consumers. Website response decoders, origin/vault-host policy, and session protocol remain subsequent cohesive groups.
 - Authentication workflow roots are already 983 and 885 lines; page-field classification is 936 lines. These require domain-aware simplification before ownership moves, without splitting tests to evade size limits.
 
 Full remaining module inventory includes authentication workflow and its candidate, enrollment, binding, facts, validation, snapshot, and vocabulary children; all authenticator and website response decoders; backup-code candidates; extension session protocol/status and vault events; generated-password responses; OAuth origins; outcome evidence; page-field classification with control, destination, form, input-role, OTP progression, and passkey children; and vault-host policy. Zero detected production functions is not equivalent to completed construction or fixture review.
+
+## Current boundary work
+
+- Main ownership overlaps from PRs 1335 and 1344 are resolved by their merges; current slices integrate those changes.
+- Sentinel checked responses in PR 1348 establish signature and supplied-key binding, with existing membership/provenance checks retained at the caller. Quorum collection and finalization remain separate pending consuming-state work.
+- Existing flat WASM exports, pairing wire selection and boolean projections, authenticator wire success flags, and raw picker expiry are remaining migration work, not permanent boundary exemptions.
+- Historical lexical counts above are unchanged and are not current remaining-violation counts. Final completion requires a refreshed compiler and semantic inventory.
