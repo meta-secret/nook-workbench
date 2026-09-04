@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-04T22:48:07Z
+updated_at: 2026-09-04T23:37:02Z
 source_issues: []
 related_prs: [1349]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
@@ -20,25 +20,26 @@ Pull request 1319 established exhaustive independent coverage gates at measured 
 
 ## Outcome
 
-The current user-authorized slice removes the unused experimental Lace crate instead of raising its coverage. It preserves the verified browser-suite timeout fix. Later remaining crates receive fresh focused coverage plans only after this pull request merges.
+Lace removal merged in pull request 1349. The current slice raises authenticator-domain from 87 to 90 percent with focused wire-value tests. Subsequent crates receive fresh plans after each slice merges.
 
 ## Scope
 
-- Remove Lace source, workspace membership, orphaned dependencies, build wiring, and current documentation references.
-- Configure an explicit 60-second instrumented browser-suite timeout and assert its policy contract after hosted failures proved the default 20-second limit insufficient.
-- Remove Lace from the coverage registry because the crate itself is removed, not by adding an exemption.
+- Add focused authenticator-domain wire-string, serialization, display, and period-value assertions.
+- Raise only authenticator-domain to 90 percent with hosted proof before merge.
+- Preserve the twelve-package inventory and previously merged browser timeout fix.
 - Preserve the `nook-fuzz` non-testable harness and vendored `arrayref` as the only explicit exclusions.
 - Exclude other crate floors, product behavior changes, aggregate masking, local Rust builds, and any new coverage exemption from this slice.
 
 ## Acceptance criteria
 
-- [ ] Lace source and all active consumers and build references are removed.
+- [x] Lace source and all active consumers and build references are removed.
+- [ ] Authenticator-domain independently measures at least 90 percent with a matching floor.
 - [ ] The remaining package inventory is exhaustive and all other floors remain unchanged.
-- [ ] The browser timeout fix and independent hosted coverage checks pass.
 - [ ] One Nook pull request stays at or below 2,000 authored additions and passes exact-head hosted validation, review, readiness, and merge.
 
 ## Progress
 
+- Pull request 1349 squash-merged as 5e2f75239728718825aad08ccd738dcf14ef9df7 after all exact-head checks and readiness passed. The next slice targets authenticator-domain.
 - The user explicitly replaced Lace coverage with complete Lace removal on 2026-09-04. The prior coverage result remains historical evidence, not the current delivery target.
 - Merged exact-head reports measure `nook-wasm` at 51.42 percent across 229 declared tests and `nook-companion-wasm` at 27.55 percent across eight tests.
 - Hive measures 73.73 percent, Lace 86.48 percent, and authenticator-domain 87.93 percent.
@@ -60,3 +61,4 @@ The current user-authorized slice removes the unused experimental Lace crate ins
 - [Blocked assessment worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/unplanned/20260904T214930Z-rust-crate-coverage-90-blocked.md)
 - [Lace 90 percent slice plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/unplanned/20260904T220046Z-lace-coverage-90.md)
 - [Superseding Lace removal plan](https://github.com/meta-secret/nook-workbench/blob/45aa7a762a91ad8e558bf116bd9b51a2d529e156/plans/unplanned/20260904T224807Z-remove-lace.md)
+- [Authenticator-domain slice plan](https://github.com/meta-secret/nook-workbench/blob/8ee8c287bc6c363b36d7925484c047b08a167299/plans/unplanned/20260904T233702Z-authenticator-domain-90.md)
