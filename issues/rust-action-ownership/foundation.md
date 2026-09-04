@@ -6,9 +6,9 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-foundation
 created_at: 2026-09-04T19:33:00Z
-updated_at: 2026-09-04T19:33:00Z
+updated_at: 2026-09-04T19:51:00Z
 source_issues: []
-related_prs: []
+related_prs: [1339]
 depends_on: []
 ---
 
@@ -46,3 +46,5 @@ A canonical Rust policy and opt-in Dylint enforcement establish a small foundati
 ## References
 
 - [Immutable plan](https://github.com/meta-secret/nook-workbench/blob/340cf75ef56c11df05877119eda32c8e7b2cb6e1/plans/rust-action-ownership/2026-09-04T19-32-00Z-foundation.md)
+
+- 2026-09-04: [PR 1339](https://github.com/meta-secret/nook/pull/1339) opened. Cortex audit and security review passed. First hosted cycle identified pinned compiler API mismatch and macro-fixture policy violations; both assigned for correction. Kani also encountered a missing registry layer before proof execution.
