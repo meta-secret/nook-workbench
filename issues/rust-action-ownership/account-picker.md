@@ -1,12 +1,12 @@
 ---
 title: Model account-picker authorization cleanup phases
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-account-picker
 created_at: 2026-09-04T20:51:00Z
-updated_at: 2026-09-04T20:51:00Z
+updated_at: 2026-09-04T20:58:00Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -42,6 +42,8 @@ Active and cleaning authorization states carry only their phase-specific data an
 ## Progress
 
 - 2026-09-04: Development core and Security completed read-only design. Implementation has not started.
+
+- 2026-09-04: Immutable plan published; Development core implementing the isolated phase model before hosted test integration.
 
 ## Findings and decisions
 
