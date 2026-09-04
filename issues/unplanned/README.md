@@ -2,7 +2,7 @@
 title: Unplanned engineering repairs
 status: active
 created_at: 2026-07-27T05:45:15Z
-updated_at: 2026-08-26T04:27:46Z
+updated_at: 2026-09-04T01:04:28Z
 ---
 
 # Unplanned engineering repairs
@@ -32,6 +32,7 @@ record exists.
 - [x] [Add persistent URLs to vault application pages](persistent-vault-page-urls.md)
 - [ ] [Resolve open Dependabot security alerts](resolve-dependabot-security-alerts.md)
 - [x] [Disable headless UI demos in GitHub Actions](disable-headless-ui-demos.md)
+- [ ] [Enforce 90 percent coverage for every Rust crate](rust-crate-coverage-floor.md)
 
 ## References
 
