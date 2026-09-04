@@ -10,7 +10,8 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 - [Incremental domain adoption](domain-adoption.md): complete coverage inventory and domain sequence.
 - [Credential-fill ownership](credential-fill.md): merged in PR 1342.
 - [Account-picker phase ownership](account-picker.md): private phase types and hosted compile-fail tests in PR 1345.
-- [Extension pairing and persistence](extension-pairing.md): domain operation ownership and unchanged browser contracts.
+- [Extension pairing and persistence](extension-pairing.md): domain operation ownership and unchanged browser contracts in PR 1347.
+- [Sentinel participant response](sentinel-response.md): checked request ownership before encrypted response generation.
 
 ## Shared decisions and interfaces
 
@@ -22,7 +23,7 @@ Domain adoption depends on the reviewed foundation. Each adopted scope must acti
 
 ## Status
 
-Foundation merged in [PR 1339](https://github.com/meta-secret/nook/pull/1339), with hosted validation and readiness passed. Project-wide adoption is in progress. Credential-fill ownership merged in [PR 1342](https://github.com/meta-secret/nook/pull/1342); account-picker phase modeling is validating in [PR 1345](https://github.com/meta-secret/nook/pull/1345).
+Foundation merged in [PR 1339](https://github.com/meta-secret/nook/pull/1339), with hosted validation and readiness passed. Project-wide adoption is in progress. Credential-fill ownership merged in [PR 1342](https://github.com/meta-secret/nook/pull/1342); account-picker phase modeling is validating in [PR 1345](https://github.com/meta-secret/nook/pull/1345), and pairing ownership is validating in [PR 1347](https://github.com/meta-secret/nook/pull/1347). Sentinel response typestate implementation is underway.
 
 ## Project-wide adoption contract
 
