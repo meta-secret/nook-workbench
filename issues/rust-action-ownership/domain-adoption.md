@@ -61,8 +61,8 @@ Initial inventory at Nook commit `b2bc663c0ed6d963f3ce13461731a5887dfafa3b` cove
 | nook-authenticator-domain | 1 | 0 | Existing method ownership; construction review pending |
 | nook-replication | 3 | 1 | Pending |
 | nook-event-log | 14 | 41 | Pending |
-| nook-companion-core | 52 | 169 | Credential-fill migration in progress |
-| nook-companion-wasm | 8 | 93 | Credential-fill consumer update in progress |
+| nook-companion-core | 52 | 169 | Credential-fill merged; account-picker validating |
+| nook-companion-wasm | 8 | 93 | Credential-fill consumers migrated in PR 1342 |
 | nook-wasm | 98 | 719 | Pending |
 | nook-app-common | 4 | 14 | Pending; distinguish generated translations |
 | nook-domain-api | 14 | 82 | Foundation merged; intentional negative fixtures retained |
@@ -82,3 +82,13 @@ Initial inventory at Nook commit `b2bc663c0ed6d963f3ce13461731a5887dfafa3b` cove
 6. Tooling, examples, test fixture ownership, and final per-crate enforcement.
 
 Each domain requires both ownership-enforcement evidence and a semantic construction/action-graph review. Remaining function counts alone cannot establish that action ordering or security is correct. Each implementation slice receives its own immutable plan and independently validated PR.
+
+## Companion domain follow-through
+
+- Credential-fill core and adapters: completed in PR 1342.
+- Account-picker phase model: PR 1345 validating; public runtime facade remains unchanged.
+- Pairing state, existing legacy decoding, and persistence classification: next cohesive ownership candidate, 13 production functions and six fixtures across five files; preserve 20 core tests. Root exports overlap active PR 1344 and require a fresh integration check before implementation.
+- Authenticator response decoders, website response decoders, origin/vault-host policy, and session protocol form subsequent cohesive ownership groups.
+- Authentication workflow roots are already 983 and 885 lines; page-field classification is 936 lines. These require domain-aware simplification before ownership moves, without splitting tests to evade size limits.
+
+Full remaining module inventory includes authentication workflow and its candidate, enrollment, binding, facts, validation, snapshot, and vocabulary children; all authenticator and website response decoders; backup-code candidates; extension session protocol/status and vault events; generated-password responses; OAuth origins; outcome evidence; page-field classification with control, destination, form, input-role, OTP progression, and passkey children; and vault-host policy. Zero detected production functions is not equivalent to completed construction or fixture review.
