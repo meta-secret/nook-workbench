@@ -6,9 +6,9 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-extension-pairing
 created_at: 2026-09-04T21:17:00Z
-updated_at: 2026-09-04T21:30:00Z
+updated_at: 2026-09-04T21:45:01.927Z
 source_issues: []
-related_prs: []
+related_prs: [1347]
 depends_on:
   - issues/rust-action-ownership/foundation.md
 ---
@@ -44,10 +44,13 @@ Existing pairing creation, refresh, storage conversion, JSON validation, legacy 
 
 - 2026-09-04: Five-file implementation committed at 9ff7215, with 445 additions and 20 tests retained. Pre-publication review found two incorrectly renamed instance calls in tests, plus selection-mode and JSON-validation booleans needing named domain representations. Repair remains within this scope and budget; branch is not published.
 
+- 2026-09-04: Repaired at 37fede3b; 492 additions across five files, 20 original tests plus two validation tests. SECURITY and pre-push passed. PR 1347 opened and hosted validation dispatched.
+
 ## Findings and decisions
 
 - PR 1344 touches the two shared root files only to remove Clippy lint attributes; exact diff inspection found no overlap with pairing reexports or delegate bodies. Its lint-policy changes and external task state remain untouched.
 - JSON validation is structural validation, not proof of cryptographic authorization.
+- Existing serialized selection fields and WASM boolean exports remain explicitly unmigrated boundary scope; internal methods now use named selection and typed validation results.
 
 ## References
 
