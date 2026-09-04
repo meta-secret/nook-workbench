@@ -8,7 +8,7 @@ gizmo_id: rust-action-ownership-sentinel-quorum
 created_at: 2026-09-04T23:06:00Z
 updated_at: 2026-09-04T23:06:00Z
 source_issues: []
-related_prs: []
+related_prs: [1355]
 depends_on:
   - issues/rust-action-ownership/sentinel-response.md
 ---
@@ -54,3 +54,5 @@ Only an admitted quorum can finalize, exactly once. Rejected admission returns i
 - 2026-09-04: Development core completed read-only inventory and concrete binding/borrowing design. SECURITY accepted the contract with explicit effect binding, complete cleanup, and non-hydrating status refresh. Ten files; implementation has not started and depends on PR1348 delivery.
 
 - 2026-09-04: Core and WEB implementation committed across ten files,1238additions. SECURITY passed combined2463bd13 against main5e2f75239; no local product tests ran. Hygiene requires a focused rejection demo, now recorded by superseding immutable plan489e8052292adc7e6478747472926a8535fc06d9. The demo uses the existing public reset operation to reproduce stale readiness; actual mid-effect failure and Rust-future Drop are covered by owning-boundary tests.
+
+- 2026-09-04: Published PR1355 at1e0b174567bc1d4a28b13edd176cee6416c3588e,1374additions across eleven files. Required demo contract and pre-push hygiene passed. SECURITY refreshed PASS; hosted validation is dispatched.
