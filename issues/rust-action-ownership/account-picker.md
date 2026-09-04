@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-account-picker
 created_at: 2026-09-04T20:51:00Z
-updated_at: 2026-09-04T21:15:00Z
+updated_at: 2026-09-04T21:27:00Z
 source_issues: []
 related_prs: [1345]
 depends_on:
@@ -26,10 +26,10 @@ Active and cleaning authorization states carry only their phase-specific data an
 ## Scope
 
 - Introduce small private ActiveAuthorization and CleaningAuthorization types with explicit cleanup requirement and completion outcomes.
-- Keep phase transitions mutable behind the current runtime facade; do not claim a fully consuming external API.
+- Consume phase and lifecycle mutations and return the successor plus a typed result; migrate Rust/WASM consumers.
 - Preserve epoch rotation, overlapping attempts, stale-epoch rejection, release requirements, and advisory final-cleanup checks.
 - Add behavioral and actual-source compile-fail evidence with a passing control; enable ownership enforcement.
-- Keep WASM/TypeScript APIs, storage markers, and persisted formats unchanged.
+- Keep exported TypeScript orchestration, storage markers, and persisted formats unchanged; the owned Rust/WASM API now uses consuming transitions and named evidence.
 
 ## Acceptance criteria
 
@@ -47,6 +47,8 @@ Active and cleaning authorization states carry only their phase-specific data an
 
 - 2026-09-04: [PR 1345](https://github.com/meta-secret/nook/pull/1345) opened after security review; hosted native validation now executes the four actual-source contract examples. Validation is running.
 
+- 2026-09-04: Accepted four review findings: explicit doctest panic, anonymous boolean evidence, reusable cleaning capability, and stale-epoch/pending conflation. Superseding [consuming transition plan](../../plans/rust-action-ownership/2026-09-04T21-26-00Z-account-picker-consuming.md) expands the bounded ABI/adapter repair; prior design remains in its immutable start plan.
+
 ## Findings and decisions
 
 - Zero-count cleaning with a full-cleanup requirement remains inactive and is a supported runtime state.
@@ -58,3 +60,10 @@ Active and cleaning authorization states carry only their phase-specific data an
 
 - [Account-picker authorization](https://github.com/meta-secret/nook/blob/main/nook-app/nook-platform/nook-companion-core/src/account_picker_authorization.rs)
 - [Coverage inventory](domain-adoption.md)
+
+## Revised transition acceptance
+
+- [ ] Consuming mutation receivers cannot be reused; rejection returns the original state with a typed reason.
+- [ ] Named cleanup evidence crosses the Rust/WASM boundary.
+- [ ] Shared initialization publishes its handle once; synchronous replacements and post-await reacquisition prevent stale-wrapper reuse.
+- [ ] Existing exported extension behavior is preserved, including marker failure propagation and overlap races.
