@@ -6,9 +6,9 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-account-picker
 created_at: 2026-09-04T20:51:00Z
-updated_at: 2026-09-04T20:58:00Z
+updated_at: 2026-09-04T21:15:00Z
 source_issues: []
-related_prs: []
+related_prs: [1345]
 depends_on:
   - issues/rust-action-ownership/foundation.md
 ---
@@ -44,6 +44,8 @@ Active and cleaning authorization states carry only their phase-specific data an
 - 2026-09-04: Development core and Security completed read-only design. Implementation has not started.
 
 - 2026-09-04: Immutable plan published; Development core implementing the isolated phase model before hosted test integration.
+
+- 2026-09-04: [PR 1345](https://github.com/meta-secret/nook/pull/1345) opened after security review; hosted native validation now executes the four actual-source contract examples. Validation is running.
 
 ## Findings and decisions
 
