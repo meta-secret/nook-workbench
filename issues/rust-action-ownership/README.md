@@ -8,7 +8,8 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 
 - [Architecture and lint foundation](foundation.md): policy, compiler diagnostics, and fixture evidence.
 - [Incremental domain adoption](domain-adoption.md): complete coverage inventory and domain sequence.
-- [Credential-fill ownership](credential-fill.md): first product module enforcement and consumer migration.
+- [Credential-fill ownership](credential-fill.md): merged in PR 1342.
+- [Account-picker phase ownership](account-picker.md): private phase types and hosted compile-fail tests in PR 1345.
 
 ## Shared decisions and interfaces
 
@@ -20,7 +21,7 @@ Domain adoption depends on the reviewed foundation. Each adopted scope must acti
 
 ## Status
 
-Foundation merged in [PR 1339](https://github.com/meta-secret/nook/pull/1339), with hosted validation and readiness passed. Project-wide adoption is now authorized and in progress; implementation inventory is underway.
+Foundation merged in [PR 1339](https://github.com/meta-secret/nook/pull/1339), with hosted validation and readiness passed. Project-wide adoption is in progress. Credential-fill ownership merged in [PR 1342](https://github.com/meta-secret/nook/pull/1342); account-picker phase modeling is validating in [PR 1345](https://github.com/meta-secret/nook/pull/1345).
 
 ## Project-wide adoption contract
 
