@@ -1,12 +1,12 @@
 ---
 title: Enforce 90 percent coverage for every Rust crate
-status: blocked
+status: in_progress
 priority: p1
 automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-floor
 created_at: 2026-09-04T01:04:28Z
-updated_at: 2026-09-04T08:55:30Z
+updated_at: 2026-09-04T09:04:49Z
 source_issues: []
 related_prs: [1319]
 depends_on: []
@@ -20,38 +20,40 @@ The repository reported one aggregate Rust coverage percentage for part of the p
 
 ## Outcome
 
-Every testable first-party Rust crate independently satisfies a 90 percent line-coverage floor in the trusted hosted path, and every non-enforced Rust manifest is explicitly classified.
+Every testable first-party Rust crate is independently coverage-gated in the trusted hosted path. Pull request 1319 establishes approved interim floors for the two measured Minds deficits; a separately planned successor will raise them to the final 90 percent target.
 
 ## Scope
 
 - Enforce separate coverage thresholds for platform, WASM adapter, Minds, and preflight crates.
 - Correct coverage metadata, base-change classification, and focused infrastructure contracts.
-- Add behavior-focused Rust tests only where hosted measurements identify a deficit.
+- Add behavior-focused Rust tests where hosted measurements identify a deficit.
 - Explicitly exclude the non-testable fuzz harness and vendored third-party crate.
-- Exclude product behavior changes, threshold reductions, local Rust builds, and additional coverage systems.
+- Exclude product behavior changes, aggregate masking, local Rust builds, and additional coverage systems.
 
 ## Acceptance criteria
 
 - [x] Every Rust manifest is registered as independently enforced or explicitly excluded with a reason.
-- [ ] Every enforced crate reports at least 90 percent line coverage without aggregate masking.
-- [ ] Added tests assert meaningful behavior at the owning Rust boundary.
-- [ ] Exact-head repository validation and readiness pass before squash merge.
-- [ ] The merged pull request and hosted evidence are linked from the completion worklog.
+- [ ] Pull request 1319 enforces Hive at 60 percent, Lace at 75 percent, and every other enforced crate at 90 percent.
+- [ ] Added Hive and Lace tests assert meaningful behavior and clear the interim floors with useful margin.
+- [ ] Exact-head repository validation and readiness pass before pull request 1319 is squash-merged.
+- [ ] The merged pull request and hosted evidence are linked from its completion worklog.
+- [ ] A separately planned successor starts from merged main and raises Hive and Lace toward the final 90 percent target.
 
 ## Progress
 
 - Pull request [#1319](https://github.com/meta-secret/nook/pull/1319) adds an exhaustive registry, explicit fuzz and vendor exclusions, independent hosted gates, corrected base-change classification, and one canonical preflight source root.
 - Hosted run [33854626271](https://github.com/meta-secret/nook/actions/runs/33854626271) passed every platform crate gate and passed preflight at 92.44 percent line coverage.
-- The same run measured Hive at 48.46 percent and Lace at 68.75 percent. Those honest deficits now prevent the Minds gate from passing.
+- The same run measured Hive at 48.46 percent and Lace at 68.75 percent.
+- The staged plan now implements the explicitly approved 60 percent Hive and 75 percent Lace floors in pull request 1319, followed by a separately planned 90 percent successor after merge.
 
 ## Findings and decisions
 
 - The old preflight container source path was replaced with the canonical repository path, while Cargo output was isolated outside the copied source tree.
-- Hive's environment-backed Neo4j integration test exits before exercising behavior inside the coverage stage because the service-backed execution occurs later. Instrumenting that existing suite is necessary but insufficient to close Hive's remaining deficit.
-- Behavior-focused Hive and Lace coverage is estimated to require another 2,730 to 3,950 authored lines. Together with the current 312 additions, that exceeds the approved one-pull-request limit of 2,000 additions.
-- Work is blocked on an explicit delivery-scope decision. The 90 percent threshold, package inventory, and behavior-test standard will not be weakened to fit the current limit.
+- Hive's environment-backed Neo4j integration test exits before exercising behavior inside the coverage stage because the service-backed execution occurs later. Focused unit and protocol tests will provide the current PR's margin without pretending this closes the final 90 percent gap.
+- The final 90 percent Hive and Lace work remains required and will not use coverage-ignore attributes, assertion-free filler, aggregate masking, or hidden exclusions.
 
 ## References
 
 - [Nook pull request #1319](https://github.com/meta-secret/nook/pull/1319)
-- [Superseding task plan](https://github.com/meta-secret/nook-workbench/blob/25eed34e186b8a4b65a0d5bfdf9bb635aa2d42b0/plans/unplanned/20260904T012700Z-rust-crate-coverage-floor-superseding.md)
+- [Current staged task plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/unplanned/20260904T090312Z-rust-crate-coverage-floor-staged.md)
+- [Prior blocked worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/unplanned/20260904T085530Z-rust-crate-coverage-floor.md)
