@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-04T22:42:15Z
+updated_at: 2026-09-04T22:48:07Z
 source_issues: []
 related_prs: [1349]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
@@ -20,25 +20,26 @@ Pull request 1319 established exhaustive independent coverage gates at measured 
 
 ## Outcome
 
-The first authorized iterative slice raises Lace from 86.48 percent to an independently enforced 90 percent hosted line-coverage floor using behavior-focused tests. Later crates receive fresh focused plans only after this pull request merges.
+The current user-authorized slice removes the unused experimental Lace crate instead of raising its coverage. It preserves the verified browser-suite timeout fix. Later remaining crates receive fresh focused coverage plans only after this pull request merges.
 
 ## Scope
 
-- Add behavior-focused generator tests for nested contracts, retry settings, payload defaults, and invalid inputs in Lace.
+- Remove Lace source, workspace membership, orphaned dependencies, build wiring, and current documentation references.
 - Configure an explicit 60-second instrumented browser-suite timeout and assert its policy contract after hosted failures proved the default 20-second limit insufficient.
-- Raise the Lace registry floor only after hosted measurement proves at least 90 percent.
+- Remove Lace from the coverage registry because the crate itself is removed, not by adding an exemption.
 - Preserve the `nook-fuzz` non-testable harness and vendored `arrayref` as the only explicit exclusions.
 - Exclude other crate floors, product behavior changes, aggregate masking, local Rust builds, and any new coverage exemption from this slice.
 
 ## Acceptance criteria
 
-- [ ] Lace independently reaches at least 90 percent line coverage.
-- [ ] Added tests assert meaningful generator output and error behavior and do not exist only to execute lines.
-- [ ] The Lace floor is raised from 75 percent to 90 percent only with matching hosted evidence.
+- [ ] Lace source and all active consumers and build references are removed.
+- [ ] The remaining package inventory is exhaustive and all other floors remain unchanged.
+- [ ] The browser timeout fix and independent hosted coverage checks pass.
 - [ ] One Nook pull request stays at or below 2,000 authored additions and passes exact-head hosted validation, review, readiness, and merge.
 
 ## Progress
 
+- The user explicitly replaced Lace coverage with complete Lace removal on 2026-09-04. The prior coverage result remains historical evidence, not the current delivery target.
 - Merged exact-head reports measure `nook-wasm` at 51.42 percent across 229 declared tests and `nook-companion-wasm` at 27.55 percent across eight tests.
 - Hive measures 73.73 percent, Lace 86.48 percent, and authenticator-domain 87.93 percent.
 - The initial admission assessment preceded implementation; the user explicitly authorized an iterative pull-request sequence on 2026-09-04, superseding that blocker.
@@ -58,3 +59,4 @@ The first authorized iterative slice raises Lace from 86.48 percent to an indepe
 - [Budget assessment plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/unplanned/20260904T214930Z-rust-crate-coverage-90-budget.md)
 - [Blocked assessment worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/unplanned/20260904T214930Z-rust-crate-coverage-90-blocked.md)
 - [Lace 90 percent slice plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/unplanned/20260904T220046Z-lace-coverage-90.md)
+- [Superseding Lace removal plan](https://github.com/meta-secret/nook-workbench/blob/45aa7a762a91ad8e558bf116bd9b51a2d529e156/plans/unplanned/20260904T224807Z-remove-lace.md)
