@@ -1,12 +1,12 @@
 ---
 title: Consume checked Sentinel unlock requests into participant responses
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-response
 created_at: 2026-09-04T21:45:00Z
-updated_at: 2026-09-04T21:57:43.489Z
+updated_at: 2026-09-04T23:12:11Z
 source_issues: []
 related_prs: [1348]
 depends_on:
@@ -32,17 +32,19 @@ A raw request must pass its signature and expected-key binding checks before a p
 
 ## Acceptance criteria
 
-- [ ] The checked stage has private fields and cannot be cloned, deserialized, constructed unchecked, or reused after response.
-- [ ] Wrong expected keys, tampering, invalid policy, and invalid participant bindings fail without a response; valid encrypted responses remain accepted by the existing quorum flow.
-- [ ] Core signing adapters and the new response module enforce meaningful function ownership.
-- [ ] Existing WASM authorization checks and public wire contracts remain intact.
-- [ ] Hosted tests, doctests, Dylint, security review, exact-head readiness, and squash merge complete.
+- [x] The checked stage has private fields and cannot be cloned, deserialized, constructed unchecked, or reused after response.
+- [x] Wrong expected keys, tampering, invalid policy, and invalid participant bindings fail without a response; valid encrypted responses remain accepted by the existing quorum flow.
+- [x] Core signing adapters and the new response module enforce meaningful function ownership.
+- [x] Existing WASM authorization checks and public wire contracts remain intact.
+- [x] Hosted tests, doctests, Dylint, security review, exact-head readiness, and squash merge complete.
 
 ## Progress
 
 - 2026-09-04: SECURITY inspected current main and selected the bounded participant-response graph. Estimated eight files and at most 1200 additions, including focused hosted doctest wiring.
 
 - 2026-09-04: PR 1348 published at 26df3bcb with 359 additions across eight files. SECURITY and pre-push checks passed; current coverage-policy base is incorporated. Hosted validation and review are dispatched.
+
+- 2026-09-04: PR 1348 squash-merged as a79c15c96490cc6c37b6e0cf492f7abb380505f5 after run33927163897, exact-head review, SECURITY, and readiness passed. [Delivery worklog](../../worklogs/rust-action-ownership/2026-09-04T23-12-11Z-pr-1348.md).
 
 ## Findings and decisions
 
