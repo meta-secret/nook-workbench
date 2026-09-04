@@ -19,4 +19,4 @@ Domain adoption depends on the reviewed foundation. Each adopted scope must acti
 
 ## Status
 
-Foundation in progress. Product-wide adoption has not started.
+Foundation merged in [PR 1339](https://github.com/meta-secret/nook/pull/1339), with hosted validation and readiness passed. Product-wide adoption has not started.
