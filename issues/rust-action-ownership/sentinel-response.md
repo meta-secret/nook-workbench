@@ -6,9 +6,9 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-response
 created_at: 2026-09-04T21:45:00Z
-updated_at: 2026-09-04T21:45:00Z
+updated_at: 2026-09-04T21:57:43.489Z
 source_issues: []
-related_prs: []
+related_prs: [1348]
 depends_on:
   - issues/rust-action-ownership/foundation.md
 ---
@@ -42,8 +42,11 @@ A raw request must pass its signature and expected-key binding checks before a p
 
 - 2026-09-04: SECURITY inspected current main and selected the bounded participant-response graph. Estimated eight files and at most 1200 additions, including focused hosted doctest wiring.
 
+- 2026-09-04: PR 1348 published at 26df3bcb with 359 additions across eight files. SECURITY and pre-push checks passed; current coverage-policy base is incorporated. Hosted validation and review are dispatched.
+
 ## Findings and decisions
 
+- SigningIdentity is defined in event-log, so core owns a SentinelUnlockSigning extension trait rather than an illegal inherent impl. The superseding immutable plan records this interface.
 - A checked request proves signature validity and equality with the supplied expected key. It does not independently establish roster membership, current authorization, freshness, or replay prevention.
 - Full quorum-session consumption remains a later slice because the existing WASM finalizer retains a cloned session across fallible work. This slice adds no recovery or retention mechanism.
 
