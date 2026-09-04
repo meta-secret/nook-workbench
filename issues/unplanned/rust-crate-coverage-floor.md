@@ -1,12 +1,12 @@
 ---
 title: Enforce 90 percent coverage for every Rust crate
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-floor
 created_at: 2026-09-04T01:04:28Z
-updated_at: 2026-09-04T09:04:49Z
+updated_at: 2026-09-04T21:49:30Z
 source_issues: []
 related_prs: [1319]
 depends_on: []
@@ -20,7 +20,7 @@ The repository reported one aggregate Rust coverage percentage for part of the p
 
 ## Outcome
 
-Every testable first-party Rust crate is independently coverage-gated in the trusted hosted path. Pull request 1319 establishes approved interim floors for the two measured Minds deficits; a separately planned successor will raise them to the final 90 percent target.
+Every testable first-party Rust crate is independently coverage-gated in the trusted hosted path. Pull request 1319 establishes measured current floors, and a separate blocked successor record preserves the final 90 percent target without masking its test budget.
 
 ## Scope
 
@@ -33,11 +33,11 @@ Every testable first-party Rust crate is independently coverage-gated in the tru
 ## Acceptance criteria
 
 - [x] Every Rust manifest is registered as independently enforced or explicitly excluded with a reason.
-- [ ] Pull request 1319 enforces Hive at 60 percent, Lace at 75 percent, and every other enforced crate at 90 percent.
-- [ ] Added Hive and Lace tests assert meaningful behavior and clear the interim floors with useful margin.
-- [ ] Exact-head repository validation and readiness pass before pull request 1319 is squash-merged.
-- [ ] The merged pull request and hosted evidence are linked from its completion worklog.
-- [ ] A separately planned successor starts from merged main and raises Hive and Lace toward the final 90 percent target.
+- [x] Pull request 1319 enforces Hive at 60 percent, Lace at 75 percent, `nook-companion-wasm` at 18 percent, `nook-wasm` at 51 percent, authenticator-domain at 87 percent, and every other enforced crate at 90 percent.
+- [x] Added tests assert meaningful behavior and clear the registered current floors with useful margin.
+- [x] Exact-head repository validation and readiness passed before pull request 1319 was squash-merged.
+- [x] The merged pull request and hosted evidence are linked from its completion worklog.
+- [x] A separate successor record preserves the all-crates 90 percent target and its measured one-PR size blocker.
 
 ## Progress
 
@@ -45,6 +45,8 @@ Every testable first-party Rust crate is independently coverage-gated in the tru
 - Hosted run [33854626271](https://github.com/meta-secret/nook/actions/runs/33854626271) passed every platform crate gate and passed preflight at 92.44 percent line coverage.
 - The same run measured Hive at 48.46 percent and Lace at 68.75 percent.
 - The staged plan now implements the explicitly approved 60 percent Hive and 75 percent Lace floors in pull request 1319, followed by a separately planned 90 percent successor after merge.
+- Pull request [#1319](https://github.com/meta-secret/nook/pull/1319) merged as `743239eb76133904d6e98fe7b7f016d7cbaf4d81` after exact-head validation and readiness succeeded.
+- The merged coverage reports count 229 `nook-wasm` tests and measure 51.42 percent line coverage; `nook-companion-wasm` measures 27.55 percent from eight tests.
 
 ## Findings and decisions
 
@@ -57,3 +59,5 @@ Every testable first-party Rust crate is independently coverage-gated in the tru
 - [Nook pull request #1319](https://github.com/meta-secret/nook/pull/1319)
 - [Current staged task plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/unplanned/20260904T090312Z-rust-crate-coverage-floor-staged.md)
 - [Prior blocked worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/unplanned/20260904T085530Z-rust-crate-coverage-floor.md)
+- [Completion worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/unplanned/20260904T214550Z-pr-1319-rust-crate-coverage-floor.md)
+- [Blocked 90 percent successor](https://github.com/meta-secret/nook-workbench/blob/main/issues/unplanned/rust-crate-coverage-90.md)
