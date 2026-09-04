@@ -8,7 +8,7 @@ gizmo_id: rust-action-ownership-authenticator-responses
 created_at: 2026-09-04T22:29:00Z
 updated_at: 2026-09-04T22:29:00Z
 source_issues: []
-related_prs: []
+related_prs: [1352]
 depends_on:
   - issues/rust-action-ownership/foundation.md
 ---
@@ -52,3 +52,5 @@ Preview, options, enrollment, backup attachment, code, and picker-open response 
 
 - [Companion responses](https://github.com/meta-secret/nook/tree/main/nook-app/nook-platform/nook-companion-core/src)
 - [Domain inventory](domain-adoption.md)
+
+- 2026-09-04: Published PR 1352 at cdffdb3ccb00f945d5d2d50d7b4ce2e3a63a5a05, 382 authored additions across nine files. All 16 core tests and one WASM test retained; static decoder, serialization, and public WASM comparisons passed. Hosted validation and SECURITY review are in progress.
