@@ -1,12 +1,12 @@
 ---
 title: Consume Sentinel genesis issuance authority
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-genesis
 created_at: 2026-09-05T01:27:54.312Z
-updated_at: 2026-09-05T01:27:54.312Z
+updated_at: 2026-09-05T02:49:28.842Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -49,3 +49,7 @@ A private collecting session consumes into a ready issuer bound to its checked s
 ## Progress
 
 - DEV-CORE completed the bounded inventory; SECURITY accepted the issuance and existing-journal boundary. Implementation has not started.
+
+## Implementation progress
+
+Quorum PR1355 merged. Development core is implementing the consuming genesis scope. The [superseding plan](https://github.com/meta-secret/nook-workbench/blob/73935ed51c4b7fd5d2f7272d595e9aecd55152e0/plans/rust-action-ownership/2026-09-05T02-48-19Z-sentinel-genesis-integrated.md) includes the newly integrated quorum fixture as a direct test consumer: eleven Rust and three web files within the unchanged 1800-addition budget. No hosted result or completion is claimed.
