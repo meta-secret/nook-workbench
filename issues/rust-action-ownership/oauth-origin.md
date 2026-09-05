@@ -1,14 +1,15 @@
 ---
 title: Own browser OAuth origin policy
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-oauth-origin
 created_at: 2026-09-05T03:44:26.608Z
-updated_at: 2026-09-05T03:44:26.608Z
+updated_at: 2026-09-05T04:27:00.597Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1366
 depends_on:
   - issues/rust-action-ownership/generated-password.md
 ---
@@ -41,3 +42,7 @@ This is a classification report, not OAuth authorization authority. Preserve mis
 ## Progress
 
 DEV-CORE completed read-only source inventory at main28747e3c. No implementation or hosted validation is claimed.
+
+## Implementation progress
+
+PR1366 is published at b5189da021531975894324212fb2249c5f2d3ead. Five files and266 authored additions; source SECURITY and pre-push hygiene passed. Full hosted run33944525000 is active. No completed runtime validation is claimed.
