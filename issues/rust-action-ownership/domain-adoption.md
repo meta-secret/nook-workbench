@@ -122,3 +122,7 @@ At that snapshot, open PRs covered account-picker phases, pairing, authenticator
 These candidates are not the complete backlog. Core secret/format/import scopes, remaining WASM manager/storage/export surfaces, app-common helpers, other tooling, binaries, examples, and nested test helpers still need classification. Stateless report decoding does not need artificial phases; reusable collections do not become one-use capabilities merely because they mutate. Local typestate cannot replace current external authorization or cryptographic checks.
 
 - 2026-09-05T02:44:53Z: Sentinel quorum PR1355 merged with full hosted checks, source SECURITY and readiness. Genesis issuance is now in progress; the project migration remains incomplete.
+
+## Latest delivered and active scopes
+
+Website response PR1361 merged as65901c8c816cf30466793980ba5e96219083eaa1 after full run33942183190, source SECURITY and readiness. Three complete core modules now enforce ownership. Generated-password response PR1365 is published; Sentinel genesis PR1363 has a batched CI correction awaiting replacement validation. The next bounded inventory is [OAuth origin policy](oauth-origin.md). Historical counts above remain snapshots; the project mission is incomplete.
