@@ -1,12 +1,12 @@
 ---
 title: Own extension pairing and persistence operations
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-extension-pairing
 created_at: 2026-09-04T21:17:00Z
-updated_at: 2026-09-05T01:30:56.778Z
+updated_at: 2026-09-05T03:05:04Z
 source_issues: []
 related_prs: [1347]
 depends_on:
@@ -32,11 +32,11 @@ Existing pairing creation, refresh, storage conversion, JSON validation, legacy 
 
 ## Acceptance criteria
 
-- [ ] All domain operations and fixture helpers have meaningful owners; both ownership lints are enabled.
-- [ ] All 20 existing core tests and host pairing-grant behavior remain intact and pass hosted checks.
-- [ ] Old free APIs and their reexports are removed with all consumers migrated.
-- [ ] WASM export signatures, serialization, error precedence, and legacy behavior remain unchanged.
-- [ ] Exact-head validation and review pass before squash merge.
+- [x] All domain operations and fixture helpers have meaningful owners; both ownership lints are enabled.
+- [x] All 20 existing core tests and host pairing-grant behavior remain intact and pass hosted checks.
+- [x] Old free APIs and their reexports are removed with all consumers migrated.
+- [x] WASM export signatures, serialization, error precedence, and legacy behavior remain unchanged.
+- [x] Exact-head validation and review pass before squash merge.
 
 ## Progress
 
@@ -60,3 +60,7 @@ Existing pairing creation, refresh, storage conversion, JSON validation, legacy 
 
 - [Pairing state](https://github.com/meta-secret/nook/blob/main/nook-app/nook-platform/nook-companion-core/src/extension_pairing_state.rs)
 - [Domain inventory](domain-adoption.md)
+
+## Completion
+
+PR1347 squash-merged as `fa2ac5c1caf0d138ad8177cf5405aa414a5aa957` at 2026-09-05T03:05:04Z. Final head `1a0bdebed313afd522ec7301f0b83a73c0e51edc` passed full run33940007077, source SECURITY and readiness with no unresolved findings. [Worklog](../../worklogs/rust-action-ownership/2026-09-05T03-05-04Z-pr-1347.md).
