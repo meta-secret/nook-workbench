@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-genesis
 created_at: 2026-09-05T01:27:54.312Z
-updated_at: 2026-09-05T03:35:10.267Z
+updated_at: 2026-09-05T04:10:45.702Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1363
@@ -58,3 +58,7 @@ Quorum PR1355 merged. Development core is implementing the consuming genesis sco
 ## Completion-route correction
 
 Review before publication identified that Inactive after uncertain persistence hid the only explicit completion action. The [superseding plan](https://github.com/meta-secret/nook-workbench/blob/9a944459f5e19088cde7b0cf6595d145a804092e/plans/rust-action-ownership/2026-09-05T03-13-05Z-sentinel-genesis-completion.md) appends an honest AwaitingCompletionCheck projection and reuses the existing Finalize action in both dashboards. Journal presence, absence and read failure remain distinct; no automatic completion, new journal or regenerated output. Scope is eighteen authored files and two generated key artifacts within the unchanged 1800-addition budget.
+
+## Hosted correction progress
+
+PR1363 current head da149972779cf71487362f82bf17ea7da18f2a3c includes latest main65901c8c. Two completed hosted runs exposed fixture typing, test lint and browser error conversion issues; these are corrected without changing production behavior. Source SECURITY and pre-push hygiene passed. Current run33943815326 is active. The obsolete CeremonyState mutable adapter was removed as a direct consequence of consuming collection:21 total files,19 authored and2 generated,1782 authored additions. No hosted runtime or compile-fail completion is claimed yet.
