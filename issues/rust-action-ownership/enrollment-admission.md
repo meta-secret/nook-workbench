@@ -1,16 +1,16 @@
 ---
 title: Consume structurally admitted enrollment envelopes
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-enrollment-admission
 created_at: 2026-09-05T04:02:42.825Z
-updated_at: 2026-09-05T04:02:42.825Z
+updated_at: 2026-09-05T09:38:00Z
 source_issues: []
 related_prs: []
 depends_on:
-  - issues/rust-action-ownership/oauth-origin.md
+  - issues/rust-action-ownership/event-quarantine-publication.md
 ---
 
 # Consume structurally admitted enrollment envelopes
@@ -36,4 +36,4 @@ This capability proves structural admission and exact encrypted input binding. I
 
 ## Progress
 
-DEV-CORE completed read-only graph inventory at main65901c8c. No implementation or validation is claimed.
+Event quarantine publication merged in PR1372. DEV-CORE is implementing the seven-file checked-envelope boundary from current main; validation remains pending.
