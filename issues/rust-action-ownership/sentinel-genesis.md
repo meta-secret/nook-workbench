@@ -1,12 +1,12 @@
 ---
 title: Consume Sentinel genesis issuance authority
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-genesis
 created_at: 2026-09-05T01:27:54.312Z
-updated_at: 2026-09-05T04:10:45.702Z
+updated_at: 2026-09-05T04:46:11.225Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1363
@@ -34,11 +34,11 @@ A private collecting session consumes into a ready issuer bound to its checked s
 
 ## Acceptance criteria
 
-- [ ] Domain tests and compile-fail controls prove unforgeable ownership, signer binding, rejection retention, and one-use issuance.
-- [ ] Actual Rust-future cancellation cannot restore issuance authority or leave a false ready status.
-- [ ] A persisted-but-reported-failed journal resumes exactly the same issued output; Start rejects pending output and journal-read errors propagate.
-- [ ] Rendered dashboard tests distinguish admission rejection, terminal consumption, and existing pending completion without automatic action.
-- [ ] Hosted checks, all existing review findings, SECURITY verdict, readiness, squash merge, and Workbench completion pass.
+- [x] Domain tests and compile-fail controls prove unforgeable ownership, signer binding, rejection retention, and one-use issuance.
+- [x] Actual Rust-future cancellation cannot restore issuance authority or leave a false ready status.
+- [x] A persisted-but-reported-failed journal resumes exactly the same issued output; Start rejects pending output and journal-read errors propagate.
+- [x] Rendered dashboard tests distinguish admission rejection, terminal consumption, and existing pending completion without automatic action.
+- [x] Hosted checks, all existing review findings, SECURITY verdict, readiness, squash merge, and Workbench completion pass.
 
 ## Decisions and limitations
 
@@ -62,3 +62,7 @@ Review before publication identified that Inactive after uncertain persistence h
 ## Hosted correction progress
 
 PR1363 current head da149972779cf71487362f82bf17ea7da18f2a3c includes latest main65901c8c. Two completed hosted runs exposed fixture typing, test lint and browser error conversion issues; these are corrected without changing production behavior. Source SECURITY and pre-push hygiene passed. Current run33943815326 is active. The obsolete CeremonyState mutable adapter was removed as a direct consequence of consuming collection:21 total files,19 authored and2 generated,1782 authored additions. No hosted runtime or compile-fail completion is claimed yet.
+
+## Completed delivery
+
+PR1363 squash-merged as 73965ffc87e70af6997948766a4005ef6c5907aa after current-base full run33944598463, source SECURITY and exact-head readiness. Private consuming issuance, all twelve compile-fail probes and positive control, browser lifecycle proofs and explicit dashboard completion are delivered. Existing journal and authorization limitations remain as documented. [Worklog](../../worklogs/rust-action-ownership/2026-09-05T04-42-42Z-pr-1363.md).
