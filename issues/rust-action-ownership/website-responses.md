@@ -8,7 +8,7 @@ gizmo_id: rust-action-ownership-website-responses
 created_at: 2026-09-05T00:06:51.777Z
 updated_at: 2026-09-05T02:32:25.451Z
 source_issues: []
-related_prs: []
+related_prs: [1361]
 depends_on:
   - issues/rust-action-ownership/authenticator-responses.md
 ---
@@ -59,3 +59,5 @@ Nine production operations belong to their existing response types, and all thre
 ## Implementation progress
 
 - 2026-09-05T02:32:25.451Z: Authenticator response PR1352 merged. Development core started the published six-file website-response ownership scope from current main, with an 800-addition budget. No hosted result or completion is claimed.
+
+- 2026-09-05T02:37:35.086Z: PR1361 published at `6970bf5b31eb1c3b12abdb49a89cac2424fc5e0b`, 319 authored additions across six files. Seven existing tests and three added boundary tests; source SECURITY and formatting passed. [Hosted validation](https://github.com/meta-secret/nook/actions/runs/33939534783) is pending.
