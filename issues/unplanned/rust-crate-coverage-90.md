@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-05T05:59:36Z
+updated_at: 2026-09-05T06:13:12Z
 source_issues: []
-related_prs: [1349, 1354, 1367]
+related_prs: [1349, 1354, 1367, 1369]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -59,6 +59,7 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Fresh hosted evidence after the latest Main changes measures `nook-companion-wasm` at 26.88 percent across 1,332 lines and `nook-wasm` at 53.45 percent across 28,633 lines. The next slice selects companion WASM as the smaller bounded target.
 - Pull request 1367 implemented the planned companion-WASM slice with 110 authored additions and raised its floor from 18 to 75 percent after hosted evidence measured 75.87 percent across 1,463 lines. It squash-merged as `fd82b6206f93465046b532a4e91d99bbc2c7c578` after exact-head policy, PR, Hive, review resolution, and readiness passed.
 - Exact per-file evidence leaves 353 companion-WASM lines uncovered. Response decoding and `lib.rs` contain 289 of those missed lines; covering their typed behavior is projected to raise the package above 90 percent within a 900-addition budget.
+- Pull request 1369 carries 564 authored additions of focused response-decoder and public-wrapper behavior tests on top of Main `c912d13de53a3c41492094cd3456f46480f64650`; hosted measurement is pending before the 90 percent floor is enabled.
 
 ## Findings and decisions
 
