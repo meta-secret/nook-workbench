@@ -1,14 +1,15 @@
 ---
 title: Own Simple genesis completion actions
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-simple-genesis-completion
 created_at: 2026-09-05T20:15:00Z
-updated_at: 2026-09-05T20:15:00Z
+updated_at: 2026-09-05T20:31:36Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1398
 depends_on:
   - issues/rust-action-ownership/sentinel-signature.md
 ---
@@ -25,12 +26,16 @@ Five Rust files with a ceiling of 300 authored additions. Move cleanup and stage
 
 ## Acceptance criteria
 
-- [ ] `SimpleGenesisCompletion` consumes itself to perform atomic completion cleanup.
-- [ ] Staged publication preserves directory migration, validation, concurrent-update rebasing, signing-seed publication, and transaction ordering.
-- [ ] Cleanup deletes only a marker matching store, identity, and creation timestamp.
-- [ ] The cleanup child module denies homeless functions without blanket suppression.
-- [ ] Hosted checks, source SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] `SimpleGenesisCompletion` consumes itself to perform atomic completion cleanup.
+- [x] Staged publication preserves directory migration, validation, concurrent-update rebasing, signing-seed publication, and transaction ordering.
+- [x] Cleanup deletes only a marker matching store, identity, and creation timestamp.
+- [x] The cleanup child module denies homeless functions without blanket suppression.
+- [x] Hosted checks, source SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Limits and decisions
 
 Use the existing completion enum as the simplest typestate boundary. Do not add artificial states, public constructors, authorization claims, protocol, schema, recovery, fallback, ABI, dependency, or logging changes.
+
+## Progress
+
+PR #1398 merged as `ef6460e61037cee9aa0da6029065d1266c596eb9` after exact-head hosted validation, source SECURITY, current-main integration, and readiness passed.
