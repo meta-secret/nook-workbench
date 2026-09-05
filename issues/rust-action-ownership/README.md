@@ -20,7 +20,7 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 
 - [Sentinel genesis issuance](sentinel-genesis.md): private collecting and signer-bound ready states, consuming issuance, and preserved pending-output completion in progress after quorum integration.
 
-- [Generated-password response ownership](generated-password.md): one decoder, complete module enforcement and preserved secret lifetime validating in PR1365.
+- [Generated-password response ownership](generated-password.md): one decoder, complete module enforcement and preserved secret lifetime merged in PR1365.
 
 ## Shared decisions and interfaces
 
@@ -46,6 +46,6 @@ Delivery proceeds through cohesive domain PRs with their consumers and validatio
 
 - 2026-09-05T02:44:53Z: Sentinel quorum PR1355 merged with full hosted checks, source SECURITY and readiness. Genesis issuance is now in progress; the project migration remains incomplete.
 
-- [OAuth origin policy ownership](oauth-origin.md): five-file existing-enum ownership plan after generated-password integration.
+- [OAuth origin policy ownership](oauth-origin.md): five-file existing-enum ownership validating in PR1366.
 
 - [Enrollment envelope admission](enrollment-admission.md): bounded checked encrypted input and consuming decryption plan after OAuth; existing runtime authorization stays separate.
