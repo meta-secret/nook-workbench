@@ -21,11 +21,11 @@ The signing public-key domain type owns deterministic derivation from a validate
 
 ## Scope
 
-One Rust file with a ceiling of 180 authored additions. Move the private signing-key derivation action onto , replace the free test fixture with a data-carrying fixture, enable full-module ownership enforcement, and add focused failure/nonmutation coverage.
+One Rust file with a ceiling of 180 authored additions. Move the private signing-key derivation action onto `DeviceSigningPublicKey`, replace the free test fixture with a data-carrying fixture, enable full-module ownership enforcement, and add focused failure/nonmutation coverage.
 
 ## Acceptance criteria
 
-- [ ]  owns signing-seed derivation.
+- [ ] `DeviceSigningPublicKey` owns signing-seed derivation.
 - [ ] Existing seed parsing, error ordering, public-key bytes, app-key binding, sealing, reopen verification, and replacement ordering remain unchanged.
 - [ ] Failed seed protection leaves the prior protected entry unchanged.
 - [ ] The module denies homeless functions without blanket suppression.
