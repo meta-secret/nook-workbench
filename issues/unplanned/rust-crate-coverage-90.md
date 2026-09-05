@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-05T05:01:32Z
+updated_at: 2026-09-05T05:08:36Z
 source_issues: []
 related_prs: [1349, 1354]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
@@ -20,15 +20,16 @@ Pull request 1319 established exhaustive independent coverage gates at measured 
 
 ## Outcome
 
-Lace removal merged in pull request 1349. Authenticator-domain reached its 90 percent floor in pull request 1354 with focused wire-value tests. The next remaining crate receives a fresh measured plan from the new Main baseline.
+Lace removal merged in pull request 1349 and authenticator-domain reached its 90 percent floor in pull request 1354. The current slice targets `nook-companion-wasm` at a provisional 60 percent floor by executing existing behavior tests on WASM and adding two focused behavior clusters.
 
 ## Scope
 
-- Add focused authenticator-domain wire-string, serialization, display, and period-value assertions.
-- Raise only authenticator-domain to 90 percent with hosted proof before merge.
-- Preserve the twelve-package inventory and previously merged browser timeout fix.
+- Dual-register the 18 existing companion-WASM behavior tests for native and WASM execution.
+- Add focused page-form-policy wrapper and account-picker cleanup/release lifecycle assertions.
+- Provisionally raise only `nook-companion-wasm` from 18 to 60 percent, then retain the exact defensible hosted floor.
+- Preserve the twelve-package inventory and the previously merged browser timeout fix.
 - Preserve the `nook-fuzz` non-testable harness and vendored `arrayref` as the only explicit exclusions.
-- Exclude other crate floors, product behavior changes, aggregate masking, local Rust builds, and any new coverage exemption from this slice.
+- Exclude other crate floors, product behavior changes, aggregate masking, local Rust/WASM builds, and any new coverage exemption from this slice.
 
 ## Acceptance criteria
 
@@ -36,6 +37,10 @@ Lace removal merged in pull request 1349. Authenticator-domain reached its 90 pe
 - [x] Authenticator-domain independently measures at least 90 percent with a matching floor.
 - [x] The remaining package inventory is exhaustive and all other floors remain unchanged.
 - [x] One Nook pull request stays at or below 2,000 authored additions and passes exact-head hosted validation, review, readiness, and merge.
+- [ ] Eighteen existing companion-WASM behavior tests execute under both native and WASM harnesses.
+- [ ] Focused page-policy and account-picker lifecycle behaviors are covered.
+- [ ] `nook-companion-wasm` independently measures at least 60 percent with a matching floor.
+- [ ] The companion-WASM pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -47,6 +52,7 @@ Lace removal merged in pull request 1349. Authenticator-domain reached its 90 pe
 - The initial pull request 1349 coverage approach measured Lace at 94.49 percent, but the user superseded it with complete Lace removal. The final removal diff contained 67 authored additions and passed the browser paths after their whole-suite timeout was made explicit.
 - During pull request 1354, Main pull request 1345 exposed a missing `extension-lifecycle-routing.ts` entry in exact module-expert discovery. The user authorized the minimal AI-owned catalog repair, which restored the fail-closed policy without transferring broader ownership.
 - Pull request 1354 raised the authenticator-domain floor to 90 percent with 26 authored additions and squash-merged as `4157dfa45e00bbb4cabb8436e93ffb23a2f8b0d9`. Hosted coverage measured 96.09 percent; repository policy, PR, Hive, review resolution, and readiness passed on exact head `88dcf4f1bdc181cdf1e73c83ddb9e0be9cc4130d` after merging Main through `73965ffc87e70af6997948766a4005ef6c5907aa`.
+- Fresh hosted evidence after the latest Main changes measures `nook-companion-wasm` at 26.88 percent across 1,332 lines and `nook-wasm` at 53.45 percent across 28,633 lines. The next slice selects companion WASM as the smaller bounded target.
 
 ## Findings and decisions
 
@@ -65,3 +71,4 @@ Lace removal merged in pull request 1349. Authenticator-domain reached its 90 pe
 - [Superseding Lace removal plan](https://github.com/meta-secret/nook-workbench/blob/45aa7a762a91ad8e558bf116bd9b51a2d529e156/plans/unplanned/20260904T224807Z-remove-lace.md)
 - [Authenticator-domain slice plan](https://github.com/meta-secret/nook-workbench/blob/8ee8c287bc6c363b36d7925484c047b08a167299/plans/unplanned/20260904T233702Z-authenticator-domain-90.md)
 - [Authenticator-domain completion worklog](../../worklogs/unplanned/20260905T050132Z-pr-1354-authenticator-domain-90.md)
+- [Companion WASM 60 percent slice plan](../../plans/unplanned/20260905T050836Z-companion-wasm-coverage-60.md)
