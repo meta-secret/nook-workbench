@@ -6,9 +6,10 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-genesis
 created_at: 2026-09-05T01:27:54.312Z
-updated_at: 2026-09-05T02:49:28.842Z
+updated_at: 2026-09-05T03:35:10.267Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1363
 depends_on:
   - issues/rust-action-ownership/sentinel-quorum.md
 ---
@@ -41,14 +42,14 @@ A private collecting session consumes into a ready issuer bound to its checked s
 
 ## Decisions and limitations
 
-- One cohesive PR: thirteen files, estimated maximum 1,800 authored additions; hard repository limit 2,000. Simplify if the uncertain-write proof needs a general fault framework or another storage abstraction.
+- One cohesive PR: eighteen authored files and two generated artifacts, estimated maximum 1,800 authored additions; hard repository limit 2,000. Simplify if the uncertain-write proof needs a general fault framework or another storage abstraction.
 - No new recovery, journal schema, plaintext persistence, secret logging, generic state framework, or blanket unlock-style reset.
 - Existing journal clearing occurs before final WASM result conversion. Do not claim transactional or exactly-once delivery.
 - Begin implementation after the quorum slice is integrated; reuse existing domain fixtures and the invitation demo.
 
 ## Progress
 
-- DEV-CORE completed the bounded inventory; SECURITY accepted the issuance and existing-journal boundary. Implementation has not started.
+- PR1363 is published at d00a5a770f09f25c1ceeba45e5404d2115c4721d. Source SECURITY and pre-push hygiene passed. The complete hosted run33942146672 is active; repository policy found untyped JavaScript values in a browser test fixture. Development core is correcting that bounded fixture while the full run completes.
 
 ## Implementation progress
 
