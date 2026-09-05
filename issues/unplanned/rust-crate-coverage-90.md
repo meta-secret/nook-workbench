@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-04T23:37:02Z
+updated_at: 2026-09-05T02:33:06Z
 source_issues: []
 related_prs: [1349]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
@@ -46,6 +46,8 @@ Lace removal merged in pull request 1349. The current slice raises authenticator
 - The initial admission assessment preceded implementation; the user explicitly authorized an iterative pull-request sequence on 2026-09-04, superseding that blocker.
 - Pull request 1349 adds two Lace generator tests and raises its floor to 90 percent. Hosted coverage measured 94.49 percent; all checks passed on head f05d4c51d before Main advanced. The current merged-base head is undergoing fresh validation.
 - The complete authored diff is 67 additions. Browser-runner failures were diagnosed as a 20-second whole-suite timeout, not an external ChromeDriver kill; both browser validation paths passed with the explicit 60-second limit.
+- Pull request 1354 raises the authenticator-domain floor to 90 percent with 25 authored additions. Hosted coverage measured 96.09 percent, and its PR and Hive suites passed before the latest Main advancement required a fresh exact-head run.
+- After Main pull request 1345, repository policy deterministically discovers `extension-lifecycle-routing.ts` as a generated-binding consumer that is absent from the exact module-expert catalog. The failed policy attempt is rooted in this one catalog invariant; eighteen additional Loom failures cascade from it. No current Nook repair pull request owns the omission.
 
 ## Findings and decisions
 
@@ -53,6 +55,7 @@ Lace removal merged in pull request 1349. The current slice raises authenticator
 - The user-authorized serial delivery shape permits focused iterations while preserving the 2,000-authored-addition limit per pull request.
 - Do not weaken floors, add exclusions, or use assertion-free tests to manufacture compliance.
 - The iterative authorization resolves the delivery-shape blocker. Each crate slice receives its own one-PR plan and must merge before the next slice begins.
+- The module-expert catalog omission belongs to AI and must be repaired without weakening discovery or silently transferring unrelated Main ownership into the SRE coverage slice. Pull request 1354 cannot satisfy exact-head readiness until that Main invariant is restored.
 
 ## References
 
