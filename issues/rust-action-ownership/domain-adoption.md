@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-09-04T19:33:00Z
-updated_at: 2026-09-05T01:42:41.482Z
+updated_at: 2026-09-05T01:52:44.284Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -61,7 +61,7 @@ Initial inventory at Nook commit `b2bc663c0ed6d963f3ce13461731a5887dfafa3b` cove
 | nook-authenticator-domain | 1 | 0 | Existing method ownership; construction review pending |
 | nook-replication | 3 | 1 | Pending |
 | nook-event-log | 14 | 41 | Pending |
-| nook-companion-core | 52 | 169 | Credential-fill merged; picker and pairing validating; authenticator decoders in progress |
+| nook-companion-core | 52 | 169 | Credential-fill and picker merged; pairing validating; authenticator decoders in progress |
 | nook-companion-wasm | 8 | 93 | Credential-fill consumers migrated in PR 1342 |
 | nook-wasm | 98 | 719 | Sentinel response consumers merged in PR 1348; quorum completion in progress |
 | nook-app-common | 4 | 14 | Pending; distinguish generated translations |
@@ -86,7 +86,7 @@ Each domain requires both ownership-enforcement evidence and a semantic construc
 ## Companion domain follow-through
 
 - Credential-fill core and adapters: completed in PR 1342.
-- Account-picker: PR 1345 validating consuming Rust/WASM lifecycle transitions, typed browser completion outcomes, concurrency behavior, and compile-fail probes.
+- Account-picker: PR1345 merged as3849b814053dbc8cea6d79d6b0e5938694410262 with consuming Rust/WASM lifecycle transitions, typed browser completion outcomes, concurrency tests, and compile-fail probes.
 - Pairing state, existing legacy decoding, and persistence classification: PR 1347 validating ownership of 13 production operations and six fixtures across five files; all 20 original tests plus two JSON validation tests passed on the previous exact head. Current base refresh requires fresh hosted evidence.
 - Authenticator response decoders: implementation underway across six core modules and their WASM consumers. Website response decoders, origin/vault-host policy, and session protocol remain subsequent cohesive groups.
 - Authentication workflow roots are already 983 and 885 lines; page-field classification is 936 lines. These require domain-aware simplification before ownership moves, without splitting tests to evade size limits.
@@ -106,7 +106,7 @@ Full remaining module inventory includes authentication workflow and its candida
 
 At main `249c4414b`, DEV-CORE inspected 451 non-vendor Rust files across 13 manifest roots. This is static prioritization evidence, not a compiler-proven violation count. Only three product source scopes explicitly activate ownership enforcement on that main snapshot: credential fill, checked Sentinel response, and its core signing adapter. Open PRs are recorded separately and are not counted as merged completion.
 
-Current PRs cover account-picker phases, pairing, authenticator responses, and Sentinel quorum completion. The next bounded plans cover [website responses](website-responses.md) and [Sentinel genesis issuance](sentinel-genesis.md). Additional candidates, each requiring its own precise contract and budget, are:
+At that snapshot, open PRs covered account-picker phases, pairing, authenticator responses, and Sentinel quorum completion. Account-picker PR1345 has since merged. The next bounded plans cover [website responses](website-responses.md) and [Sentinel genesis issuance](sentinel-genesis.md). Additional candidates, each requiring its own precise contract and budget, are:
 
 - Remaining reported responses, beginning with generated-password decoding and secret destruction.
 - OAuth-origin and vault-host policy operations.
