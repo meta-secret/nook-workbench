@@ -53,3 +53,7 @@ A private collecting session consumes into a ready issuer bound to its checked s
 ## Implementation progress
 
 Quorum PR1355 merged. Development core is implementing the consuming genesis scope. The [superseding plan](https://github.com/meta-secret/nook-workbench/blob/73935ed51c4b7fd5d2f7272d595e9aecd55152e0/plans/rust-action-ownership/2026-09-05T02-48-19Z-sentinel-genesis-integrated.md) includes the newly integrated quorum fixture as a direct test consumer: eleven Rust and three web files within the unchanged 1800-addition budget. No hosted result or completion is claimed.
+
+## Completion-route correction
+
+Review before publication identified that Inactive after uncertain persistence hid the only explicit completion action. The [superseding plan](https://github.com/meta-secret/nook-workbench/blob/9a944459f5e19088cde7b0cf6595d145a804092e/plans/rust-action-ownership/2026-09-05T03-13-05Z-sentinel-genesis-completion.md) appends an honest AwaitingCompletionCheck projection and reuses the existing Finalize action in both dashboards. Journal presence, absence and read failure remain distinct; no automatic completion, new journal or regenerated output. Scope is eighteen authored files and two generated key artifacts within the unchanged 1800-addition budget.
