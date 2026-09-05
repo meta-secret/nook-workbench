@@ -14,11 +14,11 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 - [Sentinel participant response](sentinel-response.md): checked request ownership before encrypted response generation, merged in PR 1348.
 - [Authenticator response ownership](authenticator-responses.md): six complete core decoder modules and their WASM consumers merged in PR 1352.
 
-- [Sentinel quorum completion](sentinel-quorum.md): consuming collection and finalization with terminal cleanup is validating in PR 1355.
+- [Sentinel quorum completion](sentinel-quorum.md): consuming collection and finalization with terminal cleanup merged in PR1355.
 - [Browser coverage deadline](browser-deadline.md): delivered independently in PR 1349; identical PR 1353 closed as superseded after passing validation.
 - [Website response ownership](website-responses.md): three core modules and six WASM delegates validating in PR1361.
 
-- [Sentinel genesis issuance](sentinel-genesis.md): private collecting and signer-bound ready states, consuming issuance, and preserved pending-output completion planned after quorum integration.
+- [Sentinel genesis issuance](sentinel-genesis.md): private collecting and signer-bound ready states, consuming issuance, and preserved pending-output completion in progress after quorum integration.
 
 - [Generated-password response ownership](generated-password.md): one decoder, complete module enforcement and preserved secret lifetime planned after website response integration.
 
@@ -43,3 +43,5 @@ Delivery proceeds through cohesive domain PRs with their consumers and validatio
 ## Progress
 
 - 2026-09-04: Authorized continued project-wide migration through successive reviewed and merged PRs. Credential-fill is delivered; Development core and Security continue domain adoption with explicit remaining boundary work.
+
+- 2026-09-05T02:44:53Z: Sentinel quorum PR1355 merged with full hosted checks, source SECURITY and readiness. Genesis issuance is now in progress; the project migration remains incomplete.
