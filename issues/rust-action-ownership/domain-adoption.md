@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-09-04T19:33:00Z
-updated_at: 2026-09-05T09:33:22Z
+updated_at: 2026-09-05T10:11:04Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -131,3 +131,4 @@ Website response PR1361 merged as65901c8c816cf30466793980ba5e96219083eaa1 after 
 - Sentinel genesis PR1363 merged as73965ffc87e70af6997948766a4005ef6c5907aa after current-base run33944598463, source SECURITY and readiness. Its private collecting, signer-bound ready, consuming issuance, and pending-output completion graph is delivered.
 - OAuth origin PR1366 merged as9ee87f467b6fa9da9593792c8f81f5d6a6742743 after final run33949317261, source SECURITY and readiness. The active bounded correction is [event quarantine publication](event-quarantine-publication.md), followed by [enrollment envelope admission](enrollment-admission.md). Historical counts remain snapshots; the project mission is incomplete.
 - Event quarantine publication PR1372 merged as6c43f593b30932c52ad4ba54f64e44ef1c941894 after final run33957848465, source SECURITY and readiness. Quarantined local appends now fail before head and outbox publication. The active next scope is [enrollment envelope admission](enrollment-admission.md); the project mission remains incomplete.
+- Enrollment admission PR1376 merged asdbc555139711f1c7381411108345d89aa6356df5 after final run33959442001, source SECURITY and readiness. Structurally checked encrypted input now owns consuming decryption while runtime provider, vault, identity, replay and expiry policy remain separate. The project mission remains incomplete; the next bounded action graph must come from a refreshed remaining inventory.
