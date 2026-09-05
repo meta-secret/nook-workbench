@@ -8,7 +8,8 @@ gizmo_id: rust-action-ownership-enrollment-admission
 created_at: 2026-09-05T04:02:42.825Z
 updated_at: 2026-09-05T09:38:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1376
 depends_on:
   - issues/rust-action-ownership/event-quarantine-publication.md
 ---
@@ -36,4 +37,4 @@ This capability proves structural admission and exact encrypted input binding. I
 
 ## Progress
 
-Event quarantine publication merged in PR1372. DEV-CORE is implementing the seven-file checked-envelope boundary from current main; validation remains pending.
+Event quarantine publication merged in PR1372. DEV-CORE implemented the seven-file checked-envelope boundary at fcafd52b29f1a287b46899435e4ee873e99ff950. Pre-push policy and source SECURITY passed; hosted validation is pending in PR1376.
