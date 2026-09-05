@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-05T19:43:14Z
+updated_at: 2026-09-05T20:44:41Z
 source_issues: []
-related_prs: [1349, 1354, 1367, 1369, 1374]
+related_prs: [1349, 1354, 1367, 1369, 1374, 1397]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -45,6 +45,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] The planned companion public wrappers have behavior-focused projection and error coverage.
 - [x] `nook-companion-wasm` independently measures at least 90 percent with a matching floor.
 - [x] The companion-WASM 90 percent pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 53 percent with a matching floor.
+- [x] The `nook-wasm` pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -63,6 +65,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - The final companion-WASM slice targets uncovered authentication-workflow variants and decoder rejection paths in focused implementation modules, with a 150-addition budget and no production changes.
 - Pull request 1374 added focused companion authentication-workflow, decoder-rejection, grant-authority, persistence, pairing, timeout, and vault-URL behavior tests. Hosted WASM validation ran 39 companion tests and measured 1,638 of 1,799 lines, or 91.05 percent, so the independent floor was raised from 88 to 90 percent.
 - Pull request 1374 passed exact-head validation on final head `42be2a5241adba15e03608541ffb24a3dfaeba23`, returned `ready: true` with zero unresolved review threads, and squash-merged as `fb5716cd98865a51e97ccc242861681fecd5ee0b` with 90 authored additions.
+- Pull request 1397 added deterministic `nook-wasm` projection tests for mnemonic, provider-label, OAuth, revision/scope, and vault-architecture wrappers. After merging Main through `ef6460e61037cee9aa0da6029065d1266c596eb9`, exact hosted run `33990481298` passed 96 native and 159 browser tests and measured `nook-wasm` at 54.81 percent, so the independent floor was raised from 51 to 53 percent.
+- Pull request 1397 passed exact-head validation on final head `97bfb4a041a3502983059b7898119b6911f90ebc`, returned `ready: true` with zero unresolved review threads, and squash-merged as `ae4e2512b93bf5dd359f07990a30fc2e9f41ad0a` with 282 authored additions.
 
 ## Findings and decisions
 
