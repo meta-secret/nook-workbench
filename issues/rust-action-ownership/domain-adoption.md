@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-09-04T19:33:00Z
-updated_at: 2026-09-05T02:28:11Z
+updated_at: 2026-09-05T05:57:48Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -128,3 +128,5 @@ These candidates are not the complete backlog. Core secret/format/import scopes,
 Website response PR1361 merged as65901c8c816cf30466793980ba5e96219083eaa1 after full run33942183190, source SECURITY and readiness. Three complete core modules now enforce ownership. Generated-password response PR1365 is published; Sentinel genesis PR1363 has a batched CI correction awaiting replacement validation. The next bounded inventory is [OAuth origin policy](oauth-origin.md). Historical counts above remain snapshots; the project mission is incomplete.
 
 - Generated-password PR1365 merged as5521d0851039d1b14358e1c7fc814cda9e7f1aa8 after full run33943731751, source SECURITY, readiness and Workbench closeout. OAuth origin PR1366 is validating. Genesis PR1363 passed full run33943815326 and is refreshing to the new base before readiness.
+- Sentinel genesis PR1363 merged as73965ffc87e70af6997948766a4005ef6c5907aa after current-base run33944598463, source SECURITY and readiness. Its private collecting, signer-bound ready, consuming issuance, and pending-output completion graph is delivered.
+- OAuth origin PR1366 is validating at exact head6160495c102a8c4b59a5f7c8620c3ad3df11fc28. The next bounded correction is [event quarantine publication](event-quarantine-publication.md), followed by [enrollment envelope admission](enrollment-admission.md). Historical counts remain snapshots; the project mission is incomplete.
