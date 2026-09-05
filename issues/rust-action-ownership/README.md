@@ -14,8 +14,9 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 - [Sentinel participant response](sentinel-response.md): checked request ownership before encrypted response generation, merged in PR 1348.
 - [Authenticator response ownership](authenticator-responses.md): six complete core decoder modules and their WASM consumers in PR 1352.
 
-- [Sentinel quorum completion](sentinel-quorum.md): consuming collection and finalization with terminal cleanup is planned after the merged response API.
-- [Browser coverage deadline](browser-deadline.md): a command-scoped finite deadline addresses the inherited validation blocker.
+- [Sentinel quorum completion](sentinel-quorum.md): consuming collection and finalization with terminal cleanup is validating in PR 1355.
+- [Browser coverage deadline](browser-deadline.md): delivered independently in PR 1349; identical PR 1353 closed as superseded after passing validation.
+- [Website response ownership](website-responses.md): three core modules and six WASM delegates planned after authenticator response integration.
 
 ## Shared decisions and interfaces
 
