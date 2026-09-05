@@ -1,12 +1,12 @@
 ---
 title: Own website login and passkey response decoding
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-website-responses
 created_at: 2026-09-05T00:06:51.777Z
-updated_at: 2026-09-05T00:06:51.777Z
+updated_at: 2026-09-05T02:32:25.451Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -55,3 +55,7 @@ Nine production operations belong to their existing response types, and all thre
 
 - [Companion core](https://github.com/meta-secret/nook/tree/main/nook-app/nook-platform/nook-companion-core/src)
 - [Domain inventory](domain-adoption.md)
+
+## Implementation progress
+
+- 2026-09-05T02:32:25.451Z: Authenticator response PR1352 merged. Development core started the published six-file website-response ownership scope from current main, with an 800-addition budget. No hosted result or completion is claimed.
