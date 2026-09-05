@@ -47,3 +47,5 @@ Delivery proceeds through cohesive domain PRs with their consumers and validatio
 - 2026-09-05T02:44:53Z: Sentinel quorum PR1355 merged with full hosted checks, source SECURITY and readiness. Genesis issuance is now in progress; the project migration remains incomplete.
 
 - [OAuth origin policy ownership](oauth-origin.md): five-file existing-enum ownership plan after generated-password integration.
+
+- [Enrollment envelope admission](enrollment-admission.md): bounded checked encrypted input and consuming decryption plan after OAuth; existing runtime authorization stays separate.
