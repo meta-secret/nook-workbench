@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-05T06:13:12Z
+updated_at: 2026-09-05T07:51:21Z
 source_issues: []
 related_prs: [1349, 1354, 1367, 1369]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
@@ -20,7 +20,7 @@ Pull request 1319 established exhaustive independent coverage gates at measured 
 
 ## Outcome
 
-Lace removal merged in pull request 1349, authenticator-domain reached 90 percent in pull request 1354, and companion WASM reached a 75 percent floor in pull request 1367. The current slice targets the final `nook-companion-wasm` 90 percent floor through response-decoder and public-wrapper behavior tests.
+Lace removal merged in pull request 1349, authenticator-domain reached 90 percent in pull request 1354, and companion WASM reached an 88 percent floor in pull request 1369. The next slice targets the remaining 1.01 percentage-point `nook-companion-wasm` gap to 90 percent.
 
 ## Scope
 
@@ -41,8 +41,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] Focused page-policy and account-picker lifecycle behaviors are covered.
 - [x] `nook-companion-wasm` independently measures at least 60 percent with a matching floor.
 - [x] The companion-WASM pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
-- [ ] All companion response decoders have behavior-focused accepted and rejected fixture coverage.
-- [ ] The planned companion public wrappers have behavior-focused projection and error coverage.
+- [x] All companion response decoders have behavior-focused accepted and rejected fixture coverage.
+- [x] The planned companion public wrappers have behavior-focused projection and error coverage.
 - [ ] `nook-companion-wasm` independently measures at least 90 percent with a matching floor.
 - [ ] The companion-WASM 90 percent pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
@@ -59,7 +59,7 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Fresh hosted evidence after the latest Main changes measures `nook-companion-wasm` at 26.88 percent across 1,332 lines and `nook-wasm` at 53.45 percent across 28,633 lines. The next slice selects companion WASM as the smaller bounded target.
 - Pull request 1367 implemented the planned companion-WASM slice with 110 authored additions and raised its floor from 18 to 75 percent after hosted evidence measured 75.87 percent across 1,463 lines. It squash-merged as `fd82b6206f93465046b532a4e91d99bbc2c7c578` after exact-head policy, PR, Hive, review resolution, and readiness passed.
 - Exact per-file evidence leaves 353 companion-WASM lines uncovered. Response decoding and `lib.rs` contain 289 of those missed lines; covering their typed behavior is projected to raise the package above 90 percent within a 900-addition budget.
-- Pull request 1369 carries 564 authored additions of focused response-decoder and public-wrapper behavior tests on top of Main `c912d13de53a3c41492094cd3456f46480f64650`; hosted measurement is pending before the 90 percent floor is enabled.
+- Pull request 1369 added focused response-decoder and inline public-wrapper behavior tests, measured `nook-companion-wasm` at 88.99 percent across 1,716 lines, raised its independent floor from 75 to 88 percent, and squash-merged as `d636fed26ff7a3c6b362aff53152916430353e1b` after exact-head readiness passed. The remaining gap to 90 percent is 18 covered lines at the measured denominator.
 
 ## Findings and decisions
 
@@ -81,3 +81,4 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [Companion WASM 60 percent slice plan](../../plans/unplanned/20260905T050836Z-companion-wasm-coverage-60.md)
 - [Companion WASM 75 percent completion worklog](../../worklogs/unplanned/20260905T055156Z-pr-1367-companion-wasm-coverage-75.md)
 - [Companion WASM 90 percent slice plan](../../plans/unplanned/20260905T055936Z-companion-wasm-coverage-90.md)
+- [Companion WASM 88 percent completion worklog](../../worklogs/unplanned/20260905T075121Z-pr-1369-companion-wasm-coverage-88.md)
