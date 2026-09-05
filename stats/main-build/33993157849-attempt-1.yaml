@@ -1,0 +1,59 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-09-05T21:29:02.175Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 33993157849,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/33993157849",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "946c7116476ee1fa8b1a813b8baf0889b8282c6b",
+    "conclusion": "cancelled",
+    "created_at": "2026-09-05T21:28:40Z",
+    "started_at": "2026-09-05T21:28:43Z",
+    "completed_at": "2026-09-05T21:28:43Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1399,
+      "url": "https://github.com/meta-secret/nook/pull/1399",
+      "title": "Own local identity recovery completion"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 3,
+    "execution_seconds": 0,
+    "wall_seconds": 3,
+    "job_count": 0,
+    "step_count": 0
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
