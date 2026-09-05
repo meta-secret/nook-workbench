@@ -1,11 +1,11 @@
 ---
 title: Restore failed Main verification for 7a46fd388352
-status: in_progress
+status: completed
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-09-04T20:31:01Z
-updated_at: 2026-09-04T23:46:00Z
+updated_at: 2026-09-05T10:34:54Z
 source_issues: []
 related_prs: [1338, 1343]
 depends_on: []
@@ -35,12 +35,14 @@ request while preserving the failing revision and workflow evidence.
 
 ## Acceptance criteria
 
-- [ ] The failure is explained and fixed with targeted regression coverage.
-- [ ] The fix PR passes exact-head repository-owned checks, including the
+- [x] The failure is explained and fixed with targeted regression coverage.
+- [x] The fix PR passes exact-head repository-owned checks, including the
   Main-equivalent browser suites.
-- [ ] The fix is squash-merged and the incident records its PR and validation.
+- [x] The fix is squash-merged and the incident records its PR and validation.
 
 ## Progress
+
+- 2026-09-05T10:34:54Z: PR [#1343](https://github.com/meta-secret/nook/pull/1343) was squash-merged as `ddf0f8a09da07c2bbf14bd4db044705bab7f572f`. Final exact-head run [33958717556](https://github.com/meta-secret/nook/actions/runs/33958717556) passed the full browser and extension pipeline; assigned Main run [33959372860](https://github.com/meta-secret/nook/actions/runs/33959372860) passed every executed job. The [completion worklog](../../worklogs/unplanned/2026-09-05T1029-authentication-e2e-completed.md) and [PR statistics](../../stats/ai-agent/1343.yaml) preserve architecture, validation, retries, and delivery evidence.
 
 - 2026-09-04T23:46:00Z: User resumed delivery and authorized splitting only if necessary. The existing coherent PR remains the selected shape; estimated total 800 additions. Required Development Core worker is now executing the published classifier plan. Current hosted web verification narrowed to three asynchronous routing assertions; consumer repair will be batched after the Rust contract.
 
