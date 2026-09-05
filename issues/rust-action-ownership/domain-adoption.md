@@ -5,7 +5,7 @@ priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-09-04T19:33:00Z
-updated_at: 2026-09-04T23:24:18Z
+updated_at: 2026-09-05T01:42:41.482Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -101,3 +101,22 @@ Full remaining module inventory includes authentication workflow and its candida
 - Historical lexical counts above are unchanged and are not current remaining-violation counts. Final completion requires a refreshed compiler and semantic inventory.
 
 - 2026-09-04: PR1348 completed exact-head validation, readiness, squash merge, and Workbench closeout. PR1352 decoder tests passed and await base refresh. PR1345 cleanup tests passed after a two-line test repair; PR1345 and PR1347 encountered the inherited browser coverage deadline, addressed separately in PR1353 before their next validation.
+
+## Remaining scope snapshot
+
+At main `249c4414b`, DEV-CORE inspected 451 non-vendor Rust files across 13 manifest roots. This is static prioritization evidence, not a compiler-proven violation count. Only three product source scopes explicitly activate ownership enforcement on that main snapshot: credential fill, checked Sentinel response, and its core signing adapter. Open PRs are recorded separately and are not counted as merged completion.
+
+Current PRs cover account-picker phases, pairing, authenticator responses, and Sentinel quorum completion. The next bounded plans cover [website responses](website-responses.md) and [Sentinel genesis issuance](sentinel-genesis.md). Additional candidates, each requiring its own precise contract and budget, are:
+
+- Remaining reported responses, beginning with generated-password decoding and secret destruction.
+- OAuth-origin and vault-host policy operations.
+- Authentication observation classification, whose existing module is near the source-size limit.
+- Enrollment parsing, decryption, and runtime admission capability boundaries.
+- Event append and security-epoch preparation bound to checked frontier and signer.
+- Simple identity genesis and reconciliation, preserving existing durable-output behavior.
+- Replication immutable insertion and remaining event-log operation ownership.
+- Device-protection checked material and access effects.
+- Hive claim execution and shutdown, with AI/SRE semantic ownership.
+- Preflight and lint tooling, preserving real framework entrypoints and intentional negative fixtures.
+
+These candidates are not the complete backlog. Core secret/format/import scopes, remaining WASM manager/storage/export surfaces, app-common helpers, other tooling, binaries, examples, and nested test helpers still need classification. Stateless report decoding does not need artificial phases; reusable collections do not become one-use capabilities merely because they mutate. Local typestate cannot replace current external authorization or cryptographic checks.
