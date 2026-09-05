@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-quorum
 created_at: 2026-09-04T23:06:00Z
-updated_at: 2026-09-04T23:06:00Z
+updated_at: 2026-09-05T00:14:41.313Z
 source_issues: []
 related_prs: [1355]
 depends_on:
@@ -50,6 +50,8 @@ Only an admitted quorum can finalize, exactly once. Rejected admission returns i
 - Terminal failure intentionally replaces clone-and-retain retry behavior with a new user-started ceremony requirement.
 
 ## Progress
+
+- 2026-09-05T00:14:41.314Z: PR1355 first review correction preserves actual Rust Unlocked status after later web failure, adds three cases, and corrects fixture typing. Current0124e3445 passed SECURITY and web verification; hosted Dylint still rejects the negative-test Result handling. Pinned upstream analysis identifies consuming Result handling as the next minimal test-only correction; other checks and review are pending. New main b5ad17b99 will be integrated preserving typed versions.
 
 - 2026-09-04: Development core completed read-only inventory and concrete binding/borrowing design. SECURITY accepted the contract with explicit effect binding, complete cleanup, and non-hydrating status refresh. Ten files; implementation has not started and depends on PR1348 delivery.
 
