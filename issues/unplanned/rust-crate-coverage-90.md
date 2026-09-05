@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-05T05:17:12Z
+updated_at: 2026-09-05T05:51:56Z
 source_issues: []
 related_prs: [1349, 1354, 1367]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
@@ -37,10 +37,10 @@ Lace removal merged in pull request 1349 and authenticator-domain reached its 90
 - [x] Authenticator-domain independently measures at least 90 percent with a matching floor.
 - [x] The remaining package inventory is exhaustive and all other floors remain unchanged.
 - [x] One Nook pull request stays at or below 2,000 authored additions and passes exact-head hosted validation, review, readiness, and merge.
-- [ ] Eighteen existing companion-WASM behavior tests execute under both native and WASM harnesses.
-- [ ] Focused page-policy and account-picker lifecycle behaviors are covered.
-- [ ] `nook-companion-wasm` independently measures at least 60 percent with a matching floor.
-- [ ] The companion-WASM pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] Eighteen existing companion-WASM behavior tests execute under both native and WASM harnesses.
+- [x] Focused page-policy and account-picker lifecycle behaviors are covered.
+- [x] `nook-companion-wasm` independently measures at least 60 percent with a matching floor.
+- [x] The companion-WASM pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -53,7 +53,7 @@ Lace removal merged in pull request 1349 and authenticator-domain reached its 90
 - During pull request 1354, Main pull request 1345 exposed a missing `extension-lifecycle-routing.ts` entry in exact module-expert discovery. The user authorized the minimal AI-owned catalog repair, which restored the fail-closed policy without transferring broader ownership.
 - Pull request 1354 raised the authenticator-domain floor to 90 percent with 26 authored additions and squash-merged as `4157dfa45e00bbb4cabb8436e93ffb23a2f8b0d9`. Hosted coverage measured 96.09 percent; repository policy, PR, Hive, review resolution, and readiness passed on exact head `88dcf4f1bdc181cdf1e73c83ddb9e0be9cc4130d` after merging Main through `73965ffc87e70af6997948766a4005ef6c5907aa`.
 - Fresh hosted evidence after the latest Main changes measures `nook-companion-wasm` at 26.88 percent across 1,332 lines and `nook-wasm` at 53.45 percent across 28,633 lines. The next slice selects companion WASM as the smaller bounded target.
-- Pull request 1367 implements the planned companion-WASM slice with 110 authored additions and a provisional 60 percent floor; exact-head hosted validation is in progress.
+- Pull request 1367 implemented the planned companion-WASM slice with 110 authored additions and raised its floor from 18 to 75 percent after hosted evidence measured 75.87 percent across 1,463 lines. It squash-merged as `fd82b6206f93465046b532a4e91d99bbc2c7c578` after exact-head policy, PR, Hive, review resolution, and readiness passed.
 
 ## Findings and decisions
 
@@ -73,3 +73,4 @@ Lace removal merged in pull request 1349 and authenticator-domain reached its 90
 - [Authenticator-domain slice plan](https://github.com/meta-secret/nook-workbench/blob/8ee8c287bc6c363b36d7925484c047b08a167299/plans/unplanned/20260904T233702Z-authenticator-domain-90.md)
 - [Authenticator-domain completion worklog](../../worklogs/unplanned/20260905T050132Z-pr-1354-authenticator-domain-90.md)
 - [Companion WASM 60 percent slice plan](../../plans/unplanned/20260905T050836Z-companion-wasm-coverage-60.md)
+- [Companion WASM 75 percent completion worklog](../../worklogs/unplanned/20260905T055156Z-pr-1367-companion-wasm-coverage-75.md)
