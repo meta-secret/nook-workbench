@@ -1,12 +1,12 @@
 ---
 title: Consume Sentinel quorum and secure finalization effects
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-quorum
 created_at: 2026-09-04T23:06:00Z
-updated_at: 2026-09-05T01:31:03.049Z
+updated_at: 2026-09-05T02:49:26.993Z
 source_issues: []
 related_prs: [1355]
 depends_on:
@@ -33,12 +33,12 @@ Only an admitted quorum can finalize, exactly once. Rejected admission returns i
 
 ## Acceptance criteria
 
-- [ ] Valid quorum behavior and error precedence remain tested; rejected admission retains one usable session.
-- [ ] Public compile-fail probes reject premature finalization, private construction, cloning, deserialization, and capability reuse.
-- [ ] Every terminal failure and actual Rust-future drop resets keys, crypto, catalog, event-log session, and ceremony state; successful completion retains installed access.
-- [ ] Current vault type, store, policy, and requester binding are checked before key installation.
-- [ ] Browser rejection reflects actual inactive or retained ceremony status without synchronization or restart.
-- [ ] Hosted checks, SECURITY review, readiness, squash merge, and completion records pass.
+- [x] Valid quorum behavior and error precedence remain tested; rejected admission retains one usable session.
+- [x] Public compile-fail probes reject premature finalization, private construction, cloning, deserialization, and capability reuse.
+- [x] Every terminal failure and actual Rust-future drop resets keys, crypto, catalog, event-log session, and ceremony state; successful completion retains installed access.
+- [x] Current vault type, store, policy, and requester binding are checked before key installation.
+- [x] Browser rejection reflects actual inactive or retained ceremony status without synchronization or restart.
+- [x] Hosted checks, SECURITY review, readiness, squash merge, and completion records pass.
 
 ## Decisions and limitations
 
@@ -62,3 +62,7 @@ Only an admitted quorum can finalize, exactly once. Rejected admission returns i
 - 2026-09-04: Core and WEB implementation committed across ten files,1238additions. SECURITY passed combined2463bd13 against main5e2f75239; no local product tests ran. Hygiene requires a focused rejection demo, now recorded by superseding immutable plan489e8052292adc7e6478747472926a8535fc06d9. The demo uses the existing public reset operation to reproduce stale readiness; actual mid-effect failure and Rust-future Drop are covered by owning-boundary tests.
 
 - 2026-09-04: Published PR1355 at1e0b174567bc1d4a28b13edd176cee6416c3588e,1374additions across eleven files. Required demo contract and pre-push hygiene passed. SECURITY refreshed PASS; hosted validation is dispatched.
+
+## Completion
+
+PR1355 squash-merged at 2026-09-05T02:44:53Z as `c1d423a882bf99e63ec158fc586d4dc7eedd8e6c`. Final head `7a65c23865962c49fd8ce27e1066daf3f00f82a4` passed full run33939217576, source SECURITY and readiness with no unresolved findings. [Worklog](../../worklogs/rust-action-ownership/2026-09-05T02-44-53Z-pr-1355.md).
