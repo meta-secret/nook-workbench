@@ -1,0 +1,59 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-09-05T21:29:06.639Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 33992514956,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/33992514956",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "0cbff80706abdb523be57abde33326a5f942ad6b",
+    "conclusion": "cancelled",
+    "created_at": "2026-09-05T21:15:37Z",
+    "started_at": "2026-09-05T21:28:41Z",
+    "completed_at": "2026-09-05T21:28:41Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1402,
+      "url": "https://github.com/meta-secret/nook/pull/1402",
+      "title": "Allow merge after main advances when exact-head checks pass"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 784,
+    "execution_seconds": 0,
+    "wall_seconds": 784,
+    "job_count": 0,
+    "step_count": 0
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
