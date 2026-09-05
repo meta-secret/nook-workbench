@@ -1,12 +1,12 @@
 ---
 title: Own identity-held DEK grant comparison
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-identity-dek-grant
 created_at: 2026-09-05T10:16:00Z
-updated_at: 2026-09-05T10:16:00Z
+updated_at: 2026-09-05T10:18:00Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -36,4 +36,4 @@ This is a pure semantic predicate and receives no artificial lifecycle state. It
 
 ## Progress
 
-DEV-CORE completed a read-only refreshed inventory at main dbc555139. No implementation or validation is claimed.
+DEV-CORE completed a read-only refreshed inventory and is implementing the published two-file plan from main dbc555139. Validation remains pending.
