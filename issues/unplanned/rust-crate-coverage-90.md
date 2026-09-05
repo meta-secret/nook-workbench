@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-05T05:08:36Z
+updated_at: 2026-09-05T05:17:12Z
 source_issues: []
-related_prs: [1349, 1354]
+related_prs: [1349, 1354, 1367]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -53,6 +53,7 @@ Lace removal merged in pull request 1349 and authenticator-domain reached its 90
 - During pull request 1354, Main pull request 1345 exposed a missing `extension-lifecycle-routing.ts` entry in exact module-expert discovery. The user authorized the minimal AI-owned catalog repair, which restored the fail-closed policy without transferring broader ownership.
 - Pull request 1354 raised the authenticator-domain floor to 90 percent with 26 authored additions and squash-merged as `4157dfa45e00bbb4cabb8436e93ffb23a2f8b0d9`. Hosted coverage measured 96.09 percent; repository policy, PR, Hive, review resolution, and readiness passed on exact head `88dcf4f1bdc181cdf1e73c83ddb9e0be9cc4130d` after merging Main through `73965ffc87e70af6997948766a4005ef6c5907aa`.
 - Fresh hosted evidence after the latest Main changes measures `nook-companion-wasm` at 26.88 percent across 1,332 lines and `nook-wasm` at 53.45 percent across 28,633 lines. The next slice selects companion WASM as the smaller bounded target.
+- Pull request 1367 implements the planned companion-WASM slice with 110 authored additions and a provisional 60 percent floor; exact-head hosted validation is in progress.
 
 ## Findings and decisions
 
