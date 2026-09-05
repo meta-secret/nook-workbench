@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-account-picker
 created_at: 2026-09-04T20:51:00Z
-updated_at: 2026-09-05T00:55:13.575Z
+updated_at: 2026-09-05T01:30:58.913Z
 source_issues: []
 related_prs: [1345]
 depends_on:
@@ -40,6 +40,8 @@ Active and cleaning authorization states carry only their phase-specific data an
 - [ ] Hosted Rust, doctest, Dylint, and applicable extension validation pass with security review.
 
 ## Progress
+
+- 2026-09-05T01:30:58.913Z: Correction to the earlier quota report: the live review workflow explicitly does not require a Codex provider result. Quota does not block merge; all existing findings, required team verdicts, hosted checks and readiness still apply. Current PR #1345 head c55f621667aa401e4f595aa236fea68bcb449495; run https://github.com/meta-secret/nook/actions/runs/33936201975. Prior head passed full validation and readiness, then main PR1359 advanced during the final check. Current refreshed head is validating.
 
 - 2026-09-05T00:55:13.575Z: Integrated main 48a5794fe536c8c45f40c80be97f9bf0df8d9b3e into PR #1345, current head 235c33235c4627351cbefd4e5206824004f59e36. Hosted run: https://github.com/meta-secret/nook/actions/runs/33933997616. The authored product patch is unchanged and source SECURITY review passed; hosted checks remain pending. Required replacement-head GitHub Codex review is blocked by exhausted code-review quota; no merge or readiness is claimed.
 
