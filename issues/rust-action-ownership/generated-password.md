@@ -1,12 +1,12 @@
 ---
 title: Own generated-password response decoding
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-generated-password
 created_at: 2026-09-05T02:38:56Z
-updated_at: 2026-09-05T03:52:45.738Z
+updated_at: 2026-09-05T04:23:09.019Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1365
@@ -33,10 +33,10 @@ The decoder belongs to GeneratedPasswordResponse, and its complete core module e
 
 ## Acceptance criteria
 
-- [ ] Complete core module denies unowned functions and forbids invalid suppression.
-- [ ] Direct consumer uses the associated API with the same WASM signature and error mapping.
-- [ ] Nonempty password bytes, rejection reason, numeric kinds, contradictory flags, unknown-field rejection and existing Zeroize/Drop behavior are preserved.
-- [ ] Hosted core, WASM, runtime adapter, Dylint, source SECURITY and readiness pass before squash merge.
+- [x] Complete core module denies unowned functions and forbids invalid suppression.
+- [x] Direct consumer uses the associated API with the same WASM signature and error mapping.
+- [x] Nonempty password bytes, rejection reason, numeric kinds, contradictory flags, unknown-field rejection and existing Zeroize/Drop behavior are preserved.
+- [x] Hosted core, WASM, runtime adapter, Dylint, source SECURITY and readiness pass before squash merge.
 
 ## Findings and decisions
 
@@ -45,3 +45,7 @@ This is a reported response, not an authorization or generation capability. No a
 ## Progress
 
 PR1365 is published at e35bd676feec6ed9c949eef220354e1750d75bf9. Three files and69 authored additions; two existing tests retained and two bounded tests added. Source SECURITY and pre-push hygiene passed. Hosted validation dispatched; no completed runtime evidence is claimed.
+
+## Completed delivery
+
+PR1365 squash-merged as 5521d0851039d1b14358e1c7fc814cda9e7f1aa8 after full run33943731751, source SECURITY and readiness. The typed test correction preserves every password byte case. [Worklog](../../worklogs/rust-action-ownership/2026-09-05T04-20-32Z-pr-1365.md).
