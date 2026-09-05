@@ -1,12 +1,12 @@
 ---
 title: Model account-picker authorization cleanup phases
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-account-picker
 created_at: 2026-09-04T20:51:00Z
-updated_at: 2026-09-05T01:30:58.913Z
+updated_at: 2026-09-05T01:51:44.669Z
 source_issues: []
 related_prs: [1345]
 depends_on:
@@ -33,13 +33,15 @@ Active and cleaning authorization states carry only their phase-specific data an
 
 ## Acceptance criteria
 
-- [ ] Active states cannot carry cleanup counters or requirements; phase-specific methods belong to their state types.
-- [ ] Overlap, stale epochs, release, zero-count cleaning, and intervening cleanup behavior remain covered.
-- [ ] Invalid phase operations and fabricated cleaning state fail compilation; valid transitions compile.
-- [ ] No authority cloning, default placeholder, generic state framework, or recovery path is added.
-- [ ] Hosted Rust, doctest, Dylint, and applicable extension validation pass with security review.
+- [x] Active states cannot carry cleanup counters or requirements; phase-specific methods belong to their state types.
+- [x] Overlap, stale epochs, release, zero-count cleaning, and intervening cleanup behavior remain covered.
+- [x] Invalid phase operations and fabricated cleaning state fail compilation; valid transitions compile.
+- [x] No authority cloning, default placeholder, generic state framework, or recovery path is added.
+- [x] Hosted Rust, doctest, Dylint, and applicable extension validation pass with security review.
 
 ## Progress
+
+- 2026-09-05T01:48:16Z: PR1345 squash-merged as3849b814053dbc8cea6d79d6b0e5938694410262. Final c55f621 head passed hosted run33936201975, source SECURITY and readiness with zero unresolved threads. [Completion worklog](../../worklogs/rust-action-ownership/2026-09-05T01-48-16Z-pr-1345.md). Codex provider availability was not a required gate; earlier quota blocker report was corrected.
 
 - 2026-09-05T01:30:58.913Z: Correction to the earlier quota report: the live review workflow explicitly does not require a Codex provider result. Quota does not block merge; all existing findings, required team verdicts, hosted checks and readiness still apply. Current PR #1345 head c55f621667aa401e4f595aa236fea68bcb449495; run https://github.com/meta-secret/nook/actions/runs/33936201975. Prior head passed full validation and readiness, then main PR1359 advanced during the final check. Current refreshed head is validating.
 
@@ -69,7 +71,7 @@ Active and cleaning authorization states carry only their phase-specific data an
 
 ## Revised transition acceptance
 
-- [ ] Consuming mutation receivers cannot be reused; rejection returns the original state with a typed reason.
-- [ ] Named cleanup evidence crosses the Rust/WASM boundary.
-- [ ] Shared initialization publishes its handle once; synchronous replacements and post-await reacquisition prevent stale-wrapper reuse.
-- [ ] Existing exported extension behavior is preserved, including marker failure propagation and overlap races.
+- [x] Consuming mutation receivers cannot be reused; rejection returns the original state with a typed reason.
+- [x] Named cleanup evidence crosses the Rust/WASM boundary.
+- [x] Shared initialization publishes its handle once; synchronous replacements and post-await reacquisition prevent stale-wrapper reuse.
+- [x] Existing exported extension behavior is preserved, including marker failure propagation and overlap races.
