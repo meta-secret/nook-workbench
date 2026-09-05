@@ -1,12 +1,12 @@
 ---
 title: Own authenticator response decoding operations
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-authenticator-responses
 created_at: 2026-09-04T22:29:00Z
-updated_at: 2026-09-05T01:31:00.920Z
+updated_at: 2026-09-05T02:28:11Z
 source_issues: []
 related_prs: [1352]
 depends_on:
@@ -32,12 +32,14 @@ Preview, options, enrollment, backup attachment, code, and picker-open response 
 
 ## Acceptance criteria
 
-- [ ] Six core modules have complete ownership enforcement and no unowned helpers.
-- [ ] All direct consumers use the associated APIs; existing WASM signatures remain unchanged.
-- [ ] Decoder branch behavior, errors, zeroization, and secret ownership are preserved.
-- [ ] Hosted core, WASM, host adapter tests, Dylint, review, and readiness pass before squash merge.
+- [x] Six core modules have complete ownership enforcement and no unowned helpers.
+- [x] All direct consumers use the associated APIs; existing WASM signatures remain unchanged.
+- [x] Decoder branch behavior, errors, zeroization, and secret ownership are preserved.
+- [x] Hosted core, WASM, host adapter tests, Dylint, review, and readiness pass before squash merge.
 
 ## Progress
+
+- 2026-09-05T02:28:11Z: PR1352 squash-merged as `29e0fe55f05072d34ad527192b5bb098ad1f5a70`. Final head `5e2dc67a6d1ba303cb67c26988e8877ac6ba1056` passed hosted run33937318370, source SECURITY and exact-head readiness with no unresolved findings. [Worklog](../../worklogs/rust-action-ownership/2026-09-05T02-28-11Z-pr-1352.md).
 
 - 2026-09-05T01:31:00.920Z: Correction to the earlier quota report: the live review workflow explicitly does not require a Codex provider result. Quota does not block merge; all existing findings, required team verdicts, hosted checks and readiness still apply. Current PR #1352 head 5836d94a24c1eb0f845f652e9673ee3169b65267; run https://github.com/meta-secret/nook/actions/runs/33935038859. Source SECURITY passed; current hosted evidence will be inspected before sequential base refresh and merge.
 
