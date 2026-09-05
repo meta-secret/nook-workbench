@@ -9,7 +9,7 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 - [Architecture and lint foundation](foundation.md): policy, compiler diagnostics, and fixture evidence.
 - [Incremental domain adoption](domain-adoption.md): complete coverage inventory and domain sequence.
 - [Credential-fill ownership](credential-fill.md): merged in PR 1342.
-- [Account-picker phase ownership](account-picker.md): consuming Rust/WASM transitions, typed browser outcomes, and hosted compile-fail tests in PR 1345.
+- [Account-picker phase ownership](account-picker.md): consuming Rust/WASM transitions and typed browser outcomes merged in PR 1345, with hosted compile-fail and behavior tests.
 - [Extension pairing and persistence](extension-pairing.md): domain operation ownership and unchanged browser contracts in PR 1347.
 - [Sentinel participant response](sentinel-response.md): checked request ownership before encrypted response generation, merged in PR 1348.
 - [Authenticator response ownership](authenticator-responses.md): six complete core decoder modules and their WASM consumers in PR 1352.
@@ -30,7 +30,7 @@ Domain adoption depends on the reviewed foundation. Each adopted scope must acti
 
 ## Status
 
-Foundation merged in [PR 1339](https://github.com/meta-secret/nook/pull/1339), with hosted validation and readiness passed. Project-wide adoption is in progress. Credential-fill ownership merged in [PR 1342](https://github.com/meta-secret/nook/pull/1342); account-picker phase modeling is validating in [PR 1345](https://github.com/meta-secret/nook/pull/1345), and pairing ownership is validating in [PR 1347](https://github.com/meta-secret/nook/pull/1347). Sentinel response typestate merged in [PR 1348](https://github.com/meta-secret/nook/pull/1348). Authenticator response ownership is validating in [PR 1352](https://github.com/meta-secret/nook/pull/1352).
+Foundation merged in [PR 1339](https://github.com/meta-secret/nook/pull/1339), with hosted validation and readiness passed. Project-wide adoption is in progress. Credential-fill ownership merged in [PR 1342](https://github.com/meta-secret/nook/pull/1342); account-picker phase modeling merged in [PR 1345](https://github.com/meta-secret/nook/pull/1345), and pairing ownership is validating in [PR 1347](https://github.com/meta-secret/nook/pull/1347). Sentinel response typestate merged in [PR 1348](https://github.com/meta-secret/nook/pull/1348). Authenticator response ownership is validating in [PR 1352](https://github.com/meta-secret/nook/pull/1352).
 
 ## Project-wide adoption contract
 
