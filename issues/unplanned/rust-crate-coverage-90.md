@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-05T20:44:41Z
+updated_at: 2026-09-05T23:32:44Z
 source_issues: []
-related_prs: [1349, 1354, 1367, 1369, 1374, 1397]
+related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -47,6 +47,10 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] The companion-WASM 90 percent pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 53 percent with a matching floor.
 - [x] The `nook-wasm` pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 55 percent with a matching floor.
+- [x] The `nook-wasm` 55 percent pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 56 percent with a matching floor.
+- [x] The `nook-wasm` 56 percent pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -67,6 +71,10 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1374 passed exact-head validation on final head `42be2a5241adba15e03608541ffb24a3dfaeba23`, returned `ready: true` with zero unresolved review threads, and squash-merged as `fb5716cd98865a51e97ccc242861681fecd5ee0b` with 90 authored additions.
 - Pull request 1397 added deterministic `nook-wasm` projection tests for mnemonic, provider-label, OAuth, revision/scope, and vault-architecture wrappers. After merging Main through `ef6460e61037cee9aa0da6029065d1266c596eb9`, exact hosted run `33990481298` passed 96 native and 159 browser tests and measured `nook-wasm` at 54.81 percent, so the independent floor was raised from 51 to 53 percent.
 - Pull request 1397 passed exact-head validation on final head `97bfb4a041a3502983059b7898119b6911f90ebc`, returned `ready: true` with zero unresolved review threads, and squash-merged as `ae4e2512b93bf5dd359f07990a30fc2e9f41ad0a` with 282 authored additions.
+- Pull request 1401 added deterministic `nook-wasm` runtime-wrapper projection tests and raised its floor from 53 to 55 percent. Exact hosted run `33993311760` passed 99 native and 160 browser tests and measured `nook-wasm` at 55.56 percent, with companion WASM at 91.05 percent.
+- Pull request 1401 passed exact-head validation on final head `992219518459c31fab3118c8a6f602670d744da6`, returned `ready: true` with zero unresolved review threads, and squash-merged as `35201094a4368c14d41b673f868d52ab3bf5b943` with 103 authored additions after merging the latest Main.
+- Pull request 1404 split the WASM runtime policy adapter into its focused implementation module, colocated the policy tests with that implementation, and corrected the executable `nook-wasm` floor from 55 to 56 percent. The final exact hosted run `33998240431` passed 106 native tests and 160 browser tests and measured 56.85 percent line coverage; the companion package remained above its 90 percent floor.
+- Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
 
