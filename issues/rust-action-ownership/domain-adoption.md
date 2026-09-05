@@ -126,3 +126,5 @@ These candidates are not the complete backlog. Core secret/format/import scopes,
 ## Latest delivered and active scopes
 
 Website response PR1361 merged as65901c8c816cf30466793980ba5e96219083eaa1 after full run33942183190, source SECURITY and readiness. Three complete core modules now enforce ownership. Generated-password response PR1365 is published; Sentinel genesis PR1363 has a batched CI correction awaiting replacement validation. The next bounded inventory is [OAuth origin policy](oauth-origin.md). Historical counts above remain snapshots; the project mission is incomplete.
+
+- Generated-password PR1365 merged as5521d0851039d1b14358e1c7fc814cda9e7f1aa8 after full run33943731751, source SECURITY, readiness and Workbench closeout. OAuth origin PR1366 is validating. Genesis PR1363 passed full run33943815326 and is refreshing to the new base before readiness.
