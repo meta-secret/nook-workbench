@@ -1,14 +1,15 @@
 ---
 title: Own generated-password response decoding
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-generated-password
 created_at: 2026-09-05T02:38:56Z
-updated_at: 2026-09-05T02:38:56Z
+updated_at: 2026-09-05T03:52:45.738Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1365
 depends_on:
   - issues/rust-action-ownership/website-responses.md
 ---
@@ -43,4 +44,4 @@ This is a reported response, not an authorization or generation capability. No a
 
 ## Progress
 
-DEV-CORE completed source inventory at 6970bf5b31eb1c3b12abdb49a89cac2424fc5e0b. Implementation waits for website PR1361 because core exports and the WASM adapter overlap.
+PR1365 is published at e35bd676feec6ed9c949eef220354e1750d75bf9. Three files and69 authored additions; two existing tests retained and two bounded tests added. Source SECURITY and pre-push hygiene passed. Hosted validation dispatched; no completed runtime evidence is claimed.
