@@ -16,9 +16,11 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 
 - [Sentinel quorum completion](sentinel-quorum.md): consuming collection and finalization with terminal cleanup is validating in PR 1355.
 - [Browser coverage deadline](browser-deadline.md): delivered independently in PR 1349; identical PR 1353 closed as superseded after passing validation.
-- [Website response ownership](website-responses.md): three core modules and six WASM delegates planned after authenticator response integration.
+- [Website response ownership](website-responses.md): three core modules and six WASM delegates validating in PR1361.
 
 - [Sentinel genesis issuance](sentinel-genesis.md): private collecting and signer-bound ready states, consuming issuance, and preserved pending-output completion planned after quorum integration.
+
+- [Generated-password response ownership](generated-password.md): one decoder, complete module enforcement and preserved secret lifetime planned after website response integration.
 
 ## Shared decisions and interfaces
 
