@@ -1,0 +1,736 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-09-05T07:43:54.244Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 33951184001,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/33951184001",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "53a0c3fcd98d017bfc0345a7310b5dd446e42932",
+    "conclusion": "failure",
+    "created_at": "2026-09-05T06:56:31Z",
+    "started_at": "2026-09-05T06:56:31Z",
+    "completed_at": "2026-09-05T07:42:03Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1370,
+      "url": "https://github.com/meta-secret/nook/pull/1370",
+      "title": "Activate Event Log domain API lint"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 0,
+    "execution_seconds": 2732,
+    "wall_seconds": 2732,
+    "job_count": 15,
+    "step_count": 51,
+    "build_seconds": 304
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [
+    {
+      "id": 101268315421,
+      "name": "Classify Main paths",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "nook-k0s-7wdzm-runner-jkjvn",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:13:44Z",
+      "completed_at": "2026-09-05T07:14:03Z",
+      "duration_seconds": 19,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:58Z",
+          "completed_at": "2026-09-05T07:14:00Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 2,
+          "name": "Checkout complete push history",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:00Z",
+          "completed_at": "2026-09-05T07:14:01Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 3,
+          "name": "Detect product changes",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:01Z",
+          "completed_at": "2026-09-05T07:14:01Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 6,
+          "name": "Post Checkout complete push history",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:01Z",
+          "completed_at": "2026-09-05T07:14:01Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 7,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:01Z",
+          "completed_at": "2026-09-05T07:14:01Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 101268315414,
+      "name": "Rust ecosystem / Cargo fuzz smoke",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "nook-k0s-7wdzm-runner-dfw6p",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:13:47Z",
+      "completed_at": "2026-09-05T07:17:51Z",
+      "duration_seconds": 244,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:49Z",
+          "completed_at": "2026-09-05T07:13:49Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:49Z",
+          "completed_at": "2026-09-05T07:13:52Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:52Z",
+          "completed_at": "2026-09-05T07:14:05Z",
+          "duration_seconds": 13
+        },
+        {
+          "number": 4,
+          "name": "Bake rust-fuzz-smoke",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:05Z",
+          "completed_at": "2026-09-05T07:17:47Z",
+          "duration_seconds": 222
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:17:47Z",
+          "completed_at": "2026-09-05T07:17:47Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:17:47Z",
+          "completed_at": "2026-09-05T07:17:48Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:17:48Z",
+          "completed_at": "2026-09-05T07:17:48Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 101268315300,
+      "name": "Rust ecosystem / Kani bounded proofs",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "nook-k0s-7wdzm-runner-bvwnf",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:13:49Z",
+      "completed_at": "2026-09-05T07:18:06Z",
+      "duration_seconds": 257,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:50Z",
+          "completed_at": "2026-09-05T07:13:52Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:52Z",
+          "completed_at": "2026-09-05T07:13:58Z",
+          "duration_seconds": 6
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:58Z",
+          "completed_at": "2026-09-05T07:15:07Z",
+          "duration_seconds": 69
+        },
+        {
+          "number": 4,
+          "name": "Bake Kani bounded proofs",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:15:07Z",
+          "completed_at": "2026-09-05T07:17:59Z",
+          "duration_seconds": 172
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:17:59Z",
+          "completed_at": "2026-09-05T07:17:59Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:17:59Z",
+          "completed_at": "2026-09-05T07:18:00Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:18:00Z",
+          "completed_at": "2026-09-05T07:18:00Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 101268315428,
+      "name": "Rust ecosystem / Proptest, Insta, and Loom",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "nook-k0s-7wdzm-runner-kwxm7",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:13:49Z",
+      "completed_at": "2026-09-05T07:22:23Z",
+      "duration_seconds": 514,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:50Z",
+          "completed_at": "2026-09-05T07:13:53Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:53Z",
+          "completed_at": "2026-09-05T07:14:08Z",
+          "duration_seconds": 15
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:08Z",
+          "completed_at": "2026-09-05T07:15:11Z",
+          "duration_seconds": 63
+        },
+        {
+          "number": 4,
+          "name": "Bake rust-ecosystem-deterministic",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:15:11Z",
+          "completed_at": "2026-09-05T07:22:16Z",
+          "duration_seconds": 425
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:22:16Z",
+          "completed_at": "2026-09-05T07:22:16Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:22:16Z",
+          "completed_at": "2026-09-05T07:22:16Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:22:16Z",
+          "completed_at": "2026-09-05T07:22:16Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 101268315515,
+      "name": "Rust ecosystem / Dependency policy and RustSec",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "nook-k0s-7wdzm-runner-b76wq",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:13:50Z",
+      "completed_at": "2026-09-05T07:19:16Z",
+      "duration_seconds": 326,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:51Z",
+          "completed_at": "2026-09-05T07:13:51Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:51Z",
+          "completed_at": "2026-09-05T07:13:53Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:53Z",
+          "completed_at": "2026-09-05T07:14:07Z",
+          "duration_seconds": 14
+        },
+        {
+          "number": 4,
+          "name": "Run dependency policy",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:07Z",
+          "completed_at": "2026-09-05T07:18:55Z",
+          "duration_seconds": 288
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:18:55Z",
+          "completed_at": "2026-09-05T07:18:56Z",
+          "duration_seconds": 1
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:18:56Z",
+          "completed_at": "2026-09-05T07:18:56Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:18:56Z",
+          "completed_at": "2026-09-05T07:18:56Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 101268315473,
+      "name": "Rust ecosystem / Dylint repository lints",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "nook-k0s-7wdzm-runner-csw65",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:13:52Z",
+      "completed_at": "2026-09-05T07:42:03Z",
+      "duration_seconds": 1691,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:53Z",
+          "completed_at": "2026-09-05T07:13:55Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:13:55Z",
+          "completed_at": "2026-09-05T07:14:10Z",
+          "duration_seconds": 15
+        },
+        {
+          "number": 3,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:10Z",
+          "completed_at": "2026-09-05T07:15:11Z",
+          "duration_seconds": 61
+        },
+        {
+          "number": 4,
+          "name": "Bake rust-dylint",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:15:11Z",
+          "completed_at": "2026-09-05T07:41:57Z",
+          "duration_seconds": 1606
+        },
+        {
+          "number": 7,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:41:57Z",
+          "completed_at": "2026-09-05T07:41:57Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 8,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:41:57Z",
+          "completed_at": "2026-09-05T07:41:57Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 9,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:41:57Z",
+          "completed_at": "2026-09-05T07:41:57Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 101268367049,
+      "name": "Native Rust verification",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_name": "nook-k0s-7wdzm-runner-7bgjp",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:14:15Z",
+      "completed_at": "2026-09-05T07:21:21Z",
+      "duration_seconds": 426,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:20Z",
+          "completed_at": "2026-09-05T07:14:23Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:23Z",
+          "completed_at": "2026-09-05T07:14:29Z",
+          "duration_seconds": 6
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:14:29Z",
+          "completed_at": "2026-09-05T07:14:41Z",
+          "duration_seconds": 12
+        },
+        {
+          "number": 4,
+          "name": "Native Rust format, tests, and coverage",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-09-05T07:14:41Z",
+          "completed_at": "2026-09-05T07:19:45Z",
+          "duration_seconds": 304
+        },
+        {
+          "number": 5,
+          "name": "Export commit-keyed ***-core/auth coverage",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-05T07:19:45Z",
+          "completed_at": "2026-09-05T07:19:45Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 6,
+          "name": "Upload commit-keyed ***-core/auth coverage",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-05T07:19:45Z",
+          "completed_at": "2026-09-05T07:19:45Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 7,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:19:45Z",
+          "completed_at": "2026-09-05T07:21:19Z",
+          "duration_seconds": 94
+        },
+        {
+          "number": 8,
+          "name": "Publish verified native BuildKit cache",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-05T07:21:19Z",
+          "completed_at": "2026-09-05T07:21:19Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 15,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:21:19Z",
+          "completed_at": "2026-09-05T07:21:19Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 16,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:21:19Z",
+          "completed_at": "2026-09-05T07:21:19Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 17,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-05T07:21:19Z",
+          "completed_at": "2026-09-05T07:21:19Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 101269295221,
+      "name": "WASM verification and artifact",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:21:22Z",
+      "completed_at": "2026-09-05T07:21:21Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 101269295607,
+      "name": "Verify web build",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:21:22Z",
+      "completed_at": "2026-09-05T07:21:21Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 101269295806,
+      "name": "WASM cache publication",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:21:22Z",
+      "completed_at": "2026-09-05T07:21:21Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 101269295891,
+      "name": "Extension e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "nook-k0s-container"
+      ],
+      "started_at": "2026-09-05T07:21:22Z",
+      "completed_at": "2026-09-05T07:21:22Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 101269295965,
+      "name": "Web e2e",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "nook-k0s-container"
+      ],
+      "started_at": "2026-09-05T07:21:22Z",
+      "completed_at": "2026-09-05T07:21:22Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 101269296088,
+      "name": "UI demos",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "nook-k0s-container"
+      ],
+      "started_at": "2026-09-05T07:21:22Z",
+      "completed_at": "2026-09-05T07:21:22Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 101269296245,
+      "name": "Portable WASM cache publication proof",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:21:22Z",
+      "completed_at": "2026-09-05T07:21:22Z",
+      "duration_seconds": 0,
+      "steps": []
+    },
+    {
+      "id": 101269296345,
+      "name": "Deploy development",
+      "status": "completed",
+      "conclusion": "skipped",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-05T07:21:22Z",
+      "completed_at": "2026-09-05T07:21:22Z",
+      "duration_seconds": 0,
+      "steps": []
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
