@@ -1,14 +1,15 @@
 ---
 title: Own identity epoch projection
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-identity-epoch
 created_at: 2026-09-05T10:37:30Z
-updated_at: 2026-09-05T10:37:30Z
+updated_at: 2026-09-05T10:53:03Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1379
 depends_on:
   - issues/rust-action-ownership/identity-dek-grant.md
 ---
@@ -25,10 +26,10 @@ One Rust file with a ceiling of 180 authored additions. Move `epoch_label` onto 
 
 ## Acceptance criteria
 
-- [ ] Legacy initialization, same-epoch advancement, descendant rotation, repeated rotation, and stale rejection behavior remains unchanged.
-- [ ] Stale-epoch diagnostic strings remain exact.
-- [ ] The module denies homeless functions without invalid suppressions.
-- [ ] Hosted checks, source SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Legacy initialization, same-epoch advancement, descendant rotation, repeated rotation, and stale rejection behavior remains unchanged.
+- [x] Stale-epoch diagnostic strings remain exact.
+- [x] The module denies homeless functions without invalid suppressions.
+- [x] Hosted checks, source SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Limits and decisions
 
@@ -36,4 +37,6 @@ This pure epoch projection receives no artificial typestate. It adds no cryptogr
 
 ## Progress
 
-DEV-CORE completed a read-only current-main inventory and selected this non-overlapping one-file boundary. Implementation awaits the immutable plan.
+DEV-CORE completed a read-only current-main inventory and implemented the published one-file plan.
+
+- 2026-09-05T10:53:03Z: [PR 1379](https://github.com/meta-secret/nook/pull/1379) merged as `d4ee11a7128f7fdbcd8b4051861c9833e0015da4` after source SECURITY, one full hosted validation cycle, and exact-head readiness passed. See the [completion worklog](../../worklogs/rust-action-ownership/2026-09-05T10-53-03Z-pr-1379.md).
