@@ -23,7 +23,7 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 - [Generated-password response ownership](generated-password.md): one decoder, complete module enforcement and preserved secret lifetime merged in PR1365.
 - [OAuth origin policy ownership](oauth-origin.md): five-file existing-enum ownership merged in PR1366.
 - [Event quarantine publication boundary](event-quarantine-publication.md): typed rejection before heads and outbox publication merged in PR1372.
-- [Enrollment envelope admission](enrollment-admission.md): bounded checked encrypted input and consuming decryption planned after OAuth; existing runtime authorization stays separate.
+- [Enrollment envelope admission](enrollment-admission.md): bounded checked encrypted input and consuming decryption merged in PR1376; existing runtime authorization stays separate.
 
 ## Shared decisions and interfaces
 
@@ -51,3 +51,4 @@ Delivery proceeds through cohesive domain PRs with their consumers and validatio
 - 2026-09-05T04:42:42Z: Sentinel genesis PR1363 merged after full hosted Rust, WASM, browser, compile-fail, Dylint, source SECURITY and readiness validation.
 - 2026-09-05T06:31:27Z: OAuth origin policy PR1366 merged after four current-base validation cycles, source SECURITY and readiness.
 - 2026-09-05T09:33:22Z: Event quarantine publication PR1372 merged after exact-head hosted validation, source SECURITY and readiness. Enrollment envelope admission is the active next boundary.
+- 2026-09-05T10:11:04Z: Enrollment admission PR1376 merged after full hosted validation, source SECURITY and readiness. The remaining inventory now selects the next bounded Rust action graph.
