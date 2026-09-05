@@ -61,7 +61,7 @@ Initial inventory at Nook commit `b2bc663c0ed6d963f3ce13461731a5887dfafa3b` cove
 | nook-authenticator-domain | 1 | 0 | Existing method ownership; construction review pending |
 | nook-replication | 3 | 1 | Pending |
 | nook-event-log | 14 | 41 | Pending |
-| nook-companion-core | 52 | 169 | Credential-fill and picker merged; pairing validating; authenticator decoders merged in PR1352 |
+| nook-companion-core | 52 | 169 | Credential-fill and picker merged; pairing merged; authenticator decoders merged in PR1352 |
 | nook-companion-wasm | 8 | 93 | Credential-fill consumers migrated in PR 1342 |
 | nook-wasm | 98 | 719 | Sentinel response consumers merged in PR 1348; quorum completion merged in PR1355 |
 | nook-app-common | 4 | 14 | Pending; distinguish generated translations |
@@ -87,7 +87,7 @@ Each domain requires both ownership-enforcement evidence and a semantic construc
 
 - Credential-fill core and adapters: completed in PR 1342.
 - Account-picker: PR1345 merged as3849b814053dbc8cea6d79d6b0e5938694410262 with consuming Rust/WASM lifecycle transitions, typed browser completion outcomes, concurrency tests, and compile-fail probes.
-- Pairing state, existing legacy decoding, and persistence classification: PR 1347 validating ownership of 13 production operations and six fixtures across five files; all 20 original tests plus two JSON validation tests passed on the previous exact head. Current base refresh requires fresh hosted evidence.
+- Pairing state, existing legacy decoding, and persistence classification: PR1347 merged with ownership of 13 production operations and six fixtures across five files; all20 original tests plus2JSON validation tests passed, along with full hosted checks and readiness.
 - Authenticator response decoders: merged in PR1352 across six core modules and their WASM consumers; hosted tests, Dylint, source SECURITY and readiness passed. Website response decoders, origin/vault-host policy, and session protocol remain subsequent cohesive groups.
 - Authentication workflow roots are already 983 and 885 lines; page-field classification is 936 lines. These require domain-aware simplification before ownership moves, without splitting tests to evade size limits.
 
