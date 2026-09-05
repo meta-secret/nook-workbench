@@ -57,13 +57,13 @@ Initial inventory at Nook commit `b2bc663c0ed6d963f3ce13461731a5887dfafa3b` cove
 | Package | Rust files | Function candidates | Adoption status |
 |---|---:|---:|---|
 | nook-core | 109 | 526 | Sentinel response adapters merged in PR 1348; remaining domains pending |
-| nook-auth2 | 43 | 245 | Checked participant response merged in PR 1348; consuming quorum implementation underway |
+| nook-auth2 | 43 | 245 | Checked participant response merged in PR 1348; consuming quorum merged in PR1355 |
 | nook-authenticator-domain | 1 | 0 | Existing method ownership; construction review pending |
 | nook-replication | 3 | 1 | Pending |
 | nook-event-log | 14 | 41 | Pending |
 | nook-companion-core | 52 | 169 | Credential-fill and picker merged; pairing validating; authenticator decoders merged in PR1352 |
 | nook-companion-wasm | 8 | 93 | Credential-fill consumers migrated in PR 1342 |
-| nook-wasm | 98 | 719 | Sentinel response consumers merged in PR 1348; quorum completion in progress |
+| nook-wasm | 98 | 719 | Sentinel response consumers merged in PR 1348; quorum completion merged in PR1355 |
 | nook-app-common | 4 | 14 | Pending; distinguish generated translations |
 | nook-domain-api | 14 | 82 | Foundation merged; intentional negative fixtures retained |
 | fuzz | 1 | 0 | Framework boundary review pending |
@@ -96,7 +96,7 @@ Full remaining module inventory includes authentication workflow and its candida
 ## Current boundary work
 
 - Main ownership overlaps from PRs 1335 and 1344 are resolved by their merges; current slices integrate those changes.
-- Merged Sentinel checked responses in PR 1348 establish signature and supplied-key binding, with existing membership/provenance checks retained at the caller. Quorum collection and guarded finalization are now being implemented under the separate [quorum plan](sentinel-quorum.md).
+- Merged Sentinel checked responses in PR 1348 establish signature and supplied-key binding, with existing membership/provenance checks retained at the caller. Quorum collection and guarded finalization merged in PR1355 under the [quorum plan](sentinel-quorum.md).
 - Existing flat WASM exports, pairing wire selection and boolean projections, authenticator wire success flags, and raw picker expiry are remaining migration work, not permanent boundary exemptions.
 - Historical lexical counts above are unchanged and are not current remaining-violation counts. Final completion requires a refreshed compiler and semantic inventory.
 
@@ -120,3 +120,5 @@ At that snapshot, open PRs covered account-picker phases, pairing, authenticator
 - Preflight and lint tooling, preserving real framework entrypoints and intentional negative fixtures.
 
 These candidates are not the complete backlog. Core secret/format/import scopes, remaining WASM manager/storage/export surfaces, app-common helpers, other tooling, binaries, examples, and nested test helpers still need classification. Stateless report decoding does not need artificial phases; reusable collections do not become one-use capabilities merely because they mutate. Local typestate cannot replace current external authorization or cryptographic checks.
+
+- 2026-09-05T02:44:53Z: Sentinel quorum PR1355 merged with full hosted checks, source SECURITY and readiness. Genesis issuance is now in progress; the project migration remains incomplete.
