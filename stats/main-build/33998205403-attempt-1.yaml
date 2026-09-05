@@ -1,0 +1,59 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-09-05T23:32:17.668Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 33998205403,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/33998205403",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "89092f0bfd950ef1ca85737cf5648bc45e7db342",
+    "conclusion": "cancelled",
+    "created_at": "2026-09-05T23:16:01Z",
+    "started_at": "2026-09-05T23:31:55Z",
+    "completed_at": "2026-09-05T23:31:55Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1412,
+      "url": "https://github.com/meta-secret/nook/pull/1412",
+      "title": "Own vault operation application on projection"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 954,
+    "execution_seconds": 0,
+    "wall_seconds": 954,
+    "job_count": 0,
+    "step_count": 0
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
