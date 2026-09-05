@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-05T02:33:06Z
+updated_at: 2026-09-05T05:01:32Z
 source_issues: []
-related_prs: [1349]
+related_prs: [1349, 1354]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -20,7 +20,7 @@ Pull request 1319 established exhaustive independent coverage gates at measured 
 
 ## Outcome
 
-Lace removal merged in pull request 1349. The current slice raises authenticator-domain from 87 to 90 percent with focused wire-value tests. Subsequent crates receive fresh plans after each slice merges.
+Lace removal merged in pull request 1349. Authenticator-domain reached its 90 percent floor in pull request 1354 with focused wire-value tests. The next remaining crate receives a fresh measured plan from the new Main baseline.
 
 ## Scope
 
@@ -33,9 +33,9 @@ Lace removal merged in pull request 1349. The current slice raises authenticator
 ## Acceptance criteria
 
 - [x] Lace source and all active consumers and build references are removed.
-- [ ] Authenticator-domain independently measures at least 90 percent with a matching floor.
-- [ ] The remaining package inventory is exhaustive and all other floors remain unchanged.
-- [ ] One Nook pull request stays at or below 2,000 authored additions and passes exact-head hosted validation, review, readiness, and merge.
+- [x] Authenticator-domain independently measures at least 90 percent with a matching floor.
+- [x] The remaining package inventory is exhaustive and all other floors remain unchanged.
+- [x] One Nook pull request stays at or below 2,000 authored additions and passes exact-head hosted validation, review, readiness, and merge.
 
 ## Progress
 
@@ -44,10 +44,9 @@ Lace removal merged in pull request 1349. The current slice raises authenticator
 - Merged exact-head reports measure `nook-wasm` at 51.42 percent across 229 declared tests and `nook-companion-wasm` at 27.55 percent across eight tests.
 - Hive measures 73.73 percent, Lace 86.48 percent, and authenticator-domain 87.93 percent.
 - The initial admission assessment preceded implementation; the user explicitly authorized an iterative pull-request sequence on 2026-09-04, superseding that blocker.
-- Pull request 1349 adds two Lace generator tests and raises its floor to 90 percent. Hosted coverage measured 94.49 percent; all checks passed on head f05d4c51d before Main advanced. The current merged-base head is undergoing fresh validation.
-- The complete authored diff is 67 additions. Browser-runner failures were diagnosed as a 20-second whole-suite timeout, not an external ChromeDriver kill; both browser validation paths passed with the explicit 60-second limit.
-- Pull request 1354 raises the authenticator-domain floor to 90 percent with 25 authored additions. Hosted coverage measured 96.09 percent, and its PR and Hive suites passed before the latest Main advancement required a fresh exact-head run.
-- After Main pull request 1345, repository policy deterministically discovers `extension-lifecycle-routing.ts` as a generated-binding consumer that is absent from the exact module-expert catalog. The failed policy attempt is rooted in this one catalog invariant; eighteen additional Loom failures cascade from it. No current Nook repair pull request owns the omission.
+- The initial pull request 1349 coverage approach measured Lace at 94.49 percent, but the user superseded it with complete Lace removal. The final removal diff contained 67 authored additions and passed the browser paths after their whole-suite timeout was made explicit.
+- During pull request 1354, Main pull request 1345 exposed a missing `extension-lifecycle-routing.ts` entry in exact module-expert discovery. The user authorized the minimal AI-owned catalog repair, which restored the fail-closed policy without transferring broader ownership.
+- Pull request 1354 raised the authenticator-domain floor to 90 percent with 26 authored additions and squash-merged as `4157dfa45e00bbb4cabb8436e93ffb23a2f8b0d9`. Hosted coverage measured 96.09 percent; repository policy, PR, Hive, review resolution, and readiness passed on exact head `88dcf4f1bdc181cdf1e73c83ddb9e0be9cc4130d` after merging Main through `73965ffc87e70af6997948766a4005ef6c5907aa`.
 
 ## Findings and decisions
 
@@ -55,7 +54,7 @@ Lace removal merged in pull request 1349. The current slice raises authenticator
 - The user-authorized serial delivery shape permits focused iterations while preserving the 2,000-authored-addition limit per pull request.
 - Do not weaken floors, add exclusions, or use assertion-free tests to manufacture compliance.
 - The iterative authorization resolves the delivery-shape blocker. Each crate slice receives its own one-PR plan and must merge before the next slice begins.
-- The module-expert catalog omission belongs to AI and must be repaired without weakening discovery or silently transferring unrelated Main ownership into the SRE coverage slice. Pull request 1354 cannot satisfy exact-head readiness until that Main invariant is restored.
+- The user authorized the one-line AI-owned module-expert catalog repair inside pull request 1354. Exact discovery remained fail-closed and the repaired invariant passed hosted repository policy before merge.
 
 ## References
 
@@ -65,3 +64,4 @@ Lace removal merged in pull request 1349. The current slice raises authenticator
 - [Lace 90 percent slice plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/unplanned/20260904T220046Z-lace-coverage-90.md)
 - [Superseding Lace removal plan](https://github.com/meta-secret/nook-workbench/blob/45aa7a762a91ad8e558bf116bd9b51a2d529e156/plans/unplanned/20260904T224807Z-remove-lace.md)
 - [Authenticator-domain slice plan](https://github.com/meta-secret/nook-workbench/blob/8ee8c287bc6c363b36d7925484c047b08a167299/plans/unplanned/20260904T233702Z-authenticator-domain-90.md)
+- [Authenticator-domain completion worklog](../../worklogs/unplanned/20260905T050132Z-pr-1354-authenticator-domain-90.md)
