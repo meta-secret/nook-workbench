@@ -1,14 +1,15 @@
 ---
 title: Own immutable replica insertion classification
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-replica-insert
 created_at: 2026-09-05T10:56:17Z
-updated_at: 2026-09-05T10:56:17Z
+updated_at: 2026-09-05T11:18:26Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1380
 depends_on:
   - issues/rust-action-ownership/identity-epoch.md
 ---
@@ -25,10 +26,10 @@ One Rust file with a ceiling of 180 authored additions. Move the insertion class
 
 ## Acceptance criteria
 
-- [ ] First-write immutability, exact duplicate detection, conflict rejection, provider separation, ordering, and dequeue behavior remain unchanged.
-- [ ] Loom poisoning and panic propagation plus the Kani proof entrypoint remain intact.
-- [ ] The module denies homeless functions without blanket suppression.
-- [ ] Hosted checks, source SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] First-write immutability, exact duplicate detection, conflict rejection, provider separation, ordering, and dequeue behavior remain unchanged.
+- [x] Loom poisoning and panic propagation plus the Kani proof entrypoint remain intact.
+- [x] The module denies homeless functions without blanket suppression.
+- [x] Hosted checks, source SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Limits and decisions
 
@@ -36,4 +37,4 @@ The reusable store and pure classification receive no artificial typestate. This
 
 ## Progress
 
-DEV-CORE completed a read-only current-main inventory and selected this non-overlapping one-file boundary. Implementation awaits the immutable plan.
+DEV-CORE implemented the published one-file plan. PR 1380 merged after current-main integration, exact-head source SECURITY, hosted validation, and readiness. See [the worklog](../../worklogs/rust-action-ownership/2026-09-05T11-18-26Z-pr-1380.md).
