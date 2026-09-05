@@ -1,14 +1,15 @@
 ---
 title: Reject quarantined events before publication
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-event-quarantine-publication
 created_at: 2026-09-05T05:51:54Z
-updated_at: 2026-09-05T05:51:54Z
+updated_at: 2026-09-05T06:37:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1372
 depends_on:
   - issues/rust-action-ownership/oauth-origin.md
 ---
@@ -37,4 +38,4 @@ This correction preserves the store's existing four dispositions and rejects onl
 
 ## Progress
 
-DEV-CORE completed the all-repository caller and EventError audit at main 73965ffc. SECURITY accepted the rejection-only contract. No implementation or validation is claimed.
+DEV-CORE implemented the three-file boundary in PR1372 at f85208a0848c5256c7e0cbdc4223a69183c720ae. Formatting, diff hygiene, authored-line budget, pre-push policy, and source SECURITY passed. Hosted validation remains pending.
