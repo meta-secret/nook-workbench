@@ -18,6 +18,8 @@ Rust domain operations belong to meaningful types, and state-dependent actions u
 - [Browser coverage deadline](browser-deadline.md): delivered independently in PR 1349; identical PR 1353 closed as superseded after passing validation.
 - [Website response ownership](website-responses.md): three core modules and six WASM delegates planned after authenticator response integration.
 
+- [Sentinel genesis issuance](sentinel-genesis.md): private collecting and signer-bound ready states, consuming issuance, and preserved pending-output completion planned after quorum integration.
+
 ## Shared decisions and interfaces
 
 Prefer distinct state structs with private invariant-bearing fields and consuming transitions. Closed enums represent branching outcomes. Existing runtime authorization and input validation remain authoritative. Keep public WASM contracts explicit.
