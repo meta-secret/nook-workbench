@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-account-picker
 created_at: 2026-09-04T20:51:00Z
-updated_at: 2026-09-04T22:01:45.936Z
+updated_at: 2026-09-05T00:55:13.575Z
 source_issues: []
 related_prs: [1345]
 depends_on:
@@ -40,6 +40,8 @@ Active and cleaning authorization states carry only their phase-specific data an
 - [ ] Hosted Rust, doctest, Dylint, and applicable extension validation pass with security review.
 
 ## Progress
+
+- 2026-09-05T00:55:13.575Z: Integrated main 48a5794fe536c8c45f40c80be97f9bf0df8d9b3e into PR #1345, current head 235c33235c4627351cbefd4e5206824004f59e36. Hosted run: https://github.com/meta-secret/nook/actions/runs/33933997616. The authored product patch is unchanged and source SECURITY review passed; hosted checks remain pending. Required replacement-head GitHub Codex review is blocked by exhausted code-review quota; no merge or readiness is claimed.
 
 - 2026-09-04: Development core and Security completed read-only design. Implementation has not started.
 
