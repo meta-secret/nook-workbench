@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-quorum
 created_at: 2026-09-04T23:06:00Z
-updated_at: 2026-09-05T00:55:17.775Z
+updated_at: 2026-09-05T01:31:03.049Z
 source_issues: []
 related_prs: [1355]
 depends_on:
@@ -50,6 +50,8 @@ Only an admitted quorum can finalize, exactly once. Rejected admission returns i
 - Terminal failure intentionally replaces clone-and-retain retry behavior with a new user-started ceremony requirement.
 
 ## Progress
+
+- 2026-09-05T01:31:03.049Z: Correction to the earlier quota report: the live review workflow explicitly does not require a Codex provider result. Quota does not block merge; all existing findings, required team verdicts, hosted checks and readiness still apply. Current PR #1355 head b2b92f663e6aa48db6d5ea27036233000a0bff68; run https://github.com/meta-secret/nook/actions/runs/33935982393. All151browser tests passed on the prior head after fixing the invalid genesis fixture; the current Result handler also passed Dylint. Remaining hosted checks are pending.
 
 - 2026-09-05T00:55:17.775Z: Integrated main 48a5794fe536c8c45f40c80be97f9bf0df8d9b3e into PR #1355, current head 3067af614e3cd00169720f4083ea2b8d635146a3. Hosted run: https://github.com/meta-secret/nook/actions/runs/33933874906. Rendered test conventions and safe stage/error-category diagnostics are committed. The earlier asynchronous checkpoint failure still requires current hosted evidence. Required replacement-head GitHub Codex review is blocked by exhausted code-review quota; no merge or readiness is claimed.
 
