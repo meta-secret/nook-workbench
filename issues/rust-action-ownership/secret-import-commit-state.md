@@ -1,14 +1,15 @@
 ---
 title: Type secret import preparation and commit
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-secret-import-commit
 created_at: 2026-09-05T22:25:26Z
-updated_at: 2026-09-05T22:25:26Z
+updated_at: 2026-09-05T22:47:01Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1408
 depends_on:
   - issues/rust-action-ownership/security-epoch-commit-state.md
 ---
@@ -25,12 +26,12 @@ One Rust file with a ceiling of 300 authored additions. Introduce private data-c
 
 ## Acceptance criteria
 
-- [ ] Construction coalesces equivalent plaintext items and retains the current duplicate count and metadata behavior.
-- [ ] Preparation consumes the coalesced state and returns only a prepared encrypted operation set after all records reconcile successfully.
-- [ ] Only the prepared state can invoke the final append action; empty operations still append nothing.
-- [ ] Existing crypto restoration, Sentinel admission, authorization, event ordering, zeroization, status, and error behavior remain unchanged.
-- [ ] The module denies homeless functions without blanket suppression.
-- [ ] Hosted behavior and Dylint checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Construction coalesces equivalent plaintext items and retains the current duplicate count and metadata behavior.
+- [x] Preparation consumes the coalesced state and returns only a prepared encrypted operation set after all records reconcile successfully.
+- [x] Only the prepared state can invoke the final append action; empty operations still append nothing.
+- [x] Existing crypto restoration, Sentinel admission, authorization, event ordering, zeroization, status, and error behavior remain unchanged.
+- [x] The module denies homeless functions without blanket suppression.
+- [x] Hosted behavior and Dylint checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Limits and decisions
 
@@ -38,4 +39,4 @@ The private states secure this local preparation boundary. Prepared data is not 
 
 ## Progress
 
-2026-09-05T22:25:26Z: Focused issue created from current-main inventory; implementation has not started.
+PR #1408 merged as `40f516880b11048cd6fc9e7b7bcecee97fe12772` after exact-head hosted validation, source SECURITY, and readiness passed.
