@@ -1,0 +1,125 @@
+schema_version: 4
+source_pr:
+  number: 1467
+  url: https://github.com/meta-secret/nook/pull/1467
+  title: "refactor: own shared import parsing and metadata"
+  change_surface: rust_shared_import_support_typestate
+  head_sha: 3b8873bf1292a8d7dc6b40c746cd6e853a70905e
+  merge_sha: 3cbc19bad6d235796d4c8049738f3c842719a4fb
+  started_at: 2026-09-06T18:15:10Z
+  opened_at: 2026-09-06T18:20:00Z
+  merged_at: 2026-09-06T20:21:19Z
+  elapsed_seconds: 7569
+summary:
+  local_execution_count: 8
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 180
+  github_actions_run_count: 4
+  github_actions_seconds: 1800
+  delivery_head_count: 5
+  review_request_count: 5
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 3
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 3
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 3
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-06T20:22:00Z
+  head_sha: 3b8873bf1292a8d7dc6b40c746cd6e853a70905e
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1467 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation_dispatches_after_main_refreshes
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1467
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1467 --squash
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+  - command: gh pr edit 1467 --body-file /tmp/pr1467-body-final.md
+    category: delivery
+    outcome: passed
+    reason: final_evidence_and_exact_head_update
+  - command: gh run list --workflow 'Linear UI demos'
+    category: check
+    outcome: passed
+    reason: delivery_head_ui_demo_confirmation
+  - command: git -C /tmp/nook-wb-1438-2 pull --ff-only origin main
+    category: delivery
+    outcome: passed
+    reason: workbench_completion_refresh
+
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34056837645
+    head_sha: 3b8873bf1292a8d7dc6b40c746cd6e853a70905e
+    conclusion: success
+    source_pr: 1467
+    validation_requested: true
+  - workflow: PR
+    run_id: 34056861018
+    head_sha: 3b8873bf1292a8d7dc6b40c746cd6e853a70905e
+    conclusion: success
+    source_pr: 1467
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34057597943
+    head_sha: 3b8873bf1292a8d7dc6b40c746cd6e853a70905e
+    conclusion: success
+    source_pr: 1467
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34057727598
+    head_sha: 3b8873bf1292a8d7dc6b40c746cd6e853a70905e
+    conclusion: success
+    source_pr: 1467
+    validation_requested: true
+
+delivery_heads:
+  - head_sha: 3b8873bf1292a8d7dc6b40c746cd6e853a70905e
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 3b8873bf1292a8d7dc6b40c746cd6e853a70905e
+    base_sha: 88194e6d3b482d6dacc3da68d78690684c6ed001
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 3b8873bf1292a8d7dc6b40c746cd6e853a70905e
+    run_id: 34056861018
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1465, 1461, 1460]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
