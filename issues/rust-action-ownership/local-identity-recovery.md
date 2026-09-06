@@ -1,14 +1,15 @@
 ---
 title: Type local identity reset admission and publication
-status: planned
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-local-identity-recovery
 created_at: 2026-09-06T09:43:12Z
-updated_at: 2026-09-06T09:43:12Z
+updated_at: 2026-09-06T10:17:01Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1441
 depends_on:
   - issues/rust-action-ownership/authenticated-identity-handoff.md
 ---
@@ -36,14 +37,14 @@ Move 12 production free functions onto `LocalIdentityRecoveryRequest`, borrowed 
 
 ## Acceptance criteria
 
-- [ ] Pending cleanup is returned before reconsidering the initiating app identity; scoped targeting follows that identity and preserves surviving selection.
-- [ ] Missing/corrupt directory behavior, strict corrupt-keyring rejection, target-change errors, retired-ID handling, simple-genesis checks, and Sentinel pending-marker rejection remain unchanged.
-- [ ] Existing best-effort migration and permissive reads remain explicit; no new recovery/fallback behavior is added.
-- [ ] Exact write/delete order, v1/v2 reconciliation-key recognition, encrypted-vault preservation, and post-transaction provider cleanup remain unchanged.
-- [ ] Preparation may retain existing migration writes; no effect-free, rollback, deletion-on-drop, freshness, or exactly-once claim is introduced.
-- [ ] Existing 11 browser tests remain; bounded preparation/drop, deletion-selection, and privacy/consumption coverage is added.
-- [ ] Complete recovery subtree denies homeless functions and rejects invalid suppression; unrelated identity-record parent remains outside scope.
-- [ ] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Pending cleanup is returned before reconsidering the initiating app identity; scoped targeting follows that identity and preserves surviving selection.
+- [x] Missing/corrupt directory behavior, strict corrupt-keyring rejection, target-change errors, retired-ID handling, simple-genesis checks, and Sentinel pending-marker rejection remain unchanged.
+- [x] Existing best-effort migration and permissive reads remain explicit; no new recovery/fallback behavior is added.
+- [x] Exact write/delete order, v1/v2 reconciliation-key recognition, encrypted-vault preservation, and post-transaction provider cleanup remain unchanged.
+- [x] Preparation may retain existing migration writes; no effect-free, rollback, deletion-on-drop, freshness, or exactly-once claim is introduced.
+- [x] Existing 11 browser tests remain; bounded preparation/drop, deletion-selection, and privacy/consumption coverage is added.
+- [x] Complete recovery subtree denies homeless functions and rejects invalid suppression; unrelated identity-record parent remains outside scope.
+- [x] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Constraints
 
@@ -52,3 +53,5 @@ No schema migration, new journal, fallback, rollback/recovery exception, or prov
 ## Progress
 
 Read-only DEV-CORE inventory at origin/main `80f5e4596d144a3915728a23b1e795520715365b` identified the four-file closure with no overlap with live PRs #1439, #1430, or #1210.
+
+Implementation landed in PR #1441 at initial head `f0b9cca64a284673545f15f26c8cf11ae8943bc8`, then merged latest main `0fbd5bc726efd26b7107da4caf7e2a6001479d59` without feature-file changes. Final head `302661373a5d5416d1f2225f65a502002f6d8ed0` passed scoped checks, Remote Loom, hosted validation, exact-head SECURITY, readiness, and squash merge `7390027921185515a971ee5fc4624e23e8cdcbc2`.
