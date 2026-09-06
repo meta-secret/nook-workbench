@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-06T19:45:02Z
+updated_at: 2026-09-06T22:25:03Z
 source_issues: []
-related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462]
+related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -76,6 +76,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] `nook-wasm` independently measures at least 75.0 percent in the next behavior-test slice.
 - [x] Pull request 1462 raises the executable `nook-wasm` floor to 75.4 percent after exact hosted evidence measures 75.42 percent.
 - [x] Pull request 1462 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 75.5 percent in the next behavior-test slice.
+- [x] Pull request 1468 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [ ] The next `nook-wasm` floor increase passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
@@ -130,6 +132,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1459 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, and a successful Pages deployment, then squash-merged as `0d06c5821ff4219088b51f08cf1f263262ffa8e3`. The next slice starts from merged Main at the 74.8 percent floor and targets 76 percent through the largest remaining deterministic manager gaps.
 - Pull request 1462 added 156 behavior-focused browser tests for Sentinel session and delivery guards, passkey projection branches, and security-epoch prepared-event handling. It also extracted the Sentinel delivery boundary into a cohesive module to preserve the source-size policy. Exact hosted run `34055064970` measured `nook-wasm` at 75.42 percent lines and `nook-companion-wasm` at 91.44 percent, so the executable `nook-wasm` floor was raised from 74.8 to 75.4 percent.
 - Pull request 1462 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, a successful Pages deployment, and final base `c864273e0cd29ddd14a4d6281a0706af34464426`; it squash-merged as `88194e6d3b482d6dacc3da68d78690684c6ed001`. The next slice starts from merged Main at the 75.4 percent floor and targets 80 percent through deterministic manager and storage behavior gaps.
+- Pull request 1468 added behavior-focused `nook-wasm` session-state tests for crypto lock state, ceremonies, search catalogs, resets, public app identity, sync outbox state, status channels, event-log state, and clear-sync-issue projections. The final exact hosted run `34063428197` measured `nook-wasm` at 75.54 percent lines and `nook-companion-wasm` at 91.57 percent, so the executable `nook-wasm` floor was raised from 75.4 to 75.5 percent.
+- Pull request 1468 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, a successful Pages deployment, and final base `d27b39c81d8b3e40f01d7710327615abacb943f4`; it squash-merged as `d48b2758b25c1e9424bfb9e07f0031acc3fa727b`. The next slice starts from merged Main at the 75.5 percent floor and continues toward 80 percent through deterministic manager and storage behavior gaps.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
@@ -155,3 +159,6 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [Companion WASM 88 percent completion worklog](../../worklogs/unplanned/20260905T075121Z-pr-1369-companion-wasm-coverage-88.md)
 - [Final companion WASM 90 percent plan](../../plans/unplanned/20260905T075311Z-companion-wasm-coverage-90-final.md)
 - [Companion WASM 90 percent completion worklog](../../worklogs/unplanned/20260905T194314Z-pr-1374-companion-wasm-coverage-90.md)
+- [Nook WASM 80 percent next-slice plan](../../plans/unplanned/20260906T194502Z-nook-wasm-coverage-80-next.md)
+- [Nook WASM 75.5 percent completion worklog](../../worklogs/unplanned/20260906T222503Z-pr-1468-nook-wasm-coverage-75-5.md)
+- [Merged Nook pull request #1468](https://github.com/meta-secret/nook/pull/1468)
