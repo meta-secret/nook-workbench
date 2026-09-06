@@ -70,6 +70,21 @@ and a matching 72.5 percent floor. This slice targets the next defensible
 - Exact-head validation, review resolution, readiness, merge, and Workbench
   records are complete.
 
+## Completed slice
+
+Pull request #1445 added behavior-focused manager and storage-adapter tests and
+raised the executable `nook-wasm` floor from 72.5 to 73.0 percent. Exact hosted
+run `34031529707` measured 25,391 of 34,774 lines, or 73.02 percent, with
+`nook-companion-wasm` remaining at 91.05 percent. Readiness returned
+`ready: true` with `behindBy: 0`, zero unresolved review threads, and a
+successful exact-head Pages deployment. The pull request squash-merged as
+`c7cfd0a5ee787c211734b416879c7cc2f0cf0db9` after rebasing onto Main
+`49b2bf9a590b968f50f3f29bf00fa15080e8c967`.
+
+The next slice continues from merged Main at the evidence-backed 73.0 percent
+floor and targets the next 5-to-10-point increment with focused tests in the
+remaining low-coverage `nook-wasm` modules.
+
 ## Safety review
 
 - This record contains no transcript, secret, private data, local path,
