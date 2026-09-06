@@ -61,6 +61,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] The `nook-wasm` 69.5 percent pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 70 percent with a matching floor.
 - [x] The `nook-wasm` 70 percent pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 72.5 percent with a matching floor.
+- [x] The `nook-wasm` 72.5 percent pull request passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -97,6 +99,9 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1436 passed exact-head validation, review resolution, and readiness with zero unresolved review threads on final head `715602e311c0db81ce7fce99fae73a25096afa52`, then squash-merged as `ebc68859ccb69a255e2f0d6254fe9c7e71383377`. The next bounded slice starts from merged Main at the evidence-backed 70 percent floor and targets 75 percent.
 - Pull request 1439 added focused connect, Sentinel, and vault API behavior tests. Its final exact hosted run `34025559161` passed 242 browser tests and measured `nook-wasm` at 71.73 percent line coverage across 33,773 lines after rebasing onto Main `80f5e4596`; companion WASM remained at 91.05 percent.
 - Pull request 1439 corrected a test-only genesis-record key classification assertion after the first hosted runtime failure, then passed exact-head validation, review resolution, and readiness on final head `80e13bd22e892d01379487259c6e593b452c4ef7`. It squash-merged as `0fbd5bc726efd26b7107da4caf7e2a6001479d59` with the executable `nook-wasm` floor intentionally remaining at 70 percent because this bounded slice did not reach a defensible 75 percent proof.
+- Pull request 1442 added behavior-focused tests for diagnostics, identity/passkey projections, Sentinel multi-device overflow, sync, and vault API wrappers. After correcting test fixtures to match runtime contracts and isolating the persisted event-log marker, exact hosted run `34029222290` passed the full required validation and measured `nook-wasm` at 72.50 percent line coverage across 34,340 lines; companion WASM remained at 91.05 percent.
+- Pull request 1442 raised the executable `nook-wasm` floor from 70 to 72.5 percent, passed `task pr:ready PR=1442` with zero unresolved review threads and a successful Pages deployment on exact head `118632b086599276473a8ffcae15553fd9d38fc8`, and squash-merged as `ab84eea871fa2e40b22c14adaeecfabae18fa24e` after rebasing onto Main `6100a2650636e566f188f0103e1b54f81ea28483`.
+- The next bounded slice continues from merged Main `ab84eea871fa2e40b22c14adaeecfabae18fa24e` and targets a defensible 75 percent `nook-wasm` floor with focused behavior tests in the remaining low-coverage manager/storage adapters.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
