@@ -1,14 +1,15 @@
 ---
 title: Type 1Password 1PUX archive admission
-status: planned
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-onepassword-import-admission
 created_at: 2026-09-06T15:24:53Z
-updated_at: 2026-09-06T15:24:53Z
+updated_at: 2026-09-06T15:45:43Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1456
 depends_on:
   - issues/rust-action-ownership/bitwarden-import-admission.md
 ---
@@ -37,16 +38,16 @@ Move 17 production free operations and two fixture helpers onto bounded owners w
 
 ## Acceptance criteria
 
-- [ ] Archive 128 MiB, attributes 64 KiB, data 64 MiB, advertised-size, and bounded-read checks remain unchanged.
-- [ ] ZIP lookup behavior, missing-entry, malformed UTF-8, description-before-version, and attributes-before-data error order remain unchanged.
-- [ ] Version wrapper, exact format description, direct/wrapped item acceptance, defaults, and dynamic field interpretation remain unchanged.
-- [ ] Account/vault/item ordering, unsupported counts, credential precedence, exact password bytes, URL/title selection, metadata order, archived-state handling, credential omission, card validation, and expiry parsing remain unchanged.
-- [ ] The private non-Clone checked archive retains the same opened archive after exact description/version admission and is the only state that reads `export.data`.
-- [ ] WASM ABI and plan → drop Zeroizing archive → commit ordering remain unchanged.
-- [ ] No extraction, attachment processing, crypto, storage, schema, fallback, recovery, or new limit behavior is added.
-- [ ] All four existing tests remain; focused bounded-limit/error-order, admitted-archive, wrapper-precedence, credential/metadata, and exact-byte cases plus borrow/private-construction/consumption controls are added inline.
-- [ ] Ownership denial and invalid-suppression prohibition cover the complete 1Password subtree; fixtures remain unchanged.
-- [ ] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Archive 128 MiB, attributes 64 KiB, data 64 MiB, advertised-size, and bounded-read checks remain unchanged.
+- [x] ZIP lookup behavior, missing-entry, malformed UTF-8, description-before-version, and attributes-before-data error order remain unchanged.
+- [x] Version wrapper, exact format description, direct/wrapped item acceptance, defaults, and dynamic field interpretation remain unchanged.
+- [x] Account/vault/item ordering, unsupported counts, credential precedence, exact password bytes, URL/title selection, metadata order, archived-state handling, credential omission, card validation, and expiry parsing remain unchanged.
+- [x] The private non-Clone checked archive retains the same opened archive after exact description/version admission and is the only state that reads `export.data`.
+- [x] WASM ABI and plan → drop Zeroizing archive → commit ordering remain unchanged.
+- [x] No extraction, attachment processing, crypto, storage, schema, fallback, recovery, or new limit behavior is added.
+- [x] All four existing tests remain; focused bounded-limit/error-order, admitted-archive, wrapper-precedence, credential/metadata, and exact-byte cases plus borrow/private-construction/consumption controls are added inline.
+- [x] Ownership denial and invalid-suppression prohibition cover the complete 1Password subtree; fixtures remain unchanged.
+- [x] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Constraints
 
@@ -55,3 +56,5 @@ No generic archive/parser framework, extraction, attachment processing, fallback
 ## Progress
 
 Read-only DEV-CORE inventory at fresh origin/main `643472c20230015be0110e0b65ce9c6b8c79cc07` identified the five-file closure with zero changed-file overlap with live PRs #1455, #1447, and #1210. The boundary contains 17 production free operations, two fixture helpers, and four existing tests; estimated 1,050–1,450 additions and 550–700 deletions with a hard ceiling of 1,750 additions.
+
+Implementation landed in PR #1456 at final head `a408f500a17ba6fa0b4718b369565bc561b3dc04`. Final scope is 914 additions and 547 deletions across exactly five files; squash merge is `7d071f2e64f03527c0550b5fd12d3ed81e9647cc`. Remote Loom, hosted validation, exact-head SECURITY, readiness, deployment, and post-merge Linear UI demo passed.

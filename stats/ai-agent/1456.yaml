@@ -1,0 +1,122 @@
+schema_version: 4
+source_pr:
+  number: 1456
+  url: https://github.com/meta-secret/nook/pull/1456
+  title: Type 1Password 1PUX archive admission
+  change_surface: rust_onepassword_import_typestate
+  head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+  merge_sha: 7d071f2e64f03527c0550b5fd12d3ed81e9647cc
+  started_at: 2026-09-06T15:24:53Z
+  opened_at: 2026-09-06T15:32:01Z
+  merged_at: 2026-09-06T15:44:57Z
+  elapsed_seconds: 1204
+summary:
+  local_execution_count: 5
+  local_check_count: 5
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 55
+  github_actions_run_count: 5
+  github_actions_seconds: 900
+  delivery_head_count: 1
+  review_request_count: 1
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 2
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 1
+test_inventory:
+  measured_at: 2026-09-06T15:45:43Z
+  head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push PR=1456
+    category: check
+    outcome: passed
+    reason: final_scope_pre_push_hygiene
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: dispatched
+    reason: initial_exact_head_remote_dispatch
+  - command: task pr:validate PR=1456
+    category: check
+    outcome: passed
+    reason: exact_head_hosted_validation_dispatch
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: dispatched
+    reason: transient_timeout_rerun_exact_head_remote_dispatch
+  - command: task pr:ready PR=1456
+    category: check
+    outcome: passed
+    reason: final_exact_head_readiness
+github_actions_runs:
+  - workflow: Remote / loom:verify / manual
+    run_id: 34042636996
+    head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+    conclusion: failure
+    source_pr: 1456
+    validation_requested: true
+  - workflow: PR
+    run_id: 34042651815
+    head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+    conclusion: success
+    source_pr: 1456
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34042607241
+    head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+    conclusion: success
+    source_pr: 1456
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34042850594
+    head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+    conclusion: success
+    source_pr: 1456
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34043276425
+    head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+    conclusion: success
+    source_pr: 1456
+    validation_requested: true
+delivery_heads:
+  - head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+    base_sha: 643472c20230015be0110e0b65ce9c6b8c79cc07
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+    run_id: 34042651815
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: Remote / loom:verify / manual
+    head_sha: a408f500a17ba6fa0b4718b369565bc561b3dc04
+    run_id: 34042850594
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1454, 1452, 1451]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
