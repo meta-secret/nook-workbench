@@ -1,0 +1,119 @@
+schema_version: 4
+source_pr:
+  number: 1449
+  url: https://github.com/meta-secret/nook/pull/1449
+  title: Type provider credential sealing and identity-scoped snapshot publication
+  change_surface: rust_provider_credential_publication_typestate
+  head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+  merge_sha: 8f2cc68785bc13f2415fddf0df74550c067bb3c4
+  started_at: 2026-09-06T12:28:33Z
+  opened_at: 2026-09-06T12:46:33Z
+  merged_at: 2026-09-06T13:27:39Z
+  elapsed_seconds: 3599
+  open_to_merge_seconds: 2466
+summary:
+  local_execution_count: 8
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 60
+  github_actions_run_count: 7
+  github_actions_seconds: 900
+  delivery_head_count: 3
+  review_request_count: 2
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 2
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: 2026-09-06T13:28:32Z
+  head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push PR=1449
+    category: check
+    outcome: passed
+    reason: final_base_pre_push_hygiene
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: dispatched
+    reason: final_exact_head_remote_dispatch
+  - command: task pr:validate PR=1449
+    category: check
+    outcome: passed
+    reason: final_exact_head_hosted_validation_dispatch
+  - command: task pr:ready PR=1449
+    category: check
+    outcome: passed
+    reason: final_exact_head_readiness
+github_actions_runs:
+  - workflow: PR
+    run_id: 34035713299
+    head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+    conclusion: success
+    source_pr: 1449
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34035703268
+    head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+    conclusion: success
+    source_pr: 1449
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34035689625
+    head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+    conclusion: success
+    source_pr: 1449
+    validation_requested: true
+  - workflow: Cancel obsolete PR validation
+    run_id: 34035688556
+    head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+    conclusion: success
+    source_pr: 1449
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34036166247
+    head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+    conclusion: success
+    source_pr: 1449
+    validation_requested: true
+delivery_heads:
+  - head_sha: 84c7ce4f618f901b85b76e43bac9e3cc5c606354
+    final: false
+  - head_sha: 9560611b0e9142ab83c88300b6c779634729dab6
+    final: false
+  - head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+    base_sha: f753a6e00822591d128706d3eed4c09769c5bf51
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 694e7ff42f35b67194bdd6d775f463b1b878cace
+    run_id: 34035713299
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1446, 1444]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []

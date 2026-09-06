@@ -1,14 +1,15 @@
 ---
 title: Type provider credential sealing and identity-scoped snapshot publication
-status: planned
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-provider-credential-publication
 created_at: 2026-09-06T12:28:33Z
-updated_at: 2026-09-06T12:28:33Z
+updated_at: 2026-09-06T13:28:32Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1449
 depends_on:
   - issues/rust-action-ownership/enrollment-issuance-links.md
 ---
@@ -39,15 +40,15 @@ Move 12 production free operations into credential/snapshot/publication owners w
 
 ## Acceptance criteria
 
-- [ ] Sequential sealing, clone-before-open replacement, empty credentials, marker-bearing fields, malformed armor rejection, and exact recipient/public-key behavior remain unchanged.
-- [ ] Normal-save sealing remains before keyring-policy lookup and database access; keyring observation and separate `nook_auth` transaction timing remain unchanged.
-- [ ] Identity-scoped and legacy reads, conflict refusal, exact errors, write ordering, partial effects, and future-drop behavior remain unchanged; no cross-database atomicity claim is added.
-- [ ] Presealed import checks incoming fields before database work, conditionally reads eligible legacy data, checks existing fields, and replaces only incoming active-vault grants while preserving unrelated grants and explicit recipient app ID.
-- [ ] Private-key-free presealed import, rollback projection schema, and all provider sealing/opening cryptographic behavior remain unchanged.
-- [ ] Eight core tests and 18 browser storage tests remain; publication tests move with the new child and bounded preparation/drop, malformed-marker, and failure-preservation controls are added.
-- [ ] Ownership enforcement covers the complete core credential module and new publication child only; unrelated parent storage and rollback helpers remain outside blanket activation.
-- [ ] No public ABI, schema, persistence, recipient, or cryptographic parameter changes.
-- [ ] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Sequential sealing, clone-before-open replacement, empty credentials, marker-bearing fields, malformed armor rejection, and exact recipient/public-key behavior remain unchanged.
+- [x] Normal-save sealing remains before keyring-policy lookup and database access; keyring observation and separate `nook_auth` transaction timing remain unchanged.
+- [x] Identity-scoped and legacy reads, conflict refusal, exact errors, write ordering, partial effects, and future-drop behavior remain unchanged; no cross-database atomicity claim is added.
+- [x] Presealed import checks incoming fields before database work, conditionally reads eligible legacy data, checks existing fields, and replaces only incoming active-vault grants while preserving unrelated grants and explicit recipient app ID.
+- [x] Private-key-free presealed import, rollback projection schema, and all provider sealing/opening cryptographic behavior remain unchanged.
+- [x] Eight core tests and 18 browser storage tests remain; publication tests move with the new child and bounded preparation/drop, malformed-marker, and failure-preservation controls are added.
+- [x] Ownership enforcement covers the complete core credential module and new publication child only; unrelated parent storage and rollback helpers remain outside blanket activation.
+- [x] No public ABI, schema, persistence, recipient, or cryptographic parameter changes.
+- [x] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Constraints
 
@@ -56,3 +57,5 @@ No generic persistence framework, fallback, rollback/recovery exception, cleanup
 ## Progress
 
 Read-only DEV-CORE inventory at refreshed origin/main `ea7820a4245733b26b9d49836eadc288f316e6d1` identified the seven-file closure with zero changed-file overlap with live PRs #1448, #1447, and #1210. Estimated 1,200–1,650 additions and 650–950 deletions with a hard ceiling of 1,850 additions.
+
+Implementation landed in PR #1449 at final head `694e7ff42f35b67194bdd6d775f463b1b878cace` after merging refreshed main `f753a6e00822591d128706d3eed4c09769c5bf51`. Final scope is 1,290 additions and 518 deletions across exactly seven files; squash merge is `8f2cc68785bc13f2415fddf0df74550c067bb3c4`. Remote Loom, hosted validation, exact-head SECURITY, readiness, deployment, and post-merge Linear UI demo passed.
