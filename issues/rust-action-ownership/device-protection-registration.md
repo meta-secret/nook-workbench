@@ -1,14 +1,15 @@
 ---
 title: Type device-protection registration and completion
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-device-protection-registration
 created_at: 2026-09-06T06:55:00Z
-updated_at: 2026-09-06T06:55:00Z
+updated_at: 2026-09-06T07:32:07Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1432
 depends_on:
   - issues/rust-action-ownership/passkey-authenticator.md
 ---
@@ -34,20 +35,21 @@ Device-protection registration uses a private continuation that retains credenti
 
 ## Acceptance criteria
 
-- [ ] Standard deterministic derivation and AntiHacker random wrapped-identity behavior remain unchanged.
-- [ ] Exact HKDF contexts, salts, typed-byte validation, version checks, error precedence, stored-device-ID comparison, serialization, redaction, and zeroization remain unchanged.
-- [ ] Registration retains credential ID, user handle, PRF input, and protection mode through the awaiting-assertion continuation.
-- [ ] The continuation exposes the existing assertion request and consumes itself with PRF output; incomplete or repeated completion is impossible through its private state.
-- [ ] Existing missing-registration-PRF assertion behavior remains unchanged and makes no verified browser-ceremony claim.
-- [ ] Existing record/request/material owners own derivation, recovery, assertion-request, unlock, and conversion actions.
-- [ ] WASM browser call order, observations, persistence, cleanup, failure behavior, and direct completion ABI remain unchanged.
-- [ ] The new complete registration and unlock children deny homeless functions and reject invalid suppression; the parent has no remaining production operations, while `protected_identity.rs` remains outside this enforcement slice because parent denial would inherit into its excluded helpers.
-- [ ] Colocated tests retain all existing behavior coverage and add continuation retention, equivalent branches, stored-identity rejection, dropped-incomplete-state, privacy, construction, and consuming-state controls.
-- [ ] Remote Loom, hosted PR checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Standard deterministic derivation and AntiHacker random wrapped-identity behavior remain unchanged.
+- [x] Exact HKDF contexts, salts, typed-byte validation, version checks, error precedence, stored-device-ID comparison, serialization, redaction, and zeroization remain unchanged.
+- [x] Registration retains credential ID, user handle, PRF input, and protection mode through the awaiting-assertion continuation.
+- [x] The continuation exposes the existing assertion request and consumes itself with PRF output; incomplete or repeated completion is impossible through its private state.
+- [x] Existing missing-registration-PRF assertion behavior remains unchanged and makes no verified browser-ceremony claim.
+- [x] Existing record/request/material owners own derivation, recovery, assertion-request, unlock, and conversion actions.
+- [x] WASM browser call order, observations, persistence, cleanup, failure behavior, and direct completion ABI remain unchanged.
+- [x] The new complete registration and unlock children deny homeless functions and reject invalid suppression; the parent has no remaining production operations, while `protected_identity.rs` remains outside this enforcement slice because parent denial would inherit into its excluded helpers.
+- [x] Colocated tests retain all existing behavior coverage and add continuation retention, equivalent branches, stored-identity rejection, dropped-incomplete-state, privacy, construction, and consuming-state controls.
+- [x] Remote Loom, hosted PR checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Progress
 
-The fourteen-file boundary was inventoried from Nook main at `e00cb372a60d3e7333ea395bb1fc864d0dd487c9` with zero file overlap against live PRs #1430 and #1210. The current parent has 11 production free operations, 13 tests, and a registration continuation whose setup evidence is not retained by the completion state. The lint-boundary amendment at `2026-09-06T07-05-00Z-device-protection-lint-boundary.md` records why parent denial remains deferred while the parent is left with no production operations.
+PR #1432 merged the fourteen-file device-protection ownership boundary as `8980f2fa6ec04ca943453c3d61782672c2be9fdd` after exact-head Remote Loom run `34018716176`, hosted PR run `34018476059`, exact-head SECURITY PASS, readiness, and squash merge. The first Remote Loom attempt timed out in the unrelated semantic-adapter test; the exact same head passed on retry. The lint-boundary amendment at `2026-09-06T07-05-00Z-device-protection-lint-boundary.md` remains the governing scope decision: parent denial is deferred because it would inherit into excluded `protected_identity.rs` helpers, while the parent has no production operations and the new registration/unlock children enforce ownership.
+
 
 ## Findings and decisions
 
