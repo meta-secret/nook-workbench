@@ -1,0 +1,66 @@
+schema_version: 4
+source_pr:
+  number: 1423
+  url: https://github.com/meta-secret/nook/pull/1423
+  title: Raise nook-wasm coverage floor to 65 percent
+  change_surface: nook-wasm behavior tests and executable coverage floor
+  head_sha: b66a60730bc86ca47844af762d44c1c46e6c189b
+  merge_sha: 698f73155fa4cbb53879e43db967ed9f9541ed3d
+  started_at: 2026-09-06T02:24:56Z
+  opened_at: 2026-09-06T02:59:00Z
+  merged_at: 2026-09-06T03:42:39Z
+  elapsed_seconds: 4663
+  open_to_merge_seconds: 2619
+summary:
+  local_execution_count: 3
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 9
+  github_actions_run_count: 4
+  github_actions_seconds: 2280
+  delivery_head_count: 4
+  review_request_count: 0
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 4
+  obsolete_validation_seconds: 1600
+  obsolete_validation_count: 2
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 2
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: 2026-09-06T03:27:00Z
+  head_sha: b66a60730bc86ca47844af762d44c1c46e6c189b
+  by_type: {rust: 341, preflight: 0, web_unit: 0, e2e: 0}
+  total: 341
+local_executions:
+  - {command: Workspace rustfmt, executor: Gizmo Prime, duration_seconds: 4, result: passed, notes: Static formatting only; no local Rust WASM or product Docker build.}
+  - {command: Workspace formatting check and diff check, executor: Gizmo Prime, duration_seconds: 3, result: passed, notes: Static checks only.}
+  - {command: "task loom:pre-push", executor: Gizmo Prime, duration_seconds: 2, result: passed, notes: Authored additions remained below the 2,000-line budget.}
+github_actions_runs:
+  - {workflow: PR, run_id: 34007322673, run_attempt: 1, head_sha: 9e829ec5f, trigger: pull_request, conclusion: failure, source_pr: 1423, source_attributed: true, validation_requested: true, duration_seconds: 540}
+  - {workflow: PR, run_id: 34007665539, run_attempt: 1, head_sha: 5507e72d2, trigger: pull_request, conclusion: failure, source_pr: 1423, source_attributed: true, validation_requested: true, duration_seconds: 480}
+  - {workflow: PR, run_id: 34008483208, run_attempt: 1, head_sha: 14bd2e6fd, trigger: pull_request, conclusion: success, source_pr: 1423, source_attributed: true, validation_requested: true, duration_seconds: 660}
+  - {workflow: PR, run_id: 34009030292, run_attempt: 1, head_sha: b66a60730bc86ca47844af762d44c1c46e6c189b, trigger: pull_request, conclusion: success, source_pr: 1423, source_attributed: true, validation_requested: true, duration_seconds: 600}
+delivery_heads:
+  - {head_sha: 9e829ec5f, first_observed_at: "2026-09-06T02:59:00Z", last_observed_at: "2026-09-06T03:08:00Z", final: false, action_run_count: 1, action_seconds: 500, obsolete_action_seconds: 500}
+  - {head_sha: 5507e72d2, first_observed_at: "2026-09-06T03:09:00Z", last_observed_at: "2026-09-06T03:17:00Z", final: false, action_run_count: 1, action_seconds: 480, obsolete_action_seconds: 480}
+  - {head_sha: 14bd2e6fd, first_observed_at: "2026-09-06T03:18:00Z", last_observed_at: "2026-09-06T03:29:00Z", final: false, action_run_count: 1, action_seconds: 660, obsolete_action_seconds: 660}
+  - {head_sha: b66a60730bc86ca47844af762d44c1c46e6c189b, first_observed_at: "2026-09-06T03:30:00Z", last_observed_at: "2026-09-06T03:40:00Z", final: true, action_run_count: 1, action_seconds: 600, obsolete_action_seconds: 0}
+review_events: []
+validation_cycles:
+  - {workflow: PR, head_sha: 9e829ec5f, run_id: 34007322673, run_attempt: 1, started_at: "2026-09-06T02:59:00Z", finished_at: "2026-09-06T03:08:00Z", duration_seconds: 540, conclusion: failure, obsolete_seconds: 540}
+  - {workflow: PR, head_sha: 5507e72d2, run_id: 34007665539, run_attempt: 1, started_at: "2026-09-06T03:09:00Z", finished_at: "2026-09-06T03:17:00Z", duration_seconds: 480, conclusion: failure, obsolete_seconds: 480}
+  - {workflow: PR, head_sha: 14bd2e6fd, run_id: 34008483208, run_attempt: 1, started_at: "2026-09-06T03:18:00Z", finished_at: "2026-09-06T03:29:00Z", duration_seconds: 660, conclusion: success, obsolete_seconds: 0}
+  - {workflow: PR, head_sha: b66a60730bc86ca47844af762d44c1c46e6c189b, run_id: 34009030292, run_attempt: 1, started_at: "2026-09-06T03:30:00Z", finished_at: "2026-09-06T03:40:00Z", duration_seconds: 600, conclusion: success, obsolete_seconds: 0}
+cache_telemetry: {totals: {job_count: 0, remote_backend_job_count: 0, direct_compile_job_count: 0, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0}, jobs: []}
+pr_retriggers:
+  - {reason: Corrected browser adapter expectations after hosted feedback; final validation reran on exact heads.}
+  - {reason: Main freshness was checked before merge and the exact validated head was retained.}
+merge_attempts:
+  - {started_at: "2026-09-06T03:42:35Z", finished_at: "2026-09-06T03:42:39Z", duration_seconds: 4, result: success, head_sha: b66a60730bc86ca47844af762d44c1c46e6c189b, merge_sha: 698f73155fa4cbb53879e43db967ed9f9541ed3d}
+comparison: {baseline_quality: strong, notes: PR 1417 was the immediately preceding bounded nook-wasm coverage slice using the same hosted delivery pipeline.}
+waste_assessment: {notes: Two corrected heads were obsolete; the merged result used the final exact-head successful run after hosted browser feedback., required_actions: []}
