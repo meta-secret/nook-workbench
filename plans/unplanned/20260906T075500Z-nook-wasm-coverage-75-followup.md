@@ -45,9 +45,9 @@ Continue the serial crate-coverage mission in a bounded 5-to-10 percentage-point
 
 ## Completion evidence
 
-- Exact hosted head passes repository policy, native/WASM tests, coverage, web verification, and readiness.
-- `nook-wasm` independently measures at least 70 percent with a matching executable floor, with any further increase justified by the final report.
-- Pull request is merged only after Main freshness and exact-head readiness are rechecked.
+- Exact hosted head `715602e311c0db81ce7fce99fae73a25096afa52` passed repository policy (rerun attempt 2), native/WASM tests, coverage, web verification, and readiness.
+- `nook-wasm` independently measured 70.87 percent line coverage across 33,181 lines with 231 browser tests; the executable floor was raised from 69.5 to 70 percent.
+- Pull request [#1436](https://github.com/meta-secret/nook/pull/1436) squash-merged as `ebc68859ccb69a255e2f0d6254fe9c7e71383377` after Main freshness and exact-head readiness were rechecked.
 
 ## Safety review
 
