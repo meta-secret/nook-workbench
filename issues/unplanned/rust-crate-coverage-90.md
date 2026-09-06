@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-06T08:58:10Z
+updated_at: 2026-09-06T09:54:23Z
 source_issues: []
-related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436]
+related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -95,6 +95,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1431 passed exact-head validation, review resolution, and readiness with zero unresolved review threads on head `6779ae4a0069a7eb86d4f32f8fd1d5a6eaa0af0a`, then squash-merged as `00a99bf33624c063b83174479c7b12e7e090cb4b`. The next bounded slice starts from merged Main at the evidence-backed 70 percent floor and targets 75 percent.
 - Pull request 1436 added focused manager and storage behavior tests, plus the first executable 70 percent floor. Its final exact hosted run `34022675922` passed 231 browser tests and measured `nook-wasm` at 70.87 percent line coverage across 33,181 lines; companion WASM remained at 91.05 percent. A transient 5-second Loom timeout in the parallel policy run was cleared by rerunning attempt 2 (`34022674684`).
 - Pull request 1436 passed exact-head validation, review resolution, and readiness with zero unresolved review threads on final head `715602e311c0db81ce7fce99fae73a25096afa52`, then squash-merged as `ebc68859ccb69a255e2f0d6254fe9c7e71383377`. The next bounded slice starts from merged Main at the evidence-backed 70 percent floor and targets 75 percent.
+- Pull request 1439 added focused connect, Sentinel, and vault API behavior tests. Its final exact hosted run `34025559161` passed 242 browser tests and measured `nook-wasm` at 71.73 percent line coverage across 33,773 lines after rebasing onto Main `80f5e4596`; companion WASM remained at 91.05 percent.
+- Pull request 1439 corrected a test-only genesis-record key classification assertion after the first hosted runtime failure, then passed exact-head validation, review resolution, and readiness on final head `80e13bd22e892d01379487259c6e593b452c4ef7`. It squash-merged as `0fbd5bc726efd26b7107da4caf7e2a6001479d59` with the executable `nook-wasm` floor intentionally remaining at 70 percent because this bounded slice did not reach a defensible 75 percent proof.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
