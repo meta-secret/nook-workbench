@@ -1,0 +1,155 @@
+schema_version: 4
+source_pr:
+  number: 1461
+  url: https://github.com/meta-secret/nook/pull/1461
+  title: Type Apple Passwords and Safari archive admission
+  change_surface: rust_apple_passwords_archive_typestate
+  head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+  merge_sha: 50b2f544db11bb88e5477a2e5d3f23912665867a
+  started_at: 2026-09-06T17:15:09Z
+  opened_at: 2026-09-06T17:22:50Z
+  merged_at: 2026-09-06T17:34:50Z
+  elapsed_seconds: 1181
+summary:
+  local_execution_count: 7
+  local_check_count: 7
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 95
+  github_actions_run_count: 7
+  github_actions_seconds: 1800
+  delivery_head_count: 2
+  review_request_count: 2
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 2
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 1
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 1
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 1
+test_inventory:
+  measured_at: 2026-09-06T17:35:31Z
+  head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: initial_scoped_pre_push_hygiene
+  - command: task pr:validate PR=1461 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: initial_exact_head_validation_dispatch
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: refused
+    reason: branch_behind_main_after_keeper_merge
+  - command: git rebase origin/main
+    category: check
+    outcome: passed
+    reason: refreshed_main_before_hosted_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: final_refreshed_base_hygiene
+  - command: task pr:validate PR=1461 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: final_exact_head_validation_dispatch
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: failed
+    reason: refreshed_main_module_expert_baseline
+  - command: task pr:ready PR=1461
+    category: check
+    outcome: passed
+    reason: final_exact_head_readiness
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34048426610
+    head_sha: 5b0cdba0cdcdeb28a18df005fc3dabdda668c7b6
+    conclusion: success
+    source_pr: 1461
+    validation_requested: true
+  - workflow: PR
+    run_id: 34048597968
+    head_sha: 5b0cdba0cdcdeb28a18df005fc3dabdda668c7b6
+    conclusion: cancelled
+    source_pr: 1461
+    validation_requested: true
+  - workflow: Cancel obsolete PR validation
+    run_id: 34048617247
+    head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+    conclusion: success
+    source_pr: 1461
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34048618520
+    head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+    conclusion: success
+    source_pr: 1461
+    validation_requested: true
+  - workflow: PR
+    run_id: 34048636345
+    head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+    conclusion: success
+    source_pr: 1461
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34048647670
+    head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+    conclusion: failure
+    source_pr: 1461
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34049044557
+    head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+    conclusion: success
+    source_pr: 1461
+    validation_requested: true
+delivery_heads:
+  - head_sha: 5b0cdba0cdcdeb28a18df005fc3dabdda668c7b6
+    final: false
+  - head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 5b0cdba0cdcdeb28a18df005fc3dabdda668c7b6
+    base_sha: 2a76cc7ecdc906663a454274e6833acf6867a556
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+    base_sha: 0d06c5821ff4219088b51f08cf1f263262ffa8e3
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 5b0cdba0cdcdeb28a18df005fc3dabdda668c7b6
+    run_id: 34048597968
+    conclusion: cancelled
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 9431e2a436ff8d82c52226797a08c01e37c06d26
+    run_id: 34048636345
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1460, 1459, 1458]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons:
+    - Branch was rebased onto refreshed main before final validation after the Keeper merge advanced main.
+    - Remote Loom reproduced 19 module-expert catalog failures from refreshed main PR #1447; no changed-file overlap and no Apple regression.
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
