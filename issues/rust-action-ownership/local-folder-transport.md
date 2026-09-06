@@ -1,14 +1,15 @@
 ---
 title: Type local-folder event transport lifecycle
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-local-folder-transport
 created_at: 2026-09-06T03:04:23Z
-updated_at: 2026-09-06T03:04:23Z
+updated_at: 2026-09-06T04:07:23Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1424
 depends_on:
   - issues/rust-action-ownership/authentication-advance-control.md
 ---
@@ -34,20 +35,20 @@ Local-folder event transport uses meaningful owners for registry, opened directo
 
 ## Acceptance criteria
 
-- [ ] Handle acquisition preserves memory-before-database mutation and absent-handle behavior.
-- [ ] Opened-folder naming does not imply permission authority; current query fallbacks remain unchanged.
-- [ ] Child lookup, event-directory creation, filename parsing, filtering, and deterministic sorting preserve behavior.
-- [ ] Identical existing files remain no-ops and conflicting contents remain rejected with the same errors.
-- [ ] A failed stream write prevents close; successful write occurs before consuming close.
-- [ ] Sequential per-record effects and partial completion remain explicit.
-- [ ] Existing public ABI wrappers and `NookLocalFolderConfig` remain unchanged.
-- [ ] Complete storage modules deny homeless functions and reject invalid suppression.
-- [ ] Focused browser fixtures cover permission, registry, filename, read, conflict, and stream-order behavior.
-- [ ] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Handle acquisition preserves memory-before-database mutation and absent-handle behavior.
+- [x] Opened-folder naming does not imply permission authority; current query fallbacks remain unchanged.
+- [x] Child lookup, event-directory creation, filename parsing, filtering, and deterministic sorting preserve behavior.
+- [x] Identical existing files remain no-ops and conflicting contents remain rejected with the same errors.
+- [x] A failed stream write prevents close; successful write occurs before consuming close.
+- [x] Sequential per-record effects and partial completion remain explicit.
+- [x] Existing public ABI wrappers and `NookLocalFolderConfig` remain unchanged.
+- [x] Complete storage modules deny homeless functions and reject invalid suppression.
+- [x] Focused browser fixtures cover permission, registry, filename, read, conflict, and stream-order behavior.
+- [x] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Progress
 
-The six-file boundary is inventoried from Nook main at `99846aeb20df5f7c0c524a673f74542aee7d1273` with zero file overlap against live PRs #1423, #1421, and #1210.
+The six-file boundary merged in Nook PR #1424 as `bc818ce5ca527f5d74a0fea83b36e599f5ebcee4`. The final exact head passed Remote Loom, hosted Rust/WASM/web/Dylint validation, exact-head source SECURITY, and readiness.
 
 ## Findings and decisions
 
