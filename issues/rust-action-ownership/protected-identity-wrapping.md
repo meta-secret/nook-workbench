@@ -1,14 +1,15 @@
 ---
 title: Type protected device-identity wrapping and decryption
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-protected-identity-wrapping
 created_at: 2026-09-06T07:37:58Z
-updated_at: 2026-09-06T07:37:58Z
+updated_at: 2026-09-06T08:41:14Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1435
 depends_on:
   - issues/rust-action-ownership/device-protection-registration.md
 ---
@@ -17,11 +18,11 @@ depends_on:
 
 ## Context
 
-PR #1432 moved device-protection registration, completion, unlock, recovery, and record actions onto owners while leaving `protected_identity.rs` outside ownership enforcement. That module still owns PIN and passkey wrapping, parsing, serialization, key derivation, AAD construction, field decoding, and age-secret encoding as homeless operations.
+PR #1432 moved device-protection registration, completion, unlock, recovery, and record actions onto owners while leaving `protected_identity.rs` outside ownership enforcement. That module still owned PIN and passkey wrapping, parsing, serialization, key derivation, AAD construction, field decoding, and age-secret encoding as homeless operations.
 
 ## Outcome
 
-Protected device-identity records use focused owners and one private consuming decryption state. The complete device-protection subtree can then enforce the no-homeless-function policy without suppressions while preserving existing storage and browser behavior.
+Protected device-identity records now use focused owners and one private consuming decryption state. The complete device-protection subtree enforces the no-homeless-function policy without suppressions while preserving existing storage and browser behavior.
 
 ## Scope
 
@@ -33,19 +34,23 @@ Protected device-identity records use focused owners and one private consuming d
 
 ## Acceptance criteria
 
-- [ ] PIN trimming and minimum byte length, variant/PIN/version/parameter/field/KDF/decrypt error ordering remain unchanged.
-- [ ] AES-GCM, PBKDF2/HKDF constants, random-byte order, AAD field order and length encoding, error distinctions, and zeroization remain unchanged.
-- [ ] Versioned untagged serialization remains unchanged and parsing does not gain implicit validation.
-- [ ] Existing passkey metadata binding and age-secret known-answer bytes remain unchanged.
-- [ ] `PreparedIdentityDecryption` privately retains the exact derived zeroizing key, nonce, ciphertext, and AAD and consumes itself through decrypt; it makes no authenticated-plaintext, browser-authorization, replay, or persistence claim.
-- [ ] All storage transactions, cleanup, browser ABI, and existing parse-error handling remain unchanged.
-- [ ] Existing nine protected-record tests and PR #1432 tests remain; focused parameter/error-precedence, PIN whitespace, passkey AAD tampering, and private/consuming-state controls are added.
-- [ ] Complete device-protection modules deny homeless functions and reject invalid suppression with no blanket exemption.
-- [ ] Remote Loom, hosted PR checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] PIN trimming and minimum byte length, variant/PIN/version/parameter/field/KDF/decrypt error ordering remain unchanged.
+- [x] AES-GCM, PBKDF2/HKDF constants, random-byte order, AAD field order and length encoding, error distinctions, and zeroization remain unchanged.
+- [x] Versioned untagged serialization remains unchanged and parsing does not gain implicit validation.
+- [x] Existing passkey metadata binding and age-secret known-answer bytes remain unchanged.
+- [x] `PreparedIdentityDecryption` privately retains the exact derived zeroizing key, nonce, ciphertext, and AAD and consumes itself through decrypt; it makes no authenticated-plaintext, browser-authorization, replay, or persistence claim.
+- [x] All storage transactions, cleanup, browser ABI, and existing parse-error handling remain unchanged.
+- [x] Existing nine protected-record tests and PR #1432 tests remain; focused parameter/error-precedence, PIN whitespace, passkey AAD tampering, and private/consuming-state controls are added.
+- [x] Complete device-protection modules deny homeless functions and reject invalid suppression with no blanket exemption.
+- [x] Remote Loom, hosted PR checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Progress
 
-DEV-CORE inventory at Nook main `8980f2fa6ec04ca943453c3d61782672c2be9fdd` found 18 production free operations, two test helpers, and nine protected-record tests in the deferred module. Live PRs #1433, #1431, #1430, and #1210 have no changed-file overlap.
+DEV-CORE moved 18 production free operations and two test helpers onto meaningful owners across the exact twenty-seven-file auth/core/WASM boundary. The private `PreparedIdentityDecryption` state retains the exact derived zeroizing key, nonce, ciphertext, and AAD and consumes itself through decrypt. The final PR delta is 1,086 authored additions and remains within the 2,000-line user limit and the plan's hard ceiling.
+
+Hosted validation required two focused import repairs: the first repaired missing `DeviceKeyDerivationIterations`, `DeviceIdentity`, and `WrappedDeviceIdentity` imports; the second gated four WASM test-only imports to the browser test configuration. Main advanced twice during delivery and was merged before the final validation head.
+
+Final head `71309a30ebd3b88bc8734af4f1aca0619cea1cd0` passed Remote Loom run `34021945113`, hosted PR run `34022025256`, exact-head SECURITY review, and `task pr:ready`. PR #1435 squash-merged as `eae2900403c7f20fe33be1194a3f9e3e940bbbcd`.
 
 ## Findings and decisions
 
