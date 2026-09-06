@@ -1,0 +1,143 @@
+schema_version: 4
+source_pr:
+  number: 1470
+  url: https://github.com/meta-secret/nook/pull/1470
+  title: "refactor: type secret fingerprint ownership"
+  change_surface: rust_secret_fingerprint_enrichment_ownership
+  head_sha: f002b3f864f04036c421f9ebc02145a085ac6a3d
+  merge_sha: 0fd9d80a9928c880f9d5410970b6b4cb46e17219
+  started_at: 2026-09-06T20:33:39Z
+  opened_at: 2026-09-06T20:34:00Z
+  merged_at: 2026-09-06T22:55:55Z
+elapsed_seconds: 8536
+summary:
+  local_execution_count: 10
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 420
+  github_actions_run_count: 8
+  github_actions_seconds: 7200
+  delivery_head_count: 5
+  review_request_count: 5
+  review_finding_batch_count: 1
+  review_finding_count: 1
+  validation_cycle_count: 4
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 3
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 3
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-06T22:57:00Z
+  head_sha: f002b3f864f04036c421f9ebc02145a085ac6a3d
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1470 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation_after_final_pointer_lint_repair
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1470
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1470 --squash
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+  - command: gh run list --workflow 'Linear UI demos'
+    category: check
+    outcome: passed
+    reason: delivery_head_ui_demo_confirmation
+  - command: git -C /tmp/nook-wb-1438-2 pull --ff-only origin main
+    category: delivery
+    outcome: passed
+    reason: workbench_completion_refresh
+github_actions_runs:
+  - workflow: PR
+    run_id: 34059008325
+    head_sha: 5893c7c1bc6f268fef93ad534e91b848e41fa464
+    conclusion: failure
+    source_pr: 1470
+    validation_requested: true
+  - workflow: PR
+    run_id: 34059359988
+    head_sha: 4b86c351c029eb410098c6c5fb21a27da589ac0d
+    conclusion: failure
+    source_pr: 1470
+    validation_requested: true
+  - workflow: PR
+    run_id: 34060289150
+    head_sha: 817ce9b4b459e5b519a471baba196270a6645e46
+    conclusion: failure
+    source_pr: 1470
+    validation_requested: true
+  - workflow: PR
+    run_id: 34064042346
+    head_sha: 2a7a1a0c507734d4fbfe1b9d10587b9c68631425
+    conclusion: failure
+    source_pr: 1470
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34064854269
+    head_sha: f002b3f864f04036c421f9ebc02145a085ac6a3d
+    conclusion: success
+    source_pr: 1470
+    validation_requested: true
+  - workflow: PR
+    run_id: 34064876380
+    head_sha: f002b3f864f04036c421f9ebc02145a085ac6a3d
+    conclusion: success
+    source_pr: 1470
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34065344035
+    head_sha: f002b3f864f04036c421f9ebc02145a085ac6a3d
+    conclusion: success
+    source_pr: 1470
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34065427128
+    head_sha: f002b3f864f04036c421f9ebc02145a085ac6a3d
+    conclusion: success
+    source_pr: 1470
+    validation_requested: true
+delivery_heads:
+  - head_sha: f002b3f864f04036c421f9ebc02145a085ac6a3d
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: f002b3f864f04036c421f9ebc02145a085ac6a3d
+    base_sha: d48b2758b25c1e9424bfb9e07f0031acc3fa727b
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: f002b3f864f04036c421f9ebc02145a085ac6a3d
+    run_id: 34064876380
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1467, 1465, 1461]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
