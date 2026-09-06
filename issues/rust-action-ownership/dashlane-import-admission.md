@@ -1,14 +1,15 @@
 ---
 title: Type Dashlane CSV and ZIP import admission
-status: planned
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-dashlane-import-admission
 created_at: 2026-09-06T14:14:14Z
-updated_at: 2026-09-06T14:14:14Z
+updated_at: 2026-09-06T14:37:37Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1452
 depends_on:
   - issues/rust-action-ownership/device-access-metadata.md
 ---
@@ -37,15 +38,15 @@ Move 20 production free operations and one ZIP fixture helper onto bounded owner
 
 ## Acceptance criteria
 
-- [ ] The 128 MiB export limit, each CSV 64 MiB advertised/read limit, existing per-CSV record cap, and no aggregate-limit claim remain unchanged.
-- [ ] ZIP magic detection, basename/case behavior, archive iteration order, duplicate categories, and exact error precedence remain unchanged.
-- [ ] Flexible CSV rows, header normalization, password bytes, metadata ordering, username and OTP precedence/defaults, and unsupported-row counts remain unchanged.
-- [ ] Existing payment/note validation, skipped-error behavior, and in-memory parsing remain unchanged; no filesystem extraction is added.
-- [ ] Zeroizing export lifetime and WASM parse → drop input → existing secret-import commit sequence remain unchanged.
-- [ ] `DashlaneImportPlan` remains a report DTO without artificial single-use claims; no public ABI, schema, crypto, recovery, or shared-parser change is introduced.
-- [ ] All three existing Dashlane tests remain; colocated matrices cover category/header precedence, missing columns, exact bytes, malformed/oversized entries, duplicate archive order, unsupported categories, and OTP/payment counts.
-- [ ] Private-construction, borrowed-input, and consuming-reader compile controls are added; ownership denial and invalid-suppression prohibition cover the complete Dashlane subtree.
-- [ ] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] The 128 MiB export limit, each CSV 64 MiB advertised/read limit, existing per-CSV record cap, and no aggregate-limit claim remain unchanged.
+- [x] ZIP magic detection, basename/case behavior, archive iteration order, duplicate categories, and exact error precedence remain unchanged.
+- [x] Flexible CSV rows, header normalization, password bytes, metadata ordering, username and OTP precedence/defaults, and unsupported-row counts remain unchanged.
+- [x] Existing payment/note validation, skipped-error behavior, and in-memory parsing remain unchanged; no filesystem extraction is added.
+- [x] Zeroizing export lifetime and WASM parse → drop input → existing secret-import commit sequence remain unchanged.
+- [x] `DashlaneImportPlan` remains a report DTO without artificial single-use claims; no public ABI, schema, crypto, recovery, or shared-parser change is introduced.
+- [x] All three existing Dashlane tests remain; colocated matrices cover category/header precedence, missing columns, exact bytes, malformed/oversized entries, duplicate archive order, unsupported categories, and OTP/payment counts.
+- [x] Private-construction, borrowed-input, and consuming-reader compile controls are added; ownership denial and invalid-suppression prohibition cover the complete Dashlane subtree.
+- [x] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Constraints
 
@@ -54,3 +55,6 @@ No generic parser or persistence framework, fallback, recovery exception, cleanu
 ## Progress
 
 Read-only DEV-CORE inventory at fresh origin/main `694ff764b7b7fd7c4998b3aab9abb7ad6383c342` identified the five-file closure with zero changed-file overlap with live PRs #1450, #1447, and #1210. The boundary contains 20 production free operations and one ZIP fixture helper; estimated 1,000–1,450 additions and 450–600 deletions with a hard ceiling of 1,800 additions.
+
+
+Implementation landed in PR #1452 at final head `b49338142757ae679c3d5461eb23a89fd623771c` after merging refreshed main `43c64d38b7a2fe798dda180a3a9659d944f0b88b`. Final scope is 859 additions and 496 deletions across exactly five files; squash merge is `74506792dacfcd6047e6dc8925126ab8cb81bf76`. Remote Loom, hosted validation, exact-head SECURITY, readiness, deployment, and post-merge Linear UI demo passed.
