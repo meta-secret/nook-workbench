@@ -1,0 +1,107 @@
+schema_version: 4
+source_pr:
+  number: 1457
+  url: https://github.com/meta-secret/nook/pull/1457
+  title: Type Proton Pass ZIP and JSON import admission
+  change_surface: rust_proton_pass_import_typestate
+  head_sha: 8f64120fa148e0a051f4ce118c2f302b85072eb5
+  merge_sha: 60653ba0497eccddc65318a6b10c7c5fdec9917b
+  started_at: 2026-09-06T15:48:47Z
+  opened_at: 2026-09-06T15:54:51Z
+  merged_at: 2026-09-06T16:05:12Z
+  elapsed_seconds: 985
+summary:
+  local_execution_count: 4
+  local_check_count: 4
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 48
+  github_actions_run_count: 4
+  github_actions_seconds: 700
+  delivery_head_count: 1
+  review_request_count: 1
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 1
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-06T16:05:55Z
+  head_sha: 8f64120fa148e0a051f4ce118c2f302b85072eb5
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push PR=1457
+    category: check
+    outcome: passed
+    reason: final_scope_pre_push_hygiene
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: dispatched
+    reason: final_exact_head_remote_dispatch
+  - command: task pr:validate PR=1457
+    category: check
+    outcome: passed
+    reason: final_exact_head_hosted_validation_dispatch
+  - command: task pr:ready PR=1457
+    category: check
+    outcome: passed
+    reason: final_exact_head_readiness
+github_actions_runs:
+  - workflow: PR
+    run_id: 34043814651
+    head_sha: 8f64120fa148e0a051f4ce118c2f302b85072eb5
+    conclusion: success
+    source_pr: 1457
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34043803563
+    head_sha: 8f64120fa148e0a051f4ce118c2f302b85072eb5
+    conclusion: success
+    source_pr: 1457
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34043790395
+    head_sha: 8f64120fa148e0a051f4ce118c2f302b85072eb5
+    conclusion: success
+    source_pr: 1457
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34044324609
+    head_sha: 8f64120fa148e0a051f4ce118c2f302b85072eb5
+    conclusion: success
+    source_pr: 1457
+    validation_requested: true
+delivery_heads:
+  - head_sha: 8f64120fa148e0a051f4ce118c2f302b85072eb5
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 8f64120fa148e0a051f4ce118c2f302b85072eb5
+    base_sha: 7d071f2e64f03527c0550b5fd12d3ed81e9647cc
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 8f64120fa148e0a051f4ce118c2f302b85072eb5
+    run_id: 34043814651
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1456, 1454, 1452]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
