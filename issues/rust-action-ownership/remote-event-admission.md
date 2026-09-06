@@ -1,14 +1,15 @@
 ---
 title: Type remote event admission and epoch visibility
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-remote-event-admission
 created_at: 2026-09-06T01:04:57Z
-updated_at: 2026-09-06T01:04:57Z
+updated_at: 2026-09-06T02:00:45Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1419
 depends_on:
   - issues/rust-action-ownership/provider-outbox-publication.md
 ---
@@ -33,20 +34,20 @@ Remote bytes pass content identity, schema, signature, candidate-graph authoriza
 
 ## Acceptance criteria
 
-- [ ] Requested ID, supported schema, and actor signature checks preserve current order and errors.
-- [ ] Candidate-graph authorization occurs before local store replacement.
-- [ ] Incomplete epoch trigger/checkpoint paths and descendants remain quarantined.
-- [ ] Quarantined events are excluded from accepted store and retained outbox.
-- [ ] Preparation failure or drop preserves the original local store and outbox.
-- [ ] Only a prepared remote union can commit the validated candidate.
-- [ ] Checkpoints publish before triggers with deterministic event-ID tie-breaking.
-- [ ] Empty, same-store, different-store, and multiple-store classification stays unchanged.
-- [ ] Touched complete modules deny homeless functions and compile-fail evidence rejects invalid state use.
-- [ ] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Requested ID, supported schema, and actor signature checks preserve current order and errors.
+- [x] Candidate-graph authorization occurs before local store replacement.
+- [x] Incomplete epoch trigger/checkpoint paths and descendants remain quarantined.
+- [x] Quarantined events are excluded from accepted store and retained outbox.
+- [x] Preparation failure or drop preserves the original local store and outbox.
+- [x] Only a prepared remote union can commit the validated candidate.
+- [x] Checkpoints publish before triggers with deterministic event-ID tie-breaking.
+- [x] Empty, same-store, different-store, and multiple-store classification stays unchanged.
+- [x] Touched complete modules deny homeless functions and compile-fail evidence rejects invalid state use.
+- [x] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Progress
 
-Implementation is assigned from main after provider transport PR #1418.
+PR #1419 merged the complete remote-admission and security-epoch visibility boundary as `42a444f5dad160a85d77f0db2e54300369d6b11a`. Remote Loom, hosted Rust and WASM checks, exact-head SECURITY, and readiness passed.
 
 ## Findings and decisions
 
