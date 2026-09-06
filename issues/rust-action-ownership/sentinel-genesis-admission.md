@@ -25,7 +25,7 @@ Sentinel genesis uses private checked response and delivery states that bind adm
 
 ## Scope
 
-- One cohesive ten-file auth/core/WASM boundary with a 1,800 authored-addition ceiling.
+- One cohesive eleven-file auth/core/WASM boundary with a 1,800 authored-addition ceiling.
 - Move all 23 production helpers in the complete genesis parent and link modules onto meaningful owners.
 - Add the simplest non-Clone checked response and delivery states needed to bind validation, signatures, and recipients to consuming actions.
 - Preserve the existing collecting-to-ready-to-issued session typestate.
@@ -47,7 +47,7 @@ Sentinel genesis uses private checked response and delivery states that bind adm
 
 ## Progress
 
-The ten-file boundary is inventoried from Nook main at `85a21b0c4eea13e1ec0a9450a6fe31e92e8cbb77` with zero overlap against live PRs #1425 and #1210.
+The eleven-file boundary is inventoried from Nook main at `85a21b0c4eea13e1ec0a9450a6fe31e92e8cbb77` with zero overlap against live PRs #1425 and #1210. Pre-edit consumer verification added the direct `vault_sentinel_genesis.rs` wrappers required to remove the auth2 free exports.
 
 ## Findings and decisions
 
@@ -61,6 +61,7 @@ Public-link response normalization continues to parse without verifying a respon
 - `nook-app/nook-platform/nook-auth2/src/lib.rs`
 - `nook-app/nook-platform/nook-core/src/lib.rs`
 - `nook-app/nook-platform/nook-core/src/vault/vault_sentinel_onboarding.rs`
+- `nook-app/nook-platform/nook-core/src/vault/vault_sentinel_genesis.rs`
 - `nook-app/nook-platform/nook-wasm/src/manager/sentinel.rs`
 - `nook-app/nook-platform/nook-wasm/src/manager/sentinel/genesis_finalization.rs`
 - `nook-app/nook-platform/nook-wasm/src/manager/sentinel/unlock_finalization.rs`
