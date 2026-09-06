@@ -1,0 +1,155 @@
+schema_version: 4
+source_pr:
+  number: 1458
+  url: https://github.com/meta-secret/nook/pull/1458
+  title: Type Google Authenticator migration batch admission
+  change_surface: rust_google_authenticator_migration_typestate
+  head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+  merge_sha: a1e52d3efc90657ffabcda0421003d0ac0095fa4
+  started_at: 2026-09-06T16:08:39Z
+  opened_at: 2026-09-06T16:15:11Z
+  merged_at: 2026-09-06T16:36:31Z
+  elapsed_seconds: 1672
+summary:
+  local_execution_count: 7
+  local_check_count: 7
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 75
+  github_actions_run_count: 8
+  github_actions_seconds: 1500
+  delivery_head_count: 2
+  review_request_count: 2
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 2
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-06T16:37:06Z
+  head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push PR=1458
+    category: check
+    outcome: passed
+    reason: final_scope_pre_push_hygiene
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: dispatched
+    reason: initial_exact_head_remote_dispatch
+  - command: task pr:validate PR=1458
+    category: check
+    outcome: passed
+    reason: initial_exact_head_hosted_validation_dispatch
+  - command: task pr:ready PR=1458
+    category: check
+    outcome: failed
+    reason: main_advanced_before_readiness
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: dispatched
+    reason: refreshed_base_remote_dispatch
+  - command: task pr:validate PR=1458
+    category: check
+    outcome: passed
+    reason: refreshed_base_hosted_validation_dispatch
+  - command: task pr:ready PR=1458
+    category: check
+    outcome: passed
+    reason: final_exact_head_readiness
+github_actions_runs:
+  - workflow: PR
+    run_id: 34044878053
+    head_sha: 93fe44e28c0213879b46ec631ef09a0249bc4d1b
+    conclusion: success
+    source_pr: 1458
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34044865635
+    head_sha: 93fe44e28c0213879b46ec631ef09a0249bc4d1b
+    conclusion: success
+    source_pr: 1458
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34044846376
+    head_sha: 93fe44e28c0213879b46ec631ef09a0249bc4d1b
+    conclusion: success
+    source_pr: 1458
+    validation_requested: true
+  - workflow: PR
+    run_id: 34045421682
+    head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+    conclusion: success
+    source_pr: 1458
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34045394620
+    head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+    conclusion: success
+    source_pr: 1458
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34045366050
+    head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+    conclusion: success
+    source_pr: 1458
+    validation_requested: true
+  - workflow: Cancel obsolete PR validation
+    run_id: 34045365054
+    head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+    conclusion: success
+    source_pr: 1458
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34045997036
+    head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+    conclusion: success
+    source_pr: 1458
+    validation_requested: true
+delivery_heads:
+  - head_sha: 93fe44e28c0213879b46ec631ef09a0249bc4d1b
+    final: false
+  - head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 93fe44e28c0213879b46ec631ef09a0249bc4d1b
+    base_sha: 60653ba0497eccddc65318a6b10c7c5fdec9917b
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+    base_sha: 4bd982da68a98d7d69c46a0fdf613c416ab649c5
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 93fe44e28c0213879b46ec631ef09a0249bc4d1b
+    run_id: 34044878053
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: e823b322ff7593eb46845f09c4b37ef5b08cd91f
+    run_id: 34045421682
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1457, 1456, 1454]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
