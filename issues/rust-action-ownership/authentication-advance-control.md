@@ -1,14 +1,15 @@
 ---
 title: Type authentication advance-control classification
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-authentication-advance-control
 created_at: 2026-09-06T02:09:13Z
-updated_at: 2026-09-06T02:09:13Z
+updated_at: 2026-09-06T02:59:20Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1422
 depends_on:
   - issues/rust-action-ownership/remote-event-admission.md
 ---
@@ -34,23 +35,23 @@ Authentication advance decisions consume one checked classification state carryi
 
 ## Acceptance criteria
 
-- [ ] Bounds, submission-method, canonical-origin, and provider-authority checks precede policy classification.
-- [ ] Final policy can access canonical path and route evidence only through the checked state.
-- [ ] Veto precedence, new-password exceptions, semantic-submit counting, and weak-versus-explicit username evidence remain unchanged.
-- [ ] Provider, destructive, passkey, recovery, registration, OTP enrollment, and OTP authentication distinctions remain unchanged.
-- [ ] Canonical path and query handling preserve current behavior without mutating the input observation.
-- [ ] GET, Dialog, inert, and unowned controls remain rejected where currently required.
-- [ ] Complete child modules deny homeless functions and reject invalid suppression.
-- [ ] Existing behavior tests plus bounded checked-state matrices pass remotely.
-- [ ] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Bounds, submission-method, canonical-origin, and provider-authority checks precede policy classification.
+- [x] Final policy can access canonical path and route evidence only through the checked state.
+- [x] Veto precedence, new-password exceptions, semantic-submit counting, and weak-versus-explicit username evidence remain unchanged.
+- [x] Provider, destructive, passkey, recovery, registration, OTP enrollment, and OTP authentication distinctions remain unchanged.
+- [x] Canonical path and query handling preserve current behavior without mutating the input observation.
+- [x] GET, Dialog, inert, and unowned controls remain rejected where currently required.
+- [x] Complete child modules deny homeless functions and reject invalid suppression.
+- [x] Existing behavior tests plus bounded checked-state matrices pass remotely.
+- [x] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Progress
 
-The complete five-file boundary is inventoried from main with zero overlap against live PRs #1420, #1417, and #1210.
+PR #1422 merged the complete five-file boundary as `99846aeb20df5f7c0c524a673f74542aee7d1273`. Remote Loom, hosted Rust/WASM/web/Dylint checks, exact-head SECURITY review, readiness, and agent-stat publication passed.
 
 ## Findings and decisions
 
-The checked state proves classification admission only. It does not establish browser freshness or authorize actuation. Pure text classifiers use borrowed observation owners rather than artificial single-use transitions.
+The checked state proves classification admission only. It does not establish browser freshness or authorize actuation. Pure text classifiers use borrowed observation owners. A preserved destructive-route veto also applies to decoded query values, so canonical binding tests cover both admissible and rejected navigation metadata.
 
 ## References
 
