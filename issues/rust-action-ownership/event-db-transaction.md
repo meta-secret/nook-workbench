@@ -1,14 +1,15 @@
 ---
 title: Type transaction-bound event persistence
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-event-db-transaction
 created_at: 2026-09-06T04:12:20Z
-updated_at: 2026-09-06T04:12:20Z
+updated_at: 2026-09-06T04:57:16Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1426
 depends_on:
   - issues/rust-action-ownership/local-folder-transport.md
 ---
@@ -34,20 +35,20 @@ Event persistence uses a vault-scoped owner, named operation requests, and priva
 
 ## Acceptance criteria
 
-- [ ] Applied and Duplicate admissions remain accepted; Pending and Quarantined remain rejected.
-- [ ] Single-event frontier and trigger/checkpoint parent and key-epoch linkage checks preserve behavior and exact errors.
-- [ ] Security-conflict detection and permissive persisted-graph loading remain unchanged.
-- [ ] Remote union preserves excluded-row deletion, sorted index output, derived heads, and conversion/error order.
-- [ ] Prepared states retain the exact admitted transaction and consume themselves during commit.
-- [ ] Successful heads return only after transaction completion; dropped preparation leaves storage unchanged under existing IndexedDB behavior.
-- [ ] Caller cleanup and publication sequencing, public ABI, and schemas remain unchanged.
-- [ ] The complete child and focused test module deny homeless functions and reject invalid suppression.
-- [ ] Focused browser fixtures cover successful commits, duplicates, stale frontiers, malformed linkage, unresolved parents, unauthorized events, remote contraction, and dropped preparation.
-- [ ] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Applied and Duplicate admissions remain accepted; Pending and Quarantined remain rejected.
+- [x] Single-event frontier and trigger/checkpoint parent and key-epoch linkage checks preserve behavior and exact errors.
+- [x] Security-conflict detection and permissive persisted-graph loading remain unchanged.
+- [x] Remote union preserves excluded-row deletion, sorted index output, derived heads, and conversion/error order.
+- [x] Prepared states retain the exact admitted transaction and consume themselves during commit.
+- [x] Successful heads return only after transaction completion; dropped preparation leaves storage unchanged under existing IndexedDB behavior.
+- [x] Caller cleanup and publication sequencing, public ABI, and schemas remain unchanged.
+- [x] The complete child and focused test module deny homeless functions and reject invalid suppression.
+- [x] Focused browser fixtures cover successful commits, duplicates, stale frontiers, malformed linkage, unresolved parents, unauthorized events, remote contraction, and dropped preparation.
+- [x] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Progress
 
-The six-file boundary is inventoried from Nook main at `bc818ce5ca527f5d74a0fea83b36e599f5ebcee4` with zero file overlap against live PRs #1425, #1421, and #1210.
+The six-file boundary merged in Nook PR #1426 as `97d0156faad403d19c1cb6a21417df14b4c910f2`. The final exact head passed Remote Loom, hosted Rust/WASM/web/Dylint validation, exact-head source SECURITY, and readiness.
 
 ## Findings and decisions
 
@@ -56,7 +57,7 @@ The prepared states bind frontier validation and persistence to the same transac
 ## References
 
 - `nook-app/nook-platform/nook-wasm/src/storage/event_db/security_epoch.rs`
-- `nook-app/nook-platform/nook-wasm/src/storage/event_db/security_epoch/tests.rs`
+- `nook-app/nook-platform/nook-wasm/src/storage/event_db/security_epoch/transaction.rs`
 - `nook-app/nook-platform/nook-wasm/src/storage/event_db.rs`
 - `nook-app/nook-platform/nook-wasm/src/manager/event_log.rs`
 - `nook-app/nook-platform/nook-wasm/src/manager/event_log/security_epoch.rs`
