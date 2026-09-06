@@ -41,13 +41,13 @@ Device-protection registration uses a private continuation that retains credenti
 - [ ] Existing missing-registration-PRF assertion behavior remains unchanged and makes no verified browser-ceremony claim.
 - [ ] Existing record/request/material owners own derivation, recovery, assertion-request, unlock, and conversion actions.
 - [ ] WASM browser call order, observations, persistence, cleanup, failure behavior, and direct completion ABI remain unchanged.
-- [ ] The parent and new registration/unlock children deny homeless functions and reject invalid suppression; `protected_identity.rs` remains outside this enforcement slice.
+- [ ] The new complete registration and unlock children deny homeless functions and reject invalid suppression; the parent has no remaining production operations, while `protected_identity.rs` remains outside this enforcement slice because parent denial would inherit into its excluded helpers.
 - [ ] Colocated tests retain all existing behavior coverage and add continuation retention, equivalent branches, stored-identity rejection, dropped-incomplete-state, privacy, construction, and consuming-state controls.
 - [ ] Remote Loom, hosted PR checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Progress
 
-The fourteen-file boundary was inventoried from Nook main at `e00cb372a60d3e7333ea395bb1fc864d0dd487c9` with zero file overlap against live PRs #1430 and #1210. The current parent has 11 production free operations, 13 tests, and a registration continuation whose setup evidence is not retained by the completion state.
+The fourteen-file boundary was inventoried from Nook main at `e00cb372a60d3e7333ea395bb1fc864d0dd487c9` with zero file overlap against live PRs #1430 and #1210. The current parent has 11 production free operations, 13 tests, and a registration continuation whose setup evidence is not retained by the completion state. The lint-boundary amendment at `2026-09-06T07-05-00Z-device-protection-lint-boundary.md` records why parent denial remains deferred while the parent is left with no production operations.
 
 ## Findings and decisions
 
