@@ -83,9 +83,9 @@ github_actions_runs:
     source_pr: 1465
     validation_requested: true
   - workflow: Linear UI demos
-    run_id: pending
-    head_sha: 003ab85c22df855320cd2fd0d909a6ef33b49f53
-    conclusion: pending
+    run_id: 34050638299
+    head_sha: 545bc57e49157ce7b980e75370db3c18bf3d87fb
+    conclusion: success
     source_pr: 1465
     validation_requested: true
 delivery_heads:
