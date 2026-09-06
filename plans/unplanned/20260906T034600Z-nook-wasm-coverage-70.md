@@ -49,6 +49,9 @@ Continue the serial crate-coverage mission in comfortable 5-to-10 percentage-poi
 - Exact hosted head passes the repository policy, native/WASM tests, coverage report, web verification, Hive, and readiness checks.
 - `nook-wasm` independently measures at least 70 percent line coverage with a matching floor, or a documented evidence-backed lower floor if this bounded slice proves the target is not reachable without exceeding the budget.
 - Pull request is merged only after Main freshness and exact-head readiness are rechecked.
+- Pull request [#1425](https://github.com/meta-secret/nook/pull/1425) squash-merged as `e00cb372a60d3e7333ea395bb1fc864d0dd487c9` from exact head `1d673c62dcaa4b5ae9792e4b176210f8a25d740e` after Main freshness and readiness passed.
+- The final hosted PR run `34016884812` passed repository policy, Hive, native Rust, WASM build and Node tests, RustSec, coverage, web verification, and Verify and preview. Coverage measured `nook-wasm` at 69.66 percent line coverage across 32,707 lines; companion WASM remained at 91.05 percent.
+- The bounded test slice did not reach a defensible 70 percent floor. The executable policy floor was raised from 64 to the highest evidence-backed value of 69.5 percent; the 70 percent target remains the next mission increment.
 
 ## Safety review
 
