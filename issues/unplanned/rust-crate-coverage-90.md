@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-06T03:46:00Z
+updated_at: 2026-09-06T07:51:18Z
 source_issues: []
-related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425]
+related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -91,6 +91,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1425 added behavior-focused browser tests for conversion, public projections, provider architecture and operations, secret-record projections, authentication and diagnostics types, and vault API helpers. The production public API was split into cohesive provider-operation and provider-architecture modules to preserve the source-size policy; no coverage exclusions or filler were added.
 - Pull request 1425's exact hosted run measured `nook-wasm` at 69.66 percent line coverage across 32,707 lines and companion WASM at 91.05 percent. The evidence-backed executable floor was raised from 64 to 69.5 percent, because the bounded slice did not reach a defensible 70 percent floor.
 - Pull request 1425 passed exact-head validation, review resolution, and readiness with zero unresolved review threads on head `1d673c62dcaa4b5ae9792e4b176210f8a25d740e`, then squash-merged as `e00cb372a60d3e7333ea395bb1fc864d0dd487c9`. The next bounded slice continues from merged Main at a 69.5 percent floor.
+- Pull request 1431 added 37 behavior-focused browser tests for authenticator fill, login fill/save, and Sentinel state projections. Its exact hosted run passed 226 browser tests and measured `nook-wasm` at 70.32 percent line coverage across 33,023 lines; companion WASM remained at 91.05 percent.
+- Pull request 1431 passed exact-head validation, review resolution, and readiness with zero unresolved review threads on head `6779ae4a0069a7eb86d4f32f8fd1d5a6eaa0af0a`, then squash-merged as `00a99bf33624c063b83174479c7b12e7e090cb4b`. The next bounded slice starts from merged Main at the evidence-backed 70 percent floor and targets 75 percent.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions

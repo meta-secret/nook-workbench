@@ -1,0 +1,57 @@
+schema_version: 4
+source_pr:
+  number: 1431
+  url: https://github.com/meta-secret/nook/pull/1431
+  title: Raise nook-wasm coverage floor to 70 percent
+  change_surface: nook-wasm manager behavior tests for authenticator fill, login fill/save, and Sentinel projections
+  head_sha: 6779ae4a0069a7eb86d4f32f8fd1d5a6eaa0af0a
+  merge_sha: 00a99bf33624c063b83174479c7b12e7e090cb4b
+  started_at: 2026-09-06T06:56:01Z
+  opened_at: 2026-09-06T07:00:00Z
+  merged_at: 2026-09-06T07:51:18Z
+  elapsed_seconds: 3317
+  open_to_merge_seconds: 3078
+summary:
+  local_execution_count: 4
+  local_check_count: 1
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 13
+  github_actions_run_count: 1
+  github_actions_seconds: 672
+  delivery_head_count: 1
+  review_request_count: 0
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 1
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+  merge_attempt_count: 1
+test_inventory:
+  measured_at: 2026-09-06T07:47:56Z
+  head_sha: 6779ae4a0069a7eb86d4f32f8fd1d5a6eaa0af0a
+  by_type: {rust: 345, preflight: 0, web_unit: 0, e2e: 0}
+  total: 345
+local_executions:
+  - {command: Workspace rustfmt, executor: Gizmo Prime, duration_seconds: 1, result: passed, notes: Static formatting only; no local Rust WASM or product Docker build.}
+  - {command: Workspace formatting and diff check, executor: Gizmo Prime, duration_seconds: 1, result: passed, notes: Static checks after browser-test edits.}
+  - {command: "task loom:pre-push", executor: Gizmo Prime, duration_seconds: 3, result: passed, notes: Authored additions remained below the 2,000-line budget.}
+  - {command: "task pr:ready PR=1431", executor: Gizmo Prime, duration_seconds: 8, result: passed, notes: Exact-head readiness, deployment, and review-thread audit.}
+github_actions_runs:
+  - {workflow: PR, run_id: 34019693657, run_attempt: 1, head_sha: 6779ae4a0, trigger: pull_request, conclusion: success, source_pr: 1431, source_attributed: true, validation_requested: true, duration_seconds: 672}
+delivery_heads:
+  - {head_sha: 6779ae4a0, first_observed_at: "2026-09-06T07:36:00Z", last_observed_at: "2026-09-06T07:48:00Z", final: true, action_run_count: 1, action_seconds: 672, obsolete_action_seconds: 0}
+review_events: []
+validation_cycles:
+  - {workflow: PR, head_sha: 6779ae4a0, run_id: 34019693657, run_attempt: 1, started_at: "2026-09-06T07:36:44Z", finished_at: "2026-09-06T07:47:56Z", duration_seconds: 672, conclusion: success, obsolete_seconds: 0}
+cache_telemetry: {totals: {job_count: 0, remote_backend_job_count: 0, direct_compile_job_count: 0, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0}, jobs: []}
+pr_retriggers:
+  - {reason: Main freshness required a rebase; final hosted validation ran on the rebased exact head.}
+merge_attempts:
+  - {started_at: "2026-09-06T07:51:17Z", finished_at: "2026-09-06T07:51:18Z", duration_seconds: 1, result: success, head_sha: 6779ae4a0069a7eb86d4f32f8fd1d5a6eaa0af0a, merge_sha: 00a99bf33624c063b83174479c7b12e7e090cb4b}
+comparison: {baseline_quality: strong, notes: PR 1431 was the immediately preceding bounded nook-wasm coverage slice using the same hosted delivery pipeline.}
+waste_assessment: {notes: The first hosted attempt exposed only test-fixture and assertion-shape defects; the final exact-head run passed after focused corrections and a Main rebase., required_actions: []}
