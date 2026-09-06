@@ -1,14 +1,15 @@
 ---
 title: Type simple genesis event pinning and staged identity admission
-status: planned
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-simple-genesis-event-admission
 created_at: 2026-09-06T10:21:00Z
-updated_at: 2026-09-06T10:21:00Z
+updated_at: 2026-09-06T10:51:31Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1443
 depends_on:
   - issues/rust-action-ownership/local-identity-recovery.md
 ---
@@ -42,16 +43,16 @@ Move 13 production free functions onto pending/staged/request/prepared owners an
 
 ## Acceptance criteria
 
-- [ ] Existing wire variants, legacy timestamp, conflicting-field rejection, ordinary/staged compatibility, and legacy plaintext-seed handling remain unchanged.
-- [ ] Proposed seed and member envelopes are sealed before journal update; exact store/identity/timestamp comparison and first-complete-event reuse remain unchanged.
-- [ ] Existing validation asymmetry is preserved; no new checks are added to branches that currently lack them.
-- [ ] Member-specific signer-envelope precedence and legacy envelope behavior remain unchanged.
-- [ ] Pending recovery rejection, staged owner selection, authorizer binding, directory snapshots, and no publication before completion remain unchanged.
-- [ ] Existing transaction/update ordering, errors, partial effects, browser ABI, and marker schemas remain unchanged.
-- [ ] Existing completion publication and cleanup behavior remains unchanged.
-- [ ] Fourteen existing tests remain; bounded pinning mismatch/reuse, unpolled prepared-write drop, and privacy/consumption coverage are added.
-- [ ] The completed simple/staged genesis subtree denies homeless functions and rejects invalid suppression; no unrelated keyring migration is included.
-- [ ] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Existing wire variants, legacy timestamp, conflicting-field rejection, ordinary/staged compatibility, and legacy plaintext-seed handling remain unchanged.
+- [x] Proposed seed and member envelopes are sealed before journal update; exact store/identity/timestamp comparison and first-complete-event reuse remain unchanged.
+- [x] Existing validation asymmetry is preserved; no new checks are added to branches that currently lack them.
+- [x] Member-specific signer-envelope precedence and legacy envelope behavior remain unchanged.
+- [x] Pending recovery rejection, staged owner selection, authorizer binding, directory snapshots, and no publication before completion remain unchanged.
+- [x] Existing transaction/update ordering, errors, partial effects, browser ABI, and marker schemas remain unchanged.
+- [x] Existing completion publication and cleanup behavior remains unchanged.
+- [x] Fourteen existing tests remain; bounded pinning mismatch/reuse, unpolled prepared-write drop, and privacy/consumption coverage are added.
+- [x] The completed simple/staged genesis subtree denies homeless functions and rejects invalid suppression; no unrelated keyring migration is included.
+- [x] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Constraints
 
@@ -60,3 +61,5 @@ No schema migration, fallback, rollback/recovery exception, global single-use cl
 ## Progress
 
 Read-only DEV-CORE inventory at origin/main `7390027921185515a971ee5fc4624e23e8cdcbc2` identified the ten-file closure with no changed-file overlap with live PRs #1442, #1430, or #1210. Estimated 1,500–1,850 additions and 1,000–1,300 deletions with a hard ceiling of 1,950 additions.
+
+Implementation landed in PR #1443 at initial head `4d126720c5e075abeb615b0287600908340854fc`, then received a compile-only repair for two imports and one field shorthand at final head `5640cd101a20a103199af47bb56ab90d6a9dae6a`. Final scope is 1,005 additions and 633 deletions across exactly ten files. Remote Loom, hosted validation, exact-head SECURITY, readiness, and squash merge `6100a2650636e566f188f0103e1b54f81ea28483` passed.
