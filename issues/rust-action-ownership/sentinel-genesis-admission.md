@@ -1,14 +1,15 @@
 ---
 title: Type Sentinel genesis participant admission
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-genesis-admission
 created_at: 2026-09-06T05:54:30Z
-updated_at: 2026-09-06T05:54:30Z
+updated_at: 2026-09-06T06:50:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1429
 depends_on:
   - issues/rust-action-ownership/passkey-authenticator.md
 ---
@@ -34,20 +35,20 @@ Sentinel genesis uses private checked response and delivery states that bind adm
 
 ## Acceptance criteria
 
-- [ ] Exact signed tuple bytes, fingerprint separation, errors, validation order, labels, recipients, share constraints, duplicate handling, capacity, and issuance behavior remain unchanged.
-- [ ] Checked response state retains the admitted request and signer and consumes itself during signing.
-- [ ] Checked delivery retains original signed evidence and consumes itself during record conversion.
-- [ ] Request, response, delivery, announcement, participant-key, and public-link types own their related actions.
-- [ ] Link trimming, limits, fragment/query precedence, percent/base64 decoding, and standalone-announcement rejection remain unchanged.
-- [ ] Response-link normalization remains explicitly weaker than signature/session admission and makes no verified claim.
-- [ ] WASM journal, storage, cleanup, and caller sequencing remain unchanged.
-- [ ] Complete parent and link modules deny homeless functions and invalid suppression.
-- [ ] Colocated behavior tests and compile controls cover admission order, tampering, recipients, evidence binding, normalization limits, privacy, and consuming states.
-- [ ] Remote Loom, hosted PR checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Exact signed tuple bytes, fingerprint separation, errors, validation order, labels, recipients, share constraints, duplicate handling, capacity, and issuance behavior remain unchanged.
+- [x] Checked response state retains the admitted request and signer and consumes itself during signing.
+- [x] Checked delivery retains original signed evidence and consumes itself during record conversion.
+- [x] Request, response, delivery, announcement, participant-key, and public-link types own their related actions.
+- [x] Link trimming, limits, fragment/query precedence, percent/base64 decoding, and standalone-announcement rejection remain unchanged.
+- [x] Response-link normalization remains explicitly weaker than signature/session admission and makes no verified claim.
+- [x] WASM journal, storage, cleanup, and caller sequencing remain unchanged.
+- [x] Complete parent and link modules deny homeless functions and invalid suppression.
+- [x] Colocated behavior tests and compile controls cover admission order, tampering, recipients, evidence binding, normalization limits, privacy, and consuming states.
+- [x] Remote Loom, hosted PR checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Progress
 
-The eleven-file boundary is inventoried from Nook main at `85a21b0c4eea13e1ec0a9450a6fe31e92e8cbb77` with zero overlap against live PRs #1425 and #1210. Pre-edit consumer verification added the direct `vault_sentinel_genesis.rs` wrappers required to remove the auth2 free exports.
+The eleven-file boundary was inventoried from Nook main at `85a21b0c4eea13e1ec0a9450a6fe31e92e8cbb77` with zero overlap against live PRs #1425 and #1210. Pre-edit consumer verification added the direct `vault_sentinel_genesis.rs` wrappers required to remove the auth2 free exports. PR #1429 merged at `f5dcc77308759361828ed6b35c9246e3f372ae23` after four hosted replacement heads, exact-head SECURITY PASS, Remote Loom success, green required hosted jobs, and readiness.
 
 ## Findings and decisions
 
