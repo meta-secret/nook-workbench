@@ -1,14 +1,15 @@
 ---
 title: Type website passkey authenticator ceremonies
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-passkey-authenticator
 created_at: 2026-09-06T05:02:27Z
-updated_at: 2026-09-06T05:02:27Z
+updated_at: 2026-09-06T05:48:10Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1428
 depends_on:
   - issues/rust-action-ownership/event-db-transaction.md
 ---
@@ -34,19 +35,19 @@ Registration and assertion use private checked states that carry the exact admit
 
 ## Acceptance criteria
 
-- [ ] Origin, public-suffix, localhost, canonical base64, and length validation preserve exact ordering and errors.
-- [ ] Registration exclusion and assertion allow-list, ambiguity, highest-counter selection, exhaustion, and key-validation behavior remain unchanged.
-- [ ] Checked states retain the admitted request and selected credential borrows and consume themselves during generation or signing.
-- [ ] ES256, COSE, client-data, authenticator-data, flags, attestation, signature, and stored credential formats remain unchanged.
-- [ ] Key material comparison, zeroization, and existing credential cloning remain unchanged.
-- [ ] WASM ceremony-active checks, encrypted persistence, duplicate cleanup, and response-after-append order remain unchanged.
-- [ ] Complete authenticator modules deny homeless functions and reject invalid suppression.
-- [ ] Colocated tests cover admission order, malformed fields and keys, preparation/drop immutability, selection binding, signatures, counters, and private/consuming states.
-- [ ] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Origin, public-suffix, localhost, canonical base64, and length validation preserve exact ordering and errors.
+- [x] Registration exclusion and assertion allow-list, ambiguity, highest-counter selection, exhaustion, and key-validation behavior remain unchanged.
+- [x] Checked states retain the admitted request and selected credential borrows and consume themselves during generation or signing.
+- [x] ES256, COSE, client-data, authenticator-data, flags, attestation, signature, and stored credential formats remain unchanged.
+- [x] Key material comparison, zeroization, and existing credential cloning remain unchanged.
+- [x] WASM ceremony-active checks, encrypted persistence, duplicate cleanup, and response-after-append order remain unchanged.
+- [x] Complete authenticator modules deny homeless functions and reject invalid suppression.
+- [x] Colocated tests cover admission order, malformed fields and keys, preparation/drop immutability, selection binding, signatures, counters, and private/consuming states.
+- [x] Remote Loom, hosted PR checks, exact-head source SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Progress
 
-The nine-file boundary is inventoried from Nook main at `97d0156faad403d19c1cb6a21417df14b4c910f2` with zero file overlap against live PRs #1427, #1425, and #1210.
+PR #1428 merged the complete nine-file passkey authenticator boundary as `85a21b0c4eea13e1ec0a9450a6fe31e92e8cbb77` after Remote Loom, hosted validation, exact-head SECURITY, and readiness passed.
 
 ## Findings and decisions
 
