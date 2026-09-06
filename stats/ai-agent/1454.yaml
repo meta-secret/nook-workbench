@@ -1,0 +1,178 @@
+schema_version: 4
+source_pr:
+  number: 1454
+  url: https://github.com/meta-secret/nook/pull/1454
+  title: Type Bitwarden encrypted and plaintext import admission
+  change_surface: rust_bitwarden_import_typestate
+  head_sha: ff9ff23f778f80758ceea0ad0db90b4dbbbd2d8f
+  merge_sha: 643472c20230015be0110e0b65ce9c6b8c79cc07
+  started_at: 2026-09-06T14:41:28Z
+  opened_at: 2026-09-06T14:48:21Z
+  merged_at: 2026-09-06T15:20:29Z
+  elapsed_seconds: 2341 
+summary:
+  local_execution_count: 8
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 72
+  github_actions_run_count: 10
+  github_actions_seconds: 2100
+  delivery_head_count: 3
+  review_request_count: 2
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 3
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 2
+  agent_requested_rerun_count: 1
+test_inventory:
+  measured_at: 2026-09-06T15:21:19Z
+  head_sha: ff9ff23f778f80758ceea0ad0db90b4dbbbd2d8f
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push PR=1454
+    category: check
+    outcome: passed
+    reason: final_scope_pre_push_hygiene
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: dispatched
+    reason: initial_exact_head_remote_dispatch
+  - command: task pr:validate PR=1454
+    category: check
+    outcome: passed
+    reason: initial_exact_head_hosted_validation_dispatch
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: dispatched
+    reason: repaired_exact_head_remote_dispatch
+  - command: task pr:validate PR=1454
+    category: check
+    outcome: passed
+    reason: repaired_exact_head_hosted_validation_dispatch
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: dispatched
+    reason: final_refreshed_base_remote_dispatch
+  - command: task pr:validate PR=1454
+    category: check
+    outcome: passed
+    reason: final_refreshed_base_hosted_validation_dispatch
+  - command: task pr:ready PR=1454
+    category: check
+    outcome: passed
+    reason: final_exact_head_readiness
+github_actions_runs:
+  - workflow: PR
+    run_id: 34040362169
+    head_sha: d08f4312e2398363ca8fc97ab0a9c59347bb28f2
+    conclusion: failure
+    source_pr: 1454
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34040351458
+    head_sha: d08f4312e2398363ca8fc97ab0a9c59347bb28f2
+    conclusion: success
+    source_pr: 1454
+    validation_requested: true
+  - workflow: PR
+    run_id: 34040884907
+    head_sha: c58920865339f5b2d37c50f26f56335cabe53359
+    conclusion: success
+    source_pr: 1454
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34040873874
+    head_sha: c58920865339f5b2d37c50f26f56335cabe53359
+    conclusion: success
+    source_pr: 1454
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34040868379
+    head_sha: c58920865339f5b2d37c50f26f56335cabe53359
+    conclusion: success
+    source_pr: 1454
+    validation_requested: true
+  - workflow: Cancel obsolete PR validation
+    run_id: 34040867336
+    head_sha: c58920865339f5b2d37c50f26f56335cabe53359
+    conclusion: success
+    source_pr: 1454
+    validation_requested: true
+  - workflow: PR
+    run_id: 34041472201
+    head_sha: ff9ff23f778f80758ceea0ad0db90b4dbbbd2d8f
+    conclusion: success
+    source_pr: 1454
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34041460156
+    head_sha: ff9ff23f778f80758ceea0ad0db90b4dbbbd2d8f
+    conclusion: success
+    source_pr: 1454
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34041451297
+    head_sha: ff9ff23f778f80758ceea0ad0db90b4dbbbd2d8f
+    conclusion: success
+    source_pr: 1454
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34041998140
+    head_sha: ff9ff23f778f80758ceea0ad0db90b4dbbbd2d8f
+    conclusion: success
+    source_pr: 1454
+    validation_requested: true
+delivery_heads:
+  - head_sha: d08f4312e2398363ca8fc97ab0a9c59347bb28f2
+    final: false
+  - head_sha: c58920865339f5b2d37c50f26f56335cabe53359
+    final: false
+  - head_sha: ff9ff23f778f80758ceea0ad0db90b4dbbbd2d8f
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: d08f4312e2398363ca8fc97ab0a9c59347bb28f2
+    base_sha: 74506792dacfcd6047e6dc8925126ab8cb81bf76
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: ff9ff23f778f80758ceea0ad0db90b4dbbbd2d8f
+    base_sha: cabc0fb830f12e1c8f06a6c3865454d91cded01d
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: d08f4312e2398363ca8fc97ab0a9c59347bb28f2
+    run_id: 34040362169
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: c58920865339f5b2d37c50f26f56335cabe53359
+    run_id: 34040884907
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: ff9ff23f778f80758ceea0ad0db90b4dbbbd2d8f
+    run_id: 34041472201
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1452, 1451, 1449]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
