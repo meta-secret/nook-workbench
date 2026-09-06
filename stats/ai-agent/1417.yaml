@@ -1,0 +1,72 @@
+schema_version: 4
+source_pr:
+  number: 1417
+  url: https://github.com/meta-secret/nook/pull/1417
+  title: Raise nook-wasm coverage floor to 60 percent
+  change_surface: nook-wasm public projection tests and executable coverage floor
+  head_sha: 4db94d9ccf98c3e3be45afedf9f4b68db0d4d94c
+  merge_sha: 4b41d2a842282f509c962ad5aba180ab5182f05c
+  started_at: 2026-09-05T23:32:44Z
+  opened_at: 2026-09-06T00:57:37Z
+  merged_at: 2026-09-06T02:19:12Z
+  elapsed_seconds: 9990
+  open_to_merge_seconds: 4895
+summary:
+  local_execution_count: 22
+  local_check_count: 0
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 160
+  github_actions_run_count: 6
+  github_actions_seconds: 3583
+  delivery_head_count: 6
+  review_request_count: 0
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 6
+  obsolete_validation_seconds: 1548
+  obsolete_validation_count: 5
+  cancelled_validation_seconds: 876
+  cancelled_validation_count: 1
+  pr_retrigger_count: 2
+  agent_requested_rerun_count: 1
+test_inventory:
+  measured_at: 2026-09-06T02:06:00Z
+  head_sha: 4db94d9ccf98c3e3be45afedf9f4b68db0d4d94c
+  by_type: {rust: 330, preflight: 0, web_unit: 0, e2e: 0}
+  total: 330
+local_executions:
+  - {command: Branch and static inspection, executor: Gizmo Prime, duration_seconds: 8, result: passed, notes: Reviewed prior coverage evidence and selected typed projection tests.}
+  - {command: Workspace rustfmt, executor: Gizmo Prime, duration_seconds: 4, result: passed, notes: Static formatting only; no local Rust WASM or product Docker build.}
+  - {command: Workspace formatting check and diff check, executor: Gizmo Prime, duration_seconds: 3, result: passed, notes: Static checks only.}
+  - {command: task loom:pre-push, executor: Gizmo Prime, duration_seconds: 2, result: passed, notes: Authored additions remained below the 2,000-line budget.}
+github_actions_runs:
+  - {workflow: PR, run_id: 34002636315, run_attempt: 1, head_sha: 2c6d38b154814ae6bc44466861dca0fdf6114d3a, trigger: pull_request, conclusion: cancelled, source_pr: 1417, source_attributed: true, validation_requested: true}
+  - {workflow: PR, run_id: 34003367756, run_attempt: 1, head_sha: d755924069515ebfef94ce25c3dc7469882ebc0b, trigger: pull_request, conclusion: failure, source_pr: 1417, source_attributed: true, validation_requested: true}
+  - {workflow: PR, run_id: 34003924524, run_attempt: 1, head_sha: 6cd1da48153c5ba6d009bcfebd7bd148bb66fa90, trigger: pull_request, conclusion: failure, source_pr: 1417, source_attributed: true, validation_requested: true}
+  - {workflow: PR, run_id: 34004353451, run_attempt: 1, head_sha: cb69b83a8572b8ded5fd86f5ba74ebf8d23cdd24, trigger: pull_request, conclusion: failure, source_pr: 1417, source_attributed: true, validation_requested: true}
+  - {workflow: PR, run_id: 34004844801, run_attempt: 2, head_sha: 6a498c027523b8a695ecfaa8bd01c337f2f38422, trigger: pull_request, conclusion: success, source_pr: 1417, source_attributed: true, validation_requested: true}
+  - {workflow: PR, run_id: 34005705471, run_attempt: 1, head_sha: 4db94d9ccf98c3e3be45afedf9f4b68db0d4d94c, trigger: pull_request, conclusion: success, source_pr: 1417, source_attributed: true, validation_requested: true}
+delivery_heads:
+  - {head_sha: 2c6d38b154814ae6bc44466861dca0fdf6114d3a, first_observed_at: 2026-09-06T00:57:37Z, last_observed_at: 2026-09-06T01:12:13Z, final: false, action_run_count: 1, action_seconds: 876, obsolete_action_seconds: 876}
+  - {head_sha: d755924069515ebfef94ce25c3dc7469882ebc0b, first_observed_at: 2026-09-06T01:14:17Z, last_observed_at: 2026-09-06T01:25:45Z, final: false, action_run_count: 1, action_seconds: 688, obsolete_action_seconds: 688}
+  - {head_sha: 6cd1da48153c5ba6d009bcfebd7bd148bb66fa90, first_observed_at: 2026-09-06T01:27:10Z, last_observed_at: 2026-09-06T01:35:05Z, final: false, action_run_count: 1, action_seconds: 475, obsolete_action_seconds: 475}
+  - {head_sha: cb69b83a8572b8ded5fd86f5ba74ebf8d23cdd24, first_observed_at: 2026-09-06T01:36:54Z, last_observed_at: 2026-09-06T01:46:40Z, final: false, action_run_count: 1, action_seconds: 586, obsolete_action_seconds: 586}
+  - {head_sha: 6a498c027523b8a695ecfaa8bd01c337f2f38422, first_observed_at: 2026-09-06T01:48:37Z, last_observed_at: 2026-09-06T02:07:21Z, final: false, action_run_count: 1, action_seconds: 1109, obsolete_action_seconds: 0}
+  - {head_sha: 4db94d9ccf98c3e3be45afedf9f4b68db0d4d94c, first_observed_at: 2026-09-06T02:08:33Z, last_observed_at: 2026-09-06T02:18:15Z, final: true, action_run_count: 1, action_seconds: 582, obsolete_action_seconds: 0}
+review_events: []
+validation_cycles:
+  - {workflow: PR, head_sha: 2c6d38b154814ae6bc44466861dca0fdf6114d3a, run_id: 34002636315, run_attempt: 1, started_at: 2026-09-06T00:57:37Z, finished_at: 2026-09-06T01:12:13Z, duration_seconds: 876, conclusion: cancelled, obsolete_seconds: 876}
+  - {workflow: PR, head_sha: d755924069515ebfef94ce25c3dc7469882ebc0b, run_id: 34003367756, run_attempt: 1, started_at: 2026-09-06T01:14:17Z, finished_at: 2026-09-06T01:25:45Z, duration_seconds: 688, conclusion: failure, obsolete_seconds: 688}
+  - {workflow: PR, head_sha: 6cd1da48153c5ba6d009bcfebd7bd148bb66fa90, run_id: 34003924524, run_attempt: 1, started_at: 2026-09-06T01:27:10Z, finished_at: 2026-09-06T01:35:05Z, duration_seconds: 475, conclusion: failure, obsolete_seconds: 475}
+  - {workflow: PR, head_sha: cb69b83a8572b8ded5fd86f5ba74ebf8d23cdd24, run_id: 34004353451, run_attempt: 1, started_at: 2026-09-06T01:36:54Z, finished_at: 2026-09-06T01:46:40Z, duration_seconds: 586, conclusion: failure, obsolete_seconds: 586}
+  - {workflow: PR, head_sha: 6a498c027523b8a695ecfaa8bd01c337f2f38422, run_id: 34004844801, run_attempt: 2, started_at: 2026-09-06T01:58:52Z, finished_at: 2026-09-06T02:07:21Z, duration_seconds: 509, conclusion: success, obsolete_seconds: 0}
+  - {workflow: PR, head_sha: 4db94d9ccf98c3e3be45afedf9f4b68db0d4d94c, run_id: 34005705471, run_attempt: 1, started_at: 2026-09-06T02:08:33Z, finished_at: 2026-09-06T02:18:15Z, duration_seconds: 582, conclusion: success, obsolete_seconds: 0}
+cache_telemetry: {totals: {job_count: 0, remote_backend_job_count: 0, direct_compile_job_count: 0, sccache_compile_requests: 0, sccache_cache_hits: 0, sccache_cache_misses: 0, buildkit_completed_steps: 0, buildkit_cached_steps: 0}, jobs: []}
+pr_retriggers:
+  - {reason: Corrected test imports and cfg boundaries after hosted feedback; final validation reran on successive exact heads.}
+  - {reason: Main advanced before merge; rebased the final branch and reran exact-head validation on the final head.}
+merge_attempts:
+  - {started_at: 2026-09-06T02:19:08Z, finished_at: 2026-09-06T02:19:12Z, duration_seconds: 4, result: success, head_sha: 4db94d9ccf98c3e3be45afedf9f4b68db0d4d94c, merge_sha: 4b41d2a842282f509c962ad5aba180ab5182f05c}
+comparison: {baseline_quality: strong, notes: PR 1404 was the immediately preceding bounded nook-wasm coverage slice using the same hosted delivery pipeline.}
+waste_assessment: {notes: Four corrected heads and one cancelled run were obsolete; the merged result used the final exact-head successful run after Main freshness was restored., required_actions: []}
