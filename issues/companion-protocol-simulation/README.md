@@ -2,7 +2,7 @@
 title: Companion protocol simulation
 status: in_progress
 created_at: 2026-09-07T05:32:41Z
-updated_at: 2026-09-07T05:32:41Z
+updated_at: 2026-09-07T09:03:43Z
 ---
 
 # Companion protocol simulation
@@ -29,10 +29,13 @@ while browser end-to-end tests remain the primary proof that both sides agree.
   stores and direct transports; application behavior is not tested with mocks.
 - Browser messaging remains a thin production transport and receives only
   focused adapter coverage.
+- The framework lands before its broad test suite. Production adapter migration
+  starts only after both predecessor slices merge.
 
 ## Issues
 
-- [ ] [Implement typed companion protocol simulation](typed-companion-protocol-simulation.md)
+- [x] [Implement typed companion protocol simulation](typed-companion-protocol-simulation.md)
+- [ ] [Add companion protocol composition tests](companion-protocol-composition-tests.md)
 
 ## References
 
@@ -41,4 +44,3 @@ while browser end-to-end tests remain the primary proof that both sides agree.
 - `nook-app/nook-platform/nook-wasm`
 - `nook-app/nook-web/nook-web-shared/src/extension`
 - `nook-app/nook-web/nook-web-extension/src/background`
-
