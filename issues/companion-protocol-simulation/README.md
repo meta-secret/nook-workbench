@@ -2,7 +2,7 @@
 title: Companion protocol simulation
 status: in_progress
 created_at: 2026-09-07T05:32:41Z
-updated_at: 2026-09-07T09:03:43Z
+updated_at: 2026-09-07T11:14:50Z
 ---
 
 # Companion protocol simulation
@@ -35,7 +35,7 @@ while browser end-to-end tests remain the primary proof that both sides agree.
 ## Issues
 
 - [x] [Implement typed companion protocol simulation](typed-companion-protocol-simulation.md)
-- [ ] [Add companion protocol composition tests](companion-protocol-composition-tests.md)
+- [x] [Add companion protocol composition tests](companion-protocol-composition-tests.md)
 
 ## References
 

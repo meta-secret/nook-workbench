@@ -1,14 +1,15 @@
 ---
 title: Add companion protocol composition tests
-status: in_progress
+status: done
 priority: p1
 automation: agent
 owner: cypherkitty
 gizmo_id: companion-protocol-composition-tests
 created_at: 2026-09-07T09:03:43Z
-updated_at: 2026-09-07T09:03:43Z
+updated_at: 2026-09-07T11:14:50Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1508
 depends_on:
   - issues/companion-protocol-simulation/typed-companion-protocol-simulation.md
 ---
@@ -41,24 +42,29 @@ TypeScript tests move only structural DTOs between the two WASM memories.
 
 ## Acceptance criteria
 
-- [ ] Native Rust scenarios use concrete protocol endpoints and managers.
-- [ ] No application-layer mock framework or callback mock is introduced.
-- [ ] Generated-JavaScript tests instantiate both WASM packages independently.
-- [ ] Cross-WASM communication uses generated structural DTOs or canonical
+- [x] Native Rust scenarios use concrete protocol endpoints and managers.
+- [x] No application-layer mock framework or callback mock is introduced.
+- [x] Generated-JavaScript tests instantiate both WASM packages independently.
+- [x] Cross-WASM communication uses generated structural DTOs or canonical
   bytes, never WASM object handles.
-- [ ] Failure scenarios prove one-shot state, fail-closed admission, and secret
+- [x] Failure scenarios prove one-shot state, fail-closed admission, and secret
   cleanup.
-- [ ] Focused hosted Rust, WASM Node, web, security, and readiness checks pass.
+- [x] Focused hosted Rust, WASM Node, web, security, and readiness checks pass.
 
 ## Progress
 
 - 2026-09-07: Predecessor framework PR #1500 merged and this test slice began.
+- 2026-09-07: PR #1508 merged after exact-head Rust, WASM Node, web,
+  security, coverage, policy, preview, and readiness validation passed.
 
 ## Findings and decisions
 
 - Test composition precedes production adapter migration.
 - The framework's production endpoints remain the only application behavior
   under test; simulations replace external delivery or storage only.
+- The TypeScript composition suite installs one coherent in-memory IndexedDB
+  WebIDL runtime so Rust persistence uses real request/database/transaction
+  objects with matching constructor identity.
 
 ## References
 
