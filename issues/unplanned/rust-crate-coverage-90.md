@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-07T13:05:30Z
+updated_at: 2026-09-07T13:35:05Z
 source_issues: []
 related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468, 1473, 1483, 1488]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
@@ -93,11 +93,15 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] Pull request 1516 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 78.5 percent with a matching floor.
 - [x] Pull request 1519 passes exact-head hosted validation, Hive verification, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 79.3 percent with a matching floor.
+- [x] Pull request 1522 passes exact-head hosted validation, Hive verification, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
 - Pull request 1349 squash-merged as 5e2f75239728718825aad08ccd738dcf14ef9df7 after all exact-head checks and readiness passed. The next slice targets authenticator-domain.
 - The user explicitly replaced Lace coverage with complete Lace removal on 2026-09-04. The prior coverage result remains historical evidence, not the current delivery target.
+- Pull request 1522 added 173 behavior-focused test lines for all secret-import source metadata mappings and deterministic import-wrapper lifecycle behavior. The final exact hosted graph `34127146347` passed 314 WASM tests and measured `nook-wasm` at 79.62 percent lines, with companion WASM at 91.21 percent. The executable floor rose from 78.5 to 79.3 percent.
+- Pull request 1522 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment, and Hive infrastructure verification `34127137205` on head `e3cdec89aef9ed49e82743d4c0c34f60e4779327` against Main `861a3bbdce75c2b040ffd5fcc5a73db925493673`; it squash-merged at `2026-09-07T13:35:05Z` as `575b2d4a9e35a36a4944b03ee77ea5d656011aa8`. The next slice starts from merged Main at the 79.3 percent floor.
 - Merged exact-head reports measure `nook-wasm` at 51.42 percent across 229 declared tests and `nook-companion-wasm` at 27.55 percent across eight tests.
 - Hive measures 73.73 percent, Lace 86.48 percent, and authenticator-domain 87.93 percent.
 - The initial admission assessment preceded implementation; the user explicitly authorized an iterative pull-request sequence on 2026-09-04, superseding that blocker.
@@ -202,3 +206,5 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [Merged Nook pull request #1468](https://github.com/meta-secret/nook/pull/1468)
 - [Nook WASM secrets manager coverage slice plan](../../plans/unplanned/20260907T122903Z-nook-wasm-coverage-secrets.md)
 - [Nook WASM secrets manager coverage completion worklog](../../worklogs/unplanned/20260907T130530Z-pr-1519-nook-wasm-coverage-secrets.md)
+- [Nook WASM secret-import coverage slice plan](../../plans/unplanned/20260907T131200Z-nook-wasm-coverage-secret-import.md)
+- [Nook WASM secret-import coverage completion worklog](../../worklogs/unplanned/20260907T133505Z-pr-1522-nook-wasm-secret-import.md)
