@@ -2,7 +2,7 @@
 title: Companion protocol simulation
 status: in_progress
 created_at: 2026-09-07T05:32:41Z
-updated_at: 2026-09-07T19:08:13Z
+updated_at: 2026-09-07T22:02:13Z
 ---
 
 # Companion protocol simulation
@@ -46,6 +46,7 @@ future slices start only from a separately selected functional outcome.
 - [x] [Add companion protocol composition tests](companion-protocol-composition-tests.md)
 - [x] [Migrate companion identity browser adapters](companion-identity-browser-adapters.md)
 - [ ] [Implement companion pairing approval protocol](companion-pairing-approval-protocol.md)
+- [ ] [Activate companion pairing atomically](companion-pairing-activation-transaction.md)
 - [ ] [Migrate companion pairing browser adapters](companion-pairing-browser-adapters.md)
 
 ## References
