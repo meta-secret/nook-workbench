@@ -1,14 +1,15 @@
 ---
 title: Implement typed companion protocol simulation
-status: in_progress
+status: done
 priority: p1
 automation: agent
 owner: cypherkitty
 gizmo_id: companion-protocol-simulation
 created_at: 2026-09-07T05:32:41Z
-updated_at: 2026-09-07T07:09:18Z
+updated_at: 2026-09-07T09:01:34Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1500
 depends_on: []
 ---
 
@@ -40,21 +41,23 @@ browser-adapter and generated-WASM scenario pull requests.
 
 ## Acceptance criteria
 
-- [ ] Discovery and identity-handoff request and response shapes are generated
+- [x] Discovery and identity-handoff request and response shapes are generated
   from Rust and malformed values fail closed through typed outcomes.
-- [ ] Rust tests compose real endpoint and manager objects without application
+- [x] Rust tests compose real endpoint and manager objects without application
   mocks or external infrastructure.
-- [ ] No production simulation export exposes plaintext credentials or private
+- [x] No production simulation export exposes plaintext credentials or private
   key material.
-- [ ] The architecture records direct composition and the structural
+- [x] The architecture records direct composition and the structural
   independent-WASM seam without claiming deferred adapters or scenarios.
-- [ ] Focused Rust, WASM, Cortex, security, and exact-head hosted checks pass.
+- [x] Focused Rust, WASM, Cortex, security, and exact-head hosted checks pass.
 
 ## Progress
 
 - 2026-09-07: Architecture selected and implementation authorized.
 - 2026-09-07: User required sequential architectural pull requests. The first
   slice was narrowed to the Rust protocol and simulation framework.
+- 2026-09-07: PR #1500 passed exact-head validation and Security review, then
+  squash-merged as `214dbe3e59f066ce010488a8155ee08b8e6f40b0`.
 
 ## Findings and decisions
 
