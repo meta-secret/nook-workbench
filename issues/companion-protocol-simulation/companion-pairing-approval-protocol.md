@@ -1,12 +1,12 @@
 ---
 title: Implement companion pairing approval protocol
-status: ready
+status: in_progress
 priority: p1
 automation: agent
 owner: cypherkitty
 gizmo_id: companion-pairing-approval-protocol
 created_at: 2026-09-07T14:51:01Z
-updated_at: 2026-09-07T17:00:27Z
+updated_at: 2026-09-07T21:19:08Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -79,6 +79,8 @@ production browser adapters consume it in the next pull request.
 - 2026-09-07: The initial Rust provider and browser integration draft reached
   Security review; three P1 boundary findings required provider hardening and
   a separate sequential consumer pull request.
+- 2026-09-07: Provider-only delivery resumed from current `main`; the preserved
+  draft remains evidence to port selectively rather than a branch to stack.
 
 ## Findings and decisions
 
