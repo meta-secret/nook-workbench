@@ -2,7 +2,7 @@
 title: Companion protocol simulation
 status: in_progress
 created_at: 2026-09-07T05:32:41Z
-updated_at: 2026-09-07T22:02:13Z
+updated_at: 2026-09-07T23:40:31Z
 ---
 
 # Companion protocol simulation
@@ -15,13 +15,13 @@ browser transport or external infrastructure.
 
 ## Current state
 
-The framework, generated-WASM composition suite, and paired identity browser
-adapters are merged. PR #1534 adds an unpublished native Rust harness that
-compiles both WASM crates with `nook-auth2`, `nook-core`, and
-`nook-companion-core`, runs 22 real-instance dependency scenarios, and exposes
-only three existing typed `nook-wasm` companion operations for direct Rust use.
-The larger pairing migration is paused with its unfinished work preserved;
-future slices start only from a separately selected functional outcome.
+The framework, generated-WASM composition suite, paired identity browser
+adapters, and side-effect-free pairing admission are merged. PR #1546 adds a
+Rust-owned one-shot request and approval protocol across core,
+companion-WASM, and nook-WASM, with opaque admitted capabilities, exact sealed
+provider-recipient verification, direct dual-WASM composition, and a broad
+real-manager behavior matrix. Durable atomic activation remains the next
+separate functional capability; browser adapter migration depends on it.
 
 ## Decisions
 
@@ -45,7 +45,7 @@ future slices start only from a separately selected functional outcome.
 - [x] [Implement typed companion protocol simulation](typed-companion-protocol-simulation.md)
 - [x] [Add companion protocol composition tests](companion-protocol-composition-tests.md)
 - [x] [Migrate companion identity browser adapters](companion-identity-browser-adapters.md)
-- [ ] [Implement companion pairing approval protocol](companion-pairing-approval-protocol.md)
+- [x] [Implement companion pairing approval protocol](companion-pairing-approval-protocol.md)
 - [ ] [Activate companion pairing atomically](companion-pairing-activation-transaction.md)
 - [ ] [Migrate companion pairing browser adapters](companion-pairing-browser-adapters.md)
 
