@@ -1,0 +1,151 @@
+schema_version: 4
+source_pr:
+  number: 1491
+  url: https://github.com/meta-secret/nook/pull/1491
+  title: "refactor: own Sentinel onboarding issuance and admission"
+  change_surface: rust_sentinel_onboarding_ownership
+  head_sha: 08ccc2d29ae7d8be22fc0321971bd4a825997d70
+  merge_sha: 82a9e7dc5b1241852505666a4863cf05e17c1cab
+  started_at: 2026-09-07T04:23:44Z
+  opened_at: 2026-09-07T04:27:00Z
+  merged_at: 2026-09-07T05:01:16Z
+elapsed_seconds: 2250
+summary:
+  local_execution_count: 15
+  local_check_count: 12
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 690
+  github_actions_run_count: 7
+  github_actions_seconds: 25200
+  delivery_head_count: 5
+  review_request_count: 1
+  review_finding_batch_count: 2
+  review_finding_count: 2
+  validation_cycle_count: 3
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 2
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T05:01:36Z
+  head_sha: 08ccc2d29ae7d8be22fc0321971bd4a825997d70
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: scoped formatting/static/retention/size checks
+    category: check
+    outcome: passed
+    reason: ownership_migration_scope_and_contract_checks
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1491 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation_after_initial_delivery
+  - command: task pr:validate PR=1491 CODEX_REVIEW=0
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation_after_test_repairs
+  - command: task pr:validate PR=1491 CODEX_REVIEW=0
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation_after_main_refresh
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1491
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1491 --squash
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34083543692
+    head_sha: b99a65b309b8c1538b09b7bf8d910178f9fb26e9
+    conclusion: success
+    source_pr: 1491
+    validation_requested: true
+  - workflow: PR
+    run_id: 34083556783
+    head_sha: b99a65b309b8c1538b09b7bf8d910178f9fb26e9
+    conclusion: failure
+    source_pr: 1491
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34083940115
+    head_sha: 19aa9c095c96cf7e214428baeb58b09c55c7432d
+    conclusion: success
+    source_pr: 1491
+    validation_requested: true
+  - workflow: PR
+    run_id: 34083973586
+    head_sha: 19aa9c095c96cf7e214428baeb58b09c55c7432d
+    conclusion: success
+    source_pr: 1491
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34084549139
+    head_sha: 08ccc2d29ae7d8be22fc0321971bd4a825997d70
+    conclusion: success
+    source_pr: 1491
+    validation_requested: true
+  - workflow: PR
+    run_id: 34084565053
+    head_sha: 08ccc2d29ae7d8be22fc0321971bd4a825997d70
+    conclusion: success
+    source_pr: 1491
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34085094586
+    head_sha: 08ccc2d29ae7d8be22fc0321971bd4a825997d70
+    conclusion: success
+    source_pr: 1491
+    validation_requested: true
+delivery_heads:
+  - head_sha: 08ccc2d29ae7d8be22fc0321971bd4a825997d70
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 51949b1c942193a1f7f6cedcb0da7076ef35b671
+    base_sha: f241def08d9610d8f6df554d5429a9c52623065f
+    outcome: fail
+    findings: 1
+  - reviewer: security_review
+    head_sha: 19aa9c095c96cf7e214428baeb58b09c55c7432d
+    base_sha: f241def08d9610d8f6df554d5429a9c52623065f
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: 08ccc2d29ae7d8be22fc0321971bd4a825997d70
+    base_sha: ded96e7945dffcce0b54238631fd1c65a404dd55
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 08ccc2d29ae7d8be22fc0321971bd4a825997d70
+    run_id: 34084565053
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1490, 1489, 1485]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []

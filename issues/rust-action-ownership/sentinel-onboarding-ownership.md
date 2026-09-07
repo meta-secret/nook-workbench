@@ -1,14 +1,15 @@
 ---
 title: Type Sentinel onboarding issuance admission and codec ownership
-status: planned
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-onboarding
 created_at: 2026-09-07T04:23:44Z
-updated_at: 2026-09-07T04:23:44Z
+updated_at: 2026-09-07T05:01:36Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1491
 depends_on:
   - issues/rust-action-ownership/provider-enrollment-admission-ownership.md
 ---
@@ -38,16 +39,16 @@ Move six production operations and the core `provider_snapshot` fixture onto bou
 
 ## Acceptance criteria
 
-- [ ] Session, policy, and initiator-key equality checks precede provider handling.
-- [ ] Exactly one provider is required; Local/LocalFolder are rejected; provider/store matching remains exact.
-- [ ] Issuance retains its existing weaker structural checks and does not claim delivery-signature verification.
-- [ ] Acceptance verifies the share before provider decryption, normalization, validation, and active-store assignment.
-- [ ] Schema-1 provider projection, recipient key, errors, wire version, compression, Base64, 16-KiB encoded and 64-KiB decompressed limits remain exact.
-- [ ] WASM parse/identity/error order and durable sequence remain save delivery → publish provider snapshot → install share → mark complete; partial effects and future-drop behavior remain unchanged.
-- [ ] Deserialized packages remain untrusted DTOs; no plaintext buffers are retained.
-- [ ] Retain all three core tests, all three delivery-module tests, and the unchanged parent Sentinel test; add structural mismatch precedence, provider count/type/store matrices, wrong-recipient rejection, malformed encrypted snapshot, codec limits/version, and private/consuming continuation controls.
-- [ ] Ownership denial covers the completed core onboarding subtree; unrelated public APIs remain outside blanket activation.
-- [ ] Hosted PR checks, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
+- [x] Session, policy, and initiator-key equality checks precede provider handling.
+- [x] Exactly one provider is required; Local/LocalFolder are rejected; provider/store matching remains exact.
+- [x] Issuance retains its existing weaker structural checks and does not claim delivery-signature verification.
+- [x] Acceptance verifies the share before provider decryption, normalization, validation, and active-store assignment.
+- [x] Schema-1 provider projection, recipient key, errors, wire version, compression, Base64, 16-KiB encoded and 64-KiB decompressed limits remain exact.
+- [x] WASM parse/identity/error order and durable sequence remain save delivery → publish provider snapshot → install share → mark complete; partial effects and future-drop behavior remain unchanged.
+- [x] Deserialized packages remain untrusted DTOs; no plaintext buffers are retained.
+- [x] Retain all three core tests, all three delivery-module tests, and the unchanged parent Sentinel test; add structural mismatch precedence, provider count/type/store matrices, wrong-recipient rejection, malformed encrypted snapshot, codec limits/version, and private/consuming continuation controls.
+- [x] Ownership denial covers the completed core onboarding subtree; unrelated public APIs remain outside blanket activation.
+- [x] Hosted PR checks, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
 
 ## Constraints
 
@@ -56,3 +57,7 @@ No new recovery, storage transactions, schemas, ABI, authentication claims, reta
 ## Progress
 
 Read-only DEV-CORE inventory at fresh origin/main `f241def08d9610d8f6df554d5429a9c52623065f` found six homeless production operations in an exact six-file closure with no live PR overlap. Estimated scope is 950–1,300 additions with a hard ceiling of 1,600.
+
+## Completion
+
+PR #1491 merged as `82a9e7dc5b1241852505666a4863cf05e17c1cab` from delivery head `08ccc2d29ae7d8be22fc0321971bd4a825997d70`, based on main `ded96e7945dffcce0b54238631fd1c65a404dd55`. The exact six-file closure added 645 lines and removed 230. Hosted PR `34084565053`, repository policy `34084549139`, remote Loom `34085094586`, exact-head security review, and readiness passed; readiness deployment was `https://pr-1491.nokey-sh.pages.dev`.
