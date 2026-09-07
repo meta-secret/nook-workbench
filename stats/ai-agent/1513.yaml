@@ -1,0 +1,207 @@
+schema_version: 4
+source_pr:
+  number: 1513
+  url: https://github.com/meta-secret/nook/pull/1513
+  title: "refactor password envelope actions into owned states"
+  change_surface: rust_password_envelope_action_ownership
+  head_sha: a6ff8799213fe4b6fd863a9590a640e69f871109
+  merge_sha: 815622718542f23b137de833816ea7ac38669087
+  started_at: 2026-09-07T10:54:31Z
+  opened_at: 2026-09-07T10:58:00Z
+  merged_at: 2026-09-07T11:40:42Z
+elapsed_seconds: 2771 
+summary:
+  local_execution_count: 18
+  local_check_count: 12
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 7
+  github_actions_seconds: 0
+  delivery_head_count: 4
+  review_request_count: 4
+  review_finding_batch_count: 1
+  review_finding_count: 1
+  validation_cycle_count: 4
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 3
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T11:42:00Z
+  head_sha: a6ff8799213fe4b6fd863a9590a640e69f871109
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: cargo fmt --all -- --check
+    category: check
+    outcome: passed
+    reason: initial_scoped_format_check
+  - command: git diff --check
+    category: check
+    outcome: passed
+    reason: initial_whitespace_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: initial_scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1513 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: initial_exact_head_validation
+  - command: hosted security review and ownership repair
+    category: repair
+    outcome: passed
+    reason: activated module ownership lints and moved policy and crypto helpers under owners
+  - command: cargo fmt --all -- --check and git diff --check
+    category: check
+    outcome: passed
+    reason: ownership_repair_hygiene
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: ownership_repair_scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1513 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: repaired_exact_head_validation
+  - command: hosted Dylint repair
+    category: repair
+    outcome: passed
+    reason: moved test-only sample key fixture into TestFixtures owner
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: test-fixture_owner_scoped_hygiene_and_contract_checks
+  - command: git rebase origin/main
+    category: delivery
+    outcome: passed
+    reason: refreshed_main_after_hosted_validation_advanced_main
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: final_rebased_head_scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1513 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: final_rebased_exact_head_validation
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_rebased_head_remote_loom_verification
+  - command: task pr:ready PR=1513
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1513 --squash --delete-branch
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge_remote_state_verified_after_local_worktree_update_error
+  - command: gh pr view 1513 and git fetch origin main
+    category: check
+    outcome: passed
+    reason: verify_merged_main_head
+
+github_actions_runs:
+  - workflow: PR
+    run_id: 34114428141
+    head_sha: f78f8028b2e7e071473fb4d867de78b4dee10994
+    conclusion: cancelled
+    source_pr: 1513
+  - workflow: PR
+    run_id: 34115081456
+    head_sha: e121260c72418259bebb2dd5001b0c91b032cec4
+    conclusion: failure
+    source_pr: 1513
+  - workflow: PR
+    run_id: 34116104170
+    head_sha: 9fedb27daf647e2b6881ed9a1d23e3db9dc700dd
+    conclusion: failure
+    source_pr: 1513
+  - workflow: PR
+    run_id: 34116541711
+    head_sha: a6ff8799213fe4b6fd863a9590a640e69f871109
+    conclusion: success
+    source_pr: 1513
+  - workflow: Repository policy
+    run_id: 34116516360
+    head_sha: a6ff8799213fe4b6fd863a9590a640e69f871109
+    conclusion: success
+    source_pr: 1513
+  - workflow: Remote / loom:verify / manual
+    run_id: 34117669451
+    head_sha: a6ff8799213fe4b6fd863a9590a640e69f871109
+    conclusion: success
+    source_pr: 1513
+  - workflow: Linear UI demos
+    run_id: 34117851794
+    head_sha: a6ff8799213fe4b6fd863a9590a640e69f871109
+    conclusion: success
+    source_pr: 1513
+delivery_heads:
+  - head_sha: f78f8028b2e7e071473fb4d867de78b4dee10994
+    final: false
+  - head_sha: e121260c72418259bebb2dd5001b0c91b032cec4
+    final: false
+  - head_sha: 9fedb27daf647e2b6881ed9a1d23e3db9dc700dd
+    final: false
+  - head_sha: a6ff8799213fe4b6fd863a9590a640e69f871109
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: f78f8028b2e7e071473fb4d867de78b4dee10994
+    base_sha: add2d1a2b601bc6f8472ad78fa4d953c66b5a3f9
+    outcome: findings
+    findings: 1
+  - reviewer: security_review
+    head_sha: e121260c72418259bebb2dd5001b0c91b032cec4
+    base_sha: add2d1a2b601bc6f8472ad78fa4d953c66b5a3f9
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: 9fedb27daf647e2b6881ed9a1d23e3db9dc700dd
+    base_sha: c49e6fcfddbfaea6f8c1d8a0b9cc073c6aff6865
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: a6ff8799213fe4b6fd863a9590a640e69f871109
+    base_sha: 42109a86b35b40f9579d6d633d43b2535be0ca8b
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: f78f8028b2e7e071473fb4d867de78b4dee10994
+    run_id: 34114428141
+    conclusion: cancelled
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: e121260c72418259bebb2dd5001b0c91b032cec4
+    run_id: 34115081456
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 9fedb27daf647e2b6881ed9a1d23e3db9dc700dd
+    run_id: 34116104170
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: a6ff8799213fe4b6fd863a9590a640e69f871109
+    run_id: 34116541711
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1507, 1511]
+  baseline_quality: high
+  baseline_note: Recent Rust ownership migrations in Sentinel quorum and multi-device join flows.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
