@@ -1,0 +1,167 @@
+schema_version: 4
+source_pr:
+  number: 1477
+  url: https://github.com/meta-secret/nook/pull/1477
+  title: "refactor: type TOTP URI admission"
+  change_surface: rust_totp_setup_key_uri_ownership
+  head_sha: fefa7cb54b94ee5951fa61cf1ca49084d7a29912
+  merge_sha: 7b6dacc3cad39d479e5262a61aec41bc52d946ff
+  started_at: 2026-09-06T23:53:00Z
+  opened_at: 2026-09-06T23:54:00Z
+  merged_at: 2026-09-07T01:23:21Z
+elapsed_seconds: 5421
+summary:
+  local_execution_count: 12
+  local_check_count: 10
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 600
+  github_actions_run_count: 12
+  github_actions_seconds: 9000
+  delivery_head_count: 5
+  review_request_count: 5
+  review_finding_batch_count: 1
+  review_finding_count: 1
+  validation_cycle_count: 5
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 4
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 1
+  pr_retrigger_count: 5
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T01:24:00Z
+  head_sha: fefa7cb54b94ee5951fa61cf1ca49084d7a29912
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1477 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation_after_main_refresh
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1477
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1477 --squash
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+  - command: gh run list --workflow 'Linear UI demos'
+    category: check
+    outcome: passed
+    reason: delivery_head_ui_demo_confirmation
+  - command: git -C /tmp/nook-wb-1438-2 pull --ff-only origin main
+    category: delivery
+    outcome: passed
+    reason: workbench_completion_refresh
+github_actions_runs:
+  - workflow: PR
+    run_id: 34068541677
+    head_sha: a483a7b835a6b9d313f18989b518abdb98e737d4
+    conclusion: failure
+    source_pr: 1477
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34068487794
+    head_sha: a483a7b835a6b9d313f18989b518abdb98e737d4
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34070067894
+    head_sha: 70898d0003ac7cbb966826be752380f51cac9f24
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: PR
+    run_id: 34070092887
+    head_sha: 70898d0003ac7cbb966826be752380f51cac9f24
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34070645156
+    head_sha: 5ccd4cfcd782b0ceac3ad13be3c1037ffaf5dc39
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: PR
+    run_id: 34070674924
+    head_sha: 5ccd4cfcd782b0ceac3ad13be3c1037ffaf5dc39
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34071194646
+    head_sha: 74c5c2c572741686e7d65c02b1405748cea68950
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: PR
+    run_id: 34071224434
+    head_sha: 74c5c2c572741686e7d65c02b1405748cea68950
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34071915812
+    head_sha: fefa7cb54b94ee5951fa61cf1ca49084d7a29912
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: PR
+    run_id: 34071940586
+    head_sha: fefa7cb54b94ee5951fa61cf1ca49084d7a29912
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34072751018
+    head_sha: fefa7cb54b94ee5951fa61cf1ca49084d7a29912
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34072854870
+    head_sha: fefa7cb54b94ee5951fa61cf1ca49084d7a29912
+    conclusion: success
+    source_pr: 1477
+    validation_requested: true
+delivery_heads:
+  - head_sha: fefa7cb54b94ee5951fa61cf1ca49084d7a29912
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: fefa7cb54b94ee5951fa61cf1ca49084d7a29912
+    base_sha: 2140b076fc74241723a0473a1137208b40ff3e7e
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: fefa7cb54b94ee5951fa61cf1ca49084d7a29912
+    run_id: 34071940586
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1475, 1470, 1467]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
