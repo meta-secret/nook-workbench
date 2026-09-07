@@ -6,11 +6,11 @@ automation: manual
 owner: cypherkitty
 gizmo_id: companion-pairing-browser-adapters
 created_at: 2026-09-07T17:00:27Z
-updated_at: 2026-09-07T17:00:27Z
+updated_at: 2026-09-07T22:02:13Z
 source_issues: []
 related_prs: []
 depends_on:
-  - issues/companion-protocol-simulation/companion-pairing-approval-protocol.md
+  - issues/companion-protocol-simulation/companion-pairing-activation-transaction.md
 ---
 
 # Migrate companion pairing browser adapters
