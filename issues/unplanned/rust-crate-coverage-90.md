@@ -263,3 +263,4 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [Nook WASM shared Drive adapter coverage increment completion worklog](../../worklogs/unplanned/20260907T200125Z-pr-1540-nook-wasm-coverage-drive-shared-next.md)
 - [Nook WASM recovery cleanup coverage increment plan](../../plans/unplanned/20260907T200336Z-nook-wasm-coverage-recovery-cleanup.md)
 - [Nook WASM recovery cleanup coverage increment completion worklog](../../worklogs/unplanned/20260907T205938Z-pr-1541-nook-wasm-coverage-recovery-cleanup.md)
+- [Nook WASM Drive event-list coverage increment plan](../../plans/unplanned/20260907T210211Z-nook-wasm-coverage-drive-event-list.md)
