@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-07T16:24:04Z
+updated_at: 2026-09-07T16:41:47Z
 source_issues: []
-related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468, 1473, 1483, 1488, 1493, 1499, 1503, 1506, 1509, 1510, 1512, 1514, 1516, 1519, 1522, 1524, 1528]
+related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468, 1473, 1483, 1488, 1493, 1499, 1503, 1506, 1509, 1510, 1512, 1514, 1516, 1519, 1522, 1524, 1528, 1530]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -83,6 +83,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] The executable `nook-wasm` floor is raised to 79.5 percent after hosted coverage measures 79.75 percent lines.
 - [x] `nook-wasm` independently measures at least 80.0 percent in the password-unlock behavior-test slice.
 - [x] Pull request 1528 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 80.1 percent in the shared Drive storage behavior-test slice.
+- [x] Pull request 1530 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 75.9 percent in the next behavior-test slice.
 - [x] Pull request 1473 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 76.0 percent in the next Sentinel delivery slice.
@@ -185,6 +187,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1524 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment, and green dedicated Hive verification `34136577115` on head `05d61e7193d02fcf2b24eb05122ce4df8e6746de` against Main `89edb04103a26974f4f19cc17be6fa3bc14eb02e`; it squash-merged as `164cf8ab611dd75b4ab6b9b17f091387c288571f`. The next slice starts from merged Main at the 79.5 percent floor.
 - Pull request 1528 added 255 behavior-focused browser-test lines for the password-unlock manager boundary. The initial hosted attempt caught the repository's 1,000-line source-size gate after tests were first placed in `password.rs`; the tests were moved into their owning `password_unlock.rs` module without changing production behavior. The final exact hosted graph `34141878562` passed 321 WASM tests and measured `nook-wasm` at 80.00 percent lines, `nook-companion-wasm` at 91.20 percent, and `manager/password_unlock.rs` at 87.41 percent. The executable floor remains 79.5 percent.
 - Pull request 1528 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment, and all required jobs green on head `d6790bc6bcfea1d3682539905bebdd69b6b0f9fb` against Main `84c29bc076ca7583b374e4ab20babfc35bb8d17c`; it squash-merged as `f2d96a19ce2a4a6dd52fe1651d64f0d6fcfb9d59`. The next slice starts from merged Main at the 79.5 percent floor.
+- Pull request 1530 added 73 behavior-focused test lines for shared Drive storage guards and response projections. Exact hosted graph `34143528855` passed 322 WASM tests and measured `nook-wasm` at 80.12 percent lines, `nook-companion-wasm` at 91.20 percent, and `storage/drive_shared.rs` at 42.64 percent. The executable floor remains 79.5 percent.
+- Pull request 1530 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment, and all required jobs green on head `6ad5ca11994f56338cead77e522b4737322d15be` against Main `f2d96a19ce2a4a6dd52fe1651d64f0d6fcfb9d59`; it squash-merged as `1476eefabb846509f0aae0305f1cbcaa8b093026`. The next slice starts from merged Main at the 79.5 percent floor.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
@@ -221,3 +225,5 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [Nook WASM multi-device coverage completion worklog](../../worklogs/unplanned/20260907T154130Z-pr-1524-nook-wasm-coverage-multi-device.md)
 - [Nook WASM password-unlock coverage slice plan](../../plans/unplanned/20260907T154456Z-nook-wasm-coverage-password-unlock.md)
 - [Nook WASM password-unlock coverage completion worklog](../../worklogs/unplanned/20260907T162404Z-pr-1528-nook-wasm-coverage-password-unlock.md)
+- [Nook WASM shared Drive storage coverage slice plan](../../plans/unplanned/20260907T162650Z-nook-wasm-coverage-drive-shared.md)
+- [Nook WASM shared Drive storage coverage completion worklog](../../worklogs/unplanned/20260907T164147Z-pr-1530-nook-wasm-coverage-drive-shared.md)
