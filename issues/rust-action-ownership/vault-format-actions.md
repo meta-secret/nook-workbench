@@ -1,14 +1,14 @@
 ---
 title: Own vault format read and write actions
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-vault-format-actions
 created_at: 2026-09-07T16:06:28Z
-updated_at: 2026-09-07T16:06:28Z
+updated_at: 2026-09-07T17:25:28Z
 source_issues: []
-related_prs: []
+related_prs: [1529]
 dependencies:
   - issues/rust-action-ownership/vault-sync-actions.md
 ---
@@ -25,7 +25,7 @@ Vault YAML detection, metadata reads, record deserialization, and projection ser
 
 ## Scope
 
-Fresh-main base `84c29bc076ca7583b374e4ab20babfc35bb8d17c`:
+Fresh-main base `33d6c41bb76638540783683651c4ae8ce5c2d430`:
 
 - `nook-app/nook-platform/nook-core/src/vault/vault_format.rs`
 - `nook-app/nook-platform/nook-core/src/vault/vault_format/model.rs`
@@ -36,13 +36,13 @@ Activate ownership enforcement for the migrated format boundary. Hard ceiling: 1
 
 ## Acceptance criteria
 
-- [ ] `VaultFormatDocument` owns format detection, schema/version/name/store/unlock/architecture/password reads, deserialization, and name replacement; old free core exports are removed.
-- [ ] `VaultRecordSet` owns serialization and carries unlock, store, name, version, and architecture inputs through consuming or associated actions.
-- [ ] YAML section conversion and partitioning use meaningful record/document owners; no blanket suppression is added.
-- [ ] Empty content, YAML detection, schema-version rejection, auth/member/join/sentinel section ordering, local-wrapper exclusion, id normalization, unlock normalization, and error mapping remain unchanged.
-- [ ] All direct core, WASM, sync, storage, and workflow callers use typed format actions; browser ABI and persisted YAML remain unchanged.
-- [ ] Existing format and workflow tests remain, with focused owner/action tests where behavior moves.
-- [ ] Scoped checks, hosted validation, exact-head SECURITY, readiness, remote Loom, squash merge, and Workbench closeout pass.
+- [x] `VaultFormatDocument` owns format detection, schema/version/name/store/unlock/architecture/password reads, deserialization, and name replacement; old free core exports are removed.
+- [x] `VaultRecordSet` owns serialization and carries unlock, store, name, version, and architecture inputs through consuming or associated actions.
+- [x] YAML section conversion and partitioning use meaningful record/document owners; no blanket suppression is added.
+- [x] Empty content, YAML detection, schema-version rejection, auth/member/join/sentinel section ordering, local-wrapper exclusion, id normalization, unlock normalization, and error mapping remain unchanged.
+- [x] All direct core, WASM, sync, storage, and workflow callers use typed format actions; browser ABI and persisted YAML remain unchanged.
+- [x] Existing format and workflow tests remain, with focused owner/action tests where behavior moves.
+- [x] Scoped checks, hosted validation, exact-head SECURITY, readiness, remote Loom, squash merge, and Workbench closeout pass.
 
 ## Constraints
 
@@ -50,4 +50,4 @@ No schema, serialization, cryptography, storage, browser ABI, or authorization c
 
 ## Progress
 
-Read-only inventory at fresh `origin/main` `84c29bc076ca7583b374e4ab20babfc35bb8d17c` found the complete format boundary and its direct consumers. The slice is intentionally limited to format ownership and caller migration.
+Inventory found the complete format boundary and its direct consumers. PR #1529 migrated the boundary to `VaultFormatDocument` and `VaultRecordSet`, moved tests into the owning module, migrated WASM callers, and removed the old free exports. Exact-head `0d91d78f8a6726472d8ac41668833a91ec8500b1` passed hosted policy/product validation and remote Loom, then squash-merged as `5a7ff77e32d0dacb03f50fb29633ec85da3de5e7` onto `origin/main`.

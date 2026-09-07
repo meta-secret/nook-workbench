@@ -1,0 +1,124 @@
+schema_version: 4
+source_pr:
+  number: 1529
+  url: https://github.com/meta-secret/nook/pull/1529
+  title: "Own vault format read and write actions"
+  change_surface: rust_vault_format_action_ownership
+  head_sha: 0d91d78f8a6726472d8ac41668833a91ec8500b1
+  merge_sha: 5a7ff77e32d0dacb03f50fb29633ec85da3de5e7
+  started_at: 2026-09-07T16:06:28Z
+  opened_at: 2026-09-07T16:12:00Z
+  merged_at: 2026-09-07T17:25:28Z
+elapsed_seconds: 4740
+summary:
+  local_execution_count: 13
+  local_check_count: 7
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 5
+  github_actions_seconds: 0
+  delivery_head_count: 2
+  review_request_count: 0
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 2
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 1
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T17:25:28Z
+  head_sha: 0d91d78f8a6726472d8ac41668833a91ec8500b1
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: cargo fmt --manifest-path nook-app/nook-platform/Cargo.toml --all -- --check
+    category: check
+    outcome: passed
+    reason: scoped_format_check
+  - command: git diff --check
+    category: check
+    outcome: passed
+    reason: whitespace_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: git fetch origin main and git rebase origin/main
+    category: delivery
+    outcome: passed
+    reason: fresh_main_before_final_validation
+  - command: task pr:validate PR=1529
+    category: check
+    outcome: dispatched
+    reason: exact_head_hosted_validation_after_rebase
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: exact_head_remote_loom_verification
+  - command: task pr:ready PR=1529
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh api --method PUT repos/meta-secret/nook/pulls/1529/merge
+    category: delivery
+    outcome: passed
+    reason: remote_squash_merge_after_readiness
+  - command: gh pr view 1529 and git fetch origin main
+    category: check
+    outcome: passed
+    reason: verify_merged_main_head
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34146837265
+    head_sha: 0d91d78f8a6726472d8ac41668833a91ec8500b1
+    conclusion: success
+    source_pr: 1529
+  - workflow: PR
+    run_id: 34146845580
+    head_sha: 0d91d78f8a6726472d8ac41668833a91ec8500b1
+    conclusion: success
+    source_pr: 1529
+  - workflow: Remote / loom:verify / manual
+    run_id: 34147413310
+    head_sha: 0d91d78f8a6726472d8ac41668833a91ec8500b1
+    conclusion: success
+    source_pr: 1529
+  - workflow: Repository policy
+    run_id: 34146090348
+    head_sha: 63aa1b72099aca03a2784f77afb0cca900328eb5
+    conclusion: success
+    source_pr: 1529
+  - workflow: PR
+    run_id: 34146109594
+    head_sha: 63aa1b72099aca03a2784f77afb0cca900328eb5
+    conclusion: success
+    source_pr: 1529
+validation_cycles:
+  - workflow: PR
+    head_sha: 0d91d78f8a6726472d8ac41668833a91ec8500b1
+    run_id: 34146845580
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 63aa1b72099aca03a2784f77afb0cca900328eb5
+    run_id: 34146109594
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1527, 1528]
+  baseline_quality: high
+  baseline_note: Recent Rust ownership migrations in vault synchronization and adjacent vault boundaries.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []

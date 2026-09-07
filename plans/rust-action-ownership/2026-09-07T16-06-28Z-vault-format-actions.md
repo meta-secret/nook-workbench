@@ -55,6 +55,9 @@ Continue the Rust action-ownership migration with one cohesive vault-format slic
 - Exact-head SECURITY, remote Loom, readiness, squash merge, and `origin/main` verification pass.
 - Issue, worklog, and agent statistics identify the PR and merge commit.
 
+- PR #1529 exact head `0d91d78f8a6726472d8ac41668833a91ec8500b1` passed hosted policy run `34146837265`, hosted product run `34146845580`, remote Loom run `34147413310`, and `task pr:ready PR=1529`.
+- Squash merge commit: `5a7ff77e32d0dacb03f50fb29633ec85da3de5e7`; `origin/main` was verified at that commit.
+
 ## Safety review
 
 This plan contains no credentials, raw logs, private data, or unnecessary infrastructure details.
