@@ -1,0 +1,59 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-09-07T00:40:19.620Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 34067840452,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/34067840452",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "a876331a00129d97159af8d0975253f4ace7e9b3",
+    "conclusion": "cancelled",
+    "created_at": "2026-09-06T23:46:56Z",
+    "started_at": "2026-09-07T00:39:54Z",
+    "completed_at": "2026-09-07T00:39:54Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1475,
+      "url": "https://github.com/meta-secret/nook/pull/1475",
+      "title": "refactor: type encrypted secret replacement admission"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 3178,
+    "execution_seconds": 0,
+    "wall_seconds": 3178,
+    "job_count": 0,
+    "step_count": 0
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
