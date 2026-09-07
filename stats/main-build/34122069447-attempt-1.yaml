@@ -1,0 +1,59 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-09-07T12:50:27.921Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 34122069447,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/34122069447",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "651d61e7f2b04a5b63360028497ce33c4a15295b",
+    "conclusion": "cancelled",
+    "created_at": "2026-09-07T12:28:39Z",
+    "started_at": "2026-09-07T12:50:07Z",
+    "completed_at": "2026-09-07T12:50:07Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1516,
+      "url": "https://github.com/meta-secret/nook/pull/1516",
+      "title": "test: cover password manager mutations"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 1288,
+    "execution_seconds": 0,
+    "wall_seconds": 1288,
+    "job_count": 0,
+    "step_count": 0
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
