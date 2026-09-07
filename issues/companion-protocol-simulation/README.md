@@ -2,7 +2,7 @@
 title: Companion protocol simulation
 status: in_progress
 created_at: 2026-09-07T05:32:41Z
-updated_at: 2026-09-07T17:00:27Z
+updated_at: 2026-09-07T19:08:13Z
 ---
 
 # Companion protocol simulation
@@ -15,11 +15,13 @@ browser transport or external infrastructure.
 
 ## Current state
 
-The framework, direct composition suite, and paired identity browser adapters
-are merged. Pairing delivery is now sequenced into a provider pull request and
-one dependent production-adapter pull request after Security review showed the
-complete secure implementation would exceed one product PR. Interactive unlock
-and ongoing event-log synchronization remain later sequential domain slices.
+The framework, generated-WASM composition suite, and paired identity browser
+adapters are merged. PR #1534 adds an unpublished native Rust harness that
+compiles both WASM crates with `nook-auth2`, `nook-core`, and
+`nook-companion-core`, runs 22 real-instance dependency scenarios, and exposes
+only three existing typed `nook-wasm` companion operations for direct Rust use.
+The larger pairing migration is paused with its unfinished work preserved;
+future slices start only from a separately selected functional outcome.
 
 ## Decisions
 
@@ -34,6 +36,9 @@ and ongoing event-log synchronization remain later sequential domain slices.
   consumer starts only after the provider is merged and closed.
 - Every slice is completed, squash-merged, remotely verified, and closed out
   before the next branch starts from current `origin/main`.
+- Mechanical composition and broad dependency tests precede another behavior
+  migration; browser transport simulations and TypeScript coverage remain
+  separate capabilities.
 
 ## Issues
 
