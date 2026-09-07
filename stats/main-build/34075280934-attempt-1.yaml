@@ -1,0 +1,59 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-09-07T02:23:14.882Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 302951406,
+    "run_id": 34075280934,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/34075280934",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "50e19bc1fa60f6a6515f0f4754d0036f68719d9b",
+    "conclusion": "cancelled",
+    "created_at": "2026-09-07T02:08:31Z",
+    "started_at": "2026-09-07T02:22:56Z",
+    "completed_at": "2026-09-07T02:22:56Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1482,
+      "url": "https://github.com/meta-secret/nook/pull/1482",
+      "title": "refactor: type extension identity handoff admission"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 865,
+    "execution_seconds": 0,
+    "wall_seconds": 865,
+    "job_count": 0,
+    "step_count": 0
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 0,
+      "remote_backend_job_count": 0,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 0,
+      "buildkit_cached_steps": 0
+    },
+    "jobs": [],
+    "collection": {
+      "complete": false,
+      "warnings": [
+        "cache_telemetry_artifact_unavailable"
+      ]
+    }
+  },
+  "jobs": [],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
