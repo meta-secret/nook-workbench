@@ -86,6 +86,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] Pull request 1488 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 76.5 percent in the event-log wrapper slice.
 - [x] Pull request 1493 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 76.8 percent in the provider event-log boundary slice.
+- [x] Pull request 1499 passes exact-head hosted validation, Hive verification, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -149,6 +151,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1488 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, and a successful Pages deployment on head `a6169b35d70bbbaaca94a74c08e8bdae91b6a66c`; it squash-merged as `ded96e7945dffcce0b54238631fd1c65a404dd55`. The next bounded slice starts from merged Main at the 76.0 percent floor.
 - Pull request 1493 added 157 behavior-focused browser test lines for event-log WASM wrappers, corrected two test-only expectations exposed by hosted execution, and raised the executable `nook-wasm` floor from 76.0 to 76.5 percent. Final exact hosted run `34091747872` passed 293 browser tests and measured `nook-wasm` at 76.73 percent lines and `nook-companion-wasm` at 92.15 percent.
 - Pull request 1493 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, and a successful Pages deployment on head `fcaeb7c7964e730da9480dbbed83114c9c7c82a0` against Main `b69c6404a47fe55fabacebb301dc2c68ae69aba3`; it squash-merged as `62fb9f3ee682045ce982fe9e62cd0aae9293749c`. The next slice starts from merged Main at the 76.5 percent floor.
+- Pull request 1499 added 144 behavior-focused test lines for local provider dispatch, event-log genesis reuse, prior-vault import preservation, and local outbox behavior. After correcting browser `JsError` conversions and explicit Dylint boundary expectations, final exact hosted run `34095714434` passed 298 browser tests and measured `nook-wasm` at 76.95 percent lines and `nook-companion-wasm` at 92.15 percent. The executable `nook-wasm` floor was raised from 76.5 to 76.8 percent.
+- Pull request 1499 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages preview, and green Hive verification on head `bce207e5a407dd639fe887ebf4e35d713f595c35` against Main `5d64ff95d1491a707dbe7c157932f1ad906c5066`; it squash-merged as `dfddf8aa40dbe16454a316976ff5646d0a8f92f3`. Main subsequently advanced through pull request 1502 to `69e431f159c717e6d78e0151e75157932f3af88f3`; the next slice starts from that current Main at the 76.8 percent floor.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
