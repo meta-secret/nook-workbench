@@ -1,14 +1,15 @@
 ---
 title: Type vault access diagnostic evaluation ownership
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-vault-access-diagnostic-evaluation
 created_at: 2026-09-07T07:16:45Z
-updated_at: 2026-09-07T07:16:45Z
+updated_at: 2026-09-07T07:38:49Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1502
 depends_on:
   - issues/rust-action-ownership/provider-catalog-normalization.md
 ---
@@ -36,15 +37,15 @@ Move eleven production operations and four fixture builders to meaningful owners
 
 ## Acceptance criteria
 
-- [ ] Epoch-index construction remains before key diagnosis; unsupported-schema precedence remains before pending join, auth-row selection, envelope parsing, and key resolution.
-- [ ] Exact status mappings, explanation strings, sorted/deduplicated auth IDs, sorted secret/event reports, and epoch-history order remain unchanged.
-- [ ] Existing decryptability checks and error propagation remain unchanged; event diagnostics classify metadata without newly authenticating events.
-- [ ] Key/plaintext lifetime and zeroization remain unchanged; no additional secret clones or secret-bearing report fields are introduced.
-- [ ] Payload counts cover every operation variant, including password entries and legacy checkpoint behavior.
-- [ ] WASM identity acquisition, event loading, skipped-event warnings, output conversion, public ABI, and report serialization remain unchanged.
-- [ ] Retain nine core tests and two browser tests; add status-precedence, epoch/sorting, report-metadata, input-nonmutation, and private-state construction/consumption cases. Keep tests colocated and explanations in the model child.
-- [ ] Ownership denial and invalid-suppression prohibition cover only the completed diagnostics subtree; unrelated WASM methods remain unchanged.
-- [ ] Scoped gates, hosted validation, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
+- [x] Epoch-index construction remains before key diagnosis; unsupported-schema precedence remains before pending join, auth-row selection, envelope parsing, and key resolution.
+- [x] Exact status mappings, explanation strings, sorted/deduplicated auth IDs, sorted secret/event reports, and epoch-history order remain unchanged.
+- [x] Existing decryptability checks and error propagation remain unchanged; event diagnostics classify metadata without newly authenticating events.
+- [x] Key/plaintext lifetime and zeroization remain unchanged; no additional secret clones or secret-bearing report fields are introduced.
+- [x] Payload counts cover every operation variant, including password entries and legacy checkpoint behavior.
+- [x] WASM identity acquisition, event loading, skipped-event warnings, output conversion, public ABI, and report serialization remain unchanged.
+- [x] Retained nine core tests and two browser tests; added status-precedence, epoch/sorting, report-metadata, input-nonmutation, and private-state construction/consumption cases. Tests remain colocated and explanations remain in the model child.
+- [x] Ownership denial and invalid-suppression prohibition cover only the completed diagnostics subtree; unrelated WASM methods remain unchanged.
+- [x] Scoped gates, hosted validation, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
 
 ## Constraints
 
@@ -56,4 +57,12 @@ Read-only DEV-CORE inventory at fresh origin/main `5d64ff95d1491a707dbe7c157932f
 
 ## Completion
 
-Pending implementation and delivery.
+Implemented and merged as PR #1502 at `69e431f159c717e6d78e0151e75157932f3af88f`.
+
+- Final PR head: `a41a9ca6cb9f31f23be87fad0c5cc6d570e9f419`
+- Base: `5d64ff95d1491a707dbe7c157932f1ad906c5066`
+- Scope: +640 / -409, four files, no new files.
+- Hosted PR validation: run `34095396880` passed; preview `https://pr-1502.nokey-sh.pages.dev`.
+- Remote Loom verification: run `34096140516` passed.
+- Exact-head SECURITY PASS with no P1/P2 findings; `task pr:ready PR=1502` returned ready.
+- Scoped formatting/static/retention/size checks and `task loom:pre-push` passed; no local product builds/tests run.
