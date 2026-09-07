@@ -8,7 +8,7 @@ gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
 updated_at: 2026-09-07T02:44:56Z
 source_issues: []
-related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468, 1473, 1483]
+related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468, 1473, 1483, 1488]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -82,6 +82,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] Pull request 1473 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 76.0 percent in the next Sentinel delivery slice.
 - [x] Pull request 1483 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 76.0 percent in the local-vault API lifecycle slice.
+- [x] Pull request 1488 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -141,6 +143,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1473 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, a successful Pages deployment, and final head `489b74b8156c7dfe4fafe192f5f8b4a626948f12`; it squash-merged as `4bd068de5aa7acb4defea75c4abfc1d371a434c5`. The next slice starts from merged Main at the 75.9 percent floor and continues toward 80 percent through deterministic manager and storage behavior gaps.
 - Pull request 1483 added 136 authored browser and native test lines for Sentinel delivery installation and onboarding-wrapper validation, plus three floor-record lines. The final exact hosted run `34076270101` passed 287 WASM browser tests with zero failures and measured `nook-wasm` at 76.15 percent line coverage; the executable floor was raised from 75.9 to 76.0 percent.
 - Pull request 1483 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, and a successful Pages deployment on head `0b6d397fdb50b7416cde502e49adbd082f27839b` and base `2a9c21993c23cfa2c8ab33f378b7dd1386cd8846`. It squash-merged as `a00364c87be8d58fb05469cad9acf42ff8073a42`; the next slice starts from merged Main `4658cd533d906863af16e68b71f97a147c61c328` at the 76.0 percent floor.
+- Pull request 1488 added a browser lifecycle test for local-vault discovery, active selection, labels, import, slot preparation, and cleanup, and split the local-vault API into a cohesive module to preserve the source-size policy. After rebasing onto Main `f241def08d9610d8f6df554d5429a9c52623065f`, exact hosted run `34083684121` passed 288 browser tests and measured `nook-wasm` at 76.43 percent line coverage; the executable floor remains 76.0 percent.
+- Pull request 1488 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, and a successful Pages deployment on head `a6169b35d70bbbaaca94a74c08e8bdae91b6a66c`; it squash-merged as `ded96e7945dffcce0b54238631fd1c65a404dd55`. The next bounded slice starts from merged Main at the 76.0 percent floor.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
