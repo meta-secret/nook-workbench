@@ -2,7 +2,7 @@
 title: Companion protocol simulation
 status: in_progress
 created_at: 2026-09-07T05:32:41Z
-updated_at: 2026-09-07T11:23:32Z
+updated_at: 2026-09-07T14:51:01Z
 ---
 
 # Companion protocol simulation
@@ -15,10 +15,9 @@ browser transport or external infrastructure.
 
 ## Current state
 
-Rust owns the cryptographic and vault operations, but important protocol
-requests, responses, validation, and orchestration remain distributed through
-TypeScript browser-message types and adapters. Router tests isolate callbacks,
-while browser end-to-end tests remain the primary proof that both sides agree.
+The simulation framework, direct native and dual-WASM composition tests, and
+paired identity browser adapters are merged. Pairing approval, interactive
+unlock, and ongoing event-log synchronization remain sequential domain slices.
 
 ## Decisions
 
@@ -29,14 +28,15 @@ while browser end-to-end tests remain the primary proof that both sides agree.
   stores and direct transports; application behavior is not tested with mocks.
 - Browser messaging remains a thin production transport and receives only
   focused adapter coverage.
-- The framework lands before its broad test suite. Production adapter migration
-  starts only after both predecessor slices merge.
+- Every slice is completed, squash-merged, remotely verified, and closed out
+  before the next branch starts from current `origin/main`.
 
 ## Issues
 
 - [x] [Implement typed companion protocol simulation](typed-companion-protocol-simulation.md)
 - [x] [Add companion protocol composition tests](companion-protocol-composition-tests.md)
-- [ ] [Migrate companion identity browser adapters](companion-identity-browser-adapters.md)
+- [x] [Migrate companion identity browser adapters](companion-identity-browser-adapters.md)
+- [ ] [Migrate companion pairing approval protocol](companion-pairing-approval-protocol.md)
 
 ## References
 
