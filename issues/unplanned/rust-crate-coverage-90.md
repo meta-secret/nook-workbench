@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-07T11:24:43Z
+updated_at: 2026-09-07T12:28:36Z
 source_issues: []
 related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468, 1473, 1483, 1488]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
@@ -90,6 +90,7 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] Pull request 1499 passes exact-head hosted validation, Hive verification, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 77.8 percent in the passkey-manager guard slice.
 - [x] Pull request 1514 passes exact-head hosted validation, Hive verification, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] Pull request 1516 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -167,6 +168,7 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1512 passed exact-head readiness with zero unresolved review threads, successful Pages deployment, and green Hive validation on final head `bcb3a3c61883376ec5a45132a61946de9fbb68a0` against original base `e36d48af16ff7c0223f5305fa26aac1dc315c63c`; Main advanced once during validation and readiness reported `behindBy: 1` without invalidating the exact-head evidence. It squash-merged at `2026-09-07T10:56:32Z` as `add2d1a2b601bc6f8472ad78fa4d953c66b5a3f9`. The next slice starts from merged Main at the 77.7 percent floor.
 - Pull request 1514 added 55 behavior-focused browser-test lines for passkey ceremony fail-closed behavior and extension-grant parsing before storage access. Initial hosted graph `34114608052` passed 310 WASM browser tests and measured `nook-wasm` at 77.94 percent lines, with `manager/passkeys.rs` at 78.41 percent and `nook-companion-wasm` at 91.21 percent. After Main advanced to `c49e6fcfddbfaea6f8c1d8a0b9cc073c6aff6865`, the branch was rebased, the executable floor rose from 77.7 to 77.8 percent, and replacement graph `34115723912` passed the same 310 tests with final coverage at 77.88 percent lines.
 - Pull request 1514 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment `https://pr-1514.nokey-sh.pages.dev`, and green Hive validation on head `5f63ebd37fdb0f22caa68627c182d9e94b496179` against Main `c49e6fcfddbfaea6f8c1d8a0b9cc073c6aff6865`. It squash-merged at `2026-09-07T11:24:43Z` as `42109a86b35b40f9579d6d633d43b2535be0ca8b`. The next slice starts from merged Main at the evidence-backed 77.8 percent floor.
+- Pull request 1516 added password-manager mutation and local event-log lifecycle tests, and split the password unlock/enrollment implementation into cohesive `password_unlock.rs` to satisfy the source-size policy. Final exact hosted graphs `34121001093` and `34120977371` passed all required validation, with the companion package at 91.21 percent. It passed readiness on exact head `2990aa8c322c987ac525b97fe00851d0b797b1a8` against Main `815622718542f23b137de833816ea7ac38669087`, then squash-merged at `2026-09-07T12:28:36Z` as `651d61e7f2b04a5b63360028497ce33c4a15295b`. The next slice starts from merged Main at the 77.8 percent floor.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
