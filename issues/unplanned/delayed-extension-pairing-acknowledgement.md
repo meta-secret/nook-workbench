@@ -1,12 +1,12 @@
 ---
 title: Fix delayed extension pairing acknowledgement
-status: blocked
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: extension-pairing-acknowledgement
 created_at: 2026-09-07T02:06:00Z
-updated_at: 2026-09-07T03:31:50Z
+updated_at: 2026-09-07T03:39:25Z
 source_issues: []
 related_prs: ["https://github.com/meta-secret/nook/pull/1486"]
 depends_on: []
@@ -40,6 +40,7 @@ Simple Vault sends one pairing grant and waits for the extension's completed-imp
 
 - 2026-09-07: Root cause isolated to the sender's five-second timeout and duplicate resend behavior; implementation and focused regression contracts committed for hosted validation.
 - 2026-09-07: PR 1486 passed Web verification, WASM, Rust, policy, coverage, and preview deployment, but required full extension E2E repeatedly failed before the pairing path in the shared mock-auth/static-host harness. Delivery is blocked pending explicit ownership of that separate failure.
+- 2026-09-07: The user explicitly expanded scope to include the shared extension E2E/mock-auth repair and full PR delivery; work resumed under Web Development ownership.
 
 ## Findings and decisions
 
