@@ -1,0 +1,113 @@
+schema_version: 4
+source_pr:
+  number: 1517
+  url: https://github.com/meta-secret/nook/pull/1517
+  title: "refactor(core): own vault epoch crypto actions"
+  change_surface: rust_vault_epoch_crypto_action_ownership
+  head_sha: f4c61a50b41c324181c785692b8a272364d785fb
+  merge_sha: cf86b07f9e857c23f6d8bf64b8a77085fe453611
+  started_at: 2026-09-07T11:46:14Z
+  opened_at: 2026-09-07T11:47:00Z
+  merged_at: 2026-09-07T12:02:08Z
+elapsed_seconds: 985
+summary:
+  local_execution_count: 10
+  local_check_count: 6
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 3
+  github_actions_seconds: 0
+  delivery_head_count: 1
+  review_request_count: 1
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 1
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 0
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T12:02:36Z
+  head_sha: f4c61a50b41c324181c785692b8a272364d785fb
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: cargo fmt --all -- --check
+    category: check
+    outcome: passed
+    reason: scoped_format_check
+  - command: git diff --check
+    category: check
+    outcome: passed
+    reason: whitespace_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: git fetch origin main and git rebase origin/main
+    category: delivery
+    outcome: passed
+    reason: fresh_main_before_delivery
+  - command: task pr:validate PR=1517 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation
+  - command: exact_head SECURITY review
+    category: review
+    outcome: passed
+    reason: no_actionable_findings
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: exact_head_remote_loom_verification
+  - command: task pr:ready PR=1517
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1517 --squash --delete-branch
+    category: delivery
+    outcome: passed
+    reason: remote_squash_merge_verified_after_local_worktree_update_error
+  - command: gh pr view 1517 and git fetch origin main
+    category: check
+    outcome: passed
+    reason: verify_merged_main_head
+github_actions_runs:
+  - workflow: PR
+    run_id: 34118762506
+    head_sha: f4c61a50b41c324181c785692b8a272364d785fb
+    conclusion: success
+    source_pr: 1517
+  - workflow: Repository policy
+    run_id: 34118746212
+    head_sha: f4c61a50b41c324181c785692b8a272364d785fb
+    conclusion: success
+    source_pr: 1517
+  - workflow: Remote / loom:verify / manual
+    run_id: 34119539029
+    head_sha: f4c61a50b41c324181c785692b8a272364d785fb
+    conclusion: success
+    source_pr: 1517
+validation_cycles:
+  - workflow: PR
+    head_sha: f4c61a50b41c324181c785692b8a272364d785fb
+    run_id: 34118762506
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1507, 1511, 1513]
+  baseline_quality: high
+  baseline_note: Recent Rust ownership migrations in Sentinel quorum, multi-device join, and password envelope flows.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
