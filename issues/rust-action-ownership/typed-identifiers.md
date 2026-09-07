@@ -1,14 +1,15 @@
 ---
 title: Type persisted vault identifiers and validation actions
-status: ready
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-typed-identifiers
 created_at: 2026-09-07T21:40:00Z
-updated_at: 2026-09-07T21:40:00Z
+updated_at: 2026-09-07T22:14:35Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1545
 depends_on:
   - issues/rust-action-ownership/multi-device-key-actions.md
 ---
@@ -36,13 +37,13 @@ Move compact-token, app/device-id, auth-key-id, store-id, and secret-id generati
 
 ## Acceptance criteria
 
-- [ ] Compact-token, app/device-id, auth-key-id, store-id, and secret-id policy is exposed through associated methods on the corresponding domain types.
-- [ ] Prefixes, trimming, reserved-device/auth-key rejection, digest shape, random-byte encoding, validation errors, aliases, and serialization remain unchanged.
-- [ ] No compatibility free functions remain for migrated identifier actions in auth2/core; direct callers use the type owners.
-- [ ] WASM/public API adapters retain their external names while delegating to typed core methods.
-- [ ] Auth2 identifier tests and focused core/event-log/WASM behavior coverage preserve the current contract.
-- [ ] The identifier module denies homeless functions and forbids invalid ownership-lint suppressions without blanket exceptions.
-- [ ] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
+- [x] Compact-token, app/device-id, auth-key-id, store-id, and secret-id policy is exposed through associated methods on the corresponding domain types.
+- [x] Prefixes, trimming, reserved-device/auth-key rejection, digest shape, random-byte encoding, validation errors, aliases, and serialization remain unchanged.
+- [x] No compatibility free functions remain for migrated identifier actions in auth2/core; direct callers use the type owners.
+- [x] WASM/public API adapters retain their external names while delegating to typed core methods.
+- [x] Auth2 identifier tests and focused core/event-log/WASM behavior coverage preserve the current contract.
+- [x] The identifier module denies homeless functions and forbids invalid ownership-lint suppressions without blanket exceptions.
+- [x] Remote Loom, hosted checks, exact-head SECURITY, readiness, squash merge, and Workbench completion pass.
 
 ## Constraints
 
@@ -51,3 +52,7 @@ No schema, ABI, cryptographic algorithm, authorization, persistence, fallback, r
 ## Progress
 
 Selected from the refreshed main after PR #1543: identifier generation and validation remain one of the largest security-domain clusters of homeless actions, with direct callers across auth2, core, event-log, and WASM.
+
+## Completion
+
+- 2026-09-07: PR #1545 migrated persisted identifier actions onto their domain types across auth2, core, event-log, WASM, composition tests, and direct callers. Remote Loom run `34165204065`, hosted validation `34165305435`, repository policy `34165199377`, deployment `https://pr-1545.nokey-sh.pages.dev`, and `task pr:ready PR=1545` passed. The PR merged at `3a7d6d28f54d4410a2cd6ebafbb816227edcf1d9`.
