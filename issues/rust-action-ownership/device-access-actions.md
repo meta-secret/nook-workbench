@@ -1,13 +1,13 @@
 ---
 title: Own device access profile and grant actions
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 created_at: 2026-09-07T18:20:00Z
-updated_at: 2026-09-07T18:20:00Z
+updated_at: 2026-09-07T20:10:15Z
 source_issues: []
-related_prs: []
+related_prs: [1538]
 dependencies:
   - issues/rust-action-ownership/vault-meta-projection-actions.md
 ---
@@ -33,15 +33,15 @@ Migrate `identities_linked_to_vault`, `classify_identity_vault_app_grant`, `deco
 
 ## Acceptance criteria
 
-- [ ] Vault-linked identity selection and app-grant classification retain DEK ownership, membership, dual-envelope, and revocation semantics.
-- [ ] Profile decoding preserves current/future/recoverable version behavior, malformed-input handling, credential-fingerprint requirements, and serialized shape.
-- [ ] Protection and identity-state classification preserve all existing variants and precedence.
-- [ ] Safe credential and user-handle identifiers retain stable non-secret hashing and exact prefixes.
-- [ ] Provider-label and passkey-name normalization retain trimming, control-character, length, and error behavior.
-- [ ] Direct core, WASM, storage, manager, and migration callers use typed owners; old free exports are removed for this scope.
-- [ ] Existing behavior tests remain and focused owner construction, nonmutation, and consuming-action coverage is colocated with the migrated implementation.
-- [ ] Ownership denial and invalid-suppression prohibition cover only the completed device-access child; no blanket suppression is added.
-- [ ] Scoped checks, hosted validation, exact-head SECURITY, readiness, remote Loom, squash merge, and Workbench closeout pass.
+- [x] Vault-linked identity selection and app-grant classification retain DEK ownership, membership, dual-envelope, and revocation semantics.
+- [x] Profile decoding preserves current/future/recoverable version behavior, malformed-input handling, credential-fingerprint requirements, and serialized shape.
+- [x] Protection and identity-state classification preserve all existing variants and precedence.
+- [x] Safe credential and user-handle identifiers retain stable non-secret hashing and exact prefixes.
+- [x] Provider-label and passkey-name normalization retain trimming, control-character, length, and error behavior.
+- [x] Direct core, WASM, storage, manager, and migration callers use typed owners; old free exports are removed for this scope.
+- [x] Existing behavior tests remain and focused owner construction, nonmutation, and consuming-action coverage is colocated with the migrated implementation.
+- [x] Ownership denial and invalid-suppression prohibition cover only the completed device-access child; no blanket suppression is added.
+- [x] Scoped checks, hosted validation, exact-head SECURITY, readiness, remote Loom, squash merge, and Workbench closeout pass.
 
 ## Constraints
 
@@ -50,3 +50,7 @@ No device-access schema, storage, cryptographic, authorization, browser ABI, or 
 ## Progress
 
 The fresh-main inventory after PR #1532 found nine related core device-access operations and their bounded direct callers. The slice stays focused on portable domain classification and normalization; browser ceremony and persistence orchestration remain adapter concerns.
+
+## Completion
+
+PR #1538 was squash-merged at `3348c3746f8b3799a72ec5c0f47fcdb4dd3e59cf` from exact head `007c9f14c6e7b67313a0aecb1a649f4ec9e79650` onto base `971e77651009618b4f295ff596b80eb1f839025a`. Hosted repository policy `34157817329` and PR validation `34157831697` passed, exact-head Pages deployment succeeded, and remote Loom `34157843785` passed. `task pr:ready PR=1538` passed before merge.

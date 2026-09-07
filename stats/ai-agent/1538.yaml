@@ -1,0 +1,137 @@
+schema_version: 4
+source_pr:
+  number: 1538
+  url: https://github.com/meta-secret/nook/pull/1538
+  title: "Own device access profile and grant actions"
+  change_surface: rust_device_access_action_ownership
+  head_sha: 007c9f14c6e7b67313a0aecb1a649f4ec9e79650
+  merge_sha: 3348c3746f8b3799a72ec5c0f47fcdb4dd3e59cf
+  started_at: 2026-09-07T18:20:00Z
+  opened_at: 2026-09-07T18:24:00Z
+  merged_at: 2026-09-07T20:10:15Z
+elapsed_seconds: 6615
+summary:
+  local_execution_count: 28
+  local_check_count: 10
+  local_test_count: 2
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 22
+  github_actions_seconds: 0
+  delivery_head_count: 8
+  review_request_count: 0
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 8
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 7
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 7
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T20:10:15Z
+  head_sha: 007c9f14c6e7b67313a0aecb1a649f4ec9e79650
+  by_type:
+    rust: 1
+    preflight: 1
+    web_unit: 0
+    e2e: 0
+  total: 2
+local_executions:
+  - command: cargo fmt --manifest-path nook-app/nook-platform/Cargo.toml --all -- --check
+    category: check
+    outcome: passed
+    reason: final_head_format_contract
+  - command: git diff --check
+    category: check
+    outcome: passed
+    reason: final_head_whitespace_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: final_head_hygiene_and_authored_budget
+  - command: task loom:module-experts:validate
+    category: check
+    outcome: passed
+    reason: routed_new_wasm_composition_test_module
+  - command: bun test tests/module-experts/audit.test.ts
+    category: test
+    outcome: passed
+    reason: updated_catalog_count_and_policy_audit
+  - command: task preflight:loom-contracts
+    category: test
+    outcome: passed
+    reason: loom_and_skill_authority_contracts
+  - command: task pr:validate PR=1538
+    category: check
+    outcome: dispatched
+    reason: exact_head_hosted_validation_cycles
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1538
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh api --method PUT repos/meta-secret/nook/pulls/1538/merge
+    category: delivery
+    outcome: passed
+    reason: remote_squash_merge_after_readiness
+  - command: gh pr view 1538 and git fetch origin main
+    category: check
+    outcome: passed
+    reason: verify_merged_main_head
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34157817329
+    head_sha: 007c9f14c6e7b67313a0aecb1a649f4ec9e79650
+    conclusion: success
+    source_pr: 1538
+  - workflow: PR
+    run_id: 34157831697
+    head_sha: 007c9f14c6e7b67313a0aecb1a649f4ec9e79650
+    conclusion: success
+    source_pr: 1538
+  - workflow: Remote / loom:verify / manual
+    run_id: 34157843785
+    head_sha: 007c9f14c6e7b67313a0aecb1a649f4ec9e79650
+    conclusion: success
+    source_pr: 1538
+validation_cycles:
+  - workflow: PR
+    head_sha: 98f4a5cfb369fd6f863ef675499c91420411e114
+    run_id: 34152878977
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 20b1477bbf2c8e29af8fd12cbc6e9c6e8459aaf1
+    run_id: 34153807791
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 30b6f684952bf2eebad361ef1b3dd50c2dd53642
+    run_id: 34154634870
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 1b1792b38215c6c0a98763a1c25b39185757296d
+    run_id: 34157078697
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 007c9f14c6e7b67313a0aecb1a649f4ec9e79650
+    run_id: 34157831697
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1532, 1529]
+  baseline_quality: high
+  baseline_note: Adjacent Rust action-ownership migrations and WASM boundary checks.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
