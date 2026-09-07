@@ -1,0 +1,172 @@
+schema_version: 4
+source_pr:
+  number: 1532
+  url: https://github.com/meta-secret/nook/pull/1532
+  title: "Own vault metadata projection and event-graph access actions"
+  change_surface: rust_vault_meta_projection_action_ownership
+  head_sha: 5181266c84db7186aeb054d9144a6d321531ac79
+  merge_sha: 456f149837aa32854835eaa68a3010020be65ddc
+  started_at: 2026-09-07T17:30:00Z
+  opened_at: 2026-09-07T17:44:25Z
+  merged_at: 2026-09-07T18:18:41Z
+elapsed_seconds: 2925
+summary:
+  local_execution_count: 12
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 11
+  github_actions_seconds: 0
+  delivery_head_count: 2
+  review_request_count: 0
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 4
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 2
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T18:18:45Z
+  head_sha: 5181266c84db7186aeb054d9144a6d321531ac79
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: cargo fmt --manifest-path nook-app/nook-platform/Cargo.toml --all -- --check
+    category: check
+    outcome: passed
+    reason: scoped_format_check
+  - command: git diff --check
+    category: check
+    outcome: passed
+    reason: whitespace_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: git fetch origin main and git rebase origin/main
+    category: delivery
+    outcome: passed
+    reason: fresh_main_before_final_validation
+  - command: task loom:pre-push after final-main rebase
+    category: check
+    outcome: passed
+    reason: exact_head_scoped_hygiene_and_budget
+  - command: task pr:validate PR=1532
+    category: check
+    outcome: dispatched
+    reason: exact_head_hosted_validation_cycles
+  - command: exact_head SECURITY review
+    category: review
+    outcome: passed
+    reason: no_actionable_findings
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: exact_head_remote_loom_verification
+  - command: task pr:ready PR=1532
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh api --method PUT repos/meta-secret/nook/pulls/1532/merge
+    category: delivery
+    outcome: passed
+    reason: remote_squash_merge_after_readiness
+  - command: gh pr view 1532 and git fetch origin main
+    category: check
+    outcome: passed
+    reason: verify_merged_main_head
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34148834554
+    head_sha: 418328548
+    conclusion: success
+    source_pr: 1532
+  - workflow: PR
+    run_id: 34148856392
+    head_sha: 418328548
+    conclusion: failure
+    source_pr: 1532
+  - workflow: Repository policy
+    run_id: 34149149915
+    head_sha: 4be04e2dee4e72e97ff020c44aec060c3d9903aa
+    conclusion: success
+    source_pr: 1532
+  - workflow: PR
+    run_id: 34149162207
+    head_sha: 4be04e2dee4e72e97ff020c44aec060c3d9903aa
+    conclusion: failure
+    source_pr: 1532
+  - workflow: Repository policy
+    run_id: 34149655607
+    head_sha: e781d7984c9d3d841f24f22bb67d23b63805ff7d
+    conclusion: success
+    source_pr: 1532
+  - workflow: PR
+    run_id: 34149680793
+    head_sha: e781d7984c9d3d841f24f22bb67d23b63805ff7d
+    conclusion: success
+    source_pr: 1532
+  - workflow: Cancel obsolete PR validation
+    run_id: 34149653946
+    head_sha: e781d7984c9d3d841f24f22bb67d23b63805ff7d
+    conclusion: success
+    source_pr: 1532
+  - workflow: Repository policy
+    run_id: 34150262155
+    head_sha: 5181266c84db7186aeb054d9144a6d321531ac79
+    conclusion: success
+    source_pr: 1532
+  - workflow: PR
+    run_id: 34150277057
+    head_sha: 5181266c84db7186aeb054d9144a6d321531ac79
+    conclusion: success
+    source_pr: 1532
+  - workflow: Cancel obsolete PR validation
+    run_id: 34150260272
+    head_sha: 5181266c84db7186aeb054d9144a6d321531ac79
+    conclusion: success
+    source_pr: 1532
+  - workflow: Remote / loom:verify / manual
+    run_id: 34150999225
+    head_sha: 5181266c84db7186aeb054d9144a6d321531ac79
+    conclusion: success
+    source_pr: 1532
+validation_cycles:
+  - workflow: PR
+    head_sha: 418328548
+    run_id: 34148856392
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 4be04e2dee4e72e97ff020c44aec060c3d9903aa
+    run_id: 34149162207
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: e781d7984c9d3d841f24f22bb67d23b63805ff7d
+    run_id: 34149680793
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 5181266c84db7186aeb054d9144a6d321531ac79
+    run_id: 34150277057
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1529, 1528]
+  baseline_quality: high
+  baseline_note: Recent Rust ownership migrations in vault format and adjacent vault boundaries.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []

@@ -1,14 +1,14 @@
 ---
 title: Own vault metadata projection and event-graph access actions
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-vault-meta-projection-actions
 created_at: 2026-09-07T17:30:00Z
-updated_at: 2026-09-07T17:30:00Z
+updated_at: 2026-09-07T18:18:45Z
 source_issues: []
-related_prs: []
+related_prs: [1532]
 dependencies:
   - issues/rust-action-ownership/vault-format-actions.md
 ---
@@ -35,14 +35,14 @@ Migrate `apply_vault_meta_operation`, `materialize_vault_meta_from_graph`, `even
 
 ## Acceptance criteria
 
-- [ ] Metadata replay is owned by a data-carrying projection owner and failed replay leaves the live state unchanged.
-- [ ] Graph access checks retain exact device-id/public-key/signing-key binding, approval/revocation ordering, checkpoint replacement, missing-event errors, and active-envelope semantics.
-- [ ] Active authorization IDs retain validation, sorting, and deduplication behavior.
-- [ ] Sentinel member reconstruction retains auth-id derivation, label handling, roster ordering, and encrypted record output.
-- [ ] Direct core, WASM, storage, and workflow callers use typed owners; old free exports are removed for this scope.
-- [ ] Existing behavior tests remain and focused owner construction, nonmutation, and consuming-action tests are colocated with the migrated implementation.
-- [ ] Ownership denial and invalid-suppression prohibition cover only the completed projection child; no blanket suppression is added.
-- [ ] Scoped checks, hosted validation, exact-head SECURITY, readiness, remote Loom, squash merge, and Workbench closeout pass.
+- [x] Metadata replay is owned by a data-carrying projection owner and failed replay leaves the live state unchanged.
+- [x] Graph access checks retain exact device-id/public-key/signing-key binding, approval/revocation ordering, checkpoint replacement, missing-event errors, and active-envelope semantics.
+- [x] Active authorization IDs retain validation, sorting, and deduplication behavior.
+- [x] Sentinel member reconstruction retains auth-id derivation, label handling, roster ordering, and encrypted record output.
+- [x] Direct core, WASM, storage, and workflow callers use typed owners; old free exports are removed for this scope.
+- [x] Existing behavior tests remain and focused owner construction, nonmutation, and consuming-action tests are colocated with the migrated implementation.
+- [x] Ownership denial and invalid-suppression prohibition cover only the completed projection child; no blanket suppression is added.
+- [x] Scoped checks, hosted validation, exact-head SECURITY, readiness, remote Loom, squash merge, and Workbench closeout pass.
 
 ## Constraints
 
@@ -51,3 +51,7 @@ No event schema, storage, cryptographic, authorization, browser ABI, or error-co
 ## Progress
 
 Fresh-main inventory after PR #1529 found six related core adapter operations and their bounded direct callers. The slice is intentionally limited to event-graph metadata projection and access evidence; recipient encryption and identity-genesis construction remain separate actions.
+
+## Completion
+
+PR #1532 was squash-merged at `456f149837aa32854835eaa68a3010020be65ddc` from exact head `5181266c84db7186aeb054d9144a6d321531ac79` onto base `735b5e5fba425576035543c858df06c7b0eab518`. Hosted policy run `34150262155`, hosted product run `34150277057`, remote `loom:verify` run `34150999225`, exact-head SECURITY review, and `task pr:ready PR=1532` passed. `origin/main` was verified at the merge commit.

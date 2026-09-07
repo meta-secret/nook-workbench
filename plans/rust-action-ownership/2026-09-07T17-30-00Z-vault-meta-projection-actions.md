@@ -52,6 +52,10 @@ Continue the Rust action-ownership migration with one cohesive core slice that r
 - Hosted policy/product checks and deployment pass at the exact head.
 - Remote Loom, readiness, merge, and `origin/main` verification pass.
 - Issue, worklog, and agent statistics identify the final head and merge commit.
+- Final exact head: `5181266c84db7186aeb054d9144a6d321531ac79`.
+- Final base: `735b5e5fba425576035543c858df06c7b0eab518`.
+- Squash merge: `456f149837aa32854835eaa68a3010020be65ddc`.
+- Hosted policy/product runs: `34150262155` / `34150277057`; remote Loom: `34150999225`.
 
 ## Safety review
 
