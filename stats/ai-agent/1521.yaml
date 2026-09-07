@@ -1,0 +1,134 @@
+schema_version: 4
+source_pr:
+  number: 1521
+  url: https://github.com/meta-secret/nook/pull/1521
+  title: "refactor(event-log): own canonical event actions"
+  change_surface: rust_canonical_event_action_ownership
+  head_sha: 916b1c55f8e4bb600d22cdc25d2ab306fef70f12
+  merge_sha: 9c5be29233baf10b532094b3b405bae77acb60f0
+  started_at: 2026-09-07T12:56:45Z
+  opened_at: 2026-09-07T12:57:00Z
+  merged_at: 2026-09-07T14:00:46Z
+elapsed_seconds: 3885
+summary:
+  local_execution_count: 12
+  local_check_count: 8
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 0
+  github_actions_run_count: 5
+  github_actions_seconds: 0
+  delivery_head_count: 2
+  review_request_count: 2
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 2
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T14:01:30Z
+  head_sha: 916b1c55f8e4bb600d22cdc25d2ab306fef70f12
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: cargo fmt --all -- --check
+    category: check
+    outcome: passed
+    reason: scoped_format_check
+  - command: git diff --check
+    category: check
+    outcome: passed
+    reason: whitespace_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: git fetch origin main and git rebase origin/main
+    category: delivery
+    outcome: passed
+    reason: fresh_main_before_delivery
+  - command: task pr:validate PR=1521 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation
+  - command: exact_head SECURITY review
+    category: review
+    outcome: passed
+    reason: no_actionable_findings
+  - command: fix Dylint expectations and direct nook-auth2 lockfile dependency
+    category: fix
+    outcome: passed
+    reason: hosted_compile_and_dylint_failures
+  - command: task pr:validate PR=1521 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: amended_exact_head_validation
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: exact_head_remote_loom_verification
+  - command: task pr:ready PR=1521
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh api --method PUT repos/meta-secret/nook/pulls/1521/merge
+    category: delivery
+    outcome: passed
+    reason: remote_squash_merge_after_local_worktree_lock
+  - command: gh pr view 1521 and git fetch origin main
+    category: check
+    outcome: passed
+    reason: verify_merged_main_head
+github_actions_runs:
+  - workflow: PR
+    run_id: 34129244854
+    head_sha: 916b1c55f8e4bb600d22cdc25d2ab306fef70f12
+    conclusion: success
+    source_pr: 1521
+  - workflow: Repository policy
+    run_id: 34129210656
+    head_sha: 916b1c55f8e4bb600d22cdc25d2ab306fef70f12
+    conclusion: success
+    source_pr: 1521
+  - workflow: Remote / loom:verify / manual
+    run_id: 34130415435
+    head_sha: 916b1c55f8e4bb600d22cdc25d2ab306fef70f12
+    conclusion: success
+  - workflow: Cancel obsolete PR validation
+    run_id: 34129209020
+    head_sha: 916b1c55f8e4bb600d22cdc25d2ab306fef70f12
+    conclusion: success
+  - workflow: Linear UI demos
+    run_id: 34130585771
+    head_sha: 916b1c55f8e4bb600d22cdc25d2ab306fef70f12
+    conclusion: success
+validation_cycles:
+  - workflow: PR
+    head_sha: 70c29487a719c04e842d6b97d59b70de3248bf00
+    run_id: 34124743339
+    conclusion: cancelled
+    obsolete_seconds: 0
+    note: Dylint repository-lint failure exposed ownership-policy edges; run was superseded after fixes
+  - workflow: PR
+    head_sha: 916b1c55f8e4bb600d22cdc25d2ab306fef70f12
+    run_id: 34129244854
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1518, 1520]
+  baseline_quality: high
+  baseline_note: Recent Rust ownership migrations in vault event/session and vault projection actions.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
