@@ -1,0 +1,110 @@
+schema_version: 4
+source_pr:
+  number: 1496
+  url: https://github.com/meta-secret/nook/pull/1496
+  title: "refactor: own active provider credential projection"
+  change_surface: rust_active_provider_credential_projection_ownership
+  head_sha: 27f823e0ef6531443c45436a9258bfe2d8627a24
+  merge_sha: 52196e5278bce64b469adbed1d484f3f04c31058
+  started_at: 2026-09-07T06:00:58Z
+  opened_at: 2026-09-07T06:05:00Z
+  merged_at: 2026-09-07T06:21:34Z
+elapsed_seconds: 1236
+summary:
+  local_execution_count: 8
+  local_check_count: 6
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 180
+  github_actions_run_count: 3
+  github_actions_seconds: 900
+  delivery_head_count: 1
+  review_request_count: 1
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 1
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T06:22:07Z
+  head_sha: 27f823e0ef6531443c45436a9258bfe2d8627a24
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: scoped formatting/static/retention/symbol/size checks
+    category: check
+    outcome: passed
+    reason: ownership_migration_scope_and_contract_checks
+  - command: cargo fmt --manifest-path nook-app/nook-platform/Cargo.toml --all -- --check
+    category: check
+    outcome: passed
+    reason: final_format_check
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1496 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1496
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1496 --squash
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34089421596
+    head_sha: 27f823e0ef6531443c45436a9258bfe2d8627a24
+    conclusion: success
+    source_pr: 1496
+  - workflow: PR
+    run_id: 34089435428
+    head_sha: 27f823e0ef6531443c45436a9258bfe2d8627a24
+    conclusion: success
+    source_pr: 1496
+  - workflow: Remote / loom:verify / manual
+    run_id: 34090278114
+    head_sha: 27f823e0ef6531443c45436a9258bfe2d8627a24
+    conclusion: success
+    source_pr: 1496
+delivery_heads:
+  - head_sha: 27f823e0ef6531443c45436a9258bfe2d8627a24
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 27f823e0ef6531443c45436a9258bfe2d8627a24
+    base_sha: 79ad3e2abb46a4082fcd35262f27a3c32a939e29
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 27f823e0ef6531443c45436a9258bfe2d8627a24
+    run_id: 34089435428
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1494, 1491, 1490]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
