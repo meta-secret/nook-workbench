@@ -41,3 +41,7 @@ Preserve all schemas, aliases, crypto parameters, error ordering, row ordering, 
 4. Enable ownership denial for completed action modules and reject invalid suppressions.
 5. Run scoped formatting, diff, size, and Loom gates; push one PR.
 6. Complete exact-head hosted validation, remote Loom, readiness, squash merge, and Workbench records.
+
+## Completion evidence
+
+PR #1543 merged as `39b6201a561e0207b61f86b23b3bdb822c102f7c` from exact head `76c29f821741ac0c18a0707758a4bb84f4d49e12`. `task loom:pre-push PR=1543` passed; remote Loom verification run `34162490741` passed; hosted validation run `34162499894` passed all required Rust, Dylint, WASM, Node, web, policy, fuzz, proof, coverage, deployment, and preview gates; `task pr:ready PR=1543` returned ready with base `7d8c1b9833995f9ca3b7e066662e117ec2655f44`; deployment `https://pr-1543.nokey-sh.pages.dev` succeeded; squash merge and `origin/main=39b6201a561e0207b61f86b23b3bdb822c102f7c` were verified.
