@@ -6,10 +6,11 @@ automation: agent
 owner: cypherkitty
 gizmo_id: companion-protocol-composition-tests
 created_at: 2026-09-07T09:03:43Z
-updated_at: 2026-09-07T11:14:50Z
+updated_at: 2026-09-07T19:08:13Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1508
+  - https://github.com/meta-secret/nook/pull/1534
 depends_on:
   - issues/companion-protocol-simulation/typed-companion-protocol-simulation.md
 ---
@@ -56,6 +57,10 @@ TypeScript tests move only structural DTOs between the two WASM memories.
 - 2026-09-07: Predecessor framework PR #1500 merged and this test slice began.
 - 2026-09-07: PR #1508 merged after exact-head Rust, WASM Node, web,
   security, coverage, policy, preview, and readiness validation passed.
+- 2026-09-07: PR #1534 merged an unpublished native harness with 22
+  real-instance tests spanning auth2, core, companion core, and both WASM
+  crates. Hosted validation compiled and selected the harness through the
+  existing native test path.
 
 ## Findings and decisions
 
@@ -65,6 +70,12 @@ TypeScript tests move only structural DTOs between the two WASM memories.
 - The TypeScript composition suite installs one coherent in-memory IndexedDB
   WebIDL runtime so Rust persistence uses real request/database/transaction
   objects with matching constructor identity.
+- Native cross-crate composition uses dev-only dependency edges in a dedicated
+  unpublished package. It does not add a production dependency between the
+  WASM crates.
+- Browser-backed manager completion remains outside the native harness because
+  its storage/session state is intentionally private. That boundary is recorded
+  rather than bypassed with a test-only production API.
 
 ## References
 
