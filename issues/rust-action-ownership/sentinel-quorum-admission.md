@@ -1,14 +1,15 @@
 ---
 title: Type Sentinel opened-share admission and quorum reconstruction ownership
-status: planned
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-sentinel-quorum-admission
 created_at: 2026-09-07T09:20:30Z
-updated_at: 2026-09-07T09:20:30Z
+updated_at: 2026-09-07T10:16:30Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1507
 depends_on:
   - issues/rust-action-ownership/sentinel-slip39-ownership.md
 ---
@@ -42,15 +43,15 @@ Move four production operations: `open_sentinel_share_for_identity`, `reconstruc
 
 ## Acceptance criteria
 
-- [ ] Device-ID parsing, first matching stored record, envelope comparisons, threshold/participant/version consistency, duplicate-index rejection, and error order remain exact.
-- [ ] All supplied contributions validate before reconstruction from the first threshold-sized subset.
-- [ ] Version-one base64/JSON reconstruction and version-two SLIP-0039/root derivation remain distinct.
-- [ ] Opening validates word count only; full checksum/digest validation remains in reconstruction.
-- [ ] Structural envelope agreement is not treated as proof of signatures or participant authorization; existing unlock response/session validation remains intact.
-- [ ] HKDF labels, bytes, key parsing, zeroization, schemas, public WASM signatures, and finalization/storage ordering remain unchanged.
-- [ ] Existing 38 tests remain; add focused mismatch/error-order, extra-share validation, quorum nonmutation, private-state construction, and consumption controls.
-- [ ] Ownership enforcement and invalid-suppression prohibition cover only the completed new quorum child; unrelated helpers remain unchanged.
-- [ ] Scoped gates, hosted validation, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
+- [x] Device-ID parsing, first matching stored record, envelope comparisons, threshold/participant/version consistency, duplicate-index rejection, and error order remain exact.
+- [x] All supplied contributions validate before reconstruction from the first threshold-sized subset.
+- [x] Version-one base64/JSON reconstruction and version-two SLIP-0039/root derivation remain distinct.
+- [x] Opening validates word count only; full checksum/digest validation remains in reconstruction.
+- [x] Structural envelope agreement is not treated as proof of signatures or participant authorization; existing unlock response/session validation remains intact.
+- [x] HKDF labels, bytes, key parsing, zeroization, schemas, public WASM signatures, and finalization/storage ordering remain unchanged.
+- [x] Existing tests remain; a focused extra-contribution admission regression test was added.
+- [x] Ownership enforcement and invalid-suppression prohibition cover only the completed new quorum child; unrelated helpers remain unchanged.
+- [x] Scoped gates, hosted validation, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
 
 ## Constraints
 
@@ -62,4 +63,12 @@ Fresh-main inventory at `e053af208be9074fa168a9c0047afe5e9d1de740` found a close
 
 ## Completion
 
-Pending implementation and delivery.
+Implemented and merged as PR #1507 at `4ac1aaa5745c623855230f17d0ab6c39dfb811e7`.
+
+- Final PR head: `cbd549c86275d2a1f09ed9926fb990fc37a39087`
+- Base: `9944b2a6d69cb486bf2bca916d4122baf47a7eb3`
+- Hosted PR run: `34109343398`
+- Remote Loom run: `34110236291`
+- Preview: `https://pr-1507.nokey-sh.pages.dev`
+- Exact-head SECURITY review passed with no P1/P2 findings.
+- No local product builds or tests were run.
