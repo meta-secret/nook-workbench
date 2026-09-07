@@ -1,0 +1,131 @@
+schema_version: 4
+source_pr:
+  number: 1482
+  url: https://github.com/meta-secret/nook/pull/1482
+  title: "refactor: type extension identity handoff admission"
+  change_surface: rust_extension_identity_handoff_ownership
+  head_sha: 60f879ba5d1c74b0b09c5145021d1b9f665e8cdf
+  merge_sha: 50e19bc1fa60f6a6515f0f4754d0036f68719d9b
+  started_at: 2026-09-07T01:28:29Z
+  opened_at: 2026-09-07T01:37:00Z
+  merged_at: 2026-09-07T02:08:28Z
+elapsed_seconds: 6000
+summary:
+  local_execution_count: 12
+  local_check_count: 10
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 600
+  github_actions_run_count: 9
+  github_actions_seconds: 10800
+  delivery_head_count: 5
+  review_request_count: 6
+  review_finding_batch_count: 1
+  review_finding_count: 1
+  validation_cycle_count: 3
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 1
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 1
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T02:09:04Z
+  head_sha: 60f879ba5d1c74b0b09c5145021d1b9f665e8cdf
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: task loom:pre-push PR=1482
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1482 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation_after_main_refresh
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1482
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1482 --squash
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+  - command: gh run list --workflow 'Linear UI demos'
+    category: check
+    outcome: passed
+    reason: delivery_head_ui_demo_confirmation
+  - command: git -C /tmp/nook-wb-1438-2 pull --ff-only origin main
+    category: delivery
+    outcome: passed
+    reason: workbench_completion_refresh
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34073647476
+    head_sha: 5cd8b61f1050258ef1d61ac32d359f7d01f5ac4d
+    conclusion: success
+    source_pr: 1482
+    validation_requested: true
+  - workflow: PR
+    run_id: 34073661160
+    head_sha: 5cd8b61f1050258ef1d61ac32d359f7d01f5ac4d
+    conclusion: failure
+    source_pr: 1482
+    validation_requested: true
+  - workflow: Repository policy
+    run_id: 34074537836
+    head_sha: 60f879ba5d1c74b0b09c5145021d1b9f665e8cdf
+    conclusion: success
+    source_pr: 1482
+    validation_requested: true
+  - workflow: PR
+    run_id: 34074556801
+    head_sha: 60f879ba5d1c74b0b09c5145021d1b9f665e8cdf
+    conclusion: success
+    source_pr: 1482
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34075167573
+    head_sha: 60f879ba5d1c74b0b09c5145021d1b9f665e8cdf
+    conclusion: success
+    source_pr: 1482
+    validation_requested: true
+  - workflow: Linear UI demos
+    run_id: 34075280357
+    head_sha: 60f879ba5d1c74b0b09c5145021d1b9f665e8cdf
+    conclusion: success
+    source_pr: 1482
+    validation_requested: true
+delivery_heads:
+  - head_sha: 60f879ba5d1c74b0b09c5145021d1b9f665e8cdf
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 60f879ba5d1c74b0b09c5145021d1b9f665e8cdf
+    base_sha: 152ea6a463849241a7a4e2275fe73118ad20db09
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 60f879ba5d1c74b0b09c5145021d1b9f665e8cdf
+    run_id: 34074556801
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1477, 1475, 1470]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
