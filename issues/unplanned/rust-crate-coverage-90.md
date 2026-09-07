@@ -6,7 +6,7 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-07T02:44:56Z
+updated_at: 2026-09-07T11:24:43Z
 source_issues: []
 related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468, 1473, 1483, 1488]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
@@ -88,6 +88,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] Pull request 1493 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 76.8 percent in the provider event-log boundary slice.
 - [x] Pull request 1499 passes exact-head hosted validation, Hive verification, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 77.8 percent in the passkey-manager guard slice.
+- [x] Pull request 1514 passes exact-head hosted validation, Hive verification, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -163,6 +165,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1510 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment, and green Hive validation on head `20cdec7cb5ab3cc1fb338a473ef84deb887dcdcc` against Main `4ac1aaa5745c623855230f17d0ab6c39dfb811e7`; it squash-merged at `2026-09-07T10:31:38Z` as `e36d48af16ff7c0223f5305fa26aac1dc315c63c`. The next slice starts from merged Main at the 77.6 percent floor.
 - Pull request 1512 added 54 behavior-focused browser-test lines for sync unchanged-content, active-session, and event-log restoration branches. Exact hosted graph `34112408782` passed 308 WASM browser tests and measured `nook-wasm` at 77.81 percent lines, so the executable floor was raised from 77.6 to 77.7 percent. Its replacement exact graph `34113203218` passed the same 308 tests with the 77.7 percent floor enforced; `manager/sync.rs` measured 89.60 percent lines and `nook-companion-wasm` remained at 91.21 percent.
 - Pull request 1512 passed exact-head readiness with zero unresolved review threads, successful Pages deployment, and green Hive validation on final head `bcb3a3c61883376ec5a45132a61946de9fbb68a0` against original base `e36d48af16ff7c0223f5305fa26aac1dc315c63c`; Main advanced once during validation and readiness reported `behindBy: 1` without invalidating the exact-head evidence. It squash-merged at `2026-09-07T10:56:32Z` as `add2d1a2b601bc6f8472ad78fa4d953c66b5a3f9`. The next slice starts from merged Main at the 77.7 percent floor.
+- Pull request 1514 added 55 behavior-focused browser-test lines for passkey ceremony fail-closed behavior and extension-grant parsing before storage access. Initial hosted graph `34114608052` passed 310 WASM browser tests and measured `nook-wasm` at 77.94 percent lines, with `manager/passkeys.rs` at 78.41 percent and `nook-companion-wasm` at 91.21 percent. After Main advanced to `c49e6fcfddbfaea6f8c1d8a0b9cc073c6aff6865`, the branch was rebased, the executable floor rose from 77.7 to 77.8 percent, and replacement graph `34115723912` passed the same 310 tests with final coverage at 77.88 percent lines.
+- Pull request 1514 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment `https://pr-1514.nokey-sh.pages.dev`, and green Hive validation on head `5f63ebd37fdb0f22caa68627c182d9e94b496179` against Main `c49e6fcfddbfaea6f8c1d8a0b9cc073c6aff6865`. It squash-merged at `2026-09-07T11:24:43Z` as `42109a86b35b40f9579d6d633d43b2535be0ca8b`. The next slice starts from merged Main at the evidence-backed 77.8 percent floor.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
