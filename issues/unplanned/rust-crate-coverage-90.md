@@ -6,9 +6,9 @@ automation: manual
 owner: codex
 gizmo_id: rust-crate-coverage-90
 created_at: 2026-09-04T21:49:30Z
-updated_at: 2026-09-07T18:00:44Z
+updated_at: 2026-09-07T18:18:58Z
 source_issues: []
-related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468, 1473, 1483, 1488, 1493, 1499, 1503, 1506, 1509, 1510, 1512, 1514, 1516, 1519, 1522, 1524, 1528, 1530, 1531, 1533]
+related_prs: [1349, 1354, 1367, 1369, 1374, 1397, 1401, 1404, 1417, 1423, 1425, 1431, 1436, 1439, 1442, 1445, 1448, 1450, 1453, 1455, 1459, 1462, 1468, 1473, 1483, 1488, 1493, 1499, 1503, 1506, 1509, 1510, 1512, 1514, 1516, 1519, 1522, 1524, 1528, 1530, 1531, 1533, 1535]
 depends_on: [issues/unplanned/rust-crate-coverage-floor.md]
 ---
 
@@ -89,6 +89,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] Pull request 1531 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 80.2 percent in the Drive event-storage behavior-test slice.
 - [x] Pull request 1533 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 80.2 percent in the Drive access-validation behavior-test slice.
+- [x] Pull request 1535 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 75.9 percent in the next behavior-test slice.
 - [x] Pull request 1473 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 76.0 percent in the next Sentinel delivery slice.
@@ -197,6 +199,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1531 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment, and all required jobs green on head `7312f3086ff11a51b9f120b54c98fd12f5f0fd9d` against Main `5a7ff77e32d0dacb03f50fb29633ec85da3de5e7`; it squash-merged as `71248ade6298674f529e66d83192623d047935a1`. The next slice starts from merged Main at the 79.5 percent floor.
 - Pull request 1533 added 82 behavior-focused test lines for Drive event selection, multipart request projection, and fail-closed admission. Exact hosted graph `34148887031` passed 326 WASM tests and measured `nook-wasm` at 80.27 percent lines, `nook-companion-wasm` at 91.20 percent, and `storage/drive_events.rs` at 50.79 percent. The executable floor remains 79.5 percent.
 - Pull request 1533 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment, and all required jobs green on head `320dd97a02024e0d7ae5630911029741594dfe68` against Main `71248ade6298674f529e66d83192623d047935a1`; it squash-merged as `735b5e5fba425576035543c858df06c7b0eab518`. The next slice starts from merged Main at the 79.5 percent floor.
+- Pull request 1535 added 17 behavior-focused test lines for Drive access-token validation. Exact hosted graph `34150157238` passed 327 WASM tests and measured `nook-wasm` at 80.29 percent lines, `nook-companion-wasm` at 91.20 percent, and `storage/drive.rs` at 69.23 percent. The executable floor remains 79.5 percent.
+- Pull request 1535 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, successful Pages deployment, and all required jobs green on head `26fd9e59cac7003e46fd15782df1ed89ac17ec8c` against Main `735b5e5fba425576035543c858df06c7b0eab518`; it squash-merged as `5b61162832da51181c09bc467791f5861b392af3`. Main later advanced independently to `456f149837aa32854835eaa68a3010020be65ddc`.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
@@ -239,3 +243,5 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [Nook WASM GitHub storage coverage completion worklog](../../worklogs/unplanned/20260907T174047Z-pr-1531-nook-wasm-coverage-github-storage.md)
 - [Nook WASM Drive event storage coverage slice plan](../../plans/unplanned/20260907T174500Z-nook-wasm-coverage-drive-events.md)
 - [Nook WASM Drive event storage coverage completion worklog](../../worklogs/unplanned/20260907T180044Z-pr-1533-nook-wasm-coverage-drive-events.md)
+- [Nook WASM Drive access adapter coverage slice plan](../../plans/unplanned/20260907T180214Z-nook-wasm-drive-access.md)
+- [Nook WASM Drive access adapter coverage completion worklog](../../worklogs/unplanned/20260907T181858Z-pr-1535-nook-wasm-coverage-drive-access.md)
