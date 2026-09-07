@@ -84,6 +84,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - [x] Pull request 1483 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 - [x] `nook-wasm` independently measures at least 76.0 percent in the local-vault API lifecycle slice.
 - [x] Pull request 1488 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
+- [x] `nook-wasm` independently measures at least 76.5 percent in the event-log wrapper slice.
+- [x] Pull request 1493 passes exact-head hosted validation, review resolution, readiness, and merge below 2,000 authored additions.
 
 ## Progress
 
@@ -145,6 +147,8 @@ Lace removal merged in pull request 1349, authenticator-domain reached 90 percen
 - Pull request 1483 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, and a successful Pages deployment on head `0b6d397fdb50b7416cde502e49adbd082f27839b` and base `2a9c21993c23cfa2c8ab33f378b7dd1386cd8846`. It squash-merged as `a00364c87be8d58fb05469cad9acf42ff8073a42`; the next slice starts from merged Main `4658cd533d906863af16e68b71f97a147c61c328` at the 76.0 percent floor.
 - Pull request 1488 added a browser lifecycle test for local-vault discovery, active selection, labels, import, slot preparation, and cleanup, and split the local-vault API into a cohesive module to preserve the source-size policy. After rebasing onto Main `f241def08d9610d8f6df554d5429a9c52623065f`, exact hosted run `34083684121` passed 288 browser tests and measured `nook-wasm` at 76.43 percent line coverage; the executable floor remains 76.0 percent.
 - Pull request 1488 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, and a successful Pages deployment on head `a6169b35d70bbbaaca94a74c08e8bdae91b6a66c`; it squash-merged as `ded96e7945dffcce0b54238631fd1c65a404dd55`. The next bounded slice starts from merged Main at the 76.0 percent floor.
+- Pull request 1493 added 157 behavior-focused browser test lines for event-log WASM wrappers, corrected two test-only expectations exposed by hosted execution, and raised the executable `nook-wasm` floor from 76.0 to 76.5 percent. Final exact hosted run `34091747872` passed 293 browser tests and measured `nook-wasm` at 76.73 percent lines and `nook-companion-wasm` at 92.15 percent.
+- Pull request 1493 passed exact-head readiness with `behindBy: 0`, zero unresolved review threads, and a successful Pages deployment on head `fcaeb7c7964e730da9480dbbed83114c9c7c82a0` against Main `b69c6404a47fe55fabacebb301dc2c68ae69aba3`; it squash-merged as `62fb9f3ee682045ce982fe9e62cd0aae9293749c`. The next slice starts from merged Main at the 76.5 percent floor.
 - Pull request 1404 passed exact-head validation after merging the latest Main through `89092f0bfd950ef1ca85737cf5648bc45e7db342`, returned `ready: true` with zero unresolved review threads, and squash-merged as `e368014c0b2b2b7a39a86c2085cbdcd825294af6` with 774 authored additions.
 
 ## Findings and decisions
