@@ -1,0 +1,227 @@
+schema_version: 4
+source_pr:
+  number: 1505
+  url: https://github.com/meta-secret/nook/pull/1505
+  title: "refactor: own Sentinel SLIP-0039 action graph"
+  change_surface: rust_sentinel_slip39_action_ownership
+  head_sha: 8ae20fd8ed9ea9fb048ba97ca8508b85d691bba6
+  merge_sha: e053af208be9074fa168a9c0047afe5e9d1de740
+  started_at: 2026-09-07T08:18:57Z
+  opened_at: 2026-09-07T08:25:36Z
+  merged_at: 2026-09-07T09:17:40Z
+elapsed_seconds: 3124
+summary:
+  local_execution_count: 18
+  local_check_count: 13
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 390
+  github_actions_run_count: 9
+  github_actions_seconds: 2300
+  delivery_head_count: 7
+  review_request_count: 7
+  review_finding_batch_count: 1
+  review_finding_count: 3
+  validation_cycle_count: 4
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 3
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 3
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T09:18:37Z
+  head_sha: 8ae20fd8ed9ea9fb048ba97ca8508b85d691bba6
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: scoped formatting/static/retention/symbol/size checks
+    category: check
+    outcome: passed
+    reason: ownership_migration_scope_and_contract_checks
+  - command: cargo fmt --manifest-path nook-app/nook-platform/Cargo.toml --all -- --check
+    category: check
+    outcome: passed
+    reason: final_format_check
+  - command: git diff --check
+    category: check
+    outcome: passed
+    reason: whitespace_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1505 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: initial_exact_head_validation
+  - command: gh api actions/jobs/101675062297/logs
+    category: check
+    outcome: failed
+    reason: dylint_reported_mnemonic_regression_and_unused_helpers
+  - command: restore_slip39_mnemonic_destination_bit_mapping
+    category: repair
+    outcome: passed
+    reason: exact_head_security_repair
+  - command: task pr:validate PR=1505 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: repaired_exact_head_validation
+  - command: scope_test_helpers_and_btreeset_import
+    category: repair
+    outcome: passed
+    reason: hosted_dylint_repair
+  - command: task pr:validate PR=1505 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: final_exact_head_validation
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: blocked
+    reason: origin_main_advanced_during_first_final_validation
+  - command: git rebase origin/main
+    category: delivery
+    outcome: passed
+    reason: current_base_refresh
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_rebased_head_remote_loom_verification
+  - command: task pr:ready PR=1505
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1505 --squash --delete-branch=false
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+github_actions_runs:
+  - workflow: PR
+    run_id: 34100538519
+    head_sha: 473780adf5ab6ce77deb97bd44396eaa1d685b77
+    conclusion: failure
+    source_pr: 1505
+  - workflow: PR
+    run_id: 34100940743
+    head_sha: 39b4b0b629b5098553b2483a1922b25d112cc903
+    conclusion: failure
+    source_pr: 1505
+  - workflow: PR
+    run_id: 34101336660
+    head_sha: a43daee4f42a4ba1fb4b770c84547c73092409de
+    conclusion: failure
+    source_pr: 1505
+  - workflow: PR
+    run_id: 34101937755
+    head_sha: f413294d10e7e89f587b8605fd0a6f622a083322
+    conclusion: success
+    source_pr: 1505
+  - workflow: PR
+    run_id: 34102834622
+    head_sha: 276635e8490bffae4a6e303b9e8e1c10793a7b70
+    conclusion: success
+    source_pr: 1505
+  - workflow: PR
+    run_id: 34103777775
+    head_sha: 8ae20fd8ed9ea9fb048ba97ca8508b85d691bba6
+    conclusion: success
+    source_pr: 1505
+  - workflow: Remote / loom:verify / manual
+    run_id: 34104815485
+    head_sha: 8ae20fd8ed9ea9fb048ba97ca8508b85d691bba6
+    conclusion: success
+    source_pr: 1505
+  - workflow: Repository policy
+    run_id: 34103745278
+    head_sha: 8ae20fd8ed9ea9fb048ba97ca8508b85d691bba6
+    conclusion: success
+    source_pr: 1505
+delivery_heads:
+  - head_sha: 473780adf5ab6ce77deb97bd44396eaa1d685b77
+    final: false
+  - head_sha: 39b4b0b629b5098553b2483a1922b25d112cc903
+    final: false
+  - head_sha: a43daee4f42a4ba1fb4b770c84547c73092409de
+    final: false
+  - head_sha: f413294d10e7e89f587b8605fd0a6f622a083322
+    final: false
+  - head_sha: 276635e8490bffae4a6e303b9e8e1c10793a7b70
+    final: false
+  - head_sha: 8ae20fd8ed9ea9fb048ba97ca8508b85d691bba6
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 473780adf5ab6ce77deb97bd44396eaa1d685b77
+    base_sha: 485f5de38bf42a25a0f920cfc9df20b07b090753
+    outcome: failure
+    findings: 1
+  - reviewer: security_review
+    head_sha: 39b4b0b629b5098553b2483a1922b25d112cc903
+    base_sha: 485f5de38bf42a25a0f920cfc9df20b07b090753
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: a43daee4f42a4ba1fb4b770c84547c73092409de
+    base_sha: 485f5de38bf42a25a0f920cfc9df20b07b090753
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: f413294d10e7e89f587b8605fd0a6f622a083322
+    base_sha: 485f5de38bf42a25a0f920cfc9df20b07b090753
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: 276635e8490bffae4a6e303b9e8e1c10793a7b70
+    base_sha: e8feb70d5f86970791745db202a2db86cf24142d
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: 8ae20fd8ed9ea9fb048ba97ca8508b85d691bba6
+    base_sha: 214dbe3e59f066ce010488a8155ee08b8e6f40b0
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 473780adf5ab6ce77deb97bd44396eaa1d685b77
+    run_id: 34100538519
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 39b4b0b629b5098553b2483a1922b25d112cc903
+    run_id: 34100940743
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: a43daee4f42a4ba1fb4b770c84547c73092409de
+    run_id: 34101336660
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: f413294d10e7e89f587b8605fd0a6f622a083322
+    run_id: 34101937755
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 276635e8490bffae4a6e303b9e8e1c10793a7b70
+    run_id: 34102834622
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 8ae20fd8ed9ea9fb048ba97ca8508b85d691bba6
+    run_id: 34103777775
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1504, 1502, 1498]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
