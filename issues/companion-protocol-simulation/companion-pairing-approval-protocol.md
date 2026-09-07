@@ -1,14 +1,15 @@
 ---
 title: Implement companion pairing approval protocol
-status: in_progress
+status: done
 priority: p1
 automation: agent
 owner: cypherkitty
 gizmo_id: companion-pairing-approval-protocol
 created_at: 2026-09-07T14:51:01Z
-updated_at: 2026-09-07T22:02:13Z
+updated_at: 2026-09-07T23:40:31Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1546
 depends_on:
   - issues/companion-protocol-simulation/companion-identity-browser-adapters.md
 ---
@@ -57,20 +58,21 @@ no durable grant, event, provider, pairing-state, or acknowledgement effect.
 
 ## Acceptance criteria
 
-- [ ] A pairing approval is admitted only for one live, unexpired, exactly
+- [x] A pairing approval is admitted only for one live, unexpired, exactly
       matching request and every attempted approval consumes its authority.
-- [ ] Rust rejects wrong request, nonce, runtime, app ID, encryption/signing
-      key, vault, scope, event authority, provider manifest, or recipient.
-- [ ] Rust validates sealed provider credentials for the exact installation
+- [x] Rust rejects wrong request, nonce, runtime, app ID, encryption/signing
+      key, vault, scope, provider manifest, or recipient. Event authority is
+      deliberately absent from this side-effect-free admission capability.
+- [x] Rust validates sealed provider credentials for the exact installation
       recipient without cloning plaintext credentials or persisting effects.
-- [ ] Website and extension endpoints expose opaque admitted capabilities; no
+- [x] Website and extension endpoints expose opaque admitted capabilities; no
       accepted acknowledgement or durable state can be produced in this slice.
-- [ ] Native tests compose real objects and cover success, mismatch, expiry,
+- [x] Native tests compose real objects and cover success, mismatch, expiry,
       replay, provider substitution, wrong recipient, and malformed input.
-- [ ] Independent WASM instances exchange only structural cloned DTOs and
+- [x] Independent WASM instances exchange only structural cloned DTOs and
       exercise the same admission operations without browser channels.
-- [ ] Security review and hosted Rust/WASM checks pass on one exact head.
-- [ ] The pull request is ready, squash-merged, remotely verified, and closed
+- [x] Security review and hosted Rust/WASM checks pass on one exact head.
+- [x] The pull request is ready, squash-merged, remotely verified, and closed
       in Workbench before browser adapter work begins.
 
 ## Progress
@@ -85,6 +87,16 @@ no durable grant, event, provider, pairing-state, or acknowledgement effect.
   across separate databases could return rejection after durable authority was
   already active. This issue now ends at side-effect-free Rust admission; the
   dependent activation issue owns commit-gated persistence.
+- 2026-09-07: PR #1546 added Rust-owned one-shot admission across core,
+  companion-WASM, nook-WASM, and a direct dual-WASM composition test. Hosted
+  validation exposed ownership-lint, host error-conversion, real manager-name,
+  and package-coverage gaps; each was corrected without adding effects or
+  weakening the existing coverage floor.
+- 2026-09-07: Security passed exact head
+  `30cd407923a71134fca468758f4be95f6c50bfad`; hosted validation run
+  `34169972462` passed 15 checks with five scope-correct skips and no failures.
+  Repository readiness returned `ready: true`, and PR #1546 was squash-merged
+  as `e22e2a2030e48b938d1a8de1e06781d170fef538`.
 
 ## Findings and decisions
 
@@ -101,6 +113,11 @@ no durable grant, event, provider, pairing-state, or acknowledgement effect.
 - Production browser integration is tracked by the dependent
   `companion-pairing-browser-adapters` issue and cannot start until atomic
   activation is merged and closed.
+- The manager's genesis fallback label does not name the live manager session;
+  direct composition fixtures must use the public manager naming operation and
+  then read the Rust-owned name.
+- Coverage debt in a new WASM boundary is resolved with behavior tests, never
+  by lowering or excluding the package floor.
 
 ## References
 
