@@ -1,0 +1,114 @@
+schema_version: 4
+source_pr:
+  number: 1498
+  url: https://github.com/meta-secret/nook/pull/1498
+  title: "refactor: own provider catalog normalization and selection"
+  change_surface: rust_provider_catalog_normalization_ownership
+  head_sha: e902ba4d79496bd88d3c5c2ac4b8782d1b6aeb4d
+  merge_sha: 5d64ff95d1491a707dbe7c157932f1ad906c5066
+  started_at: 2026-09-07T06:25:25Z
+  opened_at: 2026-09-07T06:29:00Z
+  merged_at: 2026-09-07T07:13:47Z
+elapsed_seconds: 2919
+summary:
+  local_execution_count: 15
+  local_check_count: 10
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 420
+  github_actions_run_count: 8
+  github_actions_seconds: 2400
+  delivery_head_count: 4
+  review_request_count: 1
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 4
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 3
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 4
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T07:14:04Z
+  head_sha: e902ba4d79496bd88d3c5c2ac4b8782d1b6aeb4d
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: scoped formatting/static/retention/symbol/size checks
+    category: check
+    outcome: passed
+    reason: ownership_migration_scope_and_contract_checks
+  - command: cargo fmt --manifest-path nook-app/nook-platform/Cargo.toml --all -- --check
+    category: check
+    outcome: passed
+    reason: final_format_check
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1498 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: initial_exact_head_validation
+  - command: task pr:validate PR=1498 CODEX_REVIEW=0
+    category: check
+    outcome: dispatched
+    reason: repaired_exact_head_validation
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1498
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1498 --squash
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34093301018
+    head_sha: e902ba4d79496bd88d3c5c2ac4b8782d1b6aeb4d
+    conclusion: success
+    source_pr: 1498
+  - workflow: PR
+    run_id: 34093325424
+    head_sha: e902ba4d79496bd88d3c5c2ac4b8782d1b6aeb4d
+    conclusion: success
+    source_pr: 1498
+  - workflow: Remote / loom:verify / manual
+    run_id: 34094116612
+    head_sha: e902ba4d79496bd88d3c5c2ac4b8782d1b6aeb4d
+    conclusion: success
+    source_pr: 1498
+delivery_heads:
+  - head_sha: e902ba4d79496bd88d3c5c2ac4b8782d1b6aeb4d
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: e902ba4d79496bd88d3c5c2ac4b8782d1b6aeb4d
+    base_sha: caaef127dad2d2c390378fd5e007f36dd33850e5
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: e902ba4d79496bd88d3c5c2ac4b8782d1b6aeb4d
+    run_id: 34093325424
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1496, 1494, 1491]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []

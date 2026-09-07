@@ -1,14 +1,15 @@
 ---
 title: Type provider catalog normalization and local-row ownership
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-provider-catalog-normalization
 created_at: 2026-09-07T06:25:25Z
-updated_at: 2026-09-07T06:25:25Z
+updated_at: 2026-09-07T07:14:04Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1498
 depends_on:
   - issues/rust-action-ownership/active-provider-credential-projection-ownership.md
 ---
@@ -43,14 +44,14 @@ Move twelve production operations and five fixture helpers onto meaningful owner
 
 ## Acceptance criteria
 
-- [ ] Existing permissive normalization, raw-input cloning, invalid-row filtering, active-scope parsing, and normalized-raw-JSON `changed` comparison remain unchanged.
-- [ ] State-tagged objects, string bytes, whitespace rules, default variants, malformed-input treatment, and migration behavior remain unchanged.
-- [ ] GitHub PAT participates in duplicate identity; missing PAT rejection, iCloud shared-target substitution, first-match/exclusion behavior, and cloned result remain unchanged.
-- [ ] Local-row insertion preserves explicit-store precedence, unscoped-local matching, prepending order, unchanged active scope, and return behavior.
-- [ ] Labels, suffixes, PAT masking, browser ABI, schema, credential opening order, publication transactions, rollback comparisons, and Sentinel admission order remain unchanged.
-- [ ] Retain all 65 scoped tests, including all five catalog tests; add focused malformed/state-tagged normalization, unchanged-input, duplicate-order/exclusion, local-row-scope, and display/default matrices. Leave target-key algorithms and five tests in `sync/validation/provider_configuration.rs` untouched.
-- [ ] Ownership denial and invalid-suppression prohibition cover only the completed `catalog.rs` subtree.
-- [ ] Scoped gates, hosted validation, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
+- [x] Existing permissive normalization, raw-input cloning, invalid-row filtering, active-scope parsing, and normalized-raw-JSON `changed` comparison remain unchanged.
+- [x] State-tagged objects, string bytes, whitespace rules, default variants, malformed-input treatment, and migration behavior remain unchanged.
+- [x] GitHub PAT participates in duplicate identity; missing PAT rejection, iCloud shared-target substitution, first-match/exclusion behavior, and cloned result remain unchanged.
+- [x] Local-row insertion preserves explicit-store precedence, unscoped-local matching, prepending order, unchanged active scope, and return behavior.
+- [x] Labels, suffixes, PAT masking, browser ABI, schema, credential opening order, publication transactions, rollback comparisons, and Sentinel admission order remain unchanged.
+- [x] Retain all 65 scoped tests, including all five catalog tests; add focused malformed/state-tagged normalization, unchanged-input, duplicate-order/exclusion, local-row-scope, and display/default matrices. Leave target-key algorithms and five tests in `sync/validation/provider_configuration.rs` untouched.
+- [x] Ownership denial and invalid-suppression prohibition cover only the completed `catalog.rs` subtree.
+- [x] Scoped gates, hosted validation, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
 
 ## Constraints
 
@@ -62,4 +63,14 @@ Read-only DEV-CORE inventory at fresh origin/main `52196e5278bce64b469adbed1d484
 
 ## Completion
 
-Pending implementation and delivery.
+Implemented and merged in PR #1498.
+
+- Final head: `e902ba4d79496bd88d3c5c2ac4b8782d1b6aeb4d`
+- Base: `caaef127dad2d2c390378fd5e007f36dd33850e5`
+- Merge commit: `5d64ff95d1491a707dbe7c157932f1ad906c5066`
+- Hosted PR run: `34093325424` passed; exact deployment: `https://pr-1498.nokey-sh.pages.dev`
+- Remote Loom verification: `34094116612` passed.
+- Exact-head SECURITY: PASS; no P1/P2 findings.
+- `task pr:ready PR=1498`: `ready: true`.
+- Scoped formatting/static/retention/size checks and `task loom:pre-push` passed; no local product builds/tests run.
+
