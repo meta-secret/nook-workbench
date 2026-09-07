@@ -1,0 +1,109 @@
+schema_version: 4
+source_pr:
+  number: 1490
+  url: https://github.com/meta-secret/nook/pull/1490
+  title: "refactor: own provider enrollment admission and selection"
+  change_surface: rust_provider_enrollment_admission_ownership
+  head_sha: 05257165b4692bfe39e3ce2d0190a8e396935c56
+  merge_sha: f241def08d9610d8f6df554d5429a9c52623065f
+  started_at: 2026-09-07T03:56:55Z
+  opened_at: 2026-09-07T04:01:00Z
+  merged_at: 2026-09-07T04:19:56Z
+elapsed_seconds: 1380
+summary:
+  local_execution_count: 11
+  local_check_count: 9
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 420
+  github_actions_run_count: 4
+  github_actions_seconds: 18000
+  delivery_head_count: 2
+  review_request_count: 1
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 1
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 0
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T04:20:17Z
+  head_sha: 05257165b4692bfe39e3ce2d0190a8e396935c56
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: scoped rustfmt/static/retention/size checks
+    category: check
+    outcome: passed
+    reason: ownership_migration_scope_and_contract_checks
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1490 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: exact_head_validation_after_main_refresh
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1490
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1490 --squash
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+github_actions_runs:
+  - workflow: Repository policy
+    run_id: 34082026156
+    head_sha: dba787f917d10d7012f0ccadcb06ddc8ca562282
+    conclusion: success
+    source_pr: 1490
+    validation_requested: true
+  - workflow: PR
+    run_id: 34082041096
+    head_sha: 05257165b4692bfe39e3ce2d0190a8e396935c56
+    conclusion: success
+    source_pr: 1490
+    validation_requested: true
+  - workflow: Remote / loom:verify / manual
+    run_id: 34082574299
+    head_sha: 05257165b4692bfe39e3ce2d0190a8e396935c56
+    conclusion: success
+    source_pr: 1490
+    validation_requested: true
+delivery_heads:
+  - head_sha: 05257165b4692bfe39e3ce2d0190a8e396935c56
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 05257165b4692bfe39e3ce2d0190a8e396935c56
+    base_sha: dba787f917d10d7012f0ccadcb06ddc8ca562282
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 05257165b4692bfe39e3ce2d0190a8e396935c56
+    run_id: 34082041096
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1489, 1485, 1482]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
