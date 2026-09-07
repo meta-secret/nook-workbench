@@ -1,14 +1,15 @@
 ---
 title: Type vault synchronization preparation and commit ownership
-status: planned
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-vault-store-sync-commit
 created_at: 2026-09-07T07:42:47Z
-updated_at: 2026-09-07T07:42:47Z
+updated_at: 2026-09-07T08:15:03Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1504
 depends_on:
   - issues/rust-action-ownership/vault-access-diagnostic-evaluation.md
 ---
@@ -35,17 +36,17 @@ Move seven production operations: `reconcile_vault_stores`, `reconcile_vault_sto
 
 ## Acceptance criteria
 
-- [ ] Comparison errors precede mutation; Conflict and Unchanged preserve both stores.
-- [ ] AdoptRemote copies blob and revision; PushLocal copies blob and advances only remote revision.
-- [ ] Fan-out sorts provider IDs lexically, applies sequentially, and retains earlier effects if a later provider fails.
-- [ ] Trimmed equal content precedes revision mismatch and preserves original bytes/revision.
-- [ ] Different content with stale revision returns `RemoteChangedDuringWrite` without mutation.
-- [ ] Explicit conflict choices retain their current unconditional behavior.
-- [ ] Existing revision parsing, malformed-revision behavior, and saturating increment remain exact.
-- [ ] Preparation drop changes neither store; commit cannot substitute a different action or store.
-- [ ] Five unit and nine integration tests remain; focused preparation/drop, comparison-error, guarded-write precedence, revision-boundary, later-provider-failure, and privacy/borrow/consumption controls are added.
-- [ ] Ownership enforcement and invalid-suppression prohibition cover only the completed store module; unrelated code remains unchanged.
-- [ ] Scoped gates, hosted validation, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
+- [x] Comparison errors precede mutation; Conflict and Unchanged preserve both stores.
+- [x] AdoptRemote copies blob and revision; PushLocal copies blob and advances only remote revision.
+- [x] Fan-out sorts provider IDs lexically, applies sequentially, and retains earlier effects if a later provider fails.
+- [x] Trimmed equal content precedes revision mismatch and preserves original bytes/revision.
+- [x] Different content with stale revision returns `RemoteChangedDuringWrite` without mutation.
+- [x] Explicit conflict choices retain their current unconditional behavior.
+- [x] Existing revision parsing, malformed-revision behavior, and saturating increment remain exact.
+- [x] Preparation drop changes neither store; commit cannot substitute a different action or store.
+- [x] Five unit and nine integration tests remain; added focused preparation/drop, comparison-error, guarded-write precedence, revision-boundary, later-provider-failure, trimmed-equality, and ownership lifecycle controls.
+- [x] Ownership enforcement and invalid-suppression prohibition cover only the completed store module; unrelated code remains unchanged.
+- [x] Scoped gates, hosted validation, exact-head SECURITY, readiness, squash merge, Workbench completion, and remote Loom pass.
 
 ## Constraints
 
@@ -57,4 +58,12 @@ Fresh-main DEV-CORE inventory at `69e431f159c717e6d78e0151e75157932f3af88f` foun
 
 ## Completion
 
-Pending implementation and delivery.
+Implemented and merged as PR #1504 at `485f5de38bf42a25a0f920cfc9df20b07b090753`.
+
+- Final PR head: `5a1be670184ee0339070830803b97569bf65a008`
+- Base: `a377a6635f27e53cbde2c7bf413289f77d3bb27e`
+- Scope: +287 authored / -124, three files, no new files.
+- Hosted PR validation: final run `34098224225` passed all required jobs; preview `https://pr-1504.nokey-sh.pages.dev`.
+- Remote Loom verification: run `34099328027` passed.
+- Exact-head SECURITY PASS with no P1/P2 findings; `task pr:ready PR=1504` returned ready.
+- Scoped formatting/static/retention/symbol/size checks and `task loom:pre-push` passed; no local product builds/tests run.

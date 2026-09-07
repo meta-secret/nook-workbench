@@ -1,0 +1,143 @@
+schema_version: 4
+source_pr:
+  number: 1504
+  url: https://github.com/meta-secret/nook/pull/1504
+  title: "refactor: own vault sync preparation and commit"
+  change_surface: rust_vault_sync_preparation_commit_ownership
+  head_sha: 5a1be670184ee0339070830803b97569bf65a008
+  merge_sha: 485f5de38bf42a25a0f920cfc9df20b07b090753
+  started_at: 2026-09-07T07:42:47Z
+  opened_at: 2026-09-07T07:44:00Z
+  merged_at: 2026-09-07T08:14:45Z
+elapsed_seconds: 1938
+summary:
+  local_execution_count: 12
+  local_check_count: 10
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 270
+  github_actions_run_count: 4
+  github_actions_seconds: 1320
+  delivery_head_count: 2
+  review_request_count: 2
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 2
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 1
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 1
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T08:15:03Z
+  head_sha: 5a1be670184ee0339070830803b97569bf65a008
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: scoped formatting/static/retention/symbol/size checks
+    category: check
+    outcome: passed
+    reason: ownership_migration_scope_and_contract_checks
+  - command: cargo fmt --manifest-path nook-app/nook-platform/Cargo.toml --all -- --check
+    category: check
+    outcome: passed
+    reason: final_format_check
+  - command: git diff --check
+    category: check
+    outcome: passed
+    reason: whitespace_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1504 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: initial_exact_head_validation
+  - command: gh run view 34097617504 --job 101664727436 --log-failed
+    category: check
+    outcome: failed
+    reason: clippy_must_use_candidate_and_drop_non_drop
+  - command: add must_use_commit_and_lexical_drop_scope
+    category: repair
+    outcome: passed
+    reason: exact_head_clippy_repair
+  - command: task pr:validate PR=1504 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: repaired_exact_head_validation
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_exact_head_remote_loom_verification
+  - command: task pr:ready PR=1504
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh pr merge 1504 --squash --delete-branch=false
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+github_actions_runs:
+  - workflow: PR
+    run_id: 34097617504
+    head_sha: 8a4fb0ed6f8029792075ecf61487a495886b1f1c
+    conclusion: failure
+    source_pr: 1504
+  - workflow: PR
+    run_id: 34098224225
+    head_sha: 5a1be670184ee0339070830803b97569bf65a008
+    conclusion: success
+    source_pr: 1504
+  - workflow: Remote / loom:verify / manual
+    run_id: 34099328027
+    head_sha: 5a1be670184ee0339070830803b97569bf65a008
+    conclusion: success
+    source_pr: 1504
+  - workflow: Repository policy
+    run_id: 34098198952
+    head_sha: 5a1be670184ee0339070830803b97569bf65a008
+    conclusion: success
+    source_pr: 1504
+delivery_heads:
+  - head_sha: 8a4fb0ed6f8029792075ecf61487a495886b1f1c
+    final: false
+  - head_sha: 5a1be670184ee0339070830803b97569bf65a008
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: 8a4fb0ed6f8029792075ecf61487a495886b1f1c
+    base_sha: a377a6635f27e53cbde2c7bf413289f77d3bb27e
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: 5a1be670184ee0339070830803b97569bf65a008
+    base_sha: a377a6635f27e53cbde2c7bf413289f77d3bb27e
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: 8a4fb0ed6f8029792075ecf61487a495886b1f1c
+    run_id: 34097617504
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 5a1be670184ee0339070830803b97569bf65a008
+    run_id: 34098224225
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1502, 1498, 1496]
+  baseline_quality: high
+  baseline_note: Recent substantial Rust ownership and typestate migrations.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
