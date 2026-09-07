@@ -1,0 +1,151 @@
+schema_version: 4
+source_pr:
+  number: 1511
+  url: https://github.com/meta-secret/nook/pull/1511
+  title: "refactor multi-device actions into owned states"
+  change_surface: rust_multi_device_join_ownership
+  head_sha: db6597a72e7a1e8eb99caf33725df61cbb83ad61
+  merge_sha: 3c6419d9512b3528a56422eb2ba075aa42ae1f76
+  started_at: 2026-09-07T10:18:55Z
+  opened_at: 2026-09-07T10:20:00Z
+  merged_at: 2026-09-07T10:51:55Z
+elapsed_seconds: 1980
+summary:
+  local_execution_count: 11
+  local_check_count: 7
+  local_test_count: 0
+  local_combined_count: 0
+  local_execution_seconds: 45
+  github_actions_run_count: 5
+  github_actions_seconds: 1200
+  delivery_head_count: 3
+  review_request_count: 3
+  review_finding_batch_count: 0
+  review_finding_count: 0
+  validation_cycle_count: 3
+  obsolete_validation_seconds: 0
+  obsolete_validation_count: 1
+  cancelled_validation_seconds: 0
+  cancelled_validation_count: 0
+  pr_retrigger_count: 2
+  agent_requested_rerun_count: 0
+test_inventory:
+  measured_at: 2026-09-07T10:53:30Z
+  head_sha: db6597a72e7a1e8eb99caf33725df61cbb83ad61
+  by_type:
+    rust: 0
+    preflight: 0
+    web_unit: 0
+    e2e: 0
+  total: 0
+local_executions:
+  - command: cargo fmt --all -- --check
+    category: check
+    outcome: passed
+    reason: final_format_check
+  - command: git diff --check
+    category: check
+    outcome: passed
+    reason: whitespace_validation
+  - command: task loom:pre-push
+    category: check
+    outcome: passed
+    reason: scoped_hygiene_and_contract_checks
+  - command: task pr:validate PR=1511 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: initial_exact_head_validation
+  - command: hosted diagnostics and shared child import repair
+    category: repair
+    outcome: passed
+    reason: fixed_hosted_compile_error
+  - command: task pr:validate PR=1511 CODEX_REVIEW=1
+    category: check
+    outcome: dispatched
+    reason: repaired_exact_head_validation
+  - command: git rebase origin/main
+    category: delivery
+    outcome: passed
+    reason: refreshed_main_after_validation_advanced_main
+  - command: task remote TASK_NAME=loom:verify
+    category: check
+    outcome: passed
+    reason: final_rebased_head_remote_loom_verification
+  - command: task pr:ready PR=1511
+    category: check
+    outcome: passed
+    reason: hosted_checks_deployment_and_mergeability_ready
+  - command: gh api pulls/1511/merge
+    category: delivery
+    outcome: passed
+    reason: exact_head_squash_merge
+github_actions_runs:
+  - workflow: PR
+    run_id: 34111499457
+    head_sha: f4629d163e0be0d376ebf43cb2af712f91bcc01b
+    conclusion: failure
+    source_pr: 1511
+  - workflow: PR
+    run_id: 34111886779
+    head_sha: 391746ecd15f2970f4519508ee85fb7f4aaa135d
+    conclusion: success
+    source_pr: 1511
+  - workflow: Remote / loom:verify / manual
+    run_id: 34112844262
+    head_sha: db6597a72e7a1e8eb99caf33725df61cbb83ad61
+    conclusion: success
+    source_pr: 1511
+  - workflow: Repository policy
+    run_id: 34111869079
+    head_sha: 391746ecd15f2970f4519508ee85fb7f4aaa135d
+    conclusion: success
+    source_pr: 1511
+delivery_heads:
+  - head_sha: f4629d163e0be0d376ebf43cb2af712f91bcc01b
+    final: false
+  - head_sha: 391746ecd15f2970f4519508ee85fb7f4aaa135d
+    final: false
+  - head_sha: db6597a72e7a1e8eb99caf33725df61cbb83ad61
+    final: true
+review_events:
+  - reviewer: security_review
+    head_sha: f4629d163e0be0d376ebf43cb2af712f91bcc01b
+    base_sha: 4ac1aaa5745c623855230f17d0ab6c39dfb811e7
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: 391746ecd15f2970f4519508ee85fb7f4aaa135d
+    base_sha: 4ac1aaa5745c623855230f17d0ab6c39dfb811e7
+    outcome: pass
+    findings: 0
+  - reviewer: security_review
+    head_sha: db6597a72e7a1e8eb99caf33725df61cbb83ad61
+    base_sha: e36d48af16ff7c0223f5305fa26aac1dc315c63c
+    outcome: pass
+    findings: 0
+validation_cycles:
+  - workflow: PR
+    head_sha: f4629d163e0be0d376ebf43cb2af712f91bcc01b
+    run_id: 34111499457
+    conclusion: failure
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: 391746ecd15f2970f4519508ee85fb7f4aaa135d
+    run_id: 34111886779
+    conclusion: success
+    obsolete_seconds: 0
+  - workflow: PR
+    head_sha: db6597a72e7a1e8eb99caf33725df61cbb83ad61
+    run_id: 34112821428
+    conclusion: success
+    obsolete_seconds: 0
+comparison:
+  baseline_prs: [1507, 1508, 1510]
+  baseline_quality: high
+  baseline_note: Recent Rust ownership and multi-device lifecycle changes.
+  regression: false
+  regression_reasons: []
+waste_assessment:
+  wasteful: false
+  findings: []
+  required_actions: []
