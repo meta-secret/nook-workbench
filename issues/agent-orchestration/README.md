@@ -2,7 +2,7 @@
 title: Agent orchestration
 status: in_progress
 created_at: 2026-09-02T17:31:56Z
-updated_at: 2026-09-08T05:58:27Z
+updated_at: 2026-09-08T07:50:00Z
 ---
 
 # Agent orchestration
@@ -24,8 +24,9 @@ PR metadata has historically varied by execution surface. The active work standa
 ## Issues
 
 - [ ] [Pull request metadata provenance](pr-metadata-provenance.md)
-- [ ] [Proactive PR Steward failure summaries](proactive-pr-steward.md)
-- [ ] [Exact PR Steward failure reconciliation](proactive-pr-steward-reconciliation.md)
+- [ ] [Compact PR Steward routing hints](proactive-pr-steward.md)
+- [ ] [Closed PR Steward routing contract](proactive-pr-steward-reconciliation.md)
+- [ ] [Exact PR Steward failure summaries](proactive-pr-steward-failure-summary.md)
 
 ## References
 
