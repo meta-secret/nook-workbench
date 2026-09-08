@@ -8,7 +8,8 @@ gizmo_id: proactive-pr-steward-observation
 created_at: 2026-09-08T10:59:04Z
 updated_at: 2026-09-08T13:45:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1570
 depends_on:
   - issues/agent-orchestration/proactive-pr-steward-webhook-decoder.md
 ---
@@ -42,6 +43,7 @@ PR Steward asynchronously reads the assigned pull request through one fixed boun
 
 - 2026-09-08: Closed codec PR #1564 and owned webhook decoder/writer PR #1568 are merged, remotely verified, and closed in Workbench. Observation implementation starts from fresh merged main.
 - 2026-09-08: Deferred review proved an assigned-PR read cannot establish repository-wide uniqueness for a PR-less job head. Commit-to-PR association moved to failure reconciliation; observation remains fail-closed.
+- 2026-09-08: PR #1570 opened at exact head `ce30153cf0d110312c9582ac8bfbe49c13ef48b1`; hosted policy and live v2 canary passed while review settles.
 
 ## References
 
