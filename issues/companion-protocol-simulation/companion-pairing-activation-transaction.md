@@ -1,12 +1,12 @@
 ---
 title: Commit companion pairing activation candidate atomically
-status: ready
+status: in_progress
 priority: p1
 automation: agent
 owner: cypherkitty
 gizmo_id: companion-pairing-activation-transaction
 created_at: 2026-09-07T22:02:13Z
-updated_at: 2026-09-08T00:04:14Z
+updated_at: 2026-09-08T00:14:35Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -76,6 +76,8 @@ readers until the dependent authoritative-adoption slice.
   adoption would make one PR approximately 2,500-3,500 authored additions.
   Delivery was split at the durable functional boundary: this issue commits a
   crash-atomic inert candidate; the dependent adoption issue makes it authority.
+- 2026-09-08: Immutable plan published and implementation started from current
+  `origin/main` on the dedicated candidate branch.
 
 ## Findings and decisions
 
