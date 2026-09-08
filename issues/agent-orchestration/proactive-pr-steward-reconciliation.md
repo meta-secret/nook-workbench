@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-reconciliation
 created_at: 2026-09-08T05:58:27Z
-updated_at: 2026-09-08T10:59:04Z
+updated_at: 2026-09-08T12:04:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1564
@@ -22,29 +22,29 @@ Compact producer hints merged in PR #1560. Review of the first dependent draft s
 
 ## Outcome
 
-PR Steward owns a closed source-discriminated `pr-steward-ndjson/v1` routing and malformed-blocker contract plus the webhook decoder that produces it.
+PR Steward owns a closed source-discriminated routing and blocker codec with validated opaque identifiers. It does not yet produce the new records from live webhooks.
 
 ## Scope
 
-- Include strict closed encoding/decoding, validated opaque identifiers, source-discriminated routing variants, owned webhook parsing/object mapping, bounded safe URLs, malformed blockers, and operational-error propagation.
-- Replace `pr-steward-routing/v1` atomically; document the writer/reader cutover and fail-closed rollback boundary.
-- Exclude GitHub subprocess/API access, assigned-head reading, observer lifecycle, PR-less job attribution, API-unavailable blockers, failure summaries, persistence, retry, replay, compatibility readers, and fallbacks.
+- Include strict closed encoding/decoding, validated opaque identifiers across routing and blocker records, source-discriminated variants, bounded safe URLs, and exact codec tests.
+- Exclude live webhook parsing, routing metadata extraction, writer cutover, stream continuation, GitHub subprocess/API access, observation, job attribution, failure summaries, persistence, retry, replay, compatibility readers, and fallbacks.
 
 ## Acceptance criteria
 
 - [ ] The codec rejects unknown fields, versions, variants, identifier shapes, URLs, and impossible source/metadata combinations.
-- [ ] The webhook decoder owns event and object mapping and emits only body-free bounded source-discriminated records.
-- [ ] Malformed input emits a static sanitized blocker and stream processing continues; unexpected operational errors propagate.
-- [ ] The v0 writer/reader boundary changes atomically with no compatibility or rollback fallback.
+- [ ] Routing and blocker PR identifiers are accepted only through validated opaque construction.
+- [ ] The codec contains no live writer, webhook decoder, GitHub reader, or observation behavior.
 - [ ] Focused tests, Security review, hosted exact-head validation, readiness, merge, remote verification, and Workbench closeout pass.
 
 ## Progress
 
 - 2026-09-08: PR #1560 merged and closed.
 - 2026-09-08: PR #1564 exposed seven review findings that separate closed decoding from asynchronous observation. The combined reviewed draft is preserved locally; PR #1564 is being rewritten to this narrower contract.
+- 2026-09-08: Three additional current-head findings proved webhook ownership and malformed continuation are a separate capability. PR #1564 was split again before edits at the 900-line boundary.
 
 ## References
 
 - [Routing hints](proactive-pr-steward.md)
+- [Owned webhook decoding and writing](proactive-pr-steward-webhook-decoder.md)
 - [Asynchronous exact-head observation](proactive-pr-steward-observation.md)
 - [Exact failure summaries](proactive-pr-steward-failure-summary.md)
