@@ -6,11 +6,11 @@ automation: manual
 owner: cypherkitty
 gizmo_id: companion-pairing-browser-adapters
 created_at: 2026-09-07T17:00:27Z
-updated_at: 2026-09-07T22:02:13Z
+updated_at: 2026-09-08T00:04:14Z
 source_issues: []
 related_prs: []
 depends_on:
-  - issues/companion-protocol-simulation/companion-pairing-activation-transaction.md
+  - issues/companion-protocol-simulation/companion-pairing-activation-adoption.md
 ---
 
 # Migrate companion pairing browser adapters
@@ -73,6 +73,9 @@ cleanup; it does not interpret portable pairing meaning.
   a committed pairing protocol result.
 - The prior web draft remains available in Git history but will be reapplied
   only from current main after the provider is merged.
+- An atomically persisted but inert activation candidate is not sufficient for
+  browser migration; all authoritative readers and reset/mutation paths must
+  complete gate-aware adoption first.
 
 ## References
 
