@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: companion-pairing-activation-candidate-storage
 created_at: 2026-09-08T08:40:09Z
-updated_at: 2026-09-08T10:59:38Z
+updated_at: 2026-09-08T11:29:08Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -78,6 +78,10 @@ product readers continue to ignore it until the dependent adoption slice.
   effect-boundary authority revalidation. The latest
   [superseding plan](../../plans/companion-protocol-simulation/20260908T105319Z-companion-pairing-activation-candidate-storage.md)
   raises the honest estimate and ceiling instead of compressing the design or tests.
+- 2026-09-08: Exact-head execution and review added post-gate expiry, DEK-role
+  separation, and test-owner requirements. The
+  [final superseding plan](../../plans/companion-protocol-simulation/20260908T112516Z-companion-pairing-activation-candidate-storage.md)
+  budgets the complete fixes below the repository hard limit.
 
 ## Findings and decisions
 
