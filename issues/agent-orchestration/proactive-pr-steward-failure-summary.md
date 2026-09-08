@@ -8,7 +8,8 @@ gizmo_id: proactive-pr-steward-failure-summary
 created_at: 2026-09-08T07:50:00Z
 updated_at: 2026-09-08T15:42:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1572
 depends_on:
   - issues/agent-orchestration/proactive-pr-steward-observation.md
 ---
@@ -42,6 +43,7 @@ PR Steward owns private fixed read-only GitHub readers that validate bounded ass
 - 2026-09-08: Repository-wide commit-to-PR uniqueness moved here after observation review proved one assigned-PR read cannot establish it.
 - 2026-09-08: Observation PR #1570 merged and closed in Workbench. Final failure reconciliation starts from fresh merged main.
 - 2026-09-08: Security review of the combined draft proved fixed evidence readers and terminal summary semantics need separate serial PRs. The 1,141-addition draft is preserved locally only as a reference.
+- 2026-09-08: PR #1572 opened at exact head `db952ff440e6be39ed69b947a9e1512a1b361db7`; exact-head Repository policy passed while review settles.
 
 ## References
 
