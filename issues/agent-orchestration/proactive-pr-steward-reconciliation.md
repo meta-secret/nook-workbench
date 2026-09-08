@@ -1,12 +1,12 @@
 ---
 title: Closed PR Steward routing contract
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-reconciliation
 created_at: 2026-09-08T05:58:27Z
-updated_at: 2026-09-08T07:50:00Z
+updated_at: 2026-09-08T09:43:30Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -38,7 +38,8 @@ PR Steward owns a closed `pr-steward-ndjson/v1` routing and sanitized-blocker co
 
 ## Progress
 
-- Waiting for compact routing hints to merge and close.
+- 2026-09-08: Compact routing hints merged in PR #1560 and its issue, worklog, and statistics were closed on Workbench `main`.
+- 2026-09-08: The closed routing slice started from fresh merged `origin/main`; exact failure reconciliation remains deferred.
 
 ## References
 
