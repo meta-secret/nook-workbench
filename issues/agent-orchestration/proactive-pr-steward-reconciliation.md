@@ -1,12 +1,12 @@
 ---
 title: Closed PR Steward routing contract
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-reconciliation
 created_at: 2026-09-08T05:58:27Z
-updated_at: 2026-09-08T12:04:00Z
+updated_at: 2026-09-08T12:34:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1564
@@ -31,16 +31,17 @@ PR Steward owns a closed source-discriminated routing and blocker codec with val
 
 ## Acceptance criteria
 
-- [ ] The codec rejects unknown fields, versions, variants, identifier shapes, URLs, and impossible source/metadata combinations.
-- [ ] Routing and blocker PR identifiers are accepted only through validated opaque construction.
-- [ ] The codec contains no live writer, webhook decoder, GitHub reader, or observation behavior.
-- [ ] Focused tests, Security review, hosted exact-head validation, readiness, merge, remote verification, and Workbench closeout pass.
+- [x] The codec rejects unknown fields, versions, variants, identifier shapes, URLs, and impossible source/metadata combinations.
+- [x] Routing and blocker PR identifiers are accepted only through validated opaque construction.
+- [x] The codec contains no live writer, webhook decoder, GitHub reader, or observation behavior.
+- [x] Focused tests, Security review, hosted exact-head validation, readiness, merge, remote verification, and Workbench closeout pass.
 
 ## Progress
 
 - 2026-09-08: PR #1560 merged and closed.
 - 2026-09-08: PR #1564 exposed seven review findings that separate closed decoding from asynchronous observation. The combined reviewed draft is preserved locally; PR #1564 is being rewritten to this narrower contract.
 - 2026-09-08: Three additional current-head findings proved webhook ownership and malformed continuation are a separate capability. PR #1564 was split again before edits at the 900-line boundary.
+- 2026-09-08: Contract-only PR #1564 merged at `ea13503ec9a71382f364a5c0f9ad7018b448f23d` with 648 additions, two files, exact-head policy success, Security acceptance, and zero unresolved threads.
 
 ## References
 
