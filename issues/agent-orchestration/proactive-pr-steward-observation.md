@@ -1,12 +1,12 @@
 ---
 title: Asynchronous PR Steward exact-head observation
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-observation
 created_at: 2026-09-08T10:59:04Z
-updated_at: 2026-09-08T13:45:00Z
+updated_at: 2026-09-08T14:56:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1570
@@ -33,17 +33,18 @@ PR Steward asynchronously reads the assigned pull request through one fixed boun
 
 ## Acceptance criteria
 
-- [ ] GitHub access is asynchronous, read-only, fixed to the assigned PR, bounded, injection-safe, and returns only validated exact-head evidence.
-- [ ] The subscriber remains responsive while observation is pending and propagates unexpected operational errors.
-- [ ] Foreign/stale events and every PR-less workflow job are suppressed; this slice never claims repository-wide uniqueness from one assigned-PR read.
-- [ ] Rejected or missing event URLs remain rejected instead of inheriting the assigned PR URL.
-- [ ] Focused tests, live subscriber canary, Security review, hosted exact-head validation, readiness, merge, remote verification, and Workbench closeout pass.
+- [x] GitHub access is asynchronous, read-only, fixed to the assigned PR, bounded, injection-safe, and returns only validated exact-head evidence.
+- [x] The subscriber remains responsive while observation is pending and propagates unexpected operational errors.
+- [x] Foreign/stale events and every PR-less workflow job are suppressed; this slice never claims repository-wide uniqueness from one assigned-PR read.
+- [x] Rejected or missing event URLs remain rejected instead of inheriting the assigned PR URL.
+- [x] Focused tests, live subscriber canary, Security review, hosted exact-head validation, readiness, merge, remote verification, and Workbench closeout pass.
 
 ## Progress
 
 - 2026-09-08: Closed codec PR #1564 and owned webhook decoder/writer PR #1568 are merged, remotely verified, and closed in Workbench. Observation implementation starts from fresh merged main.
 - 2026-09-08: Deferred review proved an assigned-PR read cannot establish repository-wide uniqueness for a PR-less job head. Commit-to-PR association moved to failure reconciliation; observation remains fail-closed.
 - 2026-09-08: PR #1570 opened at exact head `ce30153cf0d110312c9582ac8bfbe49c13ef48b1`; hosted policy and live v2 canary passed while review settles.
+- 2026-09-08: PR #1570 merged at `eb8e3b9330c75c99279200a72c542bf8dbbd9d54` after ordered-concurrency hardening, exact-head policy, live v2 canary, Security and SRE acceptance, and zero unresolved feedback.
 
 ## References
 
