@@ -2,7 +2,7 @@
 title: Companion protocol simulation
 status: in_progress
 created_at: 2026-09-07T05:32:41Z
-updated_at: 2026-09-08T08:40:09Z
+updated_at: 2026-09-08T14:59:00Z
 ---
 
 # Companion protocol simulation
@@ -16,16 +16,10 @@ browser transport or external infrastructure.
 ## Current state
 
 The framework, generated-WASM composition suite, paired identity browser
-adapters, side-effect-free pairing admission, and event-authority preparation
-are merged. PR #1546 adds a
-Rust-owned one-shot request and approval protocol across core,
-companion-WASM, and nook-WASM, with opaque admitted capabilities, exact sealed
-provider-recipient verification, direct dual-WASM composition, and a broad
-real-manager behavior matrix. PR #1552 consumes that admission with typed event
-records and proves the complete Simple-vault event authority in Rust without
-browser effects. Activation continues serially through inert candidate storage
-and then authoritative reader adoption. Browser adapter migration depends on
-both remaining slices.
+adapters, side-effect-free pairing admission, event-authority preparation, and
+atomic inert candidate persistence are merged. Strict typed readback is the
+next main-based serial slice; authoritative adoption and the browser adapter
+migration remain dependent successors.
 
 ## Decisions
 
@@ -43,10 +37,10 @@ both remaining slices.
 - Mechanical composition and broad dependency tests precede another behavior
   migration; browser transport simulations and TypeScript coverage remain
   separate capabilities.
-- Preparation, inert candidate persistence, and authoritative adoption are
-  separate functional PRs. One physical `nook_db` transaction will commit the
-  candidate; only the reader-adoption slice may make it authority or emit
-  acceptance.
+- Preparation, inert candidate persistence, strict readback, and authoritative
+  adoption are separate functional PRs. One physical `nook_db` transaction
+  publishes the candidate; only the adoption slice may make it authority or
+  emit acceptance.
 
 ## Issues
 
@@ -55,7 +49,8 @@ both remaining slices.
 - [x] [Migrate companion identity browser adapters](companion-identity-browser-adapters.md)
 - [x] [Implement companion pairing approval protocol](companion-pairing-approval-protocol.md)
 - [x] [Prepare companion pairing event authority](companion-pairing-activation-transaction.md)
-- [ ] [Persist companion pairing activation candidate](companion-pairing-activation-candidate-storage.md)
+- [x] [Persist companion pairing activation candidate](companion-pairing-activation-candidate-storage.md)
+- [ ] [Strictly read inert companion pairing activation candidate](companion-pairing-activation-candidate-readback.md)
 - [ ] [Adopt committed companion pairing activation](companion-pairing-activation-adoption.md)
 - [ ] [Migrate companion pairing browser adapters](companion-pairing-browser-adapters.md)
 
