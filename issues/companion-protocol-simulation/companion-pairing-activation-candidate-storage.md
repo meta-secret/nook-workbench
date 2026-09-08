@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: companion-pairing-activation-candidate-storage
 created_at: 2026-09-08T08:40:09Z
-updated_at: 2026-09-08T09:14:27Z
+updated_at: 2026-09-08T09:38:29Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -70,6 +70,10 @@ product readers continue to ignore it until the dependent adoption slice.
   `codex/companion-pairing-activation-storage-followup-draft` / `003be715`.
 - 2026-09-08: Claimed for implementation from merged `main` under the immutable
   [candidate-storage plan](../../plans/companion-protocol-simulation/20260908T090752Z-companion-pairing-activation-candidate-storage.md).
+- 2026-09-08: The initial plan omitted the private parent module that owns the
+  required public re-export. The narrowly corrected
+  [superseding plan](../../plans/companion-protocol-simulation/20260908T093726Z-companion-pairing-activation-candidate-storage.md)
+  adds only that path; the functional scope and estimate are unchanged.
 
 ## Findings and decisions
 
