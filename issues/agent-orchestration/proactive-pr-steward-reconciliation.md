@@ -1,64 +1,46 @@
 ---
-title: Exact PR Steward failure reconciliation
+title: Closed PR Steward routing contract
 status: proposed
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-reconciliation
 created_at: 2026-09-08T05:58:27Z
-updated_at: 2026-09-08T05:58:27Z
+updated_at: 2026-09-08T07:50:00Z
 source_issues: []
 related_prs: []
 depends_on:
   - issues/agent-orchestration/proactive-pr-steward.md
 ---
 
-# Exact PR Steward failure reconciliation
+# Closed PR Steward routing contract
 
 ## Context
 
-The [agent orchestration feature](README.md) first needs a stable compact event
-and review-routing contract. This dependent slice adds exact GitHub failure
-evidence only after that foundation is merged and verified.
+Compact producer hints must merge first. This slice then replaces them atomically with a strict owned codec and exact assigned-head observation boundary.
 
 ## Outcome
 
-PR Steward reconciles an actionable job, check, workflow, status, or pull
-request notification against the assigned exact head and returns a bounded
-failure summary. Gizmo receives the summary and routes the responsible Team
-Agent without investigating GitHub jobs itself.
+PR Steward owns a closed `pr-steward-ndjson/v1` routing and sanitized-blocker contract, observer lifecycle, and narrow read-only GitHub PR reader.
 
 ## Scope
 
-- Include fixed read-only GitHub API capabilities, exact object attribution,
-  bounded status pagination, safe URLs, failed-step summaries, sanitized
-  unavailable-evidence blockers, and exhaustive source/mismatch tests.
-- Exclude review/comment bodies, product repairs, technical adjudication,
-  persistent services, schedulers, queues, journals, retry, replay, and
-  compatibility or migration fallbacks.
+- Include strict closed encoding/decoding, owned webhook observation, a fixed `github.com` read-only assigned-PR request, exact-head binding, output limits, and malformed/API-unavailable blockers.
+- Remove `pr-steward-routing/v1` atomically; do not add compatibility readers or fallbacks.
+- Exclude failure reconciliation, failure summaries, review bodies, logs, product repairs, persistence, retry, and replay.
 
 ## Acceptance criteria
 
-- [ ] Every supported failure source is bound to the authorized repository,
-      assigned PR, exact head, triggering object, terminal state, and fixed
-      GitHub API host.
-- [ ] PR Steward emits a bounded actionable summary or sanitized blocker while
-      stale and foreign-head events remain suppressed.
-- [ ] Gizmo routes the summary to a functional specialist without performing
-      GitHub job investigation.
-- [ ] Focused source/mismatch/security tests, hosted exact-head validation,
-      readiness, merge verification, and Workbench closeout pass.
+- [ ] The codec rejects unknown fields and variants and never exposes raw input.
+- [ ] GitHub access is fixed to the assigned PR, `github.com`, GET, ten seconds, and two MiB.
+- [ ] Observer output is bound to the authorized repository, PR, and exact head.
+- [ ] Focused tests, Security review, hosted exact-head validation, readiness, merge, remote verification, and Workbench closeout pass.
 
 ## Progress
 
-- Waiting for the compact routing foundation to merge.
-
-## Findings and decisions
-
-- This is a sequential PR, created from fresh `origin/main` only after its
-  predecessor is remotely merged and closed out.
+- Waiting for compact routing hints to merge and close.
 
 ## References
 
-- [Routing foundation](proactive-pr-steward.md)
-- [Nook PR #1560](https://github.com/meta-secret/nook/pull/1560)
+- [Routing hints](proactive-pr-steward.md)
+- [Exact failure summaries](proactive-pr-steward-failure-summary.md)
