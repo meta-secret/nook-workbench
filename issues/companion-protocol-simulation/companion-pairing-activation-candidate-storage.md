@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: companion-pairing-activation-candidate-storage
 created_at: 2026-09-08T08:40:09Z
-updated_at: 2026-09-08T09:38:29Z
+updated_at: 2026-09-08T10:59:38Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -74,6 +74,10 @@ product readers continue to ignore it until the dependent adoption slice.
   required public re-export. The narrowly corrected
   [superseding plan](../../plans/companion-protocol-simulation/20260908T093726Z-companion-pairing-activation-candidate-storage.md)
   adds only that path; the functional scope and estimate are unchanged.
+- 2026-09-08: Hosted review required one exhaustive generated outcome and
+  effect-boundary authority revalidation. The latest
+  [superseding plan](../../plans/companion-protocol-simulation/20260908T105319Z-companion-pairing-activation-candidate-storage.md)
+  raises the honest estimate and ceiling instead of compressing the design or tests.
 
 ## Findings and decisions
 
