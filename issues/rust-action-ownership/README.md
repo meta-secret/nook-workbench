@@ -54,3 +54,5 @@ Delivery proceeds through cohesive domain PRs with their consumers and validatio
 - 2026-09-05T10:11:04Z: Enrollment admission PR1376 merged after full hosted validation, source SECURITY and readiness. The remaining inventory now selects the next bounded Rust action graph.
 
 - [Secret input and construction ownership](secret-input-ownership.md): current cohesive slice for password, mnemonic, card, validation, and YAML actions.
+
+- [Complete repository type-safety refactoring](global-type-safety-refactor.md): single large PR mission covering remaining product, browser, and tooling ownership; tests and reviews excluded from execution by user instruction.
