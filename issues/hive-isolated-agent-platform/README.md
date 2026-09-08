@@ -16,6 +16,8 @@ work, reviewed Nook pull requests, and verified Main outcomes.
 
 ## Focused issues
 
+- [Restore registry transfer throughput](restore-registry-transfer-throughput.md)
+  — corrects measured TCP congestion-control behavior on the registry path.
 - [Retain reusable BuildKit layers](retain-reusable-buildkit-layers.md)
   — prevents transient dependency-policy downloads from displacing reusable
   layers in persistent builder caches.
