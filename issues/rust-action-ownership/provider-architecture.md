@@ -1,14 +1,15 @@
 ---
 title: Own provider architecture and shared grant actions
-status: pending
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-provider-architecture
 created_at: 2026-09-08T00:50:00Z
-updated_at: 2026-09-08T00:50:00Z
+updated_at: 2026-09-08T01:18:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1553
 depends_on:
   - issues/rust-action-ownership/sync-projection-decisions.md
 ---
@@ -49,4 +50,7 @@ No provider I/O, authentication or authorization change, persistence or schema m
 
 ## Progress
 
-Selected from `origin/main` after PR #1550 as the next cohesive provider-architecture ownership boundary.
+Selected from `origin/main` after PR #1550 as the next cohesive provider-architecture ownership boundary. Delivered in PR #1553, squash-merged at `f3076683e83daff5843589e3a23932d462d2b6d7` after hosted run `34175371896`, remote Loom run `34175910263`, exact-head deployment `https://pr-1553.nokey-sh.pages.dev`, and readiness success. Authored additions: 191.
+
+The first hosted head exposed one clippy match-arm diagnostic; identical provider capability arms were consolidated, then the exact replacement head passed all required checks. Ownership denial and invalid-suppression prohibition are active in the completed architecture modules. Workbench worklog and stats are published.
+
