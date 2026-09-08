@@ -1,72 +1,54 @@
 ---
-title: Compact PR Steward event routing
+title: Compact PR Steward routing hints
 status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward
 created_at: 2026-09-08T03:23:45Z
-updated_at: 2026-09-08T05:58:27Z
+updated_at: 2026-09-08T07:50:00Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1560
 depends_on: []
 ---
 
-# Compact PR Steward event routing
+# Compact PR Steward routing hints
 
 ## Context
 
-The [agent orchestration feature](README.md) already provides a mission-scoped
-reactive PR event transport. Its minimal envelope does not identify a failed
-job or give Gizmo enough reconciled GitHub evidence to route a correction.
+The active PR mission already receives GitHub lifecycle events, but the producer needs compact directly attributable routing hints. The previous combined shape was too large and mixed routing with later GitHub reconciliation.
 
 ## Outcome
 
-During an active PR mission, PR Steward emits a compact, versioned routing
-notification for job, review, comment, check, workflow, and PR lifecycle
-activity. Review and comment notifications contain only the identifiers and
-location metadata Gizmo needs to select the responsible specialist.
+PR Steward receives bounded body-free hints for assigned PR activity. Review and comment hints give Gizmo only identifiers and code location metadata needed to choose a specialist.
 
 ## Scope
 
-- Include a closed versioned event contract, assigned-PR/head filtering,
-  compact review/comment routing metadata, focused tests, `workflow_job`
-  subscription configuration, and Cortex ownership updates.
-- Exclude product behavior, persistent schedulers, notification journals,
-  exact failure diagnosis, automatic repair, technical adjudication, full
-  review bodies, logs, secrets, and raw webhook payloads.
+- Extend the existing producer with flat `pr-steward-routing/v1` hints for directly attributable PR, review, review-comment, issue-comment, check, workflow, and workflow-job events.
+- Include focused attribution, exact-head-when-present, bounds, malformed-continuation, and payload-minimization tests plus the existing `workflow_job` ingress configuration.
+- Exclude a public decoder, observer lifecycle, GitHub reader, failure reconciliation, review bodies, logs, raw payloads, repair logic, persistence, replay, and fallback behavior.
 
 ## Acceptance criteria
 
-- [ ] Job, review, comment, check, workflow, and PR events produce compact
-      versioned records with exact routing identity and no full body or log.
-- [ ] Gizmo can route review/comment identifiers by repository path and line
-      without reading GitHub content or receiving unnecessary payload data.
-- [ ] The live webhook is configured for the exact required event set,
-      including `workflow_job`, with focused infrastructure validation.
-- [ ] Foreign-PR/head and malformed hints fail closed without adding
-      persistence, replay, or fallback behavior.
-- [ ] Focused Loom, infrastructure, security, hosted exact-head, readiness, and
-      merge verification evidence passes.
+- [ ] Directly attributable assigned-PR events produce compact bounded scalar routing hints.
+- [ ] Review/comment commit identity matches the payload PR head, and foreign, stale, status-only, PR-less, and malformed events are suppressed.
+- [ ] No body, text, log, secret, or raw payload crosses the PR Steward-to-Gizmo boundary.
+- [ ] The live hook retains `workflow_job`, with focused repository validation.
+- [ ] All superseded review threads are individually answered and resolved before fresh review.
+- [ ] Focused tests, Security review, hosted exact-head validation, readiness, merge, remote verification, and Workbench closeout pass.
 
 ## Progress
 
-- 2026-09-08: Gizmo established the PR path and began the implementation
-  mission from current `origin/main`.
-- 2026-09-08: The user selected sequential PRs when the combined implementation
-  approached the source-size budget. This issue now owns only the routing
-  foundation; exact failure reconciliation moves to the dependent slice.
+- 2026-09-08: The oversized routing foundation was rejected and preserved only as a local backup.
+- 2026-09-08: PR #1560 is being reconstructed from fresh `origin/main` as the first of three strictly serial PRs.
 
 ## Findings and decisions
 
-- PR Steward owns compact GitHub event observation. Gizmo retains specialist
-  routing, readiness, merge authorization, and the final verdict.
-- `workflow_job` is the explicit per-job event; existing check and workflow
-  events remain part of broader PR lifecycle reconciliation.
+- Gizmo receives compact review/comment routing metadata and routes specialists; it does not receive full comment content.
+- Closed decoding and GitHub reads belong to the next merged-dependent slice.
 
 ## References
 
-- [Nook PR #1492](https://github.com/meta-secret/nook/pull/1492)
-- [Nook PR #1495](https://github.com/meta-secret/nook/pull/1495)
-- [Exact failure reconciliation](proactive-pr-steward-reconciliation.md)
+- [Closed routing contract](proactive-pr-steward-reconciliation.md)
+- [Exact failure summaries](proactive-pr-steward-failure-summary.md)
