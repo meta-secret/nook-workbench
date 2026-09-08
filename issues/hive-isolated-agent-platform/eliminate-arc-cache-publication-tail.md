@@ -1,15 +1,17 @@
 ---
 title: Eliminate the ARC verified-cache publication tail
-status: in_progress
+status: done
 priority: high
 automation: agent
 owner: cypherkitty
 created_at: 2026-08-22T21:33:00Z
-updated_at: 2026-08-23T05:49:00Z
+updated_at: 2026-09-08T14:00:23Z
 source_issues: []
 related_prs:
   - 1077
   - 1083
+  - 1562
+  - 1566
 depends_on:
   - issues/hive-isolated-agent-platform/route-trusted-main-workloads-through-arc.md
 ---
@@ -62,6 +64,18 @@ sharing a writable BuildKit daemon or another job's mutable filesystem.
   requests local seed promotion. Reopened the issue for a bounded follow-up
   that lets successful trusted jobs request promotion without exposing the host
   cache-control directory to job code.
+- 2026-09-08: PR 1562 reduced Docker cache probes from fourteen to three for
+  native and WASM, to one for preflight and web, and to zero for the portable
+  WASM proof. It also isolated cache publication from required outcome gates,
+  published one verified native graph, added phase telemetry, pinned a current
+  immutable Dockerfile frontend, and restored the intended four-shard BuildKit
+  fleet without deleting caches.
+- 2026-09-08: PR 1566 repaired the public Main Rust task dispatch exposed by
+  the first replacement run. The exact merge commit's Main run passed. Native
+  verification fell from 14m20s to 9m05s; setup fell from 1m06s to 3s and
+  publication from 9m40s to 6m06s. Export telemetry attributed 190.3s to
+  BuildKit preparation and 16.3s to registry sending, while sccache reported
+  2,760 hits with no misses or errors.
 
 ## Findings and decisions
 
@@ -76,6 +90,12 @@ sharing a writable BuildKit daemon or another job's mutable filesystem.
   workload needs a larger BuildKit memory budget, so seven fully saturated Hive
   microVMs are the safe per-node capacity while the scale set may queue up to
   ten.
+- Required validation and cache publication remain on the same verified shard,
+  but lightweight outcome gates let downstream work depend on validation
+  without inheriting publisher latency.
+- Registry bandwidth is not the dominant residual cost. The measured send took
+  16.3s; content preparation and compression took 190.3s, so future tuning must
+  preserve portable-cache correctness while targeting BuildKit preparation.
 
 ## References
 
@@ -85,3 +105,7 @@ sharing a writable BuildKit daemon or another job's mutable filesystem.
 - Hive run 32599101547
 - Exact-head Hive smoke run 32620006296
 - Exact-head ordinary smoke run 32620238859
+- Nook PR 1562
+- Nook PR 1566
+- Main run 34232082164
+- Worklog 2026-09-08T14-00-23Z-arc-cache-publication-throughput.md
