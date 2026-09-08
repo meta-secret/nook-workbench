@@ -1,12 +1,12 @@
 ---
 title: Exact PR Steward failure summaries
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-failure-summary
 created_at: 2026-09-08T07:50:00Z
-updated_at: 2026-09-08T13:45:00Z
+updated_at: 2026-09-08T15:00:00Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -42,6 +42,7 @@ PR Steward uses fixed read-only GitHub APIs to bind the triggering job, workflow
 
 - Waiting for asynchronous exact-head observation to merge and close.
 - 2026-09-08: Repository-wide commit-to-PR uniqueness moved here after observation review proved one assigned-PR read cannot establish it.
+- 2026-09-08: Observation PR #1570 merged and closed in Workbench. Final failure reconciliation starts from fresh merged main.
 
 ## References
 
