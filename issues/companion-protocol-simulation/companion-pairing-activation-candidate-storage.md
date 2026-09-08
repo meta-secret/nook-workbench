@@ -1,12 +1,12 @@
 ---
 title: Persist companion pairing activation candidate
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: companion-pairing-activation-candidate-storage
 created_at: 2026-09-08T08:40:09Z
-updated_at: 2026-09-08T08:40:09Z
+updated_at: 2026-09-08T09:14:27Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -68,6 +68,8 @@ product readers continue to ignore it until the dependent adoption slice.
   approached the authored-line ceiling and encouraged harmful line-oriented
   optimization. The complete draft is preserved locally at
   `codex/companion-pairing-activation-storage-followup-draft` / `003be715`.
+- 2026-09-08: Claimed for implementation from merged `main` under the immutable
+  [candidate-storage plan](../../plans/companion-protocol-simulation/20260908T090752Z-companion-pairing-activation-candidate-storage.md).
 
 ## Findings and decisions
 
