@@ -1,12 +1,12 @@
 ---
 title: Own remaining vault policy adapter actions
-status: ready
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-runtime-policy-actions
 created_at: 2026-09-08T05:58:00Z
-updated_at: 2026-09-08T05:58:00Z
+updated_at: 2026-09-08T12:03:22Z
 source_issues: []
 related_prs: []
 depends_on: [rust-action-ownership-foundation]
@@ -44,3 +44,6 @@ Runtime policy parsing belongs to `VaultRuntimePolicy`, and verified device/stor
 
 - Use existing domain owners and associated functions; do not add compatibility free-function wrappers.
 - Keep this bounded to two policy modules and below the 2,000-authored-addition ceiling.
+
+
+- 2026-09-08: Claimed for the next bounded policy ownership slice after PR #1561; implementation is in progress on the runtime-policy branch.
