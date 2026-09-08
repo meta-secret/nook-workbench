@@ -1,12 +1,12 @@
 ---
 title: Compact PR Steward routing hints
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward
 created_at: 2026-09-08T03:23:45Z
-updated_at: 2026-09-08T07:50:00Z
+updated_at: 2026-09-08T09:39:34Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/1560
@@ -31,17 +31,18 @@ PR Steward receives bounded body-free hints for assigned PR activity. Review and
 
 ## Acceptance criteria
 
-- [ ] Directly attributable assigned-PR events produce compact bounded scalar routing hints.
-- [ ] Review/comment commit identity matches the payload PR head, and foreign, stale, status-only, PR-less, and malformed events are suppressed.
-- [ ] No body, text, log, secret, or raw payload crosses the PR Steward-to-Gizmo boundary.
-- [ ] The live hook retains `workflow_job`, with focused repository validation.
-- [ ] All superseded review threads are individually answered and resolved before fresh review.
-- [ ] Focused tests, Security review, hosted exact-head validation, readiness, merge, remote verification, and Workbench closeout pass.
+- [x] Directly attributable assigned-PR events produce compact bounded scalar routing hints.
+- [x] Review/comment commit identity matches the payload PR head, and foreign, stale, status-only, PR-less, and malformed events are suppressed.
+- [x] No body, text, log, secret, or raw payload crosses the PR Steward-to-Gizmo boundary.
+- [x] The live hook retains `workflow_job`, with focused repository validation.
+- [x] All superseded review threads are individually answered and resolved before fresh review.
+- [x] Focused tests, Security review, hosted exact-head validation, readiness, merge, remote verification, and Workbench closeout pass.
 
 ## Progress
 
 - 2026-09-08: The oversized routing foundation was rejected and preserved only as a local backup.
 - 2026-09-08: PR #1560 is being reconstructed from fresh `origin/main` as the first of three strictly serial PRs.
+- 2026-09-08: PR #1560 merged at `67b3ebaa340d890375ae7325dbb396ebc905abd4` after 30 individualized review-thread resolutions, exact-head validation, deployment, Security acceptance, and readiness verification.
 
 ## Findings and decisions
 
