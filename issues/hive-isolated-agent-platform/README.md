@@ -16,6 +16,9 @@ work, reviewed Nook pull requests, and verified Main outcomes.
 
 ## Focused issues
 
+- [Retain reusable BuildKit layers](retain-reusable-buildkit-layers.md)
+  — prevents transient dependency-policy downloads from displacing reusable
+  layers in persistent builder caches.
 - [Build the isolated Hive agent platform](build-k0s-kata-hive-agent-platform.md)
   — delivered k0s, Dragonball, Neo4j, the four-worker pool, publication
   capabilities, cache topology, and operational verification.
