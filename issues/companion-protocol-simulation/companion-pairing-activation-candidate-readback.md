@@ -1,12 +1,12 @@
 ---
 title: Strictly read inert companion pairing activation candidate
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: companion-pairing-activation-candidate-readback
 created_at: 2026-09-08T13:09:46Z
-updated_at: 2026-09-08T13:09:46Z
+updated_at: 2026-09-08T15:04:00Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -56,6 +56,8 @@ a typed rejection. No authoritative product reader adopts the candidate.
 - 2026-09-08: Split from candidate persistence after measured complete readback
   work exceeded the repository hard limit; no successor implementation starts
   until the persistence PR is merged and closed.
+- 2026-09-08: Candidate persistence is merged and fully closed. Claimed this
+  successor from fresh `main` for one independently useful strict-readback PR.
 
 ## Findings and decisions
 
