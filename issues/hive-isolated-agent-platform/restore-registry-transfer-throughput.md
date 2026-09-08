@@ -1,14 +1,14 @@
 ---
 title: Restore registry transfer throughput
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: codex
 gizmo_id: registry-network-throughput
 created_at: 2026-09-08T03:52:45Z
-updated_at: 2026-09-08T04:22:00Z
+updated_at: 2026-09-08T04:56:50Z
 source_issues: []
-related_prs: []
+related_prs: [1559]
 depends_on: []
 ---
 
@@ -31,10 +31,10 @@ Identify and correct the network constraint using controlled before-and-after me
 
 ## Acceptance criteria
 
-- [ ] Measurements distinguish destination-specific throughput from total access-link capacity.
-- [ ] A supported correction materially improves repeated comparable transfers.
-- [ ] Existing cluster and registry connectivity remain healthy.
-- [ ] Any persistent configuration change has reviewed repository provenance.
+- [x] Measurements distinguish destination-specific throughput from total access-link capacity.
+- [x] A supported correction materially improves repeated comparable transfers.
+- [x] Existing cluster and registry connectivity remain healthy.
+- [x] Any persistent configuration change has reviewed repository provenance.
 
 ## Progress
 
@@ -42,6 +42,7 @@ Identify and correct the network constraint using controlled before-and-after me
 - 2026-09-08: A standard speed test measured 226.77 Mbps download. Controlled actual-BuildKit transfers showed CUBIC backing off heavily on the registry path. BBR completed the same 100 MB range in 9.25 seconds where CUBIC timed out after 45 seconds with 49 MB received.
 - 2026-09-08: Persisted BBR on the registry host and affected worker. Updated the existing BuildKit network namespace without restart. Two final transfers completed in 10.06 and 16.63 seconds. Restored scheduling after verification; all four nodes are Ready and schedulable.
 - 2026-09-08: Managed configuration task passed on both intended hosts. Independent SRE review passed; repository publication and hosted validation are underway.
+- 2026-09-08: Addressed three rollout-safety review findings with explicit standalone configuration, actual home BuildKit namespace selection, and operational contracts. Final hosted checks, preview, and readiness passed. PR #1559 merged as `09537a7f75da55eec282cc49aad4828cb4f1b431` at 04:56:50 UTC; all four nodes remain schedulable.
 
 ## Findings and decisions
 
@@ -51,3 +52,4 @@ Identify and correct the network constraint using controlled before-and-after me
 ## References
 
 - [Related cache retention issue](retain-reusable-buildkit-layers.md)
+- [Merged implementation PR](https://github.com/meta-secret/nook/pull/1559)
