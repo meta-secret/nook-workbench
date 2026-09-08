@@ -6,19 +6,20 @@ automation: manual
 owner: cypherkitty
 gizmo_id: companion-pairing-activation-adoption
 created_at: 2026-09-08T00:04:14Z
-updated_at: 2026-09-08T00:04:14Z
+updated_at: 2026-09-08T08:40:09Z
 source_issues: []
 related_prs: []
 depends_on:
-  - issues/companion-protocol-simulation/companion-pairing-activation-transaction.md
+  - issues/companion-protocol-simulation/companion-pairing-activation-candidate-storage.md
 ---
 
 # Adopt committed companion pairing activation
 
 ## Context
 
-The predecessor commits one complete activation candidate atomically inside
-`nook_db`, but intentionally leaves that candidate inert. Current event,
+The predecessor will commit one complete activation candidate atomically inside
+`nook_db`, while PR #1552 supplies its side-effect-free event-authority
+preparation. The candidate remains inert. Current event,
 provider, pairing, mutation, and reset paths span separate databases and must
 adopt one gate-aware authority model before pairing can return acceptance.
 
@@ -63,6 +64,8 @@ only complete adoption emits the Rust-owned accepted acknowledgement.
 - 2026-09-08: Split from the original atomic-activation issue after repository
   inventory showed that complete reader and mutation adoption would exceed the
   2,000-authored-addition PR limit when combined with candidate persistence.
+- 2026-09-08: Dependency retargeted to the dedicated candidate-storage issue
+  after PR #1552 was narrowed to side-effect-free preparation.
 
 ## Findings and decisions
 
