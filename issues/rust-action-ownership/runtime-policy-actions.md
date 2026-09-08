@@ -1,14 +1,14 @@
 ---
 title: Own remaining vault policy adapter actions
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-runtime-policy-actions
 created_at: 2026-09-08T05:58:00Z
-updated_at: 2026-09-08T12:03:22Z
+updated_at: 2026-09-08T12:50:50Z
 source_issues: []
-related_prs: []
+related_prs: [1565]
 depends_on: [rust-action-ownership-foundation]
 ---
 
@@ -30,11 +30,11 @@ Runtime policy parsing belongs to `VaultRuntimePolicy`, and verified device/stor
 
 ## Acceptance criteria
 
-- [ ] No production free functions remain in either policy module.
-- [ ] Runtime timeout and sync parsing behavior remains unchanged.
-- [ ] Verified device/store deserialization preserves typed validation and wire compatibility.
-- [ ] Dylint accepts both modules while ordinary `cfg(test)` helpers remain allowed.
-- [ ] Hosted validation, exact-head readiness, remote Loom, merge, and Workbench closeout pass.
+- [x] No production free functions remain in either policy module.
+- [x] Runtime timeout and sync parsing behavior remains unchanged.
+- [x] Verified device/store deserialization preserves typed validation and wire compatibility.
+- [x] Dylint accepts both modules while ordinary `cfg(test)` helpers remain allowed.
+- [x] Hosted validation, exact-head readiness, remote Loom, merge, and Workbench closeout pass.
 
 ## Progress
 
@@ -47,3 +47,8 @@ Runtime policy parsing belongs to `VaultRuntimePolicy`, and verified device/stor
 
 
 - 2026-09-08: Claimed for the next bounded policy ownership slice after PR #1561; implementation is in progress on the runtime-policy branch.
+
+
+- 2026-09-08: PR #1565 moved runtime parsing onto `VaultRuntimePolicy`, verified identifier deserializers onto `VerifiedVaultAccess`, and enum-owned passkey evidence deserializers onto their evidence types. The established `cfg(test)` exception remains intact.
+- 2026-09-08: Final hosted validation run `34227098204`, exact-head deployment, readiness, and remote Loom run `34228145336` passed.
+- 2026-09-08: Squash-merged as `1b0f3bdd5ab86f4d78236cd482abc9d817f64c73`; `origin/main` was verified at the same SHA.
