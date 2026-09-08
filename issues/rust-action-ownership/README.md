@@ -52,3 +52,5 @@ Delivery proceeds through cohesive domain PRs with their consumers and validatio
 - 2026-09-05T06:31:27Z: OAuth origin policy PR1366 merged after four current-base validation cycles, source SECURITY and readiness.
 - 2026-09-05T09:33:22Z: Event quarantine publication PR1372 merged after exact-head hosted validation, source SECURITY and readiness. Enrollment envelope admission is the active next boundary.
 - 2026-09-05T10:11:04Z: Enrollment admission PR1376 merged after full hosted validation, source SECURITY and readiness. The remaining inventory now selects the next bounded Rust action graph.
+
+- [Secret input and construction ownership](secret-input-ownership.md): current cohesive slice for password, mnemonic, card, validation, and YAML actions.
