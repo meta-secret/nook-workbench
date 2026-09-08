@@ -8,7 +8,8 @@ gizmo_id: proactive-pr-steward-webhook-decoder
 created_at: 2026-09-08T12:04:00Z
 updated_at: 2026-09-08T12:39:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1568
 depends_on:
   - issues/agent-orchestration/proactive-pr-steward-reconciliation.md
 ---
@@ -41,6 +42,7 @@ PR Steward owns webhook parsing, source-specific routing metadata, body-free rec
 ## Progress
 
 - 2026-09-08: Closed codec PR #1564 merged and its Workbench issue, worklog, and statistics were closed. Implementation starts from fresh merged main.
+- 2026-09-08: PR #1568 opened at exact head `e2432e7aa45766fc2b6ab2d35476a78fc9bd3963`; hosted Repository policy passed and live subscriber validation is in progress.
 
 ## References
 
