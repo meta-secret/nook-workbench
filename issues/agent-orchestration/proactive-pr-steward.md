@@ -1,18 +1,19 @@
 ---
-title: Proactive PR Steward failure summaries
+title: Compact PR Steward event routing
 status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward
 created_at: 2026-09-08T03:23:45Z
-updated_at: 2026-09-08T03:23:45Z
+updated_at: 2026-09-08T05:58:27Z
 source_issues: []
-related_prs: []
+related_prs:
+  - https://github.com/meta-secret/nook/pull/1560
 depends_on: []
 ---
 
-# Proactive PR Steward failure summaries
+# Compact PR Steward event routing
 
 ## Context
 
@@ -22,30 +23,30 @@ job or give Gizmo enough reconciled GitHub evidence to route a correction.
 
 ## Outcome
 
-During an active PR mission, PR Steward receives job and broader PR lifecycle
-events, reconciles relevant GitHub state itself, and sends Gizmo a concise,
-actionable summary. Gizmo routes the owning team without independently
-investigating GitHub jobs.
+During an active PR mission, PR Steward emits a compact, versioned routing
+notification for job, review, comment, check, workflow, and PR lifecycle
+activity. Review and comment notifications contain only the identifiers and
+location metadata Gizmo needs to select the responsible specialist.
 
 ## Scope
 
-- Include typed job/check/workflow failure notifications, PR association,
-  exact-head validation, GitHub API reconciliation, summary content, focused
-  tests, webhook subscription configuration, and Cortex ownership updates.
+- Include a closed versioned event contract, assigned-PR/head filtering,
+  compact review/comment routing metadata, focused tests, `workflow_job`
+  subscription configuration, and Cortex ownership updates.
 - Exclude product behavior, persistent schedulers, notification journals,
-  automatic code repair, PR Steward technical adjudication, and secrets or raw
-  logs in summaries.
+  exact failure diagnosis, automatic repair, technical adjudication, full
+  review bodies, logs, secrets, and raw webhook payloads.
 
 ## Acceptance criteria
 
-- [ ] Individual failed Actions jobs and other unsuccessful PR lifecycle states
-      produce an actionable PR Steward summary with exact identity and URLs.
-- [ ] PR Steward uses current GitHub API evidence and reports the first useful
-      failure context; Gizmo does not inspect GitHub jobs directly.
+- [ ] Job, review, comment, check, workflow, and PR events produce compact
+      versioned records with exact routing identity and no full body or log.
+- [ ] Gizmo can route review/comment identifiers by repository path and line
+      without reading GitHub content or receiving unnecessary payload data.
 - [ ] The live webhook is configured for the exact required event set,
       including `workflow_job`, with focused infrastructure validation.
-- [ ] Missed or ambiguous hints fail closed into bounded PR Steward
-      reconciliation without adding persistence or fallback behavior.
+- [ ] Foreign-PR/head and malformed hints fail closed without adding
+      persistence, replay, or fallback behavior.
 - [ ] Focused Loom, infrastructure, security, hosted exact-head, readiness, and
       merge verification evidence passes.
 
@@ -53,11 +54,14 @@ investigating GitHub jobs.
 
 - 2026-09-08: Gizmo established the PR path and began the implementation
   mission from current `origin/main`.
+- 2026-09-08: The user selected sequential PRs when the combined implementation
+  approached the source-size budget. This issue now owns only the routing
+  foundation; exact failure reconciliation moves to the dependent slice.
 
 ## Findings and decisions
 
-- PR Steward owns GitHub observation and the diagnostic summary. Gizmo retains
-  functional routing, readiness, merge authorization, and the final verdict.
+- PR Steward owns compact GitHub event observation. Gizmo retains specialist
+  routing, readiness, merge authorization, and the final verdict.
 - `workflow_job` is the explicit per-job event; existing check and workflow
   events remain part of broader PR lifecycle reconciliation.
 
@@ -65,3 +69,4 @@ investigating GitHub jobs.
 
 - [Nook PR #1492](https://github.com/meta-secret/nook/pull/1492)
 - [Nook PR #1495](https://github.com/meta-secret/nook/pull/1495)
+- [Exact failure reconciliation](proactive-pr-steward-reconciliation.md)
