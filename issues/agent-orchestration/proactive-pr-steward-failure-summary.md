@@ -1,51 +1,51 @@
 ---
-title: Exact PR Steward failure summaries
+title: Bounded PR Steward failure evidence
 status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-failure-summary
 created_at: 2026-09-08T07:50:00Z
-updated_at: 2026-09-08T15:00:00Z
+updated_at: 2026-09-08T15:42:00Z
 source_issues: []
 related_prs: []
 depends_on:
   - issues/agent-orchestration/proactive-pr-steward-observation.md
 ---
 
-# Exact PR Steward failure summaries
+# Bounded PR Steward failure evidence
 
 ## Context
 
-Once closed routing and asynchronous exact-head observation are merged, PR Steward can reconcile unsuccessful GitHub objects without making Gizmo investigate jobs.
+Once observation is merged, PR Steward needs private fixed readers and fail-closed association/status evidence before terminal summaries can be trusted.
 
 ## Outcome
 
-PR Steward uses fixed read-only GitHub APIs to bind the triggering job, workflow, check, status, or PR object to the assigned exact head and sends Gizmo a bounded actionable summary or sanitized blocker.
+PR Steward owns private fixed read-only GitHub readers that validate bounded association and status evidence. This slice does not yet emit terminal failure summaries.
 
 ## Scope
 
-- Introduce the next closed schema version with bounded commit-to-pull-request association, exact failure summaries, triggering-object binding, bounded pagination, terminal-state handling, safe URLs, and sanitized blockers.
+- Include a private concrete command runner, owned fixed reader bundle, bounded commit-to-pull-request association, strict status pagination, exact identity/head validation, safe URLs, and typed unavailable or mismatch evidence.
 - Route a PR-less workflow job only when a fixed read-only association query proves exactly one open pull request and it is the assigned PR at the exact job head; suppress zero, multiple, foreign, and stale matches.
-- Remove the prior decoder atomically; do not add compatibility readers or fallbacks.
-- Exclude product repairs, technical adjudication, review bodies, job output, persistence, schedulers, queues, retry, and replay.
+- Exclude terminal summary records, observer emission changes, product repairs, technical adjudication, review bodies, job output, persistence, schedulers, queues, retry, replay, compatibility readers, and fallbacks.
 
 ## Acceptance criteria
 
-- [ ] Every supported failure source is bound to the authorized repository, assigned PR, exact head, and triggering object.
 - [ ] PR-less workflow-job attribution is proven by a bounded repository association query and fails closed unless the assigned PR is the unique match.
-- [ ] Pagination and response sizes are bounded, URLs are safe, and unavailable evidence yields only a sanitized blocker.
-- [ ] Gizmo receives enough summary to route a specialist and never investigates GitHub jobs itself.
-- [ ] Focused source, mismatch, terminal-state, pagination, Security, hosted exact-head, readiness, merge, remote verification, and Workbench evidence pass.
+- [ ] Every association and status page item is structurally valid; one malformed item invalidates the evidence instead of being ignored.
+- [ ] The concrete command runner is private and consumers can invoke only fixed owned read capabilities.
+- [ ] Focused invocation, association, malformed-item, pagination, Security, hosted exact-head, readiness, merge, remote verification, and Workbench evidence pass.
 
 ## Progress
 
 - Waiting for asynchronous exact-head observation to merge and close.
 - 2026-09-08: Repository-wide commit-to-PR uniqueness moved here after observation review proved one assigned-PR read cannot establish it.
 - 2026-09-08: Observation PR #1570 merged and closed in Workbench. Final failure reconciliation starts from fresh merged main.
+- 2026-09-08: Security review of the combined draft proved fixed evidence readers and terminal summary semantics need separate serial PRs. The 1,141-addition draft is preserved locally only as a reference.
 
 ## References
 
 - [Routing hints](proactive-pr-steward.md)
 - [Closed routing contract](proactive-pr-steward-reconciliation.md)
 - [Asynchronous exact-head observation](proactive-pr-steward-observation.md)
+- [Terminal failure summaries](proactive-pr-steward-terminal-summary.md)
