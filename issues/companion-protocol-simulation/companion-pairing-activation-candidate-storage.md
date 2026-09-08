@@ -1,14 +1,15 @@
 ---
 title: Persist companion pairing activation candidate
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: companion-pairing-activation-candidate-storage
 created_at: 2026-09-08T08:40:09Z
-updated_at: 2026-09-08T11:29:08Z
+updated_at: 2026-09-08T14:59:00Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1563
 depends_on:
   - issues/companion-protocol-simulation/companion-pairing-activation-transaction.md
 ---
@@ -25,9 +26,9 @@ and never recovered by stacking the former oversized branch.
 ## Outcome
 
 Rust consumes the prepared capability and durably commits one complete inert
-activation candidate in a single existing `nook_db` transaction. A strict,
-gate-validating Rust reader can load the candidate, while all authoritative
-product readers continue to ignore it until the dependent adoption slice.
+activation candidate in a single existing `nook_db` transaction. The typed
+publication gate and candidate remain outside authoritative product scans;
+strict readback is owned by the next independently useful serial slice.
 
 ## Scope
 
@@ -39,28 +40,28 @@ product readers continue to ignore it until the dependent adoption slice.
 - Persist activation-namespaced event rows, sealed providers, pairing state,
   and the immutable integrity gate in one existing vault-store transaction.
 - Reject replay and concurrent commits so exactly one inert candidate wins.
-- Strictly decode typed V1 rows and preserve a distinct unsupported-schema
-  failure; validate all digests and correlations during load.
+- Encode typed V1 candidate rows and the immutable integrity gate without
+  making a reader or authoritative product path observe them.
 - Add faithful in-memory and real IndexedDB behavior tests for success,
-  expiry/abort, replay, concurrency, reload, corruption, physical isolation,
-  schema failures, and secret non-exposure.
+  expiry/abort, replay, concurrency, physical isolation, and secret
+  non-exposure.
 - Exclude authoritative reader adoption, accepted acknowledgement, reset,
   TypeScript orchestration, and browser transport migration.
 
 ## Acceptance criteria
 
-- [ ] Failure before transaction completion leaves no gate-readable candidate
+- [x] Failure before transaction completion leaves no published candidate
       or accepted result.
-- [ ] Candidate payloads and gate commit atomically in one existing physical
+- [x] Candidate payloads and gate commit atomically in one existing physical
       store and remain absent from authoritative event scans.
-- [ ] Replay and concurrency produce exactly one durable candidate.
-- [ ] Strict typed schema decoding distinguishes unsupported versions from
-      corruption and rejects unknown fields.
-- [ ] Provider credentials remain sealed and transient DEK plaintext is
+- [x] Replay and concurrency produce exactly one durable candidate.
+- [x] Typed V1 rows and integrity digests are committed behind one immutable
+      publication gate without exposing a read API.
+- [x] Provider credentials remain sealed and transient DEK plaintext is
       zeroized.
-- [ ] Real in-memory and IndexedDB tests cover every validation and durable
-      failure boundary without mocks.
-- [ ] Security review and hosted Rust/WASM checks pass on one exact head.
+- [x] Real in-memory and IndexedDB tests cover validation and durable failure
+      boundaries without mocks.
+- [x] Security review and hosted Rust/WASM checks pass on one exact head.
 
 ## Progress
 
@@ -82,6 +83,16 @@ product readers continue to ignore it until the dependent adoption slice.
   separation, and test-owner requirements. The
   [final superseding plan](../../plans/companion-protocol-simulation/20260908T112516Z-companion-pairing-activation-candidate-storage.md)
   budgets the complete fixes below the repository hard limit.
+- 2026-09-08: Complete strict readback plus required recipient-authority and
+  fixture-ownership fixes measured above 2,000 authored additions. The
+  [serial execution plan](../../plans/companion-protocol-simulation/20260908T131050Z-companion-pairing-activation-candidate-storage.md)
+  preserved atomic persistence as this PR and assigned strict readback to its
+  own main-based successor without compressing tests or implementation.
+- 2026-09-08: [PR #1563](https://github.com/meta-secret/nook/pull/1563)
+  squash-merged at `f126ee9d81e57964361489841c37c8e5f1ae9704`
+  after exact-head hosted validation, clean Codex review, zero unresolved
+  threads, Security PASS, Web PASS, successful deployment, and repository
+  readiness.
 
 ## Findings and decisions
 
@@ -95,6 +106,9 @@ product readers continue to ignore it until the dependent adoption slice.
   migration.
 - This issue ends with an inert candidate. Only the adoption successor may make
   it product authority or emit acceptance.
+- Strict typed readback is the explicit
+  [candidate-readback issue](companion-pairing-activation-candidate-readback.md)
+  and immediate next serial slice.
 
 ## References
 
