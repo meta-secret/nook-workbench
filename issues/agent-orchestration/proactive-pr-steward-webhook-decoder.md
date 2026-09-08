@@ -1,12 +1,12 @@
 ---
 title: Owned PR Steward webhook decoding and writing
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-webhook-decoder
 created_at: 2026-09-08T12:04:00Z
-updated_at: 2026-09-08T12:04:00Z
+updated_at: 2026-09-08T12:39:00Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -40,7 +40,7 @@ PR Steward owns webhook parsing, source-specific routing metadata, body-free rec
 
 ## Progress
 
-- Waiting for the closed codec PR to merge and close.
+- 2026-09-08: Closed codec PR #1564 merged and its Workbench issue, worklog, and statistics were closed. Implementation starts from fresh merged main.
 
 ## References
 
