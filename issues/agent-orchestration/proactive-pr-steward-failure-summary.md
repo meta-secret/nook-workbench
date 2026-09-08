@@ -47,7 +47,7 @@ PR Steward can read bounded failure details for the routed repository, pull requ
 
 ## References
 
-- [Superseding failure-detail reader plan](../plans/agent-orchestration/20260908T173149Z-pr-steward-failure-detail-readers.md)
+- [Superseding failure-detail reader plan](https://github.com/meta-secret/nook-workbench/blob/main/plans/agent-orchestration/20260908T173149Z-pr-steward-failure-detail-readers.md)
 - [Closed routing contract](proactive-pr-steward-reconciliation.md)
 - [Asynchronous observation](proactive-pr-steward-observation.md)
 - [Terminal failure summaries](proactive-pr-steward-terminal-summary.md)
