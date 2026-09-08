@@ -6,18 +6,18 @@ automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-failure-summary
 created_at: 2026-09-08T07:50:00Z
-updated_at: 2026-09-08T07:50:00Z
+updated_at: 2026-09-08T10:59:04Z
 source_issues: []
 related_prs: []
 depends_on:
-  - issues/agent-orchestration/proactive-pr-steward-reconciliation.md
+  - issues/agent-orchestration/proactive-pr-steward-observation.md
 ---
 
 # Exact PR Steward failure summaries
 
 ## Context
 
-Once closed routing and exact-head observation are merged, PR Steward can reconcile unsuccessful GitHub objects without making Gizmo investigate jobs.
+Once closed routing and asynchronous exact-head observation are merged, PR Steward can reconcile unsuccessful GitHub objects without making Gizmo investigate jobs.
 
 ## Outcome
 
@@ -25,9 +25,9 @@ PR Steward uses fixed read-only GitHub APIs to bind the triggering job, workflow
 
 ## Scope
 
-- Introduce `pr-steward-ndjson/v2` with exact failure summaries, triggering-object binding, bounded pagination, terminal-state handling, safe URLs, and sanitized blockers.
-- Remove the v1 decoder atomically; do not add compatibility readers or fallbacks.
-- Exclude product repairs, technical adjudication, review bodies, raw logs, persistence, schedulers, queues, retry, and replay.
+- Introduce the next closed schema version with exact failure summaries, triggering-object binding, bounded pagination, terminal-state handling, safe URLs, and sanitized blockers.
+- Remove the prior decoder atomically; do not add compatibility readers or fallbacks.
+- Exclude product repairs, technical adjudication, review bodies, job output, persistence, schedulers, queues, retry, and replay.
 
 ## Acceptance criteria
 
@@ -38,9 +38,10 @@ PR Steward uses fixed read-only GitHub APIs to bind the triggering job, workflow
 
 ## Progress
 
-- Waiting for the closed routing contract to merge and close.
+- Waiting for asynchronous exact-head observation to merge and close.
 
 ## References
 
 - [Routing hints](proactive-pr-steward.md)
 - [Closed routing contract](proactive-pr-steward-reconciliation.md)
+- [Asynchronous exact-head observation](proactive-pr-steward-observation.md)
