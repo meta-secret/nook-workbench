@@ -1,14 +1,15 @@
 ---
 title: Own onboarding and recovery actions
-status: pending
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-onboarding-recovery
 created_at: 2026-09-08T01:20:00Z
-updated_at: 2026-09-08T01:20:00Z
+updated_at: 2026-09-08T03:49:52Z
 source_issues: []
-related_prs: []
+related_prs:
+  - 1555
 depends_on:
   - issues/rust-action-ownership/provider-architecture.md
 ---
@@ -21,7 +22,7 @@ Sentinel genesis operation emission, simple identity roster emission, recovery-o
 
 ## Outcome
 
-Genesis output/input and recovery domain types own these actions. Core and WASM callers use associated methods while preserving event operation order, identity enrollment checks, recovery redaction, passkey hints, and public adapter behavior.
+Genesis output/input and recovery domain types own these actions. Core and WASM callers use associated methods while preserving event operation order, identity enrollment checks, recovery redaction, passkey hints, and public adapter behavior. Test-only free helpers remain allowed by the ownership policy, while production ownership enforcement stays strict.
 
 ## Scope
 
@@ -36,12 +37,12 @@ Move genesis operation construction, recovery projection, and device hint format
 
 ## Acceptance criteria
 
-- [ ] Sentinel participant and share operation ordering and payloads remain unchanged.
-- [ ] Simple identity enrollment validation, signing-key selection, labels, and encrypted envelopes remain unchanged.
-- [ ] Recovery projection remains event-graph based, redacts encrypted material, preserves revocation/rename behavior, and keeps passkey hint formatting unchanged.
-- [ ] Core, WASM, and focused tests use owning methods; detached core exports disappear.
-- [ ] Completed onboarding/recovery modules deny homeless functions and forbid invalid ownership-lint suppressions without blanket exceptions.
-- [ ] Remote Loom, hosted checks, exact-head deployment/security, readiness, squash merge, and Workbench completion pass.
+- [x] Sentinel participant and share operation ordering and payloads remain unchanged.
+- [x] Simple identity enrollment validation, signing-key selection, labels, and encrypted envelopes remain unchanged.
+- [x] Recovery projection remains event-graph based, redacts encrypted material, preserves revocation/rename behavior, and keeps passkey hint formatting unchanged.
+- [x] Core, WASM, and focused tests use owning methods; detached core exports disappear.
+- [x] Completed onboarding/recovery modules deny homeless functions and forbid invalid ownership-lint suppressions; test-only helpers are exempt only in positively test-gated scopes.
+- [x] Remote Loom, hosted checks, exact-head deployment/security, readiness, squash merge, and Workbench completion pass.
 
 ## Constraints
 
@@ -50,3 +51,11 @@ No provider I/O, authentication or authorization change, persistence or schema m
 ## Progress
 
 Selected from `origin/main` after PR #1553 as the next cohesive onboarding and recovery ownership boundary.
+
+- PR #1555 moved the genesis, identity, recovery projection, and passkey hint actions onto existing domain owners and migrated direct core/WASM callers.
+- The Dylint policy now exempts free helpers only when source configuration positively gates their scope with `cfg(test)`; arbitrary names and mixed `cfg` predicates remain subject to ownership enforcement.
+- The final head delivered 546 authored additions and merged after exact-head hosted validation and remote Loom verification.
+
+## Completion
+
+PR #1555 squash-merged at `abd11e60130cda8b34eb406f176ee97ff8dfb775` from final head `c621a1ff8f1ac8a9303ce6452de92ba446a33ef3`, based on `main` at `72e20c7d07e2b1995b3ef55f5842374706ba877b`. Hosted validation run `34183981931`, remote Loom run `34184652816`, exact-head deployment `https://pr-1555.nokey-sh.pages.dev`, and `task pr:ready PR=1555` all passed.
