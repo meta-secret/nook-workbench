@@ -1,11 +1,11 @@
 ---
 title: "Migrate Nook development context into Workbench"
-status: done
+status: proposed
 priority: p1
 automation: manual
 owner: codex
 created_at: 2026-07-25T00:00:00Z
-updated_at: 2026-07-26T02:09:20Z
+updated_at: 2026-09-08T14:07:37Z
 source_issues: []
 related_prs:
   - https://github.com/meta-secret/nook/pull/783
@@ -47,6 +47,8 @@ history is preserved here.
 - [x] Nook no longer stores `.stats` or creates stats-only PRs.
 - [x] Nook `.cortex` consistently documents the new lifecycle.
 - [x] The Nook migration PR is validated and merged.
+- [ ] Main statistics normalize bounded negative timestamp skew for skipped jobs
+      without rejecting a completed workflow record.
 
 ## Progress
 
@@ -63,6 +65,11 @@ history is preserved here.
 - 2026-07-26: Fixed rerun collection to exclude successful jobs reused from
   earlier attempts through Nook PR 787; the production attempt-2 payload then
   published successfully.
+- 2026-09-08: Main statistics run 34235371336 rejected completed Main run
+  34232082164 because GitHub reported a skipped UI job as completing two
+  seconds before its nominal start. Reopened the collector record because its
+  existing one-second normalization bound does not cover the observed API
+  skew.
 
 ## Findings and decisions
 
@@ -80,8 +87,13 @@ history is preserved here.
 - Workbench is public. Records keep durable outcomes and decisions while
   excluding raw logs, environment details, internal infrastructure, local
   paths, and incidental debugging history.
+- GitHub's skipped-job timestamps can have at least two seconds of negative
+  skew. The collector must normalize that bounded provider inconsistency while
+  continuing to reject negative durations for jobs that actually ran.
 
 ## References
 
 - [Nook Workbench](https://github.com/meta-secret/nook-workbench)
 - [Nook repository](https://github.com/meta-secret/nook)
+- [Failed Main statistics run](https://github.com/meta-secret/nook/actions/runs/34235371336)
+- [Completed source Main run](https://github.com/meta-secret/nook/actions/runs/34232082164)
