@@ -6,18 +6,18 @@ automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-observation
 created_at: 2026-09-08T10:59:04Z
-updated_at: 2026-09-08T10:59:04Z
+updated_at: 2026-09-08T12:04:00Z
 source_issues: []
 related_prs: []
 depends_on:
-  - issues/agent-orchestration/proactive-pr-steward-reconciliation.md
+  - issues/agent-orchestration/proactive-pr-steward-webhook-decoder.md
 ---
 
 # Asynchronous PR Steward exact-head observation
 
 ## Context
 
-The closed routing contract must merge first. A separate slice can then add nonblocking GitHub observation and exact-head attribution without distorting codec ownership or tests for a line target.
+The closed routing codec and its owned webhook writer must merge first. A separate slice can then add nonblocking GitHub observation and exact-head attribution without distorting those ownership boundaries.
 
 ## Outcome
 
@@ -40,9 +40,10 @@ PR Steward asynchronously reads the assigned pull request through one fixed boun
 
 ## Progress
 
-- Waiting for the closed routing contract to merge and close.
+- Waiting for the closed codec and owned webhook decoder/writer to merge and close.
 
 ## References
 
 - [Closed routing contract](proactive-pr-steward-reconciliation.md)
+- [Owned webhook decoding and writing](proactive-pr-steward-webhook-decoder.md)
 - [Exact failure summaries](proactive-pr-steward-failure-summary.md)
