@@ -1,12 +1,12 @@
 ---
 title: Asynchronous PR Steward exact-head observation
-status: proposed
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: proactive-pr-steward-observation
 created_at: 2026-09-08T10:59:04Z
-updated_at: 2026-09-08T12:04:00Z
+updated_at: 2026-09-08T13:28:00Z
 source_issues: []
 related_prs: []
 depends_on:
@@ -40,7 +40,7 @@ PR Steward asynchronously reads the assigned pull request through one fixed boun
 
 ## Progress
 
-- Waiting for the closed codec and owned webhook decoder/writer to merge and close.
+- 2026-09-08: Closed codec PR #1564 and owned webhook decoder/writer PR #1568 are merged, remotely verified, and closed in Workbench. Observation implementation starts from fresh merged main.
 
 ## References
 
