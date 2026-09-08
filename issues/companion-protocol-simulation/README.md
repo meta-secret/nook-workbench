@@ -2,7 +2,7 @@
 title: Companion protocol simulation
 status: in_progress
 created_at: 2026-09-07T05:32:41Z
-updated_at: 2026-09-07T23:40:31Z
+updated_at: 2026-09-08T00:04:14Z
 ---
 
 # Companion protocol simulation
@@ -20,8 +20,10 @@ adapters, and side-effect-free pairing admission are merged. PR #1546 adds a
 Rust-owned one-shot request and approval protocol across core,
 companion-WASM, and nook-WASM, with opaque admitted capabilities, exact sealed
 provider-recipient verification, direct dual-WASM composition, and a broad
-real-manager behavior matrix. Durable atomic activation remains the next
-separate functional capability; browser adapter migration depends on it.
+real-manager behavior matrix. Atomic activation is now split into a durable,
+inert candidate commit followed by authoritative reader adoption because the
+combined cross-database surface exceeds the product PR limit. Browser adapter
+migration depends on both slices.
 
 ## Decisions
 
@@ -39,6 +41,9 @@ separate functional capability; browser adapter migration depends on it.
 - Mechanical composition and broad dependency tests precede another behavior
   migration; browser transport simulations and TypeScript coverage remain
   separate capabilities.
+- One physical `nook_db` transaction commits the complete inert activation
+  candidate; a separate reader-adoption slice makes it product authority and
+  may emit acceptance.
 
 ## Issues
 
@@ -46,7 +51,8 @@ separate functional capability; browser adapter migration depends on it.
 - [x] [Add companion protocol composition tests](companion-protocol-composition-tests.md)
 - [x] [Migrate companion identity browser adapters](companion-identity-browser-adapters.md)
 - [x] [Implement companion pairing approval protocol](companion-pairing-approval-protocol.md)
-- [ ] [Activate companion pairing atomically](companion-pairing-activation-transaction.md)
+- [ ] [Commit companion pairing activation candidate atomically](companion-pairing-activation-transaction.md)
+- [ ] [Adopt committed companion pairing activation](companion-pairing-activation-adoption.md)
 - [ ] [Migrate companion pairing browser adapters](companion-pairing-browser-adapters.md)
 
 ## References
