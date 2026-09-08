@@ -1,14 +1,14 @@
 ---
 title: Own secret host and presentation actions
-status: ready
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: rust-action-ownership-secret-presentation-actions
 created_at: 2026-09-08T06:05:00Z
-updated_at: 2026-09-08T06:05:00Z
+updated_at: 2026-09-08T11:59:30Z
 source_issues: []
-related_prs: []
+related_prs: [1561]
 depends_on: [rust-action-ownership-foundation]
 ---
 
@@ -31,11 +31,11 @@ Secret host normalization, login-family matching, authenticator issuer mapping, 
 
 ## Acceptance criteria
 
-- [ ] No production free functions remain in the three scoped modules.
-- [ ] Host normalization, explicit login-family allowlists, issuer mapping, URL precedence, and grouping tie-breaks remain unchanged.
-- [ ] Core and WASM callers use typed owners and public behavior remains compatible.
-- [ ] Dylint accepts the modules with ordinary `cfg(test)` helpers allowed.
-- [ ] Hosted validation, exact-head readiness, remote Loom, merge, and Workbench closeout pass.
+- [x] No production free functions remain in the three scoped modules.
+- [x] Host normalization, explicit login-family allowlists, issuer mapping, URL precedence, and grouping tie-breaks remain unchanged.
+- [x] Core and WASM callers use typed owners and public behavior remains compatible.
+- [x] Dylint accepts the modules with ordinary `cfg(test)` helpers allowed.
+- [x] Hosted validation, exact-head readiness, remote Loom, merge, and Workbench closeout pass.
 
 ## Progress
 
@@ -45,3 +45,8 @@ Secret host normalization, login-family matching, authenticator issuer mapping, 
 
 - Use the existing host catalog types and `SecretListItem` owner; do not add generic utility wrappers.
 - Keep wire and WASM contracts stable and preserve bundled catalog fail-closed behavior.
+
+
+- 2026-09-08: PR #1561 moved host normalization, issuer lookup, login matching, import error propagation, secret grouping, and page projection behind typed owners. The `unowned_function` policy keeps ordinary `cfg(test)` helpers allowed while production free functions remain denied.
+- 2026-09-08: Final hosted validation run `34222183878`, exact-head deployment, readiness, and remote Loom run `34223197292` passed.
+- 2026-09-08: Squash-merged as `1cfcc63e7ee660edeb91fc99baea54c0a2d2bc25`; `origin/main` was verified at the same SHA.
