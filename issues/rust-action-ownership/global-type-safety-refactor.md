@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T07:06:28Z
+updated_at: 2026-09-09T07:12:54Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -71,6 +71,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T07:04:25Z: TypeScript domain migration completed for [PR #1573](https://github.com/meta-secret/nook/pull/1573) at `455498f294627ca70c67a24289da5039d1aa8e40`. Rust owns canonical admission, evidence/policy and provider operations; TS consumers and source fixtures migrated; superseded Rust adapters removed; Hive presence threshold consolidated. [Completion worklog and inventory](../../worklogs/rust-action-ownership/2026-09-09T07-04-25Z-typescript-domain-migration.md). All verification remains deferred, generated bindings unbuilt, and delivery ends at the open PR.
 
 - 2026-09-09T07:06:28Z: Reopened for focused recovery-evidence enum refactoring under the [enum plan](../../plans/rust-action-ownership/2026-09-09T07-06-28Z-recovery-evidence-enums.md). Verification remains deferred.
+
+- 2026-09-09T07:12:54Z: Recovery-evidence enum refactoring completed at `cfdd51dc62bfea1c1249e26b878d5896a5354b69` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Semantic subjects, instructions and candidate presence replace stringly domain categories; shared lexical ownership preserves matching modes. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T07-12-54Z-recovery-evidence-enums.md). All verification remains deferred.
 
 ## Findings and decisions
 
