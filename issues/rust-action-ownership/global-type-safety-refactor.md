@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T08:32:14Z
+updated_at: 2026-09-09T08:34:59Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -89,6 +89,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T08:25:44Z: Reopened for workflow property-test source refactoring under the [property plan](../../plans/rust-action-ownership/2026-09-09T08-25-44Z-workflow-property-test-contract.md). Runtime snapshot admission remains required; test execution and other verification remain deferred.
 
 - 2026-09-09T08:32:14Z: Workflow property-test sources completed at `028778d3fdfe7b143011a05317ee89a2d61890b8` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Five inline generated properties replace duplicated test enumeration; runtime admission retained. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T08-32-14Z-workflow-property-test-contract.md). Existing proptest resolution reused; no tests or verification executed.
+
+- 2026-09-09T08:34:59Z: Reopened for derived domain deserialization under the [deserialization plan](../../plans/rust-action-ownership/2026-09-09T08-34-59Z-derived-domain-deserialization.md). Preserve validated admission; all verification remains deferred.
 
 ## Findings and decisions
 
