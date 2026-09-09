@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T06:30:47Z
+updated_at: 2026-09-09T06:33:09Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -43,6 +43,9 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - [x] Inventoried actionable stage and capability-construction hazards across all four source ownership areas.
 - [x] Applicable flows use simple private stage capabilities and stage-specific operations with coherent callers and test sources.
 
+- [ ] Identified misplaced TypeScript domain logic and recorded retained host/tooling boundaries.
+- [ ] Applicable decisions moved into cohesive Rust owners and affected TypeScript consumers simplified.
+
 ## Progress
 
 - 2026-09-08: Published the [expanded immutable plan](../../plans/rust-action-ownership/2026-09-08T23-53-00Z-global-type-safety-refactor.md); Rust writer active, other team discovery read-only.
@@ -62,6 +65,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T06:03:14Z: Rust typestate scope committed as `493ea99b9049c42d636752ab9d911006e1418c92` with six actionable migrations and explicit capability-construction/lifetime restrictions. Browser lifecycle migration is active; tooling and infrastructure inventories are complete and queued. Formatting/source hygiene passed for Rust; tests and review work remain excluded.
 
 - 2026-09-09T06:30:47Z: Simple typestate implementation completed across Rust/WASM, browser, tooling and infrastructure at `9a19fc3f542e2709f43f7f3989c8ecedabf657ab` for [PR #1573](https://github.com/meta-secret/nook/pull/1573). The [implementation-only plan](../../plans/rust-action-ownership/2026-09-09T06-12-25Z-typestate-implementation-only.md) records the latest instruction deferring all verification. [Completion worklog and candidate inventory](../../worklogs/rust-action-ownership/2026-09-09T06-30-47Z-simple-typestate.md). All identified applicable refactorings and affected source examples are implemented; compile/runtime correctness remains unverified. Delivery ends at the open PR.
+
+- 2026-09-09T06:33:09Z: Reopened within PR #1573 for TypeScript domain-placement refactoring under the [migration plan](../../plans/rust-action-ownership/2026-09-09T06-33-09Z-typescript-domain-migration.md). All verification and review work remain deferred.
 
 ## Findings and decisions
 
