@@ -30,9 +30,10 @@ Loom leaf tools now generate discovery YAML, decode blueprints, and defaultable
 Task aliases from typed example documents. Sample YAML files under the Loom
 package are gone. That slice merged in Nook PR #1045.
 
-The remaining multi-team gap is now tracked as the Team Plan runner: a durable
-adapter over the existing module-delivery admission contract, without adding a
-second scheduler or model runner.
+The remaining multi-team gap is tracked as four bounded Team Plan slices:
+admission, journal, runner, and commands. Together they form a durable adapter
+over the existing module-delivery contract without adding another scheduler or
+model runner.
 
 ## Decisions
 
@@ -68,7 +69,12 @@ second scheduler or model runner.
 - [x] [Add typed module context and read-only DAG planning](typed-module-context-and-read-only-dag.md)
 - [x] [Add isolated-write module DAG execution](isolated-write-module-dag.md)
 - [x] [Pilot contract-first bottom-up module delivery](module-dag-pilot.md)
+- [ ] [Add Team Plan admission](team-plan-admission.md)
+- [ ] [Add the Team Plan journal](team-plan-journal.md)
+- [ ] [Fix Team Plan journal lifecycle edges](team-plan-journal-fixes.md)
 - [ ] [Add the Team Plan runner](team-plan-runner.md)
+- [ ] [Fix Team Plan runner recovery edges](team-plan-runner-fixes.md)
+- [ ] [Expose Team Plan commands](team-plan-commands.md)
 
 ## References
 
