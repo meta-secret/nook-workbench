@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-08T23:53:00Z
+updated_at: 2026-09-09T02:47:00Z
 source_issues: []
 related_prs: []
 depends_on: []
@@ -40,6 +40,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 ## Progress
 
 - 2026-09-08: Published the [expanded immutable plan](../../plans/rust-action-ownership/2026-09-08T23-53-00Z-global-type-safety-refactor.md); Rust writer active, other team discovery read-only.
+
+- 2026-09-09: Rust committed as `4246df44e` (220 files); browser migration committed as `e4397fa12` (345 files). Both writers reported formatting, whitespace and source-size hygiene passed; no tests, compiler or reviews executed. Loom is the active next writer, followed by SRE. The [latest immutable plan](../../plans/rust-action-ownership/2026-09-09T02-47-00Z-global-type-safety-refactor.md) updates the estimate for remaining tooling.
 
 ## Findings and decisions
 
