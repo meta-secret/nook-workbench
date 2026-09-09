@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T05:28:09Z
+updated_at: 2026-09-09T06:03:14Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -58,6 +58,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T05:23:30Z: Serialization extension completed and pushed to [PR #1573](https://github.com/meta-secret/nook/pull/1573) at `44cd54cfba97ad6e3211025f806f4ac1c716eac2`. All four team scopes completed; 101 files changed. Team formatting and final whitespace/static demo/source-size checks passed. Tests, compilation and reviews remain unrun. [Serialization worklog](../../worklogs/rust-action-ownership/2026-09-09T05-23-10Z-typed-json-boundaries.md). Delivery ends at the open PR.
 
 - 2026-09-09T05:28:09Z: Reopened for comprehensive simple-typestate refactoring within PR #1573. [Typestate plan](../../plans/rust-action-ownership/2026-09-09T05-26-55Z-simple-typestate.md). Tests, compilation and review work remain excluded until separately authorized.
+
+- 2026-09-09T06:03:14Z: Rust typestate scope committed as `493ea99b9049c42d636752ab9d911006e1418c92` with six actionable migrations and explicit capability-construction/lifetime restrictions. Browser lifecycle migration is active; tooling and infrastructure inventories are complete and queued. Formatting/source hygiene passed for Rust; tests and review work remain excluded.
 
 ## Findings and decisions
 
