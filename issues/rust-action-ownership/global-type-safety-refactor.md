@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T07:52:01Z
+updated_at: 2026-09-09T08:23:31Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -83,6 +83,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T07:49:28Z: Semantic enum and standard-conversion refactoring completed at `b182eff1fc929f33a9faa36cbd7dbfd2a833fbf9` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Product Rust, Hive and preflight now use typed state/mode requests and appropriate From/TryFrom; canonical Cortex rules updated. [Worklog and dispositions](../../worklogs/rust-action-ownership/2026-09-09T07-49-28Z-semantic-enums-standard-conversions.md). Fixed transport representations retained; empty identifier decoding tightened. All verification remains deferred.
 
 - 2026-09-09T07:52:01Z: Reopened to move raw-value domain decisions into model owners under the [domain-value plan](../../plans/rust-action-ownership/2026-09-09T07-52-01Z-domain-values-without-primitive-decisions.md). All verification remains deferred.
+
+- 2026-09-09T08:23:31Z: Domain-value decision refactoring completed at `c6ab04e5746fb9bcaa1774f7956bc593a12b4cc2` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Workflow progress, count/timeout/Sentinel relationships and Hive classifications now use model owners; browser primitive policy copies removed. [Worklog and retained-boundary inventory](../../worklogs/rust-action-ownership/2026-09-09T08-23-31Z-domain-values-without-primitive-decisions.md). Wire shapes and live checks retained; all verification remains deferred.
 
 ## Findings and decisions
 
