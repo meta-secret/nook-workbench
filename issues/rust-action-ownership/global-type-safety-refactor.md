@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T07:04:25Z
+updated_at: 2026-09-09T07:06:28Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -69,6 +69,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T06:33:09Z: Reopened within PR #1573 for TypeScript domain-placement refactoring under the [migration plan](../../plans/rust-action-ownership/2026-09-09T06-33-09Z-typescript-domain-migration.md). All verification and review work remain deferred.
 
 - 2026-09-09T07:04:25Z: TypeScript domain migration completed for [PR #1573](https://github.com/meta-secret/nook/pull/1573) at `455498f294627ca70c67a24289da5039d1aa8e40`. Rust owns canonical admission, evidence/policy and provider operations; TS consumers and source fixtures migrated; superseded Rust adapters removed; Hive presence threshold consolidated. [Completion worklog and inventory](../../worklogs/rust-action-ownership/2026-09-09T07-04-25Z-typescript-domain-migration.md). All verification remains deferred, generated bindings unbuilt, and delivery ends at the open PR.
+
+- 2026-09-09T07:06:28Z: Reopened for focused recovery-evidence enum refactoring under the [enum plan](../../plans/rust-action-ownership/2026-09-09T07-06-28Z-recovery-evidence-enums.md). Verification remains deferred.
 
 ## Findings and decisions
 
