@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T06:33:09Z
+updated_at: 2026-09-09T07:04:25Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -43,8 +43,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - [x] Inventoried actionable stage and capability-construction hazards across all four source ownership areas.
 - [x] Applicable flows use simple private stage capabilities and stage-specific operations with coherent callers and test sources.
 
-- [ ] Identified misplaced TypeScript domain logic and recorded retained host/tooling boundaries.
-- [ ] Applicable decisions moved into cohesive Rust owners and affected TypeScript consumers simplified.
+- [x] Identified misplaced TypeScript domain logic and recorded retained host/tooling boundaries.
+- [x] Applicable decisions moved into cohesive Rust owners and affected TypeScript consumers simplified.
 
 ## Progress
 
@@ -67,6 +67,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T06:30:47Z: Simple typestate implementation completed across Rust/WASM, browser, tooling and infrastructure at `9a19fc3f542e2709f43f7f3989c8ecedabf657ab` for [PR #1573](https://github.com/meta-secret/nook/pull/1573). The [implementation-only plan](../../plans/rust-action-ownership/2026-09-09T06-12-25Z-typestate-implementation-only.md) records the latest instruction deferring all verification. [Completion worklog and candidate inventory](../../worklogs/rust-action-ownership/2026-09-09T06-30-47Z-simple-typestate.md). All identified applicable refactorings and affected source examples are implemented; compile/runtime correctness remains unverified. Delivery ends at the open PR.
 
 - 2026-09-09T06:33:09Z: Reopened within PR #1573 for TypeScript domain-placement refactoring under the [migration plan](../../plans/rust-action-ownership/2026-09-09T06-33-09Z-typescript-domain-migration.md). All verification and review work remain deferred.
+
+- 2026-09-09T07:04:25Z: TypeScript domain migration completed for [PR #1573](https://github.com/meta-secret/nook/pull/1573) at `455498f294627ca70c67a24289da5039d1aa8e40`. Rust owns canonical admission, evidence/policy and provider operations; TS consumers and source fixtures migrated; superseded Rust adapters removed; Hive presence threshold consolidated. [Completion worklog and inventory](../../worklogs/rust-action-ownership/2026-09-09T07-04-25Z-typescript-domain-migration.md). All verification remains deferred, generated bindings unbuilt, and delivery ends at the open PR.
 
 ## Findings and decisions
 
