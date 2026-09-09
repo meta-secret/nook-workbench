@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T10:29:32Z
+updated_at: 2026-09-09T10:31:36Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -126,3 +126,7 @@ Reopened for kind/nested-value decision ownership and removal of enclosing-objec
 ### 2026-09-09T10:29:32Z — Precise decision receivers completed
 
 Canonical precise-receiver/overwide-input guidance and all accepted AI, Rust, browser and infrastructure groups are implemented. Article block delegates kind-only decisions, nested enum/value policy moved to its owner, and overwide static helper inputs were removed. Published PR #1573 at cd17e24ba6e0e49bc7884fd69a7ee13cfa5f2ace. Tests, generation, compilation and reviews remain deferred; open PR handoff. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T10-29-32Z-precise-decision-receivers.md).
+
+### 2026-09-09T10:31:36Z — Article schema codec started
+
+Reopened for library-based article JSON structural validation and removal of handwritten field decoding. Preserve domain invariants, wire shape and errors. No tests, compilation, generation or reviews. [Plan](../../plans/rust-action-ownership/2026-09-09T10-31-36Z-article-schema-codec.md).
