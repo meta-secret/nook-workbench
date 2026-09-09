@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T09:29:27Z
+updated_at: 2026-09-09T10:05:02Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -114,3 +114,7 @@ Completed canonical generated event, collection, locale, provider and session co
 ### 2026-09-09T09:29:27Z — Owned domain decisions started
 
 Reopened for canonical SRP/data-locality policy and recursive compound-predicate refactoring across article tooling, Rust, web and infrastructure. Implementation only; tests, compilation, generation and reviews remain deferred. [Plan](../../plans/rust-action-ownership/2026-09-09T09-29-27Z-owned-domain-decisions.md).
+
+### 2026-09-09T10:05:02Z — Owned domain decisions completed
+
+Canonical recursive SRP/data-locality policy and all accepted article/tooling, Rust, browser and infrastructure predicate groups are implemented. Published PR #1573 at f3e69f4c73df51813f133338117c7a8998732dfa. Semantic owner outcomes replace caller field reconstruction; live authorization, error order and boundary representations remain. Tests, generation, compilation and reviews remain deferred; delivery stops at the open PR. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T10-05-02Z-owned-domain-decisions.md).
