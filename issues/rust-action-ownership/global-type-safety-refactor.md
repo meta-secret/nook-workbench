@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T08:47:08Z
+updated_at: 2026-09-09T09:26:04Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -106,3 +106,7 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 
 - [Feature](README.md)
 - [Expanded plan](../../plans/rust-action-ownership/2026-09-08T23-53-00Z-global-type-safety-refactor.md)
+
+### 2026-09-09T09:26:04Z — Rust/TypeScript contract transparency completed
+
+Completed canonical generated event, collection, locale, provider and session contracts; direct browser DTO consumption; and Hive native export/schema-based HTTP admission with generation-before-build wiring. Published PR #1573 at 09d7849c8936e4ba9998512f60159dadb870f10e. All inventoried source groups are implemented; generation, compilation, tests and reviews remain deferred. Hive generated imports await the first authorized generation. Delivery remains the open PR. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T09-26-04Z-rust-typescript-contract-transparency.md).
