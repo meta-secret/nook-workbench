@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T07:15:31Z
+updated_at: 2026-09-09T07:18:55Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -75,6 +75,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T07:12:54Z: Recovery-evidence enum refactoring completed at `cfdd51dc62bfea1c1249e26b878d5896a5354b69` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Semantic subjects, instructions and candidate presence replace stringly domain categories; shared lexical ownership preserves matching modes. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T07-12-54Z-recovery-evidence-enums.md). All verification remains deferred.
 
 - 2026-09-09T07:15:31Z: Reopened for explicit Cortex SRP requirements and workflow decision ownership under the [SRP plan](../../plans/rust-action-ownership/2026-09-09T07-15-31Z-single-responsibility-decisions.md). Verification remains deferred.
+
+- 2026-09-09T07:18:55Z: SRP policy and candidate decision refactoring completed at `e831f6a5de6c351645a581da7ed07e22a8fb251e` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Cortex now requires domain-local decision ownership; AuthenticationWorkflowMatch owns selection/attribution. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T07-18-55Z-single-responsibility-decisions.md). All verification remains deferred.
 
 ## Findings and decisions
 
