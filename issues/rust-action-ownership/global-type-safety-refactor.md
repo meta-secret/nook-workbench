@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: done
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T05:23:30Z
+updated_at: 2026-09-09T05:28:09Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -40,6 +40,9 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - [x] Known JSON schemas deserialize to named types; dynamic JSON and JsValue remain only at justified boundaries.
 - [x] Affected browser/tooling consumers and unit sources use coherent typed contracts.
 
+- [ ] Inventoried actionable stage and capability-construction hazards across all four source ownership areas.
+- [ ] Applicable flows use simple private stage capabilities and stage-specific operations with coherent callers and test sources.
+
 ## Progress
 
 - 2026-09-08: Published the [expanded immutable plan](../../plans/rust-action-ownership/2026-09-08T23-53-00Z-global-type-safety-refactor.md); Rust writer active, other team discovery read-only.
@@ -53,6 +56,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T05:10:39Z: Typed serialization implemented in product Rust (`a56539344`), browser (`d6c3164c7`), Rust-owned pairing comparison (`6d3d13614`, `7460a4722`), and Loom/Cortex (`4620f06cd`). Infrastructure serialization is the final active stage. Team formatting and source hygiene passed; tests, compilation and reviews remain unrun.
 
 - 2026-09-09T05:23:30Z: Serialization extension completed and pushed to [PR #1573](https://github.com/meta-secret/nook/pull/1573) at `44cd54cfba97ad6e3211025f806f4ac1c716eac2`. All four team scopes completed; 101 files changed. Team formatting and final whitespace/static demo/source-size checks passed. Tests, compilation and reviews remain unrun. [Serialization worklog](../../worklogs/rust-action-ownership/2026-09-09T05-23-10Z-typed-json-boundaries.md). Delivery ends at the open PR.
+
+- 2026-09-09T05:28:09Z: Reopened for comprehensive simple-typestate refactoring within PR #1573. [Typestate plan](../../plans/rust-action-ownership/2026-09-09T05-26-55Z-simple-typestate.md). Tests, compilation and review work remain excluded until separately authorized.
 
 ## Findings and decisions
 
