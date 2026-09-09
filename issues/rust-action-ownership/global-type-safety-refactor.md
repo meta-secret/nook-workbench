@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T10:46:23Z
+updated_at: 2026-09-09T11:22:46Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -142,3 +142,9 @@ The mandatory delegation renderer prerequisite rejects the preceding Zod runtime
 ### 2026-09-09T10:46:23Z — PR feedback and pending contracts resumed
 
 User authorizes all PR comment fixes and pushing changes. Repairing the package-gate integration as a necessary prerequisite, then collecting actionable feedback and completing pending Result/static/consuming-state requirements. Tests and compilation remain deferred. [Plan](../../plans/rust-action-ownership/2026-09-09T10-46-23Z-review-comments-and-pending-contracts.md).
+
+### 2026-09-09T11:22:46Z — PR comment fixes completed and pushed
+
+Addressed all 13 collected review threads, including the late session-admission coverage request. Exact replies posted and all threads resolved; final feedback reports zero unresolved/new actionable threads. Pushed head c17cd3d5f13fe164f9216bfd7d066819e9e4a0ce; PR #1573 remains open. Regression sources added, tests/compiler/generation remain unexecuted. [Comment worklog](../../worklogs/rust-action-ownership/2026-09-09T11-11-50Z-pr-comment-fixes.md).
+
+The overall issue remains in progress: full Result propagation, remaining authored static removal and broader consuming-state transitions are queued. Policy/dependency foundation and 23 instance execution facades are implemented; exact translation overlay is consuming. No global completion of pending API migrations is claimed.
