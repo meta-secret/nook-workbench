@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T10:31:36Z
+updated_at: 2026-09-09T10:41:43Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -130,3 +130,7 @@ Canonical precise-receiver/overwide-input guidance and all accepted AI, Rust, br
 ### 2026-09-09T10:31:36Z — Article schema codec started
 
 Reopened for library-based article JSON structural validation and removal of handwritten field decoding. Preserve domain invariants, wire shape and errors. No tests, compilation, generation or reviews. [Plan](../../plans/rust-action-ownership/2026-09-09T10-31-36Z-article-schema-codec.md).
+
+### 2026-09-09T10:41:43Z — Article schema codec completed
+
+Replaced handwritten article structural decoding with strict Zod schemas and inferred DTOs; preserved staged errors, bounds and domain admission. Published PR #1573 at 23e77f1a9a721004dfdef857cf924abf9f00fd51. No installation, tests, compilation, generation or reviews ran. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T10-41-43Z-article-schema-codec.md).
