@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T08:34:59Z
+updated_at: 2026-09-09T08:44:29Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -91,6 +91,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T08:32:14Z: Workflow property-test sources completed at `028778d3fdfe7b143011a05317ee89a2d61890b8` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Five inline generated properties replace duplicated test enumeration; runtime admission retained. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T08-32-14Z-workflow-property-test-contract.md). Existing proptest resolution reused; no tests or verification executed.
 
 - 2026-09-09T08:34:59Z: Reopened for derived domain deserialization under the [deserialization plan](../../plans/rust-action-ownership/2026-09-09T08-34-59Z-derived-domain-deserialization.md). Preserve validated admission; all verification remains deferred.
+
+- 2026-09-09T08:44:29Z: Derived domain deserialization completed at `5d359f00b66c955e6748850d6d5327ecba5e9059` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Applicable custom adapters use derives and canonical conversions; two streaming host-map visitors retain necessary duplicate/order semantics. [Worklog and inventory](../../worklogs/rust-action-ownership/2026-09-09T08-44-29Z-derived-domain-deserialization.md). Validation and wire behavior preserved in source; no tests or verification executed.
 
 ## Findings and decisions
 
