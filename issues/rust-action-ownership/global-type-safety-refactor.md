@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: blocked
+status: in_progress
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T10:44:02Z
+updated_at: 2026-09-09T10:46:23Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -138,3 +138,7 @@ Replaced handwritten article structural decoding with strict Zod schemas and inf
 ### 2026-09-09T10:44:02Z — TypeScript Result refactor blocked before dispatch
 
 The mandatory delegation renderer prerequisite rejects the preceding Zod runtime dependency because the executable-skill package/lock gate accepts only its earlier schema. No Result implementation started. A narrow exception is needed to dispatch the AI owner to repair runtime-dependency admission while retaining strict validation, then resume the requested Result migration. [Plan](../../plans/rust-action-ownership/2026-09-09T10-44-02Z-typescript-result-contracts.md) · [Blocked worklog](../../worklogs/rust-action-ownership/2026-09-09T10-44-02Z-typescript-result-blocked.md).
+
+### 2026-09-09T10:46:23Z — PR feedback and pending contracts resumed
+
+User authorizes all PR comment fixes and pushing changes. Repairing the package-gate integration as a necessary prerequisite, then collecting actionable feedback and completing pending Result/static/consuming-state requirements. Tests and compilation remain deferred. [Plan](../../plans/rust-action-ownership/2026-09-09T10-46-23Z-review-comments-and-pending-contracts.md).
