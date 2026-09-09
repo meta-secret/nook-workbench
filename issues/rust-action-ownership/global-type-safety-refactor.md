@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T05:10:39Z
+updated_at: 2026-09-09T05:23:30Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -37,8 +37,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - [x] Affected unit-test sources reflect changed contracts without being executed.
 - [x] Pull request published with accurate scope and validation limitations.
 
-- [ ] Known JSON schemas deserialize to named types; dynamic JSON and JsValue remain only at justified boundaries.
-- [ ] Affected browser/tooling consumers and unit sources use coherent typed contracts.
+- [x] Known JSON schemas deserialize to named types; dynamic JSON and JsValue remain only at justified boundaries.
+- [x] Affected browser/tooling consumers and unit sources use coherent typed contracts.
 
 ## Progress
 
@@ -51,6 +51,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T04:39:13Z: Reopened within PR #1573 to implement typed JSON deserialization and Rust/WASM return contracts across product and tooling. [Serialization extension plan](../../plans/rust-action-ownership/2026-09-09T04-38-30Z-typed-json-boundaries.md). Existing exclusions and PR-size waiver remain in force.
 
 - 2026-09-09T05:10:39Z: Typed serialization implemented in product Rust (`a56539344`), browser (`d6c3164c7`), Rust-owned pairing comparison (`6d3d13614`, `7460a4722`), and Loom/Cortex (`4620f06cd`). Infrastructure serialization is the final active stage. Team formatting and source hygiene passed; tests, compilation and reviews remain unrun.
+
+- 2026-09-09T05:23:30Z: Serialization extension completed and pushed to [PR #1573](https://github.com/meta-secret/nook/pull/1573) at `44cd54cfba97ad6e3211025f806f4ac1c716eac2`. All four team scopes completed; 101 files changed. Team formatting and final whitespace/static demo/source-size checks passed. Tests, compilation and reviews remain unrun. [Serialization worklog](../../worklogs/rust-action-ownership/2026-09-09T05-23-10Z-typed-json-boundaries.md). Delivery ends at the open PR.
 
 ## Findings and decisions
 
