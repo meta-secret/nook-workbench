@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T06:03:14Z
+updated_at: 2026-09-09T06:30:47Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -40,8 +40,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - [x] Known JSON schemas deserialize to named types; dynamic JSON and JsValue remain only at justified boundaries.
 - [x] Affected browser/tooling consumers and unit sources use coherent typed contracts.
 
-- [ ] Inventoried actionable stage and capability-construction hazards across all four source ownership areas.
-- [ ] Applicable flows use simple private stage capabilities and stage-specific operations with coherent callers and test sources.
+- [x] Inventoried actionable stage and capability-construction hazards across all four source ownership areas.
+- [x] Applicable flows use simple private stage capabilities and stage-specific operations with coherent callers and test sources.
 
 ## Progress
 
@@ -60,6 +60,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T05:28:09Z: Reopened for comprehensive simple-typestate refactoring within PR #1573. [Typestate plan](../../plans/rust-action-ownership/2026-09-09T05-26-55Z-simple-typestate.md). Tests, compilation and review work remain excluded until separately authorized.
 
 - 2026-09-09T06:03:14Z: Rust typestate scope committed as `493ea99b9049c42d636752ab9d911006e1418c92` with six actionable migrations and explicit capability-construction/lifetime restrictions. Browser lifecycle migration is active; tooling and infrastructure inventories are complete and queued. Formatting/source hygiene passed for Rust; tests and review work remain excluded.
+
+- 2026-09-09T06:30:47Z: Simple typestate implementation completed across Rust/WASM, browser, tooling and infrastructure at `9a19fc3f542e2709f43f7f3989c8ecedabf657ab` for [PR #1573](https://github.com/meta-secret/nook/pull/1573). The [implementation-only plan](../../plans/rust-action-ownership/2026-09-09T06-12-25Z-typestate-implementation-only.md) records the latest instruction deferring all verification. [Completion worklog and candidate inventory](../../worklogs/rust-action-ownership/2026-09-09T06-30-47Z-simple-typestate.md). All identified applicable refactorings and affected source examples are implemented; compile/runtime correctness remains unverified. Delivery ends at the open PR.
 
 ## Findings and decisions
 
