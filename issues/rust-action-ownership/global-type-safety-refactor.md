@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T04:39:13Z
+updated_at: 2026-09-09T05:10:39Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -49,6 +49,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T04:35:30Z: All implementation stages completed: Rust `4246df44e`, browser `e4397fa12`, Loom `c7d1a90ff`, infrastructure `0b28295dd`, final trusted-wrapper fixture `232ed1a27`. Published [PR #1573](https://github.com/meta-secret/nook/pull/1573) at head `232ed1a275f1e2ee77bbf4957f3ca842eaa96c55`. Team formatting and final whitespace/static demo checks passed. Canonical Docker formatting was unavailable; tests, compilation and reviews were not run. The requested delivery ends at the open PR. [Completed worklog](../../worklogs/rust-action-ownership/2026-09-09T04-35-30Z-global-type-safety-refactor.md).
 
 - 2026-09-09T04:39:13Z: Reopened within PR #1573 to implement typed JSON deserialization and Rust/WASM return contracts across product and tooling. [Serialization extension plan](../../plans/rust-action-ownership/2026-09-09T04-38-30Z-typed-json-boundaries.md). Existing exclusions and PR-size waiver remain in force.
+
+- 2026-09-09T05:10:39Z: Typed serialization implemented in product Rust (`a56539344`), browser (`d6c3164c7`), Rust-owned pairing comparison (`6d3d13614`, `7460a4722`), and Loom/Cortex (`4620f06cd`). Infrastructure serialization is the final active stage. Team formatting and source hygiene passed; tests, compilation and reviews remain unrun.
 
 ## Findings and decisions
 
