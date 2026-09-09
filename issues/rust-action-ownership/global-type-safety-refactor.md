@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T10:07:53Z
+updated_at: 2026-09-09T10:29:32Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -122,3 +122,7 @@ Canonical recursive SRP/data-locality policy and all accepted article/tooling, R
 ### 2026-09-09T10:07:53Z — Precise decision receivers started
 
 Reopened for kind/nested-value decision ownership and removal of enclosing-object helper parameters. Canonical Cortex policy and concrete AI, Rust, browser and infrastructure callers are included. Tests, generation, compilation and reviews remain deferred. [Plan](../../plans/rust-action-ownership/2026-09-09T10-07-53Z-precise-decision-receivers.md).
+
+### 2026-09-09T10:29:32Z — Precise decision receivers completed
+
+Canonical precise-receiver/overwide-input guidance and all accepted AI, Rust, browser and infrastructure groups are implemented. Article block delegates kind-only decisions, nested enum/value policy moved to its owner, and overwide static helper inputs were removed. Published PR #1573 at cd17e24ba6e0e49bc7884fd69a7ee13cfa5f2ace. Tests, generation, compilation and reviews remain deferred; open PR handoff. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T10-29-32Z-precise-decision-receivers.md).
