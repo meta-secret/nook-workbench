@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T16:41:10Z
+updated_at: 2026-09-09T20:20:25Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -162,3 +162,10 @@ Plan: https://github.com/meta-secret/nook-workbench/blob/main/plans/rust-action-
 Completed source slices include skill admission and article/document-map Result propagation through Loom dispatch; Rust secret normalization, device-access persistence, sync store outcomes, import cursor ownership and credential snapshot transitions; infrastructure dependency ownership, WSS and preview publication outcomes; browser startup, authentication field instances, lease renewal and the complete offscreen queue/dispatcher operation Result chain. Current implementation commit: 13f0f978fd6c0f2c1fbe6bf30e8bdac02139d81a.
 
 Remaining implementation is still active: full Loom service/workflow ownership, remaining browser/provider/vault/script chains, infrastructure and CI-agent chains, Rust identity/event aggregates and coordinated manager/search-catalog ownership. No tests, compilation, typechecks, code generation, review or validation workflows ran. Package work used scripts-disabled lockfile-only resolution; formatting was write-only. The broad mission is not complete.
+
+
+## 2026-09-09T20:20:25Z — provider and storage caller migration
+
+Additional committed source slices complete executable-host Result propagation, document/navigation owners, Loom session/scaffold outcomes, registry and SSH outcomes, OVH lifecycle Results, and browser credential admission. The current committed head is dd3da855903c682385ac97adedcf9010ceae5739.
+
+An extensive browser provider/storage consumer migration remains actively edited and uncommitted. It includes Google/iCloud outcomes, generation/deletion admission, concrete Rust recovery classification, passkey failures, sync outcomes, enrollment, Sentinel and caller cleanup. Remaining coupled consumers and fixtures must be completed before committing; no completion or validation claim is made. The remaining Rust aggregate/manager, Loom, browser and infrastructure scope remains active. Tests, compilation, typechecks, generation and review workflows remain deferred.
