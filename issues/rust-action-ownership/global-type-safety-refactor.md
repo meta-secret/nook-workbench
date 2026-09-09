@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: done
+status: blocked
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T10:41:43Z
+updated_at: 2026-09-09T10:44:02Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -134,3 +134,7 @@ Reopened for library-based article JSON structural validation and removal of han
 ### 2026-09-09T10:41:43Z — Article schema codec completed
 
 Replaced handwritten article structural decoding with strict Zod schemas and inferred DTOs; preserved staged errors, bounds and domain admission. Published PR #1573 at 23e77f1a9a721004dfdef857cf924abf9f00fd51. No installation, tests, compilation, generation or reviews ran. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T10-41-43Z-article-schema-codec.md).
+
+### 2026-09-09T10:44:02Z — TypeScript Result refactor blocked before dispatch
+
+The mandatory delegation renderer prerequisite rejects the preceding Zod runtime dependency because the executable-skill package/lock gate accepts only its earlier schema. No Result implementation started. A narrow exception is needed to dispatch the AI owner to repair runtime-dependency admission while retaining strict validation, then resume the requested Result migration. [Plan](../../plans/rust-action-ownership/2026-09-09T10-44-02Z-typescript-result-contracts.md) · [Blocked worklog](../../worklogs/rust-action-ownership/2026-09-09T10-44-02Z-typescript-result-blocked.md).
