@@ -1,12 +1,12 @@
 ---
 title: Complete repository type and action ownership refactoring
-status: in_progress
+status: done
 priority: p1
 automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T07:21:26Z
+updated_at: 2026-09-09T07:49:28Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -79,6 +79,8 @@ Consistent meaningful operation owners, explicit valid states, typed request API
 - 2026-09-09T07:18:55Z: SRP policy and candidate decision refactoring completed at `e831f6a5de6c351645a581da7ed07e22a8fb251e` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Cortex now requires domain-local decision ownership; AuthenticationWorkflowMatch owns selection/attribution. [Worklog](../../worklogs/rust-action-ownership/2026-09-09T07-18-55Z-single-responsibility-decisions.md). All verification remains deferred.
 
 - 2026-09-09T07:21:26Z: Reopened for semantic enum parameters and idiomatic Rust conversions under the [conversion plan](../../plans/rust-action-ownership/2026-09-09T07-21-26Z-semantic-enums-standard-conversions.md). All verification remains deferred.
+
+- 2026-09-09T07:49:28Z: Semantic enum and standard-conversion refactoring completed at `b182eff1fc929f33a9faa36cbd7dbfd2a833fbf9` in [PR #1573](https://github.com/meta-secret/nook/pull/1573). Product Rust, Hive and preflight now use typed state/mode requests and appropriate From/TryFrom; canonical Cortex rules updated. [Worklog and dispositions](../../worklogs/rust-action-ownership/2026-09-09T07-49-28Z-semantic-enums-standard-conversions.md). Fixed transport representations retained; empty identifier decoding tightened. All verification remains deferred.
 
 ## Findings and decisions
 
