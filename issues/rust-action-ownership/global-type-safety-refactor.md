@@ -6,7 +6,7 @@ automation: manual
 owner: cypherkitty
 gizmo_id: global-type-safety-refactor
 created_at: 2026-09-08T23:53:00Z
-updated_at: 2026-09-09T20:20:25Z
+updated_at: 2026-09-09T21:46:34Z
 source_issues: []
 related_prs: [1573]
 depends_on: []
@@ -169,3 +169,10 @@ Remaining implementation is still active: full Loom service/workflow ownership, 
 Additional committed source slices complete executable-host Result propagation, document/navigation owners, Loom session/scaffold outcomes, registry and SSH outcomes, OVH lifecycle Results, and browser credential admission. The current committed head is dd3da855903c682385ac97adedcf9010ceae5739.
 
 An extensive browser provider/storage consumer migration remains actively edited and uncommitted. It includes Google/iCloud outcomes, generation/deletion admission, concrete Rust recovery classification, passkey failures, sync outcomes, enrollment, Sentinel and caller cleanup. Remaining coupled consumers and fixtures must be completed before committing; no completion or validation claim is made. The remaining Rust aggregate/manager, Loom, browser and infrastructure scope remains active. Tests, compilation, typechecks, generation and review workflows remain deferred.
+
+
+## 2026-09-09T21:46:34Z — provider/storage and identity milestones committed
+
+The 94-file browser provider/storage Result caller chain is committed at 3a016c16629144667e904165ad0cb96b14588eda. The 39-file Rust identity/keyring/directory and publication ownership chain is committed at e6ac2ee4852d10664d6069c5d7118fc4c4d85be3. Direct fixture sources were adapted; unit tests remain inline with focused Rust owners. These are implementation receipts, not compilation or runtime validation.
+
+Remaining work stays active: Loom command/service/workflow ownership, Rust wire/event/companion/manager/catalog ownership, browser residual state/admission/background/presentation/script APIs, and SRE cache/contracts/CI-agent/console/Hive/preflight work. Tests, compilation, typechecks, code generation and review workflows remain deferred. Final publication to PR #1573 is still pending completion of the authorized source scope.
