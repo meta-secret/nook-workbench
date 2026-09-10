@@ -200,3 +200,10 @@ Five optional authentication APIs now return named outcomes: pending/not-request
 
 - [Plan](../../plans/rust-action-ownership/2026-09-10T02-51-34Z-explicit-domain-outcomes.md)
 - [Worklog](../../worklogs/rust-action-ownership/2026-09-10T02-58-47Z-explicit-domain-outcomes.md)
+
+
+## Owned conversion implementation — 2026-09-10T03:13:42Z
+
+Completed join/member/roster and public account move conversions plus owned Proton Pass and 1Password importer chains. Head 494b20ab8d15e871258d4b17edb7cf7042b4ef32; 20 files, +310/-187. Secret cleanup and necessary live snapshots retained. Tests and all execution validation remain deferred; PR1573 stays open.
+
+[Worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/rust-action-ownership/2026-09-10T03-13-42Z-owned-value-conversions.md)
