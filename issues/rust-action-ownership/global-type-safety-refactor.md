@@ -176,3 +176,11 @@ An extensive browser provider/storage consumer migration remains actively edited
 The 94-file browser provider/storage Result caller chain is committed at 3a016c16629144667e904165ad0cb96b14588eda. The 39-file Rust identity/keyring/directory and publication ownership chain is committed at e6ac2ee4852d10664d6069c5d7118fc4c4d85be3. Direct fixture sources were adapted; unit tests remain inline with focused Rust owners. These are implementation receipts, not compilation or runtime validation.
 
 Remaining work stays active: Loom command/service/workflow ownership, Rust wire/event/companion/manager/catalog ownership, browser residual state/admission/background/presentation/script APIs, and SRE cache/contracts/CI-agent/console/Hive/preflight work. Tests, compilation, typechecks, code generation and review workflows remain deferred. Final publication to PR #1573 is still pending completion of the authorized source scope.
+
+
+### 2026-09-10 — Pragmatic library simplification
+
+The user narrowed implementation toward reducing complexity and relaxed blanket TypeScript Result conversion. The approved library pass is complete and pushed to PR1573 at 255ca75b7d9629303d10ff21d6d0242532a45658: 2,032 net lines removed across 30 files. Reused Zod schemas, native CLI parsing, Serde derives, coset encoding, Chrome typings and Bits UI dialogs. Compatibility-heavy substitutions were deliberately retained. Tests, builds, typechecks, code generation and reviews remain deferred; the issue stays in progress and the PR is not merged. Earlier broad refactor remainder is not treated as completed by this bounded pass.
+
+- [Superseding plan](../../plans/rust-action-ownership/2026-09-10T02-19-52Z-library-simplification.md)
+- [Worklog](../../worklogs/rust-action-ownership/2026-09-10T02-39-09Z-library-simplification.md)
