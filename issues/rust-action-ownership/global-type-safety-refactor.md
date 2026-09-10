@@ -214,3 +214,10 @@ Completed join/member/roster and public account move conversions plus owned Prot
 Completed the authored Rust optional-state migration across product, preflight, dylint helpers and Hive at a923b5186097d6ee2f422e639c6f6febef119803; 325 files, +14,452/-9,294 relative to task start. Full source coverage accounts for remaining explicit tokens as two native browser imports and intentional fixture/detector/prose input. Standard-library and upstream SDK contracts remain upstream boundaries. Tests, compilation, reviews and all validation execution remain deferred by the user. PR1573 is open; status remains in progress.
 
 [Plan](https://github.com/meta-secret/nook-workbench/blob/7cd4bcbb709f973fde4a1a046c42189050ac1e9c/plans/rust-action-ownership/2026-09-10T03-15-52Z-explicit-option-states.md) · [Worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/rust-action-ownership/2026-09-10T06-20-37Z-explicit-option-states.md)
+
+
+## Symmetric branching implementation — 2026-09-10T06:32:49Z
+
+Completed canonical Cortex guidance and six domain families (genesis, unlock, sync, directory, keyring, event authorization), 13 files +819/-620, pushed f430883bd3a647666df9361f36311f4c5937b30f. Preserved ownership, evaluation/error order and existing protocol behavior in source changes. All validation execution remains deferred; PR1573 stays open.
+
+[Plan](https://github.com/meta-secret/nook-workbench/blob/04029c5edf0053186c81b193eac34cf3a2a44498/plans/rust-action-ownership/2026-09-10T06-22-47Z-symmetric-domain-branching.md) · [Worklog](https://github.com/meta-secret/nook-workbench/blob/main/worklogs/rust-action-ownership/2026-09-10T06-32-49Z-symmetric-domain-branching.md)
