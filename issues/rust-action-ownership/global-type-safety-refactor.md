@@ -184,3 +184,11 @@ The user narrowed implementation toward reducing complexity and relaxed blanket 
 
 - [Superseding plan](../../plans/rust-action-ownership/2026-09-10T02-19-52Z-library-simplification.md)
 - [Worklog](../../worklogs/rust-action-ownership/2026-09-10T02-39-09Z-library-simplification.md)
+
+
+### 2026-09-10 — Concrete source bug fixes
+
+Six source-confirmed defects corrected and pushed to PR1573 at 79ef947b2267c8cced37001b92c8348e91c561e8: duplicate remote event validation/persistence, premature authentication, ignored provider removal, dialog theme ancestry, Vale decoded Result handling and path admission propagation. Direct callers and focused regression sources updated. No tests, builds, typechecks or reviews run; runtime validation remains deferred and issue stays in progress. This bounded pass does not resume prior blanket refactoring.
+
+- [Plan](../../plans/rust-action-ownership/2026-09-10T02-42-11Z-source-bug-fixes.md)
+- [Worklog](../../worklogs/rust-action-ownership/2026-09-10T02-49-27Z-source-bug-fixes.md)
