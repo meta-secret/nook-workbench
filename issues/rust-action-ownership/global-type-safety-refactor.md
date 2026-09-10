@@ -192,3 +192,11 @@ Six source-confirmed defects corrected and pushed to PR1573 at 79ef947b2267c8cce
 
 - [Plan](../../plans/rust-action-ownership/2026-09-10T02-42-11Z-source-bug-fixes.md)
 - [Worklog](../../worklogs/rust-action-ownership/2026-09-10T02-49-27Z-source-bug-fixes.md)
+
+
+### 2026-09-10 — Explicit domain absence outcomes
+
+Five optional authentication APIs now return named outcomes: pending/not-requested device join, enrolled/unenrolled identity membership, opened/legacy-required signing material, opened/not-created committed vault keys, and granted/not-granted authorization. Direct Rust/WASM callers and fixture sources migrated. Pushed b03b1876226a4d7889e82e30a7bf035ae4c3df0c to PR1573. Serialized DTOs and TypeScript contracts unchanged. Errors and constrained generation rules preserved; standard-library and private algorithmic optionals remain. Tests and compilation remain deferred; issue stays in progress.
+
+- [Plan](../../plans/rust-action-ownership/2026-09-10T02-51-34Z-explicit-domain-outcomes.md)
+- [Worklog](../../worklogs/rust-action-ownership/2026-09-10T02-58-47Z-explicit-domain-outcomes.md)
