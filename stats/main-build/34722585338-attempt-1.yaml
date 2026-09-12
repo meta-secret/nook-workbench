@@ -1,0 +1,476 @@
+{
+  "schema_version": 3,
+  "recorded_at": "2026-09-12T22:28:06.971Z",
+  "source_run": {
+    "workflow_name": "Main",
+    "workflow_id": 299523043,
+    "run_id": 34722585338,
+    "run_attempt": 1,
+    "url": "https://github.com/meta-secret/nook/actions/runs/34722585338",
+    "event": "push",
+    "head_branch": "main",
+    "head_sha": "5a53e2a127d59c1e14b1c825847d9e6595fc0392",
+    "conclusion": "failure",
+    "created_at": "2026-09-12T22:22:45Z",
+    "started_at": "2026-09-12T22:22:45Z",
+    "completed_at": "2026-09-12T22:27:50Z"
+  },
+  "source_pull_requests": [
+    {
+      "number": 1590,
+      "url": "https://github.com/meta-secret/nook/pull/1590",
+      "title": "Refactor CI and infrastructure tooling ownership"
+    }
+  ],
+  "summary": {
+    "queue_seconds": 0,
+    "execution_seconds": 305,
+    "wall_seconds": 305,
+    "job_count": 4,
+    "step_count": 36
+  },
+  "cache_telemetry": {
+    "totals": {
+      "job_count": 1,
+      "remote_backend_job_count": 1,
+      "direct_compile_job_count": 0,
+      "sccache_compile_requests": 0,
+      "sccache_cache_hits": 0,
+      "sccache_cache_misses": 0,
+      "buildkit_completed_steps": 64,
+      "buildkit_cached_steps": 43,
+      "buildkit_cache_hit_rate_percent": 67.19
+    },
+    "jobs": [
+      {
+        "job": "preflight",
+        "cache_backend": {
+          "kind": "remote",
+          "persistent": true,
+          "reason": "persistent_s3_service"
+        },
+        "sccache": {
+          "report_count": 0,
+          "compile_requests": 0,
+          "requests_executed": 0,
+          "cache_hits": 0,
+          "cache_misses": 0,
+          "cache_errors": 0,
+          "cache_writes": 0
+        },
+        "buildkit": {
+          "build_record_count": 3,
+          "completed_steps": 64,
+          "cached_steps": 43,
+          "cache_hit_rate_percent": 67.19,
+          "measurement": "buildx_target_record_steps"
+        },
+        "collection": {
+          "complete": true,
+          "warnings": []
+        }
+      }
+    ],
+    "collection": {
+      "complete": true,
+      "warnings": []
+    }
+  },
+  "jobs": [
+    {
+      "id": 103631058719,
+      "name": "Rust ecosystem / Dylint repository lints",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_name": "nook-k0s-clqcz-runner-w99bb",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-12T22:23:05Z",
+      "completed_at": "2026-09-12T22:27:50Z",
+      "duration_seconds": 285,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:05Z",
+          "completed_at": "2026-09-12T22:23:08Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:08Z",
+          "completed_at": "2026-09-12T22:23:11Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 3,
+          "name": "Run go-task/setup-task@v2",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-12T22:23:11Z",
+          "completed_at": "2026-09-12T22:23:11Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 4,
+          "name": "Run docker/setup-buildx-action@v4",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-12T22:23:11Z",
+          "completed_at": "2026-09-12T22:23:11Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 5,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:11Z",
+          "completed_at": "2026-09-12T22:23:18Z",
+          "duration_seconds": 7
+        },
+        {
+          "number": 6,
+          "name": "Bake rust-dylint",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-09-12T22:23:18Z",
+          "completed_at": "2026-09-12T22:27:48Z",
+          "duration_seconds": 270
+        },
+        {
+          "number": 11,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:27:48Z",
+          "completed_at": "2026-09-12T22:27:48Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 12,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:27:48Z",
+          "completed_at": "2026-09-12T22:27:48Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:27:48Z",
+          "completed_at": "2026-09-12T22:27:48Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 103631058711,
+      "name": "Rust ecosystem / Deterministic tests, fuzz, and Kani",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_name": "nook-k0s-clqcz-runner-9wnkn",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-12T22:23:06Z",
+      "completed_at": "2026-09-12T22:26:27Z",
+      "duration_seconds": 201,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:07Z",
+          "completed_at": "2026-09-12T22:23:10Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:10Z",
+          "completed_at": "2026-09-12T22:23:12Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 3,
+          "name": "Run go-task/setup-task@v2",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-12T22:23:12Z",
+          "completed_at": "2026-09-12T22:23:12Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 4,
+          "name": "Run docker/setup-buildx-action@v4",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-12T22:23:12Z",
+          "completed_at": "2026-09-12T22:23:12Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 5,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:12Z",
+          "completed_at": "2026-09-12T22:23:22Z",
+          "duration_seconds": 10
+        },
+        {
+          "number": 6,
+          "name": "Run deterministic tests, fuzz smoke, and Kani in parallel",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-09-12T22:23:22Z",
+          "completed_at": "2026-09-12T22:26:25Z",
+          "duration_seconds": 183
+        },
+        {
+          "number": 11,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:26:25Z",
+          "completed_at": "2026-09-12T22:26:25Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 12,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:26:25Z",
+          "completed_at": "2026-09-12T22:26:25Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:26:25Z",
+          "completed_at": "2026-09-12T22:26:25Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 103631058728,
+      "name": "Rust ecosystem / Dependency policy and RustSec",
+      "status": "completed",
+      "conclusion": "success",
+      "runner_name": "nook-k0s-clqcz-runner-vg5k6",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-12T22:23:06Z",
+      "completed_at": "2026-09-12T22:26:04Z",
+      "duration_seconds": 178,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:07Z",
+          "completed_at": "2026-09-12T22:23:09Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 2,
+          "name": "Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:09Z",
+          "completed_at": "2026-09-12T22:23:12Z",
+          "duration_seconds": 3
+        },
+        {
+          "number": 3,
+          "name": "Run go-task/setup-task@v2",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-12T22:23:12Z",
+          "completed_at": "2026-09-12T22:23:12Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 4,
+          "name": "Run docker/setup-buildx-action@v4",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-12T22:23:12Z",
+          "completed_at": "2026-09-12T22:23:12Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 5,
+          "name": "Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:12Z",
+          "completed_at": "2026-09-12T22:23:19Z",
+          "duration_seconds": 7
+        },
+        {
+          "number": 6,
+          "name": "Run dependency policy",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:19Z",
+          "completed_at": "2026-09-12T22:26:02Z",
+          "duration_seconds": 163
+        },
+        {
+          "number": 11,
+          "name": "Post Run ./.github/actions/***-docker-setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:26:02Z",
+          "completed_at": "2026-09-12T22:26:02Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 12,
+          "name": "Post Run actions/checkout@v7",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:26:02Z",
+          "completed_at": "2026-09-12T22:26:02Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:26:02Z",
+          "completed_at": "2026-09-12T22:26:02Z",
+          "duration_seconds": 0
+        }
+      ]
+    },
+    {
+      "id": 103631058819,
+      "name": "Repository preflight",
+      "status": "completed",
+      "conclusion": "failure",
+      "runner_name": "nook-k0s-clqcz-runner-d2kcf",
+      "runner_group_name": "Default",
+      "labels": [
+        "nook-k0s"
+      ],
+      "started_at": "2026-09-12T22:23:10Z",
+      "completed_at": "2026-09-12T22:24:16Z",
+      "duration_seconds": 66,
+      "steps": [
+        {
+          "number": 1,
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:11Z",
+          "completed_at": "2026-09-12T22:23:13Z",
+          "duration_seconds": 2
+        },
+        {
+          "number": 2,
+          "name": "Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:13Z",
+          "completed_at": "2026-09-12T22:23:32Z",
+          "duration_seconds": 19
+        },
+        {
+          "number": 3,
+          "name": "Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:23:32Z",
+          "completed_at": "2026-09-12T22:23:50Z",
+          "duration_seconds": 18
+        },
+        {
+          "number": 4,
+          "name": "Repository invariant validation",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-09-12T22:23:50Z",
+          "completed_at": "2026-09-12T22:24:07Z",
+          "duration_seconds": 17
+        },
+        {
+          "number": 5,
+          "name": "Publish verified preflight BuildKit cache",
+          "status": "completed",
+          "conclusion": "skipped",
+          "started_at": "2026-09-12T22:24:07Z",
+          "completed_at": "2026-09-12T22:24:07Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 6,
+          "name": "Preserve cache telemetry",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:24:07Z",
+          "completed_at": "2026-09-12T22:24:12Z",
+          "duration_seconds": 5
+        },
+        {
+          "number": 11,
+          "name": "Post Docker setup",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:24:12Z",
+          "completed_at": "2026-09-12T22:24:12Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 12,
+          "name": "Post Checkout",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:24:12Z",
+          "completed_at": "2026-09-12T22:24:12Z",
+          "duration_seconds": 0
+        },
+        {
+          "number": 13,
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-09-12T22:24:12Z",
+          "completed_at": "2026-09-12T22:24:12Z",
+          "duration_seconds": 0
+        }
+      ]
+    }
+  ],
+  "comparison": {
+    "baseline_runs": [],
+    "baseline_quality": "not_applicable",
+    "baseline_note": "Failed and cancelled attempts retain partial timings but are not compared with successful builds",
+    "regression": false,
+    "regression_reasons": []
+  }
+}
